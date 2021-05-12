@@ -12,7 +12,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(raylib REQUIRED)
 
 add_executable(bomberman
-        main.cpp)
+        src/main.cpp)
 
 target_link_libraries(bomberman raylib)
 
