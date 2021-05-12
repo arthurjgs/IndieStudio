@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_3',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['getelapsedtime_10',['getElapsedTime',['../classRayLib.html#a497c616cdc81f691ac9c38582aadec8e',1,'RayLib']]]
 ];
