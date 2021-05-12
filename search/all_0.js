@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getelapsedtime_0',['getElapsedTime',['../classRayLib.html#a497c616cdc81f691ac9c38582aadec8e',1,'RayLib']]]
+  ['_5fmessage_0',['_message',['../classarc_1_1DynamicLibraryException.html#a873d2edfeaab7815f53f459229008868',1,'arc::DynamicLibraryException']]]
 ];

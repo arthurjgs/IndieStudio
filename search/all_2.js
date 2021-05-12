@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['raylib_3',['RayLib',['../classRayLib.html',1,'RayLib'],['../classRayLib.html#adc87ea9b4f16956a30e081289edb949b',1,'RayLib::RayLib()']]],
-  ['raylib_2ecpp_4',['RayLib.cpp',['../RayLib_8cpp.html',1,'']]],
-  ['raylib_2ehpp_5',['RayLib.hpp',['../RayLib_8hpp.html',1,'']]]
+  ['dynamiclibrary_2',['DynamicLibrary',['../classarc_1_1DynamicLibrary.html',1,'arc::DynamicLibrary'],['../classarc_1_1DynamicLibrary.html#ac6c7ab11871c06ef8b5f8130dd70682d',1,'arc::DynamicLibrary::DynamicLibrary()']]],
+  ['dynamiclibrary_2ecpp_3',['DynamicLibrary.cpp',['../DynamicLibrary_8cpp.html',1,'']]],
+  ['dynamiclibrary_2ehpp_4',['DynamicLibrary.hpp',['../DynamicLibrary_8hpp.html',1,'']]],
+  ['dynamiclibraryexception_5',['DynamicLibraryException',['../classarc_1_1DynamicLibraryException.html',1,'arc::DynamicLibraryException'],['../classarc_1_1DynamicLibraryException.html#afa681e6d96a20c2f98b77d79f7d6ad08',1,'arc::DynamicLibraryException::DynamicLibraryException()']]],
+  ['dynamiclibraryexception_2ecpp_6',['DynamicLibraryException.cpp',['../DynamicLibraryException_8cpp.html',1,'']]],
+  ['dynamiclibraryexception_2ehpp_7',['DynamicLibraryException.hpp',['../DynamicLibraryException_8hpp.html',1,'']]]
 ];
