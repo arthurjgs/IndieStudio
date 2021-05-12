@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to Github
+        uses: wei/git-sync@v3
+        with:
+          source_repo: "arthurjgs/IndieStudio"
+          source_branch: "master"
+          destination_repo: "EpitechIT2020/B-YEP-400-NCY-4-1-indiestudio-arthur.junges"
+          destination_branch: "master"
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # optional
+          source_ssh_private_key: ${{ secrets.SOURCE_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
+          destination_ssh_private_key: ${{ secrets.DESTINATION_SSH_PRIVATE_KEY }} # optional, will override `SSH_PRIVATE_KEY`
