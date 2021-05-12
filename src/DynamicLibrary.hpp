@@ -10,7 +10,6 @@
 
 #include <string>
 #include "DynamicLibraryException.hpp"
-#include "../shared/IEngines.hpp"
 #include <dlfcn.h>
 #include <memory>
 
