@@ -10,10 +10,10 @@
 
 #include <string>
 #include "DynamicLibraryException.hpp"
-#include <dlfcn.h>
 #include <memory>
 
 #ifdef __linux__
+#include <dlfcn.h>
 #define LIBTYPE void*
 #define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
 #define LIBFUNC(lib, fn) dlsym((lib), (fn))
@@ -26,6 +26,7 @@
 #define ERRORLIB() GetLastError()
 #define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)
 #elif __APPLE__
+#include <dlfcn.h>
 #define LIBTYPE void*
 #define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
 #define LIBFUNC(lib, fn) dlsym((lib), (fn))
