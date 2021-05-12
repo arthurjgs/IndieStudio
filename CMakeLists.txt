@@ -22,11 +22,6 @@ add_executable(bomberman
         src/DynamicLibraryException.cpp
         src/DynamicLibraryException.hpp)
 
-if (WIN32)
-    find_package(dlfcn-win32 REQUIRED)
-    set(CMAKE_DL_LIBS dlfcn-win32::dl)
-endif ()
-
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
 file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/lib")

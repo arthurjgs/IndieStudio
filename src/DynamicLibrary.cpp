@@ -15,14 +15,14 @@ arc::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
 {
     char *error = nullptr;
 
-    this->_lib = ::dlopen(filename.c_str(), RTLD_LAZY);
+    this->_lib = ::OPENLIB(filename.c_str());
     if (this->_lib == nullptr) {
-        error = ::dlerror();
+        error = ::ERRORLIB();
         throw DynamicLibraryException(error);
     }
 }
 
 arc::DynamicLibrary::~DynamicLibrary()
 {
-    ::dlclose(this->_lib);
+    ::CLOSELIB(this->_lib);
 }

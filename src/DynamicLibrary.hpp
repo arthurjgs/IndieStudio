@@ -13,6 +13,26 @@
 #include <dlfcn.h>
 #include <memory>
 
+#ifdef __linux__
+#define LIBTYPE void*
+#define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
+#define LIBFUNC(lib, fn) dlsym((lib), (fn))
+#define ERRORLIB() dlerror()
+#define CLOSELIB(LIBTYPE) dlclose(LIBTYPE)
+#elif defined(WINVER)
+#define LIBTYPE HINSTANCE
+#define OPENLIB(libname) LoadLibraryW(L ## libname)
+#define LIBFUNC(lib, fn) GetProcAddress((lib), (fn))
+#define ERRORLIB() GetLastError()
+#define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)
+#elif __APPLE__
+#define LIBTYPE void*
+#define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
+#define LIBFUNC(lib, fn) dlsym((lib), (fn))
+#define ERRORLIB() dlerror()
+#define CLOSELIB(LIBTYPE) dlclose(LIBTYPE)
+#endif
+
 /*! DynamicLibrary encapsulation class */
 namespace arc {
     class DynamicLibrary {
@@ -22,7 +42,7 @@ namespace arc {
         template <typename T>
         T getSym(const std::string &symbol); /*!< get symbol in library */
     private:
-        void *_lib; /*!< Library loaded with dlopen */
+        LIBTYPE _lib; /*!< Library loaded with dlopen */
     };
 }
 
@@ -39,11 +59,11 @@ T arc::DynamicLibrary::getSym(const std::string &symbol)
     T adr = nullptr;
     char *error = nullptr;
 
-    error = ::dlerror();
+    error = ::ERRORLIB();
     if (error != nullptr)
         throw DynamicLibraryException(error);
-    adr = reinterpret_cast<T>(::dlsym(this->_lib, symbol.c_str()));
-    error = ::dlerror();
+    adr = reinterpret_cast<T>(::LIBFUNC(this->_lib, symbol.c_str()));
+    error = ::ERRORLIB();
     if (error != nullptr)
         throw DynamicLibraryException("Unable to open library. Reason : " + std::string(error));
     return adr;
