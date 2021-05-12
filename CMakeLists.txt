@@ -15,3 +15,8 @@ add_executable(bomberman
         main.cpp)
 
 target_link_libraries(bomberman raylib)
+
+install(TARGETS bomberman)
+
+enable_testing()
+add_test(NAME bomberman COMMAND bomberman)
