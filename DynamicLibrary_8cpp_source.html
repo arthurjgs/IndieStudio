@@ -77,16 +77,16 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">char</span> *error = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;_lib = ::dlopen(filename.c_str(), RTLD_LAZY);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;_lib = ::OPENLIB(filename.c_str());</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_lib == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        error = ::dlerror();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        error = ::ERRORLIB();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classarc_1_1DynamicLibraryException.html">DynamicLibraryException</a>(error);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classarc_1_1DynamicLibrary.html#a50a465e57b3d203d2a7a62a4d75d6e83">   25</a></span>&#160;<a class="code" href="classarc_1_1DynamicLibrary.html#a50a465e57b3d203d2a7a62a4d75d6e83">arc::DynamicLibrary::~DynamicLibrary</a>()</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ::dlclose(this-&gt;_lib);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ::CLOSELIB(this-&gt;_lib);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="aDynamicLibrary_8hpp_html"><div class="ttname"><a href="DynamicLibrary_8hpp.html">DynamicLibrary.hpp</a></div><div class="ttdoc">libdl-encapsulation header</div></div>
 <div class="ttc" id="aclassarc_1_1DynamicLibraryException_html"><div class="ttname"><a href="classarc_1_1DynamicLibraryException.html">arc::DynamicLibraryException</a></div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibraryException_8hpp_source.html#l00016">DynamicLibraryException.hpp:17</a></div></div>
