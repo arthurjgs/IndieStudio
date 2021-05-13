@@ -11,7 +11,7 @@
  *   Exception raised by the DynamicLibrary class
  *   @param message the massage to be displayed in the exception.
  */
-arc::DynamicLibraryException::DynamicLibraryException(const std::string &message)
+LibDl::DynamicLibraryException::DynamicLibraryException(const std::string &message)
 {
     this->_message = message;
 }

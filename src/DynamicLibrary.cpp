@@ -11,18 +11,18 @@
  *   Encapsulation of libdl.h
  *   @param filename path of the library.
  */
-arc::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
+LibDl::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
 {
     char *error = nullptr;
 
-    this->_lib = ::OPENLIB(filename.c_str());
+    this->_lib = LibDl::OPENLIB(filename.c_str());
     if (this->_lib == nullptr) {
-        error = ::ERRORLIB();
+        error = LibDl::ERRORLIB();
         throw DynamicLibraryException(error);
     }
 }
 
-arc::DynamicLibrary::~DynamicLibrary()
+LibDl::DynamicLibrary::~DynamicLibrary()
 {
-    ::CLOSELIB(this->_lib);
+    LibDl::CLOSELIB(this->_lib);
 }

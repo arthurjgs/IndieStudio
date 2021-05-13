@@ -11,15 +11,16 @@
 #include <exception>
 #include <iostream>
 
-namespace arc {
-    /*! DynamicLibrary exception class (simple home-made exception class) */
-    class DynamicLibraryException : public std::exception
-    {
+/*! DynamicLibrary exception class (simple home-made exception class) */
+namespace LibDl {
+    class DynamicLibraryException : public std::exception {
     public:
         explicit DynamicLibraryException(std::string const &message);
-        const char *what () const throw () override {
+
+        const char *what() const throw() override {
             return this->_message.c_str();
         }
+
     protected:
         std::string _message;
     };

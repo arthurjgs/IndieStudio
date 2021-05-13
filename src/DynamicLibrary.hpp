@@ -12,14 +12,16 @@
 #include "DynamicLibraryException.hpp"
 #include <memory>
 
+namespace LibDl {
 #ifdef __linux__
-#include <dlfcn.h>
+    #include <dlfcn.h>
 #define LIBTYPE void*
 #define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
 #define LIBFUNC(lib, fn) dlsym((lib), (fn))
 #define ERRORLIB() dlerror()
 #define CLOSELIB(LIBTYPE) dlclose(LIBTYPE)
-#elif defined(WINVER)
+#elif defined(_WIN32)
+    #include <windows.h>
 #define LIBTYPE HINSTANCE
 #define OPENLIB(libname) LoadLibraryW(L ## libname)
 #define LIBFUNC(lib, fn) GetProcAddress((lib), (fn))
@@ -35,12 +37,13 @@
 #endif
 
 /*! DynamicLibrary encapsulation class */
-namespace arc {
     class DynamicLibrary {
     public:
         DynamicLibrary(const std::string &filename);
+
         ~DynamicLibrary();
-        template <typename T>
+
+        template<typename T>
         T getSym(const std::string &symbol); /*!< get symbol in library */
     private:
         LIBTYPE _lib; /*!< Library loaded with dlopen */
@@ -55,16 +58,16 @@ namespace arc {
  *   an exception will be raised
  */
 template<typename T>
-T arc::DynamicLibrary::getSym(const std::string &symbol)
+T LibDl::DynamicLibrary::getSym(const std::string &symbol)
 {
     T adr = nullptr;
     char *error = nullptr;
 
-    error = ::ERRORLIB();
+    error = ERRORLIB();
     if (error != nullptr)
         throw DynamicLibraryException(error);
-    adr = reinterpret_cast<T>(::LIBFUNC(this->_lib, symbol.c_str()));
-    error = ::ERRORLIB();
+    adr = reinterpret_cast<T>(LIBFUNC(this->_lib, symbol.c_str()));
+    error = ERRORLIB();
     if (error != nullptr)
         throw DynamicLibraryException("Unable to open library. Reason : " + std::string(error));
     return adr;
