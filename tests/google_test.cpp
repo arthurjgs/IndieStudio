@@ -15,7 +15,7 @@ TEST (DynamicLibrary, DynamicLibraryCorrectRayLib) {
     std::unique_ptr<LibDl::DynamicLibrary> dl = nullptr;
 
     for (const auto& entry : std::filesystem::directory_iterator("./lib")) {
-        if (entry.is_regular_file() && (entry.find("raylib") != std::string::npos)) {
+        if (entry.is_regular_file() && (entry.path().filename().find("raylib") != std::string::npos)) {
             dl = std::make_unique<>(entry);
             break;
         }
@@ -27,7 +27,7 @@ TEST (DynamicLibrary, EntryPointCorrectRayLib) {
     IGraphicalLibrary *engine = nullptr;
 
     for (const auto& entry : std::filesystem::directory_iterator("./lib")) {
-        if (entry.is_regular_file() && (entry.find("raylib") != std::string::npos)) {
+        if (entry.is_regular_file() && (entry.path().filename().find("raylib") != std::string::npos)) {
             auto dl = std::make_unique<LibDl::DynamicLibrary>(entry);
             auto fct = dl->getSym<IGraphicalLibrary * (*)(void)>("entryPointGraphicalLibrary");
             engine = fct();
