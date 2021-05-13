@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_34',['what',['../classarc_1_1DynamicLibraryException.html#a6f72745c1734eca544bc0636335d7b94',1,'arc::DynamicLibraryException']]]
+  ['what_34',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException']]]
 ];

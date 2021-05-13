@@ -73,25 +73,25 @@ $(function() {
 <a href="DynamicLibrary_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DynamicLibrary_8hpp.html">DynamicLibrary.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classarc_1_1DynamicLibrary.html#ac6c7ab11871c06ef8b5f8130dd70682d">   14</a></span>&#160;<a class="code" href="classarc_1_1DynamicLibrary.html#ac6c7ab11871c06ef8b5f8130dd70682d">arc::DynamicLibrary::DynamicLibrary</a>(<span class="keyword">const</span> std::string &amp;filename) : _lib(nullptr)</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classLibDl_1_1DynamicLibrary.html#a009abb1908a757a864f56e0948b3eb76">   14</a></span>&#160;<a class="code" href="classLibDl_1_1DynamicLibrary.html#a009abb1908a757a864f56e0948b3eb76">LibDl::DynamicLibrary::DynamicLibrary</a>(<span class="keyword">const</span> std::string &amp;filename) : _lib(nullptr)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">char</span> *error = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;_lib = ::OPENLIB(filename.c_str());</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;_lib = LibDl::OPENLIB(filename.c_str());</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_lib == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        error = ::ERRORLIB();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classarc_1_1DynamicLibraryException.html">DynamicLibraryException</a>(error);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        error = LibDl::ERRORLIB();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classLibDl_1_1DynamicLibraryException.html">DynamicLibraryException</a>(error);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classarc_1_1DynamicLibrary.html#a50a465e57b3d203d2a7a62a4d75d6e83">   25</a></span>&#160;<a class="code" href="classarc_1_1DynamicLibrary.html#a50a465e57b3d203d2a7a62a4d75d6e83">arc::DynamicLibrary::~DynamicLibrary</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362">   25</a></span>&#160;<a class="code" href="classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362">LibDl::DynamicLibrary::~DynamicLibrary</a>()</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ::CLOSELIB(this-&gt;_lib);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    LibDl::CLOSELIB(this-&gt;_lib);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 <div class="ttc" id="aDynamicLibrary_8hpp_html"><div class="ttname"><a href="DynamicLibrary_8hpp.html">DynamicLibrary.hpp</a></div><div class="ttdoc">libdl-encapsulation header</div></div>
-<div class="ttc" id="aclassarc_1_1DynamicLibraryException_html"><div class="ttname"><a href="classarc_1_1DynamicLibraryException.html">arc::DynamicLibraryException</a></div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibraryException_8hpp_source.html#l00016">DynamicLibraryException.hpp:17</a></div></div>
-<div class="ttc" id="aclassarc_1_1DynamicLibrary_html_a50a465e57b3d203d2a7a62a4d75d6e83"><div class="ttname"><a href="classarc_1_1DynamicLibrary.html#a50a465e57b3d203d2a7a62a4d75d6e83">arc::DynamicLibrary::~DynamicLibrary</a></div><div class="ttdeci">~DynamicLibrary()</div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibrary_8cpp_source.html#l00025">DynamicLibrary.cpp:25</a></div></div>
-<div class="ttc" id="aclassarc_1_1DynamicLibrary_html_ac6c7ab11871c06ef8b5f8130dd70682d"><div class="ttname"><a href="classarc_1_1DynamicLibrary.html#ac6c7ab11871c06ef8b5f8130dd70682d">arc::DynamicLibrary::DynamicLibrary</a></div><div class="ttdeci">DynamicLibrary(const std::string &amp;filename)</div><div class="ttdoc">Encapsulation of libdl.h.</div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibrary_8cpp_source.html#l00014">DynamicLibrary.cpp:14</a></div></div>
+<div class="ttc" id="aclassLibDl_1_1DynamicLibraryException_html"><div class="ttname"><a href="classLibDl_1_1DynamicLibraryException.html">LibDl::DynamicLibraryException</a></div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibraryException_8hpp_source.html#l00016">DynamicLibraryException.hpp:16</a></div></div>
+<div class="ttc" id="aclassLibDl_1_1DynamicLibrary_html_a009abb1908a757a864f56e0948b3eb76"><div class="ttname"><a href="classLibDl_1_1DynamicLibrary.html#a009abb1908a757a864f56e0948b3eb76">LibDl::DynamicLibrary::DynamicLibrary</a></div><div class="ttdeci">DynamicLibrary(const std::string &amp;filename)</div><div class="ttdoc">Encapsulation of libdl.h.</div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibrary_8cpp_source.html#l00014">DynamicLibrary.cpp:14</a></div></div>
+<div class="ttc" id="aclassLibDl_1_1DynamicLibrary_html_af9cb114d1b2e014869056f676e23d362"><div class="ttname"><a href="classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362">LibDl::DynamicLibrary::~DynamicLibrary</a></div><div class="ttdeci">~DynamicLibrary()</div><div class="ttdef"><b>Definition:</b> <a href="DynamicLibrary_8cpp_source.html#l00025">DynamicLibrary.cpp:25</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
