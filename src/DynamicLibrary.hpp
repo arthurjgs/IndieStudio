@@ -64,22 +64,24 @@ template<typename T>
 T LibDl::DynamicLibrary::getSym(const std::string &symbol)
 {
     T adr = nullptr;
-    ERRORTYPE error = nullptr;
+    ERRORTYPE error;
 
     error = ERRORLIB();
-    if (error != nullptr) {
 #if defined(_WIN32)
+    if (!error) {
         throw DynamicLibraryException(std::to_string(error));
 #else
+    if (error != nullptr) {
         throw DynamicLibraryException(error);
 #endif
     }
     adr = reinterpret_cast<T>(LIBFUNC(this->_lib, symbol.c_str()));
     error = ERRORLIB();
-    if (error != nullptr) {
 #if defined(_WIN32)
+    if (!error) {
         throw DynamicLibraryException("Unable to open library. Reason : " + std::to_string(error));
 #else
+    if (error != nullptr) {
         throw DynamicLibraryException("Unable to open library. Reason : " + std::string(error));
 #endif
     }

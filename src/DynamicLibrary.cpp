@@ -13,7 +13,7 @@
  */
 LibDl::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
 {
-    ERRORTYPE error = nullptr;
+    ERRORTYPE error;
 
     this->_lib = LibDl::OPENLIB(filename.c_str());
     if (this->_lib == nullptr) {
