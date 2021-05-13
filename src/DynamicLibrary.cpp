@@ -13,12 +13,16 @@
  */
 LibDl::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
 {
-    char *error = nullptr;
+    ERRORTYPE error = nullptr;
 
     this->_lib = LibDl::OPENLIB(filename.c_str());
     if (this->_lib == nullptr) {
         error = LibDl::ERRORLIB();
+#if defined(_WIN32)
+        throw DynamicLibraryException(std::to_string(error));
+#else
         throw DynamicLibraryException(error);
+#endif
     }
 }
 
