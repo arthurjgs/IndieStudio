@@ -23,7 +23,7 @@ namespace LibDl {
 #elif defined(_WIN32)
     #include <windows.h>
 #define LIBTYPE HINSTANCE
-#define OPENLIB(libname) LoadLibraryW(L ## libname)
+#define OPENLIB(libname) LoadLibrary(libname)
 #define LIBFUNC(lib, fn) GetProcAddress((lib), (fn))
 #define ERRORLIB() GetLastError()
 #define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)
