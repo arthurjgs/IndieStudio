@@ -26,6 +26,8 @@ target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
 file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/lib")
 
+add_subdirectory("googletest" "googletest")
+add_subdirectory("tests" "tests")
 add_subdirectory("src/RayLib" "src/RayLib")
 
 install(TARGETS bomberman)

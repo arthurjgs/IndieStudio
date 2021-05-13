@@ -12,13 +12,22 @@
 #include <IGraphicalLibrary.hpp>
 #include "raylib.h"
 
-class RayLib : IGraphicalLibrary{
+class RayLib : public IGraphicalLibrary {
 public:
     RayLib(float width, float height, const std::string &title);
+
     size_t getElapsedTime();
+
 private:
     Vector2 windowDimensions;
 protected:
 };
+
+extern "C" IGraphicalLibrary *entryPointGraphicalLibrary()
+{
+    static RayLib lib(1920, 1080, "Bomberman");
+    return &lib;
+}
+
 
 #endif //BOMBERMAN_RAYLIB_HPP

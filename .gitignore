@@ -3,3 +3,4 @@ cmake-build-debug/
 build/
 bomberman
 lib/
+unit_tests
