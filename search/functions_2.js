@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_32',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['getelapsedtime_32',['getElapsedTime',['../classRayLib.html#a497c616cdc81f691ac9c38582aadec8e',1,'RayLib']]],
+  ['getsym_33',['getSym',['../classLibDl_1_1DynamicLibrary.html#a27f30c58aae8c45472c1aff39ee937d0',1,'LibDl::DynamicLibrary']]]
 ];
