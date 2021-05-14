@@ -77,27 +77,53 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;IGraphicalLibrary.hpp&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;raylib.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classRayLib.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRayLib.html">RayLib</a> : <span class="keyword">public</span> IGraphicalLibrary {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classRayLib.html#adc87ea9b4f16956a30e081289edb949b">RayLib</a>(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keyword">const</span> std::string &amp;title);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classRayLib.html#a497c616cdc81f691ac9c38582aadec8e">getElapsedTime</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Vector2 windowDimensions;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="RayLib_8hpp.html#afc2164aa6238e79feb19fd26b4c032a5">   26</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> IGraphicalLibrary *<a class="code" href="RayLib_8hpp.html#afc2164aa6238e79feb19fd26b4c032a5">entryPointGraphicalLibrary</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">static</span> <a class="code" href="classRayLib.html">RayLib</a> lib(1920, 1080, <span class="stringliteral">&quot;Bomberman&quot;</span>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> &amp;lib;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_RAYLIB_HPP</span></div>
-<div class="ttc" id="aRayLib_8hpp_html_afc2164aa6238e79feb19fd26b4c032a5"><div class="ttname"><a href="RayLib_8hpp.html#afc2164aa6238e79feb19fd26b4c032a5">entryPointGraphicalLibrary</a></div><div class="ttdeci">IGraphicalLibrary * entryPointGraphicalLibrary()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8hpp_source.html#l00026">RayLib.hpp:26</a></div></div>
-<div class="ttc" id="aclassRayLib_html"><div class="ttname"><a href="classRayLib.html">RayLib</a></div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8hpp_source.html#l00015">RayLib.hpp:15</a></div></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#if defined _WIN32 || defined __CYGWIN__</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifdef BUILDING_DLL</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">    #ifdef __GNUC__</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">      #define DLL_PUBLIC __attribute__ ((dllexport))</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">      #define DLL_PUBLIC __declspec(dllexport) </span><span class="comment">// Note: actually gcc seems to also supports this syntax.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">  #else</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">    #ifdef __GNUC__</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">      #define DLL_PUBLIC __attribute__ ((dllimport))</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">    #else</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">      #define DLL_PUBLIC __declspec(dllimport) </span><span class="comment">// Note: actually gcc seems to also supports this syntax.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">    #endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">  #endif</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">  #define DLL_LOCAL</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#if __GNUC__ &gt;= 4</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define DLL_PUBLIC __attribute__ ((visibility (&quot;default&quot;</span>)))</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define DLL_LOCAL  __attribute__ ((visibility (&quot;hidden&quot;</span>)))</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="RayLib_8hpp.html#a29047de4dfe891435d8254535634ac1d">   35</a></span>&#160;<span class="preprocessor">#define DLL_PUBLIC</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="RayLib_8hpp.html#aca98bf98711e4a9d473c86d0015d9303">   36</a></span>&#160;<span class="preprocessor">    #define DLL_LOCAL</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classRayLib.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRayLib.html">RayLib</a> : <span class="keyword">public</span> IGraphicalLibrary {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classRayLib.html#adc87ea9b4f16956a30e081289edb949b">RayLib</a>(<span class="keywordtype">float</span> width, <span class="keywordtype">float</span> height, <span class="keyword">const</span> std::string &amp;title);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="classRayLib.html#a497c616cdc81f691ac9c38582aadec8e">getElapsedTime</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    Vector2 windowDimensions;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="RayLib_8hpp.html#a6c19b0272126a58fc8494ba28bc37587">   51</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code" href="RayLib_8hpp.html#a29047de4dfe891435d8254535634ac1d">DLL_PUBLIC</a> IGraphicalLibrary *<a class="code" href="RayLib_8hpp.html#a6c19b0272126a58fc8494ba28bc37587">entryPointGraphicalLibrary</a>()</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <a class="code" href="classRayLib.html">RayLib</a> lib(1920, 1080, <span class="stringliteral">&quot;Bomberman&quot;</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> &amp;lib;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_RAYLIB_HPP</span></div>
+<div class="ttc" id="aRayLib_8hpp_html_a29047de4dfe891435d8254535634ac1d"><div class="ttname"><a href="RayLib_8hpp.html#a29047de4dfe891435d8254535634ac1d">DLL_PUBLIC</a></div><div class="ttdeci">#define DLL_PUBLIC</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8hpp_source.html#l00035">RayLib.hpp:35</a></div></div>
+<div class="ttc" id="aRayLib_8hpp_html_a6c19b0272126a58fc8494ba28bc37587"><div class="ttname"><a href="RayLib_8hpp.html#a6c19b0272126a58fc8494ba28bc37587">entryPointGraphicalLibrary</a></div><div class="ttdeci">DLL_PUBLIC IGraphicalLibrary * entryPointGraphicalLibrary()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8hpp_source.html#l00051">RayLib.hpp:51</a></div></div>
+<div class="ttc" id="aclassRayLib_html"><div class="ttname"><a href="classRayLib.html">RayLib</a></div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8hpp_source.html#l00040">RayLib.hpp:40</a></div></div>
 <div class="ttc" id="aclassRayLib_html_a497c616cdc81f691ac9c38582aadec8e"><div class="ttname"><a href="classRayLib.html#a497c616cdc81f691ac9c38582aadec8e">RayLib::getElapsedTime</a></div><div class="ttdeci">size_t getElapsedTime()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8cpp_source.html#l00016">RayLib.cpp:16</a></div></div>
 <div class="ttc" id="aclassRayLib_html_adc87ea9b4f16956a30e081289edb949b"><div class="ttname"><a href="classRayLib.html#adc87ea9b4f16956a30e081289edb949b">RayLib::RayLib</a></div><div class="ttdeci">RayLib(float width, float height, const std::string &amp;title)</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_8cpp_source.html#l00010">RayLib.cpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
