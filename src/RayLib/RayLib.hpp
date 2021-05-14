@@ -34,7 +34,6 @@ extern "C" DLL_PUBLIC IGraphicalLibrary *entryPointGraphicalLibrary()
     static RayLib lib(1920, 1080, "Bomberman");
     return &lib;
 }
-#endif
 #elif defined _WIN32 || defined __CYGWIN__
 extern "C" IGraphicalLibrary *entryPointGraphicalLibrary()
 {
