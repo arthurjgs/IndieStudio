@@ -20,7 +20,7 @@ add_executable(bomberman
         src/DynamicLibrary.cpp
         src/DynamicLibrary.hpp
         src/DynamicLibraryException.cpp
-        src/DynamicLibraryException.hpp)
+        src/DynamicLibraryException.hpp src/main.h)
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
 
