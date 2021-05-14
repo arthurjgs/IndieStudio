@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_38',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException']]]
+  ['_7edynamiclibrary_37',['~DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362',1,'LibDl::DynamicLibrary']]]
 ];
