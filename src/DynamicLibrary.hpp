@@ -26,7 +26,7 @@ namespace LibDl {
 #define LIBTYPE HINSTANCE
 #define ERRORTYPE long
 #define OPENLIB(libname) LoadLibrary(libname)
-#define LIBFUNC(lib, fn) GetProcAddress((lib), (fn))
+#define LIBFUNC(lib, fn) GetProcAddress(lib, fn)
 #define ERRORLIB() GetLastError()
 #define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)
 #elif __APPLE__
@@ -68,17 +68,17 @@ T LibDl::DynamicLibrary::getSym(const std::string &symbol)
 
     error = ERRORLIB();
 #if defined(_WIN32)
-    if (!error) {
+    if (error) {
         throw DynamicLibraryException(std::to_string(error));
 #else
     if (error != nullptr) {
         throw DynamicLibraryException(error);
 #endif
     }
-    adr = reinterpret_cast<T>(LIBFUNC(this->_lib, symbol.c_str()));
+    adr = (T) (LIBFUNC(this->_lib, symbol.c_str()));
     error = ERRORLIB();
 #if defined(_WIN32)
-    if (!error) {
+    if (error) {
         throw DynamicLibraryException("Unable to open library. Reason : " + std::to_string(error));
 #else
     if (error != nullptr) {

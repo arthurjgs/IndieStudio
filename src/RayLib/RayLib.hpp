@@ -10,7 +10,7 @@
 #define BOMBERMAN_RAYLIB_HPP
 
 #include <IGraphicalLibrary.hpp>
-#include "raylib.h"
+#include <raylib.h>
 
 #if __GNUC__ >= 4
 #define DLL_PUBLIC __attribute__ ((visibility ("default")))
@@ -35,7 +35,7 @@ extern "C" DLL_PUBLIC IGraphicalLibrary *entryPointGraphicalLibrary()
     return &lib;
 }
 #elif defined _WIN32 || defined __CYGWIN__
-extern "C" IGraphicalLibrary *entryPointGraphicalLibrary()
+extern "C" __declspec(dllexport) IGraphicalLibrary *entryPointGraphicalLibrary()
 {
     static RayLib lib(1920, 1080, "Bomberman");
     return &lib;
