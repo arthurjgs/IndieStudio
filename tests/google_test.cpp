@@ -11,35 +11,22 @@ TEST (DynamicLibrary, DynamicLibraryError) {
     ASSERT_THROW(LibDl::DynamicLibrary("arthur"), LibDl::DynamicLibraryException);
 }
 
-TEST (DynamicLibrary, DynamicLibraryCorrectRayLib) {
-    std::unique_ptr<LibDl::DynamicLibrary> dl = nullptr;
-
-#if defined _WIN32 || defined __CYGWIN__
-    dl = std::make_unique<LibDl::DynamicLibrary>("indie_raylib.dll");
-#elif defined __APPLE__
-    dl = std::make_unique<LibDl::DynamicLibrary>("./lib/indie_raylib.dylib");
-#elif defined __linux__
-    dl = std::make_unique<LibDl::DynamicLibrary>("./lib/indie_raylib.so");
-#endif
-    dl.reset();
-    EXPECT_NE(nullptr, dl);
-}
-
 TEST (DynamicLibrary, EntryPointCorrectRayLib) {
-    IGraphicalLibrary *engine = nullptr;
-
+    IGraphicalLibrary* engine = nullptr;
 #if defined _WIN32 || defined __CYGWIN__
-    auto dl = std::make_unique<LibDl::DynamicLibrary>("indie_raylib.dll");
-#elif defined __APPLE__
-    auto dl = std::make_unique<LibDl::DynamicLibrary>("./lib/indie_raylib.dylib");
-#elif defined __linux__
-    auto dl = std::make_unique<LibDl::DynamicLibrary>("./lib/indie_raylib.so");
+    for (auto& p : std::filesystem::directory_iterator("..\\..\\Release")) {
+#else
+    for (auto& p : std::filesystem::directory_iterator("./lib")) {
 #endif
-    auto fct = dl->getSym<IGraphicalLibrary* (*)(void)>("entryPointGraphicalLibrary");
-    engine = fct();
+        std::string filestr = p.path().string();
+        std::cout << filestr << std::endl;
+        if (filestr.find("raylib") != std::string::npos) {
+            auto dl = std::make_unique<LibDl::DynamicLibrary>(filestr);
+            auto fct = dl->getSym<IGraphicalLibrary* (*)(void)>("entryPointGraphicalLibrary");
+            engine = fct();
+        }
+    }    
 
-    std::cout << engine->getElapsedTime() << std::endl;
-    dl.reset();
     EXPECT_NE(nullptr, engine);
 }
 
