@@ -12,6 +12,11 @@
 #include <IGraphicalLibrary.hpp>
 #include "raylib.h"
 
+#if __GNUC__ >= 4
+#define DLL_PUBLIC __attribute__ ((visibility ("default")))
+#define DLL_LOCAL  __attribute__ ((visibility ("hidden")))
+#endif
+
 class RayLib : public IGraphicalLibrary {
 public:
     RayLib(float width, float height, const std::string &title);
@@ -23,11 +28,19 @@ private:
 protected:
 };
 
+#if __GNUC__ >= 4
+extern "C" DLL_PUBLIC IGraphicalLibrary *entryPointGraphicalLibrary()
+{
+    static RayLib lib(1920, 1080, "Bomberman");
+    return &lib;
+}
+#endif
+#elif defined _WIN32 || defined __CYGWIN__
 extern "C" IGraphicalLibrary *entryPointGraphicalLibrary()
 {
     static RayLib lib(1920, 1080, "Bomberman");
     return &lib;
 }
-
+#endif
 
 #endif //BOMBERMAN_RAYLIB_HPP
