@@ -92,7 +92,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define LIBTYPE HINSTANCE</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define ERRORTYPE long</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define OPENLIB(libname) LoadLibrary(libname)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBFUNC(lib, fn) GetProcAddress((lib), (fn))</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define LIBFUNC(lib, fn) GetProcAddress(lib, fn)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define ERRORLIB() GetLastError()</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#elif __APPLE__</span></div>
@@ -126,17 +126,17 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    error = ERRORLIB();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#if defined(_WIN32)</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (!error) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">if</span> (error) {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classLibDl_1_1DynamicLibraryException.html">DynamicLibraryException</a>(std::to_string(error));</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (error != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classLibDl_1_1DynamicLibraryException.html">DynamicLibraryException</a>(error);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    adr = <span class="keyword">reinterpret_cast&lt;</span>T<span class="keyword">&gt;</span>(LIBFUNC(this-&gt;_lib, symbol.c_str()));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    adr = (T) (LIBFUNC(this-&gt;_lib, symbol.c_str()));</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    error = ERRORLIB();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#if defined(_WIN32)</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (!error) {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (error) {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classLibDl_1_1DynamicLibraryException.html">DynamicLibraryException</a>(<span class="stringliteral">&quot;Unable to open library. Reason : &quot;</span> + std::to_string(error));</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (error != <span class="keyword">nullptr</span>) {</div>

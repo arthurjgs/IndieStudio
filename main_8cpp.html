@@ -73,6 +73,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="DynamicLibrary_8hpp_source.html">DynamicLibrary.hpp</a>&quot;</code><br />
+<code>#include &quot;IGraphicalLibrary.hpp&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -97,10 +100,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00003">3</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00006">6</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    IGraphicalLibrary *engine = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">auto</span> dl = std::make_unique&lt;LibDl::DynamicLibrary&gt;(<span class="stringliteral">&quot;indie_raylib.dll&quot;</span>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">auto</span> fct = dl-&gt;getSym&lt;IGraphicalLibrary * (*)(<span class="keywordtype">void</span>)&gt;(<span class="stringliteral">&quot;entryPointGraphicalLibrary&quot;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    engine = fct();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::cout &lt;&lt; engine-&gt;getElapsedTime() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
