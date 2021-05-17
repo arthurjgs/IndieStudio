@@ -13,6 +13,13 @@ find_package(raylib REQUIRED)
 
 add_library(${PROJECT_NAME} SHARED
         RayLib.cpp
+        RayLibCore.cpp
+        RayLibShapes.cpp
+        RayLibTextures.cpp
+        RayLibText.cpp
+        RayLibModels.cpp
+        RayLibRaudio.cpp
+        RayLibPhysac.cpp
         RayLib.hpp
         ../../shared/IGraphicalLibrary.hpp)
 

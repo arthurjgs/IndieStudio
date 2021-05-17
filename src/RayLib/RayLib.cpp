@@ -7,13 +7,46 @@
 
 #include "RayLib.hpp"
 
-RayLib::RayLib(float width, float height, const std::string &title)
+rl::RayLib::RayLib(float width, float height, const std::string &title) :_rCore(width, height, title)
 {
-    this->windowDimensions.x = width;
-    this->windowDimensions.y = height;
 }
 
-size_t RayLib::getElapsedTime()
+size_t rl::RayLib::getElapsedTime()
 {
     return 0;
+}
+
+module::ICore &rl::RayLib::getCore()
+{
+    return _rCore;
+}
+
+module::IShapes &rl::RayLib::getShapes()
+{
+    return _rShapes;
+}
+
+module::ITextures &rl::RayLib::getTextures()
+{
+    return _rTextures;
+}
+
+module::IText &rl::RayLib::getText()
+{
+    return _rText;
+}
+
+module::IModels &rl::RayLib::getModels()
+{
+    return _rModels;
+}
+
+module::IAudio &rl::RayLib::getAudio()
+{
+    return _rAudio;
+}
+
+module::IPhysic &rl::RayLib::getPhysic()
+{
+    return _rPhysic;
 }
