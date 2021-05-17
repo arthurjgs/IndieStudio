@@ -1,14 +1,5 @@
 var searchData=
 [
-  ['getaudio_124',['getAudio',['../classrl_1_1RayLib.html#a3bd0c3ca2ffa26df2788c4578fc684d0',1,'rl::RayLib']]],
-  ['getcore_125',['getCore',['../classrl_1_1RayLib.html#a1ed18d4797153110851825fc701c11ad',1,'rl::RayLib']]],
-  ['getelapsedtime_126',['getElapsedTime',['../classrl_1_1RayLib.html#aac29a40a2fa75bc3aea4bfbf7b8a76bc',1,'rl::RayLib']]],
-  ['getmodels_127',['getModels',['../classrl_1_1RayLib.html#ab6136b571ea9956750b997a4d8ab941a',1,'rl::RayLib']]],
-  ['getphysic_128',['getPhysic',['../classrl_1_1RayLib.html#ae86ee88b6962e4dbe0294bfbdba81bc9',1,'rl::RayLib']]],
-  ['getscreenh_129',['getScreenH',['../classrl_1_1RayLibCore.html#ad33057e39db1e1cf9efb88fac375ff40',1,'rl::RayLibCore']]],
-  ['getscreenw_130',['getScreenW',['../classrl_1_1RayLibCore.html#a1bdca8796170e08e3f87de36b0110652',1,'rl::RayLibCore']]],
-  ['getshapes_131',['getShapes',['../classrl_1_1RayLib.html#a6511faac7c2bb6304ba9f07ae7260861',1,'rl::RayLib']]],
-  ['getsym_132',['getSym',['../classLibDl_1_1DynamicLibrary.html#a27f30c58aae8c45472c1aff39ee937d0',1,'LibDl::DynamicLibrary']]],
-  ['gettext_133',['getText',['../classrl_1_1RayLib.html#aae624ab2df90e1e2131aed1f522708ef',1,'rl::RayLib']]],
-  ['gettextures_134',['getTextures',['../classrl_1_1RayLib.html#af3350ebec61860239c52ddbaedf65952',1,'rl::RayLib']]]
+  ['main_191',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['matrix_192',['Matrix',['../classTypes_1_1Matrix.html#a20e4c5846a7cc4aac7e8e225b958b207',1,'Types::Matrix::Matrix()=delete'],['../classTypes_1_1Matrix.html#afb877a4b1d438d65cd81cd7ec7e2e593',1,'Types::Matrix::Matrix(const float *&amp;matrix)'],['../classTypes_1_1Matrix.html#ab178787bb252c3809deae003b775d121',1,'Types::Matrix::Matrix(const Matrix &amp;cpy)'],['../classTypes_1_1Matrix.html#aa138fdfb807052f730e897a7d04894d6',1,'Types::Matrix::Matrix(const Matrix &amp;&amp;cpy)']]]
 ];

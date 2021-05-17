@@ -1,6 +1,24 @@
 var searchData=
 [
-  ['disablecurs_113',['disableCurs',['../classrl_1_1RayLibCore.html#ad09f375f656a3bb7a08c36824c5bd953',1,'rl::RayLibCore']]],
-  ['dynamiclibrary_114',['DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html#a009abb1908a757a864f56e0948b3eb76',1,'LibDl::DynamicLibrary']]],
-  ['dynamiclibraryexception_115',['DynamicLibraryException',['../classLibDl_1_1DynamicLibraryException.html#a5bcfd4f6c5836f1a867f48958f87d689',1,'LibDl::DynamicLibraryException']]]
+  ['geta_169',['getA',['../classTypes_1_1Vector4.html#a7723e4aa2a7fd6efb15b9275bd4b84b3',1,'Types::Vector4::getA()'],['../classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2',1,'Type::Color::getA()']]],
+  ['getaudio_170',['getAudio',['../classrl_1_1RayLib.html#a3bd0c3ca2ffa26df2788c4578fc684d0',1,'rl::RayLib']]],
+  ['getb_171',['getB',['../classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee',1,'Type::Color']]],
+  ['getcore_172',['getCore',['../classrl_1_1RayLib.html#a1ed18d4797153110851825fc701c11ad',1,'rl::RayLib']]],
+  ['getdata_173',['getData',['../classTypes_1_1Image.html#aa1b4a5be8bb6bcd8e3714410affc6b63',1,'Types::Image']]],
+  ['getelapsedtime_174',['getElapsedTime',['../classrl_1_1RayLib.html#aac29a40a2fa75bc3aea4bfbf7b8a76bc',1,'rl::RayLib']]],
+  ['getg_175',['getG',['../classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191',1,'Type::Color']]],
+  ['getheight_176',['getHeight',['../classTypes_1_1Image.html#a3f04437681a8b6a4bfaa720370262612',1,'Types::Image::getHeight()'],['../classType_1_1Rectangle.html#a5b36b7612c806dca43c42eefa85f25b1',1,'Type::Rectangle::getHeight()'],['../classTypes_1_1Texture.html#a589df8dce0d4ccdca1ba2f30d276fd08',1,'Types::Texture::getHeight()']]],
+  ['getmatrix_177',['getMatrix',['../classTypes_1_1Matrix.html#add2002fbe262a90b4f167a060d78617d',1,'Types::Matrix']]],
+  ['getmodels_178',['getModels',['../classrl_1_1RayLib.html#ab6136b571ea9956750b997a4d8ab941a',1,'rl::RayLib']]],
+  ['getpath_179',['getPath',['../classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646',1,'Types::Texture']]],
+  ['getphysic_180',['getPhysic',['../classrl_1_1RayLib.html#ae86ee88b6962e4dbe0294bfbdba81bc9',1,'rl::RayLib']]],
+  ['getr_181',['getR',['../classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d',1,'Type::Color']]],
+  ['getshapes_182',['getShapes',['../classrl_1_1RayLib.html#a6511faac7c2bb6304ba9f07ae7260861',1,'rl::RayLib']]],
+  ['getsym_183',['getSym',['../classLibDl_1_1DynamicLibrary.html#a27f30c58aae8c45472c1aff39ee937d0',1,'LibDl::DynamicLibrary']]],
+  ['gettext_184',['getText',['../classrl_1_1RayLib.html#aae624ab2df90e1e2131aed1f522708ef',1,'rl::RayLib']]],
+  ['gettextures_185',['getTextures',['../classrl_1_1RayLib.html#af3350ebec61860239c52ddbaedf65952',1,'rl::RayLib']]],
+  ['getwidth_186',['getWidth',['../classTypes_1_1Image.html#ab2a993db204655bb42ae752b2cbff050',1,'Types::Image::getWidth()'],['../classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924',1,'Type::Rectangle::getWidth()'],['../classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e',1,'Types::Texture::getWidth()']]],
+  ['getx_187',['getX',['../classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8',1,'Type::Rectangle::getX()'],['../classTypes_1_1Vector2.html#af236f0d27c9608d6943669f2f017f68e',1,'Types::Vector2::getX()'],['../classTypes_1_1Vector3.html#a1f0a2839f6f84dca2fb64804f5515844',1,'Types::Vector3::getX()'],['../classTypes_1_1Vector4.html#a6c115bfe695158a7e34e6edc974b976e',1,'Types::Vector4::getX()']]],
+  ['gety_188',['getY',['../classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e',1,'Type::Rectangle::getY()'],['../classTypes_1_1Vector2.html#a76f024d604ea6b5b012463b421712eac',1,'Types::Vector2::getY()'],['../classTypes_1_1Vector3.html#a497efdb15c604f74686001fc91a01865',1,'Types::Vector3::getY()'],['../classTypes_1_1Vector4.html#a28d5a5735f74616e79fe9aa164bd6ebe',1,'Types::Vector4::getY()']]],
+  ['getz_189',['getZ',['../classTypes_1_1Vector3.html#a3b8be183bb4920cbc559ae35c4137385',1,'Types::Vector3::getZ()'],['../classTypes_1_1Vector4.html#a9abd991945b901384e223b43a8ff29fb',1,'Types::Vector4::getZ()']]]
 ];

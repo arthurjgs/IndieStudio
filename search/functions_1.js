@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['closewin_112',['closeWin',['../classrl_1_1RayLibCore.html#a7d33c1a14e24a46b44a57e62e8aff057',1,'rl::RayLibCore']]]
+  ['dynamiclibrary_167',['DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html#a009abb1908a757a864f56e0948b3eb76',1,'LibDl::DynamicLibrary']]],
+  ['dynamiclibraryexception_168',['DynamicLibraryException',['../classLibDl_1_1DynamicLibraryException.html#a5bcfd4f6c5836f1a867f48958f87d689',1,'LibDl::DynamicLibraryException']]]
 ];

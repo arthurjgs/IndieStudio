@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['raylib_140',['RayLib',['../classrl_1_1RayLib.html#a95b1a883734e4b2df947a9501c93cdbd',1,'rl::RayLib']]],
-  ['raylibcore_141',['RayLibCore',['../classrl_1_1RayLibCore.html#a01c90e4053583b16de73a4f6050dee0e',1,'rl::RayLibCore']]],
-  ['raylibmodels_142',['RayLibModels',['../classrl_1_1RayLibModels.html#a643b4019833c9671f8e5d4e2fd8e62c7',1,'rl::RayLibModels']]],
-  ['raylibphysac_143',['RayLibPhysac',['../classrl_1_1RayLibPhysac.html#ae89f6dc3ddee8ffbf9a4084c15a64b0e',1,'rl::RayLibPhysac']]],
-  ['raylibraudio_144',['RayLibRaudio',['../classrl_1_1RayLibRaudio.html#a9368d0fa43b8d155074a61a023f8ce91',1,'rl::RayLibRaudio']]],
-  ['raylibshapes_145',['RayLibShapes',['../classrl_1_1RayLibShapes.html#acc2f9c36b443e0afe90634887f13a78a',1,'rl::RayLibShapes']]],
-  ['raylibtext_146',['RayLibText',['../classrl_1_1RayLibText.html#a5de96fb7ba45c12a26b0233f6c0b7fb6',1,'rl::RayLibText']]],
-  ['raylibtextures_147',['RayLibTextures',['../classrl_1_1RayLibTextures.html#a42d84f918e2573f6eed49b63a4bc7ea8',1,'rl::RayLibTextures']]]
+  ['vector2_208',['Vector2',['../classTypes_1_1Vector2.html#a071f797237e4c43d3290e838d2885f96',1,'Types::Vector2::Vector2()=delete'],['../classTypes_1_1Vector2.html#ab4d03177de5ae8a77601ffd009ff3569',1,'Types::Vector2::Vector2(const float &amp;x, const float &amp;y)'],['../classTypes_1_1Vector2.html#a8672480c19235bc761819722b065ea81',1,'Types::Vector2::Vector2(const Vector2 &amp;cpy)'],['../classTypes_1_1Vector2.html#aff73b1833db1d0a1e021a9cea5444cb9',1,'Types::Vector2::Vector2(const Vector2 &amp;&amp;cpy)']]],
+  ['vector3_209',['Vector3',['../classTypes_1_1Vector3.html#aae9349739c8aa5b514791c54c9859f7a',1,'Types::Vector3::Vector3()=delete'],['../classTypes_1_1Vector3.html#a941eb12c204916ce5964e278bb7f1b5c',1,'Types::Vector3::Vector3(const float &amp;x, const float &amp;y, const float &amp;z)'],['../classTypes_1_1Vector3.html#ac828ebb7c794a16f5290cd59b61f8ea6',1,'Types::Vector3::Vector3(const Vector3 &amp;cpy)'],['../classTypes_1_1Vector3.html#a68b99cc82231e76dffb2a04f388e0488',1,'Types::Vector3::Vector3(const Vector3 &amp;&amp;cpy)']]],
+  ['vector4_210',['Vector4',['../classTypes_1_1Vector4.html#af3f175babb080968b1ad76d94216a65f',1,'Types::Vector4::Vector4()=delete'],['../classTypes_1_1Vector4.html#a6f2cd81d0f47cf5bb8103b53a8d0459e',1,'Types::Vector4::Vector4(const float &amp;x, const float &amp;y, const float &amp;z, const float &amp;a)'],['../classTypes_1_1Vector4.html#adb79ae3e78c8696be2f9e8efd9a504fe',1,'Types::Vector4::Vector4(const Vector4 &amp;cpy)'],['../classTypes_1_1Vector4.html#a25404fdac54a105ee37b83960808fb09',1,'Types::Vector4::Vector4(const Vector4 &amp;&amp;cpy)']]]
 ];
