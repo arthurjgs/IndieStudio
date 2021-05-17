@@ -12,8 +12,7 @@ namespace module
 {
     class ITextures {
         public:
-            ITextures();
-            ~ITextures();
+            virtual ~ITextures() = default;
 
         protected:
         private:
