@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_45',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException']]]
+  ['hidecurs_31',['hideCurs',['../classrl_1_1RayLibCore.html#a8556e6265e0d4fc55ea1b22a7445cede',1,'rl::RayLibCore']]]
 ];
