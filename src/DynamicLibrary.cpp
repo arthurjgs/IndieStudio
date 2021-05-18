@@ -11,7 +11,7 @@
  *   Encapsulation of libdl.h
  *   @param filename path of the library.
  */
-LibDl::DynamicLibrary::DynamicLibrary(const std::string &filename) : _lib(nullptr)
+LibDl::DynamicLibrary::DynamicLibrary(const std::string &filename)
 {
     ERRORTYPE error;
 

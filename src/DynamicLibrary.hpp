@@ -40,7 +40,7 @@ namespace LibDl {
 #endif
 
 /*! DynamicLibrary encapsulation class */
-    class DynamicLibrary {
+	class DynamicLibrary {
     public:
         DynamicLibrary(const std::string &filename);
 
@@ -61,29 +61,22 @@ namespace LibDl {
  *   an exception will be raised
  */
 template<typename T>
-T LibDl::DynamicLibrary::getSym(const std::string &symbol)
+T LibDl::DynamicLibrary::getSym(const std::string& symbol)
 {
     T adr = nullptr;
-    ERRORTYPE error;
+	ERRORTYPE error;
 
-    error = ERRORLIB();
+    adr = reinterpret_cast<T>((LIBFUNC(this->_lib, symbol.c_str())));
+    if (adr == nullptr) {
+        error = ERRORLIB();
 #if defined(_WIN32)
-    if (error) {
-        throw DynamicLibraryException(std::to_string(error));
+        if (error) {
+            throw DynamicLibraryException("Unable to open library. Reason : " + std::to_string(error));
 #else
-    if (error != nullptr) {
-        throw DynamicLibraryException(error);
+        if (error != nullptr) {
+            throw DynamicLibraryException("Unable to open library. Reason : " + std::string(error));
 #endif
-    }
-    adr = (T) (LIBFUNC(this->_lib, symbol.c_str()));
-    error = ERRORLIB();
-#if defined(_WIN32)
-    if (error) {
-        throw DynamicLibraryException("Unable to open library. Reason : " + std::to_string(error));
-#else
-    if (error != nullptr) {
-        throw DynamicLibraryException("Unable to open library. Reason : " + std::string(error));
-#endif
+        }
     }
     return adr;
 }/*!< get symbol in library */

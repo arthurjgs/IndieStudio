@@ -14,16 +14,17 @@ TEST (DynamicLibrary, DynamicLibraryError) {
 TEST (DynamicLibrary, EntryPointCorrectRayLib) {
     IGraphicalLibrary* engine = nullptr;
 #if defined _WIN32 || defined __CYGWIN__
-    for (auto& p : std::filesystem::directory_iterator("..\\..\\Release")) {
+    for (auto p : std::filesystem::directory_iterator("../lib")) {
 #else
-    for (auto& p : std::filesystem::directory_iterator("./lib")) {
+    for (auto p : std::filesystem::directory_iterator("./lib")) {
 #endif
-        std::string filestr = p.path().string();
-        std::cout << filestr << std::endl;
-        if (filestr.find("raylib") != std::string::npos) {
-            auto dl = std::make_unique<LibDl::DynamicLibrary>(filestr);
-            auto fct = dl->getSym<IGraphicalLibrary* (*)(void)>("entryPointGraphicalLibrary");
-            engine = fct();
+        if (p.is_regular_file()) {
+            auto fileStr = p.path().string();
+            if (fileStr.find("raylib.dll") != std::string::npos) {
+                auto dl = std::make_unique<LibDl::DynamicLibrary>(fileStr);
+                auto fct = dl->getSym<IGraphicalLibrary* (*)(void)>("entryPointGraphicalLibrary");
+                engine = fct();
+            }
         }
     }    
 
