@@ -19,6 +19,16 @@
 #include "RayLibRaudio.hpp"
 #include "RayLibPhysac.hpp"
 
+#if defined _WIN32 || defined __CYGWIN__
+#ifdef indie_raylib_EXPORTS
+	#define indie_raylib_API __declspec(dllexport) // Note: actually gcc seems to also supports this syntax.
+#else
+	#define indie_raylib_API __declspec(dllimport) // Note: actually gcc seems to also supports this syntax.
+#endif
+#define DLL_LOCAL
+#endif
+
+
 #if __GNUC__ >= 4
 #define DLL_PUBLIC __attribute__ ((visibility ("default")))
 #define DLL_LOCAL  __attribute__ ((visibility ("hidden")))
@@ -57,10 +67,13 @@ extern "C" DLL_PUBLIC IGraphicalLibrary *entryPointGraphicalLibrary()
     return &lib;
 }
 #elif defined _WIN32 || defined __CYGWIN__
-extern "C" __declspec(dllexport) IGraphicalLibrary *entryPointGraphicalLibrary()
+extern "C"
 {
-    static RayLib lib(1920, 1080, "Bomberman");
-    return &lib;
+	indie_raylib_API IGraphicalLibrary* entryPointGraphicalLibrary()
+	{
+        static rl::RayLib lib(1920, 1080, "Bomberman");
+        return &lib;
+    }
 }
 #endif
 
