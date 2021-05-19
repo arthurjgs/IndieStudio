@@ -1,25 +1,10 @@
 var searchData=
 [
-  ['geta_52',['getA',['../classTypes_1_1Vector4.html#a7723e4aa2a7fd6efb15b9275bd4b84b3',1,'Types::Vector4::getA()'],['../classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2',1,'Type::Color::getA()']]],
-  ['getaudio_53',['getAudio',['../classrl_1_1RayLib.html#a3bd0c3ca2ffa26df2788c4578fc684d0',1,'rl::RayLib']]],
-  ['getb_54',['getB',['../classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee',1,'Type::Color']]],
-  ['getcollisionrec_55',['GetCollisionRec',['../classrl_1_1RayLibShapes.html#af612ce83cea22ed26852f743757664ad',1,'rl::RayLibShapes']]],
-  ['getcore_56',['getCore',['../classrl_1_1RayLib.html#a1ed18d4797153110851825fc701c11ad',1,'rl::RayLib']]],
-  ['getdata_57',['getData',['../classTypes_1_1Image.html#aa1b4a5be8bb6bcd8e3714410affc6b63',1,'Types::Image']]],
-  ['getelapsedtime_58',['getElapsedTime',['../classrl_1_1RayLib.html#aac29a40a2fa75bc3aea4bfbf7b8a76bc',1,'rl::RayLib']]],
-  ['getg_59',['getG',['../classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191',1,'Type::Color']]],
-  ['getheight_60',['getHeight',['../classTypes_1_1Image.html#a3f04437681a8b6a4bfaa720370262612',1,'Types::Image::getHeight()'],['../classType_1_1Rectangle.html#a5b36b7612c806dca43c42eefa85f25b1',1,'Type::Rectangle::getHeight()'],['../classTypes_1_1Texture.html#a589df8dce0d4ccdca1ba2f30d276fd08',1,'Types::Texture::getHeight()']]],
-  ['getmatrix_61',['getMatrix',['../classTypes_1_1Matrix.html#add2002fbe262a90b4f167a060d78617d',1,'Types::Matrix']]],
-  ['getmodels_62',['getModels',['../classrl_1_1RayLib.html#ab6136b571ea9956750b997a4d8ab941a',1,'rl::RayLib']]],
-  ['getpath_63',['getPath',['../classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646',1,'Types::Texture']]],
-  ['getphysic_64',['getPhysic',['../classrl_1_1RayLib.html#ae86ee88b6962e4dbe0294bfbdba81bc9',1,'rl::RayLib']]],
-  ['getr_65',['getR',['../classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d',1,'Type::Color']]],
-  ['getshapes_66',['getShapes',['../classrl_1_1RayLib.html#a6511faac7c2bb6304ba9f07ae7260861',1,'rl::RayLib']]],
-  ['getsym_67',['getSym',['../classLibDl_1_1DynamicLibrary.html#a27f30c58aae8c45472c1aff39ee937d0',1,'LibDl::DynamicLibrary']]],
-  ['gettext_68',['getText',['../classrl_1_1RayLib.html#aae624ab2df90e1e2131aed1f522708ef',1,'rl::RayLib']]],
-  ['gettextures_69',['getTextures',['../classrl_1_1RayLib.html#af3350ebec61860239c52ddbaedf65952',1,'rl::RayLib']]],
-  ['getwidth_70',['getWidth',['../classTypes_1_1Image.html#ab2a993db204655bb42ae752b2cbff050',1,'Types::Image::getWidth()'],['../classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924',1,'Type::Rectangle::getWidth()'],['../classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e',1,'Types::Texture::getWidth()']]],
-  ['getx_71',['getX',['../classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8',1,'Type::Rectangle::getX()'],['../classTypes_1_1Vector2.html#af236f0d27c9608d6943669f2f017f68e',1,'Types::Vector2::getX()'],['../classTypes_1_1Vector3.html#a1f0a2839f6f84dca2fb64804f5515844',1,'Types::Vector3::getX()'],['../classTypes_1_1Vector4.html#a6c115bfe695158a7e34e6edc974b976e',1,'Types::Vector4::getX()']]],
-  ['gety_72',['getY',['../classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e',1,'Type::Rectangle::getY()'],['../classTypes_1_1Vector2.html#a76f024d604ea6b5b012463b421712eac',1,'Types::Vector2::getY()'],['../classTypes_1_1Vector3.html#a497efdb15c604f74686001fc91a01865',1,'Types::Vector3::getY()'],['../classTypes_1_1Vector4.html#a28d5a5735f74616e79fe9aa164bd6ebe',1,'Types::Vector4::getY()']]],
-  ['getz_73',['getZ',['../classTypes_1_1Vector3.html#a3b8be183bb4920cbc559ae35c4137385',1,'Types::Vector3::getZ()'],['../classTypes_1_1Vector4.html#a9abd991945b901384e223b43a8ff29fb',1,'Types::Vector4::getZ()']]]
+  ['_7eraylibcore_35',['~RayLibCore',['../classrl_1_1RayLibCore.html#a54ad49560afbdbe9f79dc0eb414b7939',1,'rl::RayLibCore']]],
+  ['_7eraylibmodels_36',['~RayLibModels',['../classrl_1_1RayLibModels.html#a905ba57e0cd6ec1dab920e18dd62b571',1,'rl::RayLibModels']]],
+  ['_7eraylibphysac_37',['~RayLibPhysac',['../classrl_1_1RayLibPhysac.html#ae9324027c6a8b6f601cf65069edf922e',1,'rl::RayLibPhysac']]],
+  ['_7eraylibraudio_38',['~RayLibRaudio',['../classrl_1_1RayLibRaudio.html#a7ee6fb3d81a1d938f1bd5ddd9e81915e',1,'rl::RayLibRaudio']]],
+  ['_7eraylibshapes_39',['~RayLibShapes',['../classrl_1_1RayLibShapes.html#acc344950c014135ac1082d26107d5735',1,'rl::RayLibShapes']]],
+  ['_7eraylibtext_40',['~RayLibText',['../classrl_1_1RayLibText.html#aaf84fa1a68688fa9b159826f029e6ba8',1,'rl::RayLibText']]],
+  ['_7eraylibtextures_41',['~RayLibTextures',['../classrl_1_1RayLibTextures.html#a2c4220a415653338c4ea07de382040ea',1,'rl::RayLibTextures']]]
 ];
