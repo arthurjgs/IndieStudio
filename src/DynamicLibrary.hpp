@@ -13,7 +13,7 @@
 #include <memory>
 
 namespace LibDl {
-#ifdef __linux__
+#if defined(__linux__) || defined(__APPLE__)
 #include <dlfcn.h>
 #define LIBTYPE void*
 #define ERRORTYPE char*
@@ -29,14 +29,6 @@ namespace LibDl {
 #define LIBFUNC(lib, fn) GetProcAddress(lib, fn)
 #define ERRORLIB() GetLastError()
 #define CLOSELIB(LIBTYPE) FreeLibrary(LIBTYPE)
-#elif __APPLE__
-#include <dlfcn.h>
-#define LIBTYPE void*
-#define ERRORTYPE char*
-#define OPENLIB(libname) dlopen((libname), RTLD_LAZY)
-#define LIBFUNC(lib, fn) dlsym((lib), (fn))
-#define ERRORLIB() dlerror()
-#define CLOSELIB(LIBTYPE) dlclose(LIBTYPE)
 #endif
 
 /*! DynamicLibrary encapsulation class */
