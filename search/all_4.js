@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_17',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_18',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2eh_19',['main.h',['../main_8h.html',1,'']]]
+  ['image_74',['Image',['../classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27',1,'Types::Image::Image()=delete'],['../classTypes_1_1Image.html#a46c5f40e69c856e0055603c5c05a3293',1,'Types::Image::Image(const std::string &amp;data, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Image.html#a0386f99cf2787b3830ea5103be711c70',1,'Types::Image::Image(const Image &amp;cpy)'],['../classTypes_1_1Image.html#aa66507b2febb4f8eca2f474b905fcc75',1,'Types::Image::Image(const Image &amp;&amp;cpy)'],['../classTypes_1_1Image.html',1,'Types::Image']]],
+  ['image_2ecpp_75',['Image.cpp',['../Image_8cpp.html',1,'']]],
+  ['image_2ehpp_76',['Image.hpp',['../Image_8hpp.html',1,'']]]
 ];
