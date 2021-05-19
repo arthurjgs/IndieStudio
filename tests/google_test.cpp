@@ -18,7 +18,6 @@ TEST (DynamicLibrary, EntryPointCorrectRayLib) {
 #else
     for (auto p : std::filesystem::directory_iterator("./lib")) {
 #endif
-        std::cout << p.path().string() << std::endl;
     	if (p.is_regular_file()) {
             auto fileStr = p.path().string();
 #if defined _WIN32 || defined __CYGWIN__
