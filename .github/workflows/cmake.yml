@@ -51,19 +51,11 @@ jobs:
         # Build your program with the given configuration
         run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
 
-      - name: Unit Test
-        working-directory: ${{github.workspace}}
+      - name: Test
+        working-directory: ${{github.workspace}}/build
         # Execute tests defined by the CMake configuration.
         # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-        run: ./unit_tests
-        if: runner.os != 'Windows'
-
-      - name: Unit Test (Windows)
-        working-directory: ${{github.workspace}}
-        # Execute tests defined by the CMake configuration.
-        # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-        run: D:\a\IndieStudio\IndieStudio\Release\unit_tests.exe
-        if: runner.os == 'Windows'
+        run: ctest -C ${{env.BUILD_TYPE}}
 
   doc:
     runs-on: ubuntu-latest
