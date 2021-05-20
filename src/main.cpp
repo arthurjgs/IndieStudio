@@ -2,7 +2,7 @@
 
 #include <filesystem>
 
-#include "DynamicLibrary.hpp"
+#include "DynamicLibrary/DynamicLibrary.hpp"
 #include "IGraphicalLibrary.hpp"
 #include <memory>
 

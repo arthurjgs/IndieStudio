@@ -9,10 +9,10 @@ ENABLE_TESTING()
 ADD_EXECUTABLE(unit_tests
         google_test.cpp
         ../shared/IGraphicalLibrary.hpp
-        ../src/DynamicLibrary.cpp
-        ../src/DynamicLibrary.hpp
-        ../src/DynamicLibraryException.cpp
-        ../src/DynamicLibraryException.hpp)
+        ../src/DynamicLibrary/DynamicLibrary.cpp
+        ../src/DynamicLibrary/DynamicLibrary.hpp
+        ../src/DynamicLibrary/DynamicLibraryException.cpp
+        ../src/DynamicLibrary/DynamicLibraryException.hpp)
 
 target_link_libraries(unit_tests gtest_main)
 target_link_libraries(unit_tests ${CMAKE_DL_LIBS})

@@ -15,18 +15,28 @@ include_directories(src)
 include_directories(shared)
 
 file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/lib")
-add_subdirectory("src/RayLib" "src/RayLib")
+
+find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
         shared/IGraphicalLibrary.hpp
-        src/DynamicLibrary.cpp
-        src/DynamicLibrary.hpp
-        src/DynamicLibraryException.cpp
-        src/DynamicLibraryException.hpp 
+        src/RayLib/RayLib.cpp
+        src/RayLib/RayLibCore.cpp
+        src/RayLib/RayLibShapes.cpp
+        src/RayLib/RayLibTextures.cpp
+        src/RayLib/RayLibText.cpp
+        src/RayLib/RayLibModels.cpp
+        src/RayLib/RayLibRaudio.cpp
+        src/RayLib/RayLibPhysac.cpp
+        src/RayLib/RayLib.hpp
+        src/DynamicLibrary/DynamicLibrary.cpp
+        src/DynamicLibrary/DynamicLibrary.hpp
+        src/DynamicLibrary/DynamicLibraryException.cpp
+        src/DynamicLibrary/DynamicLibraryException.hpp
         src/main.h)
 
-target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS})
+target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 
 add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
