@@ -86,7 +86,7 @@ void RayLib::Shapes::Line::DrawLineBezierQuad(const Type::Vector<2> &startPos, c
 {
     ::DrawLineBezierQuad(
         ::Vector2 {startPos.getX(), startPos.getY()},
-        ::Vector2 {controlPos.getX(), controlPos.getY()},
+        ::Vector2 {endPos.getX(), endPos.getY()},
         ::Vector2 {controlPos.getX(), controlPos.getY()},
         thick,
         ::Color {color.getR(), color.getG(), color.getB(), color.getA()}

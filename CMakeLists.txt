@@ -17,6 +17,20 @@ find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
+        src/RayLib/Shapes/Circle/Circle.cpp
+        src/RayLib/Shapes/Collision/Collision.cpp
+        src/RayLib/Shapes/Ellipse/Ellipse.cpp
+        src/RayLib/Shapes/Line/Line.cpp
+        src/RayLib/Shapes/Pixel/Pixel.cpp
+        src/RayLib/Shapes/Poly/Poly.cpp
+        src/RayLib/Shapes/Rectangle/Rectangle.cpp
+        src/RayLib/Shapes/Ring/Ring.cpp
+        src/RayLib/Shapes/Triangle/Triangle.cpp
+        src/Types/Color/Color.cpp
+        src/Types/Image/Image.cpp
+        src/Types/Matrix/Matrix.cpp
+        src/Types/Rectangle/Rectangle.cpp
+        src/Types/Texture/Texture.cpp
         src/RayLib/Window.cpp
         )
 

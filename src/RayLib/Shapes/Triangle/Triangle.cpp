@@ -9,8 +9,6 @@
  * 
  */
 
-#pragma once
-
 #include "Triangle.hpp"
 
 RayLib::Shapes::Triangle::Triangle(const Type::Vector<2> &v1, const Type::Vector<2> &v2, const Type::Vector<2> &v3, const Type::Color &color) :
@@ -59,7 +57,7 @@ void RayLib::Shapes::Triangle::DrawTriangle() const
         .b = this->__color.getB(),
         .a = this->__color.getA()
     };
-    ::DrawTriangle(dummyOne, dummyThree, dummyThree, dummyCol);
+    ::DrawTriangle(dummyOne, dummyTwo, dummyThree, dummyCol);
 }
 
 void RayLib::Shapes::Triangle::DrawTriangle(const Type::Vector<2> &v1, const Type::Vector<2> &v2, const Type::Vector<2> &v3, const Type::Color &color)
@@ -82,7 +80,7 @@ void RayLib::Shapes::Triangle::DrawTriangle(const Type::Vector<2> &v1, const Typ
         .b = color.getB(),
         .a = color.getA()
     };
-    ::DrawTriangle(dummyOne, dummyThree, dummyThree, dummyCol);
+    ::DrawTriangle(dummyOne, dummyTwo, dummyThree, dummyCol);
 }
 
 void RayLib::Shapes::Triangle::DrawTriangleLines(const Type::Vector<2> &v1, const Type::Vector<2> &v2, const Type::Vector<2> &v3, const Type::Color &color)
