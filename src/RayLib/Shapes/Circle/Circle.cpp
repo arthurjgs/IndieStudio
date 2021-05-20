@@ -33,6 +33,7 @@ RayLib::Shapes::Circle &RayLib::Shapes::Circle::operator = (const Circle &cpy)
     this->__centerX = cpy.__centerX;
     this->__centerY = cpy.__centerY;
     this->__radius = cpy.__radius;
+    return (*this);
 }
 
 void RayLib::Shapes::Circle::DrawCircle(const int &centerX, const int &centerY, const float &radius, const Type::Color &col)
