@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_2ecpp_132',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrix_2ecpp_133',['Matrix.cpp',['../Matrix_8cpp.html',1,'']]],
-  ['matrix_2ehpp_134',['Matrix.hpp',['../Matrix_8hpp.html',1,'']]]
+  ['image_2ecpp_120',['Image.cpp',['../Image_8cpp.html',1,'']]],
+  ['image_2ehpp_121',['Image.hpp',['../Image_8hpp.html',1,'']]]
 ];

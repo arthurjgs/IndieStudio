@@ -116,37 +116,16 @@ $(function() {
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    ::EndDrawing();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classRayLib_1_1Window.html#a35c08f8a9e63ebee7041cdef8ac752fd">   53</a></span>&#160;<a class="code" href="classRayLib_1_1InputMouse.html">RayLib::InputMouse</a> <a class="code" href="classRayLib_1_1Window.html#a35c08f8a9e63ebee7041cdef8ac752fd">RayLib::Window::getInputMouse</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> _inputMouse;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;RayLib::Window::~Window()</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    ::CloseWindow();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">   58</a></span>&#160;<a class="code" href="classRayLib_1_1InputKeyboard.html">RayLib::InputKeyboard</a> <a class="code" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">RayLib::Window::getInputKeyboard</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> _inputKeyboard;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classRayLib_1_1Window.html#a09dd137b5d365c22f6781d6a17a1eb87">   63</a></span>&#160;<a class="code" href="classRayLib_1_1InputGamepad.html">RayLib::InputGamepad</a> <a class="code" href="classRayLib_1_1Window.html#a09dd137b5d365c22f6781d6a17a1eb87">RayLib::Window::getInputGamepad</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> _inputGamepad;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;RayLib::Window::~Window()</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    ::CloseWindow();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
 <div class="ttc" id="aWindow_8hpp_html"><div class="ttname"><a href="Window_8hpp.html">Window.hpp</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1InputGamepad_html"><div class="ttname"><a href="classRayLib_1_1InputGamepad.html">RayLib::InputGamepad</a></div><div class="ttdef"><b>Definition:</b> <a href="InputGamepad_8hpp_source.html#l00020">InputGamepad.hpp:20</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1InputKeyboard_html"><div class="ttname"><a href="classRayLib_1_1InputKeyboard.html">RayLib::InputKeyboard</a></div><div class="ttdef"><b>Definition:</b> <a href="InputKeyboard_8hpp_source.html#l00020">InputKeyboard.hpp:20</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1InputMouse_html"><div class="ttname"><a href="classRayLib_1_1InputMouse.html">RayLib::InputMouse</a></div><div class="ttdef"><b>Definition:</b> <a href="InputMouse_8hpp_source.html#l00020">InputMouse.hpp:20</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Window_html"><div class="ttname"><a href="classRayLib_1_1Window.html">RayLib::Window</a></div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00020">Window.hpp:20</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Window_html_a09dd137b5d365c22f6781d6a17a1eb87"><div class="ttname"><a href="classRayLib_1_1Window.html#a09dd137b5d365c22f6781d6a17a1eb87">RayLib::Window::getInputGamepad</a></div><div class="ttdeci">RayLib::InputGamepad getInputGamepad() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00063">Window.cpp:63</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Window_html"><div class="ttname"><a href="classRayLib_1_1Window.html">RayLib::Window</a></div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00017">Window.hpp:17</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a10f2b1803f5042f172c0bccfdc77b611"><div class="ttname"><a href="classRayLib_1_1Window.html#a10f2b1803f5042f172c0bccfdc77b611">RayLib::Window::draw</a></div><div class="ttdeci">void draw() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00045">Window.cpp:45</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a1fd5af46b0138e03cec9fc16352a2cf4"><div class="ttname"><a href="classRayLib_1_1Window.html#a1fd5af46b0138e03cec9fc16352a2cf4">RayLib::Window::getElapsedTime</a></div><div class="ttdeci">float getElapsedTime()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00032">Window.cpp:32</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a2ca6b034a482304270e21f96d22a4951"><div class="ttname"><a href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00011">Window.cpp:11</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Window_html_a35c08f8a9e63ebee7041cdef8ac752fd"><div class="ttname"><a href="classRayLib_1_1Window.html#a35c08f8a9e63ebee7041cdef8ac752fd">RayLib::Window::getInputMouse</a></div><div class="ttdeci">RayLib::InputMouse getInputMouse() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00053">Window.cpp:53</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a9ced13630796ae71a50359b8c82ea812"><div class="ttname"><a href="classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812">RayLib::Window::isOpen</a></div><div class="ttdeci">bool isOpen() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00040">Window.cpp:40</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Window_html_ae845880afbbfb72d36a78d61bcd3c295"><div class="ttname"><a href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">RayLib::Window::getInputKeyboard</a></div><div class="ttdeci">RayLib::InputKeyboard getInputKeyboard() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00058">Window.cpp:58</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

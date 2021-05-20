@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['texture_209',['Texture',['../classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92',1,'Types::Texture::Texture()=delete'],['../classTypes_1_1Texture.html#a8de9d6eccac4dba378ef0c2c1e83186f',1,'Types::Texture::Texture(const std::string &amp;texturePath, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Texture.html#a4820cf658fa3f2418213ee0bff89ede7',1,'Types::Texture::Texture(const Texture &amp;cpy)'],['../classTypes_1_1Texture.html#a07927fd86de3756a5900c0925dd536fd',1,'Types::Texture::Texture(const Texture &amp;&amp;cpy)']]]
+  ['vector_197',['Vector',['../classType_1_1Vector.html#a5e88b2be799688ef7aba0bca3f8a8db6',1,'Type::Vector::Vector()'],['../classType_1_1Vector.html#a86eb89b31a1f3eda7b468de3f978e23b',1,'Type::Vector::Vector(Floats... args)'],['../classType_1_1Vector.html#a1100574c0d4d65ab20c956d7e2e918f3',1,'Type::Vector::Vector(const Vector&lt; vecSize &gt; &amp;cpy)']]]
 ];

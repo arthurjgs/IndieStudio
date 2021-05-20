@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['window_94',['Window',['../classRayLib_1_1Window.html',1,'RayLib']]],
-  ['window_2ecpp_95',['Window.cpp',['../Window_8cpp.html',1,'']]],
-  ['window_2ehpp_96',['Window.hpp',['../Window_8hpp.html',1,'']]]
+  ['uchar_85',['uChar',['../Color_8hpp.html#a21e0255c145ad608b8789d21b5b20a22',1,'Color.hpp']]]
 ];

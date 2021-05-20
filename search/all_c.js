@@ -1,13 +1,6 @@
 var searchData=
 [
-  ['_7ecolor_97',['~Color',['../classType_1_1Color.html#abdbc08632508a63611425187a3113fd0',1,'Type::Color']]],
-  ['_7eimage_98',['~Image',['../classTypes_1_1Image.html#a26608028b93d227c5306a2f33abf14cf',1,'Types::Image']]],
-  ['_7einputgamepad_99',['~InputGamepad',['../classRayLib_1_1InputGamepad.html#a4aaa2325bec33165f0fca02286f58f5c',1,'RayLib::InputGamepad']]],
-  ['_7einputkeyboard_100',['~InputKeyboard',['../classRayLib_1_1InputKeyboard.html#ae227023f0c5114d6ef7781a76f418383',1,'RayLib::InputKeyboard']]],
-  ['_7einputmouse_101',['~InputMouse',['../classRayLib_1_1InputMouse.html#ac6f22e2a29e4079cdab7221108b5b66b',1,'RayLib::InputMouse']]],
-  ['_7ematrix_102',['~Matrix',['../classTypes_1_1Matrix.html#a3503539b4497b5e7992f0bce08e5f4d9',1,'Types::Matrix']]],
-  ['_7erectangle_103',['~Rectangle',['../classType_1_1Rectangle.html#a566a600380b3af8c9c7a8e49f75c6713',1,'Type::Rectangle']]],
-  ['_7etexture_104',['~Texture',['../classTypes_1_1Texture.html#a358e9f16ab68334fa3de805cd13c23cb',1,'Types::Texture']]],
-  ['_7evector3_105',['~Vector3',['../classTypes_1_1Vector3.html#a37f3158cc3b4b86a60088110ed4bf642',1,'Types::Vector3']]],
-  ['_7evector4_106',['~Vector4',['../classTypes_1_1Vector4.html#a521c492d89a4c699718662df61c9d4d4',1,'Types::Vector4']]]
+  ['vector_86',['Vector',['../classType_1_1Vector.html',1,'Type::Vector&lt; vecSize &gt;'],['../classType_1_1Vector.html#a5e88b2be799688ef7aba0bca3f8a8db6',1,'Type::Vector::Vector()'],['../classType_1_1Vector.html#a86eb89b31a1f3eda7b468de3f978e23b',1,'Type::Vector::Vector(Floats... args)'],['../classType_1_1Vector.html#a1100574c0d4d65ab20c956d7e2e918f3',1,'Type::Vector::Vector(const Vector&lt; vecSize &gt; &amp;cpy)']]],
+  ['vector_2ehpp_87',['Vector.hpp',['../Vector_8hpp.html',1,'']]],
+  ['vector_3c_202_20_3e_88',['Vector&lt; 2 &gt;',['../classType_1_1Vector.html',1,'Type']]]
 ];
