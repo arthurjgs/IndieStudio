@@ -13,6 +13,7 @@
 
 #include "../../../Types/Vector/Vector.hpp"
 #include "../../../Types/Color/Color.hpp"
+#include <raylib.h>
 
 namespace RayLib {
     namespace Shapes {
@@ -39,7 +40,7 @@ namespace RayLib {
                 static void DrawLineEx(const Type::Vector<2> &startPos, const Type::Vector<2> &endPos, float thick, const Type::Color &color);
                 static void DrawLineBezier(const Type::Vector<2> &startPos, const Type::Vector<2> &endPos, float thick, const Type::Color &color);
                 static void DrawLineBezierQuad(const Type::Vector<2> &startPos, const Type::Vector<2> &endPos, const Type::Vector<2> &controlPos, float thick, const Type::Color &color);
-                static void DrawLineStrip(const Type::Vector<2> *&points, int pointsCount, const Type::Color &color);
+                static void DrawLineStrip(Type::Vector<2> &points, int pointsCount, const Type::Color &color);
             protected:
             private:
                 Type::Vector<2> __startPos;
