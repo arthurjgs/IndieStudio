@@ -94,6 +94,23 @@ namespace Type {
             {
                 return (this->__a);
             }
+
+            inline uChar getA() const
+            {
+                return (this->__a);
+            }
+            inline uChar getR() const
+            {
+                return (this->__r);
+            }
+            inline uChar getG() const
+            {
+                return (this->__g);
+            }
+            inline uChar getB() const
+            {
+                return (this->__b);
+            }
         protected:
         private:
             uChar __r;
