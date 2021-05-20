@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['image_102',['Image',['../classTypes_1_1Image.html',1,'Types']]]
+  ['ellipse_108',['Ellipse',['../classRayLib_1_1Shapes_1_1Ellipse.html',1,'RayLib::Shapes']]]
 ];
