@@ -112,6 +112,22 @@ namespace Type {
             {
                 return (this->__height);
             }
+            inline float getX() const
+            {
+                return (this->__x);
+            }
+            inline float getY() const
+            {
+                return (this->__y);
+            }
+            inline float getWidth() const
+            {
+                return (this->__width);
+            }
+            inline float getHeight() const
+            {
+                return (this->__height);
+            }
         protected:
         private:
             float __x;
