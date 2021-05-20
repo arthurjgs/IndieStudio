@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['geta_4',['getA',['../classTypes_1_1Vector4.html#a7723e4aa2a7fd6efb15b9275bd4b84b3',1,'Types::Vector4::getA()'],['../classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2',1,'Type::Color::getA()']]],
+  ['geta_4',['getA',['../classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2',1,'Type::Color']]],
   ['getb_5',['getB',['../classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee',1,'Type::Color']]],
   ['getdata_6',['getData',['../classTypes_1_1Image.html#aa1b4a5be8bb6bcd8e3714410affc6b63',1,'Types::Image']]],
   ['getelapsedtime_7',['getElapsedTime',['../classRayLib_1_1Window.html#a1fd5af46b0138e03cec9fc16352a2cf4',1,'RayLib::Window']]],
@@ -10,8 +10,10 @@ var searchData=
   ['getmatrix_11',['getMatrix',['../classTypes_1_1Matrix.html#add2002fbe262a90b4f167a060d78617d',1,'Types::Matrix']]],
   ['getpath_12',['getPath',['../classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646',1,'Types::Texture']]],
   ['getr_13',['getR',['../classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d',1,'Type::Color']]],
-  ['getwidth_14',['getWidth',['../classTypes_1_1Image.html#ab2a993db204655bb42ae752b2cbff050',1,'Types::Image::getWidth()'],['../classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e',1,'Types::Texture::getWidth()'],['../classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924',1,'Type::Rectangle::getWidth()']]],
-  ['getx_15',['getX',['../classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8',1,'Type::Rectangle::getX()'],['../classTypes_1_1Vector2.html#af236f0d27c9608d6943669f2f017f68e',1,'Types::Vector2::getX()'],['../classTypes_1_1Vector3.html#a1f0a2839f6f84dca2fb64804f5515844',1,'Types::Vector3::getX()'],['../classTypes_1_1Vector4.html#a6c115bfe695158a7e34e6edc974b976e',1,'Types::Vector4::getX()']]],
-  ['gety_16',['getY',['../classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e',1,'Type::Rectangle::getY()'],['../classTypes_1_1Vector2.html#a76f024d604ea6b5b012463b421712eac',1,'Types::Vector2::getY()'],['../classTypes_1_1Vector3.html#a497efdb15c604f74686001fc91a01865',1,'Types::Vector3::getY()'],['../classTypes_1_1Vector4.html#a28d5a5735f74616e79fe9aa164bd6ebe',1,'Types::Vector4::getY()']]],
-  ['getz_17',['getZ',['../classTypes_1_1Vector3.html#a3b8be183bb4920cbc559ae35c4137385',1,'Types::Vector3::getZ()'],['../classTypes_1_1Vector4.html#a9abd991945b901384e223b43a8ff29fb',1,'Types::Vector4::getZ()']]]
+  ['getval_14',['getVal',['../classType_1_1Vector.html#afa750559bb04a9934014f6a41e7b2bd0',1,'Type::Vector']]],
+  ['getw_15',['getW',['../classType_1_1Vector.html#ab677b4835e91f0b182e20f2fe1711a89',1,'Type::Vector']]],
+  ['getwidth_16',['getWidth',['../classTypes_1_1Image.html#ab2a993db204655bb42ae752b2cbff050',1,'Types::Image::getWidth()'],['../classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924',1,'Type::Rectangle::getWidth()'],['../classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e',1,'Types::Texture::getWidth()']]],
+  ['getx_17',['getX',['../classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8',1,'Type::Rectangle::getX()'],['../classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716',1,'Type::Vector::getX()']]],
+  ['gety_18',['getY',['../classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e',1,'Type::Rectangle::getY()'],['../classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9',1,'Type::Vector::getY()']]],
+  ['getz_19',['getZ',['../classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371',1,'Type::Vector']]]
 ];
