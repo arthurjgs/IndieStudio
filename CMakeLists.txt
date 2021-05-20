@@ -17,15 +17,7 @@ find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
-        src/RayLib/RayLib.cpp
-        src/RayLib/RayLibCore.cpp
-        src/RayLib/RayLibShapes.cpp
-        src/RayLib/RayLibTextures.cpp
-        src/RayLib/RayLibText.cpp
-        src/RayLib/RayLibModels.cpp
-        src/RayLib/RayLibRaudio.cpp
-        src/RayLib/RayLibPhysac.cpp
-        src/RayLib/RayLib.hpp
+        src/RayLib/Window.cpp
         )
 
 target_link_libraries(${PROJECT_NAME} raylib)
