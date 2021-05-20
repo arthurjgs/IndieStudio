@@ -13,6 +13,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 include_directories(src)
 include_directories(shared)
 
+file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/lib")
+
 find_package(raylib REQUIRED)
 
 add_executable(bomberman
@@ -26,9 +28,15 @@ add_executable(bomberman
         src/RayLib/RayLibRaudio.cpp
         src/RayLib/RayLibPhysac.cpp
         src/RayLib/RayLib.hpp
-        )
+        src/DynamicLibrary/DynamicLibrary.cpp
+        src/DynamicLibrary/DynamicLibrary.hpp
+        src/DynamicLibrary/DynamicLibraryException.cpp
+        src/DynamicLibrary/DynamicLibraryException.hpp)
 
-target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
+
+add_subdirectory("googletest" "googletest")
+add_subdirectory("tests" "tests")
 
 install(TARGETS bomberman)
 
