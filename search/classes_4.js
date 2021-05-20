@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rectangle_111',['Rectangle',['../classType_1_1Rectangle.html',1,'Type']]]
+  ['matrix_121',['Matrix',['../classTypes_1_1Matrix.html',1,'Types']]]
 ];
