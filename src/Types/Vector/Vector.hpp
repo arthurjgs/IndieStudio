@@ -150,9 +150,30 @@ namespace Type {
                 static_assert(index < vecSize, "Error requesting index that is not valid");
                 return (this->__vector[index]);
             }
+
+            inline std::array<float, vecSize> getArray() const
+            {
+                return (this->__vector);
+            }
             ~Vector() {};
         private:
             std::array<float, vecSize> __vector;
         protected:
     };
+}
+
+template<size_t vecSize>
+std::ostream &operator << (std::ostream &str, const Type::Vector<vecSize> &vec)
+{
+    str << "[";
+    std::array<float, vecSize> arr = vec.getArray();
+    for (size_t i = 0; i < vecSize; i++) {
+        if (i == vecSize - 1) {
+            std::cout << arr[i];
+        } else {
+            std::cout << arr[i] << ", ";
+        }
+    }
+    str << "]";
+    return (str);
 }
