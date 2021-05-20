@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['texture_117',['Texture',['../classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92',1,'Types::Texture::Texture()=delete'],['../classTypes_1_1Texture.html#a8de9d6eccac4dba378ef0c2c1e83186f',1,'Types::Texture::Texture(const std::string &amp;texturePath, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Texture.html#a4820cf658fa3f2418213ee0bff89ede7',1,'Types::Texture::Texture(const Texture &amp;cpy)'],['../classTypes_1_1Texture.html#a07927fd86de3756a5900c0925dd536fd',1,'Types::Texture::Texture(const Texture &amp;&amp;cpy)']]]
+  ['rectangle_118',['Rectangle',['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)']]]
 ];
