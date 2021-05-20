@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['pixel_2ecpp_80',['Pixel.cpp',['../Pixel_8cpp.html',1,'']]],
-  ['pixel_2ehpp_81',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
-  ['poly_2ecpp_82',['Poly.cpp',['../Poly_8cpp.html',1,'']]],
-  ['poly_2ehpp_83',['Poly.hpp',['../Poly_8hpp.html',1,'']]]
+  ['pixel_83',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html#aa937bb498f5594eabb3003d320713c69',1,'RayLib::Shapes::Pixel::Pixel()=delete'],['../classRayLib_1_1Shapes_1_1Pixel.html#aae2b880fcb0334276eff6f83ba573684',1,'RayLib::Shapes::Pixel::Pixel(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Pixel.html#a0e80b5032d8b39990c70598ca4e1e492',1,'RayLib::Shapes::Pixel::Pixel(const Pixel &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes::Pixel']]],
+  ['pixel_2ecpp_84',['Pixel.cpp',['../Pixel_8cpp.html',1,'']]],
+  ['pixel_2ehpp_85',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
+  ['poly_2ecpp_86',['Poly.cpp',['../Poly_8cpp.html',1,'']]],
+  ['poly_2ehpp_87',['Poly.hpp',['../Poly_8hpp.html',1,'']]]
 ];

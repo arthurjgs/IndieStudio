@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rectangle_226',['Rectangle',['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)']]]
+  ['pixel_235',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html#aa937bb498f5594eabb3003d320713c69',1,'RayLib::Shapes::Pixel::Pixel()=delete'],['../classRayLib_1_1Shapes_1_1Pixel.html#aae2b880fcb0334276eff6f83ba573684',1,'RayLib::Shapes::Pixel::Pixel(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Pixel.html#a0e80b5032d8b39990c70598ca4e1e492',1,'RayLib::Shapes::Pixel::Pixel(const Pixel &amp;cpy)']]]
 ];
