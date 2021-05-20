@@ -1,11 +1,4 @@
 var searchData=
 [
-  ['_7edynamiclibrary_107',['~DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362',1,'LibDl::DynamicLibrary']]],
-  ['_7eraylibcore_108',['~RayLibCore',['../classrl_1_1RayLibCore.html#a54ad49560afbdbe9f79dc0eb414b7939',1,'rl::RayLibCore']]],
-  ['_7eraylibmodels_109',['~RayLibModels',['../classrl_1_1RayLibModels.html#a905ba57e0cd6ec1dab920e18dd62b571',1,'rl::RayLibModels']]],
-  ['_7eraylibphysac_110',['~RayLibPhysac',['../classrl_1_1RayLibPhysac.html#ae9324027c6a8b6f601cf65069edf922e',1,'rl::RayLibPhysac']]],
-  ['_7eraylibraudio_111',['~RayLibRaudio',['../classrl_1_1RayLibRaudio.html#a7ee6fb3d81a1d938f1bd5ddd9e81915e',1,'rl::RayLibRaudio']]],
-  ['_7eraylibshapes_112',['~RayLibShapes',['../classrl_1_1RayLibShapes.html#acc344950c014135ac1082d26107d5735',1,'rl::RayLibShapes']]],
-  ['_7eraylibtext_113',['~RayLibText',['../classrl_1_1RayLibText.html#aaf84fa1a68688fa9b159826f029e6ba8',1,'rl::RayLibText']]],
-  ['_7eraylibtextures_114',['~RayLibTextures',['../classrl_1_1RayLibTextures.html#a2c4220a415653338c4ea07de382040ea',1,'rl::RayLibTextures']]]
+  ['rectangle_116',['Rectangle',['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)']]]
 ];

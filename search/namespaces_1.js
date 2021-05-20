@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rl_64',['rl',['../namespacerl.html',1,'']]]
+  ['type_71',['Type',['../namespaceType.html',1,'']]],
+  ['types_72',['Types',['../namespaceTypes.html',1,'']]]
 ];
