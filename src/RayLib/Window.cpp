@@ -50,6 +50,21 @@ void RayLib::Window::draw() const
     ::EndDrawing();
 }
 
+RayLib::InputMouse RayLib::Window::getInputMouse() const
+{
+    return _inputMouse;
+}
+
+RayLib::InputKeyboard RayLib::Window::getInputKeyboard() const
+{
+    return _inputKeyboard;
+}
+
+RayLib::InputGamepad RayLib::Window::getInputGamepad() const
+{
+    return _inputGamepad;
+}
+
 RayLib::Window::~Window()
 {
     ::CloseWindow();

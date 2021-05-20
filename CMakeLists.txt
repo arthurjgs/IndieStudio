@@ -18,6 +18,9 @@ find_package(raylib REQUIRED)
 add_executable(bomberman
         src/main.cpp
         src/RayLib/Window.cpp
+        src/RayLib/InputKeyboard.cpp
+        src/RayLib/InputMouse.cpp
+        src/RayLib/InputGamepad.cpp
         )
 
 target_link_libraries(${PROJECT_NAME} raylib)
