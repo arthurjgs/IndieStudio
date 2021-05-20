@@ -3,7 +3,6 @@
 //
 
 #include "DynamicLibrary/DynamicLibrary.hpp"
-#include "../shared/IGraphicalLibrary.hpp"
 #include <gtest/gtest.h>
 #include <filesystem>
 

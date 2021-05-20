@@ -8,7 +8,6 @@ ENABLE_TESTING()
 
 ADD_EXECUTABLE(unit_tests
         google_test.cpp
-        ../shared/IGraphicalLibrary.hpp
         ../src/DynamicLibrary/DynamicLibrary.cpp
         ../src/DynamicLibrary/DynamicLibrary.hpp
         ../src/DynamicLibrary/DynamicLibraryException.cpp

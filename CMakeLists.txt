@@ -4,11 +4,10 @@ project(bomberman)
 set(CMAKE_CXX_STANDARD 17)
 if(CMAKE_COMPILER_IS_GNUCXX)
     message(STATUS "GCC detected, adding compile flags")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Wextra --std=c++17")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -Wall -Wextra")
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 
 include_directories(src)
@@ -20,7 +19,6 @@ find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
-        shared/IGraphicalLibrary.hpp
         src/RayLib/RayLib.cpp
         src/RayLib/RayLibCore.cpp
         src/RayLib/RayLibShapes.cpp
@@ -33,8 +31,7 @@ add_executable(bomberman
         src/DynamicLibrary/DynamicLibrary.cpp
         src/DynamicLibrary/DynamicLibrary.hpp
         src/DynamicLibrary/DynamicLibraryException.cpp
-        src/DynamicLibrary/DynamicLibraryException.hpp
-        src/main.h)
+        src/DynamicLibrary/DynamicLibraryException.hpp)
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 
