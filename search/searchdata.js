@@ -1,10 +1,11 @@
 var indexSectionsWithContent =
 {
-  0: "cdgmors~",
-  1: "r",
-  2: "r",
-  3: "mr",
-  4: "cdgmors~"
+  0: "_dglmrw~",
+  1: "dr",
+  2: "lr",
+  3: "dmr",
+  4: "dgmrw~",
+  5: "_"
 };
 
 var indexSectionNames =
@@ -13,7 +14,8 @@ var indexSectionNames =
   1: "classes",
   2: "namespaces",
   3: "files",
-  4: "functions"
+  4: "functions",
+  5: "variables"
 };
 
 var indexSectionLabels =
@@ -22,6 +24,7 @@ var indexSectionLabels =
   1: "Classes",
   2: "Namespaces",
   3: "Files",
-  4: "Functions"
+  4: "Functions",
+  5: "Variables"
 };
 

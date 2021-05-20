@@ -1,19 +1,5 @@
 var searchData=
 [
-  ['raylib_2ecpp_97',['RayLib.cpp',['../RayLib_8cpp.html',1,'']]],
-  ['raylib_2ehpp_98',['RayLib.hpp',['../RayLib_8hpp.html',1,'']]],
-  ['raylibcore_2ecpp_99',['RayLibCore.cpp',['../RayLibCore_8cpp.html',1,'']]],
-  ['raylibcore_2ehpp_100',['RayLibCore.hpp',['../RayLibCore_8hpp.html',1,'']]],
-  ['raylibmodels_2ecpp_101',['RayLibModels.cpp',['../RayLibModels_8cpp.html',1,'']]],
-  ['raylibmodels_2ehpp_102',['RayLibModels.hpp',['../RayLibModels_8hpp.html',1,'']]],
-  ['raylibphysac_2ecpp_103',['RayLibPhysac.cpp',['../RayLibPhysac_8cpp.html',1,'']]],
-  ['raylibphysac_2ehpp_104',['RayLibPhysac.hpp',['../RayLibPhysac_8hpp.html',1,'']]],
-  ['raylibraudio_2ecpp_105',['RayLibRaudio.cpp',['../RayLibRaudio_8cpp.html',1,'']]],
-  ['raylibraudio_2ehpp_106',['RayLibRaudio.hpp',['../RayLibRaudio_8hpp.html',1,'']]],
-  ['raylibshapes_2ecpp_107',['RayLibShapes.cpp',['../RayLibShapes_8cpp.html',1,'']]],
-  ['raylibshapes_2ehpp_108',['RayLibShapes.hpp',['../RayLibShapes_8hpp.html',1,'']]],
-  ['raylibtext_2ecpp_109',['RayLibText.cpp',['../RayLibText_8cpp.html',1,'']]],
-  ['raylibtext_2ehpp_110',['RayLibText.hpp',['../RayLibText_8hpp.html',1,'']]],
-  ['raylibtextures_2ecpp_111',['RayLibTextures.cpp',['../RayLibTextures_8cpp.html',1,'']]],
-  ['raylibtextures_2ehpp_112',['RayLibTextures.hpp',['../RayLibTextures_8hpp.html',1,'']]]
+  ['main_2ecpp_70',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main_2eh_71',['main.h',['../main_8h.html',1,'']]]
 ];
