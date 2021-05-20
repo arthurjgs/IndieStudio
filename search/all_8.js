@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['pixel_118',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html#aa937bb498f5594eabb3003d320713c69',1,'RayLib::Shapes::Pixel::Pixel()=delete'],['../classRayLib_1_1Shapes_1_1Pixel.html#aae2b880fcb0334276eff6f83ba573684',1,'RayLib::Shapes::Pixel::Pixel(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Pixel.html#a0e80b5032d8b39990c70598ca4e1e492',1,'RayLib::Shapes::Pixel::Pixel(const Pixel &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes::Pixel']]],
-  ['pixel_2ecpp_119',['Pixel.cpp',['../Pixel_8cpp.html',1,'']]],
-  ['pixel_2ehpp_120',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
-  ['poly_121',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html#af81146db187f43ca4a0551817ef4430a',1,'RayLib::Shapes::Poly::Poly()=delete'],['../classRayLib_1_1Shapes_1_1Poly.html#ac53c5214732f5c0207fe54dd4bc9c221',1,'RayLib::Shapes::Poly::Poly(const Type::Vector&lt; 2 &gt; center, const int &amp;Sides, const float &amp;radius, const float &amp;rotation, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Poly.html#a009289b609a116531b7cc5ecea60641f',1,'RayLib::Shapes::Poly::Poly(const Poly &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes::Poly']]],
-  ['poly_2ecpp_122',['Poly.cpp',['../Poly_8cpp.html',1,'']]],
-  ['poly_2ehpp_123',['Poly.hpp',['../Poly_8hpp.html',1,'']]]
+  ['texture_87',['Texture',['../classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92',1,'Types::Texture::Texture()=delete'],['../classTypes_1_1Texture.html#a8de9d6eccac4dba378ef0c2c1e83186f',1,'Types::Texture::Texture(const std::string &amp;texturePath, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Texture.html#a4820cf658fa3f2418213ee0bff89ede7',1,'Types::Texture::Texture(const Texture &amp;cpy)'],['../classTypes_1_1Texture.html#a07927fd86de3756a5900c0925dd536fd',1,'Types::Texture::Texture(const Texture &amp;&amp;cpy)'],['../classTypes_1_1Texture.html',1,'Types::Texture']]],
+  ['texture_2ecpp_88',['Texture.cpp',['../Texture_8cpp.html',1,'']]],
+  ['texture_2ehpp_89',['Texture.hpp',['../Texture_8hpp.html',1,'']]],
+  ['type_90',['Type',['../namespaceType.html',1,'']]],
+  ['types_91',['Types',['../namespaceTypes.html',1,'']]]
 ];

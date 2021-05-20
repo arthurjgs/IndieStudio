@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['main_102',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_103',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrix_104',['Matrix',['../classTypes_1_1Matrix.html#a20e4c5846a7cc4aac7e8e225b958b207',1,'Types::Matrix::Matrix()=delete'],['../classTypes_1_1Matrix.html#afb877a4b1d438d65cd81cd7ec7e2e593',1,'Types::Matrix::Matrix(const float *&amp;matrix)'],['../classTypes_1_1Matrix.html#ab178787bb252c3809deae003b775d121',1,'Types::Matrix::Matrix(const Matrix &amp;cpy)'],['../classTypes_1_1Matrix.html#aa138fdfb807052f730e897a7d04894d6',1,'Types::Matrix::Matrix(const Matrix &amp;&amp;cpy)'],['../classTypes_1_1Matrix.html',1,'Types::Matrix']]],
-  ['matrix_2ecpp_105',['Matrix.cpp',['../Matrix_8cpp.html',1,'']]],
-  ['matrix_2ehpp_106',['Matrix.hpp',['../Matrix_8hpp.html',1,'']]],
-  ['matrix_5fsize_107',['MATRIX_SIZE',['../Matrix_8hpp.html#a2bd32349fcbeb6ee86434a65226cba1a',1,'Matrix.hpp']]]
+  ['raylib_77',['RayLib',['../namespaceRayLib.html',1,'']]],
+  ['rectangle_78',['Rectangle',['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
+  ['rectangle_2ecpp_79',['Rectangle.cpp',['../Rectangle_8cpp.html',1,'']]],
+  ['rectangle_2ehpp_80',['Rectangle.hpp',['../Rectangle_8hpp.html',1,'']]]
 ];

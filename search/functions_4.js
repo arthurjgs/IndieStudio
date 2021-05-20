@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['image_300',['Image',['../classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27',1,'Types::Image::Image()=delete'],['../classTypes_1_1Image.html#a46c5f40e69c856e0055603c5c05a3293',1,'Types::Image::Image(const std::string &amp;data, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Image.html#a0386f99cf2787b3830ea5103be711c70',1,'Types::Image::Image(const Image &amp;cpy)'],['../classTypes_1_1Image.html#aa66507b2febb4f8eca2f474b905fcc75',1,'Types::Image::Image(const Image &amp;&amp;cpy)']]],
-  ['isopen_301',['isOpen',['../classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812',1,'RayLib::Window']]]
+  ['main_191',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
+  ['matrix_192',['Matrix',['../classTypes_1_1Matrix.html#a20e4c5846a7cc4aac7e8e225b958b207',1,'Types::Matrix::Matrix()=delete'],['../classTypes_1_1Matrix.html#afb877a4b1d438d65cd81cd7ec7e2e593',1,'Types::Matrix::Matrix(const float *&amp;matrix)'],['../classTypes_1_1Matrix.html#ab178787bb252c3809deae003b775d121',1,'Types::Matrix::Matrix(const Matrix &amp;cpy)'],['../classTypes_1_1Matrix.html#aa138fdfb807052f730e897a7d04894d6',1,'Types::Matrix::Matrix(const Matrix &amp;&amp;cpy)']]]
 ];

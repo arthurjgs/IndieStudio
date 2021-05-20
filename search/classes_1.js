@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['ellipse_165',['Ellipse',['../classRayLib_1_1Shapes_1_1Ellipse.html',1,'RayLib::Shapes']]]
+  ['image_108',['Image',['../classTypes_1_1Image.html',1,'Types']]],
+  ['inputgamepad_109',['InputGamepad',['../classRayLib_1_1InputGamepad.html',1,'RayLib']]],
+  ['inputkeyboard_110',['InputKeyboard',['../classRayLib_1_1InputKeyboard.html',1,'RayLib']]],
+  ['inputmouse_111',['InputMouse',['../classRayLib_1_1InputMouse.html',1,'RayLib']]]
 ];
