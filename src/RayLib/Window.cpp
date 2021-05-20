@@ -6,6 +6,7 @@
  **/
 
 #include "Window.hpp"
+#include "raylib.h"
 
 RayLib::Window &RayLib::Window::getInstance()
 {
@@ -39,6 +40,14 @@ float RayLib::Window::getElapsedTime()
 bool RayLib::Window::isOpen() const
 {
     return (!::WindowShouldClose());
+}
+
+void RayLib::Window::draw() const
+{
+    ::BeginDrawing();
+    ::ClearBackground(::RAYWHITE);
+    // TODO: call scene draw method
+    ::EndDrawing();
 }
 
 RayLib::Window::~Window()

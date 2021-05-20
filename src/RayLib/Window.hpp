@@ -19,6 +19,7 @@ namespace RayLib
             static Window &getInstance();
             float getElapsedTime();
             bool isOpen() const;
+            void draw() const;
         private:
             Window() = delete;
             Window(float width, float height, const std::string &title);
