@@ -33,7 +33,7 @@ namespace RayLib {
 
                 void DrawPixelV() const;
 
-                static void DrawPixel(const int &posX, const int &posY, const Type::Color &color);                                                    // Draw a pixel
+                static void DrawPixel(const int &posX, const int &posY, const Type::Color &color);
                 static void DrawPixelV(const Type::Vector<2> &position, const Type::Color &color);
             protected:
             private:
