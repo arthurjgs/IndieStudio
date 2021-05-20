@@ -11,6 +11,9 @@
 
 #include <raylib.h>
 #include <iostream>
+#include "InputKeyboard.hpp"
+#include "InputMouse.hpp"
+#include "InputGamepad.hpp"
 
 namespace RayLib
 {
@@ -20,6 +23,9 @@ namespace RayLib
             float getElapsedTime();
             bool isOpen() const;
             void draw() const;
+            RayLib::InputMouse getInputMouse() const;
+            RayLib::InputKeyboard getInputKeyboard() const;
+            RayLib::InputGamepad getInputGamepad() const;
         private:
             Window() = delete;
             Window(float width, float height, const std::string &title);
@@ -27,6 +33,10 @@ namespace RayLib
             Window &operator = (const Window &) = delete;
             ~Window();
             float _clock;
+            RayLib::InputMouse _inputMouse;
+            RayLib::InputKeyboard _inputKeyboard;
+            RayLib::InputGamepad _inputGamepad;
+
         protected:
     };
 }
