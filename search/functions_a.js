@@ -1,12 +1,9 @@
 var searchData=
 [
-  ['_7ecolor_212',['~Color',['../classType_1_1Color.html#abdbc08632508a63611425187a3113fd0',1,'Type::Color']]],
-  ['_7eimage_213',['~Image',['../classTypes_1_1Image.html#a26608028b93d227c5306a2f33abf14cf',1,'Types::Image']]],
-  ['_7einputgamepad_214',['~InputGamepad',['../classRayLib_1_1InputGamepad.html#a4aaa2325bec33165f0fca02286f58f5c',1,'RayLib::InputGamepad']]],
-  ['_7einputkeyboard_215',['~InputKeyboard',['../classRayLib_1_1InputKeyboard.html#ae227023f0c5114d6ef7781a76f418383',1,'RayLib::InputKeyboard']]],
-  ['_7einputmouse_216',['~InputMouse',['../classRayLib_1_1InputMouse.html#ac6f22e2a29e4079cdab7221108b5b66b',1,'RayLib::InputMouse']]],
-  ['_7ematrix_217',['~Matrix',['../classTypes_1_1Matrix.html#a3503539b4497b5e7992f0bce08e5f4d9',1,'Types::Matrix']]],
-  ['_7erectangle_218',['~Rectangle',['../classType_1_1Rectangle.html#a566a600380b3af8c9c7a8e49f75c6713',1,'Type::Rectangle']]],
-  ['_7etexture_219',['~Texture',['../classTypes_1_1Texture.html#a358e9f16ab68334fa3de805cd13c23cb',1,'Types::Texture']]],
-  ['_7evector_220',['~Vector',['../classType_1_1Vector.html#aa10cbfca1be881744e7072d29bfa31bd',1,'Type::Vector']]]
+  ['setexitkey_403',['setExitKey',['../classRayLib_1_1InputKeyboard.html#a122fbb53725d268395f03ec6c423f20a',1,'RayLib::InputKeyboard']]],
+  ['setgamepadmappings_404',['setGamepadMappings',['../classRayLib_1_1InputGamepad.html#a5ad4e6cbfa8b61783ff026521ad86aa5',1,'RayLib::InputGamepad']]],
+  ['setmousecursor_405',['setMouseCursor',['../classRayLib_1_1InputMouse.html#a2c86e1f1a3f680df350121369a6d2984',1,'RayLib::InputMouse']]],
+  ['setmouseoffset_406',['setMouseOffset',['../classRayLib_1_1InputMouse.html#a2ff4f39c11f3e5923f6088dfc597671b',1,'RayLib::InputMouse']]],
+  ['setmouseposition_407',['setMousePosition',['../classRayLib_1_1InputMouse.html#ad9c92e821e2e3612f263900baeb14186',1,'RayLib::InputMouse']]],
+  ['setmousescale_408',['setMouseScale',['../classRayLib_1_1InputMouse.html#a21e6a3eb79e89cc25dfadf35ce74e28a',1,'RayLib::InputMouse']]]
 ];

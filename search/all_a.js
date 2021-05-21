@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['vector_93',['Vector',['../classType_1_1Vector.html',1,'Type::Vector&lt; vecSize &gt;'],['../classType_1_1Vector.html#a5e88b2be799688ef7aba0bca3f8a8db6',1,'Type::Vector::Vector()'],['../classType_1_1Vector.html#a86eb89b31a1f3eda7b468de3f978e23b',1,'Type::Vector::Vector(Floats... args)'],['../classType_1_1Vector.html#a1100574c0d4d65ab20c956d7e2e918f3',1,'Type::Vector::Vector(const Vector&lt; vecSize &gt; &amp;cpy)']]],
-  ['vector_2ehpp_94',['Vector.hpp',['../Vector_8hpp.html',1,'']]]
+  ['setexitkey_168',['setExitKey',['../classRayLib_1_1InputKeyboard.html#a122fbb53725d268395f03ec6c423f20a',1,'RayLib::InputKeyboard']]],
+  ['setgamepadmappings_169',['setGamepadMappings',['../classRayLib_1_1InputGamepad.html#a5ad4e6cbfa8b61783ff026521ad86aa5',1,'RayLib::InputGamepad']]],
+  ['setmousecursor_170',['setMouseCursor',['../classRayLib_1_1InputMouse.html#a2c86e1f1a3f680df350121369a6d2984',1,'RayLib::InputMouse']]],
+  ['setmouseoffset_171',['setMouseOffset',['../classRayLib_1_1InputMouse.html#a2ff4f39c11f3e5923f6088dfc597671b',1,'RayLib::InputMouse']]],
+  ['setmouseposition_172',['setMousePosition',['../classRayLib_1_1InputMouse.html#ad9c92e821e2e3612f263900baeb14186',1,'RayLib::InputMouse']]],
+  ['setmousescale_173',['setMouseScale',['../classRayLib_1_1InputMouse.html#a21e6a3eb79e89cc25dfadf35ce74e28a',1,'RayLib::InputMouse']]],
+  ['shapes_2eh_174',['Shapes.h',['../Shapes_8h.html',1,'']]]
 ];
