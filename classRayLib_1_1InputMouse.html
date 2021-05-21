@@ -94,8 +94,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6ac0c6fc68c4b3d53a39eca84cc576b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59a86e4d2ea1783ace525d3ba69343d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1InputMouse.html#a59a86e4d2ea1783ace525d3ba69343d4">getMouseY</a> (void) const</td></tr>
 <tr class="separator:a59a86e4d2ea1783ace525d3ba69343d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a496d260bebae88367f05add9db3408d4"><td class="memItemLeft" align="right" valign="top">Vector2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1InputMouse.html#a496d260bebae88367f05add9db3408d4">getMousePosition</a> (void) const</td></tr>
-<tr class="separator:a496d260bebae88367f05add9db3408d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c2cdd0bb083f216759261db2187222"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1InputMouse.html#a13c2cdd0bb083f216759261db2187222">getMousePosition</a> (void) const</td></tr>
+<tr class="separator:a13c2cdd0bb083f216759261db2187222"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9c92e821e2e3612f263900baeb14186"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1InputMouse.html#ad9c92e821e2e3612f263900baeb14186">setMousePosition</a> (int x, int y) const</td></tr>
 <tr class="separator:ad9c92e821e2e3612f263900baeb14186"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ff4f39c11f3e5923f6088dfc597671b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1InputMouse.html#a2ff4f39c11f3e5923f6088dfc597671b">setMouseOffset</a> (int offsetX, int offsetY) const</td></tr>
@@ -109,7 +109,7 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="InputMouse_8hpp_source.html#l00020">20</a> of file <a class="el" href="InputMouse_8hpp_source.html">InputMouse.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8hpp_source.html#l00021">21</a> of file <a class="el" href="InputMouse_8hpp_source.html">InputMouse.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad6f910a3e787a2a05eed43813342f706"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6f910a3e787a2a05eed43813342f706">&#9670;&nbsp;</a></span>InputMouse()</h2>
@@ -154,14 +154,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a496d260bebae88367f05add9db3408d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a496d260bebae88367f05add9db3408d4">&#9670;&nbsp;</a></span>getMousePosition()</h2>
+<a id="a13c2cdd0bb083f216759261db2187222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c2cdd0bb083f216759261db2187222">&#9670;&nbsp;</a></span>getMousePosition()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Vector2 RayLib::InputMouse::getMousePosition </td>
+          <td class="memname"><a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 2 &gt; RayLib::InputMouse::getMousePosition </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -172,8 +172,11 @@ Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00052">52</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> GetMousePosition();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    Vector2 res = GetMousePosition();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> vec(res.x, res.y);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> vec;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 2 &gt;</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -193,10 +196,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00072">72</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">return</span> GetMouseWheelMove();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00074">74</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> GetMouseWheelMove();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -354,10 +357,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00077">77</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    SetMouseCursor(cursor);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00079">79</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    SetMouseCursor(cursor);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -387,10 +390,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00062">62</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    SetMouseOffset(offsetX, offsetY);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00064">64</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    SetMouseOffset(offsetX, offsetY);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,10 +423,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00057">57</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    SetMousePosition(x, y);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00059">59</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    SetMousePosition(x, y);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -453,10 +456,10 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00067">67</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    SetMouseScale(scaleX, scaleY);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="InputMouse_8cpp_source.html#l00069">69</a> of file <a class="el" href="InputMouse_8cpp_source.html">InputMouse.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    SetMouseScale(scaleX, scaleY);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
