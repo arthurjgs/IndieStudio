@@ -14,6 +14,7 @@
 #include "InputKeyboard.hpp"
 #include "InputMouse.hpp"
 #include "InputGamepad.hpp"
+#include "Cursor.hpp"
 
 namespace RayLib
 {
@@ -26,6 +27,7 @@ namespace RayLib
             RayLib::InputMouse getInputMouse() const;
             RayLib::InputKeyboard getInputKeyboard() const;
             RayLib::InputGamepad getInputGamepad() const;
+            RayLib::Cursor getCursor() const;
         private:
             Window() = delete;
             Window(float width, float height, const std::string &title);
@@ -36,6 +38,7 @@ namespace RayLib
             RayLib::InputMouse _inputMouse;
             RayLib::InputKeyboard _inputKeyboard;
             RayLib::InputGamepad _inputGamepad;
+            RayLib::Cursor _cursor;
 
         protected:
     };

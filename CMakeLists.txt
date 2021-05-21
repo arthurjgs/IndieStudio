@@ -35,6 +35,7 @@ add_executable(bomberman
         src/RayLib/InputKeyboard.cpp
         src/RayLib/InputMouse.cpp
         src/RayLib/InputGamepad.cpp
+        src/RayLib/Cursor.cpp
         )
 
 target_link_libraries(${PROJECT_NAME} raylib)
