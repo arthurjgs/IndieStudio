@@ -144,8 +144,38 @@ namespace Type {
                 return (this->__vector[3]);
             }
 
+            inline float getX() const
+            {
+                return (this->__vector[0]);
+            }
+
+            inline float getY() const
+            {
+                static_assert(vecSize > 1, "Error requesting a properties with invalid vector size");
+                return (this->__vector[1]);
+            }
+
+            inline float getZ() const
+            {
+                static_assert(vecSize > 2, "Error requesting a properties with invalid vector size");
+                return (this->__vector[2]);
+            }
+
+            inline float getW() const
+            {
+                static_assert(vecSize > 3, "Error requesting a properties with invalid vector size");
+                return (this->__vector[3]);
+            }
+
             template <size_t index>
             inline float &getVal()
+            {
+                static_assert(index < vecSize, "Error requesting index that is not valid");
+                return (this->__vector[index]);
+            }
+
+            template <size_t index>
+            inline float getVal() const
             {
                 static_assert(index < vecSize, "Error requesting index that is not valid");
                 return (this->__vector[index]);
