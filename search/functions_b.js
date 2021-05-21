@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['setexitkey_454',['setExitKey',['../classRayLib_1_1InputKeyboard.html#a122fbb53725d268395f03ec6c423f20a',1,'RayLib::InputKeyboard']]],
-  ['setgamepadmappings_455',['setGamepadMappings',['../classRayLib_1_1InputGamepad.html#a5ad4e6cbfa8b61783ff026521ad86aa5',1,'RayLib::InputGamepad']]],
-  ['setmousecursor_456',['setMouseCursor',['../classRayLib_1_1InputMouse.html#a2c86e1f1a3f680df350121369a6d2984',1,'RayLib::InputMouse']]],
-  ['setmouseoffset_457',['setMouseOffset',['../classRayLib_1_1InputMouse.html#a2ff4f39c11f3e5923f6088dfc597671b',1,'RayLib::InputMouse']]],
-  ['setmouseposition_458',['setMousePosition',['../classRayLib_1_1InputMouse.html#ad9c92e821e2e3612f263900baeb14186',1,'RayLib::InputMouse']]],
-  ['setmousescale_459',['setMouseScale',['../classRayLib_1_1InputMouse.html#a21e6a3eb79e89cc25dfadf35ce74e28a',1,'RayLib::InputMouse']]],
-  ['showcursor_460',['showCursor',['../classRayLib_1_1Cursor.html#a2943fca90269040cd8927ef0ad735c2e',1,'RayLib::Cursor']]]
+  ['rectangle_503',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html#a857884024bfc5a2090606a63a1cd8819',1,'RayLib::Shapes::Rectangle::Rectangle()=delete'],['../classRayLib_1_1Shapes_1_1Rectangle.html#a9586c4857f5d61a367ec3d8db9fbdc15',1,'RayLib::Shapes::Rectangle::Rectangle(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Vector&lt; 2 &gt; &amp;size, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Rectangle.html#aa91300bb2ae075fe15a1ac05a2651160',1,'RayLib::Shapes::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)']]],
+  ['resumeaudiostream_504',['ResumeAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a7a14c54c32096e81dddb97b943be0d07',1,'RayLib::Audio::AudioStream']]],
+  ['resumemusicstream_505',['ResumeMusicStream',['../classRayLib_1_1Audio_1_1Music.html#af1f4c27288c6bb5089dcc21472b2275e',1,'RayLib::Audio::Music']]],
+  ['ring_506',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html#a6fa198355eb05941add07a5356f2e480',1,'RayLib::Shapes::Ring::Ring()=delete'],['../classRayLib_1_1Shapes_1_1Ring.html#ad6e4b6c606e9337119c8059c3772956a',1,'RayLib::Shapes::Ring::Ring(const Type::Vector&lt; 2 &gt; &amp;center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Ring.html#aaccf25536933a9a158a1845a08c45a1d',1,'RayLib::Shapes::Ring::Ring(const Ring &amp;cpy)']]]
 ];

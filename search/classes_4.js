@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['matrix_245',['Matrix',['../classTypes_1_1Matrix.html',1,'Types']]]
+  ['line_274',['Line',['../classRayLib_1_1Shapes_1_1Line.html',1,'RayLib::Shapes']]]
 ];
