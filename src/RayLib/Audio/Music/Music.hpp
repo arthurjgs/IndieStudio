@@ -24,12 +24,12 @@ namespace RayLib {
                 Music &operator = (const Music &) = delete;
                 ~Music();
 
-                void PlayMusicStream() const;
+                void PlayMusicStream();
                 bool IsMusicPlaying() const;
                 void UpdateMusicStream(const std::string &newMusic) const;
-                void StopMusicStream() const;
-                void PauseMusicStream() const;
-                void ResumeMusicStream() const;
+                void StopMusicStream();
+                void PauseMusicStream();
+                void ResumeMusicStream();
                 void SetMusicVolume(const float &volume) const;
                 void SetMusicPitch(const float &pitch) const;
                 float GetMusicTimeLength() const;
@@ -41,7 +41,7 @@ namespace RayLib {
             private:
                 ::Music __music;
                 std::string __filepath;
-
+                bool __playing;
         };
     }
 }

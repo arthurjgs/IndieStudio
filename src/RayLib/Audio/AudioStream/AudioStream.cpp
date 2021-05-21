@@ -45,7 +45,7 @@ void RayLib::Audio::AudioStream::ResumeAudioStream()
 
 bool RayLib::Audio::AudioStream::IsAudioStreamPlaying()
 {
-    ::IsAudioStreamPlaying(this->__stream);
+    return (::IsAudioStreamPlaying(this->__stream));
 }
 
 void RayLib::Audio::AudioStream::StopAudioStream()
