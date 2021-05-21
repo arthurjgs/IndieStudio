@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['pixel_2ecpp_319',['Pixel.cpp',['../Pixel_8cpp.html',1,'']]],
-  ['pixel_2ehpp_320',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
-  ['poly_2ecpp_321',['Poly.cpp',['../Poly_8cpp.html',1,'']]],
-  ['poly_2ehpp_322',['Poly.hpp',['../Poly_8hpp.html',1,'']]]
+  ['rectangle_2ecpp_300',['Rectangle.cpp',['../RayLib_2Shapes_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)'],['../Types_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)']]],
+  ['rectangle_2ehpp_301',['Rectangle.hpp',['../RayLib_2Shapes_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)'],['../Types_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)']]],
+  ['rendertexture_2ecpp_302',['RenderTexture.cpp',['../RenderTexture_8cpp.html',1,'']]],
+  ['rendertexture_2ehpp_303',['RenderTexture.hpp',['../RenderTexture_8hpp.html',1,'']]],
+  ['ring_2ecpp_304',['Ring.cpp',['../Ring_8cpp.html',1,'']]],
+  ['ring_2ehpp_305',['Ring.hpp',['../Ring_8hpp.html',1,'']]]
 ];
