@@ -12,6 +12,7 @@ int main()
         ::BeginDrawing();
         ::ClearBackground(::RAYWHITE);
         ::EndDrawing();
+        Camera2D f
     }
     return 0;
 }
