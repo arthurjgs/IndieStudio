@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arcade: src/Types/RenderTexture/Texture.hpp Source File</title>
+<title>Arcade: src/Types/Texture/Texture.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a80ba6df1bafd3b08a3ea260be098349.html">Types</a></li><li class="navelem"><a class="el" href="dir_856be290482a310e0ef41af1a63622e7.html">RenderTexture</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_a80ba6df1bafd3b08a3ea260be098349.html">Types</a></li><li class="navelem"><a class="el" href="dir_c34a28fb7aae182767b90a485da29d6f.html">Texture</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -71,89 +71,45 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="Texture_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifndef TEXTURE_HPP_</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define TEXTURE_HPP_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;raylib.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceType.html">Type</a></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classType_1_1Texture.html">Texture</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceTypes.html">Types</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classTypes_1_1Texture.html">Texture</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a7de8a4d1fafb45fe8884f8e52f635bb9">   22</a></span>&#160;            <a class="code" href="classType_1_1Texture.html#a7de8a4d1fafb45fe8884f8e52f635bb9">Texture</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a4ef438ed8190afb2804a94ce86a23066">   23</a></span>&#160;            <a class="code" href="classType_1_1Texture.html#a4ef438ed8190afb2804a94ce86a23066">~Texture</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classType_1_1Texture.html#a7de8a4d1fafb45fe8884f8e52f635bb9">Texture</a>(uint <span class="keywordtype">id</span>, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> mipmaps, <span class="keywordtype">int</span> format);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classType_1_1Texture.html#a7de8a4d1fafb45fe8884f8e52f635bb9">Texture</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Texture.html">Texture</a> &amp;cpy);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classType_1_1Texture.html">Texture</a> <a class="code" href="classType_1_1Texture.html#aa17d7e4d3dafa938e1fdfb4d5273e7ee">operator =</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Texture.html">Texture</a> &amp;cpy);</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a8b92006565d18017f78223fb0a401ffd">   27</a></span>&#160;            <span class="keyword">inline</span> uint &amp;<a class="code" href="classType_1_1Texture.html#a8b92006565d18017f78223fb0a401ffd">getId</a>()</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">return</span> _id;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#ad617449e25fa098c149c4a3ac98ed72d">   31</a></span>&#160;            <span class="keyword">inline</span> uint <a class="code" href="classType_1_1Texture.html#ad617449e25fa098c149c4a3ac98ed72d">getId</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">return</span> _id;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            }</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#ab154866822c47827645e9aa5f44ab9b4">   35</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classType_1_1Texture.html#ab154866822c47827645e9aa5f44ab9b4">getWidth</a>()</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keywordflow">return</span> _width;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            }</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a7e176b7dbcbecfb22e85763b319f597f">   39</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classType_1_1Texture.html#a7e176b7dbcbecfb22e85763b319f597f">getWidth</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> _width;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            }</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#af24432fec451f13dba7e21cbb5642557">   43</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classType_1_1Texture.html#af24432fec451f13dba7e21cbb5642557">getHeight</a>()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">return</span> _height;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#aa2396131887773a6cfe10127e5c4ff1b">   47</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classType_1_1Texture.html#aa2396131887773a6cfe10127e5c4ff1b">getHeight</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordflow">return</span> _height;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a75932567cda3e15cb17d70a11996b4f7">   51</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classType_1_1Texture.html#a75932567cda3e15cb17d70a11996b4f7">getMipmaps</a>()</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">return</span> _mipmaps;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            }</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a8d4c7db2b32f1bc0e5acfd611bfb90f5">   55</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classType_1_1Texture.html#a8d4c7db2b32f1bc0e5acfd611bfb90f5">getMipmaps</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">return</span> _mipmaps;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#acdbc121f914efd3e044f14190fae4c0b">   59</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classType_1_1Texture.html#acdbc121f914efd3e044f14190fae4c0b">getFormat</a>()</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordflow">return</span> _format;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            }</div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classType_1_1Texture.html#a980e7f18492b733bd8d241915ac6386b">   63</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classType_1_1Texture.html#a980e7f18492b733bd8d241915ac6386b">getFormat</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">            </span>{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> _format;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            uint _id;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordtype">int</span> _width;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            <span class="keywordtype">int</span> _height;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordtype">int</span> _mipmaps;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordtype">int</span> _format;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !TEXTURE_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassType_1_1Texture_html"><div class="ttname"><a href="classType_1_1Texture.html">Type::Texture</a></div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00020">Texture.hpp:20</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a4ef438ed8190afb2804a94ce86a23066"><div class="ttname"><a href="classType_1_1Texture.html#a4ef438ed8190afb2804a94ce86a23066">Type::Texture::~Texture</a></div><div class="ttdeci">~Texture()=default</div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a75932567cda3e15cb17d70a11996b4f7"><div class="ttname"><a href="classType_1_1Texture.html#a75932567cda3e15cb17d70a11996b4f7">Type::Texture::getMipmaps</a></div><div class="ttdeci">int &amp; getMipmaps()</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00051">Texture.hpp:51</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a7de8a4d1fafb45fe8884f8e52f635bb9"><div class="ttname"><a href="classType_1_1Texture.html#a7de8a4d1fafb45fe8884f8e52f635bb9">Type::Texture::Texture</a></div><div class="ttdeci">Texture()=delete</div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a7e176b7dbcbecfb22e85763b319f597f"><div class="ttname"><a href="classType_1_1Texture.html#a7e176b7dbcbecfb22e85763b319f597f">Type::Texture::getWidth</a></div><div class="ttdeci">int getWidth() const</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00039">Texture.hpp:39</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a8b92006565d18017f78223fb0a401ffd"><div class="ttname"><a href="classType_1_1Texture.html#a8b92006565d18017f78223fb0a401ffd">Type::Texture::getId</a></div><div class="ttdeci">uint &amp; getId()</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00027">Texture.hpp:27</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a8d4c7db2b32f1bc0e5acfd611bfb90f5"><div class="ttname"><a href="classType_1_1Texture.html#a8d4c7db2b32f1bc0e5acfd611bfb90f5">Type::Texture::getMipmaps</a></div><div class="ttdeci">int getMipmaps() const</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00055">Texture.hpp:55</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_a980e7f18492b733bd8d241915ac6386b"><div class="ttname"><a href="classType_1_1Texture.html#a980e7f18492b733bd8d241915ac6386b">Type::Texture::getFormat</a></div><div class="ttdeci">int getFormat() const</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00063">Texture.hpp:63</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_aa17d7e4d3dafa938e1fdfb4d5273e7ee"><div class="ttname"><a href="classType_1_1Texture.html#aa17d7e4d3dafa938e1fdfb4d5273e7ee">Type::Texture::operator=</a></div><div class="ttdeci">Texture operator=(const Texture &amp;cpy)</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8cpp_source.html#l00031">Texture.cpp:31</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_aa2396131887773a6cfe10127e5c4ff1b"><div class="ttname"><a href="classType_1_1Texture.html#aa2396131887773a6cfe10127e5c4ff1b">Type::Texture::getHeight</a></div><div class="ttdeci">int getHeight() const</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00047">Texture.hpp:47</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_ab154866822c47827645e9aa5f44ab9b4"><div class="ttname"><a href="classType_1_1Texture.html#ab154866822c47827645e9aa5f44ab9b4">Type::Texture::getWidth</a></div><div class="ttdeci">int &amp; getWidth()</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00035">Texture.hpp:35</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_acdbc121f914efd3e044f14190fae4c0b"><div class="ttname"><a href="classType_1_1Texture.html#acdbc121f914efd3e044f14190fae4c0b">Type::Texture::getFormat</a></div><div class="ttdeci">int &amp; getFormat()</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00059">Texture.hpp:59</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_ad617449e25fa098c149c4a3ac98ed72d"><div class="ttname"><a href="classType_1_1Texture.html#ad617449e25fa098c149c4a3ac98ed72d">Type::Texture::getId</a></div><div class="ttdeci">uint getId() const</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00031">Texture.hpp:31</a></div></div>
-<div class="ttc" id="aclassType_1_1Texture_html_af24432fec451f13dba7e21cbb5642557"><div class="ttname"><a href="classType_1_1Texture.html#af24432fec451f13dba7e21cbb5642557">Type::Texture::getHeight</a></div><div class="ttdeci">int &amp; getHeight()</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00043">Texture.hpp:43</a></div></div>
-<div class="ttc" id="anamespaceType_html"><div class="ttname"><a href="namespaceType.html">Type</a></div><div class="ttdef"><b>Definition:</b> <a href="Camera2D_8hpp_source.html#l00017">Camera2D.hpp:18</a></div></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">   22</a></span>&#160;            <a class="code" href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">Texture</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">Texture</a>(<span class="keyword">const</span> std::string &amp;texturePath, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;width, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;height);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">Texture</a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Texture.html">Texture</a> &amp;cpy);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <a class="code" href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">Texture</a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Texture.html">Texture</a> &amp;&amp;cpy);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classTypes_1_1Texture.html">Texture</a> &amp;<a class="code" href="classTypes_1_1Texture.html#a8bbb7835e5548f2ba94a459c1372c202">operator = </a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Texture.html">Texture</a> &amp;cpy);</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html#a358e9f16ab68334fa3de805cd13c23cb">   54</a></span>&#160;            <a class="code" href="classTypes_1_1Texture.html#a358e9f16ab68334fa3de805cd13c23cb">~Texture</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646">   60</a></span>&#160;            <span class="keyword">inline</span> std::string &amp;<a class="code" href="classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646">getPath</a>()</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">return</span> (this-&gt;__texturePath);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            }</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e">   69</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e">getWidth</a>()</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="keywordflow">return</span> (this-&gt;__width);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            }</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classTypes_1_1Texture.html#a589df8dce0d4ccdca1ba2f30d276fd08">   78</a></span>&#160;            <span class="keyword">inline</span> <span class="keywordtype">int</span> &amp;<a class="code" href="classTypes_1_1Texture.html#a589df8dce0d4ccdca1ba2f30d276fd08">getHeight</a>()</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <span class="keywordflow">return</span> (this-&gt;__height);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            std::string __texturePath;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="keywordtype">int</span> __width;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="keywordtype">int</span> __height;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="ttc" id="aclassTypes_1_1Texture_html"><div class="ttname"><a href="classTypes_1_1Texture.html">Types::Texture</a></div><div class="ttdoc">Data class holding a texture info.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00020">Texture.hpp:20</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_a1574c2430d57a6d3608b64a5d36dc27e"><div class="ttname"><a href="classTypes_1_1Texture.html#a1574c2430d57a6d3608b64a5d36dc27e">Types::Texture::getWidth</a></div><div class="ttdeci">int &amp; getWidth()</div><div class="ttdoc">Get the Width object.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00069">Texture.hpp:69</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_a358e9f16ab68334fa3de805cd13c23cb"><div class="ttname"><a href="classTypes_1_1Texture.html#a358e9f16ab68334fa3de805cd13c23cb">Types::Texture::~Texture</a></div><div class="ttdeci">~Texture()=default</div><div class="ttdoc">Destroy the Texture object.</div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_a589df8dce0d4ccdca1ba2f30d276fd08"><div class="ttname"><a href="classTypes_1_1Texture.html#a589df8dce0d4ccdca1ba2f30d276fd08">Types::Texture::getHeight</a></div><div class="ttdeci">int &amp; getHeight()</div><div class="ttdoc">Get the Height object.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00078">Texture.hpp:78</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_a8bbb7835e5548f2ba94a459c1372c202"><div class="ttname"><a href="classTypes_1_1Texture.html#a8bbb7835e5548f2ba94a459c1372c202">Types::Texture::operator=</a></div><div class="ttdeci">Texture &amp; operator=(const Texture &amp;cpy)</div><div class="ttdoc">Copy texture instance into current one.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8cpp_source.html#l00035">Texture.cpp:35</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_a90f3bf6276a66084e34e14416714a646"><div class="ttname"><a href="classTypes_1_1Texture.html#a90f3bf6276a66084e34e14416714a646">Types::Texture::getPath</a></div><div class="ttdeci">std::string &amp; getPath()</div><div class="ttdoc">Get the Path object.</div><div class="ttdef"><b>Definition:</b> <a href="Texture_8hpp_source.html#l00060">Texture.hpp:60</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Texture_html_abd0340d04ec86b80a6b5bf7679a4aa92"><div class="ttname"><a href="classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92">Types::Texture::Texture</a></div><div class="ttdeci">Texture()=delete</div></div>
+<div class="ttc" id="anamespaceTypes_html"><div class="ttname"><a href="namespaceTypes.html">Types</a></div><div class="ttdef"><b>Definition:</b> <a href="Matrix_8hpp_source.html#l00016">Matrix.hpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

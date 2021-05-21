@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['rectangle_256',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html',1,'RayLib::Shapes::Rectangle'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
-  ['rendertexture_257',['RenderTexture',['../classType_1_1RenderTexture.html',1,'Type']]],
-  ['ring_258',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html',1,'RayLib::Shapes']]]
+  ['pixel_289',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes']]],
+  ['poly_290',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['texture_259',['Texture',['../classType_1_1Texture.html',1,'Type']]],
-  ['triangle_260',['Triangle',['../classRayLib_1_1Shapes_1_1Triangle.html',1,'RayLib::Shapes']]]
+  ['rectangle_291',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html',1,'RayLib::Shapes::Rectangle'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
+  ['ring_292',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html',1,'RayLib::Shapes']]]
 ];
