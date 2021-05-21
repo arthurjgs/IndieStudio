@@ -26,6 +26,7 @@ add_executable(bomberman
         src/RayLib/Shapes/Rectangle/Rectangle.cpp
         src/RayLib/Shapes/Ring/Ring.cpp
         src/RayLib/Shapes/Triangle/Triangle.cpp
+        src/RayLib/Text/Text.cpp
         src/Types/Color/Color.cpp
         src/Types/Image/Image.cpp
         src/Types/Matrix/Matrix.cpp
