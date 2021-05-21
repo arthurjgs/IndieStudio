@@ -67,5 +67,6 @@ RayLib::InputGamepad RayLib::Window::getInputGamepad() const
 
 RayLib::Window::~Window()
 {
+    ::CloseAudioDevice();
     ::CloseWindow();
 }
