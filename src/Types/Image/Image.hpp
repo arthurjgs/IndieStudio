@@ -12,7 +12,7 @@
 #pragma once
 #include <iostream>
 
-namespace Types {
+namespace Type {
     /**
      * @brief Data class that hold info on an image
      * 
@@ -77,6 +77,18 @@ namespace Types {
              * @return int& 
              */
             inline int &getHeight()
+            {
+                return (this->__height);
+            }
+            inline std::string getData() const
+            {
+                return (this->__data);
+            }
+            inline int getWidth() const
+            {
+                return (this->__width);
+            }
+            inline int getHeight() const
             {
                 return (this->__height);
             }
