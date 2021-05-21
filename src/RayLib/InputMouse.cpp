@@ -49,9 +49,11 @@ int RayLib::InputMouse::getMouseY(void) const
     return GetMouseX();
 }
 
-Vector2 RayLib::InputMouse::getMousePosition(void) const
+Type::Vector<2> RayLib::InputMouse::getMousePosition(void) const
 {
-    return GetMousePosition();
+    Vector2 res = GetMousePosition();
+    Type::Vector<2> vec(res.x, res.y);
+    return vec;
 }
 
 void RayLib::InputMouse::setMousePosition(int x, int y) const

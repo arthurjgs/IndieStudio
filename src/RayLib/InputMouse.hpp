@@ -14,6 +14,7 @@
 
 #include <raylib.h>
 #include <iostream>
+#include "../Types/Vector/Vector.hpp"
 
 namespace RayLib
 {
@@ -27,7 +28,7 @@ namespace RayLib
             bool isMouseButtonUp(int button) const;
             int getMouseX(void) const;
             int getMouseY(void) const;
-            Vector2 getMousePosition(void) const;
+            Type::Vector<2> getMousePosition(void) const;
             void setMousePosition(int x, int y) const;
             void setMouseOffset(int offsetX, int offsetY) const;
             void setMouseScale(float scaleX, float scaleY) const;
