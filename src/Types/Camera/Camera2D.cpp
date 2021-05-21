@@ -11,10 +11,6 @@
 
 #include "Camera2D.hpp"
 
-Type::Camera2D::Camera2D()
-{
-}
-
 Type::Camera2D::Camera2D(const Type::Vector<2> offset, const Type::Vector<2> target, const float rotation, const float zoom)
 {
     _offset = offset;
@@ -38,8 +34,4 @@ Type::Camera2D Type::Camera2D::operator =(const Camera2D &cpy)
     _rotation = cpy._rotation;
     _zoom = cpy._zoom;
     return (*this);
-}
-
-Type::Camera2D::~Camera2D()
-{
 }

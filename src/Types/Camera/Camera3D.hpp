@@ -55,7 +55,7 @@ namespace Type
             {
                 return _projection;
             }
-            inline Type::Vector<3> getProjection() const
+            inline int getProjection() const
             {
                 return _projection;
             }

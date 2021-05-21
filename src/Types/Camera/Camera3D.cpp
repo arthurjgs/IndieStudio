@@ -11,14 +11,6 @@
 
 #include "Camera3D.hpp"
 
-Type::Camera3D::Camera3D()
-{
-}
-
-Type::Camera3D::~Camera3D()
-{
-}
-
 Type::Camera3D::Camera3D(Type::Vector<3> position, Type::Vector<3> target, Type::Vector<3> up, float fovy, int projection)
 {
     _position = position;
