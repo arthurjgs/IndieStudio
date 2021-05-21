@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['texture_175',['Texture',['../classTypes_1_1Texture.html#abd0340d04ec86b80a6b5bf7679a4aa92',1,'Types::Texture::Texture()=delete'],['../classTypes_1_1Texture.html#a8de9d6eccac4dba378ef0c2c1e83186f',1,'Types::Texture::Texture(const std::string &amp;texturePath, const int &amp;width, const int &amp;height)'],['../classTypes_1_1Texture.html#a4820cf658fa3f2418213ee0bff89ede7',1,'Types::Texture::Texture(const Texture &amp;cpy)'],['../classTypes_1_1Texture.html#a07927fd86de3756a5900c0925dd536fd',1,'Types::Texture::Texture(const Texture &amp;&amp;cpy)'],['../classTypes_1_1Texture.html',1,'Types::Texture']]],
-  ['texture_2ecpp_176',['Texture.cpp',['../Texture_8cpp.html',1,'']]],
-  ['texture_2ehpp_177',['Texture.hpp',['../Texture_8hpp.html',1,'']]],
-  ['triangle_178',['Triangle',['../classRayLib_1_1Shapes_1_1Triangle.html',1,'RayLib::Shapes::Triangle'],['../classRayLib_1_1Shapes_1_1Triangle.html#a46293da7f94f25d448736425d29e14de',1,'RayLib::Shapes::Triangle::Triangle()=delete'],['../classRayLib_1_1Shapes_1_1Triangle.html#aac2e0bc61fcd362816ae104a9d5df2c0',1,'RayLib::Shapes::Triangle::Triangle(const Type::Vector&lt; 2 &gt; &amp;v1, const Type::Vector&lt; 2 &gt; &amp;v2, const Type::Vector&lt; 2 &gt; &amp;v3, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Triangle.html#a6e25882f21823a56c2d6a330465ad203',1,'RayLib::Shapes::Triangle::Triangle(const Triangle &amp;cpy)']]],
-  ['triangle_2ecpp_179',['Triangle.cpp',['../Triangle_8cpp.html',1,'']]],
-  ['triangle_2ehpp_180',['Triangle.hpp',['../Triangle_8hpp.html',1,'']]],
-  ['type_181',['Type',['../namespaceType.html',1,'']]],
-  ['types_182',['Types',['../namespaceTypes.html',1,'']]]
+  ['setexitkey_177',['setExitKey',['../classRayLib_1_1InputKeyboard.html#a122fbb53725d268395f03ec6c423f20a',1,'RayLib::InputKeyboard']]],
+  ['setgamepadmappings_178',['setGamepadMappings',['../classRayLib_1_1InputGamepad.html#a5ad4e6cbfa8b61783ff026521ad86aa5',1,'RayLib::InputGamepad']]],
+  ['setmousecursor_179',['setMouseCursor',['../classRayLib_1_1InputMouse.html#a2c86e1f1a3f680df350121369a6d2984',1,'RayLib::InputMouse']]],
+  ['setmouseoffset_180',['setMouseOffset',['../classRayLib_1_1InputMouse.html#a2ff4f39c11f3e5923f6088dfc597671b',1,'RayLib::InputMouse']]],
+  ['setmouseposition_181',['setMousePosition',['../classRayLib_1_1InputMouse.html#ad9c92e821e2e3612f263900baeb14186',1,'RayLib::InputMouse']]],
+  ['setmousescale_182',['setMouseScale',['../classRayLib_1_1InputMouse.html#a21e6a3eb79e89cc25dfadf35ce74e28a',1,'RayLib::InputMouse']]],
+  ['shapes_2eh_183',['Shapes.h',['../Shapes_8h.html',1,'']]],
+  ['showcursor_184',['showCursor',['../classRayLib_1_1Cursor.html#a2943fca90269040cd8927ef0ad735c2e',1,'RayLib::Cursor']]]
 ];

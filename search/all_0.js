@@ -15,5 +15,8 @@ var searchData=
   ['collision_2ehpp_12',['Collision.hpp',['../Collision_8hpp.html',1,'']]],
   ['color_13',['Color',['../classType_1_1Color.html#ae8cd862b504f25c0654f6e51a0c9bf5b',1,'Type::Color::Color()=delete'],['../classType_1_1Color.html#a2df04f2fe2444ffca2ac5ccc038afd2c',1,'Type::Color::Color(const uChar &amp;r, const uChar &amp;g, const uChar &amp;b, const uChar &amp;a)'],['../classType_1_1Color.html#a5219cf8d4c3884cabd669a01edc507de',1,'Type::Color::Color(const Color &amp;cpy)'],['../classType_1_1Color.html#a1cfd2371f0824e23fb1670c82c6bef93',1,'Type::Color::Color(const Color &amp;&amp;cpy)'],['../classType_1_1Color.html',1,'Type::Color']]],
   ['color_2ecpp_14',['Color.cpp',['../Color_8cpp.html',1,'']]],
-  ['color_2ehpp_15',['Color.hpp',['../Color_8hpp.html',1,'']]]
+  ['color_2ehpp_15',['Color.hpp',['../Color_8hpp.html',1,'']]],
+  ['cursor_16',['Cursor',['../classRayLib_1_1Cursor.html#aab7c71560276df56e86a8fae6591bc30',1,'RayLib::Cursor::Cursor()'],['../classRayLib_1_1Cursor.html',1,'RayLib::Cursor']]],
+  ['cursor_2ecpp_17',['Cursor.cpp',['../Cursor_8cpp.html',1,'']]],
+  ['cursor_2ehpp_18',['Cursor.hpp',['../Cursor_8hpp.html',1,'']]]
 ];
