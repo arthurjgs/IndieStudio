@@ -39,6 +39,7 @@ add_executable(bomberman
         src/Types/Camera/Camera3D.cpp
         src/Types/RenderTexture/Texture.cpp
         src/Types/RenderTexture/RenderTexture.cpp
+        src/RayLib/Drawing.cpp
         )
 
 target_link_libraries(${PROJECT_NAME} raylib)
