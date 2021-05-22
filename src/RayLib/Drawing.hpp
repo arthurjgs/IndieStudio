@@ -23,19 +23,19 @@ namespace RayLib
         public:
             Drawing();
             ~Drawing();
-            void clearBackground(Type::Color color);
-            void beginDrawing(void);
-            void endDrawing(void);
-            void beginMode2D(Type::Camera2D camera);
-            void endMode2D(void);
-            void beginMode3D(Type::Camera3D camera);
-            void endMode3D(void);
-            void beginTextureMode(Type::RenderTexture target);
-            void endTextureMode(void);
-            void beginBlendMode(int mode);
-            void endBlendMode(void);
-            void beginScissorMode(int x, int y, int width, int height);
-            void endScissorMode(void);
+            void clearBackground(Type::Color color) const;
+            void beginDrawing(void) const;
+            void endDrawing(void) const;
+            void beginMode2D(Type::Camera2D camera) const;
+            void endMode2D(void) const;
+            void beginMode3D(Type::Camera3D camera) const;
+            void endMode3D(void) const;
+            void beginTextureMode(Type::RenderTexture target) const;
+            void endTextureMode(void) const;
+            void beginBlendMode(int mode) const;
+            void endBlendMode(void) const;
+            void beginScissorMode(int x, int y, int width, int height) const;
+            void endScissorMode(void) const;
 
         protected:
         private:
