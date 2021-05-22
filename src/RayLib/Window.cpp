@@ -65,6 +65,11 @@ RayLib::InputGamepad RayLib::Window::getInputGamepad() const
     return _inputGamepad;
 }
 
+RayLib::Drawing RayLib::Window::getDrawing() const
+{
+    return _drawing;
+}
+
 RayLib::Window::~Window()
 {
     ::CloseWindow();
