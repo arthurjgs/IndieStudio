@@ -73,28 +73,28 @@ $(function() {
 <a href="Image_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Image_8hpp.html">Image.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classType_1_1Image.html#a798c63988b4010fbbbcfc68f6b72e2e5">   14</a></span>&#160;<a class="code" href="classType_1_1Image.html#ae53510432548bcb8dbc8ba7bb5d05512">Type::Image::Image</a>(<span class="keyword">const</span> std::string &amp;data, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;width, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;height)</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classTypes_1_1Image.html#a46c5f40e69c856e0055603c5c05a3293">   14</a></span>&#160;<a class="code" href="classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27">Types::Image::Image</a>(<span class="keyword">const</span> std::string &amp;data, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;width, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;height)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;{</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    this-&gt;__data = data;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    this-&gt;__width = width;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    this-&gt;__height = height;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classType_1_1Image.html#a5585d7b0a4acd7b2a3536b847340f883">   21</a></span>&#160;<a class="code" href="classType_1_1Image.html#ae53510432548bcb8dbc8ba7bb5d05512">Type::Image::Image</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Image.html">Image</a> &amp;cpy)</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classTypes_1_1Image.html#a0386f99cf2787b3830ea5103be711c70">   21</a></span>&#160;<a class="code" href="classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27">Types::Image::Image</a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Image.html">Image</a> &amp;cpy)</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    this-&gt;__data = cpy.__data;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;__width = cpy.__width;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    this-&gt;__height = cpy.__height;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classType_1_1Image.html#a8cf446c8ba9479f30692ece320ef958a">   28</a></span>&#160;<a class="code" href="classType_1_1Image.html#ae53510432548bcb8dbc8ba7bb5d05512">Type::Image::Image</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Image.html">Image</a> &amp;&amp;cpy)</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTypes_1_1Image.html#aa66507b2febb4f8eca2f474b905fcc75">   28</a></span>&#160;<a class="code" href="classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27">Types::Image::Image</a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Image.html">Image</a> &amp;&amp;cpy)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    this-&gt;__data = cpy.__data;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    this-&gt;__width = cpy.__width;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    this-&gt;__height = cpy.__height;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classType_1_1Image.html#ae02551abae769b75403e81777123c992">   35</a></span>&#160;<a class="code" href="classType_1_1Image.html">Type::Image</a> &amp;<a class="code" href="classType_1_1Image.html#ae02551abae769b75403e81777123c992">Type::Image::operator = </a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Image.html">Image</a> &amp;cpy)</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classTypes_1_1Image.html#a455b426c13f9b584e6ca433319050bd5">   35</a></span>&#160;<a class="code" href="classTypes_1_1Image.html">Types::Image</a> &amp;<a class="code" href="classTypes_1_1Image.html#a455b426c13f9b584e6ca433319050bd5">Types::Image::operator = </a>(<span class="keyword">const</span> <a class="code" href="classTypes_1_1Image.html">Image</a> &amp;cpy)</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    this-&gt;__data = cpy.__data;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this-&gt;__width = cpy.__width;</div>
@@ -102,9 +102,9 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="ttc" id="aImage_8hpp_html"><div class="ttname"><a href="Image_8hpp.html">Image.hpp</a></div></div>
-<div class="ttc" id="aclassType_1_1Image_html"><div class="ttname"><a href="classType_1_1Image.html">Type::Image</a></div><div class="ttdoc">Data class that hold info on an image.</div><div class="ttdef"><b>Definition:</b> <a href="Image_8hpp_source.html#l00020">Image.hpp:20</a></div></div>
-<div class="ttc" id="aclassType_1_1Image_html_ae02551abae769b75403e81777123c992"><div class="ttname"><a href="classType_1_1Image.html#ae02551abae769b75403e81777123c992">Type::Image::operator=</a></div><div class="ttdeci">Image &amp; operator=(const Image &amp;cpy)</div><div class="ttdoc">Copy Image to current instance.</div><div class="ttdef"><b>Definition:</b> <a href="Image_8cpp_source.html#l00035">Image.cpp:35</a></div></div>
-<div class="ttc" id="aclassType_1_1Image_html_ae53510432548bcb8dbc8ba7bb5d05512"><div class="ttname"><a href="classType_1_1Image.html#ae53510432548bcb8dbc8ba7bb5d05512">Type::Image::Image</a></div><div class="ttdeci">Image()=delete</div></div>
+<div class="ttc" id="aclassTypes_1_1Image_html"><div class="ttname"><a href="classTypes_1_1Image.html">Types::Image</a></div><div class="ttdoc">Data class that hold info on an image.</div><div class="ttdef"><b>Definition:</b> <a href="Image_8hpp_source.html#l00020">Image.hpp:20</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Image_html_a455b426c13f9b584e6ca433319050bd5"><div class="ttname"><a href="classTypes_1_1Image.html#a455b426c13f9b584e6ca433319050bd5">Types::Image::operator=</a></div><div class="ttdeci">Image &amp; operator=(const Image &amp;cpy)</div><div class="ttdoc">Copy Image to current instance.</div><div class="ttdef"><b>Definition:</b> <a href="Image_8cpp_source.html#l00035">Image.cpp:35</a></div></div>
+<div class="ttc" id="aclassTypes_1_1Image_html_a9ed517797ec63be3bf35d4d20540fc27"><div class="ttname"><a href="classTypes_1_1Image.html#a9ed517797ec63be3bf35d4d20540fc27">Types::Image::Image</a></div><div class="ttdeci">Image()=delete</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

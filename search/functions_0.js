@@ -1,4 +1,9 @@
 var searchData=
 [
-  ['audiostream_352',['AudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a1a1f006609f6add1c88a064228cd9cd7',1,'RayLib::Audio::AudioStream::AudioStream()=delete'],['../classRayLib_1_1Audio_1_1AudioStream.html#adc1a0e30bdb0276cc57ccacecd78ae20',1,'RayLib::Audio::AudioStream::AudioStream(const unsigned int &amp;sampleRate, const unsigned int &amp;sampleSize, const unsigned int &amp;channels)'],['../classRayLib_1_1Audio_1_1AudioStream.html#a67d9082160d65fd69c39ef5fa30cef66',1,'RayLib::Audio::AudioStream::AudioStream(const AudioStream &amp;cpy)=delete']]]
+  ['beginblendmode_334',['beginBlendMode',['../classRayLib_1_1Drawing.html#a2e0cf5ccc52cb61aa88a8cd596323413',1,'RayLib::Drawing']]],
+  ['begindrawing_335',['beginDrawing',['../classRayLib_1_1Drawing.html#a3572afc5e0212795a18c3e36b2b6ec20',1,'RayLib::Drawing']]],
+  ['beginmode2d_336',['beginMode2D',['../classRayLib_1_1Drawing.html#ab7bf721e1bd86ecdc145f58e9670e014',1,'RayLib::Drawing']]],
+  ['beginmode3d_337',['beginMode3D',['../classRayLib_1_1Drawing.html#aea331e2044ef56975b5d1ccb1a0258a5',1,'RayLib::Drawing']]],
+  ['beginscissormode_338',['beginScissorMode',['../classRayLib_1_1Drawing.html#a162f9cf0a0524f5459a178e636e0887d',1,'RayLib::Drawing']]],
+  ['begintexturemode_339',['beginTextureMode',['../classRayLib_1_1Drawing.html#af07613897ef56420602c973b91b92020',1,'RayLib::Drawing']]]
 ];
