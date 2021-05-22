@@ -16,7 +16,7 @@ var searchData=
   ['circle_19',['Circle',['../classRayLib_1_1Shapes_1_1Circle.html#a78485d4c676187bdbe019f22298a593d',1,'RayLib::Shapes::Circle::Circle(const int &amp;centerX, const int &amp;centerY, const float &amp;radius, const Type::Color &amp;col)'],['../classRayLib_1_1Shapes_1_1Circle.html#ac3c70a0103971e63508b489bfdc8a299',1,'RayLib::Shapes::Circle::Circle()=delete'],['../classRayLib_1_1Shapes_1_1Circle.html#a57b3b51bd9f0efcb62d15f206bb3bafc',1,'RayLib::Shapes::Circle::Circle(const Circle &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Circle.html',1,'RayLib::Shapes::Circle']]],
   ['circle_2ecpp_20',['Circle.cpp',['../Circle_8cpp.html',1,'']]],
   ['circle_2ehpp_21',['Circle.hpp',['../Circle_8hpp.html',1,'']]],
-  ['clearbackground_22',['clearBackground',['../classRayLib_1_1Drawing.html#a0baa0540daf964a1c4d224373327e63d',1,'RayLib::Drawing']]],
+  ['clearbackground_22',['clearBackground',['../classRayLib_1_1Drawing.html#a58b531fcc2b8c54a7ccdec4695dfa55f',1,'RayLib::Drawing']]],
   ['collision_23',['Collision',['../classRayLib_1_1Shapes_1_1Collision.html#a613db6267b59722dccd9f842075bfcd6',1,'RayLib::Shapes::Collision::Collision()=default'],['../classRayLib_1_1Shapes_1_1Collision.html#a37fc11ec7a62a4d138bf638fbcca8808',1,'RayLib::Shapes::Collision::Collision(const Collision &amp;cpy)=delete'],['../classRayLib_1_1Shapes_1_1Collision.html',1,'RayLib::Shapes::Collision']]],
   ['collision_2ecpp_24',['Collision.cpp',['../Collision_8cpp.html',1,'']]],
   ['collision_2ehpp_25',['Collision.hpp',['../Collision_8hpp.html',1,'']]],

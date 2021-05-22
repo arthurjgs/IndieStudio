@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['beginblendmode_0',['beginBlendMode',['../classRayLib_1_1Drawing.html#a2e0cf5ccc52cb61aa88a8cd596323413',1,'RayLib::Drawing']]],
-  ['begindrawing_1',['beginDrawing',['../classRayLib_1_1Drawing.html#a3572afc5e0212795a18c3e36b2b6ec20',1,'RayLib::Drawing']]],
-  ['beginmode2d_2',['beginMode2D',['../classRayLib_1_1Drawing.html#ab7bf721e1bd86ecdc145f58e9670e014',1,'RayLib::Drawing']]],
-  ['beginmode3d_3',['beginMode3D',['../classRayLib_1_1Drawing.html#aea331e2044ef56975b5d1ccb1a0258a5',1,'RayLib::Drawing']]],
-  ['beginscissormode_4',['beginScissorMode',['../classRayLib_1_1Drawing.html#a162f9cf0a0524f5459a178e636e0887d',1,'RayLib::Drawing']]],
-  ['begintexturemode_5',['beginTextureMode',['../classRayLib_1_1Drawing.html#af07613897ef56420602c973b91b92020',1,'RayLib::Drawing']]]
+  ['beginblendmode_0',['beginBlendMode',['../classRayLib_1_1Drawing.html#a3f4d8eba53767886d29bf055c2201dd1',1,'RayLib::Drawing']]],
+  ['begindrawing_1',['beginDrawing',['../classRayLib_1_1Drawing.html#a8c0b62a734862f1eab7c9511ab88bc66',1,'RayLib::Drawing']]],
+  ['beginmode2d_2',['beginMode2D',['../classRayLib_1_1Drawing.html#a295b4b58bd8f7c3afb290ff1dfdca4c5',1,'RayLib::Drawing']]],
+  ['beginmode3d_3',['beginMode3D',['../classRayLib_1_1Drawing.html#a7d5ed6dfe4e777cb00c8b47bc22d11db',1,'RayLib::Drawing']]],
+  ['beginscissormode_4',['beginScissorMode',['../classRayLib_1_1Drawing.html#a81c7922ac3ff1640792a517e4c42d046',1,'RayLib::Drawing']]],
+  ['begintexturemode_5',['beginTextureMode',['../classRayLib_1_1Drawing.html#a320f52c36c896784f02730e3f4d3f1a0',1,'RayLib::Drawing']]]
 ];
