@@ -72,5 +72,6 @@ RayLib::Drawing RayLib::Window::getDrawing() const
 
 RayLib::Window::~Window()
 {
+    ::CloseAudioDevice();
     ::CloseWindow();
 }

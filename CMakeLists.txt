@@ -27,6 +27,9 @@ add_executable(bomberman
         src/RayLib/Shapes/Ring/Ring.cpp
         src/RayLib/Shapes/Triangle/Triangle.cpp
         src/RayLib/Text/Text.cpp
+        src/RayLib/Audio/AudioStream/AudioStream.cpp
+        src/RayLib/Audio/Music/Music.cpp
+        src/RayLib/Audio/Sound/Sound.cpp
         src/Types/Color/Color.cpp
         src/Types/Image/Image.cpp
         src/Types/Matrix/Matrix.cpp
