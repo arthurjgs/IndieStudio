@@ -117,7 +117,7 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="namespaceRayLib.html">RayLib</a> Model encapsulation </p>
 
-<p class="definition">Definition at line <a class="el" href="RayLibModel_8hpp_source.html#l00019">19</a> of file <a class="el" href="RayLibModel_8hpp_source.html">RayLibModel.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RayLibModel_8hpp_source.html#l00020">20</a> of file <a class="el" href="RayLibModel_8hpp_source.html">RayLibModel.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a84d6929b3442223a5cc93b512ce4f382"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84d6929b3442223a5cc93b512ce4f382">&#9670;&nbsp;</a></span>IndieModel()</h2>
@@ -203,7 +203,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_directory(_path)) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : std::filesystem::directory_iterator(path)) {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">if</span> (file.is_regular_file() &amp;&amp; file.path().string().find(<span class="stringliteral">&quot;.mtl&quot;</span>) == std::string::npos) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::string stringPath = file.path();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::string stringPath = file.path().string();</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                _fileList.emplace_back(stringPath);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
@@ -220,7 +220,7 @@ Public Attributes</h2></td></tr>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        _animType = IQM;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1IndieModel_html_a6e7db5ff2633327804829f3fc3f932a3"><div class="ttname"><a href="classRayLib_1_1IndieModel.html#a6e7db5ff2633327804829f3fc3f932a3">RayLib::IndieModel::Models</a></div><div class="ttdeci">std::vector&lt; Model &gt; Models</div><div class="ttdef"><b>Definition:</b> <a href="RayLibModel_8hpp_source.html#l00048">RayLibModel.hpp:48</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1IndieModel_html_a6e7db5ff2633327804829f3fc3f932a3"><div class="ttname"><a href="classRayLib_1_1IndieModel.html#a6e7db5ff2633327804829f3fc3f932a3">RayLib::IndieModel::Models</a></div><div class="ttdeci">std::vector&lt; Model &gt; Models</div><div class="ttdef"><b>Definition:</b> <a href="RayLibModel_8hpp_source.html#l00049">RayLibModel.hpp:49</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -587,7 +587,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RayLibModel_8hpp_source.html#l00048">48</a> of file <a class="el" href="RayLibModel_8hpp_source.html">RayLibModel.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RayLibModel_8hpp_source.html#l00049">49</a> of file <a class="el" href="RayLibModel_8hpp_source.html">RayLibModel.hpp</a>.</p>
 
 </div>
 </div>
