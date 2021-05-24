@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['audiostream_2ecpp_394',['AudioStream.cpp',['../AudioStream_8cpp.html',1,'']]],
-  ['audiostream_2ehpp_395',['AudioStream.hpp',['../AudioStream_8hpp.html',1,'']]]
+  ['animate_2ecpp_396',['Animate.cpp',['../Animate_8cpp.html',1,'']]],
+  ['animate_2ehpp_397',['Animate.hpp',['../Animate_8hpp.html',1,'']]],
+  ['audiostream_2ecpp_398',['AudioStream.cpp',['../AudioStream_8cpp.html',1,'']]],
+  ['audiostream_2ehpp_399',['AudioStream.hpp',['../AudioStream_8hpp.html',1,'']]]
 ];
