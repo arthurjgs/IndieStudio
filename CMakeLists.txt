@@ -31,7 +31,7 @@ add_executable(bomberman
         src/DynamicLibrary/DynamicLibrary.cpp
         src/DynamicLibrary/DynamicLibrary.hpp
         src/DynamicLibrary/DynamicLibraryException.cpp
-        src/DynamicLibrary/DynamicLibraryException.hpp)
+        src/DynamicLibrary/DynamicLibraryException.hpp src/RayLib/RayLibModel.cpp src/RayLib/RayLibModel.hpp)
 
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 
