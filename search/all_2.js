@@ -5,5 +5,8 @@ var searchData=
   ['beginmode2d_9',['beginMode2D',['../classRayLib_1_1Drawing.html#a295b4b58bd8f7c3afb290ff1dfdca4c5',1,'RayLib::Drawing']]],
   ['beginmode3d_10',['beginMode3D',['../classRayLib_1_1Drawing.html#a7d5ed6dfe4e777cb00c8b47bc22d11db',1,'RayLib::Drawing']]],
   ['beginscissormode_11',['beginScissorMode',['../classRayLib_1_1Drawing.html#a81c7922ac3ff1640792a517e4c42d046',1,'RayLib::Drawing']]],
-  ['begintexturemode_12',['beginTextureMode',['../classRayLib_1_1Drawing.html#a320f52c36c896784f02730e3f4d3f1a0',1,'RayLib::Drawing']]]
+  ['begintexturemode_12',['beginTextureMode',['../classRayLib_1_1Drawing.html#a320f52c36c896784f02730e3f4d3f1a0',1,'RayLib::Drawing']]],
+  ['boundingbox_13',['BoundingBox',['../classType_1_1BoundingBox.html#a81eeb82588a4a1eea4d9307632a561cf',1,'Type::BoundingBox::BoundingBox(const Vector&lt; 3 &gt; &amp;min, const Vector&lt; 3 &gt; &amp;max)'],['../classType_1_1BoundingBox.html#a724761b666fd8bc040a235c81e157bfa',1,'Type::BoundingBox::BoundingBox(const BoundingBox &amp;cpy)'],['../classType_1_1BoundingBox.html',1,'Type::BoundingBox']]],
+  ['boundingbox_2ecpp_14',['BoundingBox.cpp',['../BoundingBox_8cpp.html',1,'']]],
+  ['boundingbox_2ehpp_15',['BoundingBox.hpp',['../BoundingBox_8hpp.html',1,'']]]
 ];

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['text_382',['Text',['../classRayLib_1_1Text.html',1,'RayLib']]],
-  ['texture_383',['Texture',['../classType_1_1Texture.html',1,'Type']]],
-  ['triangle_384',['Triangle',['../classRayLib_1_1Shapes_1_1Triangle.html',1,'RayLib::Shapes']]]
+  ['simplemodel_412',['SimpleModel',['../classRayLib_1_1Models_1_1SimpleModel.html',1,'RayLib::Models']]],
+  ['sound_413',['Sound',['../classRayLib_1_1Audio_1_1Sound.html',1,'RayLib::Audio']]]
 ];
