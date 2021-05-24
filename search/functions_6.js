@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_140',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException']]]
+  ['hidecursor_552',['hideCursor',['../classRayLib_1_1Cursor.html#a01e1930ebec3448ca07e046cfe5699c4',1,'RayLib::Cursor']]]
 ];

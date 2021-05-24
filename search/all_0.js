@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_5fmessage_0',['_message',['../classLibDl_1_1DynamicLibraryException.html#ad147d31721bc2ebf9cdffcda09686485',1,'LibDl::DynamicLibraryException']]]
+  ['audiostream_0',['AudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a1a1f006609f6add1c88a064228cd9cd7',1,'RayLib::Audio::AudioStream::AudioStream()=delete'],['../classRayLib_1_1Audio_1_1AudioStream.html#adc1a0e30bdb0276cc57ccacecd78ae20',1,'RayLib::Audio::AudioStream::AudioStream(const unsigned int &amp;sampleRate, const unsigned int &amp;sampleSize, const unsigned int &amp;channels)'],['../classRayLib_1_1Audio_1_1AudioStream.html#a67d9082160d65fd69c39ef5fa30cef66',1,'RayLib::Audio::AudioStream::AudioStream(const AudioStream &amp;cpy)=delete'],['../classRayLib_1_1Audio_1_1AudioStream.html',1,'RayLib::Audio::AudioStream']]],
+  ['audiostream_2ecpp_1',['AudioStream.cpp',['../AudioStream_8cpp.html',1,'']]],
+  ['audiostream_2ehpp_2',['AudioStream.hpp',['../AudioStream_8hpp.html',1,'']]]
 ];

@@ -72,7 +72,11 @@ $(function() {
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="Window_8hpp_source.html">RayLib/Window.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InputKeyboard_8hpp_source.html">RayLib/InputKeyboard.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InputMouse_8hpp_source.html">RayLib/InputMouse.hpp</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
+</div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -96,10 +100,22 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00001">1</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;{</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00006">6</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().isOpen()) {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputGamepad().getGamepadButtonPressed() != -1)</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            std::cout &lt;&lt; <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a09dd137b5d365c22f6781d6a17a1eb87">getInputGamepad</a>().<a class="code" href="classRayLib_1_1InputGamepad.html#a8f556b9e8ae829ae5b58220c437b3b23">getGamepadButtonPressed</a>() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        ::BeginDrawing();</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        ::ClearBackground(::RAYWHITE);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        ::EndDrawing();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        Camera2D f</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1InputGamepad_html_a8f556b9e8ae829ae5b58220c437b3b23"><div class="ttname"><a href="classRayLib_1_1InputGamepad.html#a8f556b9e8ae829ae5b58220c437b3b23">RayLib::InputGamepad::getGamepadButtonPressed</a></div><div class="ttdeci">int getGamepadButtonPressed(void) const</div><div class="ttdef"><b>Definition:</b> <a href="InputGamepad_8cpp_source.html#l00057">InputGamepad.cpp:57</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Window_html_a09dd137b5d365c22f6781d6a17a1eb87"><div class="ttname"><a href="classRayLib_1_1Window.html#a09dd137b5d365c22f6781d6a17a1eb87">RayLib::Window::getInputGamepad</a></div><div class="ttdeci">RayLib::InputGamepad getInputGamepad() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00063">Window.cpp:63</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Window_html_a2ca6b034a482304270e21f96d22a4951"><div class="ttname"><a href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00011">Window.cpp:11</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
