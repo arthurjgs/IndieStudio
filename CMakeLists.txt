@@ -19,22 +19,41 @@ find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
-        src/RayLib/RayLib.cpp
-        src/RayLib/RayLibCore.cpp
-        src/RayLib/RayLibShapes.cpp
-        src/RayLib/RayLibTextures.cpp
-        src/RayLib/RayLibText.cpp
-        src/RayLib/RayLibModels.cpp
-        src/RayLib/RayLibRaudio.cpp
-        src/RayLib/RayLibPhysac.cpp
-        src/RayLib/RayLib.hpp
         src/DynamicLibrary/DynamicLibrary.cpp
         src/DynamicLibrary/DynamicLibrary.hpp
         src/DynamicLibrary/DynamicLibraryException.cpp
-        src/DynamicLibrary/DynamicLibraryException.hpp src/RayLib/RayLibModel.cpp src/RayLib/RayLibModel.hpp)
-
+        src/DynamicLibrary/DynamicLibraryException.hpp src/RayLib/RayLibModel.cpp src/RayLib/RayLibModel.hpp
+        src/RayLib/Shapes/Circle/Circle.cpp
+        src/RayLib/Shapes/Collision/Collision.cpp
+        src/RayLib/Shapes/Ellipse/Ellipse.cpp
+        src/RayLib/Shapes/Line/Line.cpp
+        src/RayLib/Shapes/Pixel/Pixel.cpp
+        src/RayLib/Shapes/Poly/Poly.cpp
+        src/RayLib/Shapes/Rectangle/Rectangle.cpp
+        src/RayLib/Shapes/Ring/Ring.cpp
+        src/RayLib/Shapes/Triangle/Triangle.cpp
+        src/RayLib/Text/Text.cpp
+        src/RayLib/Audio/AudioStream/AudioStream.cpp
+        src/RayLib/Audio/Music/Music.cpp
+        src/RayLib/Audio/Sound/Sound.cpp
+        src/Types/Color/Color.cpp
+        src/Types/Image/Image.cpp
+        src/Types/Matrix/Matrix.cpp
+        src/Types/Rectangle/Rectangle.cpp
+        src/RayLib/Window.cpp
+        src/RayLib/InputKeyboard.cpp
+        src/RayLib/InputMouse.cpp
+        src/RayLib/InputGamepad.cpp
+        src/RayLib/Cursor.cpp
+        src/Types/Camera/Camera2D.cpp
+        src/Types/Camera/Camera3D.cpp
+        src/Types/RenderTexture/Texture.cpp
+        src/Types/RenderTexture/RenderTexture.cpp
+        src/RayLib/Drawing.cpp
+        src/RayLib/Camera.cpp
+        )
+        
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
-
 add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
 
