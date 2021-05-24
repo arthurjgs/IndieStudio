@@ -14,7 +14,7 @@
 #include <filesystem>
 #include <iostream>
 #include <algorithm>
-#include "../../Types/Vector/Vector.hpp"
+#include "../../../Types/Vector/Vector.hpp"
 
 namespace RayLib {
     namespace Models {
