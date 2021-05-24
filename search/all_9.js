@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['main_201',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
-  ['main_2ecpp_202',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matrix_203',['Matrix',['../classTypes_1_1Matrix.html#aa138fdfb807052f730e897a7d04894d6',1,'Types::Matrix::Matrix(const Matrix &amp;&amp;cpy)'],['../classTypes_1_1Matrix.html#a20e4c5846a7cc4aac7e8e225b958b207',1,'Types::Matrix::Matrix()=delete'],['../classTypes_1_1Matrix.html#afb877a4b1d438d65cd81cd7ec7e2e593',1,'Types::Matrix::Matrix(const float *&amp;matrix)'],['../classTypes_1_1Matrix.html#ab178787bb252c3809deae003b775d121',1,'Types::Matrix::Matrix(const Matrix &amp;cpy)'],['../classTypes_1_1Matrix.html',1,'Types::Matrix']]],
-  ['matrix_2ecpp_204',['Matrix.cpp',['../Matrix_8cpp.html',1,'']]],
-  ['matrix_2ehpp_205',['Matrix.hpp',['../Matrix_8hpp.html',1,'']]],
-  ['matrix_5fsize_206',['MATRIX_SIZE',['../Matrix_8hpp.html#a2bd32349fcbeb6ee86434a65226cba1a',1,'Matrix.hpp']]],
-  ['music_207',['Music',['../classRayLib_1_1Audio_1_1Music.html#a1b86196495addb62cebcbbfb19f93c53',1,'RayLib::Audio::Music::Music()=delete'],['../classRayLib_1_1Audio_1_1Music.html#a2ecc7a467298097df8d8b0e725b60092',1,'RayLib::Audio::Music::Music(const std::string &amp;fileName)'],['../classRayLib_1_1Audio_1_1Music.html#a2ca7c6af4b000a97c9615ff778877ff1',1,'RayLib::Audio::Music::Music(const std::string &amp;fileType, unsigned char *data, const int &amp;dataSize)'],['../classRayLib_1_1Audio_1_1Music.html#aaafdf5b3866461ed5a181cf93328306f',1,'RayLib::Audio::Music::Music(const Music &amp;)=delete'],['../classRayLib_1_1Audio_1_1Music.html',1,'RayLib::Audio::Music']]],
-  ['music_2ecpp_208',['Music.cpp',['../Music_8cpp.html',1,'']]],
-  ['music_2ehpp_209',['Music.hpp',['../Music_8hpp.html',1,'']]]
+  ['_7edynamiclibrary_61',['~DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html#af9cb114d1b2e014869056f676e23d362',1,'LibDl::DynamicLibrary']]],
+  ['_7eindiemodel_62',['~IndieModel',['../classRayLib_1_1IndieModel.html#af0156b492603d0ed3bbb1c43ac3dfcd9',1,'RayLib::IndieModel']]],
+  ['_7eraylibcore_63',['~RayLibCore',['../classrl_1_1RayLibCore.html#a54ad49560afbdbe9f79dc0eb414b7939',1,'rl::RayLibCore']]],
+  ['_7eraylibmodels_64',['~RayLibModels',['../classrl_1_1RayLibModels.html#a905ba57e0cd6ec1dab920e18dd62b571',1,'rl::RayLibModels']]],
+  ['_7eraylibphysac_65',['~RayLibPhysac',['../classrl_1_1RayLibPhysac.html#ae9324027c6a8b6f601cf65069edf922e',1,'rl::RayLibPhysac']]],
+  ['_7eraylibraudio_66',['~RayLibRaudio',['../classrl_1_1RayLibRaudio.html#a7ee6fb3d81a1d938f1bd5ddd9e81915e',1,'rl::RayLibRaudio']]],
+  ['_7eraylibshapes_67',['~RayLibShapes',['../classrl_1_1RayLibShapes.html#acc344950c014135ac1082d26107d5735',1,'rl::RayLibShapes']]],
+  ['_7eraylibtext_68',['~RayLibText',['../classrl_1_1RayLibText.html#aaf84fa1a68688fa9b159826f029e6ba8',1,'rl::RayLibText']]],
+  ['_7eraylibtextures_69',['~RayLibTextures',['../classrl_1_1RayLibTextures.html#a2c4220a415653338c4ea07de382040ea',1,'rl::RayLibTextures']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['audiostream_317',['AudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html',1,'RayLib::Audio']]]
+  ['dynamiclibrary_70',['DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html',1,'LibDl']]],
+  ['dynamiclibraryexception_71',['DynamicLibraryException',['../classLibDl_1_1DynamicLibraryException.html',1,'LibDl']]]
 ];

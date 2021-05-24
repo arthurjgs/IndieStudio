@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['ellipse_469',['Ellipse',['../classRayLib_1_1Shapes_1_1Ellipse.html#a1182cbc3814c62344dc8719c960b6479',1,'RayLib::Shapes::Ellipse::Ellipse()=delete'],['../classRayLib_1_1Shapes_1_1Ellipse.html#ab904d9af294ae3c49807847187067e65',1,'RayLib::Shapes::Ellipse::Ellipse(const int &amp;centerX, const int &amp;centerY, const float &amp;radiusH, const float &amp;radiusV, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Ellipse.html#ac1c88a68b5e6e365d7c8e323d94fd073',1,'RayLib::Shapes::Ellipse::Ellipse(const Ellipse &amp;cpy)']]],
-  ['enablecursor_470',['enableCursor',['../classRayLib_1_1Cursor.html#afe6ad6a4b652a1475afc4988f0628b09',1,'RayLib::Cursor']]],
-  ['endblendmode_471',['endBlendMode',['../classRayLib_1_1Drawing.html#ad78d38a3110c44750bacb9839d732f29',1,'RayLib::Drawing']]],
-  ['enddrawing_472',['endDrawing',['../classRayLib_1_1Drawing.html#a1b36ca14d0ed18b38cc0fa752388a7c6',1,'RayLib::Drawing']]],
-  ['endmode2d_473',['endMode2D',['../classRayLib_1_1Drawing.html#a76c64666155759a5c0c7ada7cee78d49',1,'RayLib::Drawing']]],
-  ['endmode3d_474',['endMode3D',['../classRayLib_1_1Drawing.html#a4577c912370ddd7bf98cb4608edfd71e',1,'RayLib::Drawing']]],
-  ['endscissormode_475',['endScissorMode',['../classRayLib_1_1Drawing.html#a3e843a20c24f380076551f57020ab536',1,'RayLib::Drawing']]],
-  ['endtexturemode_476',['endTextureMode',['../classRayLib_1_1Drawing.html#a34e7390f4370e89383c23471df95b87e',1,'RayLib::Drawing']]]
+  ['raylib_125',['RayLib',['../classrl_1_1RayLib.html#a95b1a883734e4b2df947a9501c93cdbd',1,'rl::RayLib']]],
+  ['raylibcore_126',['RayLibCore',['../classrl_1_1RayLibCore.html#a01c90e4053583b16de73a4f6050dee0e',1,'rl::RayLibCore']]],
+  ['raylibmodels_127',['RayLibModels',['../classrl_1_1RayLibModels.html#a643b4019833c9671f8e5d4e2fd8e62c7',1,'rl::RayLibModels']]],
+  ['raylibphysac_128',['RayLibPhysac',['../classrl_1_1RayLibPhysac.html#ae89f6dc3ddee8ffbf9a4084c15a64b0e',1,'rl::RayLibPhysac']]],
+  ['raylibraudio_129',['RayLibRaudio',['../classrl_1_1RayLibRaudio.html#a9368d0fa43b8d155074a61a023f8ce91',1,'rl::RayLibRaudio']]],
+  ['raylibshapes_130',['RayLibShapes',['../classrl_1_1RayLibShapes.html#acc2f9c36b443e0afe90634887f13a78a',1,'rl::RayLibShapes']]],
+  ['raylibtext_131',['RayLibText',['../classrl_1_1RayLibText.html#a5de96fb7ba45c12a26b0233f6c0b7fb6',1,'rl::RayLibText']]],
+  ['raylibtextures_132',['RayLibTextures',['../classrl_1_1RayLibTextures.html#a42d84f918e2573f6eed49b63a4bc7ea8',1,'rl::RayLibTextures']]],
+  ['replace_133',['replace',['../RayLibModel_8cpp.html#a0159b96c217d65d379016f6aa2c4dd57',1,'RayLibModel.cpp']]]
 ];
