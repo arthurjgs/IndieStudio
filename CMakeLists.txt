@@ -64,4 +64,3 @@ add_subdirectory("tests" "tests")
 install(TARGETS bomberman)
 
 enable_testing()
-add_test(NAME bomberman COMMAND bomberman)
