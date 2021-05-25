@@ -53,6 +53,7 @@ add_executable(bomberman
         src/Types/RenderTexture/Texture.cpp
         src/Types/RenderTexture/RenderTexture.cpp
         src/RayLib/Drawing.cpp
+        src/RayLib/Texture/Texture.cpp
         src/RayLib/Camera.cpp
         )
         
