@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['matrix_405',['Matrix',['../classTypes_1_1Matrix.html',1,'Types']]],
-  ['music_406',['Music',['../classRayLib_1_1Audio_1_1Music.html',1,'RayLib::Audio']]]
+  ['pixel_337',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes']]],
+  ['poly_338',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes']]]
 ];
