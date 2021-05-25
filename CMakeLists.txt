@@ -13,10 +13,19 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
 include_directories(src)
 include_directories(shared)
 
+file(MAKE_DIRECTORY "${CMAKE_SOURCE_DIR}/lib")
+
 find_package(raylib REQUIRED)
 
 add_executable(bomberman
         src/main.cpp
+        src/DynamicLibrary/DynamicLibrary.cpp
+        src/DynamicLibrary/DynamicLibrary.hpp
+        src/DynamicLibrary/DynamicLibraryException.cpp
+        src/DynamicLibrary/DynamicLibraryException.hpp
+        src/RayLib/Model/Animate/Animate.cpp
+        src/RayLib/Model/SimpleModel/SimpleModel.cpp
+        src/RayLib/Model/Collision/Collision.cpp
         src/RayLib/Shapes/Circle/Circle.cpp
         src/RayLib/Shapes/Collision/Collision.cpp
         src/RayLib/Shapes/Ellipse/Ellipse.cpp
@@ -45,9 +54,12 @@ add_executable(bomberman
         src/Types/RenderTexture/RenderTexture.cpp
         src/RayLib/Drawing.cpp
         src/RayLib/Texture/Texture.cpp
+        src/RayLib/Camera.cpp
         )
-
-target_link_libraries(${PROJECT_NAME} raylib)
+        
+target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
+add_subdirectory("googletest" "googletest")
+add_subdirectory("tests" "tests")
 
 install(TARGETS bomberman)
 

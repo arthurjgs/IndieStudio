@@ -70,6 +70,11 @@ RayLib::Drawing RayLib::Window::getDrawing() const
     return _drawing;
 }
 
+RayLib::Camera RayLib::Window::getCamera() const
+{
+    return _camera;
+}
+
 RayLib::Window::~Window()
 {
     ::CloseAudioDevice();
