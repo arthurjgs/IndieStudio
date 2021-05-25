@@ -55,6 +55,7 @@ add_executable(bomberman
         src/RayLib/Drawing.cpp
         src/RayLib/Texture/Texture.cpp
         src/RayLib/Camera.cpp
+        src/Game/SceneManager/Scene/Scene.cpp
         src/Game/GameObject.cpp src/Game/GameObject.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
