@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['vector_807',['Vector',['../classType_1_1Vector.html#a5e88b2be799688ef7aba0bca3f8a8db6',1,'Type::Vector::Vector()'],['../classType_1_1Vector.html#a86eb89b31a1f3eda7b468de3f978e23b',1,'Type::Vector::Vector(Floats... args)'],['../classType_1_1Vector.html#a1100574c0d4d65ab20c956d7e2e918f3',1,'Type::Vector::Vector(const Vector&lt; vecSize &gt; &amp;cpy)']]]
+  ['update_830',['update',['../classBomberman_1_1Scene.html#a1f44ba61fae17dd4596aad1c343b0964',1,'Bomberman::Scene']]],
+  ['updateaudiostream_831',['UpdateAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a7943aa4314bc8142c4e7f9751c5ace50',1,'RayLib::Audio::AudioStream']]],
+  ['updatecamera_832',['updateCamera',['../classRayLib_1_1Camera.html#a6724c9f1531a80e740958c7d1f85af13',1,'RayLib::Camera']]],
+  ['updatemusicstream_833',['UpdateMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a93e34c70fd496dd2a531f04449ca1121',1,'RayLib::Audio::Music']]],
+  ['updatesound_834',['UpdateSound',['../classRayLib_1_1Audio_1_1Sound.html#a2163f7e6f35f9cc575d3d082cb355ccc',1,'RayLib::Audio::Sound']]]
 ];
