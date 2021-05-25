@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['vector_346',['Vector',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_202_20_3e_347',['Vector&lt; 2 &gt;',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_203_20_3e_348',['Vector&lt; 3 &gt;',['../classType_1_1Vector.html',1,'Type']]]
+  ['text_418',['Text',['../classRayLib_1_1Text.html',1,'RayLib']]],
+  ['texture_419',['Texture',['../classRayLib_1_1Texture.html',1,'RayLib::Texture'],['../classType_1_1Texture.html',1,'Type::Texture']]],
+  ['triangle_420',['Triangle',['../classRayLib_1_1Shapes_1_1Triangle.html',1,'RayLib::Shapes']]]
 ];

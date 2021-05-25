@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['ellipse_329',['Ellipse',['../classRayLib_1_1Shapes_1_1Ellipse.html',1,'RayLib::Shapes']]]
+  ['drawing_400',['Drawing',['../classRayLib_1_1Drawing.html',1,'RayLib']]],
+  ['dynamiclibrary_401',['DynamicLibrary',['../classLibDl_1_1DynamicLibrary.html',1,'LibDl']]],
+  ['dynamiclibraryexception_402',['DynamicLibraryException',['../classLibDl_1_1DynamicLibraryException.html',1,'LibDl']]]
 ];

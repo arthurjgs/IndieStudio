@@ -1,18 +1,16 @@
 var searchData=
 [
-  ['audio_237',['Audio',['../namespaceRayLib_1_1Audio.html',1,'RayLib']]],
-  ['raylib_238',['RayLib',['../namespaceRayLib.html',1,'']]],
-  ['rectangle_239',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html',1,'RayLib::Shapes::Rectangle'],['../classType_1_1Rectangle.html#a098b35d848c9046cd6325d81c4ae7ce7',1,'Type::Rectangle::Rectangle(const Rectangle &amp;&amp;cpy)'],['../classType_1_1Rectangle.html#a20de977bf44e59b48efea5794a3e42de',1,'Type::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classType_1_1Rectangle.html#a7a25082c1f8b77fa74488af359355044',1,'Type::Rectangle::Rectangle(const float &amp;x, const float &amp;y, const float &amp;width, const float &amp;height)'],['../classType_1_1Rectangle.html#a03294469566bb6896f8aa328bea1c29d',1,'Type::Rectangle::Rectangle()=delete'],['../classRayLib_1_1Shapes_1_1Rectangle.html#aa91300bb2ae075fe15a1ac05a2651160',1,'RayLib::Shapes::Rectangle::Rectangle(const Rectangle &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Rectangle.html#a9586c4857f5d61a367ec3d8db9fbdc15',1,'RayLib::Shapes::Rectangle::Rectangle(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Vector&lt; 2 &gt; &amp;size, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Rectangle.html#a857884024bfc5a2090606a63a1cd8819',1,'RayLib::Shapes::Rectangle::Rectangle()=delete'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
-  ['rectangle_2ecpp_240',['Rectangle.cpp',['../Types_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)'],['../RayLib_2Shapes_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)']]],
-  ['rectangle_2ehpp_241',['Rectangle.hpp',['../Types_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)'],['../RayLib_2Shapes_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)']]],
-  ['rendertexture_242',['RenderTexture',['../classType_1_1RenderTexture.html#a8e3e6232b74d9b8d37d1c567210be045',1,'Type::RenderTexture::RenderTexture()=delete'],['../classType_1_1RenderTexture.html#acaf24d94f9ea949610d97a9a9a260f87',1,'Type::RenderTexture::RenderTexture(uint id, Type::Texture texture, Type::Texture depth)'],['../classType_1_1RenderTexture.html#a0b5042b5c5a591f8e816ad000668ec6c',1,'Type::RenderTexture::RenderTexture(const RenderTexture &amp;cpy)'],['../classType_1_1RenderTexture.html',1,'Type::RenderTexture']]],
-  ['rendertexture_2ecpp_243',['RenderTexture.cpp',['../RenderTexture_8cpp.html',1,'']]],
-  ['rendertexture_2ehpp_244',['RenderTexture.hpp',['../RenderTexture_8hpp.html',1,'']]],
-  ['resumeaudiostream_245',['ResumeAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a7a14c54c32096e81dddb97b943be0d07',1,'RayLib::Audio::AudioStream']]],
-  ['resumemusicstream_246',['ResumeMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a631abe260a834e718789cdadaf6d8401',1,'RayLib::Audio::Music']]],
-  ['resumesound_247',['ResumeSound',['../classRayLib_1_1Audio_1_1Sound.html#ad26ecd520e24f76803ca0542c428de90',1,'RayLib::Audio::Sound']]],
-  ['ring_248',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html',1,'RayLib::Shapes::Ring'],['../classRayLib_1_1Shapes_1_1Ring.html#a6fa198355eb05941add07a5356f2e480',1,'RayLib::Shapes::Ring::Ring()=delete'],['../classRayLib_1_1Shapes_1_1Ring.html#aaccf25536933a9a158a1845a08c45a1d',1,'RayLib::Shapes::Ring::Ring(const Ring &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Ring.html#ad6e4b6c606e9337119c8059c3772956a',1,'RayLib::Shapes::Ring::Ring(const Type::Vector&lt; 2 &gt; &amp;center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, const Type::Color &amp;color)']]],
-  ['ring_2ecpp_249',['Ring.cpp',['../Ring_8cpp.html',1,'']]],
-  ['ring_2ehpp_250',['Ring.hpp',['../Ring_8hpp.html',1,'']]],
-  ['shapes_251',['Shapes',['../namespaceRayLib_1_1Shapes.html',1,'RayLib']]]
+  ['pauseaudiostream_270',['PauseAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a9d77c142f8145186f4596d0ddc4620e6',1,'RayLib::Audio::AudioStream']]],
+  ['pausemusicstream_271',['PauseMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a659ec7c919110be3ddcb984d306e1160',1,'RayLib::Audio::Music']]],
+  ['pausesound_272',['PauseSound',['../classRayLib_1_1Audio_1_1Sound.html#a582e4a254f272372f871e2d569634a5d',1,'RayLib::Audio::Sound']]],
+  ['pixel_273',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html#aa937bb498f5594eabb3003d320713c69',1,'RayLib::Shapes::Pixel::Pixel()=delete'],['../classRayLib_1_1Shapes_1_1Pixel.html#aae2b880fcb0334276eff6f83ba573684',1,'RayLib::Shapes::Pixel::Pixel(const Type::Vector&lt; 2 &gt; &amp;position, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Pixel.html#a0e80b5032d8b39990c70598ca4e1e492',1,'RayLib::Shapes::Pixel::Pixel(const Pixel &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes::Pixel']]],
+  ['pixel_2ecpp_274',['Pixel.cpp',['../Pixel_8cpp.html',1,'']]],
+  ['pixel_2ehpp_275',['Pixel.hpp',['../Pixel_8hpp.html',1,'']]],
+  ['playaudiostream_276',['PlayAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#abffbf0e4993583175289e97a43f78a4a',1,'RayLib::Audio::AudioStream']]],
+  ['playmusicstream_277',['PlayMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a3782c885e2b1f2397f529c7726fa4816',1,'RayLib::Audio::Music']]],
+  ['playsound_278',['PlaySound',['../classRayLib_1_1Audio_1_1Sound.html#a6df0e533445975ef054c2743095497bb',1,'RayLib::Audio::Sound']]],
+  ['playsoundmulti_279',['PlaySoundMulti',['../classRayLib_1_1Audio_1_1Sound.html#a3bc808feaeee17d4a6c5d3ee3c429ea2',1,'RayLib::Audio::Sound']]],
+  ['poly_280',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html#a009289b609a116531b7cc5ecea60641f',1,'RayLib::Shapes::Poly::Poly(const Poly &amp;cpy)'],['../classRayLib_1_1Shapes_1_1Poly.html#ac53c5214732f5c0207fe54dd4bc9c221',1,'RayLib::Shapes::Poly::Poly(const Type::Vector&lt; 2 &gt; center, const int &amp;Sides, const float &amp;radius, const float &amp;rotation, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Poly.html#af81146db187f43ca4a0551817ef4430a',1,'RayLib::Shapes::Poly::Poly()=delete'],['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes::Poly']]],
+  ['poly_2ecpp_281',['Poly.cpp',['../Poly_8cpp.html',1,'']]],
+  ['poly_2ehpp_282',['Poly.hpp',['../Poly_8hpp.html',1,'']]]
 ];
