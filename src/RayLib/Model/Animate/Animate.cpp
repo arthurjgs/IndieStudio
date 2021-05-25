@@ -6,7 +6,7 @@
  **/
 
 
-#include "RayLibModel.hpp"
+#include "Animate.hpp"
 
 bool replace(std::string& str, const std::string& from, const std::string& to)
 {
@@ -19,7 +19,7 @@ bool replace(std::string& str, const std::string& from, const std::string& to)
 
 
 /**
- *  IndieModel constructor
+ *  Animate constructor
  *  this will create a model without its textures and animation
  *  It will only load the model itself without any information
  *  thus you should call setTexture and/or setAnimation before using display
@@ -29,17 +29,23 @@ bool replace(std::string& str, const std::string& from, const std::string& to)
  *  @param rotationAngle models position (default is 0)
  *  @param scale models position (default is 1)
  */
-RayLib::IndieModel::IndieModel(const std::string &path, Vector3 position, Vector3 rotationAxis, double rotationAngle, Vector3 scale) : _animFrameCounter(0),
-                                                                                                                                            _position(position),
-                                                                                                                                            _rotationAngle(rotationAngle),
-                                                                                                                                            _rotationAxis(rotationAxis),
-                                                                                                                                            _scale(scale),
-                                                                                                                                            _path(path),
-                                                                                                                                            _iqmAnimCount(0),
-                                                                                                                                            _animations()
+RayLib::Models::Animate::Animate(const std::string &path, const Type::Vector<3> &position, const Type::Vector<3> &rotationAxis, double rotationAngle, const Type::Vector<3> &scale) : 
+_path(path),
+_animFrameCounter(0),
+_iqmAnimCount(0),
+_animations(),
+_rotationAngle(rotationAngle)
 {
     // TODO: CUSTOM EXCEPTIONS
-
+    this->_position.x = position.getX();
+    this->_position.y = position.getY();
+    this->_position.z = position.getZ();
+    this->_rotationAxis.x = rotationAxis.getX();
+    this->_rotationAxis.y = rotationAxis.getY();
+    this->_rotationAxis.z = rotationAxis.getZ();
+    this->_scale.x = scale.getX();
+    this->_scale.y = scale.getY();
+    this->_scale.z = scale.getZ();
     if (std::filesystem::is_directory(_path)) {
         for (const auto &file : std::filesystem::directory_iterator(path)) {
             if (file.is_regular_file() && file.path().string().find(".mtl") == std::string::npos) {
@@ -66,7 +72,7 @@ RayLib::IndieModel::IndieModel(const std::string &path, Vector3 position, Vector
  *  @param path path to the texture (only supported format is png)
  *  @param materialIndex index of the materiel if the model contains more than one material (usually 0)
  */
-void RayLib::IndieModel::setTexture(const std::string &path, int materialIndex)
+void RayLib::Models::Animate::setTexture(const std::string &path, int materialIndex)
 {
     Texture2D texture = LoadTexture(path.c_str());
 
@@ -76,7 +82,7 @@ void RayLib::IndieModel::setTexture(const std::string &path, int materialIndex)
     _textures.emplace_back(texture);
 }
 
-RayLib::IndieModel::~IndieModel()
+RayLib::Models::Animate::~Animate()
 {
     for (auto texture : _textures)
         UnloadTexture(texture);
@@ -94,14 +100,14 @@ RayLib::IndieModel::~IndieModel()
  *  Display model with it's animation
  *  This should be the only thing used in the loop to display the model
  */
-void RayLib::IndieModel::display()
+void RayLib::Models::Animate::display()
 {
     switch (_animType) {
 
         case OBJ_LIST:
             DrawModelEx(Models[_animFrameCounter], _position, _rotationAxis, _rotationAngle, _scale, WHITE);
             _animFrameCounter++;
-            if (_animFrameCounter >= Models.size()) _animFrameCounter = 0;
+            if (_animFrameCounter >= static_cast<int>(Models.size())) _animFrameCounter = 0;
             break;
         case IQM:
             _animFrameCounter++;
@@ -111,47 +117,53 @@ void RayLib::IndieModel::display()
     }
 }
 
-void RayLib::IndieModel::setPosition(Vector3 position)
+void RayLib::Models::Animate::setPosition(const Type::Vector<3> &position)
 {
-    this->_position = position;
+    this->_position.x = position.getX();
+    this->_position.y = position.getY();
+    this->_position.z = position.getZ();
 }
 
-Vector3 RayLib::IndieModel::getPosition()
+Type::Vector<3> RayLib::Models::Animate::getPosition()
 {
-    return this->_position;
+    return (Type::Vector<3>(this->_position.x, this->_position.y, this->_position.z));
 }
 
-void RayLib::IndieModel::setScale(Vector3 scale)
+void RayLib::Models::Animate::setScale(const Type::Vector<3> &scale)
 {
-    this->_scale = scale;
+    this->_scale.x = scale.getX();
+    this->_scale.y = scale.getY();
+    this->_scale.z = scale.getZ();
 }
 
-Vector3 RayLib::IndieModel::getScale()
+Type::Vector<3> RayLib::Models::Animate::getScale()
 {
-    return this->_scale;
+    return (Type::Vector<3>(this->_scale.x, this->_scale.y, this->_scale.z));
 }
 
-void RayLib::IndieModel::setRotationAxis(Vector3 rotationAxis)
+void RayLib::Models::Animate::setRotationAxis(const Type::Vector<3> &rotationAxis)
 {
-    this->_rotationAxis = rotationAxis;
+    this->_rotationAxis.x = rotationAxis.getX();
+    this->_rotationAxis.y = rotationAxis.getY();
+    this->_rotationAxis.z = rotationAxis.getZ();
 }
 
-Vector3 RayLib::IndieModel::getRotationAxis()
+Type::Vector<3> RayLib::Models::Animate::getRotationAxis()
 {
-    return this->_rotationAxis;
+    return (Type::Vector<3>(this->_rotationAxis.x, this->_rotationAxis.y, this->_rotationAxis.z));
 }
 
-void RayLib::IndieModel::setRotationAngle(double rotationAngle)
+void RayLib::Models::Animate::setRotationAngle(double rotationAngle)
 {
     this->_rotationAngle = rotationAngle;
 }
 
-double RayLib::IndieModel::getRotationAngle()
+double RayLib::Models::Animate::getRotationAngle()
 {
     return this->_rotationAngle;
 }
 
-void RayLib::IndieModel::setAnimation(const std::string &path)
+void RayLib::Models::Animate::setAnimation(const std::string &path)
 {
     _animations = LoadModelAnimations(path.c_str(), &_iqmAnimCount);
 }
