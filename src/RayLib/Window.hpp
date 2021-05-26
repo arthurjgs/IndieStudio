@@ -17,6 +17,8 @@
 #include "Cursor.hpp"
 #include "Drawing.hpp"
 #include "Camera.hpp"
+#include <memory>
+#include "../Game/SceneManager/SceneManager.hpp"
 
 namespace RayLib
 {
@@ -25,7 +27,7 @@ namespace RayLib
             static Window &getInstance();
             float getElapsedTime();
             bool isOpen() const;
-            void draw() const;
+            void draw(Bomberman::SceneManager &manager) const;
             RayLib::InputMouse getInputMouse() const;
             RayLib::InputKeyboard getInputKeyboard() const;
             RayLib::InputGamepad getInputGamepad() const;

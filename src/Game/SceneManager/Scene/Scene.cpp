@@ -15,12 +15,6 @@ __manager(manager)
 {
 }
 
-void Bomberman::Scene::_loadScene(const Scene &newScene)
-{
-    // Implement loading screen here
-    (void)newScene;
-}
-
 Bomberman::GameObject &Bomberman::Scene::getObjFromName(const std::string &name, std::vector<GameObject> &container)
 {
     for (GameObject &val : container) {
@@ -45,9 +39,4 @@ std::vector<std::reference_wrapper<Bomberman::GameObject>> Bomberman::Scene::get
         // TODO: OR DO NOTHING DEPENDS WHEN TYPE DOES NOT MATCH
     }
     return (vec);
-}
-
-void Bomberman::Scene::_unloadMe()
-{
-    // unload current scene
 }

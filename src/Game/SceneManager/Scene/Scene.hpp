@@ -15,6 +15,8 @@
 #include <vector>
 
 namespace Bomberman {
+    class SceneManager;
+    
     class Scene {
         public:
             Scene() = delete;
@@ -29,9 +31,9 @@ namespace Bomberman {
             virtual void update(const double &elapsed) = 0;
             virtual void drawScene() = 0;
         protected:
-            void _loadScene(const Scene &newScene);
-            void _unloadMe();
         private:
             SceneManager &__manager;
     };
 }
+
+#include "../SceneManager.hpp"

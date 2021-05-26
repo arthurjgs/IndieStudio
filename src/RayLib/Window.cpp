@@ -42,11 +42,11 @@ bool RayLib::Window::isOpen() const
     return (!::WindowShouldClose());
 }
 
-void RayLib::Window::draw() const
+void RayLib::Window::draw(Bomberman::SceneManager &manager) const
 {
     ::BeginDrawing();
     ::ClearBackground(::RAYWHITE);
-    // TODO: call scene draw method
+    manager.draw();
     ::EndDrawing();
 }
 
