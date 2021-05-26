@@ -15,9 +15,9 @@ int main()
     engine.newScene<Bomberman::LoadingScreen>();
 
     while (RayLib::Window::getInstance().isOpen()) {
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_ENTER) == true)
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_A) == true)
             engine.newScene<Bomberman::TestScene>();
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_SPACE) == true)
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_E) == true)
             engine.unloadScene();
         engine.checkStack(); // check if stack has scene to render
         engine.update(RayLib::Window::getInstance().getElapsedTime());
