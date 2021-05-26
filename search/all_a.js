@@ -7,9 +7,8 @@ var searchData=
   ['matrix_2ehpp_277',['Matrix.hpp',['../Matrix_8hpp.html',1,'']]],
   ['matrix_5fsize_278',['MATRIX_SIZE',['../Matrix_8hpp.html#a2bd32349fcbeb6ee86434a65226cba1a',1,'Matrix.hpp']]],
   ['models_279',['Models',['../classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12',1,'RayLib::Models::Animate']]],
-  ['music_280',['Music',['../classRayLib_1_1Audio_1_1Music.html#a1b86196495addb62cebcbbfb19f93c53',1,'RayLib::Audio::Music::Music()=delete'],['../classRayLib_1_1Audio_1_1Music.html#a2ecc7a467298097df8d8b0e725b60092',1,'RayLib::Audio::Music::Music(const std::string &amp;fileName)'],['../classRayLib_1_1Audio_1_1Music.html#a2ca7c6af4b000a97c9615ff778877ff1',1,'RayLib::Audio::Music::Music(const std::string &amp;fileType, unsigned char *data, const int &amp;dataSize)'],['../classRayLib_1_1Audio_1_1Music.html#aaafdf5b3866461ed5a181cf93328306f',1,'RayLib::Audio::Music::Music(const Music &amp;)=delete']]],
-  ['music_281',['MUSIC',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be',1,'Bomberman::GameObject']]],
-  ['music_282',['Music',['../classRayLib_1_1Audio_1_1Music.html',1,'RayLib::Audio']]],
-  ['music_2ecpp_283',['Music.cpp',['../Music_8cpp.html',1,'']]],
-  ['music_2ehpp_284',['Music.hpp',['../Music_8hpp.html',1,'']]]
+  ['music_280',['MUSIC',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be',1,'Bomberman::GameObject']]],
+  ['music_281',['Music',['../classRayLib_1_1Audio_1_1Music.html#a1b86196495addb62cebcbbfb19f93c53',1,'RayLib::Audio::Music::Music()=delete'],['../classRayLib_1_1Audio_1_1Music.html#a2ecc7a467298097df8d8b0e725b60092',1,'RayLib::Audio::Music::Music(const std::string &amp;fileName)'],['../classRayLib_1_1Audio_1_1Music.html#a2ca7c6af4b000a97c9615ff778877ff1',1,'RayLib::Audio::Music::Music(const std::string &amp;fileType, unsigned char *data, const int &amp;dataSize)'],['../classRayLib_1_1Audio_1_1Music.html#aaafdf5b3866461ed5a181cf93328306f',1,'RayLib::Audio::Music::Music(const Music &amp;)=delete'],['../classRayLib_1_1Audio_1_1Music.html',1,'RayLib::Audio::Music']]],
+  ['music_2ecpp_282',['Music.cpp',['../Music_8cpp.html',1,'']]],
+  ['music_2ehpp_283',['Music.hpp',['../Music_8hpp.html',1,'']]]
 ];

@@ -99,11 +99,14 @@ $(function() {
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;threadManager = manager;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        manager.<a class="code" href="classBomberman_1_1SceneManager.html#ace02ba15396144aa16fecee7fd9ec4e8">newScene</a>&lt;<a class="code" href="classBomberman_1_1LoadingScreen.html">LoadingScreen</a>&gt;();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::thread([&amp;threadManager]() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }).detach();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;LOADING SCREEN LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::thread([&amp;threadManager, &amp;args...]() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            threadManager.replaceTop&lt;scene&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;MAIN SCENE LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }).detach();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;PASS&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1LoadingScreen_html"><div class="ttname"><a href="classBomberman_1_1LoadingScreen.html">Bomberman::LoadingScreen</a></div><div class="ttdef"><b>Definition:</b> <a href="LoadingScreen_8hpp_source.html#l00018">LoadingScreen.hpp:18</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1LoadingScreen_html_a163a792afa7448240f26035b366f033d"><div class="ttname"><a href="classBomberman_1_1LoadingScreen.html#a163a792afa7448240f26035b366f033d">Bomberman::LoadingScreen::LoadingScreen</a></div><div class="ttdeci">LoadingScreen(const LoadingScreen &amp;)=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1LoadingScreen_html_a1c43bd82769dfef720c609bab2b4c263"><div class="ttname"><a href="classBomberman_1_1LoadingScreen.html#a1c43bd82769dfef720c609bab2b4c263">Bomberman::LoadingScreen::operator=</a></div><div class="ttdeci">LoadingScreen &amp; operator=(const LoadingScreen &amp;)=delete</div></div>

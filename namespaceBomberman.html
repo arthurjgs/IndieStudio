@@ -123,10 +123,13 @@ template&lt;typename scene , typename ... Args&gt; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        SceneManager &amp;threadManager = manager;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        manager.newScene&lt;LoadingScreen&gt;();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::thread([&amp;threadManager]() {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }).detach();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;LOADING SCREEN LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::thread([&amp;threadManager, &amp;args...]() {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            threadManager.replaceTop&lt;scene&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;MAIN SCENE LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }).detach();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;PASS&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

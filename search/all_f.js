@@ -35,12 +35,13 @@ var searchData=
   ['simplemodel_361',['SimpleModel',['../classRayLib_1_1Models_1_1SimpleModel.html',1,'RayLib::Models::SimpleModel'],['../classRayLib_1_1Models_1_1SimpleModel.html#ae40aa03e337f6d064b01403cb4f81b17',1,'RayLib::Models::SimpleModel::SimpleModel()=default'],['../classRayLib_1_1Models_1_1SimpleModel.html#a829392b8d5c7eba14b6bd02e386474d2',1,'RayLib::Models::SimpleModel::SimpleModel(const SimpleModel &amp;cpy)=delete']]],
   ['simplemodel_2ecpp_362',['SimpleModel.cpp',['../SimpleModel_8cpp.html',1,'']]],
   ['simplemodel_2ehpp_363',['SimpleModel.hpp',['../SimpleModel_8hpp.html',1,'']]],
-  ['sound_364',['Sound',['../classRayLib_1_1Audio_1_1Sound.html',1,'RayLib::Audio::Sound'],['../classRayLib_1_1Audio_1_1Sound.html#a01a8fe5d0096b4dbb1995c4b36954434',1,'RayLib::Audio::Sound::Sound()=delete'],['../classRayLib_1_1Audio_1_1Sound.html#ae1f82a75055805d6c76564d563b02d5c',1,'RayLib::Audio::Sound::Sound(const std::string &amp;filePath)'],['../classRayLib_1_1Audio_1_1Sound.html#a571983f7835ba23a4813002a658abfdf',1,'RayLib::Audio::Sound::Sound(const Sound &amp;)=delete']]],
+  ['sound_364',['Sound',['../classRayLib_1_1Audio_1_1Sound.html',1,'RayLib::Audio']]],
   ['sound_365',['SOUND',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a',1,'Bomberman::GameObject']]],
-  ['sound_2ecpp_366',['Sound.cpp',['../Sound_8cpp.html',1,'']]],
-  ['sound_2ehpp_367',['Sound.hpp',['../Sound_8hpp.html',1,'']]],
-  ['stopaudiostream_368',['StopAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a03117f65c2ac05a9b8073fe524f21032',1,'RayLib::Audio::AudioStream']]],
-  ['stopmusicstream_369',['StopMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849',1,'RayLib::Audio::Music']]],
-  ['stopsound_370',['StopSound',['../classRayLib_1_1Audio_1_1Sound.html#add1fe3fd6f85290a11d78fbda3e7c187',1,'RayLib::Audio::Sound']]],
-  ['stopsoundmulti_371',['StopSoundMulti',['../classRayLib_1_1Audio_1_1Sound.html#aea0c57f7886e8c1413869dfdea94cb35',1,'RayLib::Audio::Sound']]]
+  ['sound_366',['Sound',['../classRayLib_1_1Audio_1_1Sound.html#a01a8fe5d0096b4dbb1995c4b36954434',1,'RayLib::Audio::Sound::Sound()=delete'],['../classRayLib_1_1Audio_1_1Sound.html#ae1f82a75055805d6c76564d563b02d5c',1,'RayLib::Audio::Sound::Sound(const std::string &amp;filePath)'],['../classRayLib_1_1Audio_1_1Sound.html#a571983f7835ba23a4813002a658abfdf',1,'RayLib::Audio::Sound::Sound(const Sound &amp;)=delete']]],
+  ['sound_2ecpp_367',['Sound.cpp',['../Sound_8cpp.html',1,'']]],
+  ['sound_2ehpp_368',['Sound.hpp',['../Sound_8hpp.html',1,'']]],
+  ['stopaudiostream_369',['StopAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#a03117f65c2ac05a9b8073fe524f21032',1,'RayLib::Audio::AudioStream']]],
+  ['stopmusicstream_370',['StopMusicStream',['../classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849',1,'RayLib::Audio::Music']]],
+  ['stopsound_371',['StopSound',['../classRayLib_1_1Audio_1_1Sound.html#add1fe3fd6f85290a11d78fbda3e7c187',1,'RayLib::Audio::Sound']]],
+  ['stopsoundmulti_372',['StopSoundMulti',['../classRayLib_1_1Audio_1_1Sound.html#aea0c57f7886e8c1413869dfdea94cb35',1,'RayLib::Audio::Sound']]]
 ];

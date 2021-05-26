@@ -90,6 +90,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memTemplParams" colspan="2">template&lt;typename scene , typename ... Args&gt; </td></tr>
 <tr class="memitem:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#ace02ba15396144aa16fecee7fd9ec4e8">newScene</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="separator:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc5a92418c2488b094cf6a96c0358263"><td class="memTemplParams" colspan="2">template&lt;typename scene , typename ... Args&gt; </td></tr>
+<tr class="memitem:abc5a92418c2488b094cf6a96c0358263"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#abc5a92418c2488b094cf6a96c0358263">replaceTop</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="separator:abc5a92418c2488b094cf6a96c0358263"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab91350d7333ede1e22e9d30ac3bb9aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#ab91350d7333ede1e22e9d30ac3bb9aa2">unloadScene</a> ()</td></tr>
 <tr class="separator:ab91350d7333ede1e22e9d30ac3bb9aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45845600e2d37b4f934e29e4234f427c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a45845600e2d37b4f934e29e4234f427c">update</a> (const double &amp;elapsed)</td></tr>
@@ -207,7 +210,7 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Error scene stack is empty nothing to render&quot;</span>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1SceneManager_html_ae8c7177fdf1453484d8dd2805f53b6e0"><div class="ttname"><a href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">Bomberman::SceneManager::__engine</a></div><div class="ttdeci">std::stack&lt; std::unique_ptr&lt; Scene &gt; &gt; __engine</div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00041">SceneManager.hpp:41</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1SceneManager_html_ae8c7177fdf1453484d8dd2805f53b6e0"><div class="ttname"><a href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">Bomberman::SceneManager::__engine</a></div><div class="ttdeci">std::stack&lt; std::unique_ptr&lt; Scene &gt; &gt; __engine</div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00053">SceneManager.hpp:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -294,6 +297,45 @@ template&lt;typename scene , typename ... Args&gt; </div>
 
 </div>
 </div>
+<a id="abc5a92418c2488b094cf6a96c0358263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc5a92418c2488b094cf6a96c0358263">&#9670;&nbsp;</a></span>replaceTop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename scene , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::replaceTop </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00036">36</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                std::unique_ptr&lt;scene&gt; result = std::make_unique&lt;scene&gt;(*<span class="keyword">this</span>, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.size() == 0) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    <span class="comment">// TODO: custom exception type</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;error can&#39;t replace stack is empty&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.top() = std::move(result);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ab91350d7333ede1e22e9d30ac3bb9aa2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab91350d7333ede1e22e9d30ac3bb9aa2">&#9670;&nbsp;</a></span>unloadScene()</h2>
 
@@ -360,7 +402,7 @@ template&lt;typename scene , typename ... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00041">41</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00053">53</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
 
 </div>
 </div>
