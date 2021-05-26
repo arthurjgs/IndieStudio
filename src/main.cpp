@@ -12,7 +12,7 @@ int main()
 
     Bomberman::SceneManager engine;
 
-    engine.newScene<Bomberman::LoadingScreen>();
+    Bomberman::changeScene<Bomberman::TestScene>(engine);
 
     while (RayLib::Window::getInstance().isOpen()) {
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_A) == true)

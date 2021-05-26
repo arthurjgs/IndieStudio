@@ -9,11 +9,13 @@
  */
 
 #include "TestScene.hpp"
+#include <unistd.h>
+
 
 Bomberman::TestScene::TestScene(SceneManager &manager) :
 Scene(manager)
 {
-
+    ::usleep(100000);
 }
 
 void Bomberman::TestScene::update(const double &elapsed)

@@ -31,6 +31,18 @@ namespace Bomberman {
 
                 this->__engine.push(std::move(result));
             }
+            
+            template<typename scene, typename ...Args>
+            void replaceTop(Args &&...args)
+            {
+                std::unique_ptr<scene> result = std::make_unique<scene>(*this, std::forward<Args>(args)...);
+
+                if (this->__engine.size() == 0) {
+                    // TODO: custom exception type
+                    throw std::runtime_error("error can't replace stack is empty");
+                }
+                this->__engine.top() = std::move(result);
+            }
 
             void unloadScene();
             void update(const double &elapsed);

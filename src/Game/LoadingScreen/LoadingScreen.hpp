@@ -36,8 +36,11 @@ namespace Bomberman {
         SceneManager &threadManager = manager;
 
         manager.newScene<LoadingScreen>();
-        std::thread([&threadManager]() {
-
+        std::cout << "LOADING SCREEN LOADED" << std::endl;
+        std::thread([&threadManager, &args...]() {
+            threadManager.replaceTop<scene>(std::forward<Args>(args)...);
+            std::cout << "MAIN SCENE LOADED" << std::endl;
         }).detach();
+        std::cout << "PASS" << std::endl;
     }
 }
