@@ -83,8 +83,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1fd5af46b0138e03cec9fc16352a2cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ced13630796ae71a50359b8c82ea812"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812">isOpen</a> () const</td></tr>
 <tr class="separator:a9ced13630796ae71a50359b8c82ea812"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a10f2b1803f5042f172c0bccfdc77b611"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Window.html#a10f2b1803f5042f172c0bccfdc77b611">draw</a> () const</td></tr>
-<tr class="separator:a10f2b1803f5042f172c0bccfdc77b611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cc11e17f91579d3bae560cc02a4c53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53">draw</a> (<a class="el" href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a> &amp;manager) const</td></tr>
+<tr class="separator:aa7cc11e17f91579d3bae560cc02a4c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35c08f8a9e63ebee7041cdef8ac752fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRayLib_1_1InputMouse.html">RayLib::InputMouse</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Window.html#a35c08f8a9e63ebee7041cdef8ac752fd">getInputMouse</a> () const</td></tr>
 <tr class="separator:a35c08f8a9e63ebee7041cdef8ac752fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae845880afbbfb72d36a78d61bcd3c295"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRayLib_1_1InputKeyboard.html">RayLib::InputKeyboard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">getInputKeyboard</a> () const</td></tr>
@@ -105,10 +105,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Window_8hpp_source.html#l00023">23</a> of file <a class="el" href="Window_8hpp_source.html">Window.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Window_8hpp_source.html#l00025">25</a> of file <a class="el" href="Window_8hpp_source.html">Window.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a10f2b1803f5042f172c0bccfdc77b611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10f2b1803f5042f172c0bccfdc77b611">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="aa7cc11e17f91579d3bae560cc02a4c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cc11e17f91579d3bae560cc02a4c53">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -116,7 +116,8 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void RayLib::Window::draw </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -126,9 +127,10 @@ Static Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    ::BeginDrawing();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ::ClearBackground(::RAYWHITE);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// TODO: call scene draw method</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    manager.<a class="code" href="classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f">draw</a>();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    ::EndDrawing();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="ttc" id="aclassBomberman_1_1SceneManager_html_a2ace75d3b6d8cbb20043db00a3716b6f"><div class="ttname"><a href="classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f">Bomberman::SceneManager::draw</a></div><div class="ttdeci">void draw()</div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8cpp_source.html#l00031">SceneManager.cpp:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -312,7 +314,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> <a class="code" href="classRayLib_1_1Window.html">RayLib::Window</a> win = <a class="code" href="classRayLib_1_1Window.html">RayLib::Window</a>(1920, 1080, <span class="stringliteral">&quot;Bomberman&quot;</span>);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> (win);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Window_html"><div class="ttname"><a href="classRayLib_1_1Window.html">RayLib::Window</a></div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00023">Window.hpp:23</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Window_html"><div class="ttname"><a href="classRayLib_1_1Window.html">RayLib::Window</a></div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00025">Window.hpp:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

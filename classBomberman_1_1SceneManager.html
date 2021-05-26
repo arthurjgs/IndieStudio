@@ -68,6 +68,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classBomberman_1_1SceneManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Bomberman::SceneManager Class Reference</div>  </div>
@@ -82,13 +83,33 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a2ecef35981761b5daa9f30a0e4dec02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a356492fde68a162e25a5d879f57debfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a356492fde68a162e25a5d879f57debfd">~SceneManager</a> ()=default</td></tr>
 <tr class="separator:a356492fde68a162e25a5d879f57debfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4610b02dd330c037380f4fba7bc2a036"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a4610b02dd330c037380f4fba7bc2a036">SceneManager</a> (const <a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;)=delete</td></tr>
+<tr class="separator:a4610b02dd330c037380f4fba7bc2a036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee4d8c38c3b8b4f2a6a87b7141ff2cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a4ee4d8c38c3b8b4f2a6a87b7141ff2cf">operator=</a> (const <a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;)=delete</td></tr>
+<tr class="separator:a4ee4d8c38c3b8b4f2a6a87b7141ff2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memTemplParams" colspan="2">template&lt;typename scene , typename ... Args&gt; </td></tr>
+<tr class="memitem:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#ace02ba15396144aa16fecee7fd9ec4e8">newScene</a> (Args &amp;&amp;...args)</td></tr>
+<tr class="separator:ace02ba15396144aa16fecee7fd9ec4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab91350d7333ede1e22e9d30ac3bb9aa2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#ab91350d7333ede1e22e9d30ac3bb9aa2">unloadScene</a> ()</td></tr>
+<tr class="separator:ab91350d7333ede1e22e9d30ac3bb9aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45845600e2d37b4f934e29e4234f427c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a45845600e2d37b4f934e29e4234f427c">update</a> (const double &amp;elapsed)</td></tr>
+<tr class="separator:a45845600e2d37b4f934e29e4234f427c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ace75d3b6d8cbb20043db00a3716b6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f">draw</a> ()</td></tr>
+<tr class="separator:a2ace75d3b6d8cbb20043db00a3716b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02506a94da139cd0c177511d3bf86378"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#a02506a94da139cd0c177511d3bf86378">checkStack</a> () const</td></tr>
+<tr class="separator:a02506a94da139cd0c177511d3bf86378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ae8c7177fdf1453484d8dd2805f53b6e0"><td class="memItemLeft" align="right" valign="top">std::stack&lt; std::unique_ptr&lt; <a class="el" href="classBomberman_1_1Scene.html">Scene</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a></td></tr>
+<tr class="separator:ae8c7177fdf1453484d8dd2805f53b6e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00017">17</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00020">20</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2ecef35981761b5daa9f30a0e4dec02a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ecef35981761b5daa9f30a0e4dec02a">&#9670;&nbsp;</a></span>SceneManager()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ecef35981761b5daa9f30a0e4dec02a">&#9670;&nbsp;</a></span>SceneManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,8 +158,215 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a4610b02dd330c037380f4fba7bc2a036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4610b02dd330c037380f4fba7bc2a036">&#9670;&nbsp;</a></span>SceneManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Bomberman::SceneManager::SceneManager </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a02506a94da139cd0c177511d3bf86378"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02506a94da139cd0c177511d3bf86378">&#9670;&nbsp;</a></span>checkStack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::checkStack </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8cpp_source.html#l00023">23</a> of file <a class="el" href="SceneManager_8cpp_source.html">SceneManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">if</span> (this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.size() == 0) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">// TODO: modify this bellow by custom error type</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Error scene stack is empty nothing to render&quot;</span>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="aclassBomberman_1_1SceneManager_html_ae8c7177fdf1453484d8dd2805f53b6e0"><div class="ttname"><a href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">Bomberman::SceneManager::__engine</a></div><div class="ttdeci">std::stack&lt; std::unique_ptr&lt; Scene &gt; &gt; __engine</div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00041">SceneManager.hpp:41</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ace75d3b6d8cbb20043db00a3716b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ace75d3b6d8cbb20043db00a3716b6f">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8cpp_source.html#l00031">31</a> of file <a class="el" href="SceneManager_8cpp_source.html">SceneManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.top().get()-&gt;drawScene();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ace02ba15396144aa16fecee7fd9ec4e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace02ba15396144aa16fecee7fd9ec4e8">&#9670;&nbsp;</a></span>newScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename scene , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::newScene </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00028">28</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                std::unique_ptr&lt;scene&gt; result = std::make_unique&lt;scene&gt;(*<span class="keyword">this</span>, std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.push(std::move(result));</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4ee4d8c38c3b8b4f2a6a87b7141ff2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee4d8c38c3b8b4f2a6a87b7141ff2cf">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a>&amp; Bomberman::SceneManager::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab91350d7333ede1e22e9d30ac3bb9aa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab91350d7333ede1e22e9d30ac3bb9aa2">&#9670;&nbsp;</a></span>unloadScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::unloadScene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8cpp_source.html#l00013">13</a> of file <a class="el" href="SceneManager_8cpp_source.html">SceneManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.pop();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a45845600e2d37b4f934e29e4234f427c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45845600e2d37b4f934e29e4234f427c">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::SceneManager::update </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>elapsed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8cpp_source.html#l00018">18</a> of file <a class="el" href="SceneManager_8cpp_source.html">SceneManager.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1SceneManager.html#ae8c7177fdf1453484d8dd2805f53b6e0">__engine</a>.top().get()-&gt;update(elapsed);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae8c7177fdf1453484d8dd2805f53b6e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8c7177fdf1453484d8dd2805f53b6e0">&#9670;&nbsp;</a></span>__engine</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stack&lt;std::unique_ptr&lt;<a class="el" href="classBomberman_1_1Scene.html">Scene</a>&gt; &gt; Bomberman::SceneManager::__engine</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="SceneManager_8hpp_source.html#l00041">41</a> of file <a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/Game/SceneManager/<a class="el" href="SceneManager_8hpp_source.html">SceneManager.hpp</a></li>
+<li>src/Game/SceneManager/<a class="el" href="SceneManager_8cpp_source.html">SceneManager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

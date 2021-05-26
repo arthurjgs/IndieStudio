@@ -63,7 +63,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Bomberman Namespace Reference</div>  </div>
 </div><!--header-->
@@ -73,11 +74,62 @@ $(function() {
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html">GameObject</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1LoadingScreen.html">LoadingScreen</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Scene.html">Scene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1TestScene.html">TestScene</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa30db3210067c5b83ce1c7b1aa763fa0"><td class="memTemplParams" colspan="2">template&lt;typename scene , typename ... Args&gt; </td></tr>
+<tr class="memitem:aa30db3210067c5b83ce1c7b1aa763fa0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceBomberman.html#aa30db3210067c5b83ce1c7b1aa763fa0">changeScene</a> (<a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager, Args &amp;&amp;...args)</td></tr>
+<tr class="separator:aa30db3210067c5b83ce1c7b1aa763fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aa30db3210067c5b83ce1c7b1aa763fa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa30db3210067c5b83ce1c7b1aa763fa0">&#9670;&nbsp;</a></span>changeScene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename scene , typename ... Args&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::changeScene </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>manager</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="LoadingScreen_8hpp_source.html#l00034">34</a> of file <a class="el" href="LoadingScreen_8hpp_source.html">LoadingScreen.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        SceneManager &amp;threadManager = manager;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        manager.newScene&lt;LoadingScreen&gt;();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::thread([&amp;threadManager]() {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }).detach();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
