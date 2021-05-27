@@ -605,25 +605,26 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">float</span> dummy = this-&gt;__spriteIPS * elapsed;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    this-&gt;__frameCounter++;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (this-&gt;__frameCounter &gt; (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getRefreshRate() / dummy)) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;DEBUG&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this-&gt;__frameCounter = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        this-&gt;__currentFrame++;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">float</span> &amp;x = this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8">getX</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">float</span> &amp;y = this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e">getY</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">if</span> (this-&gt;__currentFrame &gt; this-&gt;__frameNumber) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            x = 0.0f;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            y = 0.0f;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        x += this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924">getWidth</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (x &gt;= this-&gt;__texture.<a class="code" href="classRayLib_1_1Texture.html#a012a8a9aacafcb3534e516d12b0fc888">getWidth</a>()) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            y += this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a5b36b7612c806dca43c42eefa85f25b1">getHeight</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            x = 0.0f;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (this-&gt;__frameCounter &gt; (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getRefreshRate() * dummy)) {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        this-&gt;__frameCounter = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        this-&gt;__currentFrame++;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">float</span> &amp;x = this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a5f80823ea64acbcedc520c7b5f3568d8">getX</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">float</span> &amp;y = this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#ae44ca3928cbbf0f645d51705508a316e">getY</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (this-&gt;__currentFrame == this-&gt;__frameNumber) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            x = 0.0f;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            y = 0.0f;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            this-&gt;__currentFrame = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        x += this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a84c51332193376ef9e827e05d3973924">getWidth</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">if</span> (x &gt;= this-&gt;__texture.<a class="code" href="classRayLib_1_1Texture.html#a012a8a9aacafcb3534e516d12b0fc888">getWidth</a>()) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            y += this-&gt;__rect.<a class="code" href="classType_1_1Rectangle.html#a5b36b7612c806dca43c42eefa85f25b1">getHeight</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            x = 0.0f;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Texture_html_a012a8a9aacafcb3534e516d12b0fc888"><div class="ttname"><a href="classRayLib_1_1Texture.html#a012a8a9aacafcb3534e516d12b0fc888">RayLib::Texture::getWidth</a></div><div class="ttdeci">int getWidth() const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Texture_2Texture_8hpp_source.html#l00034">Texture.hpp:34</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a2ca6b034a482304270e21f96d22a4951"><div class="ttname"><a href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00011">Window.cpp:11</a></div></div>
 <div class="ttc" id="aclassType_1_1Rectangle_html_a5b36b7612c806dca43c42eefa85f25b1"><div class="ttname"><a href="classType_1_1Rectangle.html#a5b36b7612c806dca43c42eefa85f25b1">Type::Rectangle::getHeight</a></div><div class="ttdeci">float &amp; getHeight()</div><div class="ttdoc">Get the Height object.</div><div class="ttdef"><b>Definition:</b> <a href="Types_2Rectangle_2Rectangle_8hpp_source.html#l00111">Rectangle.hpp:111</a></div></div>

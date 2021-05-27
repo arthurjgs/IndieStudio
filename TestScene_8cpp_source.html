@@ -78,7 +78,7 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classBomberman_1_1TestScene.html#a9405f3706261cbc2cea5affcd8811160">   15</a></span>&#160;<a class="code" href="classBomberman_1_1TestScene.html#a0f696cc7e4115f851ae26af978395608">Bomberman::TestScene::TestScene</a>(<a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager) :</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classBomberman_1_1Scene.html">Scene</a>(manager)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ::usleep(1000000);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ::usleep(10000000);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classBomberman_1_1TestScene.html#a9869853ddc5a370a77f83b6c4bc85d6e">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1TestScene.html#a9869853ddc5a370a77f83b6c4bc85d6e">Bomberman::TestScene::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
@@ -88,9 +88,8 @@ $(function() {
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classBomberman_1_1TestScene.html#a3e99d234b7470cdc4a54c8ec541ae543">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1TestScene.html#a3e99d234b7470cdc4a54c8ec541ae543">Bomberman::TestScene::drawScene</a>()</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;DRAWING TEST SCENE&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    this-&gt;__text.DrawText(<span class="stringliteral">&quot;THIS IS A TEST SCENE&quot;</span>, 500, 500, 100, <a class="code" href="classType_1_1Color.html">Type::Color</a>(0, 0, 0, 255));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    this-&gt;__text.DrawText(<span class="stringliteral">&quot;THIS IS A TEST SCENE&quot;</span>, 500, 500, 100, <a class="code" href="classType_1_1Color.html">Type::Color</a>(0, 0, 0, 255));</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="ttc" id="aTestScene_8hpp_html"><div class="ttname"><a href="TestScene_8hpp.html">TestScene.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html"><div class="ttname"><a href="classBomberman_1_1Scene.html">Bomberman::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00020">Scene.hpp:20</a></div></div>
