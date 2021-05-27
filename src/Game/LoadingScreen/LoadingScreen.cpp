@@ -13,7 +13,7 @@
 Bomberman::LoadingScreen::LoadingScreen(SceneManager &manager) :
 Scene(manager)
 {
-    this->__objectContainer.push_back(std::make_unique<SpriteSheetPlayer>("./assets/LoadingScreen/loading.png", 8, Type::Rectangle(0, 0, 270, 350), Type::Vector<2>(500.0f, 500.0f), "loading_wheel", 91, true));
+    this->__objectContainer.push_back(std::make_unique<SpriteSheetPlayer>("./assets/LoadingScreen/loading.png", 5, Type::Rectangle(0, 0, 256, 256), Type::Vector<2>(500.0f, 500.0f), "loading_wheel", 95, true));
 }
 
 void Bomberman::LoadingScreen::update(const double &elapsed)

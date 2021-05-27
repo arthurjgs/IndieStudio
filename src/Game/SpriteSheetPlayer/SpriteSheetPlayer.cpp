@@ -34,17 +34,18 @@ void Bomberman::SpriteSheetPlayer::update(const double &elapsed)
     float dummy = this->__spriteIPS * elapsed;
 
     this->__frameCounter++;
-    if (this->__frameCounter > (RayLib::Window::getInstance().getRefreshRate() / dummy)) {
-        std::cout << "DEBUG" << std::endl;
+    if (this->__frameCounter > (RayLib::Window::getInstance().getRefreshRate() * dummy)) {
         this->__frameCounter = 0;
         this->__currentFrame++;
 
         float &x = this->__rect.getX();
         float &y = this->__rect.getY();
 
-        if (this->__currentFrame > this->__frameNumber) {
+        if (this->__currentFrame == this->__frameNumber) {
             x = 0.0f;
             y = 0.0f;
+            this->__currentFrame = 0;
+            return;
         }
         x += this->__rect.getWidth();
         if (x >= this->__texture.getWidth()) {
