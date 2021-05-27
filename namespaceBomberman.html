@@ -80,6 +80,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SceneManager.html">SceneManager</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SpriteSheetPlayer.html">SpriteSheetPlayer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1TestScene.html">TestScene</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -118,18 +120,18 @@ template&lt;typename scene , typename ... Args&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="LoadingScreen_8hpp_source.html#l00034">34</a> of file <a class="el" href="LoadingScreen_8hpp_source.html">LoadingScreen.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        SceneManager &amp;threadManager = manager;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        manager.newScene&lt;LoadingScreen&gt;();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;LOADING SCREEN LOADED&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::thread([&amp;threadManager, &amp;args...]() {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            threadManager.replaceTop&lt;scene&gt;(std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;MAIN SCENE LOADED&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }).detach();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;PASS&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="LoadingScreen_8hpp_source.html#l00038">38</a> of file <a class="el" href="LoadingScreen_8hpp_source.html">LoadingScreen.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        SceneManager &amp;threadManager = manager;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        manager.newScene&lt;LoadingScreen&gt;();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;LOADING SCREEN LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::thread([&amp;threadManager, &amp;args...]() {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            threadManager.replaceTop&lt;scene&gt;(std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;MAIN SCENE LOADED&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }).detach();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;PASS&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
