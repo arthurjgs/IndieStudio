@@ -9,8 +9,7 @@
  * 
  */
 
-#ifndef TEXTURE_HPP_
-#define TEXTURE_HPP_
+#pragma once
 
 #include <raylib.h>
 #include <iostream>
@@ -75,5 +74,3 @@ namespace Type
             int _format;
     };
 }
-
-#endif /* !TEXTURE_HPP_ */

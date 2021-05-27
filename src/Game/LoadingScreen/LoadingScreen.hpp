@@ -13,6 +13,10 @@
 #include "../SceneManager/Scene/Scene.hpp"
 #include <thread>
 #include "../../RayLib/Text/Text.hpp"
+#include "../GameObject.hpp"
+#include <vector>
+#include "../SpriteSheetPlayer/SpriteSheetPlayer.hpp"
+#include <memory>
 
 namespace Bomberman {
     class LoadingScreen : public Scene {
@@ -27,7 +31,7 @@ namespace Bomberman {
             void drawScene();
         protected:
         private:
-            RayLib::Text __text;
+            std::vector<std::unique_ptr<GameObject>> __objectContainer;
     };
 
     template<typename scene, typename ...Args>
