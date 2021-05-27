@@ -26,6 +26,8 @@ void Bomberman::LoadingScreen::update(const double &elapsed)
 void Bomberman::LoadingScreen::drawScene()
 {
     for (const std::unique_ptr<Bomberman::GameObject> &val : this->__objectContainer) {
-        val->render();
+        if (val->getDisplay()) {    
+            val->render();
+        }
     }
 }
