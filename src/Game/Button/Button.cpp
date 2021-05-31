@@ -38,8 +38,7 @@ void Bomberman::Button::render() const
 {
     if (_display)
     {
-        _texture.drawTexture(800, 700, Type::Color(255, 255, 255, 255));
-        std::cout << "OUI" << std::endl;
+        _texture.drawTextureRec(_sourceRec, Type::Vector<2>(_btnBounds.getX(), _btnBounds.getY()), Type::Color(255, 255, 255, 255));
     }
 }
 
@@ -54,4 +53,5 @@ void Bomberman::Button::update(const double &elapsed)
     }
     else
         _state = 0;
+    _sourceRec.setX(_state * _frameWidth);
 }
