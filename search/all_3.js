@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['camera_21',['Camera',['../classRayLib_1_1Camera.html#ad6a59e65bd301589926a5283af5b5cb4',1,'RayLib::Camera']]],
   ['camera_22',['CAMERA',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682',1,'Bomberman::GameObject']]],
-  ['camera_23',['Camera',['../classRayLib_1_1Camera.html',1,'RayLib']]],
+  ['camera_23',['Camera',['../classRayLib_1_1Camera.html#ad6a59e65bd301589926a5283af5b5cb4',1,'RayLib::Camera::Camera()'],['../classRayLib_1_1Camera.html',1,'RayLib::Camera']]],
   ['camera_2ecpp_24',['Camera.cpp',['../Camera_8cpp.html',1,'']]],
   ['camera_2ehpp_25',['Camera.hpp',['../Camera_8hpp.html',1,'']]],
   ['camera2d_26',['Camera2D',['../classType_1_1Camera2D.html#ab23374a1adb982141b14d74103168e24',1,'Type::Camera2D::Camera2D(const Type::Camera2D &amp;cpy)'],['../classType_1_1Camera2D.html#adb217bed17238e49387c7e2c1301ad72',1,'Type::Camera2D::Camera2D(const Type::Vector&lt; 2 &gt; offset, const Type::Vector&lt; 2 &gt; target, const float rotation, const float zoom)'],['../classType_1_1Camera2D.html#a7cf303fba33d2bf53e7a8a82ed79c3b5',1,'Type::Camera2D::Camera2D()=delete'],['../classType_1_1Camera2D.html',1,'Type::Camera2D']]],
