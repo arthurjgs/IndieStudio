@@ -34,17 +34,18 @@ namespace Bomberman {
         virtual ~GameObject();
 
         void setPosition(Type::Vector<3> position);
-        Type::Vector<3> getPosition();
+        Type::Vector<3> getPosition() const;
 
         std::string getName() const;
 
-        ObjectType getType();
+        ObjectType getType() const;
 
         void setDisplay(bool display);
-        bool getDisplay();
+        bool getDisplay() const;
 
         virtual void render() const = 0;
         virtual void update(const double &elapsed) = 0;
+
     protected:
         Type::Vector<3> _position;
         std::string _name;

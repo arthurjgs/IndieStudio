@@ -15,7 +15,7 @@
 Bomberman::TestScene::TestScene(SceneManager &manager) :
 Scene(manager)
 {
-    _listButton.push_back(std::make_unique<Bomberman::Button>("test", Type::Vector<3>(900, 500, 0), "./assets/buttons/app.png"));
+    ::usleep(10000000);
 }
 
 void Bomberman::TestScene::update(const double &elapsed)
@@ -26,5 +26,5 @@ void Bomberman::TestScene::update(const double &elapsed)
 
 void Bomberman::TestScene::drawScene()
 {
-    _listButton[0]->render();
+    this->__text.DrawText("THIS IS A TEST SCENE", 500, 500, 100, Type::Color(0, 0, 0, 255));
 }
