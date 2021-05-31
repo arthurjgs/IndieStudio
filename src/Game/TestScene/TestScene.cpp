@@ -21,6 +21,7 @@ Scene(manager)
 void Bomberman::TestScene::update(const double &elapsed)
 {
     (void)elapsed;
+    _listButton[0]->update(elapsed);
 }
 
 void Bomberman::TestScene::drawScene()

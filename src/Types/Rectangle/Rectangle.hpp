@@ -128,6 +128,22 @@ namespace Type {
             {
                 return (this->__height);
             }
+            inline void setX(float x)
+            {
+                __x = x;
+            }
+            inline void setY(float y)
+            {
+                __y = y;
+            }
+            inline void setWidth(float width)
+            {
+                __width = width;
+            }
+            inline void setHeight(float height)
+            {
+                __height = height;
+            }
         protected:
         private:
             float __x;
