@@ -43,12 +43,14 @@ namespace Bomberman {
         void setDisplay(bool display);
         bool getDisplay();
 
-        virtual void render() = 0;
-    private:
+        virtual void render() const = 0;
+        virtual void update(const double &elapsed) = 0;
+    protected:
         Type::Vector<3> _position;
         std::string _name;
         ObjectType _type;
         bool _display;
+    private:
     };
 }
 

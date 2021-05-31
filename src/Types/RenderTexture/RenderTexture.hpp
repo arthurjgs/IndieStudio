@@ -9,8 +9,7 @@
  * 
  */
 
-#ifndef RENDERTEXTURE_HPP_
-#define RENDERTEXTURE_HPP_
+#pragma once
 
 #include "Texture.hpp"
 
@@ -55,5 +54,3 @@ namespace Type
             Type::Texture _depth;
     };
 }
-
-#endif /* !RENDERTEXTURE_HPP_ */
