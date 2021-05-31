@@ -34,9 +34,6 @@ namespace RayLib
             void drawTextureRec(Type::Rectangle source, Type::Vector<2> position, Type::Color tint) const;
             inline int getWidth() const { return (this->_texture.width); }
             inline int getHeight() const { return (this->_texture.height); }
-
-            inline int getWidth() const { return (this->_texture.width); }
-            inline int getHeight() const { return (this->_texture.height); }
         protected:
         private:
             ::Texture2D _texture;

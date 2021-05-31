@@ -15,8 +15,9 @@ Bomberman::Button::Button(const std::string &name, const Type::Vector<3> &positi
 GameObject(name, Bomberman::GameObject::BUTTON, position, display),
 _texture(texturePath),
 _sound(soundPath),
-_btnBounds(position.getX(), position.getY(), _texture.getWidth() / 3, _texture.getHeight()),
-_sourceRec(0, 0, _texture.getWidth() / 3, _texture.getHeight())
+_frameWidth(_texture.getWidth() / 3),
+_sourceRec(0, 0, _texture.getWidth() / 3, _texture.getHeight()),
+_btnBounds(position.getX(), position.getY(), _texture.getWidth() / 3, _texture.getHeight())
 {
     _frameWidth = _texture.getWidth() / 3;
     _state = 0;    
@@ -44,6 +45,7 @@ void Bomberman::Button::render() const
 
 void Bomberman::Button::update(const double &elapsed)
 {
+    (void) elapsed;
     if (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))
     {
         if (_mouse.isMouseButtonDown(MOUSE_BUTTON_LEFT))
