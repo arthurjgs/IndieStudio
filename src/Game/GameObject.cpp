@@ -12,17 +12,17 @@ void Bomberman::GameObject::setDisplay(bool display)
     this->_display = display;
 }
 
-bool Bomberman::GameObject::getDisplay()
+bool Bomberman::GameObject::getDisplay() const
 {
     return this->_display;
 }
 
-Bomberman::GameObject::ObjectType Bomberman::GameObject::getType()
+Bomberman::GameObject::ObjectType Bomberman::GameObject::getType() const
 {
     return this->_type;
 }
 
-Type::Vector<3> Bomberman::GameObject::getPosition()
+Type::Vector<3> Bomberman::GameObject::getPosition() const
 {
     return this->_position;
 }

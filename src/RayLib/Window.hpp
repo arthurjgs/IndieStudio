@@ -34,6 +34,11 @@ namespace RayLib
             RayLib::Cursor getCursor() const;
             RayLib::Drawing getDrawing() const;
             RayLib::Camera getCamera() const;
+
+            inline size_t getRefreshRate() const
+            {
+                return (this->__fps);
+            }
         private:
             Window() = delete;
             Window(float width, float height, const std::string &title);
@@ -47,6 +52,7 @@ namespace RayLib
             RayLib::Cursor _cursor;
             RayLib::Drawing _drawing;
             RayLib::Camera _camera;
+            int __fps;
 
         protected:
     };
