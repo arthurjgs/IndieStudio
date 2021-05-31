@@ -16,6 +16,7 @@
 #include "../GameObject.hpp"
 #include <vector>
 #include "../SpriteSheetPlayer/SpriteSheetPlayer.hpp"
+#include "../Image/Image.hpp"
 #include <memory>
 
 namespace Bomberman {

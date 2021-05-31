@@ -57,6 +57,7 @@ add_executable(bomberman
         src/RayLib/Camera.cpp
         src/Game/SceneManager/Scene/Scene.cpp
         src/Game/SpriteSheetPlayer/SpriteSheetPlayer.cpp
+        src/Game/Image/Image.cpp
         src/Game/SceneManager/SceneManager.cpp
         src/Game/LoadingScreen/LoadingScreen.cpp
         src/Game/TestScene/TestScene.cpp
