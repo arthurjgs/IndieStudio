@@ -38,11 +38,11 @@ namespace Bomberman
         private:
             RayLib::Texture _texture;
             RayLib::Audio::Sound _sound;
+            float _frameWidth;
             RayLib::Shapes::Collision _collision;
             RayLib::InputMouse _mouse;
             Type::Rectangle _sourceRec;
             Type::Rectangle _btnBounds;
-            float _frameWidth;
             int _state;
 
     };
