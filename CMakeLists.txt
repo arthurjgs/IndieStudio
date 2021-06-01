@@ -25,6 +25,7 @@ add_executable(bomberman
         src/DynamicLibrary/DynamicLibraryException.hpp
         src/RayLib/Model/Animate/Animate.cpp
         src/RayLib/Model/SimpleModel/SimpleModel.cpp
+        src/RayLib/Model/Map/Map.cpp
         src/RayLib/Model/Collision/Collision.cpp
         src/RayLib/Shapes/Circle/Circle.cpp
         src/RayLib/Shapes/Collision/Collision.cpp
