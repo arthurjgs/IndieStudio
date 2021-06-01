@@ -31,6 +31,12 @@ namespace RayLib
             void drawTextureEx(Type::Vector<2> position, float rotation, float scale, Type::Color tint) const;
             void drawTextureRec(Type::Rectangle source, Type::Vector<2> position, Type::Color tint) const;
 
+            Texture(const Texture &cpy);
+            Texture(const Texture &&cpy);
+
+            Texture &operator = (const Texture &cpy);
+            Texture &operator = (const Texture &&cpy);
+
             inline int getWidth() const { return (this->_texture.width); }
             inline int getHeight() const { return (this->_texture.height); }
         protected:

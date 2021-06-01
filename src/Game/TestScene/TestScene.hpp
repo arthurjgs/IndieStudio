@@ -12,6 +12,7 @@
 
 #include "../SceneManager/Scene/Scene.hpp"
 #include "../../RayLib/Text/Text.hpp"
+#include "../Image/Image.hpp"
 
 namespace Bomberman {
     class TestScene : public Scene {
@@ -27,5 +28,6 @@ namespace Bomberman {
         protected:
         private:
             RayLib::Text __text;
+            Image test;
     };
 }

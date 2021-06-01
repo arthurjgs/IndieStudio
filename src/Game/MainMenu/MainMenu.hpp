@@ -9,10 +9,16 @@
  */
 
 #include <iostream>
-#include "../../SceneManager/Scene/Scene.hpp"
+#include "../SceneManager/Scene/Scene.hpp"
+#include "../Parralax/Parralax.hpp"
+#include "../Image/Image.hpp"
+#include "../FlashingText/FlashingText.hpp"
+#include "../../RayLib/Window.hpp"
+#include <vector>
+#include <memory>
 
 namespace Bomberman {
-    namespace MenuScenes {
+    namespace Menu {
         class MainMenu : public Scene {
             public:
                 MainMenu() = delete;
@@ -26,6 +32,8 @@ namespace Bomberman {
                 void drawScene();
             protected:
             private:
+                std::vector<std::shared_ptr<GameObject>> __objContainer;
+                
         };
     }
 }

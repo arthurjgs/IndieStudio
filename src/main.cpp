@@ -5,6 +5,7 @@
 #include "Game/SceneManager/SceneManager.hpp"
 #include "Game/LoadingScreen/LoadingScreen.hpp"
 #include "Game/TestScene/TestScene.hpp"
+#include "Game/MainMenu/MainMenu.hpp"
 
 int main()
 {
@@ -12,7 +13,8 @@ int main()
 
     Bomberman::SceneManager engine;
 
-    Bomberman::changeScene<Bomberman::TestScene>(engine);
+    //Bomberman::changeScene<Bomberman::TestScene>(engine);
+    engine.newScene<Bomberman::Menu::MainMenu>();
 
     while (RayLib::Window::getInstance().isOpen()) {
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_A) == true)
