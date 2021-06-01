@@ -63,6 +63,7 @@ add_executable(bomberman
         src/Game/LoadingScreen/LoadingScreen.cpp
         src/Game/TestScene/TestScene.cpp
         src/Game/Button/Button.cpp
+        src/Game/Music/Music.cpp
         src/Game/GameObject.cpp src/Game/GameObject.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
