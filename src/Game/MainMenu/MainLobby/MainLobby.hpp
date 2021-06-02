@@ -14,6 +14,8 @@
 
 #include "../../Parralax/Parralax.hpp"
 #include "../../Image/Image.hpp"
+#include "../../Button/Button.hpp"
+#include <map>
 
 namespace Bomberman {
     namespace Menu {
@@ -31,6 +33,7 @@ namespace Bomberman {
             protected:
             private:
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
+                std::vector<std::weak_ptr<Button>>__buttonsReferer;
         };
     }
 }
