@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['boundingbox_466',['BoundingBox',['../classType_1_1BoundingBox.html',1,'Type']]]
+  ['boundingbox_516',['BoundingBox',['../classType_1_1BoundingBox.html',1,'Type']]],
+  ['button_517',['Button',['../classBomberman_1_1Button.html',1,'Bomberman']]]
 ];

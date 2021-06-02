@@ -123,7 +123,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="TestScene_8hpp_source.html#l00017">17</a> of file <a class="el" href="TestScene_8hpp_source.html">TestScene.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="TestScene_8hpp_source.html#l00018">18</a> of file <a class="el" href="TestScene_8hpp_source.html">TestScene.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0f696cc7e4115f851ae26af978395608"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f696cc7e4115f851ae26af978395608">&#9670;&nbsp;</a></span>TestScene() <span class="overload">[1/3]</span></h2>
@@ -170,7 +170,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                   :</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Scene</a>(manager)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ::usleep(1000000);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    ::usleep(10000000);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html_a189db831940ae24acfbae8dbfd6a000b"><div class="ttname"><a href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Bomberman::Scene::Scene</a></div><div class="ttdeci">Scene()=delete</div></div>
 </div><!-- fragment -->
@@ -253,9 +253,8 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1Scene.html#ab97e3ba24a582b4ed657cb37c9570039">Bomberman::Scene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="TestScene_8cpp_source.html#l00026">26</a> of file <a class="el" href="TestScene_8cpp_source.html">TestScene.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;DRAWING TEST SCENE&quot;</span> &lt;&lt; std::endl;</div>
+<p class="definition">Definition at line <a class="el" href="TestScene_8cpp_source.html#l00027">27</a> of file <a class="el" href="TestScene_8cpp_source.html">TestScene.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    this-&gt;__text.<a class="code" href="classRayLib_1_1Text.html#a0323030f38ddeccef9813c03f4f79fdf">DrawText</a>(<span class="stringliteral">&quot;THIS IS A TEST SCENE&quot;</span>, 500, 500, 100, <a class="code" href="classType_1_1Color.html">Type::Color</a>(0, 0, 0, 255));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Text_html_a0323030f38ddeccef9813c03f4f79fdf"><div class="ttname"><a href="classRayLib_1_1Text.html#a0323030f38ddeccef9813c03f4f79fdf">RayLib::Text::DrawText</a></div><div class="ttdeci">void DrawText(const std::string &amp;text, int posX, int posY, int fontSize, const Type::Color &amp;color) const</div><div class="ttdef"><b>Definition:</b> <a href="Text_8cpp_source.html#l00046">Text.cpp:46</a></div></div>
@@ -318,7 +317,8 @@ Additional Inherited Members</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="TestScene_8cpp_source.html#l00021">21</a> of file <a class="el" href="TestScene_8cpp_source.html">TestScene.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    (void)elapsed;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    _listButton[0]-&gt;update(elapsed);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

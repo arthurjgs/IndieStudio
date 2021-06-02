@@ -92,10 +92,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abde64dc480bd1778cb35d6c962246afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7751e5e25fd500dc79097ddf438a034c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Texture.html#a7751e5e25fd500dc79097ddf438a034c">drawTextureRec</a> (<a class="el" href="classType_1_1Rectangle.html">Type::Rectangle</a> source, <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 2 &gt; position, <a class="el" href="classType_1_1Color.html">Type::Color</a> tint) const</td></tr>
 <tr class="separator:a7751e5e25fd500dc79097ddf438a034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a012a8a9aacafcb3534e516d12b0fc888"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Texture.html#a012a8a9aacafcb3534e516d12b0fc888">getWidth</a> () const</td></tr>
+<tr class="separator:a012a8a9aacafcb3534e516d12b0fc888"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae629362c0e4e26062bdcf648a9ae9c1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Texture.html#ae629362c0e4e26062bdcf648a9ae9c1b">getHeight</a> () const</td></tr>
+<tr class="separator:ae629362c0e4e26062bdcf648a9ae9c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html#l00024">24</a> of file <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html">Texture.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html#l00026">26</a> of file <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html">Texture.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac4365b0f8b6b7e9be04daa3303bef3c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac4365b0f8b6b7e9be04daa3303bef3c0">&#9670;&nbsp;</a></span>Texture() <span class="overload">[1/2]</span></h2>
@@ -347,6 +351,62 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        ::Color {tint.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), tint.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), tint.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), tint.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()}</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    );</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae629362c0e4e26062bdcf648a9ae9c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae629362c0e4e26062bdcf648a9ae9c1b">&#9670;&nbsp;</a></span>getHeight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RayLib::Texture::getHeight </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html#l00036">36</a> of file <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html">Texture.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{ <span class="keywordflow">return</span> (this-&gt;_texture.height); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a012a8a9aacafcb3534e516d12b0fc888"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a012a8a9aacafcb3534e516d12b0fc888">&#9670;&nbsp;</a></span>getWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int RayLib::Texture::getWidth </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html#l00035">35</a> of file <a class="el" href="RayLib_2Texture_2Texture_8hpp_source.html">Texture.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{ <span class="keywordflow">return</span> (this-&gt;_texture.width); }</div>
 </div><!-- fragment -->
 </div>
 </div>
