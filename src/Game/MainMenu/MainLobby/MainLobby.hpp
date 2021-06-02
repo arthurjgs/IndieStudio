@@ -8,7 +8,12 @@
  * 
  */
 
+#pragma once
+
 #include "../../SceneManager/Scene/Scene.hpp"
+
+#include "../../Parralax/Parralax.hpp"
+#include "../../Image/Image.hpp"
 
 namespace Bomberman {
     namespace Menu {

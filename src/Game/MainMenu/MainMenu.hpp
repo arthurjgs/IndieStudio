@@ -8,10 +8,11 @@
  * 
  */
 
+#pragma once
+
 #include <iostream>
 #include "../SceneManager/Scene/Scene.hpp"
-#include "../Parralax/Parralax.hpp"
-#include "../Image/Image.hpp"
+#include "./MainLobby/MainLobby.hpp"
 #include "../FlashingText/FlashingText.hpp"
 #include "../../RayLib/Window.hpp"
 #include <vector>
