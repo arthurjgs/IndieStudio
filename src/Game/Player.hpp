@@ -28,7 +28,7 @@ namespace Bomberman {
 
         void Move(const Type::Vector<3> &vector);
 
-        void render() override;
+        void render() const override;
         void update(const double &elapsed) override;
         void doAction();
     private:

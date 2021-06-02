@@ -1,3 +1,4 @@
+#include <Game/GameScene/GameScene.hpp>
 #include "RayLib/Window.hpp"
 #include "RayLib/InputKeyboard.hpp"
 #include "RayLib/InputMouse.hpp"
@@ -13,10 +14,7 @@ int main()
 
     Bomberman::SceneManager engine;
 
-    Bomberman::changeScene<Bomberman::TestScene>(engine);
-
-    std::unique_ptr<Bomberman::Player> player = std::make_unique<Bomberman::Player>("Bomberman", Type::Vector<3>(0.0f, 0.0f, 0.0f) ,"assets/models/bomberman");
-    Camera camera = { { 0.0f, 10.0f, 10.0f }, { 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f, 0.0f }, 45.0f, 0 };
+    engine.newScene<Bomberman::GameScene>("", "", "", "");
 
     while (RayLib::Window::getInstance().isOpen()) {
         // if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_A) == true)

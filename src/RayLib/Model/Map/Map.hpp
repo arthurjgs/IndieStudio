@@ -31,8 +31,6 @@ namespace RayLib
                 void LoadMaterial(const std::string &filepath);
                 void setPostionMap(Type::Vector<3> position);
                 void drawMap(float scale, Type::Color tint);
-
-
             protected:
             private:
                 Model _model;
