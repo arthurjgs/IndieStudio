@@ -44,10 +44,11 @@ namespace RayLib {
             /*! Rotation axis getter @return model's rotation axis*/
             Type::Vector<3> getRotationAxis();
             /*! Rotation Angle setter @param position rotation angle to be used*/
-            void setRotationAngle(double rotationAngle);
+            void setRotationAngle(float rotationAngle);
             /*! Rotation angler getter @return model's rotation angle*/
             double getRotationAngle();
-
+            /*! Reset Animation Frames*/
+            void resetAnim();
             std::vector<Model> Models;
         private:
             /*! AnimType enum to know which type of animation it is */
@@ -76,7 +77,7 @@ namespace RayLib {
             /*! Model's rotation axis */
             Vector3 _rotationAxis;
             /*! Model's rotation angle */
-            double _rotationAngle;
+            float _rotationAngle;
             /*! Model's scale */
             Vector3 _scale;
         };

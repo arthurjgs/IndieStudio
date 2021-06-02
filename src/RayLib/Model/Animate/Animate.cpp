@@ -153,11 +153,6 @@ Type::Vector<3> RayLib::Models::Animate::getRotationAxis()
     return (Type::Vector<3>(this->_rotationAxis.x, this->_rotationAxis.y, this->_rotationAxis.z));
 }
 
-void RayLib::Models::Animate::setRotationAngle(double rotationAngle)
-{
-    this->_rotationAngle = rotationAngle;
-}
-
 double RayLib::Models::Animate::getRotationAngle()
 {
     return this->_rotationAngle;
@@ -166,4 +161,15 @@ double RayLib::Models::Animate::getRotationAngle()
 void RayLib::Models::Animate::setAnimation(const std::string &path)
 {
     _animations = LoadModelAnimations(path.c_str(), &_iqmAnimCount);
+}
+
+void RayLib::Models::Animate::setRotationAngle(float rotationAngle)
+{
+    this->_rotationAngle = rotationAngle;
+}
+
+void RayLib::Models::Animate::resetAnim()
+{
+    this->_animFrameCounter = 0;
+    this->_iqmAnimCount = 0;
 }
