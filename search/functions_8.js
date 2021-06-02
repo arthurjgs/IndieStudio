@@ -1,6 +1,28 @@
 var searchData=
 [
-  ['line_896',['Line',['../classRayLib_1_1Shapes_1_1Line.html#a0281d7841d22680285ed42e08a8a807e',1,'RayLib::Shapes::Line::Line()=delete'],['../classRayLib_1_1Shapes_1_1Line.html#a641f0217dddf8a837e4f791908d78c8a',1,'RayLib::Shapes::Line::Line(const Type::Vector&lt; 2 &gt; &amp;startPos, const Type::Vector&lt; 2 &gt; &amp;endPos, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Line.html#a60b209097f1ee13648b0c54bdc6f6dc7',1,'RayLib::Shapes::Line::Line(const Line &amp;cpy)']]],
-  ['loadingscreen_897',['LoadingScreen',['../classBomberman_1_1LoadingScreen.html#ab0abf0a149eca546163de37b3506c25e',1,'Bomberman::LoadingScreen::LoadingScreen()=delete'],['../classBomberman_1_1LoadingScreen.html#a781537f2d222c3d585f611786c306c29',1,'Bomberman::LoadingScreen::LoadingScreen(SceneManager &amp;manager)'],['../classBomberman_1_1LoadingScreen.html#a163a792afa7448240f26035b366f033d',1,'Bomberman::LoadingScreen::LoadingScreen(const LoadingScreen &amp;)=delete']]],
-  ['loadmaterial_898',['LoadMaterial',['../classRayLib_1_1Models_1_1Map.html#acb5afe4512e76ab12bf59a22ed1424ad',1,'RayLib::Models::Map']]]
+  ['image_825',['Image',['../classBomberman_1_1Image.html#a9029442a1a8e61989872a0cb0c8be08d',1,'Bomberman::Image::Image(const std::string &amp;path, const std::string &amp;name, ObjectType type, const Type::Vector&lt; 3 &gt; &amp;position, bool display=true)'],['../classBomberman_1_1Image.html#a742efbeeaf7c2474e22954afd9e68071',1,'Bomberman::Image::Image(const Image &amp;)=delete'],['../classType_1_1Image.html#ae53510432548bcb8dbc8ba7bb5d05512',1,'Type::Image::Image()=delete'],['../classType_1_1Image.html#a798c63988b4010fbbbcfc68f6b72e2e5',1,'Type::Image::Image(const std::string &amp;data, const int &amp;width, const int &amp;height)'],['../classType_1_1Image.html#a5585d7b0a4acd7b2a3536b847340f883',1,'Type::Image::Image(const Image &amp;cpy)'],['../classType_1_1Image.html#a8cf446c8ba9479f30692ece320ef958a',1,'Type::Image::Image(const Image &amp;&amp;cpy)'],['../classBomberman_1_1Image.html#a63b036ac5f3935ed70c73e9c7c96f1b8',1,'Bomberman::Image::Image()']]],
+  ['inputgamepad_826',['InputGamepad',['../classRayLib_1_1InputGamepad.html#a6eb3a4029f6df7cdc586adb409a8d622',1,'RayLib::InputGamepad']]],
+  ['inputkeyboard_827',['InputKeyboard',['../classRayLib_1_1InputKeyboard.html#ab1976cdb2d5c5ea12285a0a9d4e66a8b',1,'RayLib::InputKeyboard']]],
+  ['inputmouse_828',['InputMouse',['../classRayLib_1_1InputMouse.html#ad6f910a3e787a2a05eed43813342f706',1,'RayLib::InputMouse']]],
+  ['isaudiostreamplaying_829',['IsAudioStreamPlaying',['../classRayLib_1_1Audio_1_1AudioStream.html#ab40478b9c875c56fabd2685db847afd0',1,'RayLib::Audio::AudioStream']]],
+  ['isaudiostreamprocessed_830',['IsAudioStreamProcessed',['../classRayLib_1_1Audio_1_1AudioStream.html#a04f6bc848d657e2381e4993fbfd4ef5c',1,'RayLib::Audio::AudioStream']]],
+  ['iscursorhidden_831',['isCursorHidden',['../classRayLib_1_1Cursor.html#aeeabc75af1df680610f25147fd411f2c',1,'RayLib::Cursor']]],
+  ['iscursoronscreen_832',['isCursorOnScreen',['../classRayLib_1_1Cursor.html#a49415ec04eb487b34ebdd1d5a307ed6f',1,'RayLib::Cursor']]],
+  ['isgamepadavailable_833',['isGamepadAvailable',['../classRayLib_1_1InputGamepad.html#ac0c0131833125744dbe076b799f01613',1,'RayLib::InputGamepad']]],
+  ['isgamepadbuttondown_834',['isGamepadButtonDown',['../classRayLib_1_1InputGamepad.html#a0af1f1d6458f7cc17733f735158f36a8',1,'RayLib::InputGamepad']]],
+  ['isgamepadbuttonpressed_835',['isGamepadButtonPressed',['../classRayLib_1_1InputGamepad.html#a86096f46f0110385e91a79f5cfa0af0e',1,'RayLib::InputGamepad']]],
+  ['isgamepadbuttonreleased_836',['isGamepadButtonReleased',['../classRayLib_1_1InputGamepad.html#ad28c98ae541ce5ab1eb959a42e31c1b2',1,'RayLib::InputGamepad']]],
+  ['isgamepadbuttonup_837',['isGamepadButtonUp',['../classRayLib_1_1InputGamepad.html#a99867fd13da4d58a3ec5076e69aac7d1',1,'RayLib::InputGamepad']]],
+  ['isgamepadname_838',['isGamepadName',['../classRayLib_1_1InputGamepad.html#a781071da2ad49d438418817fe3b85f54',1,'RayLib::InputGamepad']]],
+  ['iskeydown_839',['isKeyDown',['../classRayLib_1_1InputKeyboard.html#a9b537921d19dde913f787cd4034a15ef',1,'RayLib::InputKeyboard']]],
+  ['iskeypressed_840',['isKeyPressed',['../classRayLib_1_1InputKeyboard.html#a1dcc2f1e4741d675c334b566961a077c',1,'RayLib::InputKeyboard']]],
+  ['iskeyreleased_841',['isKeyReleased',['../classRayLib_1_1InputKeyboard.html#a8693e5841d0b7315b191039c55b87625',1,'RayLib::InputKeyboard']]],
+  ['iskeyup_842',['isKeyUp',['../classRayLib_1_1InputKeyboard.html#a91a64acdf1d3c3c74bb5ad6a859a43f0',1,'RayLib::InputKeyboard']]],
+  ['ismousebuttondown_843',['isMouseButtonDown',['../classRayLib_1_1InputMouse.html#a1791192d2e271b361ae52db8f2e39f4a',1,'RayLib::InputMouse']]],
+  ['ismousebuttonpressed_844',['isMouseButtonPressed',['../classRayLib_1_1InputMouse.html#ae8369918ff28210f5f6f835af03eafb1',1,'RayLib::InputMouse']]],
+  ['ismousebuttonreleased_845',['isMouseButtonReleased',['../classRayLib_1_1InputMouse.html#aab09f1a2c945d6e9bd49931524ec96a1',1,'RayLib::InputMouse']]],
+  ['ismousebuttonup_846',['isMouseButtonUp',['../classRayLib_1_1InputMouse.html#a2370618ebadeff9ed98aa4b548c22f72',1,'RayLib::InputMouse']]],
+  ['ismusicplaying_847',['IsMusicPlaying',['../classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0',1,'RayLib::Audio::Music']]],
+  ['isopen_848',['isOpen',['../classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812',1,'RayLib::Window']]],
+  ['issoundplaying_849',['IsSoundPlaying',['../classRayLib_1_1Audio_1_1Sound.html#afab1f38fbea8b62010a379377ce550c8',1,'RayLib::Audio::Sound']]]
 ];
