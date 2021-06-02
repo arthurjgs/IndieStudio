@@ -25,6 +25,7 @@ add_executable(bomberman
         src/DynamicLibrary/DynamicLibraryException.hpp
         src/RayLib/Model/Animate/Animate.cpp
         src/RayLib/Model/SimpleModel/SimpleModel.cpp
+        src/RayLib/Model/Map/Map.cpp
         src/RayLib/Model/Collision/Collision.cpp
         src/RayLib/Shapes/Circle/Circle.cpp
         src/RayLib/Shapes/Collision/Collision.cpp
@@ -65,6 +66,8 @@ add_executable(bomberman
         src/Game/LoadingScreen/LoadingScreen.cpp
         src/Game/FlashingText/FlashingText.cpp
         src/Game/TestScene/TestScene.cpp
+        src/Game/Button/Button.cpp
+        src/Game/Music/Music.cpp
         src/Game/GameObject.cpp src/Game/GameObject.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)

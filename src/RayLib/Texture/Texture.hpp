@@ -9,6 +9,8 @@
  * 
  */
 
+#pragma once
+
 #ifndef TEXTURE_HPP_
 #define TEXTURE_HPP_
 

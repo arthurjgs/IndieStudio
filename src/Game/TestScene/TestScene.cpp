@@ -22,6 +22,7 @@ test("./assets/LoadingScreen/loading_word.png", "test", GameObject::ObjectType::
 void Bomberman::TestScene::update(const double &elapsed)
 {
     this->test.update(elapsed);
+    _listButton[0]->update(elapsed);
 }
 
 void Bomberman::TestScene::drawScene()

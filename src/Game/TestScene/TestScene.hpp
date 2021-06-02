@@ -13,6 +13,7 @@
 #include "../SceneManager/Scene/Scene.hpp"
 #include "../../RayLib/Text/Text.hpp"
 #include "../Image/Image.hpp"
+#include "../Button/Button.hpp"
 
 namespace Bomberman {
     class TestScene : public Scene {
@@ -29,5 +30,6 @@ namespace Bomberman {
         private:
             RayLib::Text __text;
             Image test;
+            std::vector<std::unique_ptr<Bomberman::Button>> _listButton;
     };
 }

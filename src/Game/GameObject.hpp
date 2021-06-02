@@ -45,11 +45,13 @@ namespace Bomberman {
 
         virtual void render() const = 0;
         virtual void update(const double &elapsed) = 0;
-    private:
+
+    protected:
         Type::Vector<3> _position;
         std::string _name;
         ObjectType _type;
         bool _display;
+    private:
     };
 }
 
