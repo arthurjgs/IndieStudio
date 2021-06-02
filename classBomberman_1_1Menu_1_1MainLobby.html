@@ -126,7 +126,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="MainLobby_8hpp_source.html#l00020">20</a> of file <a class="el" href="MainLobby_8hpp_source.html">MainLobby.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8hpp_source.html#l00022">22</a> of file <a class="el" href="MainLobby_8hpp_source.html">MainLobby.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae07432c3950dba0ce5ffdedcb0c1ecfd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae07432c3950dba0ce5ffdedcb0c1ecfd">&#9670;&nbsp;</a></span>MainLobby() <span class="overload">[1/3]</span></h2>
@@ -183,9 +183,22 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    this-&gt;__objContainer.push_back(std::make_shared&lt;Parralax&gt;(arr, 6, <span class="stringliteral">&quot;menuParralax&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(0.0f, 0.0f)));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;__objContainer.push_back(std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/lobby.png&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(525.0f, 50.0f, 0.0f)));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    this-&gt;__objContainer.push_back(std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/PNG/Window04.png&quot;</span>, <span class="stringliteral">&quot;MainPanel&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(520.0f, 400.0f, 0.0f)));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    this-&gt;__objContainer.push_back(std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/lobby.png&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(675.0f, 40.0f, 0.0f)));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// button</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::shared_ptr&lt;Button&gt; playButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;playButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 500.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::shared_ptr&lt;Button&gt; loadButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;loadButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 650.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::shared_ptr&lt;Button&gt; quitButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;quitButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 800.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    this-&gt;__objContainer.push_back(playButton);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    this-&gt;__buttonsReferer.push_back(playButton);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    this-&gt;__objContainer.push_back(loadButton);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this-&gt;__buttonsReferer.push_back(loadButton);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    this-&gt;__buttonsReferer.push_back(quitButton);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;__objContainer.push_back(quitButton);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html_a189db831940ae24acfbae8dbfd6a000b"><div class="ttname"><a href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Bomberman::Scene::Scene</a></div><div class="ttdeci">Scene()=delete</div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 2 &gt;</a></div></div>
 </div><!-- fragment -->
@@ -268,12 +281,12 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1Scene.html#ab97e3ba24a582b4ed657cb37c9570039">Bomberman::Scene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00037">37</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        val-&gt;render();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00055">55</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        val-&gt;render();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -329,12 +342,17 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1Scene.html#a1f44ba61fae17dd4596aad1c343b0964">Bomberman::Scene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00030">30</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        val-&gt;update(elapsed);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00043">43</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (val.lock()-&gt;isClick() == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            std::cout &lt;&lt; val.lock()-&gt;getName() &lt;&lt; <span class="stringliteral">&quot; -&gt; is clicked&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        val-&gt;update(elapsed);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
