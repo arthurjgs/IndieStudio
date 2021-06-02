@@ -12,6 +12,5 @@ var searchData=
   ['boundingbox_18',['BoundingBox',['../classType_1_1BoundingBox.html#a81eeb82588a4a1eea4d9307632a561cf',1,'Type::BoundingBox::BoundingBox(const Vector&lt; 3 &gt; &amp;min, const Vector&lt; 3 &gt; &amp;max)'],['../classType_1_1BoundingBox.html#a724761b666fd8bc040a235c81e157bfa',1,'Type::BoundingBox::BoundingBox(const BoundingBox &amp;cpy)'],['../classType_1_1BoundingBox.html',1,'Type::BoundingBox']]],
   ['boundingbox_2ecpp_19',['BoundingBox.cpp',['../BoundingBox_8cpp.html',1,'']]],
   ['boundingbox_2ehpp_20',['BoundingBox.hpp',['../BoundingBox_8hpp.html',1,'']]],
-  ['button_21',['BUTTON',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879',1,'Bomberman::GameObject']]],
-  ['menu_22',['Menu',['../namespaceBomberman_1_1Menu.html',1,'Bomberman']]]
+  ['button_21',['BUTTON',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879',1,'Bomberman::GameObject']]]
 ];
