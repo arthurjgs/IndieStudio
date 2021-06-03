@@ -17,7 +17,6 @@ Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &positi
     catch (GameException &g) {
         throw g;
     }
-    _animation->setScale(Type::Vector<3>(12.0f, 12.0f, 12.0f));
 }
 
 Bomberman::Player::~Player()

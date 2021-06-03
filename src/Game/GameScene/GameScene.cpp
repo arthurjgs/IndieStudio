@@ -17,14 +17,15 @@
 Bomberman::GameScene::GameScene(SceneManager &manager,
                                 const std::string &playerDll1, const std::string &playerDll2,
                                 const std::string &playerDll3, const std::string &playerDll4) : Scene(manager), _camera(
-                                        Type::Vector<3>(0.0f, 40.0f, 27.5f),
+                                        Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                                 Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                                         20.0f,
                                         CAMERA_PERSPECTIVE), _background("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f))
 {
-    this->_listPlayers[0] = std::make_unique<Player>("Player1", Type::Vector<3>(-7.0f, 0.0f, -7.0f), "assets/models/bomberman");
-    this->_gameMap = std::make_unique<Bomberman::Map>("assets/map/default", Type::Vector<3>(-8.0f, 0.0f, -8.0f));
+    this->_listPlayers[0] = std::make_unique<Player>("Player1", Type::Vector<3>(-6.0f, 0.0f, -6.0f), "assets/models/bomberman");
+    this->_listPlayers[0]->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
+    this->_gameMap = std::make_unique<Bomberman::Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
 }
 
 bool Bomberman::GameScene::checkColision(int playerIndex) const
