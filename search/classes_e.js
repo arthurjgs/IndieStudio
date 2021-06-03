@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['vector_555',['Vector',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_202_20_3e_556',['Vector&lt; 2 &gt;',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_203_20_3e_557',['Vector&lt; 3 &gt;',['../classType_1_1Vector.html',1,'Type']]]
+  ['window_563',['Window',['../classRayLib_1_1Window.html',1,'RayLib']]]
 ];
