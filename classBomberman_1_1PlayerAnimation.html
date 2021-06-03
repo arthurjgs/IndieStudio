@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af97c52e2f6d35171c743e7c8b2dcdb7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bfc3666407e72f7ef4dd2fbf0248b3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1PlayerAnimation.html#a8bfc3666407e72f7ef4dd2fbf0248b3d">setScale</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;scale)</td></tr>
 <tr class="separator:a8bfc3666407e72f7ef4dd2fbf0248b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fc4709cc9b34cfa77e16392344b5c1f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1PlayerAnimation.html#a9fc4709cc9b34cfa77e16392344b5c1f">setRotationAngle</a> (const float &amp;angle)</td></tr>
+<tr class="separator:a9fc4709cc9b34cfa77e16392344b5c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09f14b503da2c16df73f1d59fd6a6740"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1PlayerAnimation.html#a09f14b503da2c16df73f1d59fd6a6740">render</a> (<a class="el" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981">Bomberman::PlayerAnimation::PlayerState</a> state, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position)</td></tr>
 <tr class="separator:a09f14b503da2c16df73f1d59fd6a6740"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa21f92d234e42412b5a4b8ed221bb78b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1PlayerAnimation.html#aa21f92d234e42412b5a4b8ed221bb78b">resetAnimations</a> ()</td></tr>
@@ -241,28 +243,28 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="PlayerAnimation_8cpp_source.html#l00071">71</a> of file <a class="el" href="PlayerAnimation_8cpp_source.html">PlayerAnimation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    this-&gt;_walkingAnimation-&gt;setPosition(position);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    this-&gt;_idleAnimation-&gt;setPosition(position);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    this-&gt;_deathAnimation-&gt;setPosition(position);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    this-&gt;_actionAnimation-&gt;setPosition(position);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">switch</span> (state) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3">IDLE</a>:</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            _idleAnimation-&gt;display();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">WALKING</a>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            _walkingAnimation-&gt;display();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5">ACTION</a>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            _actionAnimation-&gt;display();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a0e3df0e565ffa637dde667aff3af6943">DEAD</a>:</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            _deathAnimation-&gt;display();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="PlayerAnimation_8cpp_source.html#l00079">79</a> of file <a class="el" href="PlayerAnimation_8cpp_source.html">PlayerAnimation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    this-&gt;_walkingAnimation-&gt;setPosition(position);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    this-&gt;_idleAnimation-&gt;setPosition(position);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;_deathAnimation-&gt;setPosition(position);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    this-&gt;_actionAnimation-&gt;setPosition(position);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">switch</span> (state) {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3">IDLE</a>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            _idleAnimation-&gt;display();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">WALKING</a>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            _walkingAnimation-&gt;display();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5">ACTION</a>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            _actionAnimation-&gt;display();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a0e3df0e565ffa637dde667aff3af6943">DEAD</a>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            _deathAnimation-&gt;display();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -288,6 +290,32 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    this-&gt;_deathAnimation-&gt;resetAnim();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;_actionAnimation-&gt;resetAnim();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9fc4709cc9b34cfa77e16392344b5c1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fc4709cc9b34cfa77e16392344b5c1f">&#9670;&nbsp;</a></span>setRotationAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::PlayerAnimation::setRotationAngle </td>
+          <td>(</td>
+          <td class="paramtype">const float &amp;&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="PlayerAnimation_8cpp_source.html#l00071">71</a> of file <a class="el" href="PlayerAnimation_8cpp_source.html">PlayerAnimation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    this-&gt;_walkingAnimation-&gt;setRotationAngle(rotation);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    this-&gt;_idleAnimation-&gt;setRotationAngle(rotation);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    this-&gt;_deathAnimation-&gt;setRotationAngle(rotation);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    this-&gt;_actionAnimation-&gt;setRotationAngle(rotation);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

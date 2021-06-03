@@ -282,10 +282,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00111">111</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;{</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    this-&gt;_bombs--;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00115">115</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    this-&gt;_bombs--;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -545,33 +545,37 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (IsKeyDown(KEY_W)) {</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, -_speed));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_A)) {</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-_speed, 0.0f, 0.0f));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_S)) {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, _speed));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_D)) {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(_speed, 0.0f, 0.0f));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_E)) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5">PlayerAnimation::ACTION</a>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;_startAnimTime = elapsed;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classBomberman_1_1Player.html#ac1e39ca9031821f394e8782881f29b4d">doAction</a>();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3">PlayerAnimation::IDLE</a>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        this-&gt;_animation-&gt;setRotationAngle(180.0f);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, -_speed));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_A)) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        this-&gt;_animation-&gt;setRotationAngle(-90.0f);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-_speed, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_S)) {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        this-&gt;_animation-&gt;setRotationAngle(0.0f);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, _speed));</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_D)) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">PlayerAnimation::WALKING</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        this-&gt;_animation-&gt;setRotationAngle(90.0f);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(_speed, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (IsKeyDown(KEY_E)) {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5">PlayerAnimation::ACTION</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        this-&gt;_startAnimTime = elapsed;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <a class="code" href="classBomberman_1_1Player.html#ac1e39ca9031821f394e8782881f29b4d">doAction</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        this-&gt;_state = <a class="code" href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3">PlayerAnimation::IDLE</a>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1PlayerAnimation_html_a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659"><div class="ttname"><a href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659">Bomberman::PlayerAnimation::WALKING</a></div><div class="ttdeci">@ WALKING</div><div class="ttdef"><b>Definition:</b> <a href="PlayerAnimation_8hpp_source.html#l00023">PlayerAnimation.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1PlayerAnimation_html_a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5"><div class="ttname"><a href="classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5">Bomberman::PlayerAnimation::ACTION</a></div><div class="ttdeci">@ ACTION</div><div class="ttdef"><b>Definition:</b> <a href="PlayerAnimation_8hpp_source.html#l00024">PlayerAnimation.hpp:24</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a5e22c7d59aec900a8d25e9cba6216c12"><div class="ttname"><a href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Bomberman::Player::Move</a></div><div class="ttdeci">void Move(const Type::Vector&lt; 3 &gt; &amp;vector)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00052">Player.cpp:52</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_ac1e39ca9031821f394e8782881f29b4d"><div class="ttname"><a href="classBomberman_1_1Player.html#ac1e39ca9031821f394e8782881f29b4d">Bomberman::Player::doAction</a></div><div class="ttdeci">void doAction()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00111">Player.cpp:111</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_ac1e39ca9031821f394e8782881f29b4d"><div class="ttname"><a href="classBomberman_1_1Player.html#ac1e39ca9031821f394e8782881f29b4d">Bomberman::Player::doAction</a></div><div class="ttdeci">void doAction()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00115">Player.cpp:115</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 </div><!-- fragment -->
 </div>
