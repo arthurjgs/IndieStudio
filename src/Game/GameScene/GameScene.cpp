@@ -9,8 +9,9 @@
  */
 
 #include "GameScene.hpp"
-#include <unistd.h>
+#include <cmath>
 #include <RayLib/Window.hpp>
+#include <RayLib/Model/Collision/Collision.hpp>
 
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
@@ -26,9 +27,49 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_gameMap = std::make_unique<Bomberman::Map>("assets/map/default", Type::Vector<3>(-8.0f, 0.0f, -8.0f));
 }
 
+bool Bomberman::GameScene::checkColision(int playerIndex) const
+{
+    Type::Vector<2> playerPos = { _listPlayers[playerIndex]->getPosition().getX(), _listPlayers[playerIndex]->getPosition().getZ() };
+    Type::Vector<2> cubicMap = this->_gameMap->getCubicMap();
+    int cubicMapX = static_cast<int>(cubicMap.getX());
+    int cubicMapY = static_cast<int>(cubicMap.getY());
+    float playerRadius = 0.3f;
+    std::vector<Type::Color> mapPixels = _gameMap->getMapPixels();
+
+    int playerCellX = static_cast<int>(round(playerPos.getX() - _gameMap->getPosition().getX() + 0.5f));
+    int playerCellY = static_cast<int>(round(playerPos.getY() - _gameMap->getPosition().getZ() + 0.5f));
+
+    if (playerCellX < 0) playerCellX = 0;
+    else if (playerCellX >= cubicMapX) playerCellX = cubicMapX - 1;
+
+    if (playerCellY < 0) playerCellY = 0;
+    else if (playerCellY >= cubicMapY) playerCellY = cubicMapY - 1;
+
+    for (int y = 0; y < cubicMapY; y++)
+    {
+        for (int x = 0; x < cubicMapX; x++)
+        {
+            if ((mapPixels[y * cubicMapX + x].getR() == 255) &&
+                (RayLib::Models::Collision::CheckCollisionCircleRec(playerPos, playerRadius,
+                                         Type::Rectangle { _gameMap->getPosition().getX() - 0.5f + x * 1.0f,
+                                                           _gameMap->getPosition().getZ() - 0.5f + y * 1.0f,
+                                                           1.0f,
+                                                           1.0f })))
+            {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    auto oldPosition = _listPlayers[0]->getPosition();
     _listPlayers[0]->update(elapsed);
+    if (checkColision(0))
+        _listPlayers[0]->setPosition(oldPosition);
     //for (auto &player : _listPlayers)
     //    player->update(elapsed);
 }

@@ -29,6 +29,7 @@ namespace Bomberman {
             GameScene(const GameScene &) = delete;
             GameScene &operator = (const GameScene &) = delete;
 
+            bool checkColision(int playerIndex) const;
             void update(const double &elapsed);
             void drawScene();
         protected:

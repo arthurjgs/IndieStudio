@@ -43,3 +43,13 @@ void Bomberman::Map::update(const double &elapsed)
 {
     (void) elapsed;
 }
+
+Type::Vector<2> Bomberman::Map::getCubicMap()
+{
+    return _map->getCubicMap();
+}
+
+std::vector<Type::Color> Bomberman::Map::getMapPixels()
+{
+    return _map->getMapPixels();
+}

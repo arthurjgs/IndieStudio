@@ -29,13 +29,15 @@ namespace RayLib
                 Map(const std::string &filepath, Type::Vector<3> position);
                 ~Map();
                 void LoadMaterial(const std::string &filepath);
+                Type::Vector<2> getCubicMap() const;
+                std::vector<Type::Color> getMapPixels();
                 void setPostionMap(Type::Vector<3> position);
                 void drawMap(float scale, Type::Color tint);
             protected:
             private:
                 Model _model;
                 Mesh _mesh;
-                Image _image;
+                Color *_mapPixels;
                 Texture2D _cubicmap;
                 Texture2D _material;
                 Type::Vector<3> _position;
