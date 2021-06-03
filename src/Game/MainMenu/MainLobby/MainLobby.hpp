@@ -16,6 +16,7 @@
 #include "../../Image/Image.hpp"
 #include "../../Button/Button.hpp"
 #include <map>
+#include <functional>
 
 namespace Bomberman {
     namespace Menu {
@@ -32,8 +33,19 @@ namespace Bomberman {
                 void drawScene();
             protected:
             private:
+                enum MENU_UI {
+                    MAIN,
+
+                };
+
+                void playButtonCallback();
+                void loadButtonCallback();
+                void quitButtonCallback();
+                void settingsButtonCallback();
+
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
-                std::vector<std::weak_ptr<Button>>__buttonsReferer;
+                std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>>__buttonsReferer;
+                std::map<std::string, std::function<void(MainLobby &)>> __buttonCallback;
         };
     }
 }

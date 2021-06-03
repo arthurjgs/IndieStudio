@@ -9,6 +9,7 @@
  */
 
 #include "MainLobby.hpp"
+#include "../../QuitGame/QuitGame.hpp"
 
 Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
 Scene(manager)
@@ -27,24 +28,57 @@ Scene(manager)
     this->__objContainer.push_back(std::make_shared<Image>("./assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(675.0f, 40.0f, 0.0f)));
     
     // button
-    std::shared_ptr<Button> playButton = std::make_shared<Button>("playButton", Type::Vector<3>(775.0f, 500.0f, 0.0f), "./assets/MainMenu/button_sheet.png");
-    std::shared_ptr<Button> loadButton = std::make_shared<Button>("loadButton", Type::Vector<3>(775.0f, 650.0f, 0.0f), "./assets/MainMenu/button_sheet.png");
-    std::shared_ptr<Button> quitButton = std::make_shared<Button>("quitButton", Type::Vector<3>(775.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png");
-    
+    std::shared_ptr<Button> playButton = std::make_shared<Button>("playButton", Type::Vector<3>(775.0f, 500.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "PLAY", 60);
+    std::shared_ptr<Button> loadButton = std::make_shared<Button>("loadButton", Type::Vector<3>(775.0f, 650.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "LOAD", 60);
+    std::shared_ptr<Button> quitButton = std::make_shared<Button>("quitButton", Type::Vector<3>(775.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "QUIT", 60);
+    std::shared_ptr<Button> settingsButton = std::make_shared<Button>("settingsButton", Type::Vector<3>(75.0f, 75.0f, 0.0f), "./assets/MainMenu/settings_button.png");
 
     this->__objContainer.push_back(playButton);
-    this->__buttonsReferer.push_back(playButton);
+    this->__buttonsReferer.emplace_back(MAIN, playButton);
     this->__objContainer.push_back(loadButton);
-    this->__buttonsReferer.push_back(loadButton);
-    this->__buttonsReferer.push_back(quitButton);
+    this->__buttonsReferer.emplace_back(MAIN, loadButton);
     this->__objContainer.push_back(quitButton);
+    this->__buttonsReferer.emplace_back(MAIN, quitButton);
+    this->__objContainer.push_back(settingsButton);
+    this->__buttonsReferer.emplace_back(MAIN, settingsButton);
+
+    this->__buttonCallback["playButton"] = &MainLobby::playButtonCallback;
+    this->__buttonCallback["loadButton"] = &MainLobby::loadButtonCallback;
+    this->__buttonCallback["quitButton"] = &MainLobby::quitButtonCallback;
+    this->__buttonCallback["settingsButton"] = &MainLobby::loadButtonCallback;
+}
+
+void Bomberman::Menu::MainLobby::playButtonCallback()
+{
+    std::cout << "play click" << std::endl;
+    //TODO: LOAD PLAYER SELECTION
+}
+
+void Bomberman::Menu::MainLobby::loadButtonCallback()
+{
+    std::cout << "load click" << std::endl;
+    //TODO: LOAD SAVE
+}
+
+void Bomberman::Menu::MainLobby::quitButtonCallback()
+{
+    std::cout << "quit click" << std::endl;
+    throw QuitGame();
+}
+
+void Bomberman::Menu::MainLobby::settingsButtonCallback()
+{
+    std::cout << "settings clicked" << std::endl;
+    // TODO: Manage settings
 }
 
 void Bomberman::Menu::MainLobby::update(const double &elapsed)
 {
     for (auto const &val : this->__buttonsReferer) {
-        if (val.lock()->isClick() == true) {
-            std::cout << val.lock()->getName() << " -> is clicked" << std::endl;
+        if (val.second.lock()->isClick() == true && val.second.lock()->getDisplay()) {
+            if (this->__buttonCallback.count(val.second.lock()->getName()) > 0) {
+                this->__buttonCallback[val.second.lock()->getName()](*this);
+            }
         }
     }
     for (auto const &val : this->__objContainer) {
