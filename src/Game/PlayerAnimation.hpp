@@ -27,6 +27,7 @@ namespace Bomberman
 
         explicit PlayerAnimation(const std::string &path, const Type::Vector<3> &position);
         void setScale(const Type::Vector<3> &scale);
+        void setRotationAngle(const float &angle);
         void render(Bomberman::PlayerAnimation::PlayerState state, const Type::Vector<3> &position);
         void resetAnimations();
     private:

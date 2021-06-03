@@ -68,6 +68,14 @@ void Bomberman::PlayerAnimation::setScale(const Type::Vector<3> &scale)
     this->_actionAnimation->setScale(scale);
 }
 
+void Bomberman::PlayerAnimation::setRotationAngle(const float &rotation)
+{
+    this->_walkingAnimation->setRotationAngle(rotation);
+    this->_idleAnimation->setRotationAngle(rotation);
+    this->_deathAnimation->setRotationAngle(rotation);
+    this->_actionAnimation->setRotationAngle(rotation);
+}
+
 void Bomberman::PlayerAnimation::render(PlayerState state, const Type::Vector<3> &position)
 {
     this->_walkingAnimation->setPosition(position);

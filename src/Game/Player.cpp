@@ -84,18 +84,22 @@ void Bomberman::Player::update(const double &elapsed)
 
     if (IsKeyDown(KEY_W)) {
         this->_state = PlayerAnimation::WALKING;
+        this->_animation->setRotationAngle(180.0f);
         this->Move(Type::Vector<3>(0.0f, 0.0f, -_speed));
     }
     else if (IsKeyDown(KEY_A)) {
+        this->_animation->setRotationAngle(-90.0f);
         this->_state = PlayerAnimation::WALKING;
         this->Move(Type::Vector<3>(-_speed, 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_S)) {
         this->_state = PlayerAnimation::WALKING;
+        this->_animation->setRotationAngle(0.0f);
         this->Move(Type::Vector<3>(0.0f, 0.0f, _speed));
     }
     else if (IsKeyDown(KEY_D)) {
         this->_state = PlayerAnimation::WALKING;
+        this->_animation->setRotationAngle(90.0f);
         this->Move(Type::Vector<3>(_speed, 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_E)) {
