@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['testscene_2ecpp_607',['TestScene.cpp',['../TestScene_8cpp.html',1,'']]],
-  ['testscene_2ehpp_608',['TestScene.hpp',['../TestScene_8hpp.html',1,'']]],
-  ['text_2ecpp_609',['Text.cpp',['../Text_8cpp.html',1,'']]],
-  ['text_2ehpp_610',['Text.hpp',['../Text_8hpp.html',1,'']]],
-  ['texture_2ecpp_611',['Texture.cpp',['../RayLib_2Texture_2Texture_8cpp.html',1,'(Global Namespace)'],['../Types_2RenderTexture_2Texture_8cpp.html',1,'(Global Namespace)']]],
-  ['texture_2ehpp_612',['Texture.hpp',['../RayLib_2Texture_2Texture_8hpp.html',1,'(Global Namespace)'],['../Types_2RenderTexture_2Texture_8hpp.html',1,'(Global Namespace)']]],
-  ['triangle_2ecpp_613',['Triangle.cpp',['../Triangle_8cpp.html',1,'']]],
-  ['triangle_2ehpp_614',['Triangle.hpp',['../Triangle_8hpp.html',1,'']]]
+  ['rectangle_2ecpp_638',['Rectangle.cpp',['../RayLib_2Shapes_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)'],['../Types_2Rectangle_2Rectangle_8cpp.html',1,'(Global Namespace)']]],
+  ['rectangle_2ehpp_639',['Rectangle.hpp',['../RayLib_2Shapes_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)'],['../Types_2Rectangle_2Rectangle_8hpp.html',1,'(Global Namespace)']]],
+  ['rendertexture_2ecpp_640',['RenderTexture.cpp',['../RenderTexture_8cpp.html',1,'']]],
+  ['rendertexture_2ehpp_641',['RenderTexture.hpp',['../RenderTexture_8hpp.html',1,'']]],
+  ['ring_2ecpp_642',['Ring.cpp',['../Ring_8cpp.html',1,'']]],
+  ['ring_2ehpp_643',['Ring.hpp',['../Ring_8hpp.html',1,'']]]
 ];
