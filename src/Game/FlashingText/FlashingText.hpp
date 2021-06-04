@@ -16,6 +16,8 @@ namespace Bomberman {
         public:
             FlashingText() = delete;
             FlashingText(const std::string &text, const Type::Color &col, const size_t &size, const double &speed, const std::string &name, const GameObject::ObjectType &type, const Type::Vector<2> &position, bool display = true);
+            FlashingText(const std::string &text, const Type::Color &col, const size_t &size, const double &speed, const std::string &name, const GameObject::ObjectType &type, const Type::Vector<2> &position, const std::string &font, bool display = true);
+
             ~FlashingText() = default;
 
             FlashingText(const FlashingText &) = delete;
@@ -26,6 +28,7 @@ namespace Bomberman {
         protected:
         private:
             std::string __text;
+            std::string __font;
             Type::Color __color;
             RayLib::Text __RayText;
             size_t __size;
