@@ -16,6 +16,32 @@ RayLib::Texture::~Texture()
     ::UnloadTexture(_texture);
 }
 
+RayLib::Texture::Texture(const Texture &cpy)
+{
+    this->_filename = cpy._filename;
+    this->_texture = ::LoadTexture(cpy._filename.c_str());
+}
+
+RayLib::Texture::Texture(const Texture &&cpy)
+{
+    this->_filename = cpy._filename;
+    this->_texture = ::LoadTexture(cpy._filename.c_str());
+}
+
+RayLib::Texture &RayLib::Texture::operator = (const Texture &cpy)
+{
+    this->_filename = cpy._filename;
+    this->_texture = ::LoadTexture(cpy._filename.c_str());
+    return (*this);
+}
+
+RayLib::Texture &RayLib::Texture::operator = (const Texture &&cpy)
+{
+    this->_filename = cpy._filename;
+    this->_texture = ::LoadTexture(cpy._filename.c_str());
+    return (*this);
+}
+
 RayLib::Texture::Texture(const std::string &filename)
 {
     _filename = filename;

@@ -15,7 +15,7 @@ RayLib::Audio::AudioStream::AudioStream(const unsigned int &sampleRate, const un
     this->__sampleRate = sampleRate;
     this->__sampleSize = sampleSize;
     this->__channels = channels;
-    this->__stream = ::InitAudioStream(this->__sampleRate, this->__sampleSize, this->__channels);
+    this->__stream = ::LoadAudioStream(this->__sampleRate, this->__sampleSize, this->__channels);
 }
 
 void RayLib::Audio::AudioStream::UpdateAudioStream(const void *data, const int &samplesCount)
@@ -65,5 +65,5 @@ void RayLib::Audio::AudioStream::SetAudioStreamPitch(const float &pitch)
 
 RayLib::Audio::AudioStream::~AudioStream()
 {
-    ::CloseAudioStream(this->__stream);
+    ::UnloadAudioStream(this->__stream);
 }
