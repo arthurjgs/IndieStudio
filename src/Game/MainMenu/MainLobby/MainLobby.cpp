@@ -11,6 +11,19 @@
 #include "MainLobby.hpp"
 #include "../../QuitGame/QuitGame.hpp"
 
+void Bomberman::Menu::MainLobby::createSavePanel()
+{
+    this->__objContainer.emplace_back(LOAD_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeLoad", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    close->setDisplay(false);
+
+    this->__objContainer.emplace_back(LOAD_PANEL, close);
+    this->__buttonsReferer.emplace_back(LOAD_PANEL, close);
+
+    this->__buttonCallback["closeLoad"] = &MainLobby::closeButtonCallback;
+}
+
 Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
 Scene(manager)
 {
@@ -24,7 +37,7 @@ Scene(manager)
     };
 
     this->__objContainer.emplace_back(MAIN, std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
-    this->__objContainer.emplace_back(MAIN, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
+    this->__objContainer.emplace_back(MAIN_PANEL, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
     this->__objContainer.emplace_back(MAIN, std::make_shared<Image>("./assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 40.0f, 0.0f)));
     
     this->__objContainer.emplace_back(OPTION_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel1.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(65.0f, 85.0f, 0.0f), false));
@@ -35,12 +48,12 @@ Scene(manager)
     std::shared_ptr<Button> quitButton = std::make_shared<Button>("quitButton", Type::Vector<3>(775.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "QUIT", 60);
     std::shared_ptr<Button> settingsButton = std::make_shared<Button>("settingsButton", Type::Vector<3>(40.0f, 57.0f, 0.0f), "./assets/MainMenu/settings_button.png");
 
-    this->__objContainer.emplace_back(MAIN, playButton);
-    this->__buttonsReferer.emplace_back(MAIN, playButton);
-    this->__objContainer.emplace_back(MAIN, loadButton);
-    this->__buttonsReferer.emplace_back(MAIN, loadButton);
-    this->__objContainer.emplace_back(MAIN, quitButton);
-    this->__buttonsReferer.emplace_back(MAIN, quitButton);
+    this->__objContainer.emplace_back(MAIN_PANEL, playButton);
+    this->__buttonsReferer.emplace_back(MAIN_PANEL, playButton);
+    this->__objContainer.emplace_back(MAIN_PANEL, loadButton);
+    this->__buttonsReferer.emplace_back(MAIN_PANEL, loadButton);
+    this->__objContainer.emplace_back(MAIN_PANEL, quitButton);
+    this->__buttonsReferer.emplace_back(MAIN_PANEL, quitButton);
     this->__objContainer.emplace_back(MAIN, settingsButton);
     this->__buttonsReferer.emplace_back(MAIN, settingsButton);
 
@@ -66,6 +79,8 @@ Scene(manager)
     this->__objContainer.emplace_back(OPTION_PANEL, creditsButton);
     this->__buttonsReferer.emplace_back(OPTION_PANEL, creditsButton);
 
+    this->createSavePanel();
+
     this->__buttonCallback["playButton"] = &MainLobby::playButtonCallback;
     this->__buttonCallback["loadButton"] = &MainLobby::loadButtonCallback;
     this->__buttonCallback["quitButton"] = &MainLobby::quitButtonCallback;
@@ -80,6 +95,20 @@ Scene(manager)
     this->__settings = false;
 }
 
+void Bomberman::Menu::MainLobby::closeButtonCallback()
+{
+    std::cout << "close load" << std::endl;
+    this->__save = false;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == LOAD_PANEL) {
+            val.second->setDisplay(this->__save);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__save);
+        }
+    }
+}
+
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
     std::cout << "play click" << std::endl;
@@ -89,7 +118,19 @@ void Bomberman::Menu::MainLobby::playButtonCallback()
 void Bomberman::Menu::MainLobby::loadButtonCallback()
 {
     std::cout << "load click" << std::endl;
-    //TODO: LOAD SAVE
+    if (this->__save == false) {
+        this->__save = true;
+    } else {
+        this->__save = false;
+    }
+    for (auto const &val : this->__objContainer) {
+        if (val.first == LOAD_PANEL) {
+            val.second->setDisplay(this->__save);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__save);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::quitButtonCallback()

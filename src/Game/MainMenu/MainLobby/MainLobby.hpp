@@ -35,8 +35,12 @@ namespace Bomberman {
             private:
                 enum MENU_UI {
                     MAIN,
+                    MAIN_PANEL,
                     OPTION_PANEL,
+                    LOAD_PANEL
                 };
+
+                void createSavePanel();
 
                 void playButtonCallback();
                 void loadButtonCallback();
@@ -51,11 +55,16 @@ namespace Bomberman {
                 void gameplayButtonCallback();
                 void creditsButtonCallback();
 
+                // load panel
+
+                void closeButtonCallback();
+
                 std::vector<std::pair<MENU_UI, std::shared_ptr<GameObject>>> __objContainer;
                 std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>>__buttonsReferer;
                 std::map<std::string, std::function<void(MainLobby &)>> __buttonCallback;
 
                 bool __settings;
+                bool __save;
         };
     }
 }
