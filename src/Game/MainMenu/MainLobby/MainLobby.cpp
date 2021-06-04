@@ -10,6 +10,8 @@
 
 #include "MainLobby.hpp"
 #include "../../QuitGame/QuitGame.hpp"
+#include "../../FlashingText/FlashingText.hpp"
+#include "../Credits/Credits.hpp"
 
 void Bomberman::Menu::MainLobby::createSavePanel()
 {
@@ -22,6 +24,20 @@ void Bomberman::Menu::MainLobby::createSavePanel()
     this->__buttonsReferer.emplace_back(LOAD_PANEL, close);
 
     this->__buttonCallback["closeLoad"] = &MainLobby::closeButtonCallback;
+}
+
+void Bomberman::Menu::MainLobby::createAudioPanel()
+{
+    this->__objContainer.emplace_back(AUDIO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "audioPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Master volume", Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
+
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeAudio", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    close->setDisplay(false);
+
+    this->__objContainer.emplace_back(AUDIO, close);
+    this->__buttonsReferer.emplace_back(AUDIO, close);
+
+    this->__buttonCallback["closeAudio"] = &MainLobby::closeAudioCallback;
 }
 
 Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
@@ -80,6 +96,7 @@ Scene(manager)
     this->__buttonsReferer.emplace_back(OPTION_PANEL, creditsButton);
 
     this->createSavePanel();
+    this->createAudioPanel();
 
     this->__buttonCallback["playButton"] = &MainLobby::playButtonCallback;
     this->__buttonCallback["loadButton"] = &MainLobby::loadButtonCallback;
@@ -93,11 +110,26 @@ Scene(manager)
     this->__buttonCallback["creditsButton"] = &MainLobby::creditsButtonCallback;
 
     this->__settings = false;
+    this->__save = false;
+    this->__audio = false;
+}
+
+void Bomberman::Menu::MainLobby::closeAudioCallback()
+{
+    this->__audio = false;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == AUDIO) {
+            std::cout << "close audio panel" << std::endl;
+            val.second->setDisplay(this->__audio);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__audio);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::closeButtonCallback()
 {
-    std::cout << "close load" << std::endl;
     this->__save = false;
     for (auto const &val : this->__objContainer) {
         if (val.first == LOAD_PANEL) {
@@ -118,6 +150,8 @@ void Bomberman::Menu::MainLobby::playButtonCallback()
 void Bomberman::Menu::MainLobby::loadButtonCallback()
 {
     std::cout << "load click" << std::endl;
+    this->__settings = false;
+    this->__audio = false;
     if (this->__save == false) {
         this->__save = true;
     } else {
@@ -127,7 +161,7 @@ void Bomberman::Menu::MainLobby::loadButtonCallback()
         if (val.first == LOAD_PANEL) {
             val.second->setDisplay(this->__save);
         }
-        if (val.first == MAIN_PANEL) {
+        if (val.first != MAIN && val.first != LOAD_PANEL) {
             val.second->setDisplay(!this->__save);
         }
     }
@@ -161,7 +195,21 @@ void Bomberman::Menu::MainLobby::helpButtonCallback()
 
 void Bomberman::Menu::MainLobby::audioButtonCallback()
 {
-    std::cout << "audio click" << std::endl;
+    this->__settings = false;
+    this->__save = false;
+    if (this->__audio == false) {
+        this->__audio = true;
+    } else {
+        this->__audio = false;
+    }
+    for (auto const &val : this->__objContainer) {
+        if (val.first == AUDIO) {
+            val.second->setDisplay(this->__audio);
+        }
+        if (val.first != MAIN && val.first != AUDIO) {
+            val.second->setDisplay(!this->__audio);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::videoButtonCallback()
@@ -176,7 +224,7 @@ void Bomberman::Menu::MainLobby::gameplayButtonCallback()
 
 void Bomberman::Menu::MainLobby::creditsButtonCallback()
 {
-    std::cout << "credits click" << std::endl;
+    this->__manager.newScene<Credits>();    
 }
 
 void Bomberman::Menu::MainLobby::update(const double &elapsed)

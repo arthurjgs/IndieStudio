@@ -40,6 +40,10 @@ void Bomberman::FlashingText::render() const
 
 void Bomberman::FlashingText::update(const double &elapsed)
 {
+    if (this->__speed <= 0.0) {
+        return;
+    }
+
     const double speed = this->__speed * elapsed;
     uChar &transparency = this->__color.getA();
     static bool sub = true;
