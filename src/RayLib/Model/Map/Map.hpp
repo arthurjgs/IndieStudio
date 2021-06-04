@@ -16,6 +16,7 @@
 
 #include <raylib.h>
 #include <iostream>
+#include <vector>
 #include "../../../Types/Color/Color.hpp"
 #include "../../../Types/Vector/Vector.hpp"
 
