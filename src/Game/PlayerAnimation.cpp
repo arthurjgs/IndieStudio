@@ -7,7 +7,7 @@
 
 #include "PlayerAnimation.hpp"
 
-Bomberman::PlayerAnimation::PlayerAnimation(const std::string &assetPath, const Type::Vector<3> &position)
+Bomberman::PlayerAnimation::PlayerAnimation(const std::string &assetPath, const Type::Vector<3> &position, PlayerAnimation::PlayerState state) : _state(state)
 {
     if (std::filesystem::is_directory(assetPath)) {
         for (auto &dir : std::filesystem::directory_iterator(assetPath)) {
@@ -76,25 +76,56 @@ void Bomberman::PlayerAnimation::setRotationAngle(const float &rotation)
     this->_actionAnimation->setRotationAngle(rotation);
 }
 
-void Bomberman::PlayerAnimation::render(PlayerState state, const Type::Vector<3> &position)
+void Bomberman::PlayerAnimation::setState(PlayerAnimation::PlayerState state)
+{
+    _state = state;
+}
+
+void Bomberman::PlayerAnimation::setPosition(const Type::Vector<3> &position)
 {
     this->_walkingAnimation->setPosition(position);
     this->_idleAnimation->setPosition(position);
     this->_deathAnimation->setPosition(position);
     this->_actionAnimation->setPosition(position);
+}
 
-    switch (state) {
+void Bomberman::PlayerAnimation::update(const double &elapsed)
+{
+    switch (_state) {
         case IDLE:
-            _idleAnimation->display();
+            _idleAnimation->update(elapsed);
             break;
         case WALKING:
-            _walkingAnimation->display();
+            _walkingAnimation->update(elapsed);
             break;
         case ACTION:
-            _actionAnimation->display();
+            _actionAnimation->update(elapsed);
             break;
         case DEAD:
-            _deathAnimation->display();
+            _deathAnimation->update(elapsed);
             break;
     }
+}
+
+void Bomberman::PlayerAnimation::render()
+{
+    switch (_state) {
+        case IDLE:
+            _idleAnimation->render();
+            break;
+        case WALKING:
+            _walkingAnimation->render();
+            break;
+        case ACTION:
+            _actionAnimation->render();
+            break;
+        case DEAD:
+            _deathAnimation->render();
+            break;
+    }
+}
+
+Bomberman::PlayerAnimation::PlayerState Bomberman::PlayerAnimation::getState()
+{
+    return this->_state;
 }

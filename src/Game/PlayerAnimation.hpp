@@ -25,10 +25,14 @@ namespace Bomberman
             DEAD
         };
 
-        explicit PlayerAnimation(const std::string &path, const Type::Vector<3> &position);
+        explicit PlayerAnimation(const std::string &path, const Type::Vector<3> &position, PlayerAnimation::PlayerState state = IDLE);
         void setScale(const Type::Vector<3> &scale);
+        void setState(PlayerAnimation::PlayerState state);
+        PlayerAnimation::PlayerState getState();
+        void setPosition(const Type::Vector<3> &position);
         void setRotationAngle(const float &angle);
-        void render(Bomberman::PlayerAnimation::PlayerState state, const Type::Vector<3> &position);
+        void update(const double &elapsed);
+        void render();
         void resetAnimations();
     private:
         std::unique_ptr<RayLib::Models::Animate> _idleAnimation;
@@ -36,6 +40,7 @@ namespace Bomberman
         std::unique_ptr<RayLib::Models::Animate> _actionAnimation;
         std::unique_ptr<RayLib::Models::Animate> _deathAnimation;
         std::vector<std::filesystem::path> _texturesList;
+        PlayerAnimation::PlayerState _state;
     };
 }
 

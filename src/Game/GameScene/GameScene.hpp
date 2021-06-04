@@ -30,15 +30,14 @@ namespace Bomberman {
             GameScene(const GameScene &) = delete;
             GameScene &operator = (const GameScene &) = delete;
 
-            bool checkColision(int playerIndex) const;
+            bool checkCollision(int playerIndex) const;
             void update(const double &elapsed);
             void drawScene();
         protected:
         private:
-            Bomberman::Image _background;
+            std::vector<std::shared_ptr<Bomberman::GameObject>> _gameObjectList;
+            std::vector<std::weak_ptr<Bomberman::Player>> _listPlayers;
+            std::weak_ptr<Map> _gameMap;
             Type::Camera3D _camera;
-            Bomberman::Music _music;
-            std::unique_ptr<Bomberman::Map> _gameMap;
-            std::array<std::unique_ptr<Bomberman::Player>, 4> _listPlayers;
     };
 }

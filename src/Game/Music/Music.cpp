@@ -17,6 +17,7 @@ _music(filepath),
 _volume(volume)
 {
     _pitch = 1.0f;
+    this->play();
 }
 
 Bomberman::Music::~Music() = default;

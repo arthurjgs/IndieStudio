@@ -44,7 +44,7 @@ int Bomberman::Player::getBombs()
     return this->_bombs;
 }
 
-void Bomberman::Player::setSpeed(int speed)
+void Bomberman::Player::setSpeed(float speed)
 {
     this->_speed = speed;
 }
@@ -66,50 +66,45 @@ void Bomberman::Player::setScale(const Type::Vector<3> &scale)
 
 void Bomberman::Player::render() const
 {
-    _animation->render(this->_state, this->getPosition());
+    _animation->render();
 }
 
 void Bomberman::Player::update(const double &elapsed)
 {
-    if (this->_state == PlayerAnimation::ACTION) {
-        if (elapsed - this->_startAnimTime >= 0.5) {
-            this->_state = PlayerAnimation::IDLE;
-            this->_startAnimTime = 0;
-            this->_animation->resetAnimations();
-        }
-    }
+    this->_animation->setPosition(this->getPosition());
+    PlayerAnimation::PlayerState currState = this->_animation->getState();
 
-    if (this->_state != PlayerAnimation::IDLE
-    && this->_state != PlayerAnimation::WALKING) return;
+    if (currState != PlayerAnimation::IDLE && currState != PlayerAnimation::WALKING) return;
 
     if (IsKeyDown(KEY_W)) {
-        this->_state = PlayerAnimation::WALKING;
+        this->_animation->setState(PlayerAnimation::WALKING);
         this->_animation->setRotationAngle(180.0f);
-        this->Move(Type::Vector<3>(0.0f, 0.0f, -_speed));
+        this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(-_speed * elapsed)));
     }
     else if (IsKeyDown(KEY_A)) {
+        this->_animation->setState(PlayerAnimation::WALKING);
         this->_animation->setRotationAngle(-90.0f);
-        this->_state = PlayerAnimation::WALKING;
-        this->Move(Type::Vector<3>(-_speed, 0.0f, 0.0f));
+        this->Move(Type::Vector<3>(static_cast<float>(-_speed * elapsed), 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_S)) {
-        this->_state = PlayerAnimation::WALKING;
+        this->_animation->setState(PlayerAnimation::WALKING);
         this->_animation->setRotationAngle(0.0f);
-        this->Move(Type::Vector<3>(0.0f, 0.0f, _speed));
+        this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(_speed * elapsed)));
     }
     else if (IsKeyDown(KEY_D)) {
-        this->_state = PlayerAnimation::WALKING;
+        this->_animation->setState(PlayerAnimation::WALKING);
         this->_animation->setRotationAngle(90.0f);
-        this->Move(Type::Vector<3>(_speed, 0.0f, 0.0f));
+        this->Move(Type::Vector<3>(static_cast<float>(_speed * elapsed), 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_E)) {
-        this->_state = PlayerAnimation::ACTION;
-        this->_startAnimTime = elapsed;
+        this->_animation->setState(PlayerAnimation::ACTION);
         doAction();
     }
     else {
-        this->_state = PlayerAnimation::IDLE;
+        this->_animation->setState(PlayerAnimation::IDLE);
     }
+
+    this->_animation->update(elapsed);
 }
 
 void Bomberman::Player::doAction()

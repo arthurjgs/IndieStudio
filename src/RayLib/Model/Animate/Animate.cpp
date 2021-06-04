@@ -6,6 +6,7 @@
  **/
 
 
+#include <RayLib/Window.hpp>
 #include "Animate.hpp"
 
 bool replace(std::string& str, const std::string& from, const std::string& to)
@@ -100,21 +101,29 @@ RayLib::Models::Animate::~Animate()
  *  Display model with it's animation
  *  This should be the only thing used in the loop to display the model
  */
-void RayLib::Models::Animate::display()
+void RayLib::Models::Animate::render()
 {
-    switch (_animType) {
+    int currFrame = static_cast<int>(_animFrameCounter);
 
+    switch (_animType) {
         case OBJ_LIST:
-            DrawModelEx(Models[_animFrameCounter], _position, _rotationAxis, _rotationAngle, _scale, WHITE);
-            _animFrameCounter++;
-            if (_animFrameCounter >= static_cast<int>(Models.size())) _animFrameCounter = 0;
+            DrawModelEx(Models[currFrame], _position, _rotationAxis, _rotationAngle, _scale, WHITE);
             break;
         case IQM:
-            _animFrameCounter++;
-            UpdateModelAnimation(Models[0], _animations[0], _animFrameCounter);
-            if (_animFrameCounter >= _animations[0].frameCount) _animFrameCounter = 0;
+            UpdateModelAnimation(Models[0], _animations[0], currFrame);
             break;
     }
+}
+
+/**
+ *  Update model with it's animation
+ *  This should be the only thing used to update the model
+ */
+void RayLib::Models::Animate::update(const double &elapsed)
+{
+    _animFrameCounter += elapsed * static_cast<double>(RayLib::Window::getInstance().getRefreshRate());
+
+    if (_animFrameCounter >= static_cast<int>(Models.size())) _animFrameCounter = 0;
 }
 
 void RayLib::Models::Animate::setPosition(const Type::Vector<3> &position)

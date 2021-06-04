@@ -15,14 +15,14 @@
 namespace Bomberman {
     class Player : public GameObject {
     public:
-        Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed = 0.1f, int bombs = 1, int range = 3);
+        Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed = 3.0f, int bombs = 1, int range = 3);
         ~Player() override;
 
         void setRange(int range);
         int getRange();
         void setBombs(int range);
         int getBombs();
-        void setSpeed(int range);
+        void setSpeed(float range);
         double getSpeed();
         void setScale(const Type::Vector<3> &scale);
 
