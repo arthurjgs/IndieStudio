@@ -30,14 +30,18 @@ namespace Bomberman {
 
         void render() const override;
         void update(const double &elapsed) override;
-        void doAction();
+
+        bool checkFreeTimer();
+        void launchFreeTimer(const double &elapsed);
+        void checkTimer(const double &elapsed);
+
     private:
         int _range;
-        int _bombs;
         float _speed;
-        double _startAnimTime;
         PlayerAnimation::PlayerState _state;
         std::unique_ptr<PlayerAnimation> _animation;
+        std::vector<double> _bombTimers;
+        double _startActionTime;
     };
 }
 

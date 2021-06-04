@@ -26,16 +26,17 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
 
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     std::shared_ptr<Player> player1 = std::make_shared<Player>("Player1", Type::Vector<3>(-6.0f, 0.0f, -6.0f), "assets/models/bomberman");
+    std::shared_ptr<Image> background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
     player1->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
 
     this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);
-    this->_gameObjectList.emplace_back(std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR,
-                                                               Type::Vector<3>(0.0f, 0.0f, 0.0f)));
+    this->_gameObjectList.emplace_back(background);
     this->_gameObjectList.emplace_back(player1);
 
     this->_gameMap = gameMap;
     this->_listPlayers.emplace_back(player1);
+    this->_background = background;
 }
 
 bool Bomberman::GameScene::checkCollision(int playerIndex) const
@@ -88,16 +89,13 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (checkCollision(0))
             player.lock()->setPosition(oldPosition);
     }
-    //for (auto &player : _listPlayers)
-    //    player->update(elapsed);
 }
 
 void Bomberman::GameScene::drawScene()
 {
+    _background.lock()->render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
     for (auto & object : _gameObjectList)
         object->render();
-    //for (auto &player : _listPlayers)
-    //    player->render();
     RayLib::Window::getInstance().getDrawing().endMode3D();
 }

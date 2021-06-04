@@ -9,10 +9,12 @@
 #include "Player.hpp"
 #include "GameException.hpp"
 
-Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position), _range(range), _speed(speed), _bombs(bombs), _state(PlayerAnimation::IDLE), _startAnimTime(0)
+Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position), _range(range), _speed(speed), _state(PlayerAnimation::IDLE), _startActionTime(0)
 {
     try {
         _animation = std::make_unique<PlayerAnimation>(assetPath, position);
+        for (int i = 0; i < bombs; i++)
+            _bombTimers.emplace_back(0);
     }
     catch (GameException &g) {
         throw g;
@@ -32,16 +34,6 @@ void Bomberman::Player::setRange(int range)
 int Bomberman::Player::getRange()
 {
     return this->_range;
-}
-
-void Bomberman::Player::setBombs(int bombs)
-{
-    this->_bombs = bombs;
-}
-
-int Bomberman::Player::getBombs()
-{
-    return this->_bombs;
 }
 
 void Bomberman::Player::setSpeed(float speed)
@@ -69,10 +61,47 @@ void Bomberman::Player::render() const
     _animation->render();
 }
 
+bool Bomberman::Player::checkFreeTimer()
+{
+    return std::any_of(_bombTimers.begin(), _bombTimers.end(), [](double t){ return t == 0.0; });
+}
+
+void Bomberman::Player::checkTimer(const double &elapsed)
+{
+    for (auto & timer : _bombTimers) {
+        if (timer == 0)
+            continue;
+        else if (timer < 3)
+            timer += elapsed;
+        else
+            timer = 0;
+    }
+}
+
+void Bomberman::Player::launchFreeTimer(const double &elapsed)
+{
+    for (auto & timer : _bombTimers) {
+        if (timer == 0) {
+            timer += elapsed;
+            return;
+        }
+    }
+}
+
 void Bomberman::Player::update(const double &elapsed)
 {
     this->_animation->setPosition(this->getPosition());
     PlayerAnimation::PlayerState currState = this->_animation->getState();
+
+    checkTimer(elapsed);
+
+    if (currState == PlayerAnimation::ACTION) {
+        _startActionTime += elapsed;
+        if (_startActionTime >= 0.5f) {
+            _startActionTime = 0;
+            this->_animation->setState(PlayerAnimation::IDLE);
+        }
+    }
 
     if (currState != PlayerAnimation::IDLE && currState != PlayerAnimation::WALKING) return;
 
@@ -97,17 +126,15 @@ void Bomberman::Player::update(const double &elapsed)
         this->Move(Type::Vector<3>(static_cast<float>(_speed * elapsed), 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_E)) {
+        if (!checkFreeTimer())
+            return;
         this->_animation->setState(PlayerAnimation::ACTION);
-        doAction();
+        launchFreeTimer(elapsed);
+        _startActionTime += elapsed;
     }
     else {
         this->_animation->setState(PlayerAnimation::IDLE);
     }
 
     this->_animation->update(elapsed);
-}
-
-void Bomberman::Player::doAction()
-{
-    this->_bombs--;
 }
