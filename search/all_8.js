@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hidecursor_263',['hideCursor',['../classRayLib_1_1Cursor.html#a01e1930ebec3448ca07e046cfe5699c4',1,'RayLib::Cursor']]]
+  ['hidecursor_261',['hideCursor',['../classRayLib_1_1Cursor.html#a01e1930ebec3448ca07e046cfe5699c4',1,'RayLib::Cursor']]]
 ];
