@@ -51,7 +51,7 @@ Scene(manager)
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
     std::cout << "play click" << std::endl;
-    //TODO: LOAD PLAYER SELECTION
+    this->__manager.newScene<SelectionMenu>();
 }
 
 void Bomberman::Menu::MainLobby::loadButtonCallback()

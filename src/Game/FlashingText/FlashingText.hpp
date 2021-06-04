@@ -8,6 +8,8 @@
  * 
  */
 
+#pragma once
+
 #include "../GameObject.hpp"
 #include "../../RayLib/Text/Text.hpp"
 

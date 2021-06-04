@@ -64,6 +64,7 @@ add_executable(bomberman
         src/Game/SceneManager/SceneManager.cpp
         src/Game/Parralax/Parralax.cpp
         src/Game/LoadingScreen/LoadingScreen.cpp
+        src/Game/MainMenu/SelectionMenu/SelectionMenu.cpp
         src/Game/FlashingText/FlashingText.cpp
         src/Game/TestScene/TestScene.cpp
         src/Game/Button/Button.cpp
