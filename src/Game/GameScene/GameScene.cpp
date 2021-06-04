@@ -16,16 +16,22 @@
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
                                 const std::string &playerDll1, const std::string &playerDll2,
-                                const std::string &playerDll3, const std::string &playerDll4) : Scene(manager), _camera(
-                                        Type::Vector<3>(0.0f, 40.0f, 20.0f),
+                                const std::string &playerDll3, const std::string &playerDll4) : Scene(manager),
+                                _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
-                                                Type::Vector<3>(0.0f, 1.0f, 0.0f),
-                                                        20.0f,
-                                        CAMERA_PERSPECTIVE), _background("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f))
+                                        Type::Vector<3>(0.0f, 1.0f, 0.0f),
+                                        20.0f,
+                                        CAMERA_PERSPECTIVE),
+                                _background("assets/map/default/bg.png",
+                                            "Background",
+                                            GameObject::DECOR,
+                                            Type::Vector<3>(0.0f, 0.0f, 0.0f)),
+                                _music("MainMusic", "assets/sounds/music.mp3")
 {
     this->_listPlayers[0] = std::make_unique<Player>("Player1", Type::Vector<3>(-6.0f, 0.0f, -6.0f), "assets/models/bomberman");
     this->_listPlayers[0]->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
     this->_gameMap = std::make_unique<Bomberman::Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
+    this->_music.play();
 }
 
 bool Bomberman::GameScene::checkColision(int playerIndex) const
@@ -67,6 +73,7 @@ bool Bomberman::GameScene::checkColision(int playerIndex) const
 
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    _music.update(elapsed);
     auto oldPosition = _listPlayers[0]->getPosition();
     _listPlayers[0]->update(elapsed);
     if (checkColision(0))
@@ -77,6 +84,7 @@ void Bomberman::GameScene::update(const double &elapsed)
 
 void Bomberman::GameScene::drawScene()
 {
+    _music.render();
     _background.render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
     _gameMap->render();

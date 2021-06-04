@@ -14,6 +14,7 @@
 #include <Game/Map.hpp>
 #include <Types/Camera/Camera3D.hpp>
 #include <Game/Image/Image.hpp>
+#include <Game/Music/Music.hpp>
 #include "../SceneManager/Scene/Scene.hpp"
 #include "../../RayLib/Text/Text.hpp"
 #include "../Button/Button.hpp"
@@ -36,6 +37,7 @@ namespace Bomberman {
         private:
             Bomberman::Image _background;
             Type::Camera3D _camera;
+            Bomberman::Music _music;
             std::unique_ptr<Bomberman::Map> _gameMap;
             std::array<std::unique_ptr<Bomberman::Player>, 4> _listPlayers;
     };
