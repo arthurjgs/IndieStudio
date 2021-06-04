@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['disablecursor_693',['disableCursor',['../classRayLib_1_1Cursor.html#a312b4acd4ba957227715ef223fe8d1c0',1,'RayLib::Cursor']]],
-  ['display_694',['display',['../classRayLib_1_1Models_1_1Animate.html#a669b4961d5ece2e8efd5619b0090efad',1,'RayLib::Models::Animate']]],
+  ['disablecursor_694',['disableCursor',['../classRayLib_1_1Cursor.html#a312b4acd4ba957227715ef223fe8d1c0',1,'RayLib::Cursor']]],
   ['doaction_695',['doAction',['../classBomberman_1_1Player.html#ac1e39ca9031821f394e8782881f29b4d',1,'Bomberman::Player']]],
   ['downpitch_696',['downPitch',['../classBomberman_1_1Music.html#a0644f950892f1563c7d65726291bda2e',1,'Bomberman::Music']]],
   ['downvolume_697',['downVolume',['../classBomberman_1_1Music.html#a27c58564af6e85495c74d770c755bd56',1,'Bomberman::Music']]],
-  ['draw_698',['draw',['../classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f',1,'Bomberman::SceneManager::draw()'],['../classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53',1,'RayLib::Window::draw()']]],
+  ['draw_698',['draw',['../classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53',1,'RayLib::Window::draw()'],['../classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f',1,'Bomberman::SceneManager::draw()']]],
   ['drawcircle_699',['DrawCircle',['../classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946',1,'RayLib::Shapes::Circle::DrawCircle() const'],['../classRayLib_1_1Shapes_1_1Circle.html#a0ee00db666fc60d9b31f79813ad4d808',1,'RayLib::Shapes::Circle::DrawCircle(const int &amp;centerX, const int &amp;centerY, const float &amp;radius, const Type::Color &amp;col)']]],
   ['drawcircle3d_700',['DrawCircle3D',['../classRayLib_1_1Models_1_1SimpleModel.html#abb1380e3d790bbd459b2033f3ad6d91b',1,'RayLib::Models::SimpleModel']]],
   ['drawcirclegradient_701',['DrawCircleGradient',['../classRayLib_1_1Shapes_1_1Circle.html#a18f135299cad2001b56a0d00b2ed0219',1,'RayLib::Shapes::Circle']]],

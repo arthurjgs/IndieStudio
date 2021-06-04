@@ -11,7 +11,7 @@ var searchData=
   ['camera3d_2ecpp_38',['Camera3D.cpp',['../Camera3D_8cpp.html',1,'']]],
   ['camera3d_2ehpp_39',['Camera3D.hpp',['../Camera3D_8hpp.html',1,'']]],
   ['changescene_40',['changeScene',['../namespaceBomberman.html#aa30db3210067c5b83ce1c7b1aa763fa0',1,'Bomberman']]],
-  ['checkcolision_41',['checkColision',['../classBomberman_1_1GameScene.html#a3ea48977332f6f40169d65239e1cd5b6',1,'Bomberman::GameScene']]],
+  ['checkcollision_41',['checkCollision',['../classBomberman_1_1GameScene.html#a42d2773c0180aa8461c315cb63f27370',1,'Bomberman::GameScene']]],
   ['checkcollisionboxes_42',['CheckCollisionBoxes',['../classRayLib_1_1Models_1_1Collision.html#aa01af9975baa3126513f9b2e274272c7',1,'RayLib::Models::Collision']]],
   ['checkcollisionboxsphere_43',['CheckCollisionBoxSphere',['../classRayLib_1_1Models_1_1Collision.html#ae0ccf641e22b1aaaaf45779501687b8f',1,'RayLib::Models::Collision']]],
   ['checkcollisioncirclerec_44',['CheckCollisionCircleRec',['../classRayLib_1_1Shapes_1_1Collision.html#a7459f821f53d57ff9a87257a3ade63d0',1,'RayLib::Shapes::Collision::CheckCollisionCircleRec()'],['../classRayLib_1_1Models_1_1Collision.html#ad30cdab3d206d7e86ebc784a567fa72c',1,'RayLib::Models::Collision::CheckCollisionCircleRec()']]],
