@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quitgame_553',['QuitGame',['../classBomberman_1_1QuitGame.html',1,'Bomberman']]]
+  ['quitgame_551',['QuitGame',['../classBomberman_1_1QuitGame.html',1,'Bomberman']]]
 ];

@@ -109,45 +109,57 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keywordtype">void</span> createSavePanel();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">void</span> createAudioPanel();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">void</span> playButtonCallback();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">void</span> loadButtonCallback();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordtype">void</span> quitButtonCallback();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">void</span> settingsButtonCallback();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="comment">//settings Panel</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">void</span> helpButtonCallback();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">void</span> audioButtonCallback();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">void</span> videoButtonCallback();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">void</span> gameplayButtonCallback();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">void</span> creditsButtonCallback();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="comment">// load panel</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">void</span> createHelpPanel();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordtype">void</span> createVideoPanel();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordtype">void</span> createGameplayPanel();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">void</span> playButtonCallback();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> loadButtonCallback();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">void</span> quitButtonCallback();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">void</span> settingsButtonCallback();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="comment">//settings Panel</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">void</span> helpButtonCallback();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">void</span> audioButtonCallback();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">void</span> videoButtonCallback();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">void</span> gameplayButtonCallback();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">void</span> creditsButtonCallback();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">void</span> closeButtonCallback();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="comment">// audio panel</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="comment">// load panel</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordtype">void</span> closeButtonCallback();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="comment">// audio panel</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">void</span> closeAudioCallback();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::shared_ptr&lt;GameObject&gt;&gt;&gt; __objContainer;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::weak_ptr&lt;Button&gt;&gt;&gt;__buttonsReferer;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                std::map&lt;std::string, std::function&lt;void(<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;)&gt;&gt; __buttonCallback;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">bool</span> __settings;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">bool</span> __save;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="keywordtype">bool</span> __audio;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        };</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                <span class="comment">// help panel</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordtype">void</span> closeHelpCallback();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                <span class="comment">// video panel</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordtype">void</span> closeVideoPanel();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                <span class="comment">// gameplay panel</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keywordtype">void</span> closeGameplayPanel();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::shared_ptr&lt;GameObject&gt;&gt;&gt; __objContainer;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::weak_ptr&lt;Button&gt;&gt;&gt;__buttonsReferer;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                std::map&lt;std::string, std::function&lt;void(<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;)&gt;&gt; __buttonCallback;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="keywordtype">bool</span> __settings;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keywordtype">bool</span> __save;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordtype">bool</span> __audio;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                <span class="keywordtype">bool</span> __help;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keywordtype">bool</span> __video;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">bool</span> __gameplay;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        };</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html">Bomberman::Menu::MainLobby</a></div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8hpp_source.html#l00023">MainLobby.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a02ebb49f123f0f70be6b400292039a90"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">Bomberman::Menu::MainLobby::~MainLobby</a></div><div class="ttdeci">~MainLobby()=default</div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a302d1a0bd1fe2c151db796aee46f086a"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">Bomberman::Menu::MainLobby::operator=</a></div><div class="ttdeci">MainLobby &amp; operator=(const MainLobby &amp;)=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a4adc55f91c4ee0572609a7f4a85b7b0d"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a4adc55f91c4ee0572609a7f4a85b7b0d">Bomberman::Menu::MainLobby::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00230">MainLobby.cpp:230</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a4adc55f91c4ee0572609a7f4a85b7b0d"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a4adc55f91c4ee0572609a7f4a85b7b0d">Bomberman::Menu::MainLobby::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00372">MainLobby.cpp:372</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_ac32d18e10d90a025ae21b05e02923415"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#ac32d18e10d90a025ae21b05e02923415">Bomberman::Menu::MainLobby::MainLobby</a></div><div class="ttdeci">MainLobby(const MainLobby &amp;)=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_ae07432c3950dba0ce5ffdedcb0c1ecfd"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">Bomberman::Menu::MainLobby::MainLobby</a></div><div class="ttdeci">MainLobby()=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_afc56ea7d9b7347c8eaaaa820f8c7ad39"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#afc56ea7d9b7347c8eaaaa820f8c7ad39">Bomberman::Menu::MainLobby::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00244">MainLobby.cpp:244</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_afc56ea7d9b7347c8eaaaa820f8c7ad39"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#afc56ea7d9b7347c8eaaaa820f8c7ad39">Bomberman::Menu::MainLobby::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00386">MainLobby.cpp:386</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html"><div class="ttname"><a href="classBomberman_1_1Scene.html">Bomberman::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00020">Scene.hpp:20</a></div></div>
 <div class="ttc" id="anamespaceBomberman_html"><div class="ttname"><a href="namespaceBomberman.html">Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="Button_8hpp_source.html#l00024">Button.hpp:25</a></div></div>
