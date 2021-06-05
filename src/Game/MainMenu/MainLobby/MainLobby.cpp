@@ -26,6 +26,32 @@ void Bomberman::Menu::MainLobby::createSavePanel()
     this->__buttonCallback["closeLoad"] = &MainLobby::closeButtonCallback;
 }
 
+void Bomberman::Menu::MainLobby::createVideoPanel()
+{
+    this->__objContainer.emplace_back(VIDEO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeVideo", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    close->setDisplay(false);
+
+    this->__objContainer.emplace_back(VIDEO, close);
+    this->__buttonsReferer.emplace_back(VIDEO, close);
+
+    this->__buttonCallback["closeVideo"] = &MainLobby::closeVideoPanel;
+}
+
+void Bomberman::Menu::MainLobby::createGameplayPanel()
+{
+    this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeGameplay", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    close->setDisplay(false);
+
+    this->__objContainer.emplace_back(GAMEPLAY, close);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, close);
+
+    this->__buttonCallback["closeGameplay"] = &MainLobby::closeGameplayPanel;
+}
+
 void Bomberman::Menu::MainLobby::createAudioPanel()
 {
     this->__objContainer.emplace_back(AUDIO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "audioPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
@@ -38,6 +64,20 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
     this->__buttonsReferer.emplace_back(AUDIO, close);
 
     this->__buttonCallback["closeAudio"] = &MainLobby::closeAudioCallback;
+}
+
+void Bomberman::Menu::MainLobby::createHelpPanel()
+{
+    this->__objContainer.emplace_back(HELP, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f), false));   
+
+
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeHelp", Type::Vector<3>(1300.0f, 460.0f, 0.0f), "./assets/MainMenu/close.png");
+    close->setDisplay(false);
+
+    this->__objContainer.emplace_back(HELP, close);
+    this->__buttonsReferer.emplace_back(HELP, close);
+
+    this->__buttonCallback["closeHelp"] = &MainLobby::closeHelpCallback;
 }
 
 Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
@@ -97,6 +137,9 @@ Scene(manager)
 
     this->createSavePanel();
     this->createAudioPanel();
+    this->createHelpPanel();
+    this->createVideoPanel();
+    this->createGameplayPanel();
 
     this->__buttonCallback["playButton"] = &MainLobby::playButtonCallback;
     this->__buttonCallback["loadButton"] = &MainLobby::loadButtonCallback;
@@ -112,6 +155,22 @@ Scene(manager)
     this->__settings = false;
     this->__save = false;
     this->__audio = false;
+    this->__help = false;
+    this->__video = false;
+    this->__gameplay = false;
+}
+
+void Bomberman::Menu::MainLobby::closeHelpCallback()
+{
+    this->__help = false;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == HELP) {
+            val.second->setDisplay(this->__help);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__help);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::closeAudioCallback()
@@ -119,7 +178,6 @@ void Bomberman::Menu::MainLobby::closeAudioCallback()
     this->__audio = false;
     for (auto const &val : this->__objContainer) {
         if (val.first == AUDIO) {
-            std::cout << "close audio panel" << std::endl;
             val.second->setDisplay(this->__audio);
         }
         if (val.first == MAIN_PANEL) {
@@ -141,6 +199,32 @@ void Bomberman::Menu::MainLobby::closeButtonCallback()
     }
 }
 
+void Bomberman::Menu::MainLobby::closeGameplayPanel()
+{
+    this->__gameplay = false;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == GAMEPLAY) {
+            val.second->setDisplay(this->__gameplay);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__gameplay);
+        }
+    }
+}
+
+void Bomberman::Menu::MainLobby::closeVideoPanel()
+{
+    this->__video = false;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == VIDEO) {
+            val.second->setDisplay(this->__video);
+        }
+        if (val.first == MAIN_PANEL) {
+            val.second->setDisplay(!this->__video);
+        }
+    }
+}
+
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
     std::cout << "play click" << std::endl;
@@ -152,6 +236,9 @@ void Bomberman::Menu::MainLobby::loadButtonCallback()
     std::cout << "load click" << std::endl;
     this->__settings = false;
     this->__audio = false;
+    this->__help = false;
+    this->__gameplay = false;
+    this->__video = false;
     if (this->__save == false) {
         this->__save = true;
     } else {
@@ -190,13 +277,34 @@ void Bomberman::Menu::MainLobby::settingsButtonCallback()
 
 void Bomberman::Menu::MainLobby::helpButtonCallback()
 {
-    std::cout << "help click" << std::endl;
+    this->__settings = false;
+    this->__save = false;
+    this->__audio = false;
+    this->__gameplay = false;
+    this->__video = false;
+    if (this->__help == false) {
+        this->__help = true;
+    } else {
+        this->__help = false;
+    }
+    std::cout << this->__help << std::endl;
+    for (auto const &val : this->__objContainer) {
+        if (val.first == HELP) {
+            val.second->setDisplay(this->__help);
+        }
+        if (val.first != MAIN && val.first != HELP) {
+            val.second->setDisplay(!this->__help);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::audioButtonCallback()
 {
     this->__settings = false;
     this->__save = false;
+    this->__help = false;
+    this->__gameplay = false;
+    this->__video = false;
     if (this->__audio == false) {
         this->__audio = true;
     } else {
@@ -214,12 +322,46 @@ void Bomberman::Menu::MainLobby::audioButtonCallback()
 
 void Bomberman::Menu::MainLobby::videoButtonCallback()
 {
-    std::cout << "video click" << std::endl;
+    this->__settings = false;
+    this->__save = false;
+    this->__help = false;
+    this->__audio = false;
+    this->__gameplay = false;
+    if (this->__video == false) {
+        this->__video = true;
+    } else {
+        this->__video = false;
+    }
+    for (auto const &val : this->__objContainer) {
+        if (val.first == VIDEO) {
+            val.second->setDisplay(this->__video);
+        }
+        if (val.first != MAIN && val.first != VIDEO) {
+            val.second->setDisplay(!this->__video);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::gameplayButtonCallback()
 {
-    std::cout << "gameplay click" << std::endl;
+    this->__settings = false;
+    this->__save = false;
+    this->__help = false;
+    this->__video = false;
+    this->__audio = false;
+    if (this->__gameplay == false) {
+        this->__gameplay = true;
+    } else {
+        this->__gameplay = false;
+    }
+    for (auto const &val : this->__objContainer) {
+        if (val.first == GAMEPLAY) {
+            val.second->setDisplay(this->__gameplay);
+        }
+        if (val.first != MAIN && val.first != GAMEPLAY) {
+            val.second->setDisplay(!this->__gameplay);
+        }
+    }
 }
 
 void Bomberman::Menu::MainLobby::creditsButtonCallback()

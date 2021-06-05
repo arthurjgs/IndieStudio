@@ -46,6 +46,9 @@ namespace Bomberman {
 
                 void createSavePanel();
                 void createAudioPanel();
+                void createHelpPanel();
+                void createVideoPanel();
+                void createGameplayPanel();
 
                 void playButtonCallback();
                 void loadButtonCallback();
@@ -53,7 +56,6 @@ namespace Bomberman {
                 void settingsButtonCallback();
 
                 //settings Panel
-
                 void helpButtonCallback();
                 void audioButtonCallback();
                 void videoButtonCallback();
@@ -61,12 +63,19 @@ namespace Bomberman {
                 void creditsButtonCallback();
 
                 // load panel
-
                 void closeButtonCallback();
 
                 // audio panel
-
                 void closeAudioCallback();
+
+                // help panel
+                void closeHelpCallback();
+
+                // video panel
+                void closeVideoPanel();
+                
+                // gameplay panel
+                void closeGameplayPanel();
 
                 std::vector<std::pair<MENU_UI, std::shared_ptr<GameObject>>> __objContainer;
                 std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>>__buttonsReferer;
@@ -75,6 +84,9 @@ namespace Bomberman {
                 bool __settings;
                 bool __save;
                 bool __audio;
+                bool __help;
+                bool __video;
+                bool __gameplay;
         };
     }
 }
