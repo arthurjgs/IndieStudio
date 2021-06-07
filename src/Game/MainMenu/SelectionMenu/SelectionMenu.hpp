@@ -15,6 +15,7 @@
 #include "../../FlashingText/FlashingText.hpp"
 #include "../../../RayLib/Window.hpp"
 #include "../../Image/Image.hpp"
+#include "../../StateImage/StateImage.hpp"
 #include <vector>
 #include <memory>
 
@@ -38,6 +39,7 @@ namespace Bomberman
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 int _players;
                 bool _firstPlayerGamepad;
+                std::vector<std::weak_ptr<StateImage>>__stateImagesReferer;
         };
     }
 }
