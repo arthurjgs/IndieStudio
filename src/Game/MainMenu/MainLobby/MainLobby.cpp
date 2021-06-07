@@ -58,10 +58,18 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
     this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Master volume", Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
 
     std::shared_ptr<Button> close = std::make_shared<Button>("closeAudio", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> leftMaster = std::make_shared<Button>("leftMaster", Type::Vector<3>(850.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightMaster = std::make_shared<Button>("rightMaster", Type::Vector<3>(1000.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
     close->setDisplay(false);
+    leftMaster->setDisplay(false);
+    rightMaster->setDisplay(false);
 
     this->__objContainer.emplace_back(AUDIO, close);
     this->__buttonsReferer.emplace_back(AUDIO, close);
+    this->__objContainer.emplace_back(AUDIO, leftMaster);
+    this->__buttonsReferer.emplace_back(AUDIO, leftMaster);
+    this->__objContainer.emplace_back(AUDIO, rightMaster);
+    this->__buttonsReferer.emplace_back(AUDIO, rightMaster);
 
     this->__buttonCallback["closeAudio"] = &MainLobby::closeAudioCallback;
 }
