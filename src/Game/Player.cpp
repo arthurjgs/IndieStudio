@@ -5,11 +5,9 @@
 ** delivery
 */
 
-#include <RayLib/InputKeyboard.hpp>
 #include "Player.hpp"
-#include "GameException.hpp"
 
-Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position), _range(range), _speed(speed), _state(PlayerAnimation::IDLE), _startActionTime(0)
+Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position), _range(range), _speed(speed), _startActionTime(0), _alreadyCreatedBomb(false)
 {
     try {
         _animation = std::make_unique<PlayerAnimation>(assetPath, position);
@@ -88,6 +86,14 @@ void Bomberman::Player::launchFreeTimer(const double &elapsed)
     }
 }
 
+std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
+{
+    if (_alreadyCreatedBomb)
+        return nullptr;
+    _alreadyCreatedBomb = true;
+    return std::make_shared<Bomb>("assets/models/bomb", this->getPosition(), GetTime(), this->getRange());
+}
+
 void Bomberman::Player::update(const double &elapsed)
 {
     this->_animation->setPosition(this->getPosition());
@@ -99,6 +105,7 @@ void Bomberman::Player::update(const double &elapsed)
         _startActionTime += elapsed;
         if (_startActionTime >= 0.5f) {
             _startActionTime = 0;
+            _alreadyCreatedBomb = false;
             this->_animation->setState(PlayerAnimation::IDLE);
         }
     }
@@ -137,4 +144,9 @@ void Bomberman::Player::update(const double &elapsed)
     }
 
     this->_animation->update(elapsed);
+}
+
+Bomberman::PlayerAnimation::PlayerState Bomberman::Player::getState()
+{
+    return this->_animation->getState();
 }

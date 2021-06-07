@@ -11,6 +11,10 @@
 #include "GameObject.hpp"
 #include "RayLib/Model/Animate/Animate.hpp"
 #include "PlayerAnimation.hpp"
+#include "GameException.hpp"
+#include <RayLib/InputKeyboard.hpp>
+#include <Game/Bomb/Bomb.hpp>
+#include <memory>
 
 namespace Bomberman {
     class Player : public GameObject {
@@ -26,6 +30,8 @@ namespace Bomberman {
         double getSpeed();
         void setScale(const Type::Vector<3> &scale);
 
+        PlayerAnimation::PlayerState getState();
+
         void Move(const Type::Vector<3> &vector);
 
         void render() const override;
@@ -34,14 +40,15 @@ namespace Bomberman {
         bool checkFreeTimer();
         void launchFreeTimer(const double &elapsed);
         void checkTimer(const double &elapsed);
+        std::shared_ptr<Bomb> createBomb();
 
     private:
         int _range;
         float _speed;
-        PlayerAnimation::PlayerState _state;
         std::unique_ptr<PlayerAnimation> _animation;
         std::vector<double> _bombTimers;
         double _startActionTime;
+        bool _alreadyCreatedBomb;
     };
 }
 

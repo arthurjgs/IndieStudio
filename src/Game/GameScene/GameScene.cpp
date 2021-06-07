@@ -12,6 +12,7 @@
 #include <cmath>
 #include <RayLib/Window.hpp>
 #include <RayLib/Model/Collision/Collision.hpp>
+#include <Game/Bomb/Bomb.hpp>
 
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
@@ -84,6 +85,11 @@ void Bomberman::GameScene::update(const double &elapsed)
     }
 
     for (auto & player : _listPlayers) {
+        if (player.lock()->getState() == PlayerAnimation::PlayerState::ACTION) {
+            std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
+            if (bomb != nullptr)
+                _gameObjectList.emplace_back(bomb);
+        }
         auto oldPosition = player.lock()->getPosition();
         player.lock()->update(elapsed);
         if (checkCollision(0))
