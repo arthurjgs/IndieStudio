@@ -6,3 +6,4 @@ lib/
 unit_tests
 assets/models/player/**
 .DS_Store
+config.yml

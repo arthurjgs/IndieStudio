@@ -8,6 +8,8 @@
  * 
  */
 
+#pragma once
+
 #include "../GameObject.hpp"
 #include "../../RayLib/Text/Text.hpp"
 
@@ -25,6 +27,9 @@ namespace Bomberman {
 
             void render() const;
             void update(const double &elapsed);
+
+            inline std::string &getText() { return (this->__text); }
+            inline std::string getText() const { return (this->__text); }              
         protected:
         private:
             std::string __text;

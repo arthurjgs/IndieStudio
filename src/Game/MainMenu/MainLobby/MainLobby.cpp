@@ -10,7 +10,6 @@
 
 #include "MainLobby.hpp"
 #include "../../QuitGame/QuitGame.hpp"
-#include "../../FlashingText/FlashingText.hpp"
 #include "../Credits/Credits.hpp"
 
 void Bomberman::Menu::MainLobby::createSavePanel()
@@ -56,13 +55,20 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
 {
     this->__objContainer.emplace_back(AUDIO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "audioPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
     this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Master volume", Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
+    this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Music volume", Type::Color(255, 255, 255, 255), 35, 0.0, "musicVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 630.0f), false));
 
     std::shared_ptr<Button> close = std::make_shared<Button>("closeAudio", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
-    std::shared_ptr<Button> leftMaster = std::make_shared<Button>("leftMaster", Type::Vector<3>(850.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightMaster = std::make_shared<Button>("rightMaster", Type::Vector<3>(1000.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmAudio", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftMaster = std::make_shared<Button>("leftMaster", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightMaster = std::make_shared<Button>("rightMaster", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> leftMusic = std::make_shared<Button>("leftMusic", Type::Vector<3>(800.0f, 700.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightMusic = std::make_shared<Button>("rightMusic", Type::Vector<3>(950.0f, 700.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
     close->setDisplay(false);
     leftMaster->setDisplay(false);
     rightMaster->setDisplay(false);
+    leftMusic->setDisplay(false);
+    rightMusic->setDisplay(false);
+    confirm->setDisplay(false);
 
     this->__objContainer.emplace_back(AUDIO, close);
     this->__buttonsReferer.emplace_back(AUDIO, close);
@@ -70,8 +76,27 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
     this->__buttonsReferer.emplace_back(AUDIO, leftMaster);
     this->__objContainer.emplace_back(AUDIO, rightMaster);
     this->__buttonsReferer.emplace_back(AUDIO, rightMaster);
+    this->__objContainer.emplace_back(AUDIO, leftMusic);
+    this->__buttonsReferer.emplace_back(AUDIO, leftMusic);
+    this->__objContainer.emplace_back(AUDIO, rightMusic);
+    this->__buttonsReferer.emplace_back(AUDIO, rightMusic);
+    this->__objContainer.emplace_back(AUDIO, confirm);
+    this->__buttonsReferer.emplace_back(AUDIO, confirm);
 
     this->__buttonCallback["closeAudio"] = &MainLobby::closeAudioCallback;
+    this->__buttonCallback["confirmAudio"] = &MainLobby::confirmAudioCallback;
+    this->__buttonCallback["leftMaster"] = &MainLobby::leftMasterAudioCallback;
+    this->__buttonCallback["rightMaster"] = &MainLobby::rightMasterAudioCallback;
+    this->__buttonCallback["leftMusic"] = &MainLobby::leftMusicAudioCallback;
+    this->__buttonCallback["rightMusic"] = &MainLobby::rightMusicAudioCallback;
+
+    std::shared_ptr<FlashingText> masterVolumeNb = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::MASTER_VOL)), Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeNb", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 525.0f), false);
+    std::shared_ptr<FlashingText> masterMusicNb = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::MUSIC_VOL)), Type::Color(255, 255, 255, 255), 35, 0.0, "musicVolumeNb", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 725.0f), false);
+
+    this->__objContainer.emplace_back(AUDIO, masterVolumeNb);
+    this->__dynamicTextReferer.emplace_back(AUDIO, masterVolumeNb);
+    this->__objContainer.emplace_back(AUDIO, masterMusicNb);
+    this->__dynamicTextReferer.emplace_back(AUDIO, masterMusicNb);
 }
 
 void Bomberman::Menu::MainLobby::createHelpPanel()
@@ -166,6 +191,99 @@ Scene(manager)
     this->__help = false;
     this->__video = false;
     this->__gameplay = false;
+    
+    // TODO: set music volume via config file for each musics created
+}
+
+std::weak_ptr<Bomberman::GameObject> Bomberman::Menu::MainLobby::findElemByName(const std::string &name)
+{
+    for (auto const &val : this->__objContainer) {
+        if (val.second->getName() == name) {
+            return (val.second);
+        }
+    }
+    throw std::runtime_error("Requested name does not exist");
+}
+
+std::weak_ptr<Bomberman::FlashingText> Bomberman::Menu::MainLobby::findTextByName(const std::string &name)
+{
+    for (auto const &val : this->__dynamicTextReferer) {
+        if (val.second.lock()->getName() == name) {
+            return (val.second);
+        }
+    }
+    throw std::runtime_error("Requested name does not exist");
+}
+
+void Bomberman::Menu::MainLobby::setAudioChanges()
+{
+    // TODO: Loop threw all music and set volume of each one
+    RayLib::Window::getInstance().setMasterVolume(this->__configHandler.getValue(UserConfig::ValueType::MASTER_VOL));
+}
+
+void Bomberman::Menu::MainLobby::confirmAudioCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("masterVolumeNb");
+    int value = std::stoi(text.lock()->getText());
+
+    this->__configHandler.setValue(UserConfig::ValueType::MASTER_VOL, value);
+
+    text.reset();
+    text = this->findTextByName("musicVolumeNb");
+    value = std::stoi(text.lock()->getText());
+
+    this->__configHandler.setValue(UserConfig::ValueType::MUSIC_VOL, value);
+
+    this->setAudioChanges();
+    this->closeAudioCallback();
+}
+
+void Bomberman::Menu::MainLobby::leftMasterAudioCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("masterVolumeNb");
+    int value = std::stoi(text.lock()->getText());
+    
+    if (value > 0) {
+        value--;
+        std::string &holder = text.lock()->getText();
+        holder = std::to_string(value);
+    } 
+}
+
+void Bomberman::Menu::MainLobby::rightMasterAudioCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("masterVolumeNb");
+    int value = std::stoi(text.lock()->getText());
+    
+    if (value < 100) {
+        value++;
+        std::string &holder = text.lock()->getText();
+        holder = std::to_string(value);
+    } 
+}
+
+void Bomberman::Menu::MainLobby::leftMusicAudioCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("musicVolumeNb");
+    int value = std::stoi(text.lock()->getText());
+    
+    if (value > 0) {
+        value--;
+        std::string &holder = text.lock()->getText();
+        holder = std::to_string(value);
+    } 
+}
+
+void Bomberman::Menu::MainLobby::rightMusicAudioCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("musicVolumeNb");
+    int value = std::stoi(text.lock()->getText());
+    
+    if (value < 100) {
+        value++;
+        std::string &holder = text.lock()->getText();
+        holder = std::to_string(value);
+    } 
 }
 
 void Bomberman::Menu::MainLobby::closeHelpCallback()

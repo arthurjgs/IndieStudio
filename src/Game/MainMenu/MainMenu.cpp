@@ -28,6 +28,10 @@ Scene(manager)
     const std::string text = "Press any key to start...";
     
     this->__objContainer.push_back(std::make_shared<FlashingText>(text, Type::Color(255, 255, 255, 255), 75, 200, "instruction", GameObject::ObjectType::DECOR, Type::Vector<2>(500.0f, 800.0f)));
+    
+    RayLib::Window::getInstance().setMasterVolume(this->__config.getValue(UserConfig::ValueType::MASTER_VOL));
+    RayLib::Window::getInstance().setRefreshRate(this->__config.getValue(UserConfig::ValueType::FPS));
+    // TODO: set music volume via config file for each musics created
 }
 
 void Bomberman::Menu::MainMenu::update(const double &elapsed)

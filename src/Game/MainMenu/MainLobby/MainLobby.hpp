@@ -15,6 +15,8 @@
 #include "../../Parralax/Parralax.hpp"
 #include "../../Image/Image.hpp"
 #include "../../Button/Button.hpp"
+#include "../../UserConfig/UserConfig.hpp"
+#include "../../FlashingText/FlashingText.hpp"
 #include <map>
 #include <functional>
 
@@ -44,6 +46,7 @@ namespace Bomberman {
                     LOAD_PANEL
                 };
 
+
                 void createSavePanel();
                 void createAudioPanel();
                 void createHelpPanel();
@@ -67,6 +70,12 @@ namespace Bomberman {
 
                 // audio panel
                 void closeAudioCallback();
+                void confirmAudioCallback();
+                void leftMasterAudioCallback();
+                void rightMasterAudioCallback();
+                void leftMusicAudioCallback();
+                void rightMusicAudioCallback();
+                void setAudioChanges();
 
                 // help panel
                 void closeHelpCallback();
@@ -77,8 +86,12 @@ namespace Bomberman {
                 // gameplay panel
                 void closeGameplayPanel();
 
+                std::weak_ptr<GameObject> findElemByName(const std::string &name);
+                std::weak_ptr<FlashingText> findTextByName(const std::string &name);
+
                 std::vector<std::pair<MENU_UI, std::shared_ptr<GameObject>>> __objContainer;
-                std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>>__buttonsReferer;
+                std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>> __buttonsReferer;
+                std::vector<std::pair<MENU_UI, std::weak_ptr<FlashingText>>> __dynamicTextReferer;
                 std::map<std::string, std::function<void(MainLobby &)>> __buttonCallback;
 
                 bool __settings;
@@ -87,6 +100,8 @@ namespace Bomberman {
                 bool __help;
                 bool __video;
                 bool __gameplay;
+
+                UserConfig __configHandler;
         };
     }
 }

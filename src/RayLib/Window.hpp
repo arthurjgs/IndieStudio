@@ -35,10 +35,27 @@ namespace RayLib
             RayLib::Drawing getDrawing() const;
             RayLib::Camera getCamera() const;
 
+            inline int getMonitorRefreshRate() const
+            {
+                return (::GetMonitorRefreshRate(::GetCurrentMonitor()));
+            }
+
             inline size_t getRefreshRate() const
             {
                 return (this->__fps);
             }
+
+            inline void setMasterVolume(float vol)
+            {
+                ::SetMasterVolume(vol);
+            }
+
+            inline void setRefreshRate(int fps)
+            {
+                this->__fps = fps;
+                ::SetTargetFPS(this->__fps);    
+            }
+
         private:
             Window() = delete;
             Window(float width, float height, const std::string &title);
