@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector_2ehpp_668',['Vector.hpp',['../Vector_8hpp.html',1,'']]]
+  ['userconfig_2ecpp_686',['UserConfig.cpp',['../UserConfig_8cpp.html',1,'']]],
+  ['userconfig_2ehpp_687',['UserConfig.hpp',['../UserConfig_8hpp.html',1,'']]]
 ];

@@ -103,6 +103,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a72b6ad8c501aae7871d1329e28f0283b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb4db4d602b30a866b75ffea9b65f02b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1FlashingText.html#aeb4db4d602b30a866b75ffea9b65f02b">update</a> (const double &amp;elapsed)</td></tr>
 <tr class="separator:aeb4db4d602b30a866b75ffea9b65f02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dd4eb36ea1089d819ec1e6f827935e1"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1FlashingText.html#a0dd4eb36ea1089d819ec1e6f827935e1">getText</a> ()</td></tr>
+<tr class="separator:a0dd4eb36ea1089d819ec1e6f827935e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd0a6dcfe73ce4d8d807eb1dbdcab14"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1FlashingText.html#a9dd0a6dcfe73ce4d8d807eb1dbdcab14">getText</a> () const</td></tr>
+<tr class="separator:a9dd0a6dcfe73ce4d8d807eb1dbdcab14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBomberman_1_1GameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBomberman_1_1GameObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></td></tr>
 <tr class="memitem:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a> ()=delete</td></tr>
 <tr class="separator:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,7 +162,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="FlashingText_8hpp_source.html#l00015">15</a> of file <a class="el" href="FlashingText_8hpp_source.html">FlashingText.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="FlashingText_8hpp_source.html#l00017">17</a> of file <a class="el" href="FlashingText_8hpp_source.html">FlashingText.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae2648dd62dd84614123db9a06d548250"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2648dd62dd84614123db9a06d548250">&#9670;&nbsp;</a></span>FlashingText() <span class="overload">[1/4]</span></h2>
@@ -399,6 +403,62 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0dd4eb36ea1089d819ec1e6f827935e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dd4eb36ea1089d819ec1e6f827935e1">&#9670;&nbsp;</a></span>getText() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string&amp; Bomberman::FlashingText::getText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FlashingText_8hpp_source.html#l00031">31</a> of file <a class="el" href="FlashingText_8hpp_source.html">FlashingText.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{ <span class="keywordflow">return</span> (this-&gt;__text); }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9dd0a6dcfe73ce4d8d807eb1dbdcab14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dd0a6dcfe73ce4d8d807eb1dbdcab14">&#9670;&nbsp;</a></span>getText() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Bomberman::FlashingText::getText </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="FlashingText_8hpp_source.html#l00032">32</a> of file <a class="el" href="FlashingText_8hpp_source.html">FlashingText.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{ <span class="keywordflow">return</span> (this-&gt;__text); }              </div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a68a04124166af4c4689bd3c17e9cda2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68a04124166af4c4689bd3c17e9cda2a">&#9670;&nbsp;</a></span>operator=()</h2>
 
