@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['parralax_547',['Parralax',['../classBomberman_1_1Parralax.html',1,'Bomberman']]],
-  ['parralaxmember_548',['ParralaxMember',['../classBomberman_1_1ParralaxMember.html',1,'Bomberman']]],
-  ['pixel_549',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes']]],
-  ['poly_550',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes']]]
+  ['rectangle_558',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html',1,'RayLib::Shapes::Rectangle'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
+  ['rendertexture_559',['RenderTexture',['../classType_1_1RenderTexture.html',1,'Type']]],
+  ['ring_560',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html',1,'RayLib::Shapes']]]
 ];

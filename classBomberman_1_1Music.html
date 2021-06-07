@@ -119,6 +119,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1eaa7a726fac8a14b5e61e267ef938c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82b2c78eecccf0140c97d4c38c538289"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Music.html#a82b2c78eecccf0140c97d4c38c538289">resume</a> ()</td></tr>
 <tr class="separator:a82b2c78eecccf0140c97d4c38c538289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae25853c0f38430ec09a46dc8ea4d4402"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Music.html#ae25853c0f38430ec09a46dc8ea4d4402">render</a> () const</td></tr>
+<tr class="separator:ae25853c0f38430ec09a46dc8ea4d4402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7de5de5ad339626633db640e424d538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Music.html#ae7de5de5ad339626633db640e424d538">update</a> (const double &amp;elapsed)</td></tr>
+<tr class="separator:ae7de5de5ad339626633db640e424d538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBomberman_1_1GameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBomberman_1_1GameObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></td></tr>
 <tr class="memitem:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a> ()=delete</td></tr>
 <tr class="separator:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,10 +146,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1b02887f33dd0433f13e6211abc7f061 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a422e96707d1c32c4199935cb71d193ab inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a422e96707d1c32c4199935cb71d193ab">getDisplay</a> () const</td></tr>
 <tr class="separator:a422e96707d1c32c4199935cb71d193ab inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70c1a04376caf8d73d4a5573cf88cb48 inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a70c1a04376caf8d73d4a5573cf88cb48">render</a> () const =0</td></tr>
-<tr class="separator:a70c1a04376caf8d73d4a5573cf88cb48 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a122c639a70301e75174d90a76f57b925 inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a122c639a70301e75174d90a76f57b925">update</a> (const double &amp;elapsed)=0</td></tr>
-<tr class="separator:a122c639a70301e75174d90a76f57b925 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -276,9 +276,11 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;_volume(volume)</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    _pitch = 1.0f;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1Music.html#a0b02a9035ea6b1ebdebb702ed18c7783">play</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_a3cabcb7657b1b8aa42527fbbb165bd90"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">Bomberman::GameObject::GameObject</a></div><div class="ttdeci">GameObject()=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">Bomberman::GameObject::MUSIC</a></div><div class="ttdeci">@ MUSIC</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00025">GameObject.hpp:25</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Music_html_a0b02a9035ea6b1ebdebb702ed18c7783"><div class="ttname"><a href="classBomberman_1_1Music.html#a0b02a9035ea6b1ebdebb702ed18c7783">Bomberman::Music::play</a></div><div class="ttdeci">void play()</div><div class="ttdef"><b>Definition:</b> <a href="Game_2Music_2Music_8cpp_source.html#l00096">Music.cpp:96</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -288,6 +290,9 @@ Additional Inherited Members</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">Bomberman::Music::~Music </td>
@@ -296,12 +301,13 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00022">22</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -321,18 +327,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00080">80</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (_pitch - pitch &gt;= 0.0f)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            _pitch -= pitch;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a0a4c32f86b719360e9529536b42693be"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">RayLib::Audio::Music::SetMusicPitch</a></div><div class="ttdeci">void SetMusicPitch(const float &amp;pitch) const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00072">Music.cpp:72</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00079">79</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (_pitch - pitch &gt;= 0.0f)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            _pitch -= pitch;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a0a4c32f86b719360e9529536b42693be"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">RayLib::Audio::Music::SetMusicPitch</a></div><div class="ttdeci">void SetMusicPitch(const float &amp;pitch) const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00071">Music.cpp:71</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,18 +358,18 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00056">56</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (volume &gt;= 0 &amp;&amp; volume &lt;= 1.0f)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">if</span> (_volume - volume &gt;= 0.0f)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            _volume -= volume;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a177a0ed90e640435da72108803c3f14a"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">RayLib::Audio::Music::SetMusicVolume</a></div><div class="ttdeci">void SetMusicVolume(const float &amp;volume) const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00067">Music.cpp:67</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00055">55</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (volume &gt;= 0 &amp;&amp; volume &lt;= 1.0f)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">if</span> (_volume - volume &gt;= 0.0f)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            _volume -= volume;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a177a0ed90e640435da72108803c3f14a"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">RayLib::Audio::Music::SetMusicVolume</a></div><div class="ttdeci">void SetMusicVolume(const float &amp;volume) const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00066">Music.cpp:66</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -382,10 +388,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00092">92</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">return</span> _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00091">91</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a4eb29c13b4fc2fc9fc89417e5894a8b0"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">RayLib::Audio::Music::IsMusicPlaying</a></div><div class="ttdeci">bool IsMusicPlaying() const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00038">Music.cpp:38</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -431,12 +437,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00108">108</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a659ec7c919110be3ddcb984d306e1160">PauseMusicStream</a>();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a659ec7c919110be3ddcb984d306e1160"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a659ec7c919110be3ddcb984d306e1160">RayLib::Audio::Music::PauseMusicStream</a></div><div class="ttdeci">void PauseMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00055">Music.cpp:55</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00107">107</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">if</span> (_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a659ec7c919110be3ddcb984d306e1160">PauseMusicStream</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a659ec7c919110be3ddcb984d306e1160"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a659ec7c919110be3ddcb984d306e1160">RayLib::Audio::Music::PauseMusicStream</a></div><div class="ttdeci">void PauseMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00054">Music.cpp:54</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -455,12 +461,42 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00097">97</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span> (!_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a3782c885e2b1f2397f529c7726fa4816">PlayMusicStream</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00096">96</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">if</span> (!_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a3782c885e2b1f2397f529c7726fa4816">PlayMusicStream</a>();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a3782c885e2b1f2397f529c7726fa4816"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a3782c885e2b1f2397f529c7726fa4816">RayLib::Audio::Music::PlayMusicStream</a></div><div class="ttdeci">void PlayMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00032">Music.cpp:32</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae25853c0f38430ec09a46dc8ea4d4402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae25853c0f38430ec09a46dc8ea4d4402">&#9670;&nbsp;</a></span>render()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::Music::render </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a70c1a04376caf8d73d4a5573cf88cb48">Bomberman::GameObject</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00119">119</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -479,12 +515,12 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00114">114</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;{</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">if</span> (!_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a631abe260a834e718789cdadaf6d8401">ResumeMusicStream</a>();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a631abe260a834e718789cdadaf6d8401"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a631abe260a834e718789cdadaf6d8401">RayLib::Audio::Music::ResumeMusicStream</a></div><div class="ttdeci">void ResumeMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00061">Music.cpp:61</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00113">113</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">if</span> (!_music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a4eb29c13b4fc2fc9fc89417e5894a8b0">IsMusicPlaying</a>())</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a631abe260a834e718789cdadaf6d8401">ResumeMusicStream</a>();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a631abe260a834e718789cdadaf6d8401"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a631abe260a834e718789cdadaf6d8401">RayLib::Audio::Music::ResumeMusicStream</a></div><div class="ttdeci">void ResumeMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00060">Music.cpp:60</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -504,14 +540,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00035">35</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        _pitch = pitch;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00034">34</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        _pitch = pitch;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -531,14 +567,14 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00026">26</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (volume &gt; 0 &amp;&amp; volume &lt; 1.0f)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        _volume = volume;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00025">25</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (volume &gt; 0 &amp;&amp; volume &lt; 1.0f)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        _volume = volume;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -557,11 +593,46 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00103">103</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849">StopMusicStream</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a9b2d18a89101f013ff5cc33083036849"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849">RayLib::Audio::Music::StopMusicStream</a></div><div class="ttdeci">void StopMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00049">Music.cpp:49</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00102">102</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849">StopMusicStream</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a9b2d18a89101f013ff5cc33083036849"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a9b2d18a89101f013ff5cc33083036849">RayLib::Audio::Music::StopMusicStream</a></div><div class="ttdeci">void StopMusicStream()</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00048">Music.cpp:48</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae7de5de5ad339626633db640e424d538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7de5de5ad339626633db640e424d538">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Bomberman::Music::update </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>elapsed</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a122c639a70301e75174d90a76f57b925">Bomberman::GameObject</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00121">121</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    (void) elapsed;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a904be4fc90ec250e49d99dcbbee601f5">UpdateMusicStream</a>();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Audio_1_1Music_html_a904be4fc90ec250e49d99dcbbee601f5"><div class="ttname"><a href="classRayLib_1_1Audio_1_1Music.html#a904be4fc90ec250e49d99dcbbee601f5">RayLib::Audio::Music::UpdateMusicStream</a></div><div class="ttdeci">void UpdateMusicStream() const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Audio_2Music_2Music_8cpp_source.html#l00043">Music.cpp:43</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -581,17 +652,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00068">68</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (_pitch + pitch &lt;= 2.0f)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            _pitch += pitch;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00067">67</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span> (pitch &gt;= 0 &amp;&amp; pitch &lt;= 2.0f)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span> (_pitch + pitch &lt;= 2.0f)</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            _pitch += pitch;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a0a4c32f86b719360e9529536b42693be">SetMusicPitch</a>(_pitch);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -611,17 +682,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00044">44</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">if</span> (volume &gt;= 0 &amp;&amp; volume &lt;= 1.0f)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">if</span> (_volume + volume &lt;= 1.0f)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            _volume += volume;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Music_2Music_8cpp_source.html#l00043">43</a> of file <a class="el" href="Game_2Music_2Music_8cpp_source.html">Music.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (volume &gt;= 0 &amp;&amp; volume &lt;= 1.0f)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (_volume + volume &lt;= 1.0f)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            _volume += volume;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            _music.<a class="code" href="classRayLib_1_1Audio_1_1Music.html#a177a0ed90e640435da72108803c3f14a">SetMusicVolume</a>(_volume);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
