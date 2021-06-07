@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['image_2ecpp_620',['Image.cpp',['../Game_2Image_2Image_8cpp.html',1,'(Global Namespace)'],['../Types_2Image_2Image_8cpp.html',1,'(Global Namespace)']]],
-  ['image_2ehpp_621',['Image.hpp',['../Game_2Image_2Image_8hpp.html',1,'(Global Namespace)'],['../Types_2Image_2Image_8hpp.html',1,'(Global Namespace)']]],
-  ['inputgamepad_2ecpp_622',['InputGamepad.cpp',['../InputGamepad_8cpp.html',1,'']]],
-  ['inputgamepad_2ehpp_623',['InputGamepad.hpp',['../InputGamepad_8hpp.html',1,'']]],
-  ['inputkeyboard_2ecpp_624',['InputKeyboard.cpp',['../InputKeyboard_8cpp.html',1,'']]],
-  ['inputkeyboard_2ehpp_625',['InputKeyboard.hpp',['../InputKeyboard_8hpp.html',1,'']]],
-  ['inputmouse_2ecpp_626',['InputMouse.cpp',['../InputMouse_8cpp.html',1,'']]],
-  ['inputmouse_2ehpp_627',['InputMouse.hpp',['../InputMouse_8hpp.html',1,'']]]
+  ['gameobject_2ecpp_611',['GameObject.cpp',['../GameObject_8cpp.html',1,'']]],
+  ['gameobject_2ehpp_612',['GameObject.hpp',['../GameObject_8hpp.html',1,'']]]
 ];
