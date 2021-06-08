@@ -36,10 +36,18 @@ namespace Bomberman
 
             protected:
             private:
+                void cancel();
+                void cancelSquareState();
+                void ready();
+                void readySquareState();
+                void isKeyboardOrGamepad();
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 int _players;
                 bool _firstPlayerGamepad;
                 std::vector<std::weak_ptr<StateImage>>__stateImagesReferer;
+                std::vector<std::weak_ptr<FlashingText>> __flashingTextReferer;
+                int _selectionPlayer;
+                bool _isAction;
         };
     }
 }
