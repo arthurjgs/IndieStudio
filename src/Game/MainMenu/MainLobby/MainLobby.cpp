@@ -28,14 +28,52 @@ void Bomberman::Menu::MainLobby::createSavePanel()
 void Bomberman::Menu::MainLobby::createVideoPanel()
 {
     this->__objContainer.emplace_back(VIDEO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
-    
+    this->__objContainer.emplace_back(VIDEO, std::make_shared<FlashingText>("Refresh Rate", Type::Color(255, 255, 255, 255), 35, 0.0, "refreshRateTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
+    this->__objContainer.emplace_back(VIDEO, std::make_shared<FlashingText>("Vertical Sync", Type::Color(255, 255, 255, 255), 35, 0.0, "VerticalSyncTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 730.0f), false));
+
     std::shared_ptr<Button> close = std::make_shared<Button>("closeVideo", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmAudio", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftRefresh = std::make_shared<Button>("leftRefresh", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightRefresh = std::make_shared<Button>("rightRefresh", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> checkedSync = std::make_shared<Button>("checkedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), "./assets/MainMenu/checked_box.png");
+    std::shared_ptr<Button> uncheckedSync = std::make_shared<Button>("uncheckedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), "./assets/MainMenu/unchecked_box.png");
     close->setDisplay(false);
+    confirm->setDisplay(false);
+    leftRefresh->setDisplay(false);
+    rightRefresh->setDisplay(false);
+    checkedSync->setDisplay(false);
+    uncheckedSync->setDisplay(false);
 
     this->__objContainer.emplace_back(VIDEO, close);
     this->__buttonsReferer.emplace_back(VIDEO, close);
+    this->__objContainer.emplace_back(VIDEO, confirm);
+    this->__buttonsReferer.emplace_back(VIDEO, confirm);
+    this->__objContainer.emplace_back(VIDEO, leftRefresh);
+    this->__buttonsReferer.emplace_back(VIDEO, leftRefresh);
+    this->__objContainer.emplace_back(VIDEO, rightRefresh);
+    this->__buttonsReferer.emplace_back(VIDEO, rightRefresh);
+    this->__objContainer.emplace_back(VIDEO, checkedSync);
+    this->__buttonsReferer.emplace_back(VIDEO, checkedSync);
+    this->__objContainer.emplace_back(VIDEO, uncheckedSync);
+    this->__buttonsReferer.emplace_back(VIDEO, uncheckedSync);
 
     this->__buttonCallback["closeVideo"] = &MainLobby::closeVideoPanel;
+    this->__buttonCallback["confirmAudio"] = &MainLobby::confirmVideo;
+    this->__buttonCallback["leftRefresh"] = &MainLobby::leftRefreshVideo;
+    this->__buttonCallback["rightRefresh"] = &MainLobby::rightRefreshVideo;
+    this->__buttonCallback["checkedSync"] = &MainLobby::checkedSyncVideo;
+    this->__buttonCallback["uncheckedSync"] = &MainLobby::uncheckedSyncVideo;
+
+    std::string text;
+    if (this->__configHandler.getValue(UserConfig::VERTICAL_SYNC) == 0) {
+        text = std::to_string(this->__configHandler.getValue(UserConfig::ValueType::FPS));
+    } else {
+        text = std::to_string(RayLib::Window::getInstance().getMonitorRefreshRate());
+    }
+    std::shared_ptr<FlashingText> refreshRate = std::make_shared<FlashingText>(text, Type::Color(255, 255, 255, 255), 35, 0.0, "refreshRateNb", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 525.0f), false);
+
+    this->__objContainer.emplace_back(VIDEO, refreshRate);
+    this->__dynamicTextReferer.emplace_back(VIDEO, refreshRate);
 }
 
 void Bomberman::Menu::MainLobby::createGameplayPanel()
@@ -191,8 +229,85 @@ Scene(manager)
     this->__help = false;
     this->__video = false;
     this->__gameplay = false;
+    this->__ignore = -1;
     
     // TODO: set music volume via config file for each musics created
+}
+
+void Bomberman::Menu::MainLobby::confirmVideo()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("refreshRateNb");
+    int vsync = 0;
+    int fps = std::stoi(text.lock()->getText());
+    std::weak_ptr<Button> unchecked = this->findButtonByName("uncheckedSync");
+
+    if (unchecked.lock()->getDisplay()) {
+        vsync = 0;
+    } else {
+        vsync = 1;
+    }
+    this->__configHandler.setValue(UserConfig::ValueType::FPS, fps);
+    this->__configHandler.setValue(UserConfig::ValueType::VERTICAL_SYNC, vsync);
+    if (vsync == 1) {
+        RayLib::Window::getInstance().setRefreshRate(RayLib::Window::getInstance().getMonitorRefreshRate());
+    } else {
+        RayLib::Window::getInstance().setRefreshRate(fps);
+    }
+    this->closeVideoPanel();
+}
+
+void Bomberman::Menu::MainLobby::leftRefreshVideo()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("refreshRateNb");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value > 1) {
+        value--;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
+void Bomberman::Menu::MainLobby::rightRefreshVideo()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("refreshRateNb");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value < 260) {
+        value++;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
+void Bomberman::Menu::MainLobby::checkedSyncVideo()
+{
+    std::weak_ptr<Button> unchecked = this->findButtonByName("uncheckedSync");
+    std::weak_ptr<Button> checked = this->findButtonByName("checkedSync");
+    std::weak_ptr<FlashingText> text = this->findTextByName("refreshRateNb");
+    
+    checked.lock()->setDisplay(false);
+    unchecked.lock()->setDisplay(true);
+    std::string &res = text.lock()->getText();
+    res = std::to_string(this->__configHandler.getValue(UserConfig::ValueType::FPS));
+    this->__ignore = 0;
+}
+
+void Bomberman::Menu::MainLobby::uncheckedSyncVideo()
+{
+    std::weak_ptr<Button> unchecked = this->findButtonByName("uncheckedSync");
+    std::weak_ptr<Button> checked = this->findButtonByName("checkedSync");
+    std::weak_ptr<FlashingText> text = this->findTextByName("refreshRateNb");
+
+    if (this->__ignore == 0) {
+        this->__ignore = 1;
+        return;
+    }
+    checked.lock()->setDisplay(true);
+    unchecked.lock()->setDisplay(false);
+    std::string &res = text.lock()->getText();
+    res = std::to_string(RayLib::Window::getInstance().getMonitorRefreshRate());
+    this->__ignore = 1;
 }
 
 std::weak_ptr<Bomberman::GameObject> Bomberman::Menu::MainLobby::findElemByName(const std::string &name)
@@ -208,6 +323,16 @@ std::weak_ptr<Bomberman::GameObject> Bomberman::Menu::MainLobby::findElemByName(
 std::weak_ptr<Bomberman::FlashingText> Bomberman::Menu::MainLobby::findTextByName(const std::string &name)
 {
     for (auto const &val : this->__dynamicTextReferer) {
+        if (val.second.lock()->getName() == name) {
+            return (val.second);
+        }
+    }
+    throw std::runtime_error("Requested name does not exist");
+}
+
+std::weak_ptr<Bomberman::Button> Bomberman::Menu::MainLobby::findButtonByName(const std::string &name)
+{
+    for (auto const &val : this->__buttonsReferer) {
         if (val.second.lock()->getName() == name) {
             return (val.second);
         }
@@ -461,6 +586,12 @@ void Bomberman::Menu::MainLobby::videoButtonCallback()
     for (auto const &val : this->__objContainer) {
         if (val.first == VIDEO) {
             val.second->setDisplay(this->__video);
+            if (val.second->getName() == "checkedSync" && this->__configHandler.getValue(UserConfig::ValueType::VERTICAL_SYNC) == 0) {
+                val.second->setDisplay(false);
+            } 
+            if (val.second->getName() == "uncheckedSync" && this->__configHandler.getValue(UserConfig::ValueType::VERTICAL_SYNC) == 1) {
+                val.second->setDisplay(false);
+            } 
         }
         if (val.first != MAIN && val.first != VIDEO) {
             val.second->setDisplay(!this->__video);

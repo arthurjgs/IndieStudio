@@ -33,6 +33,7 @@ namespace Bomberman {
                 MASTER_VOL,
                 MUSIC_VOL,
                 FPS,
+                VERTICAL_SYNC,
             };
 
             int getValue(const ValueType &type) const;
@@ -47,16 +48,18 @@ namespace Bomberman {
     };
 }
 
-#define TAB_SIZE 3
+#define TAB_SIZE 4 
 
 static const std::pair<Bomberman::UserConfig::ValueType, const std::string> keyTab[] = {
     std::make_pair(Bomberman::UserConfig::ValueType::MASTER_VOL, "masterVolume"),
     std::make_pair(Bomberman::UserConfig::ValueType::MUSIC_VOL, "musicVolume"),
     std::make_pair(Bomberman::UserConfig::ValueType::FPS, "fps"),
+    std::make_pair(Bomberman::UserConfig::ValueType::VERTICAL_SYNC, "vsync"),
 };
 
 static const std::pair<Bomberman::UserConfig::ValueType, const std::string> defaultTab[] = {
     std::make_pair(Bomberman::UserConfig::ValueType::MASTER_VOL, "100"),
     std::make_pair(Bomberman::UserConfig::ValueType::MUSIC_VOL, "100"),
     std::make_pair(Bomberman::UserConfig::ValueType::FPS, std::to_string(RayLib::Window::getInstance().getMonitorRefreshRate())),
+    std::make_pair(Bomberman::UserConfig::ValueType::VERTICAL_SYNC, "1"),
 };

@@ -82,12 +82,18 @@ namespace Bomberman {
 
                 // video panel
                 void closeVideoPanel();
+                void confirmVideo();
+                void leftRefreshVideo();
+                void rightRefreshVideo();
+                void checkedSyncVideo();
+                void uncheckedSyncVideo();
                 
                 // gameplay panel
                 void closeGameplayPanel();
 
                 std::weak_ptr<GameObject> findElemByName(const std::string &name);
                 std::weak_ptr<FlashingText> findTextByName(const std::string &name);
+                std::weak_ptr<Bomberman::Button> findButtonByName(const std::string &name);
 
                 std::vector<std::pair<MENU_UI, std::shared_ptr<GameObject>>> __objContainer;
                 std::vector<std::pair<MENU_UI, std::weak_ptr<Button>>> __buttonsReferer;
@@ -100,6 +106,8 @@ namespace Bomberman {
                 bool __help;
                 bool __video;
                 bool __gameplay;
+
+                int __ignore;
 
                 UserConfig __configHandler;
         };
