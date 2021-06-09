@@ -24,7 +24,7 @@ int main()
                 engine.checkStack(); // check if stack has scene to render
                 engine.update(RayLib::Window::getInstance().getElapsedTime());
                 RayLib::Window::getInstance().draw(engine);
-            }    
+            }
         }
         catch(const Bomberman::QuitGame &e) {
             return (0);

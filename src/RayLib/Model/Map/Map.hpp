@@ -38,6 +38,7 @@ namespace RayLib
             private:
                 Model _model;
                 Mesh _mesh;
+                int _size;
                 Color *_mapPixels;
                 Texture2D _cubicmap;
                 Texture2D _material;
