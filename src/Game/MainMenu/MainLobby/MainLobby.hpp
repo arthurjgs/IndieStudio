@@ -100,6 +100,13 @@ namespace Bomberman {
                 std::vector<std::pair<MENU_UI, std::weak_ptr<FlashingText>>> __dynamicTextReferer;
                 std::map<std::string, std::function<void(MainLobby &)>> __buttonCallback;
 
+                std::map<int, std::string> __controllerMapMain;
+                int __currentBtnMain;
+
+                bool settingsFocus;
+                bool mainPanelFocus;
+                void manageControllerInput();
+
                 bool __settings;
                 bool __save;
                 bool __audio;
@@ -108,6 +115,8 @@ namespace Bomberman {
                 bool __gameplay;
 
                 int __ignore;
+
+                bool controllerActive;
 
                 UserConfig __configHandler;
         };

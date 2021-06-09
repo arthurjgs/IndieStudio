@@ -35,6 +35,27 @@ namespace RayLib
             RayLib::Drawing getDrawing() const;
             RayLib::Camera getCamera() const;
 
+            enum XBOX {
+                NOTHING,
+                UP,
+                RIGHT,
+                DOWN,
+                LEFT,
+                Y,
+                B,
+                A,
+                X,
+                LB,
+                LT,
+                RB,
+                RT,
+                SELECT,
+                XBOX,
+                START,
+                JOYLEFT,
+                JOYRIGHT
+            };
+
             inline int getMonitorRefreshRate() const
             {
                 return (::GetMonitorRefreshRate(::GetCurrentMonitor()));
@@ -55,6 +76,9 @@ namespace RayLib
                 this->__fps = fps;
                 ::SetTargetFPS(this->__fps);    
             }
+
+            inline void ShowCursor(void) {::ShowCursor();}                                                
+            inline void HideCursor(void) {::HideCursor();}   
 
         private:
             Window() = delete;

@@ -184,6 +184,11 @@ Scene(manager)
     this->__objContainer.emplace_back(MAIN, settingsButton);
     this->__buttonsReferer.emplace_back(MAIN, settingsButton);
 
+    this->__currentBtnMain = 0;
+    this->__controllerMapMain[0] = "playButton";
+    this->__controllerMapMain[1] = "loadButton";
+    this->__controllerMapMain[2] = "quitButton";
+
     std::shared_ptr<Button> helpButton = std::make_shared<Button>("helpButton", Type::Vector<3>(80.0f, 200.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Help", 50);
     std::shared_ptr<Button> audioButton = std::make_shared<Button>("audioButton", Type::Vector<3>(80.0f, 300.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Audio", 50);
     std::shared_ptr<Button> videoButton = std::make_shared<Button>("videoButton", Type::Vector<3>(80.0f, 400.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Video", 50);
@@ -231,6 +236,9 @@ Scene(manager)
     this->__gameplay = false;
     this->__ignore = -1;
     
+    this->mainPanelFocus = true;
+    this->settingsFocus = false;
+    this->controllerActive = false;
     // TODO: set music volume via config file for each musics created
 }
 
@@ -626,8 +634,61 @@ void Bomberman::Menu::MainLobby::creditsButtonCallback()
     this->__manager.newScene<Credits>();    
 }
 
+void Bomberman::Menu::MainLobby::manageControllerInput()
+{
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::START) == true) {
+        this->settingsButtonCallback();
+        this->settingsFocus = !this->settingsFocus;
+        this->mainPanelFocus = !this->settingsFocus;
+        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
+        int &state = button.lock()->getState();
+        state = 0;
+    }
+    if (this->mainPanelFocus == true) {
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)this->__currentBtnMain < this->__controllerMapMain.size() - 1) {
+            std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
+            int &state = button.lock()->getState();
+            state = 0;
+            this->__currentBtnMain++;
+        }
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::UP) == true && this->__currentBtnMain > 0) {
+            std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
+            int &state = button.lock()->getState();
+            state = 0;
+            this->__currentBtnMain--;
+        }
+        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
+        int &state = button.lock()->getState();
+        state = 1;
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::A) == true) {
+            if (this->__buttonCallback.count(button.lock()->getName()) > 0) {
+                this->__buttonCallback[button.lock()->getName()](*this);
+            }
+        }
+    }
+}
+
 void Bomberman::Menu::MainLobby::update(const double &elapsed)
 {
+    if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0) {
+        this->controllerActive = false;
+        for (auto const &val : this->__buttonsReferer) {
+            bool &manual = val.second.lock()->getManual();
+            manual = false;
+        }
+        RayLib::Window::getInstance().ShowCursor();
+    }
+    if (RayLib::Window::getInstance().getInputGamepad().getGamepadButtonPressed() > 0) {
+        this->controllerActive = true;
+        for (auto const &val : this->__buttonsReferer) {
+            bool &manual = val.second.lock()->getManual();
+            manual = true;
+        }
+        RayLib::Window::getInstance().HideCursor();
+    }
+    if (this->controllerActive) {
+        this->manageControllerInput();
+    }
     for (auto const &val : this->__buttonsReferer) {
         if (val.second.lock()->isClick() == true && val.second.lock()->getDisplay()) {
             if (this->__buttonCallback.count(val.second.lock()->getName()) > 0) {
