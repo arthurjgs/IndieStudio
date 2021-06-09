@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['bomb_1097',['BOMB',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5',1,'Bomberman::GameObject']]],
-  ['bonus_1098',['BONUS',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a',1,'Bomberman::GameObject']]],
-  ['button_1099',['BUTTON',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879',1,'Bomberman::GameObject']]]
+  ['action_1079',['ACTION',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981ac0e5ebb9ead5e5ca8fa04e740b27c2b5',1,'Bomberman::PlayerAnimation']]],
+  ['alive_1080',['ALIVE',['../classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da9222ad994f8deb19c277052193145739',1,'Bomberman::GameObject']]]
 ];
