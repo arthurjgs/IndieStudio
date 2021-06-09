@@ -26,6 +26,7 @@ namespace RayLib {
                 static bool CheckCollisionSpheres(const Type::Vector<3> &center1, float radius1, const Type::Vector<3> &center2, float radius2);
                 static bool CheckCollisionBoxes(const Type::BoundingBox &box1, const Type::BoundingBox &box2);
                 static bool CheckCollisionBoxSphere(const Type::BoundingBox &box, const Type::Vector<3> &center, float radius);
+                static bool CheckCollisionCircleRec(const Type::Vector<2> &pos, const float &radius, const Type::Rectangle &rect);
             protected:
             private:
         };

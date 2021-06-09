@@ -26,7 +26,7 @@ namespace RayLib {
 
                 void PlayMusicStream();
                 bool IsMusicPlaying() const;
-                void UpdateMusicStream(const std::string &newMusic) const;
+                void UpdateMusicStream() const;
                 void StopMusicStream();
                 void PauseMusicStream();
                 void ResumeMusicStream();

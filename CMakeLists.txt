@@ -56,6 +56,14 @@ add_executable(bomberman
         src/RayLib/Drawing.cpp
         src/RayLib/Texture/Texture.cpp
         src/RayLib/Camera.cpp
+        src/Game/GameObject.cpp
+        src/Game/GameObject.hpp
+        src/Game/Player.cpp
+        src/Game/Player.hpp
+        src/Game/GameException.cpp
+        src/Game/GameException.hpp
+        src/Game/PlayerAnimation.cpp
+        src/Game/PlayerAnimation.hpp
         src/Game/SceneManager/Scene/Scene.cpp
         src/Game/SpriteSheetPlayer/SpriteSheetPlayer.cpp
         src/Game/Image/Image.cpp
@@ -65,12 +73,20 @@ add_executable(bomberman
         src/Game/Parralax/Parralax.cpp
         src/Game/LoadingScreen/LoadingScreen.cpp
         src/Game/MainMenu/SelectionMenu/SelectionMenu.cpp
+        src/Game/GameScene/GameScene.cpp
+        src/Game/GameScene/GameScene.hpp
         src/Game/FlashingText/FlashingText.cpp
         src/Game/TestScene/TestScene.cpp
+        src/Game/TestScene/TestScene.hpp
         src/Game/Button/Button.cpp
         src/Game/Music/Music.cpp
         src/Game/StateImage/StateImage.cpp
-        src/Game/GameObject.cpp src/Game/GameObject.hpp)
+        src/Game/GameObject.cpp
+        src/Game/GameObject.hpp
+        src/Game/Map.cpp
+        src/Game/Map.hpp
+        src/Game/Bomb/Bomb.cpp
+        src/Game/Bomb/Bomb.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
