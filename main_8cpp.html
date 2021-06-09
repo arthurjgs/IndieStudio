@@ -72,15 +72,13 @@ $(function() {
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="GameScene_8hpp_source.html">Game/GameScene/GameScene.hpp</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="Window_8hpp_source.html">RayLib/Window.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="Window_8hpp_source.html">RayLib/Window.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="InputKeyboard_8hpp_source.html">RayLib/InputKeyboard.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="InputMouse_8hpp_source.html">RayLib/InputMouse.hpp</a>&quot;</code><br />
 <code>#include &quot;raylib.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="SceneManager_8hpp_source.html">Game/SceneManager/SceneManager.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="LoadingScreen_8hpp_source.html">Game/LoadingScreen/LoadingScreen.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TestScene_8hpp_source.html">Game/TestScene/TestScene.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Player_8hpp_source.html">Game/Player.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="MainMenu_8hpp_source.html">Game/MainMenu/MainMenu.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="QuitGame_8hpp_source.html">Game/QuitGame/QuitGame.hpp</a>&quot;</code><br />
 </div>
@@ -107,31 +105,32 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00013">13</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>();</div>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00011">11</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a> engine;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a> engine;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="comment">//Bomberman::changeScene&lt;Bomberman::TestScene&gt;(engine);</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    engine.<a class="code" href="classBomberman_1_1SceneManager.html#ace02ba15396144aa16fecee7fd9ec4e8">newScene</a>&lt;<a class="code" href="classBomberman_1_1Menu_1_1MainMenu.html">Bomberman::Menu::MainMenu</a>&gt;();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    engine.<a class="code" href="classBomberman_1_1SceneManager.html#ace02ba15396144aa16fecee7fd9ec4e8">newScene</a>&lt;<a class="code" href="classBomberman_1_1Menu_1_1MainMenu.html">Bomberman::Menu::MainMenu</a>&gt;();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812">isOpen</a>()) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                engine.<a class="code" href="classBomberman_1_1SceneManager.html#a02506a94da139cd0c177511d3bf86378">checkStack</a>(); <span class="comment">// check if stack has scene to render</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                engine.<a class="code" href="classBomberman_1_1SceneManager.html#a45845600e2d37b4f934e29e4234f427c">update</a>(<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a1fd5af46b0138e03cec9fc16352a2cf4">getElapsedTime</a>());</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53">draw</a>(engine);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1QuitGame.html">Bomberman::QuitGame</a> &amp;e) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> (84);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a9ced13630796ae71a50359b8c82ea812">isOpen</a>()) {</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                engine.<a class="code" href="classBomberman_1_1SceneManager.html#a02506a94da139cd0c177511d3bf86378">checkStack</a>(); <span class="comment">// check if stack has scene to render</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                engine.<a class="code" href="classBomberman_1_1SceneManager.html#a45845600e2d37b4f934e29e4234f427c">update</a>(<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a1fd5af46b0138e03cec9fc16352a2cf4">getElapsedTime</a>());</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53">draw</a>(engine);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            }    </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1QuitGame.html">Bomberman::QuitGame</a> &amp;e) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        std::cerr &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> (84);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainMenu_html"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainMenu.html">Bomberman::Menu::MainMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="MainMenu_8hpp_source.html#l00023">MainMenu.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1QuitGame_html"><div class="ttname"><a href="classBomberman_1_1QuitGame.html">Bomberman::QuitGame</a></div><div class="ttdef"><b>Definition:</b> <a href="QuitGame_8hpp_source.html#l00014">QuitGame.hpp:14</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
