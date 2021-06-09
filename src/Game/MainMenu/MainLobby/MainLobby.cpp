@@ -211,6 +211,13 @@ Scene(manager)
     this->__objContainer.emplace_back(OPTION_PANEL, creditsButton);
     this->__buttonsReferer.emplace_back(OPTION_PANEL, creditsButton);
 
+    this->__currentBtnSettings = 0;
+    this->__controllerMapSettings[0] = "helpButton";
+    this->__controllerMapSettings[1] = "audioButton";
+    this->__controllerMapSettings[2] = "videoButton";
+    this->__controllerMapSettings[3] = "gameplayButton";
+    this->__controllerMapSettings[4] = "creditsButton";
+
     this->createSavePanel();
     this->createAudioPanel();
     this->createHelpPanel();
@@ -368,6 +375,7 @@ void Bomberman::Menu::MainLobby::confirmAudioCallback()
     this->__configHandler.setValue(UserConfig::ValueType::MUSIC_VOL, value);
 
     this->setAudioChanges();
+    std::cout << "close" << std::endl;
     this->closeAudioCallback();
 }
 
@@ -634,15 +642,46 @@ void Bomberman::Menu::MainLobby::creditsButtonCallback()
     this->__manager.newScene<Credits>();    
 }
 
+void Bomberman::Menu::MainLobby::manageSettingsController()
+{
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)this->__currentBtnSettings < this->__controllerMapSettings.size() - 1) {
+        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+        int &state = button.lock()->getState();
+        state = 0;
+        this->__currentBtnSettings++;
+        std::cout << "salut cava" << std::endl;
+    }
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::UP) == true && this->__currentBtnSettings > 0) {
+        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+        int &state = button.lock()->getState();
+        state = 0;
+        this->__currentBtnSettings--;
+        std::cout << "salut cava bien" << std::endl;
+    }
+    std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+    int &state = button.lock()->getState();
+    state = 1;
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::A) == true) {
+        if (this->__buttonCallback.count(button.lock()->getName()) > 0) {
+            this->__buttonCallback[button.lock()->getName()](*this);
+        }
+    }
+}
+
 void Bomberman::Menu::MainLobby::manageControllerInput()
 {
+    
     if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::START) == true) {
         this->settingsButtonCallback();
         this->settingsFocus = !this->settingsFocus;
         this->mainPanelFocus = !this->settingsFocus;
+        // set focus of all panel to the opposite of settings focus
         std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
         int &state = button.lock()->getState();
         state = 0;
+    }
+    if (this->settingsFocus == true) {
+        this->manageSettingsController();
     }
     if (this->mainPanelFocus == true) {
         if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)this->__currentBtnMain < this->__controllerMapMain.size() - 1) {

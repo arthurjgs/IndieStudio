@@ -102,10 +102,13 @@ namespace Bomberman {
 
                 std::map<int, std::string> __controllerMapMain;
                 int __currentBtnMain;
+                std::map<int, std::string> __controllerMapSettings;
+                int __currentBtnSettings;
 
                 bool settingsFocus;
                 bool mainPanelFocus;
                 void manageControllerInput();
+                void manageSettingsController();
 
                 bool __settings;
                 bool __save;

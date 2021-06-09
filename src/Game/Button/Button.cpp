@@ -71,7 +71,6 @@ void Bomberman::Button::update(const double &elapsed)
 {
     (void) elapsed;
     if (this->_manual == true) {
-        std::cout << RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() << std::endl;
         _sourceRec.setX(_state * _frameWidth);
         if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0) {
             this->_manual = false;
