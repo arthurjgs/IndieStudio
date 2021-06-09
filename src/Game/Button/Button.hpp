@@ -19,6 +19,7 @@
 #include "../../RayLib/Texture/Texture.hpp"
 #include "../../RayLib/Shapes/Collision/Collision.hpp"
 #include "../../RayLib/InputMouse.hpp"
+#include "../../RayLib/Text/Text.hpp"
 
 namespace Bomberman
 {
@@ -28,11 +29,21 @@ namespace Bomberman
             Button(const Bomberman::Button &) = delete;
             Button &operator=(const Bomberman::Button &) = delete;
             Button(const std::string &name, const Type::Vector<3> &position,
-            const std::string &texturePath, const std::string &soundPath = "./assets/sounds/mute.wav", bool display = true);
+            const std::string &texturePath, const std::string &text = "", size_t fontSize = 12, const Type::Color &textColor = Type::Color(255, 255, 255, 255),
+            const std::string &soundPath = "./assets/sounds/mute.wav", bool display = true);
             ~Button();
             bool isClick() const;
             void render() const;
             void update(const double &elapsed);
+
+            inline std::string &getText() { return (this->_text); }
+            inline std::string getText() const { return (this->_text); }
+
+            inline size_t &getFontSize() { return (this->_fontSize); }
+            inline size_t getFontSize() const { return (this->_fontSize); }
+
+            inline Type::Color &getTextColor() { return (this->_textColor); }
+            inline Type::Color getTextColor() const { return (this->_textColor); }
 
         protected:
         private:
@@ -45,6 +56,10 @@ namespace Bomberman
             Type::Rectangle _btnBounds;
             int _state;
 
+            std::string _text;
+            size_t _fontSize;
+            RayLib::Text _textDisplayer;
+            Type::Color _textColor;
     };
 }
 

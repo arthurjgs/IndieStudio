@@ -13,18 +13,19 @@
 
 
 Bomberman::TestScene::TestScene(SceneManager &manager) :
-Scene(manager)
+Scene(manager),
+test("./assets/LoadingScreen/loading_word.png", "test", GameObject::ObjectType::DECOR, Type::Vector<3>(500.0f, 500.0f, 0.0f))
 {
     ::usleep(10000000);
 }
 
 void Bomberman::TestScene::update(const double &elapsed)
 {
-    (void)elapsed;
+    this->test.update(elapsed);
     _listButton[0]->update(elapsed);
 }
 
 void Bomberman::TestScene::drawScene()
 {
-    this->__text.DrawText("THIS IS A TEST SCENE", 500, 500, 100, Type::Color(0, 0, 0, 255));
+    this->test.render();
 }

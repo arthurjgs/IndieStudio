@@ -31,8 +31,8 @@ namespace Bomberman {
             virtual void update(const double &elapsed) = 0;
             virtual void drawScene() = 0;
         protected:
-        private:
             SceneManager &__manager;
+        private:
     };
 }
 
