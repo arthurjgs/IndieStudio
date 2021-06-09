@@ -72,6 +72,7 @@ add_executable(bomberman
         src/Game/SceneManager/SceneManager.cpp
         src/Game/Parralax/Parralax.cpp
         src/Game/LoadingScreen/LoadingScreen.cpp
+        src/Game/MainMenu/SelectionMenu/SelectionMenu.cpp
         src/Game/GameScene/GameScene.cpp
         src/Game/GameScene/GameScene.hpp
         src/Game/FlashingText/FlashingText.cpp
@@ -79,6 +80,7 @@ add_executable(bomberman
         src/Game/TestScene/TestScene.hpp
         src/Game/Button/Button.cpp
         src/Game/Music/Music.cpp
+        src/Game/StateImage/StateImage.cpp
         src/Game/GameObject.cpp
         src/Game/GameObject.hpp
         src/Game/Map.cpp

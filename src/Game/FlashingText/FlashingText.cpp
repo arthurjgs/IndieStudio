@@ -24,7 +24,8 @@ __RayText() // TODO: Load custom font here
 
 void Bomberman::FlashingText::render() const
 {
-    this->__RayText.DrawText(this->__text, this->getPosition().getX(), this->getPosition().getY(), this->__size, this->__color);
+    if (_display)
+        this->__RayText.DrawText(this->__text, this->getPosition().getX(), this->getPosition().getY(), this->__size, this->__color);
 }
 
 void Bomberman::FlashingText::update(const double &elapsed)

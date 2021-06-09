@@ -17,6 +17,7 @@
 #include "../../Button/Button.hpp"
 #include <map>
 #include <functional>
+#include "../SelectionMenu/SelectionMenu.hpp"
 
 namespace Bomberman {
     namespace Menu {
