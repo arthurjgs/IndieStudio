@@ -41,6 +41,9 @@ namespace Bomberman
                 void ready();
                 void readySquareState();
                 void isKeyboardOrGamepad();
+                void handleGamepads(int gamepad);
+                void changeStateSelection(int gamepad, bool available);
+                void checkPlayers();
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 int _players;
                 bool _firstPlayerGamepad;
@@ -48,6 +51,9 @@ namespace Bomberman
                 std::vector<std::weak_ptr<FlashingText>> __flashingTextReferer;
                 int _selectionPlayer;
                 bool _isAction;
+                bool _isPlayerTwoAI;
+                bool _isPlayerThreeAI;
+                bool _isPlayerFourAI;
         };
     }
 }
