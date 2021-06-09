@@ -243,13 +243,11 @@ void Bomberman::Menu::SelectionMenu::cancelSquareState()
             break;
         }
     }
-    if (less)
+    if (less && _selectionPlayer > 0)
     {
         _selectionPlayer--;
         less = false;
     }
-    // if (_selectionPlayer == 0)
-        //TODO Revenir à la scène d'avant;
     _isAction = false;
 }
 
@@ -378,6 +376,8 @@ void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
     for (int i = 0; i < 4; i++)
         handleGamepads(i);
     checkPlayers();
+    if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_BACKSPACE))
+        __manager.unloadScene();
 }
 
 void Bomberman::Menu::SelectionMenu::drawScene()
