@@ -1,6 +1,9 @@
 var searchData=
 [
-  ['rectangle_562',['Rectangle',['../classRayLib_1_1Shapes_1_1Rectangle.html',1,'RayLib::Shapes::Rectangle'],['../classType_1_1Rectangle.html',1,'Type::Rectangle']]],
-  ['rendertexture_563',['RenderTexture',['../classType_1_1RenderTexture.html',1,'Type']]],
-  ['ring_564',['Ring',['../classRayLib_1_1Shapes_1_1Ring.html',1,'RayLib::Shapes']]]
+  ['parralax_588',['Parralax',['../classBomberman_1_1Parralax.html',1,'Bomberman']]],
+  ['parralaxmember_589',['ParralaxMember',['../classBomberman_1_1ParralaxMember.html',1,'Bomberman']]],
+  ['pixel_590',['Pixel',['../classRayLib_1_1Shapes_1_1Pixel.html',1,'RayLib::Shapes']]],
+  ['player_591',['Player',['../classBomberman_1_1Player.html',1,'Bomberman']]],
+  ['playeranimation_592',['PlayerAnimation',['../classBomberman_1_1PlayerAnimation.html',1,'Bomberman']]],
+  ['poly_593',['Poly',['../classRayLib_1_1Shapes_1_1Poly.html',1,'RayLib::Shapes']]]
 ];
