@@ -17,11 +17,10 @@ _music(filepath),
 _volume(volume)
 {
     _pitch = 1.0f;
+    this->play();
 }
 
-Bomberman::Music::~Music()
-{
-}
+Bomberman::Music::~Music() = default;
 
 void Bomberman::Music::setVolume(const float &volume)
 {
@@ -115,4 +114,12 @@ void Bomberman::Music::resume()
 {
     if (!_music.IsMusicPlaying())
         _music.ResumeMusicStream();
+}
+
+void Bomberman::Music::render() const {}
+
+void Bomberman::Music::update(const double &elapsed)
+{
+    (void) elapsed;
+    _music.UpdateMusicStream();
 }

@@ -9,15 +9,20 @@
  * 
  */
 
+#include <vector>
 #include "Map.hpp"
 
 RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position)
 {
-    _image = ::LoadImage(filepath.c_str());
-    _cubicmap = ::LoadTextureFromImage(_image);
-    _mesh = ::GenMeshCubicmap(_image, (Vector3){ 1.0f, 1.0f, 1.0f });
+    auto image = ::LoadImage(filepath.c_str());
+
+    _cubicmap = ::LoadTextureFromImage(image);
+    _mesh = ::GenMeshCubicmap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
     _model = ::LoadModelFromMesh(_mesh);
+    _mapPixels = ::LoadImageColors(image);
     _position = position;
+
+    ::UnloadImage(image);
 }
 
 RayLib::Models::Map::~Map()
@@ -25,6 +30,7 @@ RayLib::Models::Map::~Map()
     ::UnloadTexture(_cubicmap);
     ::UnloadTexture(_material);
     ::UnloadModel(_model);
+    ::UnloadImageColors(_mapPixels);
 }
 
 void RayLib::Models::Map::LoadMaterial(const std::string &filepath)
@@ -45,4 +51,22 @@ void RayLib::Models::Map::drawMap(float scale, Type::Color tint)
     ::Vector3 {_position.getX(), _position.getY(), _position.getZ()},
     scale,
     ::Color {tint.getR(), tint.getG(), tint.getB(), tint.getA()});
+}
+
+Type::Vector<2> RayLib::Models::Map::getCubicMap() const
+{
+    return Type::Vector<2>(static_cast<float>(_cubicmap.width), static_cast<float>(_cubicmap.height));
+}
+
+std::vector<Type::Color> RayLib::Models::Map::getMapPixels()
+{
+    std::vector<Type::Color> colors = std::vector<Type::Color>();
+
+    for(int i = 0; i < 255; i++)
+    {
+        Color c = _mapPixels[i];
+        colors.emplace_back(Type::Color(c.r, c.g, c.b, c.a));
+    }
+
+    return colors;
 }

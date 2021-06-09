@@ -40,10 +40,9 @@ bool RayLib::Audio::Music::IsMusicPlaying() const
     return (this->__playing);
 }
 
-void RayLib::Audio::Music::UpdateMusicStream(const std::string &newMusic) const
+void RayLib::Audio::Music::UpdateMusicStream() const
 {
-    Music dummy(newMusic);
-    ::UpdateMusicStream(dummy.__music);
+    ::UpdateMusicStream(this->__music);
 }
 
 void RayLib::Audio::Music::StopMusicStream()
