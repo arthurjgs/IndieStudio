@@ -32,7 +32,7 @@ void Bomberman::GameObject::setPosition(Type::Vector<3> position)
     this->_position = position;
 }
 
-Bomberman::GameObject::GameObject(const std::string &name, Bomberman::GameObject::ObjectType type, const Type::Vector<3> &position, bool display)
+Bomberman::GameObject::GameObject(const std::string &name, Bomberman::GameObject::ObjectType type, const Type::Vector<3> &position, bool display) : _state(ALIVE)
 {
     this->_type = type;
     this->_position = position;
@@ -43,6 +43,16 @@ Bomberman::GameObject::GameObject(const std::string &name, Bomberman::GameObject
 std::string Bomberman::GameObject::getName() const
 {
     return this->_name;
+}
+
+Bomberman::GameObject::GameObjectState Bomberman::GameObject::getState() const
+{
+    return this->_state;
+}
+
+void Bomberman::GameObject::destroy()
+{
+    this->_state = DESTROYED;
 }
 
 Bomberman::GameObject::~GameObject() = default;

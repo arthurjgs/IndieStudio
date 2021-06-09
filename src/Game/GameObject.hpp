@@ -13,6 +13,11 @@
 namespace Bomberman {
     class GameObject {
     public:
+        enum GameObjectState {
+            ALIVE,
+            DESTROYED
+        };
+
         enum ObjectType {
             PLAYER,
             DECOR,
@@ -39,9 +44,11 @@ namespace Bomberman {
         std::string getName() const;
 
         ObjectType getType() const;
+        GameObjectState getState() const;
 
         void setDisplay(bool display);
         bool getDisplay() const;
+        void destroy();
 
         virtual void render() const = 0;
         virtual void update(const double &elapsed) = 0;
@@ -51,6 +58,7 @@ namespace Bomberman {
         std::string _name;
         ObjectType _type;
         bool _display;
+        GameObjectState _state;
     private:
     };
 }

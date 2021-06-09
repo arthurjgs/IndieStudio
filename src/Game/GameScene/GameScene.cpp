@@ -79,6 +79,13 @@ bool Bomberman::GameScene::checkCollision(int playerIndex) const
 
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    // CHECK IF OBJECT SHOULD BE DESTROYED
+    _gameObjectList.erase(std::remove_if(
+            _gameObjectList.begin(), _gameObjectList.end(),
+            [](std::shared_ptr<Bomberman::GameObject> &b) {
+                return b->getState() == GameObject::DESTROYED;
+            }), _gameObjectList.end());
+
     for (auto & object : _gameObjectList) {
         if (object->getName().find("Player") == std::string::npos)
             object->update(elapsed);

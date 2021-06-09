@@ -18,13 +18,13 @@ namespace Bomberman {
     class Bomb : public GameObject {
     public:
         Bomb(const std::string &assetPath, const Type::Vector<3> &position, double startTimer, int range);
-        ~Bomb();
+        ~Bomb() = default;
         void update(const double &elapsed);
         void render() const;
     protected:
     private:
         std::vector<std::filesystem::path> _texturesList;
-        double _startTimer;
+        double _lifespan;
         int _range;
         std::unique_ptr<RayLib::Models::Animate> _model;
     };

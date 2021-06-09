@@ -7,7 +7,7 @@
 
 #include "Bomb.hpp"
 
-Bomberman::Bomb::Bomb(const std::string &assetPath, const Type::Vector<3> &position, double startTimer, int range) : GameObject("Bomb", BOMB, position)
+Bomberman::Bomb::Bomb(const std::string &assetPath, const Type::Vector<3> &position, double startTimer, int range) : GameObject("Bomb", BOMB, position), _lifespan(0)
 {
     if (std::filesystem::is_directory(assetPath)) {
         for (auto &dir : std::filesystem::directory_iterator(assetPath)) {
@@ -41,20 +41,20 @@ Bomberman::Bomb::Bomb(const std::string &assetPath, const Type::Vector<3> &posit
         }
     }
     _model->setScale(Type::Vector<3>(30.0f, 30.0f, 30.0f));
-    std::cout << "NEW BOMB" << std::endl;
-}
-
-Bomberman::Bomb::~Bomb()
-{
-
 }
 
 void Bomberman::Bomb::update(const double &elapsed)
 {
-    
+    if (_lifespan > 3) {
+        this->_state = DESTROYED;
+        return;
+    }
+    _lifespan += elapsed;
 }
 
 void Bomberman::Bomb::render() const
 {
+    if (this->_state == DESTROYED)
+        return;
     this->_model->render();
 }

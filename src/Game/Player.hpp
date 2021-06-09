@@ -24,8 +24,6 @@ namespace Bomberman {
 
         void setRange(int range);
         int getRange();
-        void setBombs(int range);
-        int getBombs();
         void setSpeed(float range);
         double getSpeed();
         void setScale(const Type::Vector<3> &scale);

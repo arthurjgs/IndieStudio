@@ -75,7 +75,12 @@ add_executable(bomberman
         src/Game/TestScene/TestScene.hpp
         src/Game/Button/Button.cpp
         src/Game/Music/Music.cpp
-        src/Game/GameObject.cpp src/Game/GameObject.hpp src/Game/Map.cpp src/Game/Map.hpp src/Game/Bomb/Bomb.cpp src/Game/Bomb/Bomb.hpp)
+        src/Game/GameObject.cpp
+        src/Game/GameObject.hpp
+        src/Game/Map.cpp
+        src/Game/Map.hpp
+        src/Game/Bomb/Bomb.cpp
+        src/Game/Bomb/Bomb.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
