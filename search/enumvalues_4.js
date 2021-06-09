@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['idle_1197',['IDLE',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3',1,'Bomberman::PlayerAnimation']]]
+  ['fps_1135',['FPS',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7a868b93bbd265bd19393ec5d63c0adf75',1,'Bomberman::UserConfig']]]
 ];
