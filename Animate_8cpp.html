@@ -72,7 +72,8 @@ $(function() {
 <div class="title">Animate.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="Animate_8hpp_source.html">Animate.hpp</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="Window_8hpp_source.html">RayLib/Window.hpp</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Animate_8hpp_source.html">Animate.hpp</a>&quot;</code><br />
 </div>
 <p><a href="Animate_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -114,14 +115,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00011">11</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">size_t</span> start_pos = str.find(from);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">if</span>(start_pos == std::string::npos)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    str.replace(start_pos, from.length(), to);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00012">12</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">size_t</span> start_pos = str.find(from);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span>(start_pos == std::string::npos)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    str.replace(start_pos, from.length(), to);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
