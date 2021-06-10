@@ -10,6 +10,7 @@
  */
 
 #include "SelectionMenu.hpp"
+#include "../../GameScene/GameScene.hpp"
 #include "../../../RayLib/Window.hpp"
 
 Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager)
@@ -116,6 +117,9 @@ void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
 
 void Bomberman::Menu::SelectionMenu::ready()
 {
+    int ajust = 0;
+    if (!_firstPlayerGamepad)
+        ajust = -1;
     if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_ENTER))
         readySquareState();
     if (_firstPlayerGamepad)
@@ -126,17 +130,17 @@ void Bomberman::Menu::SelectionMenu::ready()
         if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
             if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::A))
                 readySquareState();
-    if (_selectionPlayer == 1)
+    if (_firstPlayerGamepad && _selectionPlayer == 1)
         if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(1))
             if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(1, RayLib::Window::XBOX::A))
                 readySquareState();
     if (_selectionPlayer == 2)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(2))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(2, RayLib::Window::XBOX::A))
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(ajust + 2))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(ajust + 2, RayLib::Window::XBOX::A))
                 readySquareState();
     if (_selectionPlayer == 3)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(3))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(3, RayLib::Window::XBOX::A))
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(ajust + 3))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(ajust + 3, RayLib::Window::XBOX::A))
                 readySquareState();
 }
 
@@ -264,7 +268,7 @@ void Bomberman::Menu::SelectionMenu::cancel()
         if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
             if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::B))
                 cancelSquareState();
-    if (_selectionPlayer == 1)
+    if (_firstPlayerGamepad && _selectionPlayer == 1)
         if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(1))
             if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(1, RayLib::Window::XBOX::B))
                 cancelSquareState();
@@ -365,6 +369,19 @@ void Bomberman::Menu::SelectionMenu::checkPlayers()
     }
 }
 
+void Bomberman::Menu::SelectionMenu::goToGameScene()
+{
+    bool end = false;
+    for (auto const &val : this->__stateImagesReferer)
+    {
+        if (val.lock()->getName() == "perso4" && val.lock()->getActualState() == 1)
+            end = true;
+    }
+    if (end)
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE))
+            __manager.newScene<Bomberman::GameScene>("", "", "", "");
+}
+
 void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
 {
     for (auto const &val : this->__objContainer) {
@@ -376,6 +393,7 @@ void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
     for (int i = 0; i < 4; i++)
         handleGamepads(i);
     checkPlayers();
+    goToGameScene();
     if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_BACKSPACE))
         __manager.unloadScene();
 }
