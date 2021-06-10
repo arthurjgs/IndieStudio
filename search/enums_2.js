@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playerstate_1182',['PlayerState',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981',1,'Bomberman::PlayerAnimation']]]
+  ['xbox_1125',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window']]]
 ];
