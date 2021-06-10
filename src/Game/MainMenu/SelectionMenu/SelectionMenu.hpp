@@ -44,6 +44,7 @@ namespace Bomberman
                 void handleGamepads(int gamepad);
                 void changeStateSelection(int gamepad, bool available);
                 void checkPlayers();
+                void goToGameScene();
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 int _players;
                 bool _firstPlayerGamepad;
