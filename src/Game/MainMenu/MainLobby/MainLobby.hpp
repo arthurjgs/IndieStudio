@@ -105,10 +105,34 @@ namespace Bomberman {
                 std::map<int, std::string> __controllerMapSettings;
                 int __currentBtnSettings;
 
+                std::map<int, std::string> __controllerMapHelp;
+                int __currentBtnHelp;
+
+                std::map<int, std::string> __controllerMapAudio;
+                int __currentBtnAudio;
+
+                std::map<int, std::string> __controllerMapVideo;
+                int __currentBtnVideo;
+
+                std::map<int, std::string> __controllerMapGameplay;
+                int __currentBtnGameplay;
+
+                std::map<int, std::string> __controllerMapLoad;
+                int __currentBtnLoad;
+
                 bool settingsFocus;
                 bool mainPanelFocus;
+                bool helpPanelFocus;
+                bool audioPanelFocus;
+                bool videoPanelFocus;
+                bool gameplayPanelFocus;
+                bool loadPanelFocus;
                 void manageControllerInput();
-                void manageSettingsController();
+                void manageSpecificController(int &index, std::map<int, std::string> &map);
+
+                std::string findFocusedPanelButton();
+
+                bool &getActivePanel();
 
                 bool __settings;
                 bool __save;
@@ -116,6 +140,7 @@ namespace Bomberman {
                 bool __help;
                 bool __video;
                 bool __gameplay;
+                
 
                 int __ignore;
 

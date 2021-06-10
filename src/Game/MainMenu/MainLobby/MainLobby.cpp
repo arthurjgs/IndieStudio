@@ -23,6 +23,7 @@ void Bomberman::Menu::MainLobby::createSavePanel()
     this->__buttonsReferer.emplace_back(LOAD_PANEL, close);
 
     this->__buttonCallback["closeLoad"] = &MainLobby::closeButtonCallback;
+    this->__controllerMapLoad[0] = "closeLoad";
 }
 
 void Bomberman::Menu::MainLobby::createVideoPanel()
@@ -32,7 +33,7 @@ void Bomberman::Menu::MainLobby::createVideoPanel()
     this->__objContainer.emplace_back(VIDEO, std::make_shared<FlashingText>("Vertical Sync", Type::Color(255, 255, 255, 255), 35, 0.0, "VerticalSyncTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 730.0f), false));
 
     std::shared_ptr<Button> close = std::make_shared<Button>("closeVideo", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
-    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmAudio", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmVideo", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
     std::shared_ptr<Button> leftRefresh = std::make_shared<Button>("leftRefresh", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
     std::shared_ptr<Button> rightRefresh = std::make_shared<Button>("rightRefresh", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
     std::shared_ptr<Button> checkedSync = std::make_shared<Button>("checkedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), "./assets/MainMenu/checked_box.png");
@@ -58,7 +59,7 @@ void Bomberman::Menu::MainLobby::createVideoPanel()
     this->__buttonsReferer.emplace_back(VIDEO, uncheckedSync);
 
     this->__buttonCallback["closeVideo"] = &MainLobby::closeVideoPanel;
-    this->__buttonCallback["confirmAudio"] = &MainLobby::confirmVideo;
+    this->__buttonCallback["confirmVideo"] = &MainLobby::confirmVideo;
     this->__buttonCallback["leftRefresh"] = &MainLobby::leftRefreshVideo;
     this->__buttonCallback["rightRefresh"] = &MainLobby::rightRefreshVideo;
     this->__buttonCallback["checkedSync"] = &MainLobby::checkedSyncVideo;
@@ -74,6 +75,13 @@ void Bomberman::Menu::MainLobby::createVideoPanel()
 
     this->__objContainer.emplace_back(VIDEO, refreshRate);
     this->__dynamicTextReferer.emplace_back(VIDEO, refreshRate);
+
+    this->__controllerMapVideo[0] = "closeVideo";
+    this->__controllerMapVideo[1] = "confirmVideo";
+    this->__controllerMapVideo[2] = "leftRefresh";
+    this->__controllerMapVideo[3] = "rightRefresh";
+    this->__controllerMapVideo[4] = "checkedSync";
+    this->__controllerMapAudio[5] = "uncheckedSync";
 }
 
 void Bomberman::Menu::MainLobby::createGameplayPanel()
@@ -87,6 +95,8 @@ void Bomberman::Menu::MainLobby::createGameplayPanel()
     this->__buttonsReferer.emplace_back(GAMEPLAY, close);
 
     this->__buttonCallback["closeGameplay"] = &MainLobby::closeGameplayPanel;
+
+    this->__controllerMapGameplay[0] = "closeGameplay";
 }
 
 void Bomberman::Menu::MainLobby::createAudioPanel()
@@ -128,6 +138,13 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
     this->__buttonCallback["leftMusic"] = &MainLobby::leftMusicAudioCallback;
     this->__buttonCallback["rightMusic"] = &MainLobby::rightMusicAudioCallback;
 
+    this->__controllerMapAudio[0] = "closeAudio";
+    this->__controllerMapAudio[1] = "leftMaster";
+    this->__controllerMapAudio[2] = "rightMaster";
+    this->__controllerMapAudio[3] = "leftMusic";
+    this->__controllerMapAudio[4] = "rightMusic";
+    this->__controllerMapAudio[5] = "confirmAudio";
+
     std::shared_ptr<FlashingText> masterVolumeNb = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::MASTER_VOL)), Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeNb", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 525.0f), false);
     std::shared_ptr<FlashingText> masterMusicNb = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::MUSIC_VOL)), Type::Color(255, 255, 255, 255), 35, 0.0, "musicVolumeNb", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 725.0f), false);
 
@@ -149,6 +166,8 @@ void Bomberman::Menu::MainLobby::createHelpPanel()
     this->__buttonsReferer.emplace_back(HELP, close);
 
     this->__buttonCallback["closeHelp"] = &MainLobby::closeHelpCallback;
+
+    this->__controllerMapHelp[0] = "closeHelp";
 }
 
 Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
@@ -246,6 +265,16 @@ Scene(manager)
     this->mainPanelFocus = true;
     this->settingsFocus = false;
     this->controllerActive = false;
+    this->helpPanelFocus = false;
+    this->audioPanelFocus = false;
+    this->videoPanelFocus = false;
+    this->gameplayPanelFocus = false;
+    this->loadPanelFocus = false;
+    this->__currentBtnAudio = 0;
+    this->__currentBtnHelp = 0;
+    this->__currentBtnGameplay = 0;
+    this->__currentBtnVideo = 0;
+    this->__currentBtnLoad = 0;
     // TODO: set music volume via config file for each musics created
 }
 
@@ -352,7 +381,7 @@ std::weak_ptr<Bomberman::Button> Bomberman::Menu::MainLobby::findButtonByName(co
             return (val.second);
         }
     }
-    throw std::runtime_error("Requested name does not exist");
+    throw std::runtime_error("Requested name does not exist: " + name);
 }
 
 void Bomberman::Menu::MainLobby::setAudioChanges()
@@ -375,7 +404,6 @@ void Bomberman::Menu::MainLobby::confirmAudioCallback()
     this->__configHandler.setValue(UserConfig::ValueType::MUSIC_VOL, value);
 
     this->setAudioChanges();
-    std::cout << "close" << std::endl;
     this->closeAudioCallback();
 }
 
@@ -430,6 +458,7 @@ void Bomberman::Menu::MainLobby::rightMusicAudioCallback()
 void Bomberman::Menu::MainLobby::closeHelpCallback()
 {
     this->__help = false;
+    this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
         if (val.first == HELP) {
             val.second->setDisplay(this->__help);
@@ -438,11 +467,13 @@ void Bomberman::Menu::MainLobby::closeHelpCallback()
             val.second->setDisplay(!this->__help);
         }
     }
+    this->helpPanelFocus = false;
 }
 
 void Bomberman::Menu::MainLobby::closeAudioCallback()
 {
     this->__audio = false;
+    this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
         if (val.first == AUDIO) {
             val.second->setDisplay(this->__audio);
@@ -451,11 +482,14 @@ void Bomberman::Menu::MainLobby::closeAudioCallback()
             val.second->setDisplay(!this->__audio);
         }
     }
+    this->audioPanelFocus = false;
 }
 
 void Bomberman::Menu::MainLobby::closeButtonCallback()
 {
     this->__save = false;
+    this->loadPanelFocus = false;
+    this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
         if (val.first == LOAD_PANEL) {
             val.second->setDisplay(this->__save);
@@ -469,6 +503,7 @@ void Bomberman::Menu::MainLobby::closeButtonCallback()
 void Bomberman::Menu::MainLobby::closeGameplayPanel()
 {
     this->__gameplay = false;
+    this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
         if (val.first == GAMEPLAY) {
             val.second->setDisplay(this->__gameplay);
@@ -477,11 +512,13 @@ void Bomberman::Menu::MainLobby::closeGameplayPanel()
             val.second->setDisplay(!this->__gameplay);
         }
     }
+    this->gameplayPanelFocus = false;
 }
 
 void Bomberman::Menu::MainLobby::closeVideoPanel()
 {
     this->__video = false;
+    this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
         if (val.first == VIDEO) {
             val.second->setDisplay(this->__video);
@@ -490,26 +527,33 @@ void Bomberman::Menu::MainLobby::closeVideoPanel()
             val.second->setDisplay(!this->__video);
         }
     }
+    this->videoPanelFocus = false;
 }
 
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
-    std::cout << "play click" << std::endl;
     //TODO: LOAD PLAYER SELECTION
 }
 
 void Bomberman::Menu::MainLobby::loadButtonCallback()
 {
-    std::cout << "load click" << std::endl;
     this->__settings = false;
     this->__audio = false;
     this->__help = false;
     this->__gameplay = false;
     this->__video = false;
+    this->mainPanelFocus = false;
+    this->loadPanelFocus = true;
+    this->settingsFocus = false;
     if (this->__save == false) {
         this->__save = true;
     } else {
         this->__save = false;
+        for (auto const &val : this->__objContainer) {
+            if (val.first != MAIN && val.first != LOAD_PANEL) {
+                val.second->setDisplay(false);
+            }
+        }
     }
     for (auto const &val : this->__objContainer) {
         if (val.first == LOAD_PANEL) {
@@ -523,13 +567,11 @@ void Bomberman::Menu::MainLobby::loadButtonCallback()
 
 void Bomberman::Menu::MainLobby::quitButtonCallback()
 {
-    std::cout << "quit click" << std::endl;
     throw QuitGame();
 }
 
 void Bomberman::Menu::MainLobby::settingsButtonCallback()
 {
-    std::cout << "settings clicked" << std::endl;
     if (this->__settings == false) {
         this->__settings = true;
     } else {
@@ -549,12 +591,20 @@ void Bomberman::Menu::MainLobby::helpButtonCallback()
     this->__audio = false;
     this->__gameplay = false;
     this->__video = false;
+    this->helpPanelFocus = true;
+    this->settingsFocus = false;
+    this->mainPanelFocus = false;
     if (this->__help == false) {
         this->__help = true;
     } else {
         this->__help = false;
+        for (auto const &val : this->__objContainer) {
+            if (val.first != MAIN && val.first != HELP) {
+                val.second->setDisplay(false);
+            }
+        }
+        return;
     }
-    std::cout << this->__help << std::endl;
     for (auto const &val : this->__objContainer) {
         if (val.first == HELP) {
             val.second->setDisplay(this->__help);
@@ -572,10 +622,19 @@ void Bomberman::Menu::MainLobby::audioButtonCallback()
     this->__help = false;
     this->__gameplay = false;
     this->__video = false;
+    this->audioPanelFocus = true;
+    this->settingsFocus = false;
+    this->mainPanelFocus = false;
     if (this->__audio == false) {
         this->__audio = true;
     } else {
         this->__audio = false;
+        for (auto const &val : this->__objContainer) {
+            if (val.first != MAIN && val.first != AUDIO) {
+                val.second->setDisplay(false);
+            }
+        }
+        return;
     }
     for (auto const &val : this->__objContainer) {
         if (val.first == AUDIO) {
@@ -594,10 +653,19 @@ void Bomberman::Menu::MainLobby::videoButtonCallback()
     this->__help = false;
     this->__audio = false;
     this->__gameplay = false;
+    this->videoPanelFocus = true;
+    this->settingsFocus = false;
+    this->mainPanelFocus = false;
     if (this->__video == false) {
         this->__video = true;
     } else {
         this->__video = false;
+        for (auto const &val : this->__objContainer) {
+            if (val.first != MAIN && val.first != VIDEO) {
+                val.second->setDisplay(false);
+            }
+        }
+        return;
     }
     for (auto const &val : this->__objContainer) {
         if (val.first == VIDEO) {
@@ -622,10 +690,19 @@ void Bomberman::Menu::MainLobby::gameplayButtonCallback()
     this->__help = false;
     this->__video = false;
     this->__audio = false;
+    this->gameplayPanelFocus = true;
+    this->settingsFocus = false;
+    this->mainPanelFocus = false;
     if (this->__gameplay == false) {
         this->__gameplay = true;
     } else {
         this->__gameplay = false;
+        for (auto const &val : this->__objContainer) {
+            if (val.first != MAIN && val.first != GAMEPLAY) {
+                val.second->setDisplay(false);
+            }
+        }
+        return;
     }
     for (auto const &val : this->__objContainer) {
         if (val.first == GAMEPLAY) {
@@ -642,23 +719,21 @@ void Bomberman::Menu::MainLobby::creditsButtonCallback()
     this->__manager.newScene<Credits>();    
 }
 
-void Bomberman::Menu::MainLobby::manageSettingsController()
+void Bomberman::Menu::MainLobby::manageSpecificController(int &index, std::map<int, std::string> &map)
 {
-    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)this->__currentBtnSettings < this->__controllerMapSettings.size() - 1) {
-        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)index < map.size() - 1) {
+        std::weak_ptr<Button> button = this->findButtonByName(map[index]);
         int &state = button.lock()->getState();
         state = 0;
-        this->__currentBtnSettings++;
-        std::cout << "salut cava" << std::endl;
+        index++;
     }
-    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::UP) == true && this->__currentBtnSettings > 0) {
-        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::UP) == true && index > 0) {
+        std::weak_ptr<Button> button = this->findButtonByName(map[index]);
         int &state = button.lock()->getState();
         state = 0;
-        this->__currentBtnSettings--;
-        std::cout << "salut cava bien" << std::endl;
+        index--;
     }
-    std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapSettings[this->__currentBtnSettings]);
+    std::weak_ptr<Button> button = this->findButtonByName(map[index]);
     int &state = button.lock()->getState();
     state = 1;
     if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::A) == true) {
@@ -668,42 +743,99 @@ void Bomberman::Menu::MainLobby::manageSettingsController()
     }
 }
 
+bool &Bomberman::Menu::MainLobby::getActivePanel()
+{
+    for (auto const &val : this->__objContainer) {
+        if (val.first != MAIN && val.second->getDisplay() == true) {
+            if (val.first == MAIN_PANEL) {
+                return (this->mainPanelFocus);
+            }
+            if (val.first == HELP) {
+                return (this->helpPanelFocus);
+            }
+            if (val.first == AUDIO) {
+                return (this->audioPanelFocus);
+            }  
+            if (val.first == VIDEO) {   
+                return (this->videoPanelFocus);
+            }
+            if (val.first == GAMEPLAY) {
+                return (this->gameplayPanelFocus);
+            }
+            if (val.first == LOAD_PANEL) {
+                return (this->loadPanelFocus);
+            }
+        }
+    }
+    throw std::runtime_error("Unexpected error");
+}
+
+std::string Bomberman::Menu::MainLobby::findFocusedPanelButton()
+{
+    for (auto const &val : this->__objContainer) {
+        if (val.first != MAIN && val.second->getDisplay() == true) {
+            if (val.first == MAIN_PANEL) {
+                return (this->__controllerMapMain[this->__currentBtnMain]);
+            }
+            if (val.first == HELP) {
+                return (this->__controllerMapHelp[this->__currentBtnHelp]);
+            }
+            if (val.first == AUDIO) {
+                return (this->__controllerMapAudio[this->__currentBtnAudio]);
+            }  
+            if (val.first == VIDEO) {   
+                return (this->__controllerMapVideo[this->__currentBtnVideo]);
+            }
+            if (val.first == GAMEPLAY) {
+                return (this->__controllerMapGameplay[this->__currentBtnGameplay]);
+            }
+            if (val.first == LOAD_PANEL) {
+                return (this->__controllerMapLoad[this->__currentBtnLoad]);
+            }
+        }
+    }
+    throw std::runtime_error("Unexpected error");
+}
+
 void Bomberman::Menu::MainLobby::manageControllerInput()
 {
     
     if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::START) == true) {
         this->settingsButtonCallback();
         this->settingsFocus = !this->settingsFocus;
-        this->mainPanelFocus = !this->settingsFocus;
-        // set focus of all panel to the opposite of settings focus
-        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
+        bool &focus = this->getActivePanel();
+        focus = !this->settingsFocus;
+        std::weak_ptr<Button> button = this->findButtonByName(this->findFocusedPanelButton());
         int &state = button.lock()->getState();
         state = 0;
     }
     if (this->settingsFocus == true) {
-        this->manageSettingsController();
+        this->manageSpecificController(this->__currentBtnSettings, this->__controllerMapSettings);
+        return;
+    }
+    if (this->helpPanelFocus) {
+        this->manageSpecificController(this->__currentBtnHelp, this->__controllerMapHelp);
+        return;
+    }
+    if (this->audioPanelFocus) {
+        this->manageSpecificController(this->__currentBtnAudio, this->__controllerMapAudio);
+        return;
+    }
+    if (this->videoPanelFocus) {
+        this->manageSpecificController(this->__currentBtnVideo, this->__controllerMapVideo);
+        return;
+    }
+    if (this->gameplayPanelFocus) {
+        this->manageSpecificController(this->__currentBtnGameplay, this->__controllerMapGameplay);
+        return;
     }
     if (this->mainPanelFocus == true) {
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::DOWN) == true && (size_t)this->__currentBtnMain < this->__controllerMapMain.size() - 1) {
-            std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
-            int &state = button.lock()->getState();
-            state = 0;
-            this->__currentBtnMain++;
-        }
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::UP) == true && this->__currentBtnMain > 0) {
-            std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
-            int &state = button.lock()->getState();
-            state = 0;
-            this->__currentBtnMain--;
-        }
-        std::weak_ptr<Button> button = this->findButtonByName(this->__controllerMapMain[this->__currentBtnMain]);
-        int &state = button.lock()->getState();
-        state = 1;
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::A) == true) {
-            if (this->__buttonCallback.count(button.lock()->getName()) > 0) {
-                this->__buttonCallback[button.lock()->getName()](*this);
-            }
-        }
+        this->manageSpecificController(this->__currentBtnMain, this->__controllerMapMain);
+        return;
+    }
+    if (this->loadPanelFocus) {
+        this->manageSpecificController(this->__currentBtnLoad, this->__controllerMapLoad);
+        return;
     }
 }
 
