@@ -17,7 +17,7 @@ RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position) 
     auto image = ::LoadImage(filepath.c_str());
 
     _cubicmap = ::LoadTextureFromImage(image);
-    _mesh = ::GenMeshCubicmap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
+    _mesh = ::GenMeshCubicmap(image, ::Vector3{ 1.0f, 1.0f, 1.0f });
     _model = ::LoadModelFromMesh(_mesh);
     _mapPixels = ::LoadImageColors(image);
     _position = position;
