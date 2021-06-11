@@ -13,6 +13,7 @@
 #include <vector>
 #include <filesystem>
 #include "Game/GameException.hpp"
+#include <cmath>
 
 namespace Bomberman {
     class Bomb : public GameObject {

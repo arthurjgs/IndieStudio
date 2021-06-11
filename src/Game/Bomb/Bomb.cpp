@@ -25,6 +25,9 @@ void Bomberman::Bomb::update(const double &elapsed)
         return;
     }
     _lifespan += elapsed;
+    if (_exploded) {
+        RayLib::Manager3D::getInstance().getModel("fire")->update(elapsed);
+    }
 }
 
 void Bomberman::Bomb::render() const
@@ -35,23 +38,24 @@ void Bomberman::Bomb::render() const
 
     if (_exploded) {
         model = RayLib::Manager3D::getInstance().getModel("fire");
+        Type::Vector<3> flameScale(0.8f, 0.8f, 0.8f);
         for (int i = 0; i < (_range * 4) + 1; i++, side++) {
             if (i == 0) {
-                model.lock()->render(this->getPosition(), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                model.lock()->render(this->getPosition(), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
                 continue;
             }
             switch (side) {
                 case UP:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
                     break;
                 case DOWN:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
                     break;
                 case LEFT:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
                     break;
                 case RIGHT:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f), 0, Type::Vector<3>(1.0f, 1.0f, 1.0f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
                     break;
                 default:
                     side = 0;
