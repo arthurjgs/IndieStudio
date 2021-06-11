@@ -214,7 +214,7 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            std::sort(_texturesList.begin(), _texturesList.end());</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;filePath : _texturesList) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::string file = filePath.filename();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::string file = filePath.filename().string();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            std::cout &lt;&lt; file.substr(0, file.find_last_of(<span class="charliteral">&#39;.&#39;</span>)) &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                    this-&gt;_walkingAnimation-&gt;setTexture(filePath.string(), std::stoi(file.substr(0, file.find_last_of(<span class="charliteral">&#39;.&#39;</span>))));</div>
