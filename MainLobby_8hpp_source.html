@@ -80,39 +80,40 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../../Button/Button.hpp&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceBomberman_1_1Menu.html">   22</a></span>&#160;    <span class="keyword">namespace </span>Menu {</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html">   23</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> : <span class="keyword">public</span> <a class="code" href="classBomberman_1_1Scene.html">Scene</a> {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">   25</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">MainLobby</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">MainLobby</a>(<a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager);</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">   27</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">~MainLobby</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#ac32d18e10d90a025ae21b05e02923415">   29</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ac32d18e10d90a025ae21b05e02923415">MainLobby</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">   30</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">operator = </a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a4adc55f91c4ee0572609a7f4a85b7b0d">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#afc56ea7d9b7347c8eaaaa820f8c7ad39">drawScene</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                <span class="keyword">enum</span> MENU_UI {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    MAIN,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordtype">void</span> playButtonCallback();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordtype">void</span> loadButtonCallback();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">void</span> quitButtonCallback();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">void</span> settingsButtonCallback();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; __objContainer;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::weak_ptr&lt;Button&gt;&gt;&gt;__buttonsReferer;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                std::map&lt;std::string, std::function&lt;void(<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;)&gt;&gt; __buttonCallback;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        };</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html">Bomberman::Menu::MainLobby</a></div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8hpp_source.html#l00023">MainLobby.hpp:23</a></div></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../SelectionMenu/SelectionMenu.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceBomberman_1_1Menu.html">   23</a></span>&#160;    <span class="keyword">namespace </span>Menu {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html">   24</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> : <span class="keyword">public</span> <a class="code" href="classBomberman_1_1Scene.html">Scene</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">   26</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">MainLobby</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ae07432c3950dba0ce5ffdedcb0c1ecfd">MainLobby</a>(<a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager);</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">   28</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">~MainLobby</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#ac32d18e10d90a025ae21b05e02923415">   30</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#ac32d18e10d90a025ae21b05e02923415">MainLobby</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">   31</a></span>&#160;                <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">operator = </a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#a4adc55f91c4ee0572609a7f4a85b7b0d">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html#afc56ea7d9b7347c8eaaaa820f8c7ad39">drawScene</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                <span class="keyword">enum</span> MENU_UI {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    MAIN,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                };</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordtype">void</span> playButtonCallback();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordtype">void</span> loadButtonCallback();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordtype">void</span> quitButtonCallback();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordtype">void</span> settingsButtonCallback();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; __objContainer;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                std::vector&lt;std::pair&lt;MENU_UI, std::weak_ptr&lt;Button&gt;&gt;&gt;__buttonsReferer;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                std::map&lt;std::string, std::function&lt;void(<a class="code" href="classBomberman_1_1Menu_1_1MainLobby.html">MainLobby</a> &amp;)&gt;&gt; __buttonCallback;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        };</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html">Bomberman::Menu::MainLobby</a></div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8hpp_source.html#l00024">MainLobby.hpp:24</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a02ebb49f123f0f70be6b400292039a90"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a02ebb49f123f0f70be6b400292039a90">Bomberman::Menu::MainLobby::~MainLobby</a></div><div class="ttdeci">~MainLobby()=default</div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a302d1a0bd1fe2c151db796aee46f086a"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a302d1a0bd1fe2c151db796aee46f086a">Bomberman::Menu::MainLobby::operator=</a></div><div class="ttdeci">MainLobby &amp; operator=(const MainLobby &amp;)=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_a4adc55f91c4ee0572609a7f4a85b7b0d"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#a4adc55f91c4ee0572609a7f4a85b7b0d">Bomberman::Menu::MainLobby::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00075">MainLobby.cpp:75</a></div></div>
@@ -121,7 +122,7 @@ $(function() {
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1MainLobby_html_afc56ea7d9b7347c8eaaaa820f8c7ad39"><div class="ttname"><a href="classBomberman_1_1Menu_1_1MainLobby.html#afc56ea7d9b7347c8eaaaa820f8c7ad39">Bomberman::Menu::MainLobby::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="MainLobby_8cpp_source.html#l00089">MainLobby.cpp:89</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html"><div class="ttname"><a href="classBomberman_1_1Scene.html">Bomberman::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00020">Scene.hpp:20</a></div></div>
-<div class="ttc" id="anamespaceBomberman_html"><div class="ttname"><a href="namespaceBomberman.html">Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00018">Bomb.hpp:18</a></div></div>
+<div class="ttc" id="anamespaceBomberman_html"><div class="ttname"><a href="namespaceBomberman.html">Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00017">Bomb.hpp:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
