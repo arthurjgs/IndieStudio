@@ -40,9 +40,9 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_background = background;
 }
 
-bool Bomberman::GameScene::checkCollision(int playerIndex) const
+bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPosition) const
 {
-    Type::Vector<2> playerPos = { _listPlayers[playerIndex].lock()->getPosition().getX(), _listPlayers[playerIndex].lock()->getPosition().getZ() };
+    Type::Vector<2> playerPos = { playerPosition.getX(), playerPosition.getZ() };
     Type::Vector<2> cubicMap = this->_gameMap.lock()->getCubicMap();
     int cubicMapX = static_cast<int>(cubicMap.getX());
     int cubicMapY = static_cast<int>(cubicMap.getY());
@@ -77,6 +77,29 @@ bool Bomberman::GameScene::checkCollision(int playerIndex) const
     return false;
 }
 
+bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition) const
+{
+    for (auto & obj : _gameObjectList) {
+        if (obj->getType() == GameObject::PLAYER)
+            continue;
+        Type::Vector<3> enemyPosition = obj->getPosition();
+        if (RayLib::Models::Collision::CheckCollisionBoxes(Type::BoundingBox(Type::Vector<3>(playerPosition.getX() - 0.5f / 2,
+                                                                                             playerPosition.getY() - 0.5f / 2,
+                                                                                             playerPosition.getZ() - 0.5f / 2),
+                                                                             Type::Vector<3>(playerPosition.getX() - 0.5f / 2,
+                                                                                             playerPosition.getY() - 0.5f / 2,
+                                                                                             playerPosition.getZ() - 0.5f / 2)),
+                                                           Type::BoundingBox(Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2),
+                                                                             Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2))))
+            return true;
+    }
+    return false;
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
     // CHECK IF OBJECT SHOULD BE DESTROYEDd
@@ -100,7 +123,9 @@ void Bomberman::GameScene::update(const double &elapsed)
         }
         auto oldPosition = player.lock()->getPosition();
         player.lock()->update(elapsed);
-        if (checkCollision(0))
+        if (checkCollisionForMap(player.lock()->getPosition()))
+            player.lock()->setPosition(oldPosition);
+        if (checkCollisionForObjects(player.lock()->getPosition()))
             player.lock()->setPosition(oldPosition);
     }
 }

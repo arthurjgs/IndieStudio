@@ -51,6 +51,8 @@ add_executable(bomberman
         src/RayLib/Cursor.cpp
         src/Types/Camera/Camera2D.cpp
         src/Types/Camera/Camera3D.cpp
+        src/Types/BoundingBox/BoundingBox.cpp
+        src/Types/BoundingBox/BoundingBox.hpp
         src/Types/RenderTexture/Texture.cpp
         src/Types/RenderTexture/RenderTexture.cpp
         src/RayLib/Drawing.cpp
