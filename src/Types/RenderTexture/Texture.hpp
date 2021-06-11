@@ -14,6 +14,10 @@
 #include <raylib.h>
 #include <iostream>
 
+#ifndef WIN32_
+#define uint unsigned int
+#endif
+
 namespace Type
 {
     class Texture {
