@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['walking_1215',['WALKING',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981abd7aa87d85c94b1714004225268bd659',1,'Bomberman::PlayerAnimation']]]
+  ['walking_1180',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]]
 ];
