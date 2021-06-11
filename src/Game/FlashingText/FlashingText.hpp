@@ -29,7 +29,11 @@ namespace Bomberman {
             void update(const double &elapsed);
 
             inline std::string &getText() { return (this->__text); }
-            inline std::string getText() const { return (this->__text); }              
+            inline std::string getText() const { return (this->__text); }
+
+            inline Type::Color &getColor() { return (this->__color); }
+            inline Type::Color getColor() const { return (this->__color); }
+                       
         protected:
         private:
             std::string __text;
