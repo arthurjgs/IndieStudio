@@ -5,47 +5,22 @@
 ** delivery
 */
 
+#include <RayLib/Manager3D.hpp>
 #include "Bomb.hpp"
 
-Bomberman::Bomb::Bomb(const std::string &assetPath, const Type::Vector<3> &position, double startTimer, int range) : GameObject("Bomb", BOMB, position), _lifespan(0)
+Bomberman::Bomb::Bomb(Type::Vector<3> position, int range) : GameObject("Bomb", BOMB, position), _lifespan(0), _exploded(false), _range(range)
 {
-    if (std::filesystem::is_directory(assetPath)) {
-        for (auto &dir : std::filesystem::directory_iterator(assetPath)) {
-            std::string path = dir.path().string();
-            if (path.find("idle") != std::string::npos)
-                _model = std::make_unique<RayLib::Models::Animate>(path, position);
-        }
-    }
-    else {
-        throw GameException("Unable to load " + assetPath + " it's not a directory.");
-    }
-
-    for (auto &dir : std::filesystem::directory_iterator(assetPath)) {
-        std::string path = dir.path().string();
-        if (path.find("texture") != std::string::npos) {
-            for (const auto &file : std::filesystem::directory_iterator(path)) {
-                if (file.is_regular_file() && file.path().string().find(".png") != std::string::npos) {
-                    _texturesList.emplace_back(file.path());
-                }
-            }
-            std::sort(_texturesList.begin(), _texturesList.end());
-            for (const auto &filePath : _texturesList) {
-                std::string file = filePath.filename();
-                std::cout << file.substr(0, file.find_last_of('.')) << std::endl;
-                try {
-                    this->_model->setTexture(filePath.string(), std::stoi(file.substr(0, file.find_last_of('.'))));
-                } catch (std::invalid_argument &e) {
-                    throw GameException("Unable to load texture :" + file);
-                }
-            }
-        }
-    }
-    _model->setScale(Type::Vector<3>(30.0f, 30.0f, 30.0f));
+    this->setPosition(position);
 }
+
+Bomberman::Bomb::~Bomb() = default;
+
 
 void Bomberman::Bomb::update(const double &elapsed)
 {
     if (_lifespan > 3) {
+        _exploded = true;
+    } if (_lifespan > 4.5) {
         this->_state = DESTROYED;
         return;
     }
@@ -54,7 +29,38 @@ void Bomberman::Bomb::update(const double &elapsed)
 
 void Bomberman::Bomb::render() const
 {
-    if (this->_state == DESTROYED)
-        return;
-    this->_model->render();
+    std::weak_ptr<RayLib::Models::Animate> model;
+    int side = 0;
+    float coef = 1;
+
+    if (_exploded) {
+        model = RayLib::Manager3D::getInstance().getModel("fire");
+        for (int i = 0; i < (_range * 4) + 1; i++, side++) {
+            if (i == 0) {
+                model.lock()->render(this->getPosition(), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                continue;
+            }
+            switch (side) {
+                case UP:
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    break;
+                case DOWN:
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    break;
+                case LEFT:
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f), 0, Type::Vector<3>(0.9f, 0.9f, 0.9f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    break;
+                case RIGHT:
+                    model.lock()->render(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f), 0, Type::Vector<3>(1.0f, 1.0f, 1.0f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+                    break;
+                default:
+                    side = 0;
+                    coef += 1;
+                    break;
+            }
+        }
+    } else {
+        model = RayLib::Manager3D::getInstance().getModel("bomb");
+        model.lock()->render(this->getPosition(), 0, Type::Vector<3>(35.0f, 35.0f, 35.0f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
+    }
 }

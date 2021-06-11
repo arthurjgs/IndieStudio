@@ -7,10 +7,13 @@
 
 #include "Player.hpp"
 
-Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, const std::string &assetPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position), _range(range), _speed(speed), _startActionTime(0), _alreadyCreatedBomb(false)
+Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
+_range(range),
+_speed(speed),
+_startActionTime(0),
+_alreadyCreatedBomb(false)
 {
     try {
-        _animation = std::make_unique<PlayerAnimation>(assetPath, position);
         for (int i = 0; i < bombs; i++)
             _bombTimers.emplace_back(0);
     }
@@ -19,10 +22,7 @@ Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &positi
     }
 }
 
-Bomberman::Player::~Player()
-{
-    _animation.reset();
-}
+Bomberman::Player::~Player() = default;
 
 void Bomberman::Player::setRange(int range)
 {
@@ -51,12 +51,32 @@ double Bomberman::Player::getSpeed()
 
 void Bomberman::Player::setScale(const Type::Vector<3> &scale)
 {
-    this->_animation->setScale(scale);
+    this->_scale = scale;
+}
+
+Bomberman::Player::PlayerState Bomberman::Player::getState()
+{
+    return this->_state;
 }
 
 void Bomberman::Player::render() const
 {
-    _animation->render();
+    std::weak_ptr<RayLib::Models::Animate> model;
+    switch (_state) {
+        case IDLE:
+            model = RayLib::Manager3D::getInstance().getModel(_name + "IDLE");
+            break;
+        case WALKING:
+            model = RayLib::Manager3D::getInstance().getModel(_name + "WALKING");
+            break;
+        case ACTION:
+            model = RayLib::Manager3D::getInstance().getModel(_name + "ACTION");
+            break;
+        case DEAD:
+            model = RayLib::Manager3D::getInstance().getModel(_name + "DEAD");
+            break;
+    }
+    model.lock()->render(this->getPosition(), this->_rotationAngle, this->_scale, Type::Vector<3>(0.0f, 1.0f, 0.0f));
 }
 
 bool Bomberman::Player::checkFreeTimer()
@@ -91,62 +111,81 @@ std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
     if (_alreadyCreatedBomb)
         return nullptr;
     _alreadyCreatedBomb = true;
-    return std::make_shared<Bomb>("assets/models/bomb", this->getPosition(), GetTime(), this->getRange());
+    Type::Vector<3> position = this->getPosition();
+    Type::Vector<3> roundedPosition(round(position.getX()), round(position.getY()), round(position.getZ()));
+    return std::make_shared<Bomb>(roundedPosition, this->getRange());
 }
 
 void Bomberman::Player::update(const double &elapsed)
 {
-    this->_animation->setPosition(this->getPosition());
-    PlayerAnimation::PlayerState currState = this->_animation->getState();
-
+    auto currState = this->getState();
     checkTimer(elapsed);
 
-    if (currState == PlayerAnimation::ACTION) {
+    if (currState == ACTION) {
         _startActionTime += elapsed;
         if (_startActionTime >= 0.5f) {
             _startActionTime = 0;
             _alreadyCreatedBomb = false;
-            this->_animation->setState(PlayerAnimation::IDLE);
+            this->setState(IDLE);
         }
     }
 
-    if (currState != PlayerAnimation::IDLE && currState != PlayerAnimation::WALKING) return;
+    switch (_state) {
+        case IDLE:
+            RayLib::Manager3D::getInstance().getModel(_name + "IDLE")->update(elapsed);
+            break;
+        case WALKING:
+            RayLib::Manager3D::getInstance().getModel(_name + "WALKING")->update(elapsed);
+            break;
+        case ACTION:
+            RayLib::Manager3D::getInstance().getModel(_name + "ACTION")->update(elapsed);
+            break;
+        case DEAD:
+            RayLib::Manager3D::getInstance().getModel(_name + "DEAD")->update(elapsed);
+            break;
+    }
+
+    if (currState != IDLE && currState != WALKING) return;
 
     if (IsKeyDown(KEY_W)) {
-        this->_animation->setState(PlayerAnimation::WALKING);
-        this->_animation->setRotationAngle(180.0f);
+        this->setState(WALKING);
+        this->setRotationAngle(180.0f);
         this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(-_speed * elapsed)));
     }
     else if (IsKeyDown(KEY_A)) {
-        this->_animation->setState(PlayerAnimation::WALKING);
-        this->_animation->setRotationAngle(-90.0f);
+        this->setState(WALKING);
+        this->setRotationAngle(-90.0f);
         this->Move(Type::Vector<3>(static_cast<float>(-_speed * elapsed), 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_S)) {
-        this->_animation->setState(PlayerAnimation::WALKING);
-        this->_animation->setRotationAngle(0.0f);
+        this->setState(WALKING);
+        this->setRotationAngle(0.0f);
         this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(_speed * elapsed)));
     }
     else if (IsKeyDown(KEY_D)) {
-        this->_animation->setState(PlayerAnimation::WALKING);
-        this->_animation->setRotationAngle(90.0f);
+        this->setState(WALKING);
+        this->setRotationAngle(90.0f);
         this->Move(Type::Vector<3>(static_cast<float>(_speed * elapsed), 0.0f, 0.0f));
     }
     else if (IsKeyDown(KEY_E)) {
         if (!checkFreeTimer())
             return;
-        this->_animation->setState(PlayerAnimation::ACTION);
+        this->setState(ACTION);
         launchFreeTimer(elapsed);
         _startActionTime += elapsed;
     }
     else {
-        this->_animation->setState(PlayerAnimation::IDLE);
+        this->setState(IDLE);
     }
-
-    this->_animation->update(elapsed);
 }
 
-Bomberman::PlayerAnimation::PlayerState Bomberman::Player::getState()
+void Bomberman::Player::setState(const PlayerState &state)
 {
-    return this->_animation->getState();
+    this->_state = state;
 }
+
+void Bomberman::Player::setRotationAngle(const double &rotationAngle)
+{
+    this->_rotationAngle = rotationAngle;
+}
+
