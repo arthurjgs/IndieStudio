@@ -39,86 +39,38 @@ RayLib::Shapes::Triangle &RayLib::Shapes::Triangle::operator = (const Triangle &
 
 void RayLib::Shapes::Triangle::DrawTriangle() const
 {
-    ::Vector2 dummyOne = {
-        .x = this->__v1.getX(),
-        .y = this->__v1.getY()
-    };
-    ::Vector2 dummyTwo = {
-        .x = this->__v2.getX(),
-        .y = this->__v2.getY()
-    };
-    ::Vector2 dummyThree = {
-        .x = this->__v3.getX(),
-        .y = this->__v3.getY()
-    };
-    ::Color dummyCol = {
-        .r = this->__color.getR(),
-        .g = this->__color.getG(),
-        .b = this->__color.getB(),
-        .a = this->__color.getA()
-    };
-    ::DrawTriangle(dummyOne, dummyTwo, dummyThree, dummyCol);
+    ::DrawTriangle(
+        Vector2{ this->__v1.getX(), this->__v1.getY() },
+        Vector2{ this->__v2.getX(), this->__v2.getY() },
+        Vector2{ this->__v3.getX(), this->__v3.getY() },
+        ::Color{ this->__color.getR(), this->__color.getG(), this->__color.getB(),this->__color.getA() });
 }
 
 void RayLib::Shapes::Triangle::DrawTriangle(const Type::Vector<2> &v1, const Type::Vector<2> &v2, const Type::Vector<2> &v3, const Type::Color &color)
 {
-    ::Vector2 dummyOne = {
-        .x = v1.getX(),
-        .y = v1.getY()
-    };
-    ::Vector2 dummyTwo = {
-        .x = v2.getX(),
-        .y = v2.getY()
-    };
-    ::Vector2 dummyThree = {
-        .x = v3.getX(),
-        .y = v3.getY()
-    };
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawTriangle(dummyOne, dummyTwo, dummyThree, dummyCol);
+    ::DrawTriangle(
+        Vector2{ v1.getX(), v1.getY() },
+        Vector2{v2.getX(), v2.getY()},
+        Vector2{ v3.getX(), v3.getY() },
+        ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
 }
 
 void RayLib::Shapes::Triangle::DrawTriangleLines(const Type::Vector<2> &v1, const Type::Vector<2> &v2, const Type::Vector<2> &v3, const Type::Color &color)
 {
-    ::Vector2 dummyOne = {
-        .x = v1.getX(),
-        .y = v1.getY()
-    };
-    ::Vector2 dummyTwo = {
-        .x = v2.getX(),
-        .y = v2.getY()
-    };
-    ::Vector2 dummyThree = {
-        .x = v3.getX(),
-        .y = v3.getY()
-    };
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawTriangleLines(dummyOne, dummyTwo, dummyThree, dummyCol);
+    ::DrawTriangle(
+        Vector2{ v1.getX(), v1.getY() },
+        Vector2{ v2.getX(), v2.getY() },
+        Vector2{ v3.getX(), v3.getY() },
+        ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
 }
 
 void RayLib::Shapes::Triangle::DrawTriangleFan(Type::Vector<2> &points, const int &pointsCount, const Type::Color &color)
 {
-    ::Vector2 dummyPoints = {
-        .x = points.getX(),
-        .y = points.getY()
-    };
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawTriangleFan(&dummyPoints, pointsCount, dummyCol);
+    ::Vector2 dummyPoints;
+
+    dummyPoints.x = points.getX();
+    dummyPoints.y = points.getY();
+    ::DrawTriangleFan(&dummyPoints, pointsCount, ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
     float &x = points.getX();
     float &y = points.getY();
     x = dummyPoints.x;
@@ -127,17 +79,11 @@ void RayLib::Shapes::Triangle::DrawTriangleFan(Type::Vector<2> &points, const in
 
 void RayLib::Shapes::Triangle::DrawTriangleStrip(Type::Vector<2> &points, const int &pointsCount, const Type::Color &color)
 {
-    ::Vector2 dummyPoints = {
-        .x = points.getX(),
-        .y = points.getY()
-    };
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawTriangleStrip(&dummyPoints, pointsCount, dummyCol);
+    ::Vector2 dummyPoints;
+
+    dummyPoints.x = points.getX();
+    dummyPoints.y = points.getY();
+    ::DrawTriangleStrip(&dummyPoints, pointsCount, ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
     float &x = points.getX();
     float &y = points.getY();
     x = dummyPoints.x;

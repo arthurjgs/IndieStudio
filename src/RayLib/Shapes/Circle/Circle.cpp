@@ -38,13 +38,7 @@ RayLib::Shapes::Circle &RayLib::Shapes::Circle::operator = (const Circle &cpy)
 
 void RayLib::Shapes::Circle::DrawCircle(const int &centerX, const int &centerY, const float &radius, const Type::Color &col)
 {
-    ::Color dummy = {
-        .r = col.getR(),
-        .g = col.getG(),
-        .b = col.getB(),
-        .a = col.getA()
-    };
-    ::DrawCircle(centerX, centerY, radius, dummy);
+    ::DrawCircle(centerX, centerY, radius, ::Color{col.getR(), col.getG(), col.getB(), col.getA() });
 }
 
 void RayLib::Shapes::Circle::DrawCircleSector(const Type::Vector<2> &vec, float radius, float startAngle, float endAngle, int segments, const Type::Color &col)
@@ -96,37 +90,15 @@ void RayLib::Shapes::Circle::DrawCircleGradient(int centerX, int centerY, float 
 
 void RayLib::Shapes::Circle::DrawCircleV(const Type::Vector<2> &center, float radius, const Type::Color &color)
 {
-    ::Vector2 dummyVec = {
-        .x = center.getX(),
-        .y = center.getY()
-    };
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawCircleV(dummyVec, radius, dummyCol);
+    ::DrawCircleV(::Vector2{center.getX(), center.getY()}, radius, ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
 }
 
 void RayLib::Shapes::Circle::DrawCircleLines(int centerX, int centerY, float radius, const Type::Color & color)
 {
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawCircleLines(centerX, centerY, radius, dummyCol);
+    ::DrawCircleLines(centerX, centerY, radius, ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
 }
 
 void RayLib::Shapes::Circle::DrawCircle() const
 {
-    ::Color dummy = {
-        .r = this->__col.getR(),
-        .g = this->__col.getG(),
-        .b = this->__col.getB(),
-        .a = this->__col.getA()
-    };
-    ::DrawCircle(this->__centerX, this->__centerY, this->__radius, dummy);
+    ::DrawCircle(this->__centerX, this->__centerY, this->__radius, ::Color{color.getR(), color.getG(), color.getB(), color.getA()});
 }
