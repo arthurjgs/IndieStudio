@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['game_1168',['GAME',['../classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a3113ea893b0000b80227b2f6d1dadc16',1,'RayLib::Manager3D']]]
+  ['fps_1144',['FPS',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7a868b93bbd265bd19393ec5d63c0adf75',1,'Bomberman::UserConfig']]]
 ];
