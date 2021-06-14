@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['player_1263',['PLAYER',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323',1,'Bomberman::GameObject']]]
+  ['none_1286',['NONE',['../classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a68a070cf1d271e853b8d2fd7c30fc7e4',1,'RayLib::Manager3D']]],
+  ['nothing_1287',['NOTHING',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a197b863a08e75a72daf74debe87c3eca',1,'RayLib::Window']]]
 ];

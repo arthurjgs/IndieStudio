@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_562',['Y',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ab5494b4f7b669535c10bc3d8984962fa',1,'RayLib::Window']]]
+  ['y_573',['Y',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a622bbee15a6ed6a5dd3cfe326d037eef',1,'RayLib::Window']]]
 ];

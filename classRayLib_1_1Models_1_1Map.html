@@ -151,7 +151,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html#l00015">15</a> of file <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                      : _size(0)</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">auto</span> image = ::LoadImage(filepath.c_str());</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    _cubicmap = ::LoadTextureFromImage(image);</div>
@@ -159,9 +160,10 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    _model = ::LoadModelFromMesh(_mesh);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    _mapPixels = ::LoadImageColors(image);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    _position = position;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ::UnloadImage(image);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    _size = image.height * image.height;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ::UnloadImage(image);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -180,13 +182,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html#l00028">28</a> of file <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    ::UnloadTexture(_cubicmap);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ::UnloadTexture(_material);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ::UnloadModel(_model);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ::UnloadImageColors(_mapPixels);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html#l00029">29</a> of file <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ::UnloadTexture(_cubicmap);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ::UnloadTexture(_material);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ::UnloadModel(_model);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ::UnloadImageColors(_mapPixels);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,7 +278,7 @@ Public Member Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::vector&lt;Type::Color&gt; colors = std::vector&lt;Type::Color&gt;();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 255; i++)</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; _size; i++)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        Color c = _mapPixels[i];</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        colors.emplace_back(<a class="code" href="classType_1_1Color.html">Type::Color</a>(c.r, c.g, c.b, c.a));</div>
@@ -304,9 +306,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html#l00036">36</a> of file <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    ::UnloadTexture(_material);</div>
+<p class="definition">Definition at line <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html#l00037">37</a> of file <a class="el" href="RayLib_2Model_2Map_2Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    _material = ::LoadTexture(filepath.c_str());</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    _model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _material;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
