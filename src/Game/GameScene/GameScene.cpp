@@ -86,10 +86,6 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
         Type::Vector<3> playerRoundedPosition(static_cast<float>(round(playerPosition.getX())),
                                               static_cast<float>(round(playerPosition.getY())),
                                               static_cast<float>(round(playerPosition.getZ())));
-        if (obj->getType() == GameObject::FLAME) {
-            std::cout << "BOMB WITH CORDS  {X " << enemyPosition.getX() << "} {Y " << enemyPosition.getY() << "} {Z " << enemyPosition.getX() << "}"<< std::endl;
-            std::cout << "PLAYER WITH CORDS  {X " << playerRoundedPosition.getX() << "} {Y " << playerRoundedPosition.getY() << "} {Z " << playerRoundedPosition.getX() << "}"<< std::endl;
-        }
         if (RayLib::Models::Collision::CheckCollisionBoxes(Type::BoundingBox(Type::Vector<3>(playerRoundedPosition.getX() - 1.0f / 2,
                                                                                              playerRoundedPosition.getY() - 1.0f / 2,
                                                                                              playerRoundedPosition.getZ() - 1.0f / 2),
@@ -101,8 +97,11 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                                                                                              enemyPosition.getZ() - 1.0f / 2),
                                                                              Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
                                                                                              enemyPosition.getY() - 1.0f / 2,
-                                                                                             enemyPosition.getZ() - 1.0f / 2))))
+                                                                                             enemyPosition.getZ() - 1.0f / 2)))) {
+            if (obj->getType() == Bomb::FLAME)
+                std::cout << "YOU SHOULD DIE" << std::endl;
             return true;
+        }
     }
     return false;
 }

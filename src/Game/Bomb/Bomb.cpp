@@ -41,7 +41,7 @@ std::vector<std::shared_ptr<Bomberman::Flame>> Bomberman::Bomb::explode()
 {
     std::vector<std::shared_ptr<Flame>> flames;
     int side = 0;
-    float coef = 0;
+    float coef = 1;
 
     for (int i = 0; i < (_range * 4) + 1; i++, side++) {
         if (i == 0) {
