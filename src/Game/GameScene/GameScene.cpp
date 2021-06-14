@@ -24,7 +24,10 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
                                         20.0f,
                                         CAMERA_PERSPECTIVE)
 {
-
+    (void)playerDll1;
+    (void)playerDll2;
+    (void)playerDll3;
+    (void)playerDll4;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     std::shared_ptr<Player> player1 = std::make_shared<Player>("Player1", Type::Vector<3>(-6.0f, 0.0f, -6.0f), "assets/models/bomberman");
     std::shared_ptr<Image> background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
