@@ -14,6 +14,7 @@
 #include <filesystem>
 #include "Game/GameException.hpp"
 #include <cmath>
+#include <Game/Flame/Flame.hpp>
 
 namespace Bomberman {
     class Bomb : public GameObject {
@@ -24,8 +25,9 @@ namespace Bomberman {
             DOWN = 3,
             LEFT = 4
         };
-        Bomb(Type::Vector<3> position, int range = 1);
+        Bomb(const Type::Vector<3> &position, int range = 1);
         ~Bomb();
+        std::vector<std::shared_ptr<Flame>> explode();
         void update(const double &elapsed);
         void render() const;
     protected:

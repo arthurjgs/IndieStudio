@@ -86,7 +86,7 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
         Type::Vector<3> playerRoundedPosition(static_cast<float>(round(playerPosition.getX())),
                                               static_cast<float>(round(playerPosition.getY())),
                                               static_cast<float>(round(playerPosition.getZ())));
-        if (obj->getType() == GameObject::BOMB) {
+        if (obj->getType() == GameObject::FLAME) {
             std::cout << "BOMB WITH CORDS  {X " << enemyPosition.getX() << "} {Y " << enemyPosition.getY() << "} {Z " << enemyPosition.getX() << "}"<< std::endl;
             std::cout << "PLAYER WITH CORDS  {X " << playerRoundedPosition.getX() << "} {Y " << playerRoundedPosition.getY() << "} {Z " << playerRoundedPosition.getX() << "}"<< std::endl;
         }
@@ -109,7 +109,19 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
 
 void Bomberman::GameScene::update(const double &elapsed)
 {
-    // CHECK IF OBJECT SHOULD BE DESTROYEDd
+    // CHECK IF BOMB HAS EXPLODED
+    for (auto & b : _bombList) {
+        if (b.expired())
+            continue;
+        if (b.lock()->getState() == GameObject::DESTROYED) {
+            auto flames = b.lock()->explode();
+            for (auto & flame : flames) {
+                _gameObjectList.emplace_back(flame);
+            }
+        }
+    }
+
+    // CHECK IF OBJECTS SHOULD BE DESTROYED
     _gameObjectList.erase(std::remove_if(
             _gameObjectList.begin(), _gameObjectList.end(),
             [] (std::shared_ptr<Bomberman::GameObject> &b) {
@@ -126,6 +138,7 @@ void Bomberman::GameScene::update(const double &elapsed)
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
             if (bomb != nullptr) {
                 _gameObjectList.emplace_back(bomb);
+                _bombList.emplace_back(bomb);
             }
         }
         auto oldPosition = player.lock()->getPosition();

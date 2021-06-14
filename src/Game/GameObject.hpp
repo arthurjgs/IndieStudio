@@ -23,6 +23,7 @@ namespace Bomberman {
             DECOR,
             DESTRUCTIBLE,
             BOMB,
+            FLAME,
             BONUS,
             BUTTON,
             TEXT,

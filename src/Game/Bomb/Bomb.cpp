@@ -8,7 +8,7 @@
 #include <RayLib/Manager3D.hpp>
 #include "Bomb.hpp"
 
-Bomberman::Bomb::Bomb(Type::Vector<3> position, int range) : GameObject("Bomb", BOMB, position), _lifespan(0), _exploded(false), _range(range)
+Bomberman::Bomb::Bomb(const Type::Vector<3> &position, int range) : GameObject("Bomb", BOMB, position), _lifespan(0), _exploded(false), _range(range)
 {
     this->setPosition(position);
 }
@@ -19,52 +19,53 @@ Bomberman::Bomb::~Bomb() = default;
 void Bomberman::Bomb::update(const double &elapsed)
 {
     if (_lifespan > 3) {
-        _exploded = true;
-    } if (_lifespan > 4.5) {
         this->_state = DESTROYED;
         return;
     }
     _lifespan += elapsed;
-    if (_exploded) {
-        RayLib::Manager3D::getInstance().getModel("fire")->update(elapsed);
-    }
 }
 
 void Bomberman::Bomb::render() const
 {
     std::weak_ptr<RayLib::Models::Animate> model;
-    int side = 0;
-    float coef = 1;
 
     if (_exploded) {
-        model = RayLib::Manager3D::getInstance().getModel("fire");
-        Type::Vector<3> flameScale(0.8f, 0.8f, 0.8f);
-        for (int i = 0; i < (_range * 4) + 1; i++, side++) {
-            if (i == 0) {
-                model.lock()->render(this->getPosition(), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-                continue;
-            }
-            switch (side) {
-                case UP:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-                    break;
-                case DOWN:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-                    break;
-                case LEFT:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-                    break;
-                case RIGHT:
-                    model.lock()->render(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-                    break;
-                default:
-                    side = 0;
-                    coef += 1;
-                    break;
-            }
-        }
+        return;
     } else {
         model = RayLib::Manager3D::getInstance().getModel("bomb");
         model.lock()->render(this->getPosition(), 0, Type::Vector<3>(35.0f, 35.0f, 35.0f), Type::Vector<3>(0.0f, 0.0f, 0.0f));
     }
+}
+
+std::vector<std::shared_ptr<Bomberman::Flame>> Bomberman::Bomb::explode()
+{
+    std::vector<std::shared_ptr<Flame>> flames;
+    int side = 0;
+    float coef = 0;
+
+    for (int i = 0; i < (_range * 4) + 1; i++, side++) {
+        if (i == 0) {
+            flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition()));
+            continue;
+        }
+        switch (side) {
+            case UP:
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef)));
+                break;
+            case DOWN:
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef)));
+                break;
+            case LEFT:
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f)));
+                break;
+            case RIGHT:
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f)));
+                break;
+            default:
+                side = 0;
+                coef += 1;
+                break;
+        }
+    }
+    return flames;
 }

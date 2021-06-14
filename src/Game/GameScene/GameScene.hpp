@@ -38,6 +38,7 @@ namespace Bomberman {
         private:
             std::vector<std::shared_ptr<Bomberman::GameObject>> _gameObjectList;
             std::vector<std::weak_ptr<Bomberman::Player>> _listPlayers;
+            std::vector<std::weak_ptr<Bomberman::Bomb>> _bombList;
             std::weak_ptr<Map> _gameMap;
             std::weak_ptr<Image> _background;
             Type::Camera3D _camera;
