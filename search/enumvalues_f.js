@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['walking_1195',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]]
+  ['vertical_5fsync_1272',['VERTICAL_SYNC',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7ad85831fedc7a0d6a19fef6e216de1048',1,'Bomberman::UserConfig']]]
 ];

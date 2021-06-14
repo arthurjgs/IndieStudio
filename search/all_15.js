@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['walking_523',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]],
-  ['what_524',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException::what()'],['../classBomberman_1_1GameException.html#a5e3d88a31390040f1cb89cc62374df85',1,'Bomberman::GameException::what()'],['../classBomberman_1_1QuitGame.html#a7ad4228668b9fe5d6d557a40048fee2c',1,'Bomberman::QuitGame::what()']]],
-  ['window_525',['Window',['../classRayLib_1_1Window.html',1,'RayLib']]],
-  ['window_2ecpp_526',['Window.cpp',['../Window_8cpp.html',1,'']]],
-  ['window_2ehpp_527',['Window.hpp',['../Window_8hpp.html',1,'']]]
+  ['valuetype_549',['ValueType',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7',1,'Bomberman::UserConfig']]],
+  ['vector_550',['Vector',['../classType_1_1Vector.html',1,'Type::Vector&lt; vecSize &gt;'],['../classType_1_1Vector.html#a5e88b2be799688ef7aba0bca3f8a8db6',1,'Type::Vector::Vector()'],['../classType_1_1Vector.html#a86eb89b31a1f3eda7b468de3f978e23b',1,'Type::Vector::Vector(Floats... args)'],['../classType_1_1Vector.html#a1100574c0d4d65ab20c956d7e2e918f3',1,'Type::Vector::Vector(const Vector&lt; vecSize &gt; &amp;cpy)']]],
+  ['vector_2ehpp_551',['Vector.hpp',['../Vector_8hpp.html',1,'']]],
+  ['vector_3c_202_20_3e_552',['Vector&lt; 2 &gt;',['../classType_1_1Vector.html',1,'Type']]],
+  ['vector_3c_203_20_3e_553',['Vector&lt; 3 &gt;',['../classType_1_1Vector.html',1,'Type']]],
+  ['vertical_5fsync_554',['VERTICAL_SYNC',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7ad85831fedc7a0d6a19fef6e216de1048',1,'Bomberman::UserConfig']]]
 ];
