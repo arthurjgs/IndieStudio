@@ -77,65 +77,79 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** delivery</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Bomb_8hpp.html">Bomb.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#a415204428eee32d415dff8d1520bb411">   10</a></span>&#160;<a class="code" href="classBomberman_1_1Bomb.html#a415204428eee32d415dff8d1520bb411">Bomberman::Bomb::Bomb</a>(<span class="keyword">const</span> std::string &amp;assetPath, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;position, <span class="keywordtype">double</span> startTimer, <span class="keywordtype">int</span> range) : <a class="code" href="classBomberman_1_1GameObject.html">GameObject</a>(<span class="stringliteral">&quot;Bomb&quot;</span>, BOMB, position), _lifespan(0)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_directory(assetPath)) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;dir : std::filesystem::directory_iterator(assetPath)) {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            std::string path = dir.path().string();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <span class="keywordflow">if</span> (path.find(<span class="stringliteral">&quot;idle&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                _model = std::make_unique&lt;RayLib::Models::Animate&gt;(path, position);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="classBomberman_1_1GameException.html">GameException</a>(<span class="stringliteral">&quot;Unable to load &quot;</span> + assetPath + <span class="stringliteral">&quot; it&#39;s not a directory.&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;dir : std::filesystem::directory_iterator(assetPath)) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string path = dir.path().string();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (path.find(<span class="stringliteral">&quot;texture&quot;</span>) != std::string::npos) {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : std::filesystem::directory_iterator(path)) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;                <span class="keywordflow">if</span> (file.is_regular_file() &amp;&amp; file.path().string().find(<span class="stringliteral">&quot;.png&quot;</span>) != std::string::npos) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                    _texturesList.emplace_back(file.path());</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            std::sort(_texturesList.begin(), _texturesList.end());</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;filePath : _texturesList) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                std::string file = filePath.filename().string();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                std::cout &lt;&lt; file.substr(0, file.find_last_of(<span class="charliteral">&#39;.&#39;</span>)) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    this-&gt;_model-&gt;setTexture(filePath.string(), std::stoi(file.substr(0, file.find_last_of(<span class="charliteral">&#39;.&#39;</span>))));</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                } <span class="keywordflow">catch</span> (std::invalid_argument &amp;e) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    <span class="keywordflow">throw</span> <a class="code" href="classBomberman_1_1GameException.html">GameException</a>(<span class="stringliteral">&quot;Unable to load texture :&quot;</span> + file);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    _model-&gt;setScale(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(30.0f, 30.0f, 30.0f));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span> (_lifespan &gt; 3) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        this-&gt;_state = DESTROYED;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    _lifespan += elapsed;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb::render</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_state == DESTROYED)</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;_model-&gt;render();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Manager3D_8hpp.html">RayLib/Manager3D.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Bomb_8hpp.html">Bomb.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#a0867621674f18d79e6e6cff208f0e1e6">   11</a></span>&#160;<a class="code" href="classBomberman_1_1Bomb.html#a0867621674f18d79e6e6cff208f0e1e6">Bomberman::Bomb::Bomb</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> position, <span class="keywordtype">int</span> range) : <a class="code" href="classBomberman_1_1GameObject.html">GameObject</a>(<span class="stringliteral">&quot;Bomb&quot;</span>, BOMB, position), _lifespan(0), _exploded(false), _range(range)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">setPosition</a>(position);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<a class="code" href="classBomberman_1_1Bomb.html#a4ce448604ff647e8ecaa701e9664c6d4">Bomberman::Bomb::~Bomb</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (_lifespan &gt; 3) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        _exploded = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    } <span class="keywordflow">if</span> (_lifespan &gt; 4.5) {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;_state = DESTROYED;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    _lifespan += elapsed;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (_exploded) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<span class="stringliteral">&quot;fire&quot;</span>)-&gt;update(elapsed);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">   33</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb::render</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::weak_ptr&lt;RayLib::Models::Animate&gt; model;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">int</span> side = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> coef = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (_exploded) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<span class="stringliteral">&quot;fire&quot;</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> flameScale(0.8f, 0.8f, 0.8f);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (_range * 4) + 1; i++, side++) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (i == 0) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                model.lock()-&gt;render(this-&gt;getPosition(), 0, flameScale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">switch</span> (side) {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">case</span> UP:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    model.lock()-&gt;render(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, -coef), 0, flameScale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">case</span> DOWN:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    model.lock()-&gt;render(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, coef), 0, flameScale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">case</span> LEFT:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    model.lock()-&gt;render(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-coef, 0.0f, 0.0f), 0, flameScale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">case</span> RIGHT:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    model.lock()-&gt;render(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(coef, 0.0f, 0.0f), 0, flameScale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">default</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    side = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    coef += 1;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<span class="stringliteral">&quot;bomb&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        model.lock()-&gt;render(this-&gt;getPosition(), 0, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(35.0f, 35.0f, 35.0f), <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 <div class="ttc" id="aBomb_8hpp_html"><div class="ttname"><a href="Bomb_8hpp.html">Bomb.hpp</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Bomb_html_a415204428eee32d415dff8d1520bb411"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a415204428eee32d415dff8d1520bb411">Bomberman::Bomb::Bomb</a></div><div class="ttdeci">Bomb(const std::string &amp;assetPath, const Type::Vector&lt; 3 &gt; &amp;position, double startTimer, int range)</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00010">Bomb.cpp:10</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Bomb_html_ab08a71e0b55392596468d9f1d0a7e02a"><div class="ttname"><a href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb::render</a></div><div class="ttdeci">void render() const</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00055">Bomb.cpp:55</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Bomb_html_abb31af2d51662bc1c517f157e54ac53e"><div class="ttname"><a href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00046">Bomb.cpp:46</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameException_html"><div class="ttname"><a href="classBomberman_1_1GameException.html">Bomberman::GameException</a></div><div class="ttdef"><b>Definition:</b> <a href="GameException_8hpp_source.html#l00016">GameException.hpp:16</a></div></div>
+<div class="ttc" id="aManager3D_8hpp_html"><div class="ttname"><a href="Manager3D_8hpp.html">Manager3D.hpp</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomb_html_a0867621674f18d79e6e6cff208f0e1e6"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a0867621674f18d79e6e6cff208f0e1e6">Bomberman::Bomb::Bomb</a></div><div class="ttdeci">Bomb(Type::Vector&lt; 3 &gt; position, int range=1)</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00011">Bomb.cpp:11</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomb_html_a4ce448604ff647e8ecaa701e9664c6d4"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a4ce448604ff647e8ecaa701e9664c6d4">Bomberman::Bomb::~Bomb</a></div><div class="ttdeci">~Bomb()</div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomb_html_ab08a71e0b55392596468d9f1d0a7e02a"><div class="ttname"><a href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb::render</a></div><div class="ttdeci">void render() const</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00033">Bomb.cpp:33</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomb_html_abb31af2d51662bc1c517f157e54ac53e"><div class="ttname"><a href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00019">Bomb.cpp:19</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html"><div class="ttname"><a href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00014">GameObject.hpp:14</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_a380622be27edc00134161a0a0ba7658d"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">Bomberman::GameObject::setPosition</a></div><div class="ttdeci">void setPosition(Type::Vector&lt; 3 &gt; position)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00030">GameObject.cpp:30</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Manager3D_html_a8f72fcf7e87d47c13717cf52cdc4bb50"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a></div><div class="ttdeci">std::shared_ptr&lt; RayLib::Models::Animate &gt; getModel(const std::string &amp;object)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00122">Manager3D.cpp:122</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Manager3D_html_abbf9eec195dc5f9aea5b651a063168cd"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a></div><div class="ttdeci">static Manager3D &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00010">Manager3D.cpp:10</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

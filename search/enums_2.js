@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['playerstate_1183',['PlayerState',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981',1,'Bomberman::PlayerAnimation']]]
+  ['playerstate_1154',['PlayerState',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8',1,'Bomberman::Player']]]
 ];
