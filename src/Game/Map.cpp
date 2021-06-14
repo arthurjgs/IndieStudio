@@ -29,10 +29,7 @@ Bomberman::Map::Map(const std::string &filepath, const Type::Vector<3> &position
     }
 }
 
-Bomberman::Map::~Map()
-{
-    this->_map.reset();
-}
+Bomberman::Map::~Map() = default;
 
 void Bomberman::Map::render() const
 {

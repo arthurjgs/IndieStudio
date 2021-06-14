@@ -7,31 +7,24 @@
 #include "Game/LoadingScreen/LoadingScreen.hpp"
 #include "Game/TestScene/TestScene.hpp"
 #include "Game/Player.hpp"
-#include "Game/MainMenu/MainMenu.hpp"
-#include "Game/QuitGame/QuitGame.hpp"
 
 int main()
 {
     RayLib::Window::getInstance();
+    RayLib::Manager3D::getInstance();
 
     Bomberman::SceneManager engine;
 
+    engine.newScene<Bomberman::GameScene>("", "", "", "");
 
-    engine.newScene<Bomberman::Menu::MainMenu>();
-    try {
-        try {
-            while (RayLib::Window::getInstance().isOpen()) {
-                engine.checkStack(); // check if stack has scene to render
-                engine.update(RayLib::Window::getInstance().getElapsedTime());
-                RayLib::Window::getInstance().draw(engine);
-            }    
-        }
-        catch(const Bomberman::QuitGame &e) {
-            return (0);
-        }
-    } catch (const std::exception &e) {
-        std::cerr << e.what() << std::endl;
-        return (84);
+    while (RayLib::Window::getInstance().isOpen()) {
+        // if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_A) == true)
+        //     engine.newScene<Bomberman::TestScene>();
+        // if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(::KEY_E) == true)
+        //     engine.unloadScene();
+        engine.checkStack(); // check if stack has scene to render
+        engine.update(RayLib::Window::getInstance().getElapsedTime());
+        RayLib::Window::getInstance().draw(engine);
     }
     return 0;
 }

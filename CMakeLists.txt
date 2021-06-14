@@ -51,6 +51,8 @@ add_executable(bomberman
         src/RayLib/Cursor.cpp
         src/Types/Camera/Camera2D.cpp
         src/Types/Camera/Camera3D.cpp
+        src/Types/BoundingBox/BoundingBox.cpp
+        src/Types/BoundingBox/BoundingBox.hpp
         src/Types/RenderTexture/Texture.cpp
         src/Types/RenderTexture/RenderTexture.cpp
         src/RayLib/Drawing.cpp
@@ -62,8 +64,6 @@ add_executable(bomberman
         src/Game/Player.hpp
         src/Game/GameException.cpp
         src/Game/GameException.hpp
-        src/Game/PlayerAnimation.cpp
-        src/Game/PlayerAnimation.hpp
         src/Game/SceneManager/Scene/Scene.cpp
         src/Game/SpriteSheetPlayer/SpriteSheetPlayer.cpp
         src/Game/Image/Image.cpp
@@ -88,7 +88,7 @@ add_executable(bomberman
         src/Game/Map.cpp
         src/Game/Map.hpp
         src/Game/Bomb/Bomb.cpp
-        src/Game/Bomb/Bomb.hpp)
+        src/Game/Bomb/Bomb.hpp src/RayLib/Manager3D.cpp src/RayLib/Manager3D.hpp src/Game/Flame/Flame.cpp src/Game/Flame/Flame.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
