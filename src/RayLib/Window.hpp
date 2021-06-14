@@ -24,26 +24,6 @@ namespace RayLib
 {
     class Window {
         public:
-            enum XBOX {
-                    NOTHING,
-                    UP,
-                    RIGHT,
-                    DOWN,
-                    LEFT,
-                    Y,
-                    B,
-                    A,
-                    X,
-                    LB,
-                    LT,
-                    RB,
-                    RT,
-                    SELECT,
-                    XBOX,
-                    START,
-                    JOYLEFT,
-                    JOYRIGHT
-                };
             static Window &getInstance();
             float getElapsedTime();
             bool isOpen() const;
