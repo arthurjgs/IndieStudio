@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_17',['B',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ac348247c0de662938ec7148e207a331e',1,'RayLib::Window']]],
+  ['b_17',['B',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148aaa308eceec2c505fe5c3630160ab570f',1,'RayLib::Window']]],
   ['beginblendmode_18',['beginBlendMode',['../classRayLib_1_1Drawing.html#a3f4d8eba53767886d29bf055c2201dd1',1,'RayLib::Drawing']]],
   ['begindrawing_19',['beginDrawing',['../classRayLib_1_1Drawing.html#a8c0b62a734862f1eab7c9511ab88bc66',1,'RayLib::Drawing']]],
   ['beginmode2d_20',['beginMode2D',['../classRayLib_1_1Drawing.html#a295b4b58bd8f7c3afb290ff1dfdca4c5',1,'RayLib::Drawing']]],
