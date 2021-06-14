@@ -10,6 +10,7 @@
  */
 
 #include "Button.hpp"
+#include "../../RayLib/Window.hpp"
 
 Bomberman::Button::Button(const std::string &name, const Type::Vector<3> &position,
     const std::string &texturePath, const std::string &text, size_t fontSize, const Type::Color &textColor,
@@ -27,6 +28,7 @@ _textColor(textColor)
     _state = 0;
     this->_text = text;
     this->_fontSize = fontSize;
+    this->_manual = false;
 }
 
 Bomberman::Button::~Button()
@@ -35,10 +37,21 @@ Bomberman::Button::~Button()
 
 bool Bomberman::Button::isClick() const
 {
+    if (this->_manual) {
+        return (false);
+    }
     if (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))
         if (_mouse.isMouseButtonReleased(MOUSE_BUTTON_LEFT))
             return true;
     return false;
+}
+
+bool Bomberman::Button::isValidate() const
+{
+    if (!this->_manual) {
+        return (false);
+    }
+    return (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(0, RayLib::Window::A));
 }
 
 void Bomberman::Button::render() const
@@ -57,6 +70,14 @@ void Bomberman::Button::render() const
 void Bomberman::Button::update(const double &elapsed)
 {
     (void) elapsed;
+    if (this->_manual == true) {
+        _sourceRec.setX(_state * _frameWidth);
+        if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0) {
+            this->_manual = false;
+            std::cout << "salut" << std::endl;
+        }
+        return;
+    }
     if (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))
     {
         if (_mouse.isMouseButtonDown(MOUSE_BUTTON_LEFT))

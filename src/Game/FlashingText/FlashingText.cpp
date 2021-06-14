@@ -22,6 +22,17 @@ __RayText() // TODO: Load custom font here
     this->__dummy = 0.0f;
 }
 
+Bomberman::FlashingText::FlashingText(const std::string &text, const Type::Color &col, const size_t &size, const double &speed, const std::string &name, const GameObject::ObjectType &type, const Type::Vector<2> &position, const std::string &font, bool display) :
+GameObject(name, type, Type::Vector<3>(position.getX(), position.getY(), 0.0f), display),
+__color(col),
+__RayText(font) // TODO: Load custom font here
+{
+    this->__text = text;
+    this->__size = size;
+    this->__speed = speed;
+    this->__dummy = 0.0f;
+}
+
 void Bomberman::FlashingText::render() const
 {
     if (_display)
@@ -30,6 +41,10 @@ void Bomberman::FlashingText::render() const
 
 void Bomberman::FlashingText::update(const double &elapsed)
 {
+    if (this->__speed <= 0.0) {
+        return;
+    }
+
     const double speed = this->__speed * elapsed;
     uChar &transparency = this->__color.getA();
     static bool sub = true;

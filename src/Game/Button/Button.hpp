@@ -33,6 +33,7 @@ namespace Bomberman
             const std::string &soundPath = "./assets/sounds/mute.wav", bool display = true);
             ~Button();
             bool isClick() const;
+            bool isValidate() const;
             void render() const;
             void update(const double &elapsed);
 
@@ -45,6 +46,12 @@ namespace Bomberman
             inline Type::Color &getTextColor() { return (this->_textColor); }
             inline Type::Color getTextColor() const { return (this->_textColor); }
 
+            inline bool &getManual() { return (this->_manual); }
+            inline bool getManual() const { return (this->_manual); }
+
+            inline int &getState() { this->_manual = true; return (this->_state); }
+            inline int getState() const { return (this->_state); }
+
         protected:
         private:
             RayLib::Texture _texture;
@@ -55,6 +62,7 @@ namespace Bomberman
             Type::Rectangle _sourceRec;
             Type::Rectangle _btnBounds;
             int _state;
+            bool _manual;
 
             std::string _text;
             size_t _fontSize;
