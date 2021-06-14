@@ -9,6 +9,5 @@ var searchData=
   ['endmode2d_172',['endMode2D',['../classRayLib_1_1Drawing.html#a76c64666155759a5c0c7ada7cee78d49',1,'RayLib::Drawing']]],
   ['endmode3d_173',['endMode3D',['../classRayLib_1_1Drawing.html#a4577c912370ddd7bf98cb4608edfd71e',1,'RayLib::Drawing']]],
   ['endscissormode_174',['endScissorMode',['../classRayLib_1_1Drawing.html#a3e843a20c24f380076551f57020ab536',1,'RayLib::Drawing']]],
-  ['endtexturemode_175',['endTextureMode',['../classRayLib_1_1Drawing.html#a34e7390f4370e89383c23471df95b87e',1,'RayLib::Drawing']]],
-  ['explode_176',['explode',['../classBomberman_1_1Bomb.html#a43fd88101de321708935645e869ebe0f',1,'Bomberman::Bomb']]]
+  ['endtexturemode_175',['endTextureMode',['../classRayLib_1_1Drawing.html#a34e7390f4370e89383c23471df95b87e',1,'RayLib::Drawing']]]
 ];

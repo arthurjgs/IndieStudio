@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['walking_1299',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]]
+  ['x_1272',['X',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148afcac6157c69eaba17c537b7660b3a7f9',1,'RayLib::Window']]],
+  ['xbox_1273',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a3f8bb10b09252c9a02adafb9fa542d52',1,'RayLib::Window']]]
 ];

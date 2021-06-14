@@ -79,12 +79,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb200c2378a1abdc0abfc54ed2dba5ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Models_1_1Animate.html#aeb200c2378a1abdc0abfc54ed2dba5ae">Animate</a> (const std::string &amp;path)</td></tr>
-<tr class="memdesc:aeb200c2378a1abdc0abfc54ed2dba5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRayLib_1_1Models_1_1Animate.html">Animate</a> constructor this will create a model without its textures and animation It will only load the model itself without any information thus you should call setTexture and/or setAnimation before using display.  <a href="classRayLib_1_1Models_1_1Animate.html#aeb200c2378a1abdc0abfc54ed2dba5ae">More...</a><br /></td></tr>
-<tr class="separator:aeb200c2378a1abdc0abfc54ed2dba5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a547c61bab183a2fccde0836eaea408cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Models_1_1Animate.html#a547c61bab183a2fccde0836eaea408cd">render</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position, const double &amp;rotationAngle, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;scale, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;rotationAxis)</td></tr>
-<tr class="memdesc:a547c61bab183a2fccde0836eaea408cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display model with it's animation This should be the only thing used in the loop to display the model.  <a href="classRayLib_1_1Models_1_1Animate.html#a547c61bab183a2fccde0836eaea408cd">More...</a><br /></td></tr>
-<tr class="separator:a547c61bab183a2fccde0836eaea408cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae365769124dcb438596a670d4d66d97e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Models_1_1Animate.html#ae365769124dcb438596a670d4d66d97e">Animate</a> (const std::string &amp;path, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position=<a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt;(0.0f, 0.0f, 0.0f), const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;rotationAxis=<a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt;(0.0f, 1.0f, 0.0f), double rotationAngle=0.0f, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;scale=<a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt;(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:ae365769124dcb438596a670d4d66d97e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classRayLib_1_1Models_1_1Animate.html">Animate</a> constructor this will create a model without its textures and animation It will only load the model itself without any information thus you should call setTexture and/or setAnimation before using display.  <a href="classRayLib_1_1Models_1_1Animate.html#ae365769124dcb438596a670d4d66d97e">More...</a><br /></td></tr>
+<tr class="separator:ae365769124dcb438596a670d4d66d97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a062a5ddcce9f775da29871f1a4ece1e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Models_1_1Animate.html#a062a5ddcce9f775da29871f1a4ece1e1">render</a> ()</td></tr>
+<tr class="memdesc:a062a5ddcce9f775da29871f1a4ece1e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display model with it's animation This should be the only thing used in the loop to display the model.  <a href="classRayLib_1_1Models_1_1Animate.html#a062a5ddcce9f775da29871f1a4ece1e1">More...</a><br /></td></tr>
+<tr class="separator:a062a5ddcce9f775da29871f1a4ece1e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab5e3333f993ccfced89da3a7795e417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRayLib_1_1Models_1_1Animate.html#aab5e3333f993ccfced89da3a7795e417">update</a> (const double &amp;elapsed)</td></tr>
 <tr class="memdesc:aab5e3333f993ccfced89da3a7795e417"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update model with it's animation This should be the only thing used to update the model.  <a href="classRayLib_1_1Models_1_1Animate.html#aab5e3333f993ccfced89da3a7795e417">More...</a><br /></td></tr>
 <tr class="separator:aab5e3333f993ccfced89da3a7795e417"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,8 +124,8 @@ Public Attributes</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Animate_8hpp_source.html#l00022">22</a> of file <a class="el" href="Animate_8hpp_source.html">Animate.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aeb200c2378a1abdc0abfc54ed2dba5ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb200c2378a1abdc0abfc54ed2dba5ae">&#9670;&nbsp;</a></span>Animate()</h2>
+<a id="ae365769124dcb438596a670d4d66d97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae365769124dcb438596a670d4d66d97e">&#9670;&nbsp;</a></span>Animate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,8 +137,36 @@ Public Attributes</h2></td></tr>
           <td class="memname">RayLib::Models::Animate::Animate </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>path</em></td><td>)</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>position</em> = <code><a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt;3&gt;(0.0f,&#160;0.0f,&#160;0.0f)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rotationAxis</em> = <code><a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt;3&gt;(0.0f,&#160;1.0f,&#160;0.0f)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rotationAngle</em> = <code>0.0f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scale</em> = <code><a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt;3&gt;(1.0f,&#160;1.0f,&#160;1.0f)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -166,34 +194,47 @@ Public Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00033">33</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                  :</div>
+<div class="fragment"><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                                                                                                                                      : </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;_path(path),</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;_animFrameCounter(0),</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;_iqmAnimCount(0),</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;_animations(),</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;_rotationAngle(0)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;_rotationAngle(rotationAngle)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_directory(_path)) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : std::filesystem::directory_iterator(path)) {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (file.is_regular_file() &amp;&amp; file.path().string().find(<span class="stringliteral">&quot;.mtl&quot;</span>) == std::string::npos) {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                std::string stringPath = file.path().string();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                _fileList.emplace_back(stringPath);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::sort(_fileList.begin(), _fileList.end());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : _fileList) {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (file.find(<span class="stringliteral">&quot;.obj&quot;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.emplace_back(LoadModel(file.c_str()));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        _animType = OBJ_LIST;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_regular_file(_path)) {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.emplace_back(LoadModel(_path.c_str()));</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        _animType = IQM;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// TODO: CUSTOM EXCEPTIONS</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    this-&gt;_position.x = position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    this-&gt;_position.y = position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    this-&gt;_position.z = position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    this-&gt;_rotationAxis.x = rotationAxis.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    this-&gt;_rotationAxis.y = rotationAxis.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;_rotationAxis.z = rotationAxis.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;_scale.x = scale.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;_scale.y = scale.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;_scale.z = scale.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_directory(_path)) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : std::filesystem::directory_iterator(path)) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (file.is_regular_file() &amp;&amp; file.path().string().find(<span class="stringliteral">&quot;.mtl&quot;</span>) == std::string::npos) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                std::string stringPath = file.path().string();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                _fileList.emplace_back(stringPath);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        std::sort(_fileList.begin(), _fileList.end());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;file : _fileList) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (file.find(<span class="stringliteral">&quot;.obj&quot;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.emplace_back(LoadModel(file.c_str()));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        _animType = OBJ_LIST;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (std::filesystem::is_regular_file(_path)) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.emplace_back(LoadModel(_path.c_str()));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        _animType = IQM;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Models_1_1Animate_html_a97064a066476990720e2f46132444f12"><div class="ttname"><a href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">RayLib::Models::Animate::Models</a></div><div class="ttdeci">std::vector&lt; Model &gt; Models</div><div class="ttdef"><b>Definition:</b> <a href="Animate_8hpp_source.html#l00054">Animate.hpp:54</a></div></div>
+<div class="ttc" id="aclassType_1_1Vector_html_a0167d3843974715eb2edbe2b1793bba9"><div class="ttname"><a href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">Type::Vector::getY</a></div><div class="ttdeci">float &amp; getY()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00129">Vector.hpp:129</a></div></div>
+<div class="ttc" id="aclassType_1_1Vector_html_a1c20248488b288bae7bdbc32a406b371"><div class="ttname"><a href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">Type::Vector::getZ</a></div><div class="ttdeci">float &amp; getZ()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00135">Vector.hpp:135</a></div></div>
+<div class="ttc" id="aclassType_1_1Vector_html_aadcbd924c2b192ec64e32b1e48509716"><div class="ttname"><a href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">Type::Vector::getX</a></div><div class="ttdeci">float &amp; getX()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00124">Vector.hpp:124</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -212,19 +253,19 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00076">76</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> texture : _textures)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        UnloadTexture(texture);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (_animType == IQM) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _iqmAnimCount; i++) UnloadModelAnimation(_animations[i]);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        RL_FREE(_animations);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> model : <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>)</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        UnloadModel(model);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00086">86</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> texture : _textures)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        UnloadTexture(texture);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (_animType == IQM) {</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; _iqmAnimCount; i++) UnloadModelAnimation(_animations[i]);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        RL_FREE(_animations);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> model : <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        UnloadModel(model);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -245,10 +286,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Position getter </p><dl class="section return"><dt>Returns</dt><dd>model's position </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00131">131</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;{</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_position.x, this-&gt;_position.y, this-&gt;_position.z));</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00136">136</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_position.x, this-&gt;_position.y, this-&gt;_position.z));</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -269,10 +310,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Rotation angler getter </p><dl class="section return"><dt>Returns</dt><dd>model's rotation angle </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00160">160</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> this-&gt;_rotationAngle;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00165">165</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> this-&gt;_rotationAngle;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -292,10 +333,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Rotation axis getter </p><dl class="section return"><dt>Returns</dt><dd>model's rotation axis </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00155">155</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_rotationAxis.x, this-&gt;_rotationAxis.y, this-&gt;_rotationAxis.z));</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00160">160</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_rotationAxis.x, this-&gt;_rotationAxis.y, this-&gt;_rotationAxis.z));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -315,15 +356,15 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Scale getter </p><dl class="section return"><dt>Returns</dt><dd>model's scale </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00143">143</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_scale.x, this-&gt;_scale.y, this-&gt;_scale.z));</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00148">148</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(this-&gt;_scale.x, this-&gt;_scale.y, this-&gt;_scale.z));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a547c61bab183a2fccde0836eaea408cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a547c61bab183a2fccde0836eaea408cd">&#9670;&nbsp;</a></span>render()</h2>
+<a id="a062a5ddcce9f775da29871f1a4ece1e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a062a5ddcce9f775da29871f1a4ece1e1">&#9670;&nbsp;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -331,31 +372,8 @@ Public Attributes</h2></td></tr>
         <tr>
           <td class="memname">void RayLib::Models::Animate::render </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>rotationAngle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>scale</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>rotationAxis</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -363,28 +381,19 @@ Public Attributes</h2></td></tr>
 <p>Display model with it's animation This should be the only thing used in the loop to display the model. </p>
 <p>Function used to display (with animation) the model </p>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00094">94</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">int</span> currFrame = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_animFrameCounter);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    this-&gt;<a class="code" href="classRayLib_1_1Models_1_1Animate.html#ad3a874517f19e2c9e991e73bc00aa736">setPosition</a>(position);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    this-&gt;<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a5eb265a3dc3c202701ce0dcbe189c477">setRotationAngle</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(rotationAngle));</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    this-&gt;<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a835df5a49665c56dd45b0774824a1215">setScale</a>(scale);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    this-&gt;<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a30edb7c9bc9665eeb3b9d1d01ca79ce1">setRotationAxis</a>(rotationAxis);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">switch</span> (_animType) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">case</span> OBJ_LIST:</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            DrawModelEx(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>[currFrame], _position, _rotationAxis, _rotationAngle, _scale, WHITE);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">case</span> IQM:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            UpdateModelAnimation(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>[0], _animations[0], currFrame);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Models_1_1Animate_html_a30edb7c9bc9665eeb3b9d1d01ca79ce1"><div class="ttname"><a href="classRayLib_1_1Models_1_1Animate.html#a30edb7c9bc9665eeb3b9d1d01ca79ce1">RayLib::Models::Animate::setRotationAxis</a></div><div class="ttdeci">void setRotationAxis(const Type::Vector&lt; 3 &gt; &amp;rotationAxis)</div><div class="ttdef"><b>Definition:</b> <a href="Animate_8cpp_source.html#l00148">Animate.cpp:148</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Models_1_1Animate_html_a5eb265a3dc3c202701ce0dcbe189c477"><div class="ttname"><a href="classRayLib_1_1Models_1_1Animate.html#a5eb265a3dc3c202701ce0dcbe189c477">RayLib::Models::Animate::setRotationAngle</a></div><div class="ttdeci">void setRotationAngle(float rotationAngle)</div><div class="ttdef"><b>Definition:</b> <a href="Animate_8cpp_source.html#l00170">Animate.cpp:170</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Models_1_1Animate_html_a835df5a49665c56dd45b0774824a1215"><div class="ttname"><a href="classRayLib_1_1Models_1_1Animate.html#a835df5a49665c56dd45b0774824a1215">RayLib::Models::Animate::setScale</a></div><div class="ttdeci">void setScale(const Type::Vector&lt; 3 &gt; &amp;scale)</div><div class="ttdef"><b>Definition:</b> <a href="Animate_8cpp_source.html#l00136">Animate.cpp:136</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Models_1_1Animate_html_ad3a874517f19e2c9e991e73bc00aa736"><div class="ttname"><a href="classRayLib_1_1Models_1_1Animate.html#ad3a874517f19e2c9e991e73bc00aa736">RayLib::Models::Animate::setPosition</a></div><div class="ttdeci">void setPosition(const Type::Vector&lt; 3 &gt; &amp;position)</div><div class="ttdef"><b>Definition:</b> <a href="Animate_8cpp_source.html#l00124">Animate.cpp:124</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00104">104</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> currFrame = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_animFrameCounter);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">switch</span> (_animType) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">case</span> OBJ_LIST:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            DrawModelEx(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>[currFrame], _position, _rotationAxis, _rotationAngle, _scale, WHITE);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">case</span> IQM:</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            UpdateModelAnimation(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>[0], _animations[0], currFrame);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -404,11 +413,11 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Reset Animation Frames </p>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00175">175</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    this-&gt;_animFrameCounter = 0;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    this-&gt;_iqmAnimCount = 0;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00180">180</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    this-&gt;_animFrameCounter = 0;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    this-&gt;_iqmAnimCount = 0;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -429,10 +438,10 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Function used to set the animation file (ONLY USED IF THE MODEL IS A .IQM TYPE) </p>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00165">165</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    _animations = LoadModelAnimations(path.c_str(), &amp;_iqmAnimCount);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00170">170</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    _animations = LoadModelAnimations(path.c_str(), &amp;_iqmAnimCount);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -458,15 +467,12 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00124">124</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    this-&gt;_position.x = position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    this-&gt;_position.y = position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    this-&gt;_position.z = position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="ttc" id="aclassType_1_1Vector_html_a0167d3843974715eb2edbe2b1793bba9"><div class="ttname"><a href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">Type::Vector::getY</a></div><div class="ttdeci">float &amp; getY()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00129">Vector.hpp:129</a></div></div>
-<div class="ttc" id="aclassType_1_1Vector_html_a1c20248488b288bae7bdbc32a406b371"><div class="ttname"><a href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">Type::Vector::getZ</a></div><div class="ttdeci">float &amp; getZ()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00135">Vector.hpp:135</a></div></div>
-<div class="ttc" id="aclassType_1_1Vector_html_aadcbd924c2b192ec64e32b1e48509716"><div class="ttname"><a href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">Type::Vector::getX</a></div><div class="ttdeci">float &amp; getX()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00124">Vector.hpp:124</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00129">129</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    this-&gt;_position.x = position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    this-&gt;_position.y = position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    this-&gt;_position.z = position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -492,10 +498,10 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00170">170</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    this-&gt;_rotationAngle = rotationAngle;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00175">175</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    this-&gt;_rotationAngle = rotationAngle;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -521,12 +527,12 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00148">148</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    this-&gt;_rotationAxis.x = rotationAxis.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    this-&gt;_rotationAxis.y = rotationAxis.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    this-&gt;_rotationAxis.z = rotationAxis.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00153">153</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    this-&gt;_rotationAxis.x = rotationAxis.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    this-&gt;_rotationAxis.y = rotationAxis.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    this-&gt;_rotationAxis.z = rotationAxis.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -552,12 +558,12 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00136">136</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    this-&gt;_scale.x = scale.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    this-&gt;_scale.y = scale.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    this-&gt;_scale.z = scale.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00141">141</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;{</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    this-&gt;_scale.x = scale.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    this-&gt;_scale.y = scale.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    this-&gt;_scale.z = scale.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -598,15 +604,15 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00066">66</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    Texture2D texture = LoadTexture(path.c_str());</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; Model : <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        SetMaterialTexture(&amp;Model.materials[materialIndex], MAP_DIFFUSE, texture);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    _textures.emplace_back(texture);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00076">76</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Texture2D texture = LoadTexture(path.c_str());</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; Model : <a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        SetMaterialTexture(&amp;Model.materials[materialIndex], MAP_DIFFUSE, texture);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    _textures.emplace_back(texture);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -629,12 +635,12 @@ Public Attributes</h2></td></tr>
 <p>Update model with it's animation This should be the only thing used to update the model. </p>
 <p>Function used to update animations frames </p>
 
-<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00117">117</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    _animFrameCounter += elapsed * <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a9f048bee3615582f343aa0218ae72deb">getRefreshRate</a>());</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span> (_animFrameCounter &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.size())) _animFrameCounter = 0;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Animate_8cpp_source.html#l00122">122</a> of file <a class="el" href="Animate_8cpp_source.html">Animate.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    _animFrameCounter += elapsed * <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a9f048bee3615582f343aa0218ae72deb">getRefreshRate</a>());</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">if</span> (_animFrameCounter &gt;= <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code" href="classRayLib_1_1Models_1_1Animate.html#a97064a066476990720e2f46132444f12">Models</a>.size())) _animFrameCounter = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a2ca6b034a482304270e21f96d22a4951"><div class="ttname"><a href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00011">Window.cpp:11</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a9f048bee3615582f343aa0218ae72deb"><div class="ttname"><a href="classRayLib_1_1Window.html#a9f048bee3615582f343aa0218ae72deb">RayLib::Window::getRefreshRate</a></div><div class="ttdeci">size_t getRefreshRate() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00064">Window.hpp:64</a></div></div>
 </div><!-- fragment -->

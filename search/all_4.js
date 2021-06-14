@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['dead_84',['DEAD',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0',1,'Bomberman::Player']]],
+  ['dead_84',['DEAD',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a0e3df0e565ffa637dde667aff3af6943',1,'Bomberman::PlayerAnimation']]],
   ['decor_85',['DECOR',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e',1,'Bomberman::GameObject']]],
   ['destroy_86',['destroy',['../classBomberman_1_1GameObject.html#a710ec39a33e1142934c2157801acb6fa',1,'Bomberman::GameObject']]],
   ['destroyed_87',['DESTROYED',['../classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91',1,'Bomberman::GameObject']]],
   ['destructible_88',['DESTRUCTIBLE',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8',1,'Bomberman::GameObject']]],
   ['disablecursor_89',['disableCursor',['../classRayLib_1_1Cursor.html#a312b4acd4ba957227715ef223fe8d1c0',1,'RayLib::Cursor']]],
-  ['down_90',['DOWN',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a54a34c65daf39e2c6f5ce4417087786e',1,'RayLib::Window::DOWN()'],['../classBomberman_1_1Bomb.html#a9130bd632b3b9d4ab5423ee7a537f971a01d4840ae161049b8b27799e0aab96e7',1,'Bomberman::Bomb::DOWN()']]],
+  ['down_90',['DOWN',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a54a34c65daf39e2c6f5ce4417087786e',1,'RayLib::Window']]],
   ['downpitch_91',['downPitch',['../classBomberman_1_1Music.html#a0644f950892f1563c7d65726291bda2e',1,'Bomberman::Music']]],
   ['downvolume_92',['downVolume',['../classBomberman_1_1Music.html#a27c58564af6e85495c74d770c755bd56',1,'Bomberman::Music']]],
   ['draw_93',['draw',['../classBomberman_1_1Menu_1_1CreditsComponent.html#a62b74fe43f5127d875090ff0016e3ba7',1,'Bomberman::Menu::CreditsComponent::draw()'],['../classBomberman_1_1SceneManager.html#a2ace75d3b6d8cbb20043db00a3716b6f',1,'Bomberman::SceneManager::draw()'],['../classRayLib_1_1Window.html#aa7cc11e17f91579d3bae560cc02a4c53',1,'RayLib::Window::draw()']]],
