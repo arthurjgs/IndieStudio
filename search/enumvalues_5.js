@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['game_1275',['GAME',['../classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a3113ea893b0000b80227b2f6d1dadc16',1,'RayLib::Manager3D']]]
+  ['idle_1253',['IDLE',['../classBomberman_1_1PlayerAnimation.html#a04299fafece65197c48b876ae8e6a981a2003641b0a7895880a55ce8e32c756f3',1,'Bomberman::PlayerAnimation']]]
 ];
