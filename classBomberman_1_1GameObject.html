@@ -85,14 +85,15 @@ Inheritance diagram for Bomberman::GameObject:</div>
   <map id="Bomberman::GameObject_map" name="Bomberman::GameObject_map">
 <area href="classBomberman_1_1Bomb.html" alt="Bomberman::Bomb" shape="rect" coords="196,56,382,80"/>
 <area href="classBomberman_1_1Button.html" alt="Bomberman::Button" shape="rect" coords="196,112,382,136"/>
-<area href="classBomberman_1_1FlashingText.html" alt="Bomberman::FlashingText" shape="rect" coords="196,168,382,192"/>
-<area href="classBomberman_1_1Image.html" alt="Bomberman::Image" shape="rect" coords="196,224,382,248"/>
-<area href="classBomberman_1_1Map.html" alt="Bomberman::Map" shape="rect" coords="196,280,382,304"/>
-<area href="classBomberman_1_1Music.html" alt="Bomberman::Music" shape="rect" coords="196,336,382,360"/>
-<area href="classBomberman_1_1Parralax.html" alt="Bomberman::Parralax" shape="rect" coords="196,392,382,416"/>
-<area href="classBomberman_1_1Player.html" alt="Bomberman::Player" shape="rect" coords="196,448,382,472"/>
-<area href="classBomberman_1_1SpriteSheetPlayer.html" alt="Bomberman::SpriteSheetPlayer" shape="rect" coords="196,504,382,528"/>
-<area href="classBomberman_1_1StateImage.html" alt="Bomberman::StateImage" shape="rect" coords="196,560,382,584"/>
+<area href="classBomberman_1_1Flame.html" alt="Bomberman::Flame" shape="rect" coords="196,168,382,192"/>
+<area href="classBomberman_1_1FlashingText.html" alt="Bomberman::FlashingText" shape="rect" coords="196,224,382,248"/>
+<area href="classBomberman_1_1Image.html" alt="Bomberman::Image" shape="rect" coords="196,280,382,304"/>
+<area href="classBomberman_1_1Map.html" alt="Bomberman::Map" shape="rect" coords="196,336,382,360"/>
+<area href="classBomberman_1_1Music.html" alt="Bomberman::Music" shape="rect" coords="196,392,382,416"/>
+<area href="classBomberman_1_1Parralax.html" alt="Bomberman::Parralax" shape="rect" coords="196,448,382,472"/>
+<area href="classBomberman_1_1Player.html" alt="Bomberman::Player" shape="rect" coords="196,504,382,528"/>
+<area href="classBomberman_1_1SpriteSheetPlayer.html" alt="Bomberman::SpriteSheetPlayer" shape="rect" coords="196,560,382,584"/>
+<area href="classBomberman_1_1StateImage.html" alt="Bomberman::StateImage" shape="rect" coords="196,616,382,640"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -108,12 +109,13 @@ Public Types</h2></td></tr>
 , <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8">DESTRUCTIBLE</a>
 , <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5">BOMB</a>
 , <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">BONUS</a>
+&#160;&#160;<a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">FLAME</a>
+, <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">BONUS</a>
 , <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879">BUTTON</a>
 , <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345">TEXT</a>
-, <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">CAMERA</a>
 , <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">MUSIC</a>
+&#160;&#160;<a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">CAMERA</a>
+, <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">MUSIC</a>
 , <a class="el" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a">SOUND</a>
 <br />
  }</td></tr>
@@ -211,6 +213,7 @@ Protected Attributes</h2></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e"></a>DECOR&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8"></a>DESTRUCTIBLE&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5"></a>BOMB&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b"></a>FLAME&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a"></a>BONUS&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879"></a>BUTTON&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345"></a>TEXT&#160;</td><td class="fielddoc"></td></tr>
@@ -225,23 +228,25 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">DECOR</a>,</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8">DESTRUCTIBLE</a>,</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5">BOMB</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">BONUS</a>,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879">BUTTON</a>,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345">TEXT</a>,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">CAMERA</a>,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">MUSIC</a>,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a">SOUND</a></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        };</div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a">Bomberman::GameObject::SOUND</a></div><div class="ttdeci">@ SOUND</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00032">GameObject.hpp:31</a></div></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">FLAME</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">BONUS</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879">BUTTON</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345">TEXT</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">CAMERA</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">MUSIC</a>,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a">SOUND</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        };</div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea03baf5294508a2666269da8d25551e7a">Bomberman::GameObject::SOUND</a></div><div class="ttdeci">@ SOUND</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00033">GameObject.hpp:32</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea0cc2016f7fa9bf0629b34c58bfab4ea8">Bomberman::GameObject::DESTRUCTIBLE</a></div><div class="ttdeci">@ DESTRUCTIBLE</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00024">GameObject.hpp:24</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">Bomberman::GameObject::MUSIC</a></div><div class="ttdeci">@ MUSIC</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00030">GameObject.hpp:30</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">Bomberman::GameObject::CAMERA</a></div><div class="ttdeci">@ CAMERA</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00029">GameObject.hpp:29</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea15ea202c6c13ddc940f6b217a87f47be">Bomberman::GameObject::MUSIC</a></div><div class="ttdeci">@ MUSIC</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00031">GameObject.hpp:31</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea269dace7dcb3df1343227b3523512682">Bomberman::GameObject::CAMERA</a></div><div class="ttdeci">@ CAMERA</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00030">GameObject.hpp:30</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomberman::GameObject::FLAME</a></div><div class="ttdeci">@ FLAME</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00026">GameObject.hpp:26</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">Bomberman::GameObject::DECOR</a></div><div class="ttdeci">@ DECOR</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00023">GameObject.hpp:23</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345">Bomberman::GameObject::TEXT</a></div><div class="ttdeci">@ TEXT</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00028">GameObject.hpp:28</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea5e5f5d5d754151cc5fa3b45c63d9c345">Bomberman::GameObject::TEXT</a></div><div class="ttdeci">@ TEXT</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00029">GameObject.hpp:29</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">Bomberman::GameObject::PLAYER</a></div><div class="ttdeci">@ PLAYER</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00022">GameObject.hpp:22</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5">Bomberman::GameObject::BOMB</a></div><div class="ttdeci">@ BOMB</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00025">GameObject.hpp:25</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879">Bomberman::GameObject::BUTTON</a></div><div class="ttdeci">@ BUTTON</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00027">GameObject.hpp:27</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">Bomberman::GameObject::BONUS</a></div><div class="ttdeci">@ BONUS</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00026">GameObject.hpp:26</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879">Bomberman::GameObject::BUTTON</a></div><div class="ttdeci">@ BUTTON</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00028">GameObject.hpp:28</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">Bomberman::GameObject::BONUS</a></div><div class="ttdeci">@ BONUS</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00027">GameObject.hpp:27</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -343,11 +348,11 @@ Protected Attributes</h2></td></tr>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#aa40bd512d92bf06b82daf41e6af2f562">_display</a> = display;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> = name;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_a32130129d2f7b0428b16c47143727319"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">Bomberman::GameObject::_position</a></div><div class="ttdeci">Type::Vector&lt; 3 &gt; _position</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00057">GameObject.hpp:57</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_a63c72d88038acecd9e8f6ead2769ca4f"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a63c72d88038acecd9e8f6ead2769ca4f">Bomberman::GameObject::_state</a></div><div class="ttdeci">GameObjectState _state</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00061">GameObject.hpp:61</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_a696c11bc55b326fb5ad1bb1612c20247"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a696c11bc55b326fb5ad1bb1612c20247">Bomberman::GameObject::_type</a></div><div class="ttdeci">ObjectType _type</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00059">GameObject.hpp:59</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa40bd512d92bf06b82daf41e6af2f562"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa40bd512d92bf06b82daf41e6af2f562">Bomberman::GameObject::_display</a></div><div class="ttdeci">bool _display</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00060">GameObject.hpp:60</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa7ecc65dea82a50f7d0e3e4e2f3bd747"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">Bomberman::GameObject::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00058">GameObject.hpp:58</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_a32130129d2f7b0428b16c47143727319"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">Bomberman::GameObject::_position</a></div><div class="ttdeci">Type::Vector&lt; 3 &gt; _position</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00058">GameObject.hpp:58</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_a63c72d88038acecd9e8f6ead2769ca4f"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a63c72d88038acecd9e8f6ead2769ca4f">Bomberman::GameObject::_state</a></div><div class="ttdeci">GameObjectState _state</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00062">GameObject.hpp:62</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_a696c11bc55b326fb5ad1bb1612c20247"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a696c11bc55b326fb5ad1bb1612c20247">Bomberman::GameObject::_type</a></div><div class="ttdeci">ObjectType _type</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00060">GameObject.hpp:60</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa40bd512d92bf06b82daf41e6af2f562"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa40bd512d92bf06b82daf41e6af2f562">Bomberman::GameObject::_display</a></div><div class="ttdeci">bool _display</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00061">GameObject.hpp:61</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa7ecc65dea82a50f7d0e3e4e2f3bd747"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">Bomberman::GameObject::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00059">GameObject.hpp:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -558,7 +563,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classBomberman_1_1Player.html#aa0a31d9908e96209d26a9848fdf30184">Bomberman::Player</a>, <a class="el" href="classBomberman_1_1Map.html#a9d7b688377c1ca25ac1db2d46df0371c">Bomberman::Map</a>, <a class="el" href="classBomberman_1_1StateImage.html#ae70a51d787ec2fbbe80c3b1947c7a9d9">Bomberman::StateImage</a>, <a class="el" href="classBomberman_1_1SpriteSheetPlayer.html#a21e1c9026fc29e001a2c82b59abd90f5">Bomberman::SpriteSheetPlayer</a>, <a class="el" href="classBomberman_1_1Parralax.html#a423613e84592a152a3849783d9608c64">Bomberman::Parralax</a>, <a class="el" href="classBomberman_1_1Music.html#ae25853c0f38430ec09a46dc8ea4d4402">Bomberman::Music</a>, <a class="el" href="classBomberman_1_1Image.html#a005e80473436ddd43baaf4306541afa8">Bomberman::Image</a>, <a class="el" href="classBomberman_1_1FlashingText.html#a72b6ad8c501aae7871d1329e28f0283b">Bomberman::FlashingText</a>, <a class="el" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button</a>, and <a class="el" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb</a>.</p>
+<p>Implemented in <a class="el" href="classBomberman_1_1Player.html#aa0a31d9908e96209d26a9848fdf30184">Bomberman::Player</a>, <a class="el" href="classBomberman_1_1Map.html#a9d7b688377c1ca25ac1db2d46df0371c">Bomberman::Map</a>, <a class="el" href="classBomberman_1_1StateImage.html#ae70a51d787ec2fbbe80c3b1947c7a9d9">Bomberman::StateImage</a>, <a class="el" href="classBomberman_1_1SpriteSheetPlayer.html#a21e1c9026fc29e001a2c82b59abd90f5">Bomberman::SpriteSheetPlayer</a>, <a class="el" href="classBomberman_1_1Parralax.html#a423613e84592a152a3849783d9608c64">Bomberman::Parralax</a>, <a class="el" href="classBomberman_1_1Music.html#ae25853c0f38430ec09a46dc8ea4d4402">Bomberman::Music</a>, <a class="el" href="classBomberman_1_1Image.html#a005e80473436ddd43baaf4306541afa8">Bomberman::Image</a>, <a class="el" href="classBomberman_1_1FlashingText.html#a72b6ad8c501aae7871d1329e28f0283b">Bomberman::FlashingText</a>, <a class="el" href="classBomberman_1_1Flame.html#a56893d0b35ecf3d5612f1a673434a7b5">Bomberman::Flame</a>, <a class="el" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button</a>, and <a class="el" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">Bomberman::Bomb</a>.</p>
 
 </div>
 </div>
@@ -632,7 +637,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">Bomberman::Player</a>, <a class="el" href="classBomberman_1_1Map.html#a824b8f33fcc87ba7fb5c2248a2805d74">Bomberman::Map</a>, <a class="el" href="classBomberman_1_1StateImage.html#a128e4a2b8597f202e60b3559fc71db7c">Bomberman::StateImage</a>, <a class="el" href="classBomberman_1_1SpriteSheetPlayer.html#af80b0a02da9fc13c11cc1b4d071e4383">Bomberman::SpriteSheetPlayer</a>, <a class="el" href="classBomberman_1_1Parralax.html#a97bea90e8ac2d6ecf3f4ec4cb8d7e501">Bomberman::Parralax</a>, <a class="el" href="classBomberman_1_1Music.html#ae7de5de5ad339626633db640e424d538">Bomberman::Music</a>, <a class="el" href="classBomberman_1_1Image.html#a5cdd8b7296703e7721145a32fb4659a4">Bomberman::Image</a>, <a class="el" href="classBomberman_1_1FlashingText.html#aeb4db4d602b30a866b75ffea9b65f02b">Bomberman::FlashingText</a>, <a class="el" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button</a>, and <a class="el" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb</a>.</p>
+<p>Implemented in <a class="el" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">Bomberman::Player</a>, <a class="el" href="classBomberman_1_1Map.html#a824b8f33fcc87ba7fb5c2248a2805d74">Bomberman::Map</a>, <a class="el" href="classBomberman_1_1StateImage.html#a128e4a2b8597f202e60b3559fc71db7c">Bomberman::StateImage</a>, <a class="el" href="classBomberman_1_1SpriteSheetPlayer.html#af80b0a02da9fc13c11cc1b4d071e4383">Bomberman::SpriteSheetPlayer</a>, <a class="el" href="classBomberman_1_1Parralax.html#a97bea90e8ac2d6ecf3f4ec4cb8d7e501">Bomberman::Parralax</a>, <a class="el" href="classBomberman_1_1Music.html#ae7de5de5ad339626633db640e424d538">Bomberman::Music</a>, <a class="el" href="classBomberman_1_1Image.html#a5cdd8b7296703e7721145a32fb4659a4">Bomberman::Image</a>, <a class="el" href="classBomberman_1_1FlashingText.html#aeb4db4d602b30a866b75ffea9b65f02b">Bomberman::FlashingText</a>, <a class="el" href="classBomberman_1_1Flame.html#aa453dedb3375926d0ea6e4eeba80c25d">Bomberman::Flame</a>, <a class="el" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button</a>, and <a class="el" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">Bomberman::Bomb</a>.</p>
 
 </div>
 </div>
@@ -657,7 +662,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00060">60</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00061">61</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -681,7 +686,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00058">58</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00059">59</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -705,7 +710,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00057">57</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00058">58</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -729,7 +734,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00061">61</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00062">62</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>
@@ -753,7 +758,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00059">59</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="GameObject_8hpp_source.html#l00060">60</a> of file <a class="el" href="GameObject_8hpp_source.html">GameObject.hpp</a>.</p>
 
 </div>
 </div>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['joyleft_1252',['JOYLEFT',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148acb2022bf5d00d76ae07140c0a246f3bd',1,'RayLib::Window']]],
-  ['joyright_1253',['JOYRIGHT',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ac4f3670fc8baebb459666b7125e213ef',1,'RayLib::Window']]]
+  ['idle_1277',['IDLE',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2',1,'Bomberman::Player']]]
 ];
