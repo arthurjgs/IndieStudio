@@ -3,6 +3,6 @@ cmake-build-debug/
 build/
 lib/
 unit_tests
-assets/models/player/**
+./bomberman
+bomberman
 .DS_Store
-config.yml

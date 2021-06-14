@@ -13,20 +13,28 @@
 #include <vector>
 #include <filesystem>
 #include "Game/GameException.hpp"
+#include <cmath>
+#include <Game/Flame/Flame.hpp>
 
 namespace Bomberman {
     class Bomb : public GameObject {
     public:
-        Bomb(const std::string &assetPath, const Type::Vector<3> &position, double startTimer, int range);
-        ~Bomb() = default;
+        enum Side {
+            UP = 1,
+            RIGHT = 2,
+            DOWN = 3,
+            LEFT = 4
+        };
+        Bomb(const Type::Vector<3> &position, int range = 1);
+        ~Bomb();
+        std::vector<std::shared_ptr<Flame>> explode();
         void update(const double &elapsed);
         void render() const;
     protected:
     private:
-        std::vector<std::filesystem::path> _texturesList;
         double _lifespan;
         int _range;
-        std::unique_ptr<RayLib::Models::Animate> _model;
+        bool _exploded;
     };
 }
 

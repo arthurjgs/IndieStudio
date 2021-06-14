@@ -30,23 +30,13 @@ bool replace(std::string& str, const std::string& from, const std::string& to)
  *  @param rotationAngle models position (default is 0)
  *  @param scale models position (default is 1)
  */
-RayLib::Models::Animate::Animate(const std::string &path, const Type::Vector<3> &position, const Type::Vector<3> &rotationAxis, double rotationAngle, const Type::Vector<3> &scale) : 
+RayLib::Models::Animate::Animate(const std::string &path) :
 _path(path),
 _animFrameCounter(0),
 _iqmAnimCount(0),
 _animations(),
-_rotationAngle(rotationAngle)
+_rotationAngle(0)
 {
-    // TODO: CUSTOM EXCEPTIONS
-    this->_position.x = position.getX();
-    this->_position.y = position.getY();
-    this->_position.z = position.getZ();
-    this->_rotationAxis.x = rotationAxis.getX();
-    this->_rotationAxis.y = rotationAxis.getY();
-    this->_rotationAxis.z = rotationAxis.getZ();
-    this->_scale.x = scale.getX();
-    this->_scale.y = scale.getY();
-    this->_scale.z = scale.getZ();
     if (std::filesystem::is_directory(_path)) {
         for (const auto &file : std::filesystem::directory_iterator(path)) {
             if (file.is_regular_file() && file.path().string().find(".mtl") == std::string::npos) {
@@ -101,9 +91,14 @@ RayLib::Models::Animate::~Animate()
  *  Display model with it's animation
  *  This should be the only thing used in the loop to display the model
  */
-void RayLib::Models::Animate::render()
+void RayLib::Models::Animate::render(const Type::Vector<3> &position, const double &rotationAngle, const Type::Vector<3> &scale, const Type::Vector<3> &rotationAxis)
 {
     int currFrame = static_cast<int>(_animFrameCounter);
+
+    this->setPosition(position);
+    this->setRotationAngle(static_cast<float>(rotationAngle));
+    this->setScale(scale);
+    this->setRotationAxis(rotationAxis);
 
     switch (_animType) {
         case OBJ_LIST:

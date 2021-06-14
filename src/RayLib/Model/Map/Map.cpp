@@ -12,7 +12,7 @@
 #include <vector>
 #include "Map.hpp"
 
-RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position)
+RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position) : _size(0)
 {
     auto image = ::LoadImage(filepath.c_str());
 
@@ -21,6 +21,7 @@ RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position)
     _model = ::LoadModelFromMesh(_mesh);
     _mapPixels = ::LoadImageColors(image);
     _position = position;
+    _size = image.height * image.height;
 
     ::UnloadImage(image);
 }
@@ -35,7 +36,6 @@ RayLib::Models::Map::~Map()
 
 void RayLib::Models::Map::LoadMaterial(const std::string &filepath)
 {
-    ::UnloadTexture(_material);
     _material = ::LoadTexture(filepath.c_str());
     _model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _material;
 }
@@ -62,7 +62,7 @@ std::vector<Type::Color> RayLib::Models::Map::getMapPixels()
 {
     std::vector<Type::Color> colors = std::vector<Type::Color>();
 
-    for(int i = 0; i < 255; i++)
+    for(int i = 0; i < _size; i++)
     {
         Color c = _mapPixels[i];
         colors.emplace_back(Type::Color(c.r, c.g, c.b, c.a));
