@@ -28,9 +28,13 @@ namespace Bomberman {
         
             void update(const double &elapsed);
             void render() const;
+
+            inline Type::Color &getColor() { return (this->__color); }
+            inline Type::Color getColor() const { return (this->__color); }
         protected:
         private:
             std::string __path;
             RayLib::Texture __texture;
+            Type::Color __color;
     };
 }

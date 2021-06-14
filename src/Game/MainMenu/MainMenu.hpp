@@ -15,6 +15,7 @@
 #include "./MainLobby/MainLobby.hpp"
 #include "../FlashingText/FlashingText.hpp"
 #include "../../RayLib/Window.hpp"
+#include "../UserConfig/UserConfig.hpp"
 #include <vector>
 #include <memory>
 
@@ -34,7 +35,7 @@ namespace Bomberman {
             protected:
             private:
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
-                
+                UserConfig __config;
         };
     }
 }

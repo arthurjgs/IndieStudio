@@ -12,7 +12,8 @@
 
 Bomberman::Image::Image(const std::string &path, const std::string &name, ObjectType type, const Type::Vector<3> &position, bool display) :
 GameObject(name, type, position, display),
-__texture(path)
+__texture(path),
+__color(255, 255, 255, 255)
 {
     this->__path = path;
 }
@@ -24,5 +25,5 @@ void Bomberman::Image::update(const double &elapsed)
 
 void Bomberman::Image::render() const
 {
-    this->__texture.drawTexture(this->getPosition().getX(), this->getPosition().getY(), Type::Color(255, 255, 255, 255));
+    this->__texture.drawTexture(this->getPosition().getX(), this->getPosition().getY(), this->__color);
 }
