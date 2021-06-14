@@ -35,7 +35,8 @@ namespace Bomberman
             void stop();
             void pause();
             void resume();
-
+            void render() const;
+            void update(const double &elapsed);
 
         protected:
         private:

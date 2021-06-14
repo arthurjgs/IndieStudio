@@ -1,7 +1,6 @@
 .idea/
 cmake-build-debug/
 build/
-bomberman
 lib/
 unit_tests
 assets/models/player/**

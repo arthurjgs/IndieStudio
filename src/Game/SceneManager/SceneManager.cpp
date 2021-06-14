@@ -22,7 +22,7 @@ void Bomberman::SceneManager::update(const double &elapsed)
 
 void Bomberman::SceneManager::checkStack() const
 {
-    if (this->__engine.size() == 0) {
+    if (this->__engine.empty()) {
         // TODO: modify this bellow by custom error type
         throw std::runtime_error("Error scene stack is empty nothing to render");
     }

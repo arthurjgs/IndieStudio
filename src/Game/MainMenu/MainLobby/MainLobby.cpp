@@ -532,7 +532,8 @@ void Bomberman::Menu::MainLobby::closeVideoPanel()
 
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
-    //TODO: LOAD PLAYER SELECTION
+    std::cout << "play click" << std::endl;
+    this->__manager.newScene<SelectionMenu>();
 }
 
 void Bomberman::Menu::MainLobby::loadButtonCallback()

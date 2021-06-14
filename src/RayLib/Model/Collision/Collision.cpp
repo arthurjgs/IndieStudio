@@ -8,9 +8,10 @@
  * 
  */
 
+#include <Types/Rectangle/Rectangle.hpp>
 #include "Collision.hpp"
 
-bool CheckCollisionSpheres(const Type::Vector<3> &center1, float radius1, const Type::Vector<3> &center2, float radius2)
+bool RayLib::Models::Collision::CheckCollisionSpheres(const Type::Vector<3> &center1, float radius1, const Type::Vector<3> &center2, float radius2)
 {
     return (
         ::CheckCollisionSpheres(
@@ -22,7 +23,7 @@ bool CheckCollisionSpheres(const Type::Vector<3> &center1, float radius1, const 
     );
 }
 
-bool CheckCollisionBoxes(const Type::BoundingBox &box1, const Type::BoundingBox &box2)
+bool RayLib::Models::Collision::CheckCollisionBoxes(const Type::BoundingBox &box1, const Type::BoundingBox &box2)
 {
     return (
         ::CheckCollisionBoxes(
@@ -38,7 +39,26 @@ bool CheckCollisionBoxes(const Type::BoundingBox &box1, const Type::BoundingBox 
     );
 }
 
-bool CheckCollisionBoxSphere(const Type::BoundingBox &box, const Type::Vector<3> &center, float radius)
+bool RayLib::Models::Collision::CheckCollisionCircleRec(const Type::Vector<2> &pos, const float &radius, const Type::Rectangle &rect)
+{
+    return (
+            ::CheckCollisionCircleRec(
+                    ::Vector2 {
+                            pos.getX(),
+                            pos.getY()
+                    },
+                    radius,
+                    ::Rectangle {
+                        rect.getX(),
+                        rect.getY(),
+                        rect.getHeight(),
+                        rect.getWidth()
+                    }
+            )
+    );
+}
+
+bool RayLib::Models::Collision::CheckCollisionBoxSphere(const Type::BoundingBox &box, const Type::Vector<3> &center, float radius)
 {
     return (
         ::CheckCollisionBoxSphere(

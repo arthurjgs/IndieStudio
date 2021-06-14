@@ -22,9 +22,11 @@ namespace RayLib {
         class Animate {
         public:
             /*! Create model from @param path path @param position position @param rotationAxis rotation Axis @param rotationAngle rotation Angle and finally @param scale the scale*/
-            explicit Animate(const std::string &path, const Type::Vector<3> &position = Type::Vector<3>(0.0f, 0.0f, 0.0f), const Type::Vector<3> &rotationAxis = Type::Vector<3>(0.0f, 0.0f, 0.0f), double rotationAngle = 0.0f, const Type::Vector<3> &scale = Type::Vector<3>(1.0f, 1.0f, 1.0f));
+            explicit Animate(const std::string &path, const Type::Vector<3> &position = Type::Vector<3>(0.0f, 0.0f, 0.0f), const Type::Vector<3> &rotationAxis = Type::Vector<3>(0.0f, 1.0f, 0.0f), double rotationAngle = 0.0f, const Type::Vector<3> &scale = Type::Vector<3>(1.0f, 1.0f, 1.0f));
             /*! Function used to display (with animation) the model*/
-            void display();
+            void render();
+            /*! Function used to update animations frames */
+            void update(const double &elapsed);
             /*! Function used to set textures for a model. @param path path to png file only @param materialIndex index of the material in the model material list*/
             void setTexture(const std::string &path, int materialIndex);
             /*! Function used to set the animation file (ONLY USED IF THE MODEL IS A .IQM TYPE)*/
@@ -44,10 +46,11 @@ namespace RayLib {
             /*! Rotation axis getter @return model's rotation axis*/
             Type::Vector<3> getRotationAxis();
             /*! Rotation Angle setter @param position rotation angle to be used*/
-            void setRotationAngle(double rotationAngle);
+            void setRotationAngle(float rotationAngle);
             /*! Rotation angler getter @return model's rotation angle*/
             double getRotationAngle();
-
+            /*! Reset Animation Frames*/
+            void resetAnim();
             std::vector<Model> Models;
         private:
             /*! AnimType enum to know which type of animation it is */
@@ -66,7 +69,7 @@ namespace RayLib {
             /*! Model's textures list */
             std::vector<Texture2D> _textures;
             /*! Model's animation frame counter */
-            int _animFrameCounter;
+            double _animFrameCounter;
             /*! Model's animation frame counter (if it's an IQM file)*/
             int _iqmAnimCount;
             /*! Model's animations (if it's an IQM file)*/
@@ -76,7 +79,7 @@ namespace RayLib {
             /*! Model's rotation axis */
             Vector3 _rotationAxis;
             /*! Model's rotation angle */
-            double _rotationAngle;
+            float _rotationAngle;
             /*! Model's scale */
             Vector3 _scale;
         };
