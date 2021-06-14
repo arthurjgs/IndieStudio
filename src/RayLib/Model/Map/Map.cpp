@@ -36,7 +36,6 @@ RayLib::Models::Map::~Map()
 
 void RayLib::Models::Map::LoadMaterial(const std::string &filepath)
 {
-    ::UnloadTexture(_material);
     _material = ::LoadTexture(filepath.c_str());
     _model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _material;
 }

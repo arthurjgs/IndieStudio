@@ -10,8 +10,10 @@
 Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
 _range(range),
 _speed(speed),
+_state(IDLE),
 _startActionTime(0),
-_alreadyCreatedBomb(false)
+_alreadyCreatedBomb(false),
+_rotationAngle(0)
 {
     try {
         for (int i = 0; i < bombs; i++)
@@ -112,7 +114,23 @@ std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
         return nullptr;
     _alreadyCreatedBomb = true;
     Type::Vector<3> position = this->getPosition();
-    Type::Vector<3> roundedPosition(round(position.getX()), round(position.getY()), round(position.getZ()));
+    Type::Vector<3> roundedPosition;
+    if (_rotationAngle == 0)
+        roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                          static_cast<float>(round(position.getY())),
+                                          static_cast<float>(round(position.getZ() + 1)));
+    else if (_rotationAngle == 180)
+        roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                          static_cast<float>(round(position.getY())),
+                                          static_cast<float>(round(position.getZ() - 1)));
+    else if (_rotationAngle == 90)
+        roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX() + 1)),
+                                          static_cast<float>(round(position.getY())),
+                                          static_cast<float>(round(position.getZ())));
+    else if (_rotationAngle == -90)
+        roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
+                                          static_cast<float>(round(position.getY())),
+                                          static_cast<float>(round(position.getZ())));
     return std::make_shared<Bomb>(roundedPosition, this->getRange());
 }
 
