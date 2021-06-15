@@ -95,8 +95,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a80be50f18d68aec5d6594e05014521ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0038e1502631ddafe7c4ad1cd21ac8a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classType_1_1Color.html">Type::Color</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Map.html#ac0038e1502631ddafe7c4ad1cd21ac8a">getMapPixels</a> ()</td></tr>
 <tr class="separator:ac0038e1502631ddafe7c4ad1cd21ac8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9603ed377254717e69b07a47e6e5e05e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classBomberman_1_1Crate.html">Bomberman::Crate</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Map.html#a9603ed377254717e69b07a47e6e5e05e">createCrates</a> (const double &amp;percentage)</td></tr>
-<tr class="separator:a9603ed377254717e69b07a47e6e5e05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d7b688377c1ca25ac1db2d46df0371c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Map.html#a9d7b688377c1ca25ac1db2d46df0371c">render</a> () const override</td></tr>
 <tr class="separator:a9d7b688377c1ca25ac1db2d46df0371c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a824b8f33fcc87ba7fb5c2248a2805d74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Map.html#a824b8f33fcc87ba7fb5c2248a2805d74">update</a> (const double &amp;elapsed) override</td></tr>
@@ -167,7 +165,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Game_2Map_8hpp_source.html#l00017">17</a> of file <a class="el" href="Game_2Map_8hpp_source.html">Map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Game_2Map_8hpp_source.html#l00016">16</a> of file <a class="el" href="Game_2Map_8hpp_source.html">Map.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acb927ddda23b054bdf84c390fc022883"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb927ddda23b054bdf84c390fc022883">&#9670;&nbsp;</a></span>Map()</h2>
@@ -246,70 +244,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9603ed377254717e69b07a47e6e5e05e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9603ed377254717e69b07a47e6e5e05e">&#9670;&nbsp;</a></span>createCrates()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classBomberman_1_1Crate.html">Bomberman::Crate</a> &gt; &gt; Bomberman::Map::createCrates </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>percentage</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Game_2Map_8cpp_source.html#l00044">44</a> of file <a class="el" href="Game_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::vector&lt;std::shared_ptr&lt;Bomberman::Crate&gt;&gt; crates;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> width = _map-&gt;getWidth() - 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">int</span> height = _map-&gt;getHeight() - 1;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    srand(time(<span class="keyword">nullptr</span>));</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 1; z &lt; height; z++) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 1; x &lt; width; x++) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="comment">// TOP LEFT CORNER</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">if</span> (x == 1 &amp;&amp; z == 1 ||</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                x == 2 &amp;&amp; z == 1 ||</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                x == 1 &amp;&amp; z == 2) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">// TOP RIGHT CORNER</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keywordflow">if</span> (x == width - 1 &amp;&amp; z == 1 ||</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                x == width - 2 &amp;&amp; z == 1 ||</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                x == width - 1 &amp;&amp; z == 2) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <span class="comment">// BOTTOM LEFT CORNER</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">if</span> (x == 1 &amp;&amp; z == height - 1 ||</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                x == 2 &amp;&amp; z == height - 1 ||</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                x == 1 &amp;&amp; z == height - 2) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="comment">// BOTTOM RIGHT CORNER</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span> (x == width - 1 &amp;&amp; z == height - 1 ||</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                x == width - 2 &amp;&amp; z == height - 1 ||</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                x == width - 1 &amp;&amp; z == height - 2) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">if</span> (rand() % (100 + 1) &lt;= percentage) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> pos(this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>().getX() + <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(x),</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>().getY(),</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>().getZ() + <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(z));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                crates.emplace_back(std::make_shared&lt;Crate&gt;(pos));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">return</span> crates;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_a1da506f6cbe800e26e5c7a43ca48f01f"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">Bomberman::GameObject::getPosition</a></div><div class="ttdeci">Type::Vector&lt; 3 &gt; getPosition() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00025">GameObject.cpp:25</a></div></div>
-<div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
 <a id="a80be50f18d68aec5d6594e05014521ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80be50f18d68aec5d6594e05014521ae">&#9670;&nbsp;</a></span>getCubicMap()</h2>
 
@@ -325,10 +259,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Map_8cpp_source.html#l00088">88</a> of file <a class="el" href="Game_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">return</span> _map-&gt;getCubicMap();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Map_8cpp_source.html#l00044">44</a> of file <a class="el" href="Game_2Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> _map-&gt;getCubicMap();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -347,10 +281,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Game_2Map_8cpp_source.html#l00093">93</a> of file <a class="el" href="Game_2Map_8cpp_source.html">Map.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> _map-&gt;getMapPixels();</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Game_2Map_8cpp_source.html#l00049">49</a> of file <a class="el" href="Game_2Map_8cpp_source.html">Map.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> _map-&gt;getMapPixels();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
