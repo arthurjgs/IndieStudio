@@ -76,6 +76,8 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_2DDynamicText.emplace_back(MAIN, text);
 
     this->_gameMap = gameMap;
+    for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        this->_gameObjectList.emplace_back(obj);
     this->_listPlayers.emplace_back(player1);
     this->_background = background;
     this->_currentUIStage = MAIN;
