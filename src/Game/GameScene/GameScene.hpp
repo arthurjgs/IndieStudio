@@ -18,6 +18,7 @@
 #include "../SceneManager/Scene/Scene.hpp"
 #include "../../RayLib/Text/Text.hpp"
 #include "../Button/Button.hpp"
+#include "../FlashingText/FlashingText.hpp"
 
 namespace Bomberman {
     class GameScene : public Scene {
@@ -25,7 +26,7 @@ namespace Bomberman {
             GameScene() = delete;
             GameScene(SceneManager &manager,
                       const std::string &playerDll1, const std::string &playerDll2,
-                      const std::string &playerDll3, const std::string &playerDll4);
+                      const std::string &playerDll3, const std::string &playerDll4, const int timer = 180);
             ~GameScene() = default;
             GameScene(const GameScene &) = delete;
             GameScene &operator = (const GameScene &) = delete;
@@ -36,11 +37,24 @@ namespace Bomberman {
             void drawScene();
         protected:
         private:
+            std::string convertSecondToDisplayTime(int value);
+            std::string addZeroOrNot(int value);
+            std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
+
+            enum UI_SCENE {
+                MAIN,
+            };
+
             std::vector<std::shared_ptr<Bomberman::GameObject>> _gameObjectList;
             std::vector<std::weak_ptr<Bomberman::Player>> _listPlayers;
+            std::vector<std::pair<UI_SCENE, std::shared_ptr<GameObject>>> _2DGameObjectList;
+            std::vector<std::pair<UI_SCENE, std::weak_ptr<FlashingText>>> _2DDynamicText;
+            UI_SCENE _currentUIStage;
             std::vector<std::weak_ptr<Bomberman::Bomb>> _bombList;
             std::weak_ptr<Map> _gameMap;
             std::weak_ptr<Image> _background;
             Type::Camera3D _camera;
+            int _timer;
+            double _second;
     };
 }

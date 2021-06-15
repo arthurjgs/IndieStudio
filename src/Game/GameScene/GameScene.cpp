@@ -13,11 +13,36 @@
 #include <RayLib/Window.hpp>
 #include <RayLib/Model/Collision/Collision.hpp>
 #include <Game/Bomb/Bomb.hpp>
+#include "../QuitGame/QuitGame.hpp"
 
+std::string Bomberman::GameScene::addZeroOrNot(int value)
+{
+    if (std::to_string(value).length() == 1) {
+        return ("0");
+    }
+    return ("");
+}
+
+std::string Bomberman::GameScene::convertSecondToDisplayTime(int value)
+{
+    std::string res;
+    int min = 0;
+
+    while (value > 60) {
+        value -= 60;
+        min++;
+    }
+    if (value == 60) {
+        res = std::to_string(min + 1) + ":00";
+    } else {
+        res = std::to_string(min) + ":" + this->addZeroOrNot(value) + std::to_string(value);
+    }
+    return (res);
+}
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
                                 const std::string &playerDll1, const std::string &playerDll2,
-                                const std::string &playerDll3, const std::string &playerDll4) : Scene(manager),
+                                const std::string &playerDll3, const std::string &playerDll4, const int timer) : Scene(manager),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
@@ -29,6 +54,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     (void)playerDll2;
     (void)playerDll3;
     (void)playerDll4;
+    this->_timer = timer;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     std::shared_ptr<Player> player1 = std::make_shared<Player>("Bomberman", Type::Vector<3>(-6.0f, 0.0f, -6.0f));
     std::shared_ptr<Image> background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
@@ -39,9 +65,21 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_gameObjectList.emplace_back(background);
     this->_gameObjectList.emplace_back(player1);
 
+    std::shared_ptr<Image> timer_back = std::make_shared<Image>("./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
+    this->_2DGameObjectList.emplace_back(MAIN, timer_back);
+    Type::Color &color = timer_back->getColor();
+    uChar &transparency = color.getA();
+    transparency = 200;
+
+    std::shared_ptr<FlashingText> text = std::make_shared<FlashingText>(this->convertSecondToDisplayTime(this->_timer), Type::Color(255, 255, 255, 255), 60, 0.0, "timer", GameObject::ObjectType::DECOR, Type::Vector<2>(900.0f, 90.0f));
+    this->_2DGameObjectList.emplace_back(MAIN, text);
+    this->_2DDynamicText.emplace_back(MAIN, text);
+
     this->_gameMap = gameMap;
     this->_listPlayers.emplace_back(player1);
     this->_background = background;
+    this->_currentUIStage = MAIN;
+    this->_second = 0.0;
 }
 
 bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPosition) const
@@ -81,6 +119,17 @@ bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPos
     return false;
 }
 
+
+std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(const std::string &name)
+{
+    for (auto const &val : this->_2DDynamicText) {
+        if (val.second.lock()->getName() == name) {
+            return (val.second);
+        }
+    }
+    throw std::runtime_error(name + " does not exist in dynamic text");
+}
+
 bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition) const
 {
     for (auto & obj : _gameObjectList) {
@@ -108,6 +157,7 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
         }
     }
     return false;
+
 }
 
 void Bomberman::GameScene::update(const double &elapsed)
@@ -151,6 +201,17 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (checkCollisionForObjects(player.lock()->getPosition()))
             player.lock()->setPosition(oldPosition);
     }
+    this->_second += elapsed;
+    if (this->_second >= 1) {
+        this->_timer--;
+        std::string &text = this->getTextFromName("timer").lock()->getText();
+        text = this->convertSecondToDisplayTime(this->_timer);
+        if (this->_timer == 0) {
+            // TODO: HANDLE PROPERLY TIMER TO ZERO
+            throw QuitGame();
+        }
+        this->_second = 0.0;
+    }
 }
 
 void Bomberman::GameScene::drawScene()
@@ -160,4 +221,8 @@ void Bomberman::GameScene::drawScene()
    for (auto & object : _gameObjectList)
         object->render();
     RayLib::Window::getInstance().getDrawing().endMode3D();
+    for (auto const &val : this->_2DGameObjectList) {
+        if (this->_currentUIStage == val.first)
+            val.second->render();
+    }
 }
