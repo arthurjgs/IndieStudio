@@ -43,6 +43,20 @@ namespace Bomberman {
                 }
                 this->__engine.top() = std::move(result);
             }
+            
+            template<typename scene, typename ...Args>
+            inline void clearStack(Args &&...args)
+            {
+                while (!this->__engine.empty()) {
+                    this->__engine.pop();
+                }
+                this->newScene<scene, Args...>(std::forward<Args>(args)...);
+            }
+
+            inline int getSize() const
+            {
+                return (this->__engine.size());
+            }
 
             void unloadScene();
             void update(const double &elapsed);

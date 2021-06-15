@@ -19,6 +19,8 @@
 #include "../../RayLib/Text/Text.hpp"
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
+#include <map>
+#include <functional>
 
 namespace Bomberman {
     class GameScene : public Scene {
@@ -37,18 +39,28 @@ namespace Bomberman {
             void drawScene();
         protected:
         private:
-            std::string convertSecondToDisplayTime(int value);
-            std::string addZeroOrNot(int value);
+            void continueCallback();
+            void saveCallback();
+            void quitCallback();
+
+            std::string convertSecondToDisplayTime(int value) const;
+            std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
+            void createPause();
+            void updatePause(const double &elasped);
 
             enum UI_SCENE {
                 MAIN,
+                PAUSE,
             };
 
             std::vector<std::shared_ptr<Bomberman::GameObject>> _gameObjectList;
             std::vector<std::weak_ptr<Bomberman::Player>> _listPlayers;
             std::vector<std::pair<UI_SCENE, std::shared_ptr<GameObject>>> _2DGameObjectList;
             std::vector<std::pair<UI_SCENE, std::weak_ptr<FlashingText>>> _2DDynamicText;
+            std::vector<std::pair<UI_SCENE, std::weak_ptr<Button>>> _2DButtonList;
+            std::map<std::string, std::function<void(GameScene &)>>  _buttonCallback; 
+
             UI_SCENE _currentUIStage;
             std::vector<std::weak_ptr<Bomberman::Bomb>> _bombList;
             std::weak_ptr<Map> _gameMap;
@@ -56,5 +68,7 @@ namespace Bomberman {
             Type::Camera3D _camera;
             int _timer;
             double _second;
+            bool _pause;
+            bool quitting;
     };
 }

@@ -378,8 +378,9 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
             end = true;
     }
     if (end)
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE))
-            __manager.newScene<Bomberman::GameScene>("", "", "", "");
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
+            __manager.clearStack<Bomberman::GameScene>("", "", "", "");
+        }
 }
 
 void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
