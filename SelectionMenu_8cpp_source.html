@@ -440,37 +440,36 @@ $(function() {
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            end = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    }</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keywordflow">if</span> (end)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().isKeyReleased(KEY_SPACE)) {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            __manager.clearStack&lt;<a class="code" href="classBomberman_1_1GameScene.html">Bomberman::GameScene</a>&gt;(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;}</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
-<div class="line"><a name="l00386"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">  386</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">Bomberman::Menu::SelectionMenu::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        val-&gt;update(elapsed);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    isKeyboardOrGamepad();</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    cancel();</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    ready();</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        handleGamepads(i);</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    checkPlayers();</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    goToGameScene();</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().isKeyReleased(KEY_BACKSPACE))</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        __manager.unloadScene();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;}</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160; </div>
-<div class="line"><a name="l00402"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">  402</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a>()</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;{</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        val-&gt;render();</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().isKeyReleased(KEY_SPACE))</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            __manager.newScene&lt;<a class="code" href="classBomberman_1_1GameScene.html">Bomberman::GameScene</a>&gt;(<span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">  385</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">Bomberman::Menu::SelectionMenu::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        val-&gt;update(elapsed);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    isKeyboardOrGamepad();</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    cancel();</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    ready();</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        handleGamepads(i);</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    checkPlayers();</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    goToGameScene();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().isKeyReleased(KEY_BACKSPACE))</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        __manager.unloadScene();</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
+<div class="line"><a name="l00401"></a><span class="lineno"><a class="line" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">  401</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a>()</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;{</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        val-&gt;render();</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
 <div class="ttc" id="aSelectionMenu_8hpp_html"><div class="ttname"><a href="SelectionMenu_8hpp.html">SelectionMenu.hpp</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html"><div class="ttname"><a href="classBomberman_1_1GameScene.html">Bomberman::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8hpp_source.html#l00026">GameScene.hpp:26</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a0e0c659b585881155834202f385493de"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00402">SelectionMenu.cpp:402</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a694a6c181e5af7411826cb42125d35ef"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">Bomberman::Menu::SelectionMenu::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00386">SelectionMenu.cpp:386</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html"><div class="ttname"><a href="classBomberman_1_1GameScene.html">Bomberman::GameScene</a></div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8hpp_source.html#l00024">GameScene.hpp:24</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a0e0c659b585881155834202f385493de"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00401">SelectionMenu.cpp:401</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a694a6c181e5af7411826cb42125d35ef"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">Bomberman::Menu::SelectionMenu::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00385">SelectionMenu.cpp:385</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_abfe54b2732c4faa93cbef54f467ef5a7"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#abfe54b2732c4faa93cbef54f467ef5a7">Bomberman::Menu::SelectionMenu::SelectionMenu</a></div><div class="ttdeci">SelectionMenu()=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html"><div class="ttname"><a href="classBomberman_1_1Scene.html">Bomberman::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00020">Scene.hpp:20</a></div></div>
