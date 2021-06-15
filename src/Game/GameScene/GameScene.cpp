@@ -40,6 +40,8 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_gameObjectList.emplace_back(player1);
 
     this->_gameMap = gameMap;
+    for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        this->_gameObjectList.emplace_back(obj);
     this->_listPlayers.emplace_back(player1);
     this->_background = background;
 }
