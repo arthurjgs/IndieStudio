@@ -26,7 +26,7 @@ namespace Bomberman {
             DEAD
         };
 
-        Player(const std::string &name, const Type::Vector<3> &position, float speed = 3.0f, int bombs = 1, int range = 1);
+        Player(const std::string &name, const Type::Vector<3> &position, float speed = 3.0f, int bombs = 1, int range = 2);
         ~Player() override;
 
         void setRange(int range);
@@ -37,7 +37,7 @@ namespace Bomberman {
         PlayerState getState();
         void setState(const PlayerState &state);
         void setRotationAngle(const double &rotationAngle);
-
+        double getRotationAngle() const;
 
         void Move(const Type::Vector<3> &vector);
 

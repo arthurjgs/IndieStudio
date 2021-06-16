@@ -43,23 +43,23 @@ std::vector<std::shared_ptr<Bomberman::Flame>> Bomberman::Bomb::explode()
     int side = 0;
     float coef = 1;
 
-    for (int i = 0; i < (_range * 4) + 1; i++, side++) {
+    for (int i = 0; i <= (_range * 4) + 1; i++, side++) {
         if (i == 0) {
-            flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition()));
+            flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition(), 0));
             continue;
         }
         switch (side) {
             case UP:
-                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef)));
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, -coef), 1));
                 break;
             case DOWN:
-                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef)));
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(0.0f, 0.0f, coef), 3));
                 break;
             case LEFT:
-                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f)));
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(-coef, 0.0f, 0.0f), 4));
                 break;
             case RIGHT:
-                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f)));
+                flames.emplace_back(std::make_shared<Bomberman::Flame>(this->getPosition() + Type::Vector<3>(coef, 0.0f, 0.0f), 2));
                 break;
             default:
                 side = 0;

@@ -20,6 +20,7 @@ namespace Bomberman {
     class Bomb : public GameObject {
     public:
         enum Side {
+            CENTER = 0,
             UP = 1,
             RIGHT = 2,
             DOWN = 3,
