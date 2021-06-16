@@ -87,10 +87,12 @@ Inheritance diagram for Bomberman::Flame:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a40c9df2e20199d25aab9635423ef0706"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#a40c9df2e20199d25aab9635423ef0706">Flame</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position)</td></tr>
-<tr class="separator:a40c9df2e20199d25aab9635423ef0706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab01e2d1d2f6bef82b4c9a4374b69419d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#ab01e2d1d2f6bef82b4c9a4374b69419d">Flame</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position, int side)</td></tr>
+<tr class="separator:ab01e2d1d2f6bef82b4c9a4374b69419d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa71bfc7c2514e5af2942bdc8f61dd48b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#aa71bfc7c2514e5af2942bdc8f61dd48b">~Flame</a> ()</td></tr>
 <tr class="separator:aa71bfc7c2514e5af2942bdc8f61dd48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe16eb6de909deac4df454ba7a0432a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#abe16eb6de909deac4df454ba7a0432a8">getSide</a> () const</td></tr>
+<tr class="separator:abe16eb6de909deac4df454ba7a0432a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa453dedb3375926d0ea6e4eeba80c25d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#aa453dedb3375926d0ea6e4eeba80c25d">update</a> (const double &amp;elapsed)</td></tr>
 <tr class="separator:aa453dedb3375926d0ea6e4eeba80c25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56893d0b35ecf3d5612f1a673434a7b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Flame.html#a56893d0b35ecf3d5612f1a673434a7b5">render</a> () const</td></tr>
@@ -163,8 +165,8 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definition at line <a class="el" href="Flame_8hpp_source.html#l00015">15</a> of file <a class="el" href="Flame_8hpp_source.html">Flame.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a40c9df2e20199d25aab9635423ef0706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40c9df2e20199d25aab9635423ef0706">&#9670;&nbsp;</a></span>Flame()</h2>
+<a id="ab01e2d1d2f6bef82b4c9a4374b69419d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab01e2d1d2f6bef82b4c9a4374b69419d">&#9670;&nbsp;</a></span>Flame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,14 +175,24 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">Bomberman::Flame::Flame </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>position</em></td><td>)</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>side</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="Flame_8cpp_source.html#l00011">11</a> of file <a class="el" href="Flame_8cpp_source.html">Flame.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                   : <a class="code" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a>(<span class="stringliteral">&quot;Flame&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">FLAME</a>, position), _lifespan(0)</div>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                             : <a class="code" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a>(<span class="stringliteral">&quot;Flame&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">FLAME</a>, position), _lifespan(0), _side(side)</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">setPosition</a>(position);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
@@ -216,6 +228,28 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="abe16eb6de909deac4df454ba7a0432a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe16eb6de909deac4df454ba7a0432a8">&#9670;&nbsp;</a></span>getSide()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Bomberman::Flame::getSide </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Flame_8cpp_source.html#l00037">37</a> of file <a class="el" href="Flame_8cpp_source.html">Flame.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">return</span> this-&gt;_side;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a56893d0b35ecf3d5612f1a673434a7b5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56893d0b35ecf3d5612f1a673434a7b5">&#9670;&nbsp;</a></span>render()</h2>
 

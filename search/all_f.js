@@ -15,7 +15,7 @@ var searchData=
   ['playaudiostream_421',['PlayAudioStream',['../classRayLib_1_1Audio_1_1AudioStream.html#abffbf0e4993583175289e97a43f78a4a',1,'RayLib::Audio::AudioStream']]],
   ['player_422',['Player',['../classBomberman_1_1Player.html',1,'Bomberman']]],
   ['player_423',['PLAYER',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323',1,'Bomberman::GameObject']]],
-  ['player_424',['Player',['../classBomberman_1_1Player.html#a73cc9f82afa103bec03a6ad6086e0c6b',1,'Bomberman::Player']]],
+  ['player_424',['Player',['../classBomberman_1_1Player.html#af784263867c44812f7078f50e791c002',1,'Bomberman::Player']]],
   ['player_2ecpp_425',['Player.cpp',['../Player_8cpp.html',1,'']]],
   ['player_2ehpp_426',['Player.hpp',['../Player_8hpp.html',1,'']]],
   ['player_5fselection_427',['PLAYER_SELECTION',['../classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198ab621f5335eec5e9515e1d3b67ee1b76e',1,'RayLib::Manager3D']]],

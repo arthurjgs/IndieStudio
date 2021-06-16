@@ -9,7 +9,7 @@ var searchData=
   ['checkcollisioncirclerec_835',['CheckCollisionCircleRec',['../classRayLib_1_1Models_1_1Collision.html#ad30cdab3d206d7e86ebc784a567fa72c',1,'RayLib::Models::Collision::CheckCollisionCircleRec()'],['../classRayLib_1_1Shapes_1_1Collision.html#a7459f821f53d57ff9a87257a3ade63d0',1,'RayLib::Shapes::Collision::CheckCollisionCircleRec(const Type::Vector&lt; 2 &gt; &amp;center, float radius, const Type::Rectangle &amp;rec)']]],
   ['checkcollisioncircles_836',['CheckCollisionCircles',['../classRayLib_1_1Shapes_1_1Collision.html#a894e00027202189aa9d7718dba168018',1,'RayLib::Shapes::Collision']]],
   ['checkcollisionformap_837',['checkCollisionForMap',['../classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de',1,'Bomberman::GameScene']]],
-  ['checkcollisionforobjects_838',['checkCollisionForObjects',['../classBomberman_1_1GameScene.html#abe90cef37788404cb0a991236e17f7ef',1,'Bomberman::GameScene']]],
+  ['checkcollisionforobjects_838',['checkCollisionForObjects',['../classBomberman_1_1GameScene.html#a6e7fcb4de3a5a1104f2d806c03ad21e8',1,'Bomberman::GameScene']]],
   ['checkcollisionlines_839',['CheckCollisionLines',['../classRayLib_1_1Shapes_1_1Collision.html#adaf6c372b46aa3cec450e502980a9fd2',1,'RayLib::Shapes::Collision']]],
   ['checkcollisionpointcircle_840',['CheckCollisionPointCircle',['../classRayLib_1_1Shapes_1_1Collision.html#a83b7f308bdbbbff222924ab221f0a777',1,'RayLib::Shapes::Collision']]],
   ['checkcollisionpointrec_841',['CheckCollisionPointRec',['../classRayLib_1_1Shapes_1_1Collision.html#a2404ba54dd98ec50e082c047db26b89e',1,'RayLib::Shapes::Collision']]],
