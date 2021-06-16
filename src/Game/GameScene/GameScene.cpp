@@ -132,7 +132,7 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition) const
+bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame) const
 {
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
@@ -153,6 +153,10 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                                                                              Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
                                                                                              enemyPosition.getY() - 1.0f / 2,
                                                                                              enemyPosition.getZ() - 1.0f / 2)))) {
+            if (isFlame) {
+                obj->destroy();
+                return true;
+            }
             if (obj->getType() == Bomb::FLAME)
                 std::cout << "YOU SHOULD DIE" << std::endl;
             return true;
@@ -164,6 +168,8 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
 
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    std::vector<int> sideList;
+
     // CHECK IF BOMB HAS EXPLODED
     for (auto & b : _bombList) {
         if (b.expired())
@@ -171,6 +177,11 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.lock()->getState() == GameObject::DESTROYED) {
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
+                if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
+                    continue;
+                if (checkCollisionForObjects(flame->getPosition(), true) ||
+                    checkCollisionForMap(flame->getPosition()))
+                    sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
             }
         }

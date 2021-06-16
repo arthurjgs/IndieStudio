@@ -8,7 +8,7 @@
 #include <RayLib/Manager3D.hpp>
 #include "Flame.hpp"
 
-Bomberman::Flame::Flame(const Type::Vector<3> &position) : GameObject("Flame", FLAME, position), _lifespan(0)
+Bomberman::Flame::Flame(const Type::Vector<3> &position, int side) : GameObject("Flame", FLAME, position), _lifespan(0), _side(side)
 {
     this->setPosition(position);
 }
@@ -32,4 +32,9 @@ void Bomberman::Flame::render() const
     model = RayLib::Manager3D::getInstance().getModel("fire");
     Type::Vector<3> flameScale(0.8f, 0.8f, 0.8f);
     model.lock()->render(this->getPosition(), 0, flameScale, Type::Vector<3>(0.0f, 0.0f, 0.0f));
+}
+
+int Bomberman::Flame::getSide() const
+{
+    return this->_side;
 }
