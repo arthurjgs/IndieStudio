@@ -57,10 +57,17 @@ void Bomberman::GameScene::continueCallback()
 
 void Bomberman::GameScene::saveCallback()
 {
+    std::weak_ptr<FlashingText> text = this->getTextFromName("inputField");
+    
+    std::string &val = text.lock()->getText();
+    val = "";
+    this->_saveName = "";
+    this->isInput = true;
     this->getObjectFromName("backSave").lock()->setDisplay(true);
     this->getObjectFromName("confirmSave").lock()->setDisplay(true);
     this->getObjectFromName("cancelSave").lock()->setDisplay(true);
     this->getObjectFromName("titleSave").lock()->setDisplay(true);
+    this->getObjectFromName("inputField").lock()->setDisplay(true);
     for (auto const &val : this->_2DGameObjectList) {
         if (val.first == PAUSE) {
             val.second->setDisplay(false);
@@ -76,12 +83,33 @@ void Bomberman::GameScene::quitCallback()
 
 void Bomberman::GameScene::confirmSaveCallback()
 {
-    std::cout << "confirm" << std::endl;
+    this->isInput = false;
+    this->getObjectFromName("backSave").lock()->setDisplay(false);
+    this->getObjectFromName("confirmSave").lock()->setDisplay(false);
+    this->getObjectFromName("cancelSave").lock()->setDisplay(false);
+    this->getObjectFromName("titleSave").lock()->setDisplay(false);
+    this->getObjectFromName("inputField").lock()->setDisplay(false);
+    for (auto const &val : this->_2DGameObjectList) {
+        if (val.first == PAUSE) {
+            val.second->setDisplay(true);
+        }
+    }
+    //TODO: save with name data here with a save class
 }
 
 void Bomberman::GameScene::cancelSaveCallback()
 {
-    std::cout << "cancel" << std::endl;
+    this->isInput = false;
+    this->getObjectFromName("backSave").lock()->setDisplay(false);
+    this->getObjectFromName("confirmSave").lock()->setDisplay(false);
+    this->getObjectFromName("cancelSave").lock()->setDisplay(false);
+    this->getObjectFromName("titleSave").lock()->setDisplay(false);
+    this->getObjectFromName("inputField").lock()->setDisplay(false);
+    for (auto const &val : this->_2DGameObjectList) {
+        if (val.first == PAUSE) {
+            val.second->setDisplay(true);
+        }
+    }
 }
 
 void Bomberman::GameScene::createPause()
@@ -116,6 +144,11 @@ void Bomberman::GameScene::createPause()
     this->_2DGameObjectList.emplace_back(NONE, confirmSave);
     this->_2DButtonList.emplace_back(NONE, cancelSave);
     this->_2DButtonList.emplace_back(NONE, confirmSave);
+
+    std::shared_ptr<FlashingText> inputField = std::make_shared<FlashingText>("", Type::Color(255, 255, 255, 255), 60, 0.0, "inputField", GameObject::ObjectType::DECOR, Type::Vector<2>(762.0f, 600.0f));
+
+    this->_2DGameObjectList.emplace_back(NONE, inputField);
+    this->_2DDynamicText.emplace_back(NONE, inputField);
 
     this->_buttonCallback["continueGame"] = &GameScene::continueCallback;
     this->_buttonCallback["saveGame"] = &GameScene::saveCallback;
@@ -168,6 +201,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_second = 0.0;
     this->quitting = false;
     this->_pause = false;
+    this->isInput = false;
 }
 
 bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPosition) const
@@ -257,9 +291,28 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
 
 }
 
+void Bomberman::GameScene::handleSaveNaming()
+{
+    std::weak_ptr<FlashingText> text = this->getTextFromName("inputField");
+
+    char value = RayLib::Window::getInstance().getInputKeyboard().getCharPressed();
+    if (this->_saveName.length() > 0 && RayLib::Window::getInstance().getInputKeyboard().isKeyPressed(KEY_BACKSPACE)) {
+        this->_saveName = this->_saveName.substr(0, this->_saveName.length() - 1);
+        std::string &current = text.lock()->getText();
+        current = this->_saveName;
+        return;
+    }
+    if (value > 0 && this->_saveName.length() <= 10) {
+        std::cout << (int)value << std::endl;
+        this->_saveName += value;
+        std::string &current = text.lock()->getText();
+        current = this->_saveName;
+    }
+}
+
 void Bomberman::GameScene::updatePause(const double &elapsed)
 {
-    if (RayLib::Window::getInstance().getInputKeyboard().isKeyPressed(KEY_P)) {
+    if (RayLib::Window::getInstance().getInputKeyboard().isKeyPressed(KEY_P) && !this->isInput) {
         this->_pause = !this->_pause;
         if (this->_pause == true) {
             this->_currentUIStage = UI_SCENE::PAUSE;
@@ -284,6 +337,9 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
         }
     }
     if (this->_pause == true) {
+        if (this->getObjectFromName("backSave").lock()->getDisplay())  {
+            this->handleSaveNaming();
+        }
         for (auto const &val : this->_2DButtonList) {
             if (!val.second.lock()->getDisplay())
                 continue;
@@ -365,15 +421,12 @@ void Bomberman::GameScene::update(const double &elapsed)
         val.second->update(elapsed);
     }
     for (auto const &val : this->_2DButtonList) {
-        std::cout << val.second.lock()->getName() << std::endl;
-        std::cout << "PASS" << std::endl;
         if (val.second.lock()->isClick() && val.second.lock()->getDisplay()) {
             if (this->_buttonCallback.count(val.second.lock()->getName()) > 0) {
                 this->_buttonCallback[val.second.lock()->getName()](*this);
             }
         }
     }
-    std::cout << "IN" << std::endl;
 }
 
 void Bomberman::GameScene::drawScene()

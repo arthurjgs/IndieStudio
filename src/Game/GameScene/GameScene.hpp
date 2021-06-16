@@ -45,6 +45,8 @@ namespace Bomberman {
             void confirmSaveCallback();
             void cancelSaveCallback();
 
+            void handleSaveNaming();
+
             std::string convertSecondToDisplayTime(int value) const;
             std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
@@ -75,5 +77,7 @@ namespace Bomberman {
             double _second;
             bool _pause;
             bool quitting;
+            bool isInput;
+            std::string _saveName;
     };
 }
