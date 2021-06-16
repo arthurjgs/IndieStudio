@@ -30,6 +30,8 @@ namespace RayLib
                 Map(const std::string &filepath, Type::Vector<3> position);
                 ~Map();
                 void LoadMaterial(const std::string &filepath);
+                int getWidth();
+                int getHeight();
                 Type::Vector<2> getCubicMap() const;
                 std::vector<Type::Color> getMapPixels();
                 void setPostionMap(Type::Vector<3> position);
@@ -39,6 +41,8 @@ namespace RayLib
                 Model _model;
                 Mesh _mesh;
                 int _size;
+                int _width;
+                int _height;
                 Color *_mapPixels;
                 Texture2D _cubicmap;
                 Texture2D _material;

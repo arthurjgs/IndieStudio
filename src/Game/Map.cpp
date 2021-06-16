@@ -41,6 +41,50 @@ void Bomberman::Map::update(const double &elapsed)
     (void) elapsed;
 }
 
+std::vector<std::shared_ptr<Bomberman::Crate>> Bomberman::Map::createCrates(const double &percentage)
+{
+    std::vector<std::shared_ptr<Bomberman::Crate>> crates;
+    int width = _map->getWidth() - 1;
+    int height = _map->getHeight() - 1;
+
+    srand(time(nullptr));
+    for (int z = 1; z < height; z++) {
+        for (int x = 1; x < width; x++) {
+            // TOP LEFT CORNER
+            if (x == 1 && z == 1 ||
+                x == 2 && z == 1 ||
+                x == 1 && z == 2) {
+                continue;
+            }
+            // TOP RIGHT CORNER
+            if (x == width - 1 && z == 1 ||
+                x == width - 2 && z == 1 ||
+                x == width - 1 && z == 2) {
+                continue;
+            }
+            // BOTTOM LEFT CORNER
+            if (x == 1 && z == height - 1 ||
+                x == 2 && z == height - 1 ||
+                x == 1 && z == height - 2) {
+                continue;
+            }
+            // BOTTOM RIGHT CORNER
+            if (x == width - 1 && z == height - 1 ||
+                x == width - 2 && z == height - 1 ||
+                x == width - 1 && z == height - 2) {
+                continue;
+            }
+            if (rand() % (100 + 1) <= percentage) {
+                Type::Vector<3> pos(this->getPosition().getX() + static_cast<float>(x),
+                                    this->getPosition().getY(),
+                                    this->getPosition().getZ() + static_cast<float>(z));
+                crates.emplace_back(std::make_shared<Crate>(pos));
+            }
+        }
+    }
+    return crates;
+}
+
 Type::Vector<2> Bomberman::Map::getCubicMap()
 {
     return _map->getCubicMap();

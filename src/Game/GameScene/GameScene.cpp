@@ -174,12 +174,11 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_timer = timer;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     std::shared_ptr<Player> player1 = std::make_shared<Player>("Bomberman", Type::Vector<3>(-6.0f, 0.0f, -6.0f));
-    std::shared_ptr<Image> background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
+    this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
     player1->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
 
     this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);
-    this->_gameObjectList.emplace_back(background);
     this->_gameObjectList.emplace_back(player1);
 
     std::shared_ptr<Image> timer_back = std::make_shared<Image>("./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
@@ -195,8 +194,9 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->createPause();
 
     this->_gameMap = gameMap;
+    for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        this->_gameObjectList.emplace_back(obj);
     this->_listPlayers.emplace_back(player1);
-    this->_background = background;
     this->_currentUIStage = MAIN;
     this->_second = 0.0;
     this->quitting = false;
@@ -261,7 +261,7 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition) const
+bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
 {
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
@@ -282,6 +282,12 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                                                                              Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
                                                                                              enemyPosition.getY() - 1.0f / 2,
                                                                                              enemyPosition.getZ() - 1.0f / 2)))) {
+            if (isFlame) {
+                obj->destroy();
+                return true;
+            }
+            if (obj->getType() == Bomb::BOMB && isBomb)
+                continue;
             if (obj->getType() == Bomb::FLAME)
                 std::cout << "YOU SHOULD DIE" << std::endl;
             return true;
@@ -362,11 +368,14 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
 
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    std::vector<int> sideList;
+    
     // CHECK IF PAUSE HIS ON GOING
     this->updatePause(elapsed);
     if (this->_pause == true || this->quitting) {
         return;
     }
+
     // CHECK IF BOMB HAS EXPLODED
     for (auto & b : _bombList) {
         if (b.expired())
@@ -374,6 +383,11 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.lock()->getState() == GameObject::DESTROYED) {
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
+                if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
+                    continue;
+                if (checkCollisionForObjects(flame->getPosition(), true) ||
+                    checkCollisionForMap(flame->getPosition()))
+                    sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
             }
         }
@@ -393,6 +407,30 @@ void Bomberman::GameScene::update(const double &elapsed)
 
     for (auto & player : _listPlayers) {
         if (player.lock()->getState() == Player::PlayerState::ACTION) {
+            double angle = player.lock()->getRotationAngle();
+            auto position = player.lock()->getPosition();
+            auto bombPos = Type::Vector<3>();
+
+            if (angle == 0)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ() + 1)));
+            else if (angle == 180)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ() - 1)));
+            else if (angle == 90)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX() + 1)),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ())));
+            else if (angle == -90)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ())));
+            if (checkCollisionForMap(bombPos) || checkCollisionForObjects(bombPos, false, true)) {
+                player.lock()->setState(Player::PlayerState::IDLE);
+                continue;
+            }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
             if (bomb != nullptr) {
                 _gameObjectList.emplace_back(bomb);
@@ -431,7 +469,7 @@ void Bomberman::GameScene::update(const double &elapsed)
 
 void Bomberman::GameScene::drawScene()
 {
-    _background.lock()->render();
+    _background->render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
    for (auto & object : _gameObjectList)
         object->render();

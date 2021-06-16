@@ -21,7 +21,9 @@ RayLib::Models::Map::Map(const std::string &filepath, Type::Vector<3> position) 
     _model = ::LoadModelFromMesh(_mesh);
     _mapPixels = ::LoadImageColors(image);
     _position = position;
-    _size = image.height * image.height;
+    _size = image.width * image.height;
+    _width = image.width;
+    _height = image.height;
 
     ::UnloadImage(image);
 }
@@ -69,4 +71,14 @@ std::vector<Type::Color> RayLib::Models::Map::getMapPixels()
     }
 
     return colors;
+}
+
+int RayLib::Models::Map::getWidth()
+{
+    return this->_width;
+}
+
+int RayLib::Models::Map::getHeight()
+{
+    return this->_height;
 }

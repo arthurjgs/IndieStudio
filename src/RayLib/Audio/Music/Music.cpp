@@ -42,6 +42,12 @@ bool RayLib::Audio::Music::IsMusicPlaying() const
 
 void RayLib::Audio::Music::UpdateMusicStream() const
 {
+    float timePlayed = ::GetMusicTimePlayed(this->__music) / ::GetMusicTimeLength(this->__music);
+
+    if (timePlayed == 1.0f) {
+        ::StopMusicStream(this->__music);
+        ::PlayMusicStream(this->__music);
+    }
     ::UpdateMusicStream(this->__music);
 }
 

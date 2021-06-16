@@ -34,7 +34,7 @@ namespace Bomberman {
             GameScene &operator = (const GameScene &) = delete;
 
             bool checkCollisionForMap(const Type::Vector<3> &playerPosition) const;
-            bool checkCollisionForObjects(const Type::Vector<3> &playerPosition) const;
+            bool checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
             void update(const double &elapsed);
             void drawScene();
         protected:
@@ -71,7 +71,7 @@ namespace Bomberman {
             UI_SCENE _currentUIStage;
             std::vector<std::weak_ptr<Bomberman::Bomb>> _bombList;
             std::weak_ptr<Map> _gameMap;
-            std::weak_ptr<Image> _background;
+            std::shared_ptr<Image> _background;
             Type::Camera3D _camera;
             int _timer;
             double _second;

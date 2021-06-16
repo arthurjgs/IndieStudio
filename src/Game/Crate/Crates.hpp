@@ -5,25 +5,23 @@
 ** delivery
 */
 
-#ifndef BOMBERMAN_FLAME_HPP
-#define BOMBERMAN_FLAME_HPP
+#ifndef BOMBERMAN_CRATES_HPP
+#define BOMBERMAN_CRATES_HPP
 
 #include <Types/Vector/Vector.hpp>
 #include <Game/GameObject.hpp>
 
 namespace Bomberman {
-    class Flame : public GameObject {
+    class Crate : public GameObject {
     public:
-        Flame(const Type::Vector<3> &position, int side);
-        ~Flame();
-        int getSide() const;
+        Crate(const Type::Vector<3> &position);
+        ~Crate();
         void update(const double &elapsed);
         void render() const;
     protected:
     private:
-        double _lifespan;
-        int _side;
     };
 }
 
-#endif //BOMBERMAN_FLAME_HPP
+
+#endif //BOMBERMAN_CRATES_HPP
