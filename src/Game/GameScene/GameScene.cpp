@@ -132,7 +132,7 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame) const
+bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
 {
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
@@ -157,6 +157,8 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                 obj->destroy();
                 return true;
             }
+            if (obj->getType() == Bomb::BOMB && isBomb)
+                continue;
             if (obj->getType() == Bomb::FLAME)
                 std::cout << "YOU SHOULD DIE" << std::endl;
             return true;
@@ -201,6 +203,30 @@ void Bomberman::GameScene::update(const double &elapsed)
 
     for (auto & player : _listPlayers) {
         if (player.lock()->getState() == Player::PlayerState::ACTION) {
+            double angle = player.lock()->getRotationAngle();
+            auto position = player.lock()->getPosition();
+            auto bombPos = Type::Vector<3>();
+
+            if (angle == 0)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ() + 1)));
+            else if (angle == 180)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX())),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ() - 1)));
+            else if (angle == 90)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX() + 1)),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ())));
+            else if (angle == -90)
+                bombPos = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
+                                                  static_cast<float>(round(position.getY())),
+                                                  static_cast<float>(round(position.getZ())));
+            if (checkCollisionForMap(bombPos) || checkCollisionForObjects(bombPos, false, true)) {
+                player.lock()->setState(Player::PlayerState::IDLE);
+                continue;
+            }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
             if (bomb != nullptr) {
                 _gameObjectList.emplace_back(bomb);

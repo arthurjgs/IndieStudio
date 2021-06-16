@@ -32,7 +32,7 @@ namespace Bomberman {
             GameScene &operator = (const GameScene &) = delete;
 
             bool checkCollisionForMap(const Type::Vector<3> &playerPosition) const;
-            bool checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false) const;
+            bool checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
             void update(const double &elapsed);
             void drawScene();
         protected:
