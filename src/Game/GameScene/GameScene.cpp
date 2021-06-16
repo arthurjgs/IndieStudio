@@ -57,13 +57,31 @@ void Bomberman::GameScene::continueCallback()
 
 void Bomberman::GameScene::saveCallback()
 {
-    std::cout << "save" << std::endl;
+    this->getObjectFromName("backSave").lock()->setDisplay(true);
+    this->getObjectFromName("confirmSave").lock()->setDisplay(true);
+    this->getObjectFromName("cancelSave").lock()->setDisplay(true);
+    this->getObjectFromName("titleSave").lock()->setDisplay(true);
+    for (auto const &val : this->_2DGameObjectList) {
+        if (val.first == PAUSE) {
+            val.second->setDisplay(false);
+        }
+    }
 }
 
 void Bomberman::GameScene::quitCallback()
 {
     this->__manager.replaceTop<Menu::MainLobby>();
     this->quitting = true;
+}
+
+void Bomberman::GameScene::confirmSaveCallback()
+{
+    std::cout << "confirm" << std::endl;
+}
+
+void Bomberman::GameScene::cancelSaveCallback()
+{
+    std::cout << "cancel" << std::endl;
 }
 
 void Bomberman::GameScene::createPause()
@@ -86,9 +104,24 @@ void Bomberman::GameScene::createPause()
     this->_2DGameObjectList.emplace_back(PAUSE, quitGame);
     this->_2DButtonList.emplace_back(PAUSE, quitGame);
 
+    this->_2DGameObjectList.emplace_back(NONE, std::make_shared<Image>("./assets/MainMenu/PanelWindow.png", "backSave", GameObject::ObjectType::DECOR, Type::Vector<3>(675.0f, 400.0f, 0.0f), false));
+    this->_2DGameObjectList.emplace_back(NONE, std::make_shared<FlashingText>("SAVE NAME", Type::Color(255, 255, 255, 255), 50, 0.0, "titleSave", GameObject::DECOR, Type::Vector<2>(800.0f, 500.0f), false));
+
+    std::shared_ptr<Button> cancelSave = std::make_shared<Button>("cancelSave", Type::Vector<3>(700.0f, 700.0f, 0.0f), "./assets/MainMenu/close.png");
+    cancelSave->setDisplay(false);
+    std::shared_ptr<Button> confirmSave = std::make_shared<Button>("confirmSave", Type::Vector<3>(1150.0f, 700.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    confirmSave->setDisplay(false);
+
+    this->_2DGameObjectList.emplace_back(NONE, cancelSave);
+    this->_2DGameObjectList.emplace_back(NONE, confirmSave);
+    this->_2DButtonList.emplace_back(NONE, cancelSave);
+    this->_2DButtonList.emplace_back(NONE, confirmSave);
+
     this->_buttonCallback["continueGame"] = &GameScene::continueCallback;
     this->_buttonCallback["saveGame"] = &GameScene::saveCallback;
     this->_buttonCallback["quitGame"] = &GameScene::quitCallback;
+    this->_buttonCallback["cancelSave"] = &GameScene::confirmSaveCallback;
+    this->_buttonCallback["confirmSave"] = &GameScene::cancelSaveCallback;
 }
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
@@ -174,6 +207,15 @@ bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPos
     return false;
 }
 
+std::weak_ptr<Bomberman::GameObject> Bomberman::GameScene::getObjectFromName(const std::string &name)
+{
+    for (auto const &val : this->_2DGameObjectList) {
+        if (val.second->getName() == name) {
+            return (val.second);
+        }
+    }
+    throw std::runtime_error(name + " does not exist in dynamic text");
+}
 
 std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(const std::string &name)
 {
@@ -243,7 +285,9 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
     }
     if (this->_pause == true) {
         for (auto const &val : this->_2DButtonList) {
-            if (val.second.lock()->isClick() && val.first == UI_SCENE::PAUSE) {
+            if (!val.second.lock()->getDisplay())
+                continue;
+            if (val.second.lock()->isClick() && (val.first == UI_SCENE::PAUSE || val.first == UI_SCENE::NONE)) {
                 if (this->_buttonCallback.count(val.second.lock()->getName()) > 0) {
                     this->_buttonCallback[val.second.lock()->getName()](*this);
                     if (this->quitting) {
@@ -253,7 +297,7 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
             }
         }
         for (auto const &val : this->_2DGameObjectList) {
-            if (val.first == UI_SCENE::PAUSE) {
+            if (val.first == UI_SCENE::PAUSE || val.first == NONE) {
                 val.second->update(elapsed);
             }
         }
@@ -321,12 +365,15 @@ void Bomberman::GameScene::update(const double &elapsed)
         val.second->update(elapsed);
     }
     for (auto const &val : this->_2DButtonList) {
+        std::cout << val.second.lock()->getName() << std::endl;
+        std::cout << "PASS" << std::endl;
         if (val.second.lock()->isClick() && val.second.lock()->getDisplay()) {
             if (this->_buttonCallback.count(val.second.lock()->getName()) > 0) {
                 this->_buttonCallback[val.second.lock()->getName()](*this);
             }
         }
     }
+    std::cout << "IN" << std::endl;
 }
 
 void Bomberman::GameScene::drawScene()
@@ -337,7 +384,7 @@ void Bomberman::GameScene::drawScene()
         object->render();
     RayLib::Window::getInstance().getDrawing().endMode3D();
     for (auto const &val : this->_2DGameObjectList) {
-        if (this->_currentUIStage == val.first && val.second->getDisplay())
+        if ((this->_currentUIStage == val.first || val.first == NONE) && val.second->getDisplay())
             val.second->render();
     }
 }

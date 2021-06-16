@@ -42,16 +42,21 @@ namespace Bomberman {
             void continueCallback();
             void saveCallback();
             void quitCallback();
+            void confirmSaveCallback();
+            void cancelSaveCallback();
 
             std::string convertSecondToDisplayTime(int value) const;
             std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
+            std::weak_ptr<GameObject> getObjectFromName(const std::string &name);
+
             void createPause();
             void updatePause(const double &elasped);
 
             enum UI_SCENE {
                 MAIN,
                 PAUSE,
+                NONE,
             };
 
             std::vector<std::shared_ptr<Bomberman::GameObject>> _gameObjectList;
