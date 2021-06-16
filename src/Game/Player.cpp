@@ -207,3 +207,8 @@ void Bomberman::Player::setRotationAngle(const double &rotationAngle)
     this->_rotationAngle = rotationAngle;
 }
 
+double Bomberman::Player::getRotationAngle() const
+{
+    return this->_rotationAngle;
+}
+

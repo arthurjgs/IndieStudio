@@ -37,7 +37,7 @@ namespace Bomberman {
         PlayerState getState();
         void setState(const PlayerState &state);
         void setRotationAngle(const double &rotationAngle);
-
+        double getRotationAngle() const;
 
         void Move(const Type::Vector<3> &vector);
 
