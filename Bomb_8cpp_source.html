@@ -115,23 +115,23 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> side = 0;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">float</span> coef = 1;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= (_range * 4) + 1; i++, side++) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (_range * 4) + 1; i++, side++) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (i == 0) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition(), 0));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition()));</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">switch</span> (side) {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">case</span> UP:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, -coef), 1));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, -coef)));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">case</span> DOWN:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, coef), 3));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, coef)));</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">case</span> LEFT:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-coef, 0.0f, 0.0f), 4));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-coef, 0.0f, 0.0f)));</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">case</span> RIGHT:</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(coef, 0.0f, 0.0f), 2));</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                flames.emplace_back(std::make_shared&lt;Bomberman::Flame&gt;(this-&gt;getPosition() + <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(coef, 0.0f, 0.0f)));</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">default</span>:</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                side = 0;</div>

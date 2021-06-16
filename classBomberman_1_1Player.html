@@ -119,8 +119,8 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af784263867c44812f7078f50e791c002"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#af784263867c44812f7078f50e791c002">Player</a> (const std::string &amp;name, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position, float speed=3.0f, int bombs=1, int range=2)</td></tr>
-<tr class="separator:af784263867c44812f7078f50e791c002"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73cc9f82afa103bec03a6ad6086e0c6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a73cc9f82afa103bec03a6ad6086e0c6b">Player</a> (const std::string &amp;name, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position, float speed=3.0f, int bombs=1, int range=1)</td></tr>
+<tr class="separator:a73cc9f82afa103bec03a6ad6086e0c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7f0b10990968c37c0e8ff2d69eab815"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#af7f0b10990968c37c0e8ff2d69eab815">~Player</a> () override</td></tr>
 <tr class="separator:af7f0b10990968c37c0e8ff2d69eab815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad003c7b666e0c56067e149bb06a40811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#ad003c7b666e0c56067e149bb06a40811">setRange</a> (int range)</td></tr>
@@ -139,8 +139,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a63b1ad93c268f66ccf940212e342fac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57ce3806b02961bf24d5d7b3bd01e3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a57ce3806b02961bf24d5d7b3bd01e3c9">setRotationAngle</a> (const double &amp;rotationAngle)</td></tr>
 <tr class="separator:a57ce3806b02961bf24d5d7b3bd01e3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa884cf463877b2e1a1c0d34daef0a27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#aaa884cf463877b2e1a1c0d34daef0a27">getRotationAngle</a> () const</td></tr>
-<tr class="separator:aaa884cf463877b2e1a1c0d34daef0a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e22c7d59aec900a8d25e9cba6216c12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;vector)</td></tr>
 <tr class="separator:a5e22c7d59aec900a8d25e9cba6216c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0a31d9908e96209d26a9848fdf30184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#aa0a31d9908e96209d26a9848fdf30184">render</a> () const override</td></tr>
@@ -234,8 +232,8 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af784263867c44812f7078f50e791c002"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af784263867c44812f7078f50e791c002">&#9670;&nbsp;</a></span>Player()</h2>
+<a id="a73cc9f82afa103bec03a6ad6086e0c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73cc9f82afa103bec03a6ad6086e0c6b">&#9670;&nbsp;</a></span>Player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,7 +266,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>range</em> = <code>2</code>&#160;</td>
+          <td class="paramname"><em>range</em> = <code>1</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -446,28 +444,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> this-&gt;_range;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="aaa884cf463877b2e1a1c0d34daef0a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa884cf463877b2e1a1c0d34daef0a27">&#9670;&nbsp;</a></span>getRotationAngle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Bomberman::Player::getRotationAngle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00210">210</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">return</span> this-&gt;_rotationAngle;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

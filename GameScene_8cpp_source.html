@@ -77,255 +77,380 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Model_2Collision_2Collision_8hpp.html">RayLib/Model/Collision/Collision.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Bomb_8hpp.html">Game/Bomb/Bomb.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../QuitGame/QuitGame.hpp&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::string Bomberman::GameScene::addZeroOrNot(<span class="keywordtype">int</span> value)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (std::to_string(value).length() == 1) {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;0&quot;</span>);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;std::string Bomberman::GameScene::convertSecondToDisplayTime(<span class="keywordtype">int</span> value)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    std::string res;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> min = 0;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">while</span> (value &gt; 60) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        value -= 60;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        min++;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (value == 60) {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        res = std::to_string(min + 1) + <span class="stringliteral">&quot;:00&quot;</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        res = std::to_string(min) + <span class="stringliteral">&quot;:&quot;</span> + this-&gt;addZeroOrNot(value) + std::to_string(value);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">return</span> (res);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#ac8ae8bf956b0d5d9098ec6040fa390e1">   43</a></span>&#160;<a class="code" href="classBomberman_1_1GameScene.html#af42cdec7f1ec37b62031652841ddc770">Bomberman::GameScene::GameScene</a>(<a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                                <span class="keyword">const</span> std::string &amp;playerDll1, <span class="keyword">const</span> std::string &amp;playerDll2,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                                <span class="keyword">const</span> std::string &amp;playerDll3, <span class="keyword">const</span> std::string &amp;playerDll4, <span class="keyword">const</span> <span class="keywordtype">int</span> timer) : <a class="code" href="classBomberman_1_1Scene.html">Scene</a>(manager),</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                                _camera(<a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 40.0f, 20.0f),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                        <a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 0.0f, 0.0f),</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                        <a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 1.0f, 0.0f),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                        20.0f,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                                        CAMERA_PERSPECTIVE)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a60d9b18d2acceb319a74b15bebd176bd">setScene</a>(<a class="code" href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a3113ea893b0000b80227b2f6d1dadc16">RayLib::Manager3D::GAME</a>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    (void)playerDll1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    (void)playerDll2;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    (void)playerDll3;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    (void)playerDll4;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    this-&gt;_timer = timer;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::shared_ptr&lt;Map&gt; gameMap = std::make_shared&lt;Map&gt;(<span class="stringliteral">&quot;assets/map/default&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-7.0f, 0.0f, -7.0f));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::shared_ptr&lt;Player&gt; player1 = std::make_shared&lt;Player&gt;(<span class="stringliteral">&quot;Bomberman&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-6.0f, 0.0f, -6.0f));</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    this-&gt;_background = std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;assets/map/default/bg.png&quot;</span>, <span class="stringliteral">&quot;Background&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">GameObject::DECOR</a>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    player1-&gt;setScale(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(15.0f, 15.0f, 15.0f));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    this-&gt;_gameObjectList.emplace_back(std::make_shared&lt;Music&gt;(<span class="stringliteral">&quot;MainMusic&quot;</span>, <span class="stringliteral">&quot;assets/sounds/music.mp3&quot;</span>, 0.5f));</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;_gameObjectList.emplace_back(gameMap);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    this-&gt;_gameObjectList.emplace_back(player1);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::shared_ptr&lt;Image&gt; timer_back = std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/game_scenes/timer.png&quot;</span>, <span class="stringliteral">&quot;backgroud_timer&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(810.0f, 50.0f, 0.0f));</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(MAIN, timer_back);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="classType_1_1Color.html">Type::Color</a> &amp;color = timer_back-&gt;getColor();</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="Color_8hpp.html#a21e0255c145ad608b8789d21b5b20a22">uChar</a> &amp;transparency = color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    transparency = 200;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::shared_ptr&lt;FlashingText&gt; text = std::make_shared&lt;FlashingText&gt;(this-&gt;convertSecondToDisplayTime(this-&gt;_timer), <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255), 60, 0.0, <span class="stringliteral">&quot;timer&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(900.0f, 90.0f));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(MAIN, text);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    this-&gt;_2DDynamicText.emplace_back(MAIN, text);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../MainMenu/MainLobby/MainLobby.hpp&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;std::string Bomberman::GameScene::addZeroOrNot(<span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (std::to_string(value).length() == 1) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> (<span class="stringliteral">&quot;0&quot;</span>);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> (<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;std::string Bomberman::GameScene::convertSecondToDisplayTime(<span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::string res;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> min = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span> (value &gt; 60) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        value -= 60;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        min++;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (value == 60) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        res = std::to_string(min + 1) + <span class="stringliteral">&quot;:00&quot;</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        res = std::to_string(min) + <span class="stringliteral">&quot;:&quot;</span> + this-&gt;addZeroOrNot(value) + std::to_string(value);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> (res);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::continueCallback()</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;_pause = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;_currentUIStage = UI_SCENE::MAIN;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (val.first == PAUSE) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            val.second-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">if</span> (val.first == MAIN) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            val.second-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::saveCallback()</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    this-&gt;getObjectFromName(<span class="stringliteral">&quot;backSave&quot;</span>).lock()-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    this-&gt;getObjectFromName(<span class="stringliteral">&quot;confirmSave&quot;</span>).lock()-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    this-&gt;getObjectFromName(<span class="stringliteral">&quot;cancelSave&quot;</span>).lock()-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    this-&gt;getObjectFromName(<span class="stringliteral">&quot;titleSave&quot;</span>).lock()-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (val.first == PAUSE) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            val.second-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::quitCallback()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    this-&gt;__manager.replaceTop&lt;Menu::MainLobby&gt;();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    this-&gt;quitting = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    this-&gt;_gameMap = gameMap;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : this-&gt;_gameMap.lock()-&gt;createCrates(75))</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        this-&gt;_gameObjectList.emplace_back(obj);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    this-&gt;_listPlayers.emplace_back(player1);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    this-&gt;_currentUIStage = MAIN;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    this-&gt;_second = 0.0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">   85</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">Bomberman::GameScene::checkCollisionForMap</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;playerPosition)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> playerPos = { playerPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(), playerPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> cubicMap = this-&gt;_gameMap.lock()-&gt;getCubicMap();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> cubicMapX = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cubicMap.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>());</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> cubicMapY = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cubicMap.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>());</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">float</span> playerRadius = 0.3f;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::vector&lt;Type::Color&gt; mapPixels = _gameMap.lock()-&gt;getMapPixels();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> playerCellX = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(round(playerPos.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - _gameMap.lock()-&gt;getPosition().getX() + 0.5f));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> playerCellY = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(round(playerPos.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - _gameMap.lock()-&gt;getPosition().getZ() + 0.5f));</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::confirmSaveCallback()</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;confirm&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::cancelSaveCallback()</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;{</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;cancel&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::createPause()</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(PAUSE, std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/Panel1.png&quot;</span>, <span class="stringliteral">&quot;pauseBack&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(770.0f, 200.0f, 0.0f), <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(PAUSE, std::make_shared&lt;FlashingText&gt;(<span class="stringliteral">&quot;GAME PAUSED&quot;</span>, <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255), 50, 0.0, <span class="stringliteral">&quot;titlePause&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">GameObject::DECOR</a>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(785.0f, 275.0f), <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::shared_ptr&lt;Button&gt; continueGame = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;continueGame&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(790.0f, 400.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;CONTINUE&quot;</span>, 40);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    continueGame-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(PAUSE, continueGame);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    this-&gt;_2DButtonList.emplace_back(PAUSE, continueGame);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span> (playerCellX &lt; 0) playerCellX = 0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerCellX &gt;= cubicMapX) playerCellX = cubicMapX - 1;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (playerCellY &lt; 0) playerCellY = 0;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerCellY &gt;= cubicMapY) playerCellY = cubicMapY - 1;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; cubicMapY; y++)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; cubicMapX; x++)</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        {</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">if</span> ((mapPixels[y * cubicMapX + x].getR() == 255) &amp;&amp;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                (<a class="code" href="classRayLib_1_1Models_1_1Collision.html#ad30cdab3d206d7e86ebc784a567fa72c">RayLib::Models::Collision::CheckCollisionCircleRec</a>(playerPos, playerRadius,</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                                         <a class="code" href="classType_1_1Rectangle.html">Type::Rectangle</a> { _gameMap.lock()-&gt;getPosition().getX() - 0.5f + x * 1.0f,</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                                                           _gameMap.lock()-&gt;getPosition().getZ() - 0.5f + y * 1.0f,</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;                                                           1.0f,</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                                           1.0f })))</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            {</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;std::weak_ptr&lt;Bomberman::FlashingText&gt; Bomberman::GameScene::getTextFromName(<span class="keyword">const</span> std::string &amp;name)</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DDynamicText) {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (val.second.lock()-&gt;getName() == name) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> (val.second);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(name + <span class="stringliteral">&quot; does not exist in dynamic text&quot;</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#acc87411e6a82809b4f2f735c61c0cfe5">  133</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1GameScene.html#acc87411e6a82809b4f2f735c61c0cfe5">Bomberman::GameScene::checkCollisionForObjects</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;playerPosition, <span class="keywordtype">bool</span> isFlame, <span class="keywordtype">bool</span> isBomb)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : _gameObjectList) {</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">GameObject::PLAYER</a>)</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> enemyPosition = obj-&gt;getPosition();</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> playerRoundedPosition(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                              <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                              <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Models_1_1Collision.html#aa01af9975baa3126513f9b2e274272c7">RayLib::Models::Collision::CheckCollisionBoxes</a>(<a class="code" href="classType_1_1BoundingBox.html">Type::BoundingBox</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2),</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                                                             <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2)),</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                           <a class="code" href="classType_1_1BoundingBox.html">Type::BoundingBox</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(enemyPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2),</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                                                                             <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(enemyPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2)))) {</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            <span class="keywordflow">if</span> (isFlame) {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                obj-&gt;destroy();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5">Bomb::BOMB</a> &amp;&amp; isBomb)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomb::FLAME</a>)</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;YOU SHOULD DIE&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">  169</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    std::vector&lt;int&gt; sideList;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::shared_ptr&lt;Button&gt; saveGame = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;saveGame&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(790.0f, 550.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;SAVE GAME&quot;</span>, 40);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    saveGame-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(PAUSE, saveGame);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    this-&gt;_2DButtonList.emplace_back(PAUSE, saveGame);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::shared_ptr&lt;Button&gt; quitGame = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;quitGame&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(790.0f, 700.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;QUIT GAME&quot;</span>, 40);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    quitGame-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(PAUSE, quitGame);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    this-&gt;_2DButtonList.emplace_back(PAUSE, quitGame);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(NONE, std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/PanelWindow.png&quot;</span>, <span class="stringliteral">&quot;backSave&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(675.0f, 400.0f, 0.0f), <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(NONE, std::make_shared&lt;FlashingText&gt;(<span class="stringliteral">&quot;SAVE NAME&quot;</span>, <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255), 50, 0.0, <span class="stringliteral">&quot;titleSave&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">GameObject::DECOR</a>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(800.0f, 500.0f), <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::shared_ptr&lt;Button&gt; cancelSave = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;cancelSave&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(700.0f, 700.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/close.png&quot;</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    cancelSave-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::shared_ptr&lt;Button&gt; confirmSave = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;confirmSave&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(1150.0f, 700.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/confirm.png&quot;</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    confirmSave-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(NONE, cancelSave);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(NONE, confirmSave);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    this-&gt;_2DButtonList.emplace_back(NONE, cancelSave);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    this-&gt;_2DButtonList.emplace_back(NONE, confirmSave);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    this-&gt;_buttonCallback[<span class="stringliteral">&quot;continueGame&quot;</span>] = &amp;GameScene::continueCallback;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    this-&gt;_buttonCallback[<span class="stringliteral">&quot;saveGame&quot;</span>] = &amp;GameScene::saveCallback;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    this-&gt;_buttonCallback[<span class="stringliteral">&quot;quitGame&quot;</span>] = &amp;GameScene::quitCallback;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    this-&gt;_buttonCallback[<span class="stringliteral">&quot;cancelSave&quot;</span>] = &amp;GameScene::confirmSaveCallback;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    this-&gt;_buttonCallback[<span class="stringliteral">&quot;confirmSave&quot;</span>] = &amp;GameScene::cancelSaveCallback;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#ac8ae8bf956b0d5d9098ec6040fa390e1">  127</a></span>&#160;<a class="code" href="classBomberman_1_1GameScene.html#af42cdec7f1ec37b62031652841ddc770">Bomberman::GameScene::GameScene</a>(<a class="code" href="classBomberman_1_1SceneManager.html">SceneManager</a> &amp;manager,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                                <span class="keyword">const</span> std::string &amp;playerDll1, <span class="keyword">const</span> std::string &amp;playerDll2,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                                <span class="keyword">const</span> std::string &amp;playerDll3, <span class="keyword">const</span> std::string &amp;playerDll4, <span class="keyword">const</span> <span class="keywordtype">int</span> timer) : <a class="code" href="classBomberman_1_1Scene.html">Scene</a>(manager),</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                                _camera(<a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 40.0f, 20.0f),</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                                        <a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 0.0f, 0.0f),</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                                        <a class="code" href="namespaceType.html">Type</a>::Vector&lt;3&gt;(0.0f, 1.0f, 0.0f),</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                                        20.0f,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                                        CAMERA_PERSPECTIVE)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;{</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a60d9b18d2acceb319a74b15bebd176bd">setScene</a>(<a class="code" href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a3113ea893b0000b80227b2f6d1dadc16">RayLib::Manager3D::GAME</a>);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    (void)playerDll1;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    (void)playerDll2;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    (void)playerDll3;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    (void)playerDll4;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    this-&gt;_timer = timer;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::shared_ptr&lt;Map&gt; gameMap = std::make_shared&lt;Map&gt;(<span class="stringliteral">&quot;assets/map/default&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-7.0f, 0.0f, -7.0f));</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::shared_ptr&lt;Player&gt; player1 = std::make_shared&lt;Player&gt;(<span class="stringliteral">&quot;Bomberman&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(-6.0f, 0.0f, -6.0f));</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::shared_ptr&lt;Image&gt; background = std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;assets/map/default/bg.png&quot;</span>, <span class="stringliteral">&quot;Background&quot;</span>, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">GameObject::DECOR</a>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 0.0f, 0.0f));</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    player1-&gt;setScale(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(15.0f, 15.0f, 15.0f));</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    this-&gt;_gameObjectList.emplace_back(std::make_shared&lt;Music&gt;(<span class="stringliteral">&quot;MainMusic&quot;</span>, <span class="stringliteral">&quot;assets/sounds/music.mp3&quot;</span>, 0.5f));</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    this-&gt;_gameObjectList.emplace_back(gameMap);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    this-&gt;_gameObjectList.emplace_back(background);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    this-&gt;_gameObjectList.emplace_back(player1);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::shared_ptr&lt;Image&gt; timer_back = std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/game_scenes/timer.png&quot;</span>, <span class="stringliteral">&quot;backgroud_timer&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(810.0f, 50.0f, 0.0f));</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(MAIN, timer_back);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <a class="code" href="classType_1_1Color.html">Type::Color</a> &amp;color = timer_back-&gt;getColor();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <a class="code" href="Color_8hpp.html#a21e0255c145ad608b8789d21b5b20a22">uChar</a> &amp;transparency = color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    transparency = 200;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    std::shared_ptr&lt;FlashingText&gt; text = std::make_shared&lt;FlashingText&gt;(this-&gt;convertSecondToDisplayTime(this-&gt;_timer), <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255), 60, 0.0, <span class="stringliteral">&quot;timer&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(900.0f, 90.0f));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    this-&gt;_2DGameObjectList.emplace_back(MAIN, text);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    this-&gt;_2DDynamicText.emplace_back(MAIN, text);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    this-&gt;createPause();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    this-&gt;_gameMap = gameMap;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    this-&gt;_listPlayers.emplace_back(player1);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    this-&gt;_background = background;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    this-&gt;_currentUIStage = MAIN;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    this-&gt;_second = 0.0;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    this-&gt;quitting = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    this-&gt;_pause = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// CHECK IF BOMB HAS EXPLODED</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; b : _bombList) {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span> (b.expired())</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">if</span> (b.lock()-&gt;getState() == <a class="code" href="classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91">GameObject::DESTROYED</a>) {</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="keyword">auto</span> flames = b.lock()-&gt;explode();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; flame : flames) {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;                <span class="keywordflow">if</span> (std::find(sideList.begin(), sideList.end(), flame-&gt;getSide()) != sideList.end())</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                    <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="keywordflow">if</span> (checkCollisionForObjects(flame-&gt;getPosition(), <span class="keyword">true</span>) ||</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                    checkCollisionForMap(flame-&gt;getPosition()))</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                    sideList.emplace_back(flame-&gt;getSide());</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                _gameObjectList.emplace_back(flame);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;            }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        }</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// CHECK IF OBJECTS SHOULD BE DESTROYED</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    _gameObjectList.erase(std::remove_if(</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;            _gameObjectList.begin(), _gameObjectList.end(),</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            [] (std::shared_ptr&lt;Bomberman::GameObject&gt; &amp;b) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                return b-&gt;getState() == GameObject::DESTROYED;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            }), _gameObjectList.end());</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; <span class="keywordtype">object</span> : _gameObjectList) {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <span class="keywordflow">if</span> (object-&gt;getType() != <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">GameObject::PLAYER</a>)</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;            <span class="keywordtype">object</span>-&gt;update(elapsed);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    }</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; player : _listPlayers) {</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">if</span> (player.lock()-&gt;getState() == Player::PlayerState::ACTION) {</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            <span class="keywordtype">double</span> angle = player.lock()-&gt;getRotationAngle();</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;            <span class="keyword">auto</span> position = player.lock()-&gt;getPosition();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;            <span class="keyword">auto</span> bombPos = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;            <span class="keywordflow">if</span> (angle == 0)</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                bombPos = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getX())),</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getY())),</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getZ() + 1)));</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (angle == 180)</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                bombPos = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getX())),</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getY())),</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getZ() - 1)));</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (angle == 90)</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                bombPos = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getX() + 1)),</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getY())),</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getZ())));</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (angle == -90)</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                bombPos = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getX()) - 1),</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getY())),</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                                                  <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.getZ())));</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">if</span> (checkCollisionForMap(bombPos) || checkCollisionForObjects(bombPos, <span class="keyword">false</span>, <span class="keyword">true</span>)) {</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;                player.lock()-&gt;setState(Player::PlayerState::IDLE);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            std::shared_ptr&lt;Bomb&gt; bomb = player.lock()-&gt;createBomb();</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">if</span> (bomb != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                _gameObjectList.emplace_back(bomb);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                _bombList.emplace_back(bomb);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            }</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        <span class="keyword">auto</span> oldPosition = player.lock()-&gt;getPosition();</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        player.lock()-&gt;update(elapsed);</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keywordflow">if</span> (checkCollisionForMap(player.lock()-&gt;getPosition()))</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            player.lock()-&gt;setPosition(oldPosition);</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keywordflow">if</span> (checkCollisionForObjects(player.lock()-&gt;getPosition()))</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            player.lock()-&gt;setPosition(oldPosition);</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    }</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    this-&gt;_second += elapsed;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_second &gt;= 1) {</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        this-&gt;_timer--;</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        std::string &amp;text = this-&gt;getTextFromName(<span class="stringliteral">&quot;timer&quot;</span>).lock()-&gt;getText();</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        text = this-&gt;convertSecondToDisplayTime(this-&gt;_timer);</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_timer == 0) {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="comment">// TODO: HANDLE PROPERLY TIMER TO ZERO</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classBomberman_1_1QuitGame.html">QuitGame</a>();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        this-&gt;_second = 0.0;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;}</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160; </div>
-<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">  254</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a>()</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;{</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    _background-&gt;render();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a7a0a75610bdad52417134e22c2c352be">getDrawing</a>().<a class="code" href="classRayLib_1_1Drawing.html#a7d5ed6dfe4e777cb00c8b47bc22d11db">beginMode3D</a>(_camera);</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; <span class="keywordtype">object</span> : _gameObjectList)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordtype">object</span>-&gt;render();</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a7a0a75610bdad52417134e22c2c352be">getDrawing</a>().<a class="code" href="classRayLib_1_1Drawing.html#a4577c912370ddd7bf98cb4608edfd71e">endMode3D</a>();</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_currentUIStage == val.first)</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            val.second-&gt;render();</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;}</div>
+<div class="line"><a name="l00173"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">  173</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">Bomberman::GameScene::checkCollisionForMap</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;playerPosition)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> playerPos = { playerPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(), playerPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() };</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> cubicMap = this-&gt;_gameMap.lock()-&gt;getCubicMap();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">int</span> cubicMapX = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cubicMap.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>());</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">int</span> cubicMapY = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(cubicMap.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>());</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">float</span> playerRadius = 0.3f;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    std::vector&lt;Type::Color&gt; mapPixels = _gameMap.lock()-&gt;getMapPixels();</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">int</span> playerCellX = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(round(playerPos.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - _gameMap.lock()-&gt;getPosition().getX() + 0.5f));</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">int</span> playerCellY = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(round(playerPos.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - _gameMap.lock()-&gt;getPosition().getZ() + 0.5f));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">if</span> (playerCellX &lt; 0) playerCellX = 0;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerCellX &gt;= cubicMapX) playerCellX = cubicMapX - 1;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordflow">if</span> (playerCellY &lt; 0) playerCellY = 0;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (playerCellY &gt;= cubicMapY) playerCellY = cubicMapY - 1;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; cubicMapY; y++)</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; cubicMapX; x++)</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">if</span> ((mapPixels[y * cubicMapX + x].getR() == 255) &amp;&amp;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                (<a class="code" href="classRayLib_1_1Models_1_1Collision.html#ad30cdab3d206d7e86ebc784a567fa72c">RayLib::Models::Collision::CheckCollisionCircleRec</a>(playerPos, playerRadius,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                         <a class="code" href="classType_1_1Rectangle.html">Type::Rectangle</a> { _gameMap.lock()-&gt;getPosition().getX() - 0.5f + x * 1.0f,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                                           _gameMap.lock()-&gt;getPosition().getZ() - 0.5f + y * 1.0f,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                           1.0f,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                                                           1.0f })))</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            {</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;}</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;std::weak_ptr&lt;Bomberman::GameObject&gt; Bomberman::GameScene::getObjectFromName(<span class="keyword">const</span> std::string &amp;name)</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;{</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">if</span> (val.second-&gt;getName() == name) {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;            <span class="keywordflow">return</span> (val.second);</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        }</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(name + <span class="stringliteral">&quot; does not exist in dynamic text&quot;</span>);</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;std::weak_ptr&lt;Bomberman::FlashingText&gt; Bomberman::GameScene::getTextFromName(<span class="keyword">const</span> std::string &amp;name)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;{</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DDynamicText) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        <span class="keywordflow">if</span> (val.second.lock()-&gt;getName() == name) {</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            <span class="keywordflow">return</span> (val.second);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">throw</span> std::runtime_error(name + <span class="stringliteral">&quot; does not exist in dynamic text&quot;</span>);</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;}</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#abe90cef37788404cb0a991236e17f7ef">  230</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1GameScene.html#abe90cef37788404cb0a991236e17f7ef">Bomberman::GameScene::checkCollisionForObjects</a>(<span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;playerPosition)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : _gameObjectList) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">GameObject::PLAYER</a>)</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> enemyPosition = obj-&gt;getPosition();</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> playerRoundedPosition(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                                              <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                                              <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(playerPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Models_1_1Collision.html#aa01af9975baa3126513f9b2e274272c7">RayLib::Models::Collision::CheckCollisionBoxes</a>(<a class="code" href="classType_1_1BoundingBox.html">Type::BoundingBox</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2),</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                                                             <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                                                                                             playerRoundedPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2)),</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                                                           <a class="code" href="classType_1_1BoundingBox.html">Type::BoundingBox</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(enemyPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2),</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                                                                             <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(enemyPosition.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() - 1.0f / 2,</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                                                                                             enemyPosition.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1.0f / 2)))) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomb::FLAME</a>)</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;YOU SHOULD DIE&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="keywordtype">void</span> Bomberman::GameScene::updatePause(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;{</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().isKeyPressed(KEY_P)) {</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        this-&gt;_pause = !this-&gt;_pause;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_pause == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            this-&gt;_currentUIStage = UI_SCENE::PAUSE;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="keywordflow">if</span> (val.first == PAUSE) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    val.second-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                }</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                <span class="keywordflow">if</span> (val.first == MAIN) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                    val.second-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                }</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            }</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            this-&gt;_currentUIStage = UI_SCENE::MAIN;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                <span class="keywordflow">if</span> (val.first == PAUSE) {</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    val.second-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                }</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                <span class="keywordflow">if</span> (val.first == MAIN) {</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                    val.second-&gt;setDisplay(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;            }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_pause == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DButtonList) {</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;            <span class="keywordflow">if</span> (!val.second.lock()-&gt;getDisplay())</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;            <span class="keywordflow">if</span> (val.second.lock()-&gt;isClick() &amp;&amp; (val.first == UI_SCENE::PAUSE || val.first == UI_SCENE::NONE)) {</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;                <span class="keywordflow">if</span> (this-&gt;_buttonCallback.count(val.second.lock()-&gt;getName()) &gt; 0) {</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;                    this-&gt;_buttonCallback[val.second.lock()-&gt;getName()](*this);</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;                    <span class="keywordflow">if</span> (this-&gt;quitting) {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;                        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                }</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        }</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;            <span class="keywordflow">if</span> (val.first == UI_SCENE::PAUSE || val.first == NONE) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                val.second-&gt;update(elapsed);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;            }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        }</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;}</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">  307</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// CHECK IF PAUSE HIS ON GOING</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    this-&gt;updatePause(elapsed);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_pause == <span class="keyword">true</span> || this-&gt;quitting) {</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// CHECK IF BOMB HAS EXPLODED</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; b : _bombList) {</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">if</span> (b.expired())</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">if</span> (b.lock()-&gt;getState() == <a class="code" href="classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91">GameObject::DESTROYED</a>) {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;            <span class="keyword">auto</span> flames = b.lock()-&gt;explode();</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; flame : flames) {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                _gameObjectList.emplace_back(flame);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            }</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        }</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">// CHECK IF OBJECTS SHOULD BE DESTROYED</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    _gameObjectList.erase(std::remove_if(</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            _gameObjectList.begin(), _gameObjectList.end(),</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            [] (std::shared_ptr&lt;Bomberman::GameObject&gt; &amp;b) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                return b-&gt;getState() == GameObject::DESTROYED;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            }), _gameObjectList.end());</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; <span class="keywordtype">object</span> : _gameObjectList) {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="keywordflow">if</span> (object-&gt;getType() != <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">GameObject::PLAYER</a>)</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordtype">object</span>-&gt;update(elapsed);</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; player : _listPlayers) {</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordflow">if</span> (player.lock()-&gt;getState() == Player::PlayerState::ACTION) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            std::shared_ptr&lt;Bomb&gt; bomb = player.lock()-&gt;createBomb();</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">if</span> (bomb != <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;                _gameObjectList.emplace_back(bomb);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                _bombList.emplace_back(bomb);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            }</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        }</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        <span class="keyword">auto</span> oldPosition = player.lock()-&gt;getPosition();</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        player.lock()-&gt;update(elapsed);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">if</span> (checkCollisionForMap(player.lock()-&gt;getPosition()))</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;            player.lock()-&gt;setPosition(oldPosition);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">if</span> (checkCollisionForObjects(player.lock()-&gt;getPosition()))</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            player.lock()-&gt;setPosition(oldPosition);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    this-&gt;_second += elapsed;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_second &gt;= 1) {</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        this-&gt;_timer--;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        std::string &amp;text = this-&gt;getTextFromName(<span class="stringliteral">&quot;timer&quot;</span>).lock()-&gt;getText();</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        text = this-&gt;convertSecondToDisplayTime(this-&gt;_timer);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_timer == 0) {</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;            <span class="comment">// TODO: HANDLE PROPERLY TIMER TO ZERO</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="classBomberman_1_1QuitGame.html">QuitGame</a>();</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;        }</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;        this-&gt;_second = 0.0;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    }</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        val.second-&gt;update(elapsed);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    }</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DButtonList) {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;        std::cout &lt;&lt; val.second.lock()-&gt;getName() &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;PASS&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;        <span class="keywordflow">if</span> (val.second.lock()-&gt;isClick() &amp;&amp; val.second.lock()-&gt;getDisplay()) {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">if</span> (this-&gt;_buttonCallback.count(val.second.lock()-&gt;getName()) &gt; 0) {</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;                this-&gt;_buttonCallback[val.second.lock()-&gt;getName()](*this);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            }</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        }</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;IN&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
+<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">  379</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a>()</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;{</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    _background.lock()-&gt;render();</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a7a0a75610bdad52417134e22c2c352be">getDrawing</a>().<a class="code" href="classRayLib_1_1Drawing.html#a7d5ed6dfe4e777cb00c8b47bc22d11db">beginMode3D</a>(_camera);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;   <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; <span class="keywordtype">object</span> : _gameObjectList)</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        <span class="keywordtype">object</span>-&gt;render();</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a7a0a75610bdad52417134e22c2c352be">getDrawing</a>().<a class="code" href="classRayLib_1_1Drawing.html#a4577c912370ddd7bf98cb4608edfd71e">endMode3D</a>();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;_2DGameObjectList) {</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> ((this-&gt;_currentUIStage == val.first || val.first == NONE) &amp;&amp; val.second-&gt;getDisplay())</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            val.second-&gt;render();</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;}</div>
 <div class="ttc" id="aBomb_8hpp_html"><div class="ttname"><a href="Bomb_8hpp.html">Bomb.hpp</a></div></div>
 <div class="ttc" id="aColor_8hpp_html_a21e0255c145ad608b8789d21b5b20a22"><div class="ttname"><a href="Color_8hpp.html#a21e0255c145ad608b8789d21b5b20a22">uChar</a></div><div class="ttdeci">unsigned char uChar</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00014">Color.hpp:14</a></div></div>
 <div class="ttc" id="aGameScene_8hpp_html"><div class="ttname"><a href="GameScene_8hpp.html">GameScene.hpp</a></div></div>
@@ -334,13 +459,12 @@ $(function() {
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomberman::GameObject::FLAME</a></div><div class="ttdeci">@ FLAME</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00026">GameObject.hpp:26</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea396e8a60d61c8b71f0007fdd4bf1364e">Bomberman::GameObject::DECOR</a></div><div class="ttdeci">@ DECOR</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00023">GameObject.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">Bomberman::GameObject::PLAYER</a></div><div class="ttdeci">@ PLAYER</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00022">GameObject.hpp:22</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea8357fb41dadc3c5f0a3c4080627227a5">Bomberman::GameObject::BOMB</a></div><div class="ttdeci">@ BOMB</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00025">GameObject.hpp:25</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91"><div class="ttname"><a href="classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91">Bomberman::GameObject::DESTROYED</a></div><div class="ttdeci">@ DESTROYED</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00019">GameObject.hpp:18</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_a43c7b50b2a2940c9868e3fa0777138a7"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00169">GameScene.cpp:169</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_a66647d414a12deaf79076f2d424dc19a"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00254">GameScene.cpp:254</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_acc87411e6a82809b4f2f735c61c0cfe5"><div class="ttname"><a href="classBomberman_1_1GameScene.html#acc87411e6a82809b4f2f735c61c0cfe5">Bomberman::GameScene::checkCollisionForObjects</a></div><div class="ttdeci">bool checkCollisionForObjects(const Type::Vector&lt; 3 &gt; &amp;playerPosition, bool isFlame=false, bool isBomb=false) const</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00133">GameScene.cpp:133</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_a43c7b50b2a2940c9868e3fa0777138a7"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00307">GameScene.cpp:307</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_a66647d414a12deaf79076f2d424dc19a"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00379">GameScene.cpp:379</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_abe90cef37788404cb0a991236e17f7ef"><div class="ttname"><a href="classBomberman_1_1GameScene.html#abe90cef37788404cb0a991236e17f7ef">Bomberman::GameScene::checkCollisionForObjects</a></div><div class="ttdeci">bool checkCollisionForObjects(const Type::Vector&lt; 3 &gt; &amp;playerPosition) const</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00230">GameScene.cpp:230</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_af42cdec7f1ec37b62031652841ddc770"><div class="ttname"><a href="classBomberman_1_1GameScene.html#af42cdec7f1ec37b62031652841ddc770">Bomberman::GameScene::GameScene</a></div><div class="ttdeci">GameScene()=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_afa25562382a3eed48c296a3ccb10d4de"><div class="ttname"><a href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">Bomberman::GameScene::checkCollisionForMap</a></div><div class="ttdeci">bool checkCollisionForMap(const Type::Vector&lt; 3 &gt; &amp;playerPosition) const</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00085">GameScene.cpp:85</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_afa25562382a3eed48c296a3ccb10d4de"><div class="ttname"><a href="classBomberman_1_1GameScene.html#afa25562382a3eed48c296a3ccb10d4de">Bomberman::GameScene::checkCollisionForMap</a></div><div class="ttdeci">bool checkCollisionForMap(const Type::Vector&lt; 3 &gt; &amp;playerPosition) const</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00173">GameScene.cpp:173</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1QuitGame_html"><div class="ttname"><a href="classBomberman_1_1QuitGame.html">Bomberman::QuitGame</a></div><div class="ttdef"><b>Definition:</b> <a href="QuitGame_8hpp_source.html#l00014">QuitGame.hpp:14</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1SceneManager_html"><div class="ttname"><a href="classBomberman_1_1SceneManager.html">Bomberman::SceneManager</a></div><div class="ttdef"><b>Definition:</b> <a href="SceneManager_8hpp_source.html#l00020">SceneManager.hpp:20</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html"><div class="ttname"><a href="classBomberman_1_1Scene.html">Bomberman::Scene</a></div><div class="ttdef"><b>Definition:</b> <a href="Scene_8hpp_source.html#l00020">Scene.hpp:20</a></div></div>
