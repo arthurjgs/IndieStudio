@@ -14,13 +14,15 @@
 namespace Bomberman {
     class Flame : public GameObject {
     public:
-        Flame(const Type::Vector<3> &position);
+        Flame(const Type::Vector<3> &position, int side);
         ~Flame();
+        int getSide() const;
         void update(const double &elapsed);
         void render() const;
     protected:
     private:
         double _lifespan;
+        int _side;
     };
 }
 
