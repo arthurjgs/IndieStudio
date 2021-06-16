@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['vector_639',['Vector',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_202_20_3e_640',['Vector&lt; 2 &gt;',['../classType_1_1Vector.html',1,'Type']]],
-  ['vector_3c_203_20_3e_641',['Vector&lt; 3 &gt;',['../classType_1_1Vector.html',1,'Type']]]
+  ['userconfig_690',['UserConfig',['../classBomberman_1_1UserConfig.html',1,'Bomberman']]]
 ];

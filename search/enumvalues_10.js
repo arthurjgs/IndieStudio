@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['y_1218',['Y',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ab5494b4f7b669535c10bc3d8984962fa',1,'RayLib::Window']]]
+  ['vertical_5fsync_1312',['VERTICAL_SYNC',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7ad85831fedc7a0d6a19fef6e216de1048',1,'Bomberman::UserConfig']]]
 ];
