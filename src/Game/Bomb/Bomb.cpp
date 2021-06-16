@@ -23,7 +23,6 @@ void Bomberman::Bomb::update(const double &elapsed)
         return;
     }
     _lifespan += elapsed;
-}
 
 void Bomberman::Bomb::render() const
 {
