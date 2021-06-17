@@ -94,7 +94,8 @@ void Bomberman::GameScene::confirmSaveCallback()
             val.second->setDisplay(true);
         }
     }
-    //TODO: save with name data here with a save class
+    SaveData resData(this->_gameObjectList, this->_listPlayers, this->_timer);
+    Save res(std::move(resData), this->_saveName);
 }
 
 void Bomberman::GameScene::cancelSaveCallback()
@@ -153,8 +154,8 @@ void Bomberman::GameScene::createPause()
     this->_buttonCallback["continueGame"] = &GameScene::continueCallback;
     this->_buttonCallback["saveGame"] = &GameScene::saveCallback;
     this->_buttonCallback["quitGame"] = &GameScene::quitCallback;
-    this->_buttonCallback["cancelSave"] = &GameScene::confirmSaveCallback;
-    this->_buttonCallback["confirmSave"] = &GameScene::cancelSaveCallback;
+    this->_buttonCallback["cancelSave"] = &GameScene::cancelSaveCallback;
+    this->_buttonCallback["confirmSave"] = &GameScene::confirmSaveCallback;
 }
 
 Bomberman::GameScene::GameScene(SceneManager &manager,

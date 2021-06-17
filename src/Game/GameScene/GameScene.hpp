@@ -11,6 +11,7 @@
 #pragma once
 
 #include <Game/Player.hpp>
+#include "../Save/Save.hpp"
 #include <Game/Map.hpp>
 #include <Types/Camera/Camera3D.hpp>
 #include <Game/Image/Image.hpp>

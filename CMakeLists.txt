@@ -87,6 +87,7 @@ add_executable(bomberman
         src/Game/GameObject.hpp
         src/Game/Map.cpp
         src/Game/Map.hpp
+        src/Game/Save/Save.cpp
         src/Game/Bomb/Bomb.cpp
         src/Game/Bomb/Bomb.hpp src/RayLib/Manager3D.cpp src/RayLib/Manager3D.hpp src/Game/Flame/Flame.cpp src/Game/Flame/Flame.hpp src/Game/Crate/Crates.cpp src/Game/Crate/Crates.hpp)
         
