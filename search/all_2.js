@@ -22,5 +22,6 @@ var searchData=
   ['button_2ecpp_39',['Button.cpp',['../Button_8cpp.html',1,'']]],
   ['button_2ehpp_40',['Button.hpp',['../Button_8hpp.html',1,'']]],
   ['button_5fhpp_5f_41',['BUTTON_HPP_',['../Button_8hpp.html#a795d006e5bca73e60b162465af51dec2',1,'Button.hpp']]],
-  ['menu_42',['Menu',['../namespaceBomberman_1_1Menu.html',1,'Bomberman']]]
+  ['config_42',['Config',['../namespaceBomberman_1_1Config.html',1,'Bomberman']]],
+  ['menu_43',['Menu',['../namespaceBomberman_1_1Menu.html',1,'Bomberman']]]
 ];
