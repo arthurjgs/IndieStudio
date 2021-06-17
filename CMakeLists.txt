@@ -95,7 +95,7 @@ add_executable(bomberman
         src/Game/Crate/Crates.cpp
         src/Game/Crate/Crates.hpp
         src/players/Player.cpp
-        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp)
+        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")

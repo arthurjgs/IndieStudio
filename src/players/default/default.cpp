@@ -7,7 +7,7 @@
 
 #include "default.hpp"
 
-Bomberman::Bomberman::Bomberman() : AbstractPlayer("Bomberman", 0, 0, 0, 3.0f, 1.0f, 1.0f, 15.0f)
+Bomberman::Bomberman::Bomberman() : AbstractPlayer("Bomberman", 3.0f, 1.0f, 1.0f, 15.0f)
 {
 }
 
