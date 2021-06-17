@@ -10,7 +10,7 @@
 
 #pragma once
 
-#include <Game/Player.hpp>
+#include <players/Player.hpp>
 #include <Game/Map.hpp>
 #include <Types/Camera/Camera3D.hpp>
 #include <Game/Image/Image.hpp>

@@ -13,6 +13,7 @@
 #include <RayLib/Window.hpp>
 #include <RayLib/Model/Collision/Collision.hpp>
 #include <Game/Bomb/Bomb.hpp>
+#include <DynamicLibrary/DynamicLibrary.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
 
@@ -134,13 +135,17 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
-    (void)playerDll1;
+    LibDl::DynamicLibrary dl(playerDll1);
+
+    auto fct = dl.getSym<Player * (*)(void)>("entryPointPlayer");
+    Player *p1 = fct();
+
     (void)playerDll2;
     (void)playerDll3;
     (void)playerDll4;
     this->_timer = timer;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
-    std::shared_ptr<Player> player1 = std::make_shared<Player>("Bomberman", Type::Vector<3>(-6.0f, 0.0f, -6.0f));
+    std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-6.0f, 0.0f, -6.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
     player1->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
 

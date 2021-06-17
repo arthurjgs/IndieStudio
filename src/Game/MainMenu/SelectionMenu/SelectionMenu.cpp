@@ -379,7 +379,7 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>("", "", "", "");
+            __manager.clearStack<Bomberman::GameScene>("lib/default.dylib", "", "", "");
         }
 }
 

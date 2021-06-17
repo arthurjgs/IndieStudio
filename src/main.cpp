@@ -6,7 +6,7 @@
 #include "Game/SceneManager/SceneManager.hpp"
 #include "Game/LoadingScreen/LoadingScreen.hpp"
 #include "Game/TestScene/TestScene.hpp"
-#include "Game/Player.hpp"
+#include "players/Player.hpp"
 #include "Game/MainMenu/MainMenu.hpp"
 #include "Game/QuitGame/QuitGame.hpp"
 

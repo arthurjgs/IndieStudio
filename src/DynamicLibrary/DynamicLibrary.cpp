@@ -6,6 +6,7 @@
  **/
 
 #include "DynamicLibrary.hpp"
+#include "DynamicLibraryException.hpp"
 
 /**
  *   Encapsulation of libdl.h
