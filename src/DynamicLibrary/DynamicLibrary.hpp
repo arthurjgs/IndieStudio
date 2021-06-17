@@ -5,8 +5,8 @@
  *  @date   2021-03-18
  **/
 
-#ifndef ARCADE_DYNAMICLIBRARY_HPP
-#define ARCADE_DYNAMICLIBRARY_HPP
+#ifndef BOMBERMAN_DYNAMICLIBRARY_HPP
+#define BOMBERMAN_DYNAMICLIBRARY_HPP
 
 #include <string>
 #include "DynamicLibraryException.hpp"
@@ -73,4 +73,4 @@ T LibDl::DynamicLibrary::getSym(const std::string& symbol)
     return adr;
 }/*!< get symbol in library */
 
-#endif //ARCADE_DYNAMICLIBRARY_HPP
+#endif //BOMBERMAN_DYNAMICLIBRARY_HPP

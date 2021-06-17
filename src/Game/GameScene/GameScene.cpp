@@ -13,6 +13,8 @@
 #include <RayLib/Window.hpp>
 #include <RayLib/Model/Collision/Collision.hpp>
 #include <Game/Bomb/Bomb.hpp>
+#include <players/AbstractPlayer.hpp>
+#include <DynamicLibrary/DynamicLibrary.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
 
@@ -134,15 +136,26 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
-    (void)playerDll1;
+    std::shared_ptr<Player> player1;
+
+    try {
+        std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(playerDll1);
+        auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+        AbstractPlayer *p1 = fct();
+        if (p1 == nullptr)
+            throw GameException("Symbol not found entryPoint in " + playerDll1);
+        player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-6.0f, 0.0f, -6.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+        player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+    } catch (LibDl::DynamicLibraryException &e) {
+        throw e;
+    }
+
+    this->_timer = timer;
     (void)playerDll2;
     (void)playerDll3;
     (void)playerDll4;
-    this->_timer = timer;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
-    std::shared_ptr<Player> player1 = std::make_shared<Player>("Bomberman", Type::Vector<3>(-6.0f, 0.0f, -6.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
-    player1->setScale(Type::Vector<3>(15.0f, 15.0f, 15.0f));
 
     this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);

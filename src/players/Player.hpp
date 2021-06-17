@@ -8,9 +8,9 @@
 #ifndef BOMBERMAN_PLAYER_HPP
 #define BOMBERMAN_PLAYER_HPP
 
-#include "GameObject.hpp"
+#include <Game/GameObject.hpp>
 #include "RayLib/Model/Animate/Animate.hpp"
-#include "GameException.hpp"
+#include <Game/GameException.hpp>
 #include <RayLib/InputKeyboard.hpp>
 #include <Game/Bomb/Bomb.hpp>
 #include <memory>
@@ -26,7 +26,7 @@ namespace Bomberman {
             DEAD
         };
 
-        Player(const std::string &name, const Type::Vector<3> &position, float speed = 3.0f, int bombs = 1, int range = 2);
+        Player(const std::string &name, const Type::Vector<3> &position, float speed = 3.0f, int bombs = 1, int range = 1);
         ~Player() override;
 
         void setRange(int range);
