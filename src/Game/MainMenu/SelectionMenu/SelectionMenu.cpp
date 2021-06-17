@@ -12,6 +12,7 @@
 #include "SelectionMenu.hpp"
 #include "../../GameScene/GameScene.hpp"
 #include "../../../RayLib/Window.hpp"
+#include <Game/Config.hpp>
 
 Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager)
 {
@@ -379,7 +380,7 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>("lib/default.dylib", "", "", "");
+            __manager.clearStack<Bomberman::GameScene>(Bomberman::Config::ExecutablePath +  "lib/bomberman_player.dylib", "", "", "");
         }
 }
 

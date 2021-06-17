@@ -136,15 +136,21 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
-    LibDl::DynamicLibrary dl(playerDll1);
+    std::shared_ptr<Player> player1;
+
+    try {
+        std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(playerDll1);
+        auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+        AbstractPlayer *p1 = fct();
+        if (p1 == nullptr)
+            throw GameException("Symbol not found entryPoint in " + playerDll1);
+        player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-6.0f, 0.0f, -6.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+        player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+    } catch (LibDl::DynamicLibraryException &e) {
+        throw e;
+    }
 
     this->_timer = timer;
-
-    auto fct = dl.getSym<AbstractPlayer * (*)(void)>("entryPointPlayer");
-    AbstractPlayer *p1 = fct();
-    std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-6.0f, 0.0f, -6.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
-    player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
-
     (void)playerDll2;
     (void)playerDll3;
     (void)playerDll4;

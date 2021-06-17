@@ -20,10 +20,10 @@ namespace Bomberman {
     };
 }
 
-extern "C" Bomberman::AbstractPlayer *entryPointPlayer()
+extern "C" Bomberman::AbstractPlayer *entryPoint()
 {
-    static Bomberman::Bomberman *player;
-    return player;
+    static Bomberman::Bomberman player;
+    return &player;
 }
 
 #endif //BOMBERMAN_DEFAULT_HPP
