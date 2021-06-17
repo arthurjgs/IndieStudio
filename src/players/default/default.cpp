@@ -7,7 +7,7 @@
 
 #include "default.hpp"
 
-Bomberman::Bomberman::Bomberman() : Player("Bomberman", Type::Vector<3>(0.0f, 0.0f, 0.0f), 3.0f, 1.0f, 1.0f)
+Bomberman::Bomberman::Bomberman() : AbstractPlayer("Bomberman", 0, 0, 0, 3.0f, 1.0f, 1.0f, 15.0f)
 {
 }
 

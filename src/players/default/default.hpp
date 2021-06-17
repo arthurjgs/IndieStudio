@@ -8,11 +8,10 @@
 #ifndef BOMBERMAN_DEFAULT_HPP
 #define BOMBERMAN_DEFAULT_HPP
 
-#include <players/Player.hpp>
-#include <Types/Vector/Vector.hpp>
+#include <players/AbstractPlayer.hpp>
 
 namespace Bomberman {
-    class Bomberman : public Player {
+    class Bomberman : public AbstractPlayer {
     public:
         Bomberman();
         ~Bomberman() = default;
@@ -21,7 +20,7 @@ namespace Bomberman {
     };
 }
 
-extern "C" Bomberman::Player *entryPointPlayer()
+extern "C" Bomberman::AbstractPlayer *entryPointPlayer()
 {
     static Bomberman::Bomberman *player;
     return player;
