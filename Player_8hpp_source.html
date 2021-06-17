@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arcade: src/players/Player.hpp Source File</title>
+<title>Arcade: src/Game/Player.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3e72a3b57dc3879b770eea3465447b47.html">players</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b43036362fece0f978c3c8156df55d19.html">Game</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -80,9 +80,9 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BOMBERMAN_PLAYER_HPP</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BOMBERMAN_PLAYER_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GameObject_8hpp.html">Game/GameObject.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GameObject_8hpp.html">GameObject.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Animate_8hpp.html">RayLib/Model/Animate/Animate.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="GameException_8hpp.html">Game/GameException.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="GameException_8hpp.html">GameException.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="InputKeyboard_8hpp.html">RayLib/InputKeyboard.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Bomb_8hpp.html">Game/Bomb/Bomb.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">   27</a></span>&#160;        };</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classBomberman_1_1Player.html#a73cc9f82afa103bec03a6ad6086e0c6b">Player</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;position, <span class="keywordtype">float</span> speed = 3.0f, <span class="keywordtype">int</span> bombs = 1, <span class="keywordtype">int</span> range = 1);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classBomberman_1_1Player.html#af784263867c44812f7078f50e791c002">Player</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;position, <span class="keywordtype">float</span> speed = 3.0f, <span class="keywordtype">int</span> bombs = 1, <span class="keywordtype">int</span> range = 2);</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classBomberman_1_1Player.html#af7f0b10990968c37c0e8ff2d69eab815">   30</a></span>&#160;        <a class="code" href="classBomberman_1_1Player.html#af7f0b10990968c37c0e8ff2d69eab815">~Player</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Player.html#ad003c7b666e0c56067e149bb06a40811">setRange</a>(<span class="keywordtype">int</span> range);</div>
@@ -150,7 +150,6 @@ $(function() {
 <div class="ttc" id="aclassBomberman_1_1Player_html_a5e3a1b94134f36cbb2114484c0f3a5d1"><div class="ttname"><a href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">Bomberman::Player::getState</a></div><div class="ttdeci">PlayerState getState()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00059">Player.cpp:59</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a63b1ad93c268f66ccf940212e342fac4"><div class="ttname"><a href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">Bomberman::Player::setState</a></div><div class="ttdeci">void setState(const PlayerState &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00200">Player.cpp:200</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a66a0f2cc35617550352ac11d5f9ab41d"><div class="ttname"><a href="classBomberman_1_1Player.html#a66a0f2cc35617550352ac11d5f9ab41d">Bomberman::Player::checkFreeTimer</a></div><div class="ttdeci">bool checkFreeTimer()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00084">Player.cpp:84</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a73cc9f82afa103bec03a6ad6086e0c6b"><div class="ttname"><a href="classBomberman_1_1Player.html#a73cc9f82afa103bec03a6ad6086e0c6b">Bomberman::Player::Player</a></div><div class="ttdeci">Player(const std::string &amp;name, const Type::Vector&lt; 3 &gt; &amp;position, float speed=3.0f, int bombs=1, int range=1)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00010">Player.cpp:10</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a75878848c5c9862c034cd0ba9fd7f6ae"><div class="ttname"><a href="classBomberman_1_1Player.html#a75878848c5c9862c034cd0ba9fd7f6ae">Bomberman::Player::setScale</a></div><div class="ttdeci">void setScale(const Type::Vector&lt; 3 &gt; &amp;scale)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00054">Player.cpp:54</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">Bomberman::Player::PlayerState</a></div><div class="ttdeci">PlayerState</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00022">Player.hpp:22</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">Bomberman::Player::IDLE</a></div><div class="ttdeci">@ IDLE</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00023">Player.hpp:23</a></div></div>
@@ -164,6 +163,7 @@ $(function() {
 <div class="ttc" id="aclassBomberman_1_1Player_html_aaa884cf463877b2e1a1c0d34daef0a27"><div class="ttname"><a href="classBomberman_1_1Player.html#aaa884cf463877b2e1a1c0d34daef0a27">Bomberman::Player::getRotationAngle</a></div><div class="ttdeci">double getRotationAngle() const</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00210">Player.cpp:210</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_ab83fa0de1422e556729dd55948ec35ae"><div class="ttname"><a href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">Bomberman::Player::checkTimer</a></div><div class="ttdeci">void checkTimer(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00089">Player.cpp:89</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_ad003c7b666e0c56067e149bb06a40811"><div class="ttname"><a href="classBomberman_1_1Player.html#ad003c7b666e0c56067e149bb06a40811">Bomberman::Player::setRange</a></div><div class="ttdeci">void setRange(int range)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00029">Player.cpp:29</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_af784263867c44812f7078f50e791c002"><div class="ttname"><a href="classBomberman_1_1Player.html#af784263867c44812f7078f50e791c002">Bomberman::Player::Player</a></div><div class="ttdeci">Player(const std::string &amp;name, const Type::Vector&lt; 3 &gt; &amp;position, float speed=3.0f, int bombs=1, int range=2)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00010">Player.cpp:10</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_af7f0b10990968c37c0e8ff2d69eab815"><div class="ttname"><a href="classBomberman_1_1Player.html#af7f0b10990968c37c0e8ff2d69eab815">Bomberman::Player::~Player</a></div><div class="ttdeci">~Player() override</div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 <div class="ttc" id="anamespaceBomberman_html"><div class="ttname"><a href="namespaceBomberman.html">Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00019">Bomb.hpp:19</a></div></div>
