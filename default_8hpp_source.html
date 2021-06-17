@@ -80,32 +80,30 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BOMBERMAN_DEFAULT_HPP</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BOMBERMAN_DEFAULT_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Player_8hpp.html">players/Player.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Vector_8hpp.html">Types/Vector/Vector.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomberman.html">   15</a></span>&#160;    <span class="keyword">class </span><a class="code" href="namespaceBomberman.html">Bomberman</a> : <span class="keyword">public</span> <a class="code" href="classBomberman_1_1Player.html">Player</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="namespaceBomberman.html">Bomberman</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomberman.html#a499aa401aa69f102ac5519d135db2699">   18</a></span>&#160;        <a class="code" href="classBomberman_1_1Bomberman.html#a499aa401aa69f102ac5519d135db2699">~Bomberman</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="default_8hpp.html#a9f449301769e656d1549c50766ef9858">   24</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code" href="classBomberman_1_1Player.html">Bomberman::Player</a> *<a class="code" href="default_8hpp.html#a9f449301769e656d1549c50766ef9858">entryPointPlayer</a>()</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> <a class="code" href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a> *player;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> player;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_DEFAULT_HPP</span></div>
-<div class="ttc" id="aPlayer_8hpp_html"><div class="ttname"><a href="Player_8hpp.html">Player.hpp</a></div></div>
-<div class="ttc" id="aVector_8hpp_html"><div class="ttname"><a href="Vector_8hpp.html">Vector.hpp</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Bomberman_html"><div class="ttname"><a href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="default_8hpp_source.html#l00015">default.hpp:15</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="AbstractPlayer_8hpp.html">players/AbstractPlayer.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomberman.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="namespaceBomberman.html">Bomberman</a> : <span class="keyword">public</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html">AbstractPlayer</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="namespaceBomberman.html">Bomberman</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomberman.html#a499aa401aa69f102ac5519d135db2699">   17</a></span>&#160;        <a class="code" href="classBomberman_1_1Bomberman.html#a499aa401aa69f102ac5519d135db2699">~Bomberman</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    };</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="default_8hpp.html#acf2700fc1b7ace1e40fbdc2048e5eb0e">   23</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a> *<a class="code" href="default_8hpp.html#acf2700fc1b7ace1e40fbdc2048e5eb0e">entryPointPlayer</a>()</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <a class="code" href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a> *player;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> player;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_DEFAULT_HPP</span></div>
+<div class="ttc" id="aAbstractPlayer_8hpp_html"><div class="ttname"><a href="AbstractPlayer_8hpp.html">AbstractPlayer.hpp</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8hpp_source.html#l00014">AbstractPlayer.hpp:14</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomberman_html"><div class="ttname"><a href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="default_8hpp_source.html#l00014">default.hpp:14</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomberman_html_a499aa401aa69f102ac5519d135db2699"><div class="ttname"><a href="classBomberman_1_1Bomberman.html#a499aa401aa69f102ac5519d135db2699">Bomberman::Bomberman::~Bomberman</a></div><div class="ttdeci">~Bomberman()=default</div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html"><div class="ttname"><a href="classBomberman_1_1Player.html">Bomberman::Player</a></div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00020">Player.hpp:20</a></div></div>
-<div class="ttc" id="adefault_8hpp_html_a9f449301769e656d1549c50766ef9858"><div class="ttname"><a href="default_8hpp.html#a9f449301769e656d1549c50766ef9858">entryPointPlayer</a></div><div class="ttdeci">Bomberman::Player * entryPointPlayer()</div><div class="ttdef"><b>Definition:</b> <a href="default_8hpp_source.html#l00024">default.hpp:24</a></div></div>
+<div class="ttc" id="adefault_8hpp_html_acf2700fc1b7ace1e40fbdc2048e5eb0e"><div class="ttname"><a href="default_8hpp.html#acf2700fc1b7ace1e40fbdc2048e5eb0e">entryPointPlayer</a></div><div class="ttdeci">Bomberman::AbstractPlayer * entryPointPlayer()</div><div class="ttdef"><b>Definition:</b> <a href="default_8hpp_source.html#l00023">default.hpp:23</a></div></div>
 <div class="ttc" id="anamespaceBomberman_html"><div class="ttname"><a href="namespaceBomberman.html">Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00019">Bomb.hpp:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
