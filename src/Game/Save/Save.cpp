@@ -75,7 +75,6 @@ void Bomberman::Save::__writeCrate(const std::weak_ptr<GameObject> &val, std::of
 void Bomberman::Save::__writeDataInFile() const
 {
     std::ofstream myfile(this->__filepath);
-    int i = 1;
 
     if (!myfile.is_open()) {
         throw std::runtime_error("creation of : " + this->__filepath + " failed");
