@@ -7,7 +7,9 @@
 
 #include "Player.hpp"
 
-Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
+Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
+_isAi(isAi),
+_controller(controller),
 _range(range),
 _speed(speed),
 _state(IDLE),
@@ -59,6 +61,27 @@ void Bomberman::Player::setScale(const Type::Vector<3> &scale)
 Bomberman::Player::PlayerState Bomberman::Player::getState()
 {
     return this->_state;
+}
+
+void Bomberman::Player::updateCollisions(Type::Vector<3> position, int update)
+{
+    _walls[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7] = update;
+}
+
+void Bomberman::Player::updateDangers(Type::Vector<3> position, int range, int update)
+{
+    _dangers[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7];
+    for (int i = 0; i < range; i++)
+    {
+        if (static_cast<int>(position.getZ()) + 7 + (i + 1) < 15)
+            _dangers[static_cast<int>(position.getZ()) + 7 + (i + 1)][static_cast<int>(position.getX()) + 7] = update;
+        if (static_cast<int>(position.getZ()) + 7 - (i + 1) > 0)
+            _dangers[static_cast<int>(position.getZ()) + 7 - (i + 1)][static_cast<int>(position.getX()) + 7] = update;
+        if (static_cast<int>(position.getX()) + 7 + (i + 1) < 15)
+            _dangers[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7 + (i + 1)] = update;
+        if (static_cast<int>(position.getX()) + 7 + (i + 1) > 0)
+            _dangers[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7 - (i + 1)] = update;
+    }
 }
 
 void Bomberman::Player::render() const
@@ -134,37 +157,8 @@ std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
     return std::make_shared<Bomb>(roundedPosition, this->getRange());
 }
 
-void Bomberman::Player::update(const double &elapsed)
+void Bomberman::Player::_playerKeyboard(double elapsed)
 {
-    auto currState = this->getState();
-    checkTimer(elapsed);
-
-    if (currState == ACTION) {
-        _startActionTime += elapsed;
-        if (_startActionTime >= 0.5f) {
-            _startActionTime = 0;
-            _alreadyCreatedBomb = false;
-            this->setState(IDLE);
-        }
-    }
-
-    switch (_state) {
-        case IDLE:
-            RayLib::Manager3D::getInstance().getModel(_name + "IDLE")->update(elapsed);
-            break;
-        case WALKING:
-            RayLib::Manager3D::getInstance().getModel(_name + "WALKING")->update(elapsed);
-            break;
-        case ACTION:
-            RayLib::Manager3D::getInstance().getModel(_name + "ACTION")->update(elapsed);
-            break;
-        case DEAD:
-            RayLib::Manager3D::getInstance().getModel(_name + "DEAD")->update(elapsed);
-            break;
-    }
-
-    if (currState != IDLE && currState != WALKING) return;
-
     if (IsKeyDown(KEY_W)) {
         this->setState(WALKING);
         this->setRotationAngle(180.0f);
@@ -194,6 +188,99 @@ void Bomberman::Player::update(const double &elapsed)
     }
     else {
         this->setState(IDLE);
+    }
+}
+
+void Bomberman::Player::_playerGamepad(double elapsed, int gamepad)
+{
+
+}
+
+void Bomberman::Player::_playerHandler(double elapsed)
+{
+    if (_controller < 0)
+    {
+        _playerKeyboard(elapsed);
+        if (_controller == -2)
+            _playerGamepad(elapsed, 0);
+    }
+    else
+        _playerGamepad(elapsed, _controller);
+}
+
+void Bomberman::Player::_AiHandler()
+{
+
+}
+
+void Bomberman::Player::_moveAi()
+{
+
+}
+
+void Bomberman::Player::_setNewGoalOffense()
+{
+
+}
+
+bool Bomberman::Player::_isSolidBlock(int x, int z)
+{
+
+}
+
+bool Bomberman::Player::_isDangerousBox(int x, int z)
+{
+
+}
+
+void Bomberman::Player::_iaOrPlayer(double elapsed)
+{
+    if (_isAi)
+        _AiHandler();
+    if (!_isAi)
+        _playerHandler(elapsed);
+}
+
+void Bomberman::Player::update(const double &elapsed)
+{
+    auto currState = this->getState();
+    checkTimer(elapsed);
+
+    if (currState == ACTION) {
+        _startActionTime += elapsed;
+        if (_startActionTime >= 0.5f) {
+            _startActionTime = 0;
+            _alreadyCreatedBomb = false;
+            this->setState(IDLE);
+        }
+    }
+    std::cout << "position x: " << this->_position.getX() << " position z: " << this->_position.getZ() << std::endl;
+    switch (_state) {
+        case IDLE:
+            RayLib::Manager3D::getInstance().getModel(_name + "IDLE")->update(elapsed);
+            break;
+        case WALKING:
+            RayLib::Manager3D::getInstance().getModel(_name + "WALKING")->update(elapsed);
+            break;
+        case ACTION:
+            RayLib::Manager3D::getInstance().getModel(_name + "ACTION")->update(elapsed);
+            break;
+        case DEAD:
+            RayLib::Manager3D::getInstance().getModel(_name + "DEAD")->update(elapsed);
+            break;
+    }
+
+    if (currState != IDLE && currState != WALKING) return;
+
+    _iaOrPlayer(elapsed);
+    std::cout<<"\n Two Dimensional Array is : \n";
+    for(int i = 0; i < 15; i++)
+    {
+            for(int j = 0; j < 15; j++)
+            {
+                std::cout << " " << _walls[i][j] << " ";
+            }
+            std::cout<<"\n";
     }
 }
 

@@ -126,9 +126,11 @@ void Bomberman::GameScene::createPause()
     this->_buttonCallback["confirmSave"] = &GameScene::cancelSaveCallback;
 }
 
-Bomberman::GameScene::GameScene(SceneManager &manager,
+Bomberman::GameScene::GameScene(SceneManager &manager, bool firstPlayerGamepad, int players,
                                 const std::string &playerDll1, const std::string &playerDll2,
                                 const std::string &playerDll3, const std::string &playerDll4, const int timer) : Scene(manager),
+                                _firstPlayerGamepad(firstPlayerGamepad),
+                                _players(players),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
@@ -160,6 +162,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
+    //this->_gameObjectList.emplace_back(player2);
 
     std::shared_ptr<Image> timer_back = std::make_shared<Image>("./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
     this->_2DGameObjectList.emplace_back(MAIN, timer_back);
@@ -170,13 +173,19 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     std::shared_ptr<FlashingText> text = std::make_shared<FlashingText>(this->convertSecondToDisplayTime(this->_timer), Type::Color(255, 255, 255, 255), 60, 0.0, "timer", GameObject::ObjectType::DECOR, Type::Vector<2>(900.0f, 90.0f));
     this->_2DGameObjectList.emplace_back(MAIN, text);
     this->_2DDynamicText.emplace_back(MAIN, text);
+    this->_listPlayers.emplace_back(player1);
 
     this->createPause();
 
     this->_gameMap = gameMap;
     for (auto & obj : this->_gameMap.lock()->createCrates(75))
+    {
+        for (auto &val : this->_listPlayers)
+            val.lock()->updateCollisions(obj->getPosition(), 2);
         this->_gameObjectList.emplace_back(obj);
-    this->_listPlayers.emplace_back(player1);
+        this->_CrateList.emplace_back(obj);
+    }
+    //this->_listPlayers.emplace_back(player2);
     this->_currentUIStage = MAIN;
     this->_second = 0.0;
     this->quitting = false;
@@ -262,6 +271,8 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                                                                                              enemyPosition.getY() - 1.0f / 2,
                                                                                              enemyPosition.getZ() - 1.0f / 2)))) {
             if (isFlame) {
+                for (auto &val : this->_listPlayers)
+                    val.lock()->updateCollisions(obj->getPosition(), 0);
                 obj->destroy();
                 return true;
             }
@@ -347,9 +358,15 @@ void Bomberman::GameScene::update(const double &elapsed)
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
             }
+            for (auto &val : this->_listPlayers)
+            {
+                val.lock()->updateCollisions(b.lock()->getPosition(), 0);
+                val.lock()->updateDangers(b.lock()->getPosition(), b.lock()->getRange(), 0);
+            }
         }
     }
 
+    
     // CHECK IF OBJECTS SHOULD BE DESTROYED
     _gameObjectList.erase(std::remove_if(
             _gameObjectList.begin(), _gameObjectList.end(),
@@ -390,6 +407,12 @@ void Bomberman::GameScene::update(const double &elapsed)
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
             if (bomb != nullptr) {
+
+                for (auto &val : this->_listPlayers)
+                {
+                    val.lock()->updateCollisions(bomb->getPosition(), 2);
+                    val.lock()->updateDangers(bomb->getPosition(), bomb->getRange(), 1);
+                }
                 _gameObjectList.emplace_back(bomb);
                 _bombList.emplace_back(bomb);
             }
