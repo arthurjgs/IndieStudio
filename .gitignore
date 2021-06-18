@@ -3,5 +3,5 @@ cmake-build-debug/
 build/
 lib/
 unit_tests
-./bomberman
 .DS_Store
+bomberman

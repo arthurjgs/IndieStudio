@@ -155,7 +155,7 @@ std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
         roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
                                           static_cast<float>(round(position.getY())),
                                           static_cast<float>(round(position.getZ())));
-    return std::make_shared<Bomb>(roundedPosition, this->getRange());
+    return std::make_shared<Bomb>(roundedPosition, this, this->getRange());
 }
 
 void Bomberman::Player::_playerKeyboard(double elapsed)
