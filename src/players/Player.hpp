@@ -53,7 +53,7 @@ namespace Bomberman {
         void _iaOrPlayer(double elapsed);
         void _playerHandler(double elapsed);
         void _playerKeyboard(double elapsed);
-        void _playerGamepad(double elapsed, int gamepad);
+        void _playerGamepad(double elapsed);
         void _AiHandler();
         void _moveAi();
         void _setNewGoalOffense();

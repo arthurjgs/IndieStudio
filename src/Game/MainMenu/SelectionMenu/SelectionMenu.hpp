@@ -55,15 +55,12 @@ namespace Bomberman
                 std::vector<std::string> getPlayerDlls();
                 int _players;
                 Type::Camera3D _camera;
-                bool _firstPlayerGamepad;
                 std::vector<std::weak_ptr<StateImage>>__stateImagesReferer;
                 std::vector<std::weak_ptr<FlashingText>> __flashingTextReferer;
                 int _selectionPlayer;
                 bool _isAction;
-                bool _isPlayerTwoAI;
-                bool _isPlayerThreeAI;
-                bool _isPlayerFourAI;
-                std::vector<int> _selectedModel;
+                std::vector<int> _selectedModel {0, -1, -1, -1};
+                std::vector<int> _playerInputIds {-1, 0, 1, 2};
         };
     }
 }
