@@ -49,6 +49,9 @@ namespace Bomberman
                 void goToGameScene();
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 std::vector<std::shared_ptr<Player>> __modelsContainer;
+                std::vector<std::shared_ptr<Player>> __modelsContainer1;
+                std::vector<std::shared_ptr<Player>> __modelsContainer2;
+                std::vector<std::shared_ptr<Player>> __modelsContainer3;
                 std::vector<std::string> getPlayerDlls();
                 int _players;
                 Type::Camera3D _camera;

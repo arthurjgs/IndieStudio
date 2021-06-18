@@ -431,10 +431,8 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
 
 void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
 {
-    for (auto &i : this->_selectedModel) {
-        if (i == -1)
-            continue;
-        this->__modelsContainer[i]->update(elapsed);
+    for (auto &model : this->__modelsContainer) {
+        model->update(elapsed);
     }
 
     for (auto const &val : this->__objContainer) {
@@ -476,9 +474,20 @@ void Bomberman::Menu::SelectionMenu::loadPlayers()
             AbstractPlayer *p1 = fct();
             if (p1 == nullptr)
                 throw GameException("Symbol not found entryPoint in " + file.path().string());
+
             std::shared_ptr<Player> player = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-4.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-1.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player2 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(1.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player3 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(4.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
             player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player2->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player3->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
             __modelsContainer.emplace_back(player);
+            __modelsContainer1.emplace_back(player1);
+            __modelsContainer2.emplace_back(player2);
+            __modelsContainer3.emplace_back(player3);
+
         } catch (LibDl::DynamicLibraryException &e) {
             throw e;
         }
