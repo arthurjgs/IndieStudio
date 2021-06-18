@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Arcade: src/players/default/default.hpp File Reference</title>
+<title>Arcade: src/Game/Save/Save.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,25 +62,32 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3e72a3b57dc3879b770eea3465447b47.html">players</a></li><li class="navelem"><a class="el" href="dir_da52c2ee0997f309e46fe8e3167f0dc8.html">default</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b43036362fece0f978c3c8156df55d19.html">Game</a></li><li class="navelem"><a class="el" href="dir_4fa5c0e77e43ce034adf40d98c5bd02d.html">Save</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
-<div class="title">default.hpp File Reference</div>  </div>
+<div class="title">Save.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="AbstractPlayer_8hpp_source.html">players/AbstractPlayer.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="GameObject_8hpp_source.html">../GameObject.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Crates_8hpp_source.html">../Crate/Crates.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Player_8hpp_source.html">../Player.hpp</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
 </div>
-<p><a href="default_8hpp_source.html">Go to the source code of this file.</a></p>
+<p><a href="Save_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1SaveData.html">Bomberman::SaveData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Save.html">Bomberman::Save</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -88,34 +95,32 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceBomberman"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceBomberman.html">Bomberman</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:abacce1e75f68b9b8fdea7cb66da403d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="default_8hpp.html#abacce1e75f68b9b8fdea7cb66da403d1">entryPoint</a> ()</td></tr>
-<tr class="separator:abacce1e75f68b9b8fdea7cb66da403d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a9413d72dc356c6e5c11b7577c1f1db1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Save_8hpp.html#a9413d72dc356c6e5c11b7577c1f1db1a">SAVE_FOLDER</a>&#160;&#160;&#160;&quot;./save/&quot;</td></tr>
+<tr class="separator:a9413d72dc356c6e5c11b7577c1f1db1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="abacce1e75f68b9b8fdea7cb66da403d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abacce1e75f68b9b8fdea7cb66da403d1">&#9670;&nbsp;</a></span>entryPoint()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-06-17</dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2021 </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="Save_8hpp_source.html">Save.hpp</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a9413d72dc356c6e5c11b7577c1f1db1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9413d72dc356c6e5c11b7577c1f1db1a">&#9670;&nbsp;</a></span>SAVE_FOLDER</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a>* entryPoint </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">#define SAVE_FOLDER&#160;&#160;&#160;&quot;./save/&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="default_8hpp_source.html#l00023">23</a> of file <a class="el" href="default_8hpp_source.html">default.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <a class="code" href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a> player;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> &amp;player;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1Bomberman_html"><div class="ttname"><a href="classBomberman_1_1Bomberman.html">Bomberman::Bomberman</a></div><div class="ttdef"><b>Definition:</b> <a href="default_8hpp_source.html#l00014">default.hpp:14</a></div></div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="Save_8hpp_source.html#l00020">20</a> of file <a class="el" href="Save_8hpp_source.html">Save.hpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
