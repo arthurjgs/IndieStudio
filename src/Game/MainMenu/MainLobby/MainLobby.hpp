@@ -149,6 +149,7 @@ namespace Bomberman {
                 bool __help;
                 bool __video;
                 bool __gameplay;
+                bool __saveDisplay;
                 
 
                 int __ignore;

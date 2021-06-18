@@ -101,7 +101,7 @@ Bomberman::SaveData &&Bomberman::Save::__loadDataFromPath()
 }
 
 Bomberman::Save::Save(const std::string &filepath) :
-__filepath(SAVE_FOLDER + filepath + ".yml"),
-__data(std::move(__loadDataFromPath()))
+__data(std::move(__loadDataFromPath())),
+__filepath(SAVE_FOLDER + filepath + ".yml")
 {
 }

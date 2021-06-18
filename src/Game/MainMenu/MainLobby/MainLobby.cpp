@@ -651,6 +651,7 @@ void Bomberman::Menu::MainLobby::__fetchSave()
         }
     }
     this->__saveIndex = 3;
+    this->__saveDisplay = true;
 }
 
 void Bomberman::Menu::MainLobby::loadButtonCallback()
@@ -987,10 +988,11 @@ void Bomberman::Menu::MainLobby::update(const double &elapsed)
         }
     }
     for (auto const &val : this->__saveButtons) {
-        if (val.lock()->getDisplay() && val.lock()->isClick()) {
-            std::cout << val.lock()->getName() << std::endl;
+        if (val.lock()->getDisplay() && val.lock()->isClick() && this->__saveDisplay == false) {
+            std::cout << "click " << val.lock()->getName() << std::endl;
         }
     }
+    this->__saveDisplay = false;
     for (auto const &val : this->__objContainer) {
         val.second->update(elapsed);
     }
