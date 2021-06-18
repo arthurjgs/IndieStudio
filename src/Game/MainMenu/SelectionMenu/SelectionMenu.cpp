@@ -113,13 +113,26 @@ void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
             _firstPlayerGamepad = false;
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_P))
             _firstPlayerGamepad = true;
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_LEFT))
+        if (!_firstPlayerGamepad && RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_LEFT))
         {
             std::cout << this->_selectedModel[0] << std::endl;
             if (this->_selectedModel[0] != 0)
                 this->_selectedModel[0]--;
         }
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_RIGHT))
+        if (!_firstPlayerGamepad && RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_RIGHT))
+        {
+            std::cout << this->_selectedModel[0] << std::endl;
+
+            if (this->_selectedModel[0] + 1 < this->__modelsContainer.size())
+                this->_selectedModel[0]++;
+        }
+        if (_firstPlayerGamepad && RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::LEFT))
+        {
+            std::cout << this->_selectedModel[0] << std::endl;
+            if (this->_selectedModel[0] != 0)
+                this->_selectedModel[0]--;
+        }
+        if (_firstPlayerGamepad && RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::RIGHT))
         {
             std::cout << this->_selectedModel[0] << std::endl;
 

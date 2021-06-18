@@ -4,5 +4,4 @@ build/
 lib/
 unit_tests
 ./bomberman
-bomberman
 .DS_Store
