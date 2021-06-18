@@ -13,9 +13,18 @@
 #include "../../GameScene/GameScene.hpp"
 #include "../../../RayLib/Window.hpp"
 #include <Game/Config.hpp>
+#include <DynamicLibrary/DynamicLibrary.hpp>
+#include <players/AbstractPlayer.hpp>
+#include <RayLib/Manager3D.hpp>
 
-Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager)
+Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager), _camera(Type::Vector<3>(0.0f, 1.0f, 15.0f),
+                                                                                               Type::Vector<3>(0.0f, 0.0f, 0.0f),
+                                                                                               Type::Vector<3>(0.0f, 1.0f, 0.0f),
+                                                                                               25.0f,
+                                                                                               CAMERA_PERSPECTIVE),
+                                                                                               _selectedModel(1)
 {
+    RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::PLAYER_SELECTION);
     _players = 1;
     _firstPlayerGamepad = false;
     _selectionPlayer = 0;
@@ -87,6 +96,13 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
     this->__flashingTextReferer.emplace_back(_gamepadInfoThree);
     this->__objContainer.push_back(std::make_shared<Image>("./assets/selectionmenu/bande_bot.png", "bande_bot", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 930.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<FlashingText>("Please select your charactere", Type::Color(255, 255, 255, 255), 50, 150, "select", GameObject::ObjectType::DECOR, Type::Vector<2>(580.0f, 970.0f)));
+
+    this->_selectedModel.push_back(0);
+    this->_selectedModel.push_back(-1);
+    this->_selectedModel.push_back(-1);
+    this->_selectedModel.push_back(-1);
+
+    loadPlayers();
 }
 
 void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
@@ -97,6 +113,19 @@ void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
             _firstPlayerGamepad = false;
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_P))
             _firstPlayerGamepad = true;
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_LEFT))
+        {
+            std::cout << this->_selectedModel[0] << std::endl;
+            if (this->_selectedModel[0] != 0)
+                this->_selectedModel[0]--;
+        }
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_RIGHT))
+        {
+            std::cout << this->_selectedModel[0] << std::endl;
+
+            if (this->_selectedModel[0] + 1 < this->__modelsContainer.size())
+                this->_selectedModel[0]++;
+        }
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_ENTER))
         {
             _selectionPlayer += 1;
@@ -296,16 +325,31 @@ void Bomberman::Menu::SelectionMenu::changeStateSelection(int gamepad, bool avai
         switch (gamepad)
         {
             case 1:
-                if (val.lock()->getName() == "gamepadInfo1")
+                if (val.lock()->getName() == "gamepadInfo1") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[1] = 0;
+                    else
+                        _selectedModel[1] = -1;
+                }
                 break;
             case 2:
-                if (val.lock()->getName() == "gamepadInfo2")
+                if (val.lock()->getName() == "gamepadInfo2") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[2] = 0;
+                    else
+                        _selectedModel[2] = -1;
+                }
                 break;
             case 3:
-                if (val.lock()->getName() == "gamepadInfo3")
+                if (val.lock()->getName() == "gamepadInfo3") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[3] = 0;
+                    else
+                        _selectedModel[3] = -1;
+                }
                 break;
         }
     }
@@ -380,12 +424,19 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>(_firstPlayerGamepad, _players, Bomberman::Config::ExecutablePath +  "lib/bomberman_player.dylib", "", "", "");
+            std::vector<std::string> playerDlls = getPlayerDlls();
+            __manager.clearStack<Bomberman::GameScene>(playerDlls[0], playerDlls[1], playerDlls[2], playerDlls[3]);
         }
 }
 
 void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
 {
+    for (auto &i : this->_selectedModel) {
+        if (i == -1)
+            continue;
+        this->__modelsContainer[i]->update(elapsed);
+    }
+
     for (auto const &val : this->__objContainer) {
         val->update(elapsed);
     }
@@ -405,4 +456,47 @@ void Bomberman::Menu::SelectionMenu::drawScene()
     for (auto const &val : this->__objContainer) {
         val->render();
     }
+    RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
+    for (auto & i : this->_selectedModel) {
+        if (i == -1)
+            continue;
+        this->__modelsContainer[i]->render();
+    }
+    RayLib::Window::getInstance().getDrawing().endMode3D();
+}
+
+void Bomberman::Menu::SelectionMenu::loadPlayers()
+{
+    if (!std::filesystem::is_directory(Config::ExecutablePath + "lib"))
+        throw GameException("Unable to find lib folder at executable root.");
+    for (auto & file : std::filesystem::directory_iterator(Config::ExecutablePath + "lib")) {
+        try {
+            std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(file.path().string());
+            auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+            AbstractPlayer *p1 = fct();
+            if (p1 == nullptr)
+                throw GameException("Symbol not found entryPoint in " + file.path().string());
+            std::shared_ptr<Player> player = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-4.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            __modelsContainer.emplace_back(player);
+        } catch (LibDl::DynamicLibraryException &e) {
+            throw e;
+        }
+    }
+}
+
+std::vector<std::string> Bomberman::Menu::SelectionMenu::getPlayerDlls()
+{
+    std::vector<std::string> dlls;
+
+    for (auto & i : this->_selectedModel) {
+        if (i == -1)
+            i = 0;
+        for (auto &file : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath + "lib")) {
+            if (file.path().string().find(__modelsContainer[i]->getName()) != std::string::npos) {
+                dlls.emplace_back(std::filesystem::absolute(file.path()).string());
+            }
+        }
+    }
+    return dlls;
 }

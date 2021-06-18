@@ -100,6 +100,9 @@ add_executable(bomberman
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
-add_subdirectory("src/players/default" "src/players/default")
+add_subdirectory("src/players/Bomberman" "src/players/Bomberman")
+add_subdirectory("src/players/Steve" "src/players/Steve")
+
+ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
 
 enable_testing()

@@ -454,7 +454,7 @@ void Bomberman::GameScene::drawScene()
 {
     _background->render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
-   for (auto & object : _gameObjectList)
+    for (auto & object : _gameObjectList)
         object->render();
     RayLib::Window::getInstance().getDrawing().endMode3D();
     for (auto const &val : this->_2DGameObjectList) {
