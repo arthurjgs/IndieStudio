@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Game_2Player_8hpp_source.html">Player.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Player_8hpp_source.html">Player.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Bomberman::Player:</div>
 <div class="dyncontent">
@@ -83,36 +83,15 @@ Inheritance diagram for Bomberman::Player:</div>
   <img src="classBomberman_1_1Player.png" usemap="#Bomberman::Player_map" alt=""/>
   <map id="Bomberman::Player_map" name="Bomberman::Player_map">
 <area href="classBomberman_1_1GameObject.html" alt="Bomberman::GameObject" shape="rect" coords="0,0,153,24"/>
-<area href="classBomberman_1_1GameObject.html" alt="Bomberman::GameObject" shape="rect" coords="163,0,316,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a7b479034d37ae3902a5cca4387a4bdc8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> { <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>
-, <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>
-<br />
- }</td></tr>
-<tr class="separator:a7b479034d37ae3902a5cca4387a4bdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b479034d37ae3902a5cca4387a4bdc8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> { <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>
-, <br />
-&#160;&#160;<a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>
-, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>
-<br />
+<tr class="memitem:a7b479034d37ae3902a5cca4387a4bdc8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> { <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>
+, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>
+, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>
+, <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>
  }</td></tr>
 <tr class="separator:a7b479034d37ae3902a5cca4387a4bdc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classBomberman_1_1GameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classBomberman_1_1GameObject')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></td></tr>
@@ -180,42 +159,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae2e54ac557b6c7c27f94addb303cf0d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8efb992ef9668cae4c1039bff2a403dc"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classBomberman_1_1Bomb.html">Bomb</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a8efb992ef9668cae4c1039bff2a403dc">createBomb</a> ()</td></tr>
 <tr class="separator:a8efb992ef9668cae4c1039bff2a403dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73cc9f82afa103bec03a6ad6086e0c6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a73cc9f82afa103bec03a6ad6086e0c6b">Player</a> (const std::string &amp;name, const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;position, float speed=3.0f, int bombs=1, int range=1)</td></tr>
-<tr class="separator:a73cc9f82afa103bec03a6ad6086e0c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7f0b10990968c37c0e8ff2d69eab815"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#af7f0b10990968c37c0e8ff2d69eab815">~Player</a> () override</td></tr>
-<tr class="separator:af7f0b10990968c37c0e8ff2d69eab815"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad003c7b666e0c56067e149bb06a40811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#ad003c7b666e0c56067e149bb06a40811">setRange</a> (int range)</td></tr>
-<tr class="separator:ad003c7b666e0c56067e149bb06a40811"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8de9424906e390ac10c4f3116dc2d986"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a8de9424906e390ac10c4f3116dc2d986">getRange</a> ()</td></tr>
-<tr class="separator:a8de9424906e390ac10c4f3116dc2d986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa87b87f7c871a356e93e9cb15f8064af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#aa87b87f7c871a356e93e9cb15f8064af">setSpeed</a> (float range)</td></tr>
-<tr class="separator:aa87b87f7c871a356e93e9cb15f8064af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f09e0c3e0d9edfc3aa6817c11db6450"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a3f09e0c3e0d9edfc3aa6817c11db6450">getSpeed</a> ()</td></tr>
-<tr class="separator:a3f09e0c3e0d9edfc3aa6817c11db6450"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75878848c5c9862c034cd0ba9fd7f6ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a75878848c5c9862c034cd0ba9fd7f6ae">setScale</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;scale)</td></tr>
-<tr class="separator:a75878848c5c9862c034cd0ba9fd7f6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac38d94f499a4030939ce4ad8c4194bd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#ac38d94f499a4030939ce4ad8c4194bd8">getState</a> ()</td></tr>
-<tr class="separator:ac38d94f499a4030939ce4ad8c4194bd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b1ad93c268f66ccf940212e342fac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">setState</a> (const <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> &amp;state)</td></tr>
-<tr class="separator:a63b1ad93c268f66ccf940212e342fac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57ce3806b02961bf24d5d7b3bd01e3c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a57ce3806b02961bf24d5d7b3bd01e3c9">setRotationAngle</a> (const double &amp;rotationAngle)</td></tr>
-<tr class="separator:a57ce3806b02961bf24d5d7b3bd01e3c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa884cf463877b2e1a1c0d34daef0a27"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#aaa884cf463877b2e1a1c0d34daef0a27">getRotationAngle</a> () const</td></tr>
-<tr class="separator:aaa884cf463877b2e1a1c0d34daef0a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e22c7d59aec900a8d25e9cba6216c12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a5e22c7d59aec900a8d25e9cba6216c12">Move</a> (const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;vector)</td></tr>
-<tr class="separator:a5e22c7d59aec900a8d25e9cba6216c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0a31d9908e96209d26a9848fdf30184"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#aa0a31d9908e96209d26a9848fdf30184">render</a> () const override</td></tr>
-<tr class="separator:aa0a31d9908e96209d26a9848fdf30184"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ef72b33ddd4ba38adfd3ea6532272a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a> (const double &amp;elapsed) override</td></tr>
-<tr class="separator:a4ef72b33ddd4ba38adfd3ea6532272a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66a0f2cc35617550352ac11d5f9ab41d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a66a0f2cc35617550352ac11d5f9ab41d">checkFreeTimer</a> ()</td></tr>
-<tr class="separator:a66a0f2cc35617550352ac11d5f9ab41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e8e51d3357633bc0729798fbbd134d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#a4e8e51d3357633bc0729798fbbd134d1">launchFreeTimer</a> (const double &amp;elapsed)</td></tr>
-<tr class="separator:a4e8e51d3357633bc0729798fbbd134d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab83fa0de1422e556729dd55948ec35ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">checkTimer</a> (const double &amp;elapsed)</td></tr>
-<tr class="separator:ab83fa0de1422e556729dd55948ec35ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2870a8656eca3c50ddc6590312e2e8d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classBomberman_1_1Bomb.html">Bomb</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1Player.html#ad2870a8656eca3c50ddc6590312e2e8d">createBomb</a> ()</td></tr>
-<tr class="separator:ad2870a8656eca3c50ddc6590312e2e8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classBomberman_1_1GameObject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classBomberman_1_1GameObject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></td></tr>
 <tr class="memitem:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a> ()=delete</td></tr>
 <tr class="separator:a3cabcb7657b1b8aa42527fbbb165bd90 inherit pub_methods_classBomberman_1_1GameObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -260,10 +203,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="Game_2Player_8hpp_source.html#l00020">20</a> of file <a class="el" href="Game_2Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00018">18</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="a7b479034d37ae3902a5cca4387a4bdc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b479034d37ae3902a5cca4387a4bdc8">&#9670;&nbsp;</a></span>PlayerState <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b479034d37ae3902a5cca4387a4bdc8">&#9670;&nbsp;</a></span>PlayerState</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,65 +217,29 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038"></a>WALKING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038"></a>WALKING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0"></a>WALKING&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="Game_2Player_8hpp_source.html#l00022">22</a> of file <a class="el" href="Game_2Player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                         {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">Bomberman::Player::ACTION</a></div><div class="ttdeci">@ ACTION</div><div class="ttdef"><b>Definition:</b> <a href="Game_2Player_8hpp_source.html#l00025">Player.hpp:25</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">Bomberman::Player::IDLE</a></div><div class="ttdeci">@ IDLE</div><div class="ttdef"><b>Definition:</b> <a href="Game_2Player_8hpp_source.html#l00023">Player.hpp:23</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">Bomberman::Player::WALKING</a></div><div class="ttdeci">@ WALKING</div><div class="ttdef"><b>Definition:</b> <a href="Game_2Player_8hpp_source.html#l00024">Player.hpp:24</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">Bomberman::Player::DEAD</a></div><div class="ttdeci">@ DEAD</div><div class="ttdef"><b>Definition:</b> <a href="Game_2Player_8hpp_source.html#l00027">Player.hpp:26</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a7b479034d37ae3902a5cca4387a4bdc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b479034d37ae3902a5cca4387a4bdc8">&#9670;&nbsp;</a></span>PlayerState <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">Bomberman::Player::PlayerState</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038"></a>WALKING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c"></a>IDLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038"></a>WALKING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97"></a>ACTION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89"></a>DEAD&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="players_2Player_8hpp_source.html#l00022">22</a> of file <a class="el" href="players_2Player_8hpp_source.html">Player.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                         {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        };</div>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00020">20</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                         {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        };</div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">Bomberman::Player::IDLE</a></div><div class="ttdeci">@ IDLE</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00021">Player.hpp:21</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">Bomberman::Player::ACTION</a></div><div class="ttdeci">@ ACTION</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00023">Player.hpp:23</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">Bomberman::Player::DEAD</a></div><div class="ttdeci">@ DEAD</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00025">Player.hpp:24</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0"><div class="ttname"><a href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">Bomberman::Player::WALKING</a></div><div class="ttdeci">@ WALKING</div><div class="ttdef"><b>Definition:</b> <a href="Player_8hpp_source.html#l00022">Player.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad8598c8f1f0f691b91b81153db79d2ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8598c8f1f0f691b91b81153db79d2ad">&#9670;&nbsp;</a></span>Player() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8598c8f1f0f691b91b81153db79d2ad">&#9670;&nbsp;</a></span>Player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +300,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;_controller(controller),</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;_range(range),</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;_speed(speed),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;_state(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;_state(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>),</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;_startActionTime(0),</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;_alreadyCreatedBomb(<span class="keyword">false</span>),</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;_rotationAngle(0)</div>
@@ -412,7 +319,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="af7f0b10990968c37c0e8ff2d69eab815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7f0b10990968c37c0e8ff2d69eab815">&#9670;&nbsp;</a></span>~Player() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af7f0b10990968c37c0e8ff2d69eab815">&#9670;&nbsp;</a></span>~Player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,80 +343,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a73cc9f82afa103bec03a6ad6086e0c6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a73cc9f82afa103bec03a6ad6086e0c6b">&#9670;&nbsp;</a></span>Player() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Bomberman::Player::Player </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>speed</em> = <code>3.0f</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bombs</em> = <code>1</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>range</em> = <code>1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af7f0b10990968c37c0e8ff2d69eab815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7f0b10990968c37c0e8ff2d69eab815">&#9670;&nbsp;</a></span>~Player() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Bomberman::Player::~Player </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a66a0f2cc35617550352ac11d5f9ab41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a0f2cc35617550352ac11d5f9ab41d">&#9670;&nbsp;</a></span>checkFreeTimer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a66a0f2cc35617550352ac11d5f9ab41d">&#9670;&nbsp;</a></span>checkFreeTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,25 +366,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a66a0f2cc35617550352ac11d5f9ab41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66a0f2cc35617550352ac11d5f9ab41d">&#9670;&nbsp;</a></span>checkFreeTimer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Bomberman::Player::checkFreeTimer </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab83fa0de1422e556729dd55948ec35ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab83fa0de1422e556729dd55948ec35ae">&#9670;&nbsp;</a></span>checkTimer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83fa0de1422e556729dd55948ec35ae">&#9670;&nbsp;</a></span>checkTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -577,26 +396,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ab83fa0de1422e556729dd55948ec35ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab83fa0de1422e556729dd55948ec35ae">&#9670;&nbsp;</a></span>checkTimer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::checkTimer </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>elapsed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a8efb992ef9668cae4c1039bff2a403dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8efb992ef9668cae4c1039bff2a403dc">&#9670;&nbsp;</a></span>createBomb() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efb992ef9668cae4c1039bff2a403dc">&#9670;&nbsp;</a></span>createBomb()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -644,25 +445,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad2870a8656eca3c50ddc6590312e2e8d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2870a8656eca3c50ddc6590312e2e8d">&#9670;&nbsp;</a></span>createBomb() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classBomberman_1_1Bomb.html">Bomb</a>&gt; Bomberman::Player::createBomb </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a8de9424906e390ac10c4f3116dc2d986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8de9424906e390ac10c4f3116dc2d986">&#9670;&nbsp;</a></span>getRange() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de9424906e390ac10c4f3116dc2d986">&#9670;&nbsp;</a></span>getRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -683,25 +467,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a8de9424906e390ac10c4f3116dc2d986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8de9424906e390ac10c4f3116dc2d986">&#9670;&nbsp;</a></span>getRange() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Bomberman::Player::getRange </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aaa884cf463877b2e1a1c0d34daef0a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa884cf463877b2e1a1c0d34daef0a27">&#9670;&nbsp;</a></span>getRotationAngle() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa884cf463877b2e1a1c0d34daef0a27">&#9670;&nbsp;</a></span>getRotationAngle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -722,25 +489,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aaa884cf463877b2e1a1c0d34daef0a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa884cf463877b2e1a1c0d34daef0a27">&#9670;&nbsp;</a></span>getRotationAngle() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Bomberman::Player::getRotationAngle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a3f09e0c3e0d9edfc3aa6817c11db6450"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f09e0c3e0d9edfc3aa6817c11db6450">&#9670;&nbsp;</a></span>getSpeed() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f09e0c3e0d9edfc3aa6817c11db6450">&#9670;&nbsp;</a></span>getSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -761,25 +511,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a3f09e0c3e0d9edfc3aa6817c11db6450"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f09e0c3e0d9edfc3aa6817c11db6450">&#9670;&nbsp;</a></span>getSpeed() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double Bomberman::Player::getSpeed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5e3a1b94134f36cbb2114484c0f3a5d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e3a1b94134f36cbb2114484c0f3a5d1">&#9670;&nbsp;</a></span>getState() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e3a1b94134f36cbb2114484c0f3a5d1">&#9670;&nbsp;</a></span>getState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -800,25 +533,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ac38d94f499a4030939ce4ad8c4194bd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac38d94f499a4030939ce4ad8c4194bd8">&#9670;&nbsp;</a></span>getState() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> Bomberman::Player::getState </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4e8e51d3357633bc0729798fbbd134d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e8e51d3357633bc0729798fbbd134d1">&#9670;&nbsp;</a></span>launchFreeTimer() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e8e51d3357633bc0729798fbbd134d1">&#9670;&nbsp;</a></span>launchFreeTimer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -845,26 +561,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a4e8e51d3357633bc0729798fbbd134d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e8e51d3357633bc0729798fbbd134d1">&#9670;&nbsp;</a></span>launchFreeTimer() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::launchFreeTimer </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>elapsed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5e22c7d59aec900a8d25e9cba6216c12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e22c7d59aec900a8d25e9cba6216c12">&#9670;&nbsp;</a></span>Move() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e22c7d59aec900a8d25e9cba6216c12">&#9670;&nbsp;</a></span>Move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -887,26 +585,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5e22c7d59aec900a8d25e9cba6216c12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e22c7d59aec900a8d25e9cba6216c12">&#9670;&nbsp;</a></span>Move() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::Move </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>vector</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa0a31d9908e96209d26a9848fdf30184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a31d9908e96209d26a9848fdf30184">&#9670;&nbsp;</a></span>render() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a31d9908e96209d26a9848fdf30184">&#9670;&nbsp;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -934,16 +614,16 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;{</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::weak_ptr&lt;RayLib::Models::Animate&gt; model;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>:</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
@@ -955,35 +635,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa0a31d9908e96209d26a9848fdf30184"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a31d9908e96209d26a9848fdf30184">&#9670;&nbsp;</a></span>render() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::render </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a70c1a04376caf8d73d4a5573cf88cb48">Bomberman::GameObject</a>.</p>
-
-</div>
-</div>
 <a id="ad003c7b666e0c56067e149bb06a40811"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad003c7b666e0c56067e149bb06a40811">&#9670;&nbsp;</a></span>setRange() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad003c7b666e0c56067e149bb06a40811">&#9670;&nbsp;</a></span>setRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1005,26 +658,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="ad003c7b666e0c56067e149bb06a40811"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad003c7b666e0c56067e149bb06a40811">&#9670;&nbsp;</a></span>setRange() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::setRange </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>range</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a57ce3806b02961bf24d5d7b3bd01e3c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57ce3806b02961bf24d5d7b3bd01e3c9">&#9670;&nbsp;</a></span>setRotationAngle() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a57ce3806b02961bf24d5d7b3bd01e3c9">&#9670;&nbsp;</a></span>setRotationAngle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1046,26 +681,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a57ce3806b02961bf24d5d7b3bd01e3c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57ce3806b02961bf24d5d7b3bd01e3c9">&#9670;&nbsp;</a></span>setRotationAngle() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::setRotationAngle </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>rotationAngle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a75878848c5c9862c034cd0ba9fd7f6ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75878848c5c9862c034cd0ba9fd7f6ae">&#9670;&nbsp;</a></span>setScale() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a75878848c5c9862c034cd0ba9fd7f6ae">&#9670;&nbsp;</a></span>setScale()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1087,26 +704,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a75878848c5c9862c034cd0ba9fd7f6ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75878848c5c9862c034cd0ba9fd7f6ae">&#9670;&nbsp;</a></span>setScale() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::setScale </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classType_1_1Vector.html">Type::Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>scale</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aa87b87f7c871a356e93e9cb15f8064af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87b87f7c871a356e93e9cb15f8064af">&#9670;&nbsp;</a></span>setSpeed() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa87b87f7c871a356e93e9cb15f8064af">&#9670;&nbsp;</a></span>setSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1128,26 +727,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="aa87b87f7c871a356e93e9cb15f8064af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa87b87f7c871a356e93e9cb15f8064af">&#9670;&nbsp;</a></span>setSpeed() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::setSpeed </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>range</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a63b1ad93c268f66ccf940212e342fac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63b1ad93c268f66ccf940212e342fac4">&#9670;&nbsp;</a></span>setState() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b1ad93c268f66ccf940212e342fac4">&#9670;&nbsp;</a></span>setState()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1169,26 +750,8 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a63b1ad93c268f66ccf940212e342fac4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63b1ad93c268f66ccf940212e342fac4">&#9670;&nbsp;</a></span>setState() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::setState </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8">PlayerState</a> &amp;&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a4ef72b33ddd4ba38adfd3ea6532272a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ef72b33ddd4ba38adfd3ea6532272a6">&#9670;&nbsp;</a></span>update() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ef72b33ddd4ba38adfd3ea6532272a6">&#9670;&nbsp;</a></span>update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1218,31 +781,31 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keyword">auto</span> currState = this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">getState</a>();</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <a class="code" href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">checkTimer</a>(elapsed);</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (currState == <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">if</span> (currState == <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>) {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        _startActionTime += elapsed;</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordflow">if</span> (_startActionTime &gt;= 0.5f) {</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            _startActionTime = 0;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            _alreadyCreatedBomb = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            this-&gt;<a class="code" href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">setState</a>(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            this-&gt;<a class="code" href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">setState</a>(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>);</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        }</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    }</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    std::cout &lt;&lt; <span class="stringliteral">&quot;position x: &quot;</span> &lt;&lt; this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() &lt;&lt; <span class="stringliteral">&quot; position z: &quot;</span> &lt;&lt; this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a>:</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>)-&gt;update(elapsed);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>:</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>)-&gt;update(elapsed);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a0e549e65072464e8c2b2361701292a97">ACTION</a>:</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>)-&gt;update(elapsed);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8af9c1e1a9e42a77eadcd23d65482bfa89">DEAD</a>:</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>)-&gt;update(elapsed);</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    }</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a2861095bd747f321f15b66f4dc04a17c">IDLE</a> &amp;&amp; currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8ab4e176d3cc015689bb8c9296ea6b3038">WALKING</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">if</span> (currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a> &amp;&amp; currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>) <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    _iaOrPlayer(elapsed);</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;\n Two Dimensional Array is : \n&quot;</span>;</div>
@@ -1260,34 +823,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassBomberman_1_1Player_html_a63b1ad93c268f66ccf940212e342fac4"><div class="ttname"><a href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">Bomberman::Player::setState</a></div><div class="ttdeci">void setState(const PlayerState &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00287">Player.cpp:287</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Player_html_ab83fa0de1422e556729dd55948ec35ae"><div class="ttname"><a href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">Bomberman::Player::checkTimer</a></div><div class="ttdeci">void checkTimer(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00112">Player.cpp:112</a></div></div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a4ef72b33ddd4ba38adfd3ea6532272a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ef72b33ddd4ba38adfd3ea6532272a6">&#9670;&nbsp;</a></span>update() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Bomberman::Player::update </td>
-          <td>(</td>
-          <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>elapsed</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a122c639a70301e75174d90a76f57b925">Bomberman::GameObject</a>.</p>
-
 </div>
 </div>
 <a id="aea9233a873a919f5bd91301d6cc5849e"></a>
@@ -1358,7 +893,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00071">71</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7];</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = 1;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; range; i++)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 + (i + 1) &lt; 15)</div>
@@ -1375,7 +910,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/Game/<a class="el" href="Game_2Player_8hpp_source.html">Player.hpp</a></li>
+<li>src/players/<a class="el" href="Player_8hpp_source.html">Player.hpp</a></li>
 <li>src/players/<a class="el" href="Player_8cpp_source.html">Player.cpp</a></li>
 </ul>
 </div><!-- contents -->
