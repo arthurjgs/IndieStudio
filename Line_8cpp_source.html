@@ -157,20 +157,21 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classRayLib_1_1Shapes_1_1Line.html#a04b8345c3172c3fe2e77269a271f6a73">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classRayLib_1_1Shapes_1_1Line.html#a04b8345c3172c3fe2e77269a271f6a73">RayLib::Shapes::Line::DrawLineStrip</a>(<a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a> &amp;points, <span class="keywordtype">int</span> pointsCount, <span class="keyword">const</span> <a class="code" href="classType_1_1Color.html">Type::Color</a> &amp;color)</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;{</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ::Vector2 dummyPoint;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    dummyPoint.x = points.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    dummyPoint.y = points.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ::DrawLineStrip(</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        &amp;dummyPoint,</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        pointsCount,</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        ::Color {color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()}</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    );</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">float</span> &amp;x = points.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">float</span> &amp;y = points.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    x = dummyPoint.x;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    y = dummyPoint.y;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    ::Vector2 dummyPoint {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        .x = points.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(),</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        .y = points.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    };</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ::DrawLineStrip(</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        &amp;dummyPoint,</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        pointsCount,</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        ::Color {color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()}</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    );</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">float</span> &amp;x = points.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">float</span> &amp;y = points.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    x = dummyPoint.x;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    y = dummyPoint.y;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
 <div class="ttc" id="aLine_8hpp_html"><div class="ttname"><a href="Line_8hpp.html">Line.hpp</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Shapes_1_1Line_html"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Line.html">RayLib::Shapes::Line</a></div><div class="ttdef"><b>Definition:</b> <a href="Line_8hpp_source.html#l00020">Line.hpp:20</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Shapes_1_1Line_html_a0281d7841d22680285ed42e08a8a807e"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Line.html#a0281d7841d22680285ed42e08a8a807e">RayLib::Shapes::Line::Line</a></div><div class="ttdeci">Line()=delete</div></div>
