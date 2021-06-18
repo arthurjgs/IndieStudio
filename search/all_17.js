@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['x_595',['X',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148afcac6157c69eaba17c537b7660b3a7f9',1,'RayLib::Window']]],
-  ['xbox_596',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window::XBOX()'],['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a3f8bb10b09252c9a02adafb9fa542d52',1,'RayLib::Window::XBOX()']]]
+  ['x_593',['X',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148afcac6157c69eaba17c537b7660b3a7f9',1,'RayLib::Window']]],
+  ['xbox_594',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window::XBOX()'],['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148a3f8bb10b09252c9a02adafb9fa542d52',1,'RayLib::Window::XBOX()']]]
 ];
