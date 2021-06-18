@@ -39,6 +39,7 @@ Scene(manager)
     } else {
         RayLib::Window::getInstance().setRefreshRate(RayLib::Window::getInstance().getMonitorRefreshRate());
     }
+    this->__objContainer.emplace_back(std::make_shared<Music>("MenuMusic", Bomberman::Config::ExecutablePath + "assets/sounds/menumusic.mp3", 0.5f));
     // TODO: set music volume via config file for each musics created
 }
 
