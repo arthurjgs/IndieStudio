@@ -23,7 +23,7 @@ Scene(manager)
         std::pair<const std::string, const double>("./assets/MainMenu/layers/6.png", 60.0),
     };
 
-    this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", "./assets/sounds/lobbymusic.mp3", 0.5f));
+    this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", "./assets/sounds/menumusic.mp3", 0.5f));
     this->__objContainer.push_back(std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<Image>("./assets/MainMenu/title.png", "tile", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, -40.0f, 0.0f)));
     
