@@ -13,6 +13,7 @@
 #include "../Credits/Credits.hpp"
 #include <memory>
 #include <Game/Config.hpp>
+#include "../../Music/Music.hpp"
 
 void Bomberman::Menu::MainLobby::createSavePanel()
 {
@@ -277,6 +278,7 @@ Scene(manager)
     this->__currentBtnGameplay = 0;
     this->__currentBtnVideo = 0;
     this->__currentBtnLoad = 0;
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/music.mp3", 0.5f));
     // TODO: set music volume via config file for each musics created
 }
 
