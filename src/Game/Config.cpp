@@ -7,7 +7,10 @@
 
 #include <stdexcept>
 #include <iostream>
+#include <string>
+#include <locale>
 #include <thread>
+#include <codecvt>
 #ifdef _WIN32
 #include <windows.h>
 #elif __linux__
@@ -32,11 +35,9 @@ namespace Bomberman
 
 void  Bomberman::Config::initialize()
 {
-    const size_t bufSize = PATH_MAX + 1;
-
 #ifdef _WIN32
     HMODULE handle;
-  WCHAR   path[bufSize] = { 0 };
+  WCHAR   path[260] = { 0 };
 
   // This error should never happen...
   handle = GetModuleHandle(nullptr);
@@ -44,8 +45,9 @@ void  Bomberman::Config::initialize()
     throw std::runtime_error((std::string(__FILE__) + ": l." + std::to_string(__LINE__)).c_str());
 
   GetModuleFileNameW(handle, path, MAX_PATH);
-  Game::Config::ExecutablePath = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(std::wstring(path).substr(0, std::wstring(path).find_last_of('\\') + 1));
+  Bomberman::Config::ExecutablePath = std::wstring_convert<std::codecvt_utf8<wchar_t>, wchar_t>().to_bytes(std::wstring(path).substr(0, std::wstring(path).find_last_of('\\') + 1));
 #elif __linux__
+    const size_t bufSize = PATH_MAX + 1;
     char  path[bufSize] = { 0 };
 
     // Find executable path from /proc/self/exe
@@ -54,6 +56,7 @@ void  Bomberman::Config::initialize()
 
     Bomberman::Config::ExecutablePath = std::string(path).substr(0, std::string(path).find_last_of('/') + 1);
 #elif __APPLE__
+    const size_t bufSize = PATH_MAX + 1;
     uint32_t size = bufSize;
     char dirNameBuffer[bufSize];
 

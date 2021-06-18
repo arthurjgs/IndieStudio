@@ -17,6 +17,8 @@
 #include <DynamicLibrary/DynamicLibrary.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
+#include <memory>
+#include <Game/Config.hpp>
 
 std::string Bomberman::GameScene::addZeroOrNot(int value) const
 {
@@ -88,30 +90,30 @@ void Bomberman::GameScene::cancelSaveCallback()
 
 void Bomberman::GameScene::createPause()
 {
-    this->_2DGameObjectList.emplace_back(PAUSE, std::make_shared<Image>("./assets/MainMenu/Panel1.png", "pauseBack", GameObject::ObjectType::DECOR, Type::Vector<3>(770.0f, 200.0f, 0.0f), false));
+    this->_2DGameObjectList.emplace_back(PAUSE, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/MainMenu/Panel1.png", "pauseBack", GameObject::ObjectType::DECOR, Type::Vector<3>(770.0f, 200.0f, 0.0f), false));
     this->_2DGameObjectList.emplace_back(PAUSE, std::make_shared<FlashingText>("GAME PAUSED", Type::Color(255, 255, 255, 255), 50, 0.0, "titlePause", GameObject::DECOR, Type::Vector<2>(785.0f, 275.0f), false));
 
-    std::shared_ptr<Button> continueGame = std::make_shared<Button>("continueGame", Type::Vector<3>(790.0f, 400.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "CONTINUE", 40);
+    std::shared_ptr<Button> continueGame = std::make_shared<Button>("continueGame", Type::Vector<3>(790.0f, 400.0f, 0.0f), Bomberman::Config::ExecutablePath + Bomberman::Config::ExecutablePath + "./assets/MainMenu/button_sheet_2.png", "CONTINUE", 40);
     continueGame->setDisplay(false);
     this->_2DGameObjectList.emplace_back(PAUSE, continueGame);
     this->_2DButtonList.emplace_back(PAUSE, continueGame);
 
-    std::shared_ptr<Button> saveGame = std::make_shared<Button>("saveGame", Type::Vector<3>(790.0f, 550.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "SAVE GAME", 40);
+    std::shared_ptr<Button> saveGame = std::make_shared<Button>("saveGame", Type::Vector<3>(790.0f, 550.0f, 0.0f), Bomberman::Config::ExecutablePath + Bomberman::Config::ExecutablePath + "./assets/MainMenu/button_sheet_2.png", "SAVE GAME", 40);
     saveGame->setDisplay(false);
     this->_2DGameObjectList.emplace_back(PAUSE, saveGame);
     this->_2DButtonList.emplace_back(PAUSE, saveGame);
 
-    std::shared_ptr<Button> quitGame = std::make_shared<Button>("quitGame", Type::Vector<3>(790.0f, 700.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "QUIT GAME", 40);
+    std::shared_ptr<Button> quitGame = std::make_shared<Button>("quitGame", Type::Vector<3>(790.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + Bomberman::Config::ExecutablePath + "./assets/MainMenu/button_sheet_2.png", "QUIT GAME", 40);
     quitGame->setDisplay(false);
     this->_2DGameObjectList.emplace_back(PAUSE, quitGame);
     this->_2DButtonList.emplace_back(PAUSE, quitGame);
 
-    this->_2DGameObjectList.emplace_back(NONE, std::make_shared<Image>("./assets/MainMenu/PanelWindow.png", "backSave", GameObject::ObjectType::DECOR, Type::Vector<3>(675.0f, 400.0f, 0.0f), false));
+    this->_2DGameObjectList.emplace_back(NONE, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/MainMenu/PanelWindow.png", "backSave", GameObject::ObjectType::DECOR, Type::Vector<3>(675.0f, 400.0f, 0.0f), false));
     this->_2DGameObjectList.emplace_back(NONE, std::make_shared<FlashingText>("SAVE NAME", Type::Color(255, 255, 255, 255), 50, 0.0, "titleSave", GameObject::DECOR, Type::Vector<2>(800.0f, 500.0f), false));
 
-    std::shared_ptr<Button> cancelSave = std::make_shared<Button>("cancelSave", Type::Vector<3>(700.0f, 700.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> cancelSave = std::make_shared<Button>("cancelSave", Type::Vector<3>(700.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + Bomberman::Config::ExecutablePath + "./assets/MainMenu/close.png");
     cancelSave->setDisplay(false);
-    std::shared_ptr<Button> confirmSave = std::make_shared<Button>("confirmSave", Type::Vector<3>(1150.0f, 700.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> confirmSave = std::make_shared<Button>("confirmSave", Type::Vector<3>(1150.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + Bomberman::Config::ExecutablePath + "./assets/MainMenu/confirm.png");
     confirmSave->setDisplay(false);
 
     this->_2DGameObjectList.emplace_back(NONE, cancelSave);
@@ -157,11 +159,11 @@ Bomberman::GameScene::GameScene(SceneManager &manager,
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
-    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
+    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
 
-    std::shared_ptr<Image> timer_back = std::make_shared<Image>("./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
+    std::shared_ptr<Image> timer_back = std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
     this->_2DGameObjectList.emplace_back(MAIN, timer_back);
     Type::Color &color = timer_back->getColor();
     uChar &transparency = color.getA();

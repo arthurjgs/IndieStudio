@@ -11,21 +11,21 @@
 #include "BoundingBox.hpp"
 
 Type::BoundingBox::BoundingBox(const Vector<3> &min, const Vector<3> &max) :
-__min(min),
-__max(max)
+_min(min),
+_max(max)
 {
 }
 
 Type::BoundingBox::BoundingBox(const BoundingBox &cpy) :
-__min(cpy.__min),
-__max(cpy.__max)
+_min(cpy._min),
+_max(cpy._max)
 {
 }
 
 Type::BoundingBox &Type::BoundingBox::operator = (const BoundingBox &cpy)
 {
-    this->__min = cpy.__min;
-    this->__max = cpy.__max;
+    this->_min = cpy._min;
+    this->_max = cpy._max;
     return (*this);
 }
 
@@ -33,15 +33,15 @@ Type::BoundingBox Type::BoundingBox::operator + (const BoundingBox &cpy)
 {
     BoundingBox res(*this);
 
-    res.__min += cpy.__min;
-    res.__max += cpy.__max;
+    res._min += cpy._min;
+    res._max += cpy._max;
     return (res);
 }
 
 Type::BoundingBox &Type::BoundingBox::operator += (const BoundingBox &cpy)
 {
-    this->__min += cpy.__min;
-    this->__max += cpy.__max;
+    this->_min += cpy._min;
+    this->_max += cpy._max;
     return (*this);
 }
 
@@ -49,15 +49,15 @@ Type::BoundingBox Type::BoundingBox::operator - (const BoundingBox &cpy)
 {
     BoundingBox res(*this);
 
-    res.__min -= cpy.__min;
-    res.__max -= cpy.__max;
+    res._min -= cpy._min;
+    res._max -= cpy._max;
     return (res);
 }
 
 Type::BoundingBox &Type::BoundingBox::operator -= (const BoundingBox &cpy)
 {
-    this->__min -= cpy.__min;
-    this->__max -= cpy.__max;
+    this->_min -= cpy._min;
+    this->_max -= cpy._max;
     return (*this);
 }
 
@@ -65,15 +65,15 @@ Type::BoundingBox Type::BoundingBox::operator * (const BoundingBox &cpy)
 {
     BoundingBox res(*this);
 
-    res.__min *= cpy.__min;
-    res.__max *= cpy.__max;
+    res._min *= cpy._min;
+    res._max *= cpy._max;
     return (res);
 }
 
 Type::BoundingBox &Type::BoundingBox::operator *= (const BoundingBox &cpy)
 {
-    this->__min *= cpy.__min;
-    this->__max *= cpy.__max;
+    this->_min *= cpy._min;
+    this->_max *= cpy._max;
     return (*this);
 }
 
@@ -81,14 +81,14 @@ Type::BoundingBox Type::BoundingBox::operator / (const BoundingBox &cpy)
 {
     BoundingBox res(*this);
 
-    res.__min /= cpy.__min;
-    res.__max /= cpy.__max;
+    res._min /= cpy._min;
+    res._max /= cpy._max;
     return (res);
 }
 
 Type::BoundingBox &Type::BoundingBox::operator /= (const BoundingBox &cpy)
 {
-    this->__min /= cpy.__min;
-    this->__max /= cpy.__max;
+    this->_min /= cpy._min;
+    this->_max /= cpy._max;
     return (*this);
 }

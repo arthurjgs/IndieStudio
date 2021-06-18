@@ -21,11 +21,11 @@ namespace Type {
             BoundingBox(const BoundingBox &cpy);
             BoundingBox &operator = (const BoundingBox &cpy);
 
-            inline Vector<3> &getMin() { return (this->__min); }
-            inline Vector<3> &getMax() { return (this->__max); }
+            inline Vector<3> &getMin() { return (this->_min); }
+            inline Vector<3> &getMax() { return (this->_max); }
         
-            inline Vector<3> getMin() const { return (this->__min); }
-            inline Vector<3> getMax() const { return (this->__max); }
+            inline Vector<3> getMin() const { return (this->_min); }
+            inline Vector<3> getMax() const { return (this->_max); }
         
             BoundingBox operator + (const BoundingBox &cpy);
             BoundingBox &operator += (const BoundingBox &cpy);
@@ -37,7 +37,7 @@ namespace Type {
             BoundingBox &operator /= (const BoundingBox &cpy);
         protected:
         private:
-            Vector<3> __min;
-            Vector<3> __max;
+            Vector<3> _min;
+            Vector<3> _max;
     };
 }

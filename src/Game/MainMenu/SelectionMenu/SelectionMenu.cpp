@@ -22,29 +22,29 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
     _isAction = false;
     const std::string text = "MULTIPLAYER BATTLE";
 
-    std::shared_ptr<StateImage> playerOne = std::make_shared<StateImage>("./assets/selectionmenu/selectionmenu.png", "perso1", GameObject::ObjectType::DECOR, Type::Vector<3>(85.0f, 340.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> playerTwo = std::make_shared<StateImage>("./assets/selectionmenu/selectionmenu.png", "perso2", GameObject::ObjectType::DECOR, Type::Vector<3>(535.0f, 340.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> playerThree = std::make_shared<StateImage>("./assets/selectionmenu/selectionmenu.png", "perso3", GameObject::ObjectType::DECOR, Type::Vector<3>(985.0f, 340.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> playerFour = std::make_shared<StateImage>("./assets/selectionmenu/selectionmenu.png", "perso4", GameObject::ObjectType::DECOR, Type::Vector<3>(1435.0f, 340.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowLeftOne = std::make_shared<StateImage>("./assets/selectionmenu/arrow_left.png", "leftArrow1", GameObject::ObjectType::DECOR, Type::Vector<3>(85.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowRightOne = std::make_shared<StateImage>("./assets/selectionmenu/arrow_right.png", "rightArrow1", GameObject::ObjectType::DECOR, Type::Vector<3>(430.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowLeftTwo = std::make_shared<StateImage>("./assets/selectionmenu/arrow_left.png", "leftArrow2", GameObject::ObjectType::DECOR, Type::Vector<3>(535.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowRightTwo = std::make_shared<StateImage>("./assets/selectionmenu/arrow_right.png", "rightArrow2", GameObject::ObjectType::DECOR, Type::Vector<3>(880.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowLeftThree = std::make_shared<StateImage>("./assets/selectionmenu/arrow_left.png", "leftArrow3", GameObject::ObjectType::DECOR, Type::Vector<3>(985.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowRightThree = std::make_shared<StateImage>("./assets/selectionmenu/arrow_right.png", "rightArrow3", GameObject::ObjectType::DECOR, Type::Vector<3>(1325.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowLeftFour = std::make_shared<StateImage>("./assets/selectionmenu/arrow_left.png", "leftArrow4", GameObject::ObjectType::DECOR, Type::Vector<3>(1440.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> arrowRightFour = std::make_shared<StateImage>("./assets/selectionmenu/arrow_right.png", "rightArrow4", GameObject::ObjectType::DECOR, Type::Vector<3>(1775.0f, 670.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> oneP = std::make_shared<StateImage>("./assets/selectionmenu/1p.png", "1p", GameObject::ObjectType::DECOR, Type::Vector<3>(100.0f, 355.0f, 0.0f), 2);
-    std::shared_ptr<StateImage> twoP = std::make_shared<StateImage>("./assets/selectionmenu/2p.png", "2p", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, 355.0f, 0.0f), 4);
-    std::shared_ptr<StateImage> threeP = std::make_shared<StateImage>("./assets/selectionmenu/3p.png", "3p", GameObject::ObjectType::DECOR, Type::Vector<3>(1000.0f, 355.0f, 0.0f), 4);
-    std::shared_ptr<StateImage> fourP = std::make_shared<StateImage>("./assets/selectionmenu/4p.png", "4p", GameObject::ObjectType::DECOR, Type::Vector<3>(1450.0f, 355.0f, 0.0f), 4);
+    std::shared_ptr<StateImage> playerOne = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/selectionmenu.png", "perso1", GameObject::ObjectType::DECOR, Type::Vector<3>(85.0f, 340.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> playerTwo = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/selectionmenu.png", "perso2", GameObject::ObjectType::DECOR, Type::Vector<3>(535.0f, 340.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> playerThree = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/selectionmenu.png", "perso3", GameObject::ObjectType::DECOR, Type::Vector<3>(985.0f, 340.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> playerFour = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/selectionmenu.png", "perso4", GameObject::ObjectType::DECOR, Type::Vector<3>(1435.0f, 340.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowLeftOne = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_left.png", "leftArrow1", GameObject::ObjectType::DECOR, Type::Vector<3>(85.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowRightOne = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_right.png", "rightArrow1", GameObject::ObjectType::DECOR, Type::Vector<3>(430.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowLeftTwo = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_left.png", "leftArrow2", GameObject::ObjectType::DECOR, Type::Vector<3>(535.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowRightTwo = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_right.png", "rightArrow2", GameObject::ObjectType::DECOR, Type::Vector<3>(880.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowLeftThree = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_left.png", "leftArrow3", GameObject::ObjectType::DECOR, Type::Vector<3>(985.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowRightThree = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_right.png", "rightArrow3", GameObject::ObjectType::DECOR, Type::Vector<3>(1325.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowLeftFour = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_left.png", "leftArrow4", GameObject::ObjectType::DECOR, Type::Vector<3>(1440.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> arrowRightFour = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/arrow_right.png", "rightArrow4", GameObject::ObjectType::DECOR, Type::Vector<3>(1775.0f, 670.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> oneP = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/1p.png", "1p", GameObject::ObjectType::DECOR, Type::Vector<3>(100.0f, 355.0f, 0.0f), 2);
+    std::shared_ptr<StateImage> twoP = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/2p.png", "2p", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, 355.0f, 0.0f), 4);
+    std::shared_ptr<StateImage> threeP = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/3p.png", "3p", GameObject::ObjectType::DECOR, Type::Vector<3>(1000.0f, 355.0f, 0.0f), 4);
+    std::shared_ptr<StateImage> fourP = std::make_shared<StateImage>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/4p.png", "4p", GameObject::ObjectType::DECOR, Type::Vector<3>(1450.0f, 355.0f, 0.0f), 4);
     std::shared_ptr<FlashingText> _gamepadInfoOne = std::make_shared<FlashingText>("Press start", Type::Color(0, 0, 0, 255), 40, 0, "gamepadInfo1", GameObject::ObjectType::DECOR, Type::Vector<2>(610.0f, 490.0f));
     std::shared_ptr<FlashingText> _gamepadInfoTwo = std::make_shared<FlashingText>("Press start", Type::Color(0, 0, 0, 255), 40, 0, "gamepadInfo2", GameObject::ObjectType::DECOR, Type::Vector<2>(1060.0f, 490.0f));
     std::shared_ptr<FlashingText> _gamepadInfoThree = std::make_shared<FlashingText>("Press start", Type::Color(0, 0, 0, 255), 40, 0, "gamepadInfo3", GameObject::ObjectType::DECOR, Type::Vector<2>(1510.0f, 490.0f));
 
-    this->__objContainer.push_back(std::make_shared<Image>("./assets/selectionmenu/yellow.png", "wall", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f)));
-    this->__objContainer.push_back(std::make_shared<Image>("./assets/selectionmenu/bande.png", "bande", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 100.0f, 0.0f)));
-    this->__objContainer.push_back(std::make_shared<Image>("./assets/selectionmenu/house.png", "house", GameObject::ObjectType::DECOR, Type::Vector<3>(100.0f, 110.0f, 0.0f)));
+    this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/yellow.png", "wall", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f)));
+    this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/bande.png", "bande", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 100.0f, 0.0f)));
+    this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/house.png", "house", GameObject::ObjectType::DECOR, Type::Vector<3>(100.0f, 110.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<FlashingText>(text, Type::Color(255, 255, 255, 255), 80, 0, "title", GameObject::ObjectType::DECOR, Type::Vector<2>(340.0f, 160.0f)));
     this->__objContainer.push_back(playerOne);
     this->__objContainer.push_back(playerTwo);
@@ -85,7 +85,7 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
     this->__flashingTextReferer.emplace_back(_gamepadInfoOne);
     this->__flashingTextReferer.emplace_back(_gamepadInfoTwo);
     this->__flashingTextReferer.emplace_back(_gamepadInfoThree);
-    this->__objContainer.push_back(std::make_shared<Image>("./assets/selectionmenu/bande_bot.png", "bande_bot", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 930.0f, 0.0f)));
+    this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/bande_bot.png", "bande_bot", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 930.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<FlashingText>("Please select your charactere", Type::Color(255, 255, 255, 255), 50, 150, "select", GameObject::ObjectType::DECOR, Type::Vector<2>(580.0f, 970.0f)));
 }
 
@@ -380,7 +380,7 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>(Bomberman::Config::ExecutablePath +  "lib/bomberman_player.dylib", "", "", "");
+            __manager.clearStack<Bomberman::GameScene>(Bomberman::Config::ExecutablePath + "lib/bomberman_player.dylib", "", "", "");
         }
 }
 
