@@ -11,7 +11,7 @@ var searchData=
   ['bomb_28',['Bomb',['../classBomberman_1_1Bomb.html#a71ceafc077d72478f9fff26412c5b194',1,'Bomberman::Bomb::Bomb()'],['../classBomberman_1_1Bomb.html',1,'Bomberman::Bomb']]],
   ['bomb_2ecpp_29',['Bomb.cpp',['../Bomb_8cpp.html',1,'']]],
   ['bomb_2ehpp_30',['Bomb.hpp',['../Bomb_8hpp.html',1,'']]],
-  ['bomberman_31',['Bomberman',['../namespaceBomberman.html',1,'']]],
+  ['bomberman_31',['Bomberman',['../classBomberman_1_1Bomberman.html#a043c5e5b065617a14466fddf2c7a93e0',1,'Bomberman::Bomberman::Bomberman()'],['../namespaceBomberman.html',1,'Bomberman'],['../classBomberman_1_1Bomberman.html',1,'Bomberman::Bomberman']]],
   ['bonus_32',['BONUS',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a',1,'Bomberman::GameObject']]],
   ['boundingbox_33',['BoundingBox',['../classType_1_1BoundingBox.html#a81eeb82588a4a1eea4d9307632a561cf',1,'Type::BoundingBox::BoundingBox(const Vector&lt; 3 &gt; &amp;min, const Vector&lt; 3 &gt; &amp;max)'],['../classType_1_1BoundingBox.html#a724761b666fd8bc040a235c81e157bfa',1,'Type::BoundingBox::BoundingBox(const BoundingBox &amp;cpy)'],['../classType_1_1BoundingBox.html',1,'Type::BoundingBox']]],
   ['boundingbox_2ecpp_34',['BoundingBox.cpp',['../BoundingBox_8cpp.html',1,'']]],
