@@ -9,7 +9,8 @@
  */
 
 #include "TestScene.hpp"
-
+#include <memory>
+#include <Game/Config.hpp>
 
 Bomberman::TestScene::TestScene(SceneManager &manager) :
 Scene(manager),
