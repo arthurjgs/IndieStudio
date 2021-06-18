@@ -269,20 +269,12 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00123">123</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    ::Color dummy = {</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        .r = this-&gt;__col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        .g = this-&gt;__col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        .b = this-&gt;__col.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        .a = this-&gt;__col.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    };</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">::DrawCircle</a>(this-&gt;__centerX, this-&gt;__centerY, this-&gt;__radius, dummy);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a96ef1b75d9a6a9e67fafd4d466c79946"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">RayLib::Shapes::Circle::DrawCircle</a></div><div class="ttdeci">void DrawCircle() const</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00123">Circle.cpp:123</a></div></div>
-<div class="ttc" id="aclassType_1_1Color_html_a150435d2b7fe587d0410229b68c932ee"><div class="ttname"><a href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">Type::Color::getB</a></div><div class="ttdeci">uChar &amp; getB()</div><div class="ttdoc">get B value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00084">Color.hpp:84</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00069">69</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">::DrawCircle</a>(this-&gt;__centerX, this-&gt;__centerY, this-&gt;__radius, ::Color{this-&gt;__col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), this-&gt;__col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), this-&gt;__col.getB(), this-&gt;__col.getA()});</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a96ef1b75d9a6a9e67fafd4d466c79946"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">RayLib::Shapes::Circle::DrawCircle</a></div><div class="ttdeci">void DrawCircle() const</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00069">Circle.cpp:69</a></div></div>
 <div class="ttc" id="aclassType_1_1Color_html_a1d0348ebc877166deff6a28063d4f191"><div class="ttname"><a href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">Type::Color::getG</a></div><div class="ttdeci">uChar &amp; getG()</div><div class="ttdoc">get G value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00075">Color.hpp:75</a></div></div>
-<div class="ttc" id="aclassType_1_1Color_html_ac0a8519447c85de6c320179e53bc3cf2"><div class="ttname"><a href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">Type::Color::getA</a></div><div class="ttdeci">uChar &amp; getA()</div><div class="ttdoc">get A value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00093">Color.hpp:93</a></div></div>
 <div class="ttc" id="aclassType_1_1Color_html_ae41cf6315a8f48fc5cfc91e6f868ce8d"><div class="ttname"><a href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">Type::Color::getR</a></div><div class="ttdeci">uChar &amp; getR()</div><div class="ttdoc">get R value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00066">Color.hpp:66</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -335,14 +327,10 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00039">39</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ::Color dummy = {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        .r = col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        .g = col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        .b = col.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        .a = col.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    };</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">::DrawCircle</a>(centerX, centerY, radius, dummy);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a96ef1b75d9a6a9e67fafd4d466c79946">::DrawCircle</a>(centerX, centerY, radius, ::Color{col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), col.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), col.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="aclassType_1_1Color_html_a150435d2b7fe587d0410229b68c932ee"><div class="ttname"><a href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">Type::Color::getB</a></div><div class="ttdeci">uChar &amp; getB()</div><div class="ttdoc">get B value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00084">Color.hpp:84</a></div></div>
+<div class="ttc" id="aclassType_1_1Color_html_ac0a8519447c85de6c320179e53bc3cf2"><div class="ttname"><a href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">Type::Color::getA</a></div><div class="ttdeci">uChar &amp; getA()</div><div class="ttdoc">get A value</div><div class="ttdef"><b>Definition:</b> <a href="Color_8hpp_source.html#l00093">Color.hpp:93</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -398,23 +386,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00080">80</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ::Color dummyCol1 = {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        .r = color1.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        .g = color1.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        .b = color1.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        .a = color1.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    };</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ::Color dummyCol2 = {</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        .r = color2.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        .g = color2.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        .b = color2.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        .a = color2.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    };</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a18f135299cad2001b56a0d00b2ed0219">::DrawCircleGradient</a>(centerX, centerY, radius, dummyCol1, dummyCol2);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a18f135299cad2001b56a0d00b2ed0219"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a18f135299cad2001b56a0d00b2ed0219">RayLib::Shapes::Circle::DrawCircleGradient</a></div><div class="ttdeci">static void DrawCircleGradient(int centerX, int centerY, float radius, const Type::Color &amp;color1, const Type::Color &amp;color2)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00080">Circle.cpp:80</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00054">54</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a18f135299cad2001b56a0d00b2ed0219">::DrawCircleGradient</a>(centerX, centerY, radius, ::Color{ color1.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color1.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color1.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color1.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() }, ::Color{ color2.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color2.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color2.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color2.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a18f135299cad2001b56a0d00b2ed0219"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a18f135299cad2001b56a0d00b2ed0219">RayLib::Shapes::Circle::DrawCircleGradient</a></div><div class="ttdeci">static void DrawCircleGradient(int centerX, int centerY, float radius, const Type::Color &amp;color1, const Type::Color &amp;color2)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00054">Circle.cpp:54</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -464,17 +440,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00112">112</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ::Color dummyCol = {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        .r = color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        .g = color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        .b = color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        .a = color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    };</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#ad05039ec935a76f9be1f61b19e44b649">::DrawCircleLines</a>(centerX, centerY, radius, dummyCol);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_ad05039ec935a76f9be1f61b19e44b649"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#ad05039ec935a76f9be1f61b19e44b649">RayLib::Shapes::Circle::DrawCircleLines</a></div><div class="ttdeci">static void DrawCircleLines(int centerX, int centerY, float radius, const Type::Color &amp;color)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00112">Circle.cpp:112</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00064">64</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#ad05039ec935a76f9be1f61b19e44b649">::DrawCircleLines</a>(centerX, centerY, radius, ::Color{ color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_ad05039ec935a76f9be1f61b19e44b649"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#ad05039ec935a76f9be1f61b19e44b649">RayLib::Shapes::Circle::DrawCircleLines</a></div><div class="ttdeci">static void DrawCircleLines(int centerX, int centerY, float radius, const Type::Color &amp;color)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00064">Circle.cpp:64</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -536,21 +506,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00050">50</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    ::Vector2 dummyVec = {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        .x = vec.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        .y = vec.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    };</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    ::Color dummyCol = {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        .r = col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        .g = col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        .b = col.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        .a = col.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    };</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a6965b862a43fdb7cb75854900e51b2bb">::DrawCircleSector</a>(dummyVec, radius, startAngle, endAngle, segments, dummyCol);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a6965b862a43fdb7cb75854900e51b2bb"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a6965b862a43fdb7cb75854900e51b2bb">RayLib::Shapes::Circle::DrawCircleSector</a></div><div class="ttdeci">static void DrawCircleSector(const Type::Vector&lt; 2 &gt; &amp;vec, float radius, float startAngle, float endAngle, int segments, const Type::Color &amp;col)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00050">Circle.cpp:50</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00044">44</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a6965b862a43fdb7cb75854900e51b2bb">::DrawCircleSector</a>(::Vector2{vec.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(), vec.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()}, radius, startAngle, endAngle, segments, ::Color{ col.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), col.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), col.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), col.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a6965b862a43fdb7cb75854900e51b2bb"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a6965b862a43fdb7cb75854900e51b2bb">RayLib::Shapes::Circle::DrawCircleSector</a></div><div class="ttdeci">static void DrawCircleSector(const Type::Vector&lt; 2 &gt; &amp;vec, float radius, float startAngle, float endAngle, int segments, const Type::Color &amp;col)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00044">Circle.cpp:44</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html_a0167d3843974715eb2edbe2b1793bba9"><div class="ttname"><a href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">Type::Vector::getY</a></div><div class="ttdeci">float &amp; getY()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00129">Vector.hpp:129</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html_aadcbd924c2b192ec64e32b1e48509716"><div class="ttname"><a href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">Type::Vector::getX</a></div><div class="ttdeci">float &amp; getX()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00124">Vector.hpp:124</a></div></div>
 </div><!-- fragment -->
@@ -614,21 +574,10 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00065">65</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    ::Vector2 dummyVec = {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        .x = center.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(),</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        .y = center.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    };</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    ::Color dummyCol = {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        .r = color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        .g = color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        .b = color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        .a = color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a54ce20cf08b3b139e623a550fd91dfc2">::DrawCircleSectorLines</a>(dummyVec, radius, startAngle, endAngle, segments, dummyCol);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a54ce20cf08b3b139e623a550fd91dfc2"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a54ce20cf08b3b139e623a550fd91dfc2">RayLib::Shapes::Circle::DrawCircleSectorLines</a></div><div class="ttdeci">static void DrawCircleSectorLines(const Type::Vector&lt; 2 &gt; &amp;center, float radius, float startAngle, float endAngle, int segments, const Type::Color &amp;color)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00065">Circle.cpp:65</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00049">49</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a6965b862a43fdb7cb75854900e51b2bb">::DrawCircleSector</a>(::Vector2{ center.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(), center.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>() }, radius, startAngle, endAngle, segments, ::Color{ color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -672,21 +621,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00097">97</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ::Vector2 dummyVec = {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        .x = center.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(),</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        .y = center.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    };</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ::Color dummyCol = {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        .r = color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(),</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        .g = color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(),</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        .b = color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(),</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        .a = color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>()</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    };</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a4425cf11175607482635e539c92cd1a2">::DrawCircleV</a>(dummyVec, radius, dummyCol);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a4425cf11175607482635e539c92cd1a2"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a4425cf11175607482635e539c92cd1a2">RayLib::Shapes::Circle::DrawCircleV</a></div><div class="ttdeci">static void DrawCircleV(const Type::Vector&lt; 2 &gt; &amp;center, float radius, const Type::Color &amp;color)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00097">Circle.cpp:97</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Circle_8cpp_source.html#l00059">59</a> of file <a class="el" href="Circle_8cpp_source.html">Circle.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classRayLib_1_1Shapes_1_1Circle.html#a4425cf11175607482635e539c92cd1a2">::DrawCircleV</a>(::Vector2{center.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>(), center.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>()}, radius, ::Color{ color.<a class="code" href="classType_1_1Color.html#ae41cf6315a8f48fc5cfc91e6f868ce8d">getR</a>(), color.<a class="code" href="classType_1_1Color.html#a1d0348ebc877166deff6a28063d4f191">getG</a>(), color.<a class="code" href="classType_1_1Color.html#a150435d2b7fe587d0410229b68c932ee">getB</a>(), color.<a class="code" href="classType_1_1Color.html#ac0a8519447c85de6c320179e53bc3cf2">getA</a>() });</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="ttc" id="aclassRayLib_1_1Shapes_1_1Circle_html_a4425cf11175607482635e539c92cd1a2"><div class="ttname"><a href="classRayLib_1_1Shapes_1_1Circle.html#a4425cf11175607482635e539c92cd1a2">RayLib::Shapes::Circle::DrawCircleV</a></div><div class="ttdeci">static void DrawCircleV(const Type::Vector&lt; 2 &gt; &amp;center, float radius, const Type::Color &amp;color)</div><div class="ttdef"><b>Definition:</b> <a href="Circle_8cpp_source.html#l00059">Circle.cpp:59</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
