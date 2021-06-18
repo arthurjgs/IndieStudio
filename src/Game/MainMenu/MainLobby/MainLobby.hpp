@@ -19,6 +19,7 @@
 #include "../../FlashingText/FlashingText.hpp"
 #include <map>
 #include <functional>
+#include <filesystem>
 #include "../SelectionMenu/SelectionMenu.hpp"
 
 namespace Bomberman {
@@ -47,6 +48,8 @@ namespace Bomberman {
                     LOAD_PANEL
                 };
 
+                void __deleteSaveButtons(const std::vector<std::string> &container);
+                void __fetchSave();
 
                 void createSavePanel();
                 void createAudioPanel();
@@ -68,6 +71,8 @@ namespace Bomberman {
 
                 // load panel
                 void closeButtonCallback();
+                void backButtonCallback();
+                void forwardButtonCallback();
 
                 // audio panel
                 void closeAudioCallback();
@@ -121,6 +126,9 @@ namespace Bomberman {
                 std::map<int, std::string> __controllerMapLoad;
                 int __currentBtnLoad;
 
+                std::string getFileName(const std::string &val);
+                std::vector<std::weak_ptr<Button>> __saveButtons;                
+
                 bool settingsFocus;
                 bool mainPanelFocus;
                 bool helpPanelFocus;
@@ -132,7 +140,7 @@ namespace Bomberman {
                 void manageSpecificController(int &index, std::map<int, std::string> &map);
 
                 std::string findFocusedPanelButton();
-
+                
                 bool &getActivePanel();
 
                 bool __settings;
@@ -144,6 +152,7 @@ namespace Bomberman {
                 
 
                 int __ignore;
+                int __saveIndex;
 
                 bool controllerActive;
 
