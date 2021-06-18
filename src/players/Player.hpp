@@ -8,9 +8,7 @@
 #ifndef BOMBERMAN_PLAYER_HPP
 #define BOMBERMAN_PLAYER_HPP
 
-#include <Game/GameObject.hpp>
 #include "RayLib/Model/Animate/Animate.hpp"
-#include <Game/GameException.hpp>
 #include <RayLib/InputKeyboard.hpp>
 #include <Game/Bomb/Bomb.hpp>
 #include <memory>
@@ -26,7 +24,7 @@ namespace Bomberman {
             DEAD
         };
 
-        Player(const std::string &name, const Type::Vector<3> &position, float speed = 3.0f, int bombs = 1, int range = 1);
+        Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed = 3.0f, int bombs = 1, int range = 2);
         ~Player() override;
 
         void setRange(int range);
@@ -47,9 +45,20 @@ namespace Bomberman {
         bool checkFreeTimer();
         void launchFreeTimer(const double &elapsed);
         void checkTimer(const double &elapsed);
+        void updateCollisions(Type::Vector<3> position, int update);
+        void updateDangers(Type::Vector<3> position, int range, int update);
         std::shared_ptr<Bomb> createBomb();
 
     private:
+        void _iaOrPlayer(double elapsed);
+        void _playerHandler(double elapsed);
+        void _playerKeyboard(double elapsed);
+        void _playerGamepad(double elapsed, int gamepad);
+        void _AiHandler();
+        void _moveAi();
+        void _setNewGoalOffense();
+        bool _isSolidBlock(int x, int z);
+        bool _isDangerousBox(int x, int z);
         int _range;
         float _speed;
         std::vector<double> _bombTimers;
@@ -58,6 +67,44 @@ namespace Bomberman {
         double _startActionTime;
         bool _alreadyCreatedBomb;
         double _rotationAngle;
+        bool _isAi;
+        int _controller;
+        std::pair<int, int> _newGoal;
+        int _walls[15][15] = {
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+                {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1},
+                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+        };
+        int _dangers[15][15] =
+                {
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                        {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+                };
     };
 }
 

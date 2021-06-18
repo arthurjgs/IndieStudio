@@ -380,7 +380,7 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>(Bomberman::Config::ExecutablePath +  "lib/bomberman_player.dylib", "", "", "");
+            __manager.clearStack<Bomberman::GameScene>(_firstPlayerGamepad, _players, Bomberman::Config::ExecutablePath +  "lib/bomberman_player.dylib", "", "", "");
         }
 }
 

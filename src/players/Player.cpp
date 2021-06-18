@@ -70,7 +70,7 @@ void Bomberman::Player::updateCollisions(Type::Vector<3> position, int update)
 
 void Bomberman::Player::updateDangers(Type::Vector<3> position, int range, int update)
 {
-    _dangers[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7];
+    _dangers[static_cast<int>(position.getZ()) + 7][static_cast<int>(position.getX()) + 7] = 1;
     for (int i = 0; i < range; i++)
     {
         if (static_cast<int>(position.getZ()) + 7 + (i + 1) < 15)
