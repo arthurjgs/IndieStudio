@@ -111,25 +111,28 @@ $(function() {
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <span class="keywordtype">void</span> goToGameScene();</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                std::vector&lt;std::shared_ptr&lt;GameObject&gt;&gt; __objContainer;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                std::vector&lt;std::shared_ptr&lt;Player&gt;&gt; __modelsContainer;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                std::vector&lt;std::string&gt; getPlayerDlls();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordtype">int</span> _players;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="classType_1_1Camera3D.html">Type::Camera3D</a> _camera;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">bool</span> _firstPlayerGamepad;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                std::vector&lt;std::weak_ptr&lt;StateImage&gt;&gt;__stateImagesReferer;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                std::vector&lt;std::weak_ptr&lt;FlashingText&gt;&gt; __flashingTextReferer;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">int</span> _selectionPlayer;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keywordtype">bool</span> _isAction;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">bool</span> _isPlayerTwoAI;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">bool</span> _isPlayerThreeAI;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">bool</span> _isPlayerFourAI;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                std::vector&lt;int&gt; _selectedModel;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                std::vector&lt;std::shared_ptr&lt;Player&gt;&gt; __modelsContainer1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                std::vector&lt;std::shared_ptr&lt;Player&gt;&gt; __modelsContainer2;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                std::vector&lt;std::shared_ptr&lt;Player&gt;&gt; __modelsContainer3;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                std::vector&lt;std::string&gt; getPlayerDlls();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordtype">int</span> _players;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="classType_1_1Camera3D.html">Type::Camera3D</a> _camera;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                <span class="keywordtype">bool</span> _firstPlayerGamepad;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                std::vector&lt;std::weak_ptr&lt;StateImage&gt;&gt;__stateImagesReferer;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                std::vector&lt;std::weak_ptr&lt;FlashingText&gt;&gt; __flashingTextReferer;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">int</span> _selectionPlayer;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">bool</span> _isAction;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">bool</span> _isPlayerTwoAI;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordtype">bool</span> _isPlayerThreeAI;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordtype">bool</span> _isPlayerFourAI;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                std::vector&lt;int&gt; _selectedModel;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        };</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="ttc" id="aPlayer_8hpp_html"><div class="ttname"><a href="Player_8hpp.html">Player.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html">Bomberman::Menu::SelectionMenu</a></div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8hpp_source.html#l00027">SelectionMenu.hpp:27</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a0ac9e6ee8f16f26fc398abda5ca4f9d3"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0ac9e6ee8f16f26fc398abda5ca4f9d3">Bomberman::Menu::SelectionMenu::operator=</a></div><div class="ttdeci">SelectionMenu &amp; operator=(const SelectionMenu &amp;)=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a0e0c659b585881155834202f385493de"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00454">SelectionMenu.cpp:454</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a0e0c659b585881155834202f385493de"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a0e0c659b585881155834202f385493de">Bomberman::Menu::SelectionMenu::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00452">SelectionMenu.cpp:452</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a4294ffbbaf583d53e5ef1d50fcf262aa"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a4294ffbbaf583d53e5ef1d50fcf262aa">Bomberman::Menu::SelectionMenu::~SelectionMenu</a></div><div class="ttdeci">~SelectionMenu()=default</div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a694a6c181e5af7411826cb42125d35ef"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a694a6c181e5af7411826cb42125d35ef">Bomberman::Menu::SelectionMenu::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="SelectionMenu_8cpp_source.html#l00432">SelectionMenu.cpp:432</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Menu_1_1SelectionMenu_html_a77bbee9ebce6dd7c9942795b98378911"><div class="ttname"><a href="classBomberman_1_1Menu_1_1SelectionMenu.html#a77bbee9ebce6dd7c9942795b98378911">Bomberman::Menu::SelectionMenu::SelectionMenu</a></div><div class="ttdeci">SelectionMenu(const SelectionMenu &amp;)=delete</div></div>
