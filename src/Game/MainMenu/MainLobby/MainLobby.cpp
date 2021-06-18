@@ -990,6 +990,8 @@ void Bomberman::Menu::MainLobby::update(const double &elapsed)
     for (auto const &val : this->__saveButtons) {
         if (val.lock()->getDisplay() && val.lock()->isClick() && this->__saveDisplay == false) {
             std::cout << "click " << val.lock()->getName() << std::endl;
+            // TODO: gather player dll path here and send save path with it
+            // Can't do that now because i do not have any way to retrieve player dll path via player class
         }
     }
     this->__saveDisplay = false;
