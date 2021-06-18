@@ -10,6 +10,9 @@
 
 #include "Credits.hpp"
 #include "../../../RayLib/Window.hpp"
+#include <string>
+#include <memory>
+#include <Game/Config.hpp>
 
 Bomberman::Menu::CreditsComponent::CreditsComponent(const std::string &imgPath, const std::vector<std::string> &textVec) :
 __img(imgPath, "image", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 200.0f, 0.0f))
@@ -60,7 +63,7 @@ void Bomberman::Menu::CreditsComponent::draw() const
 
 Bomberman::Menu::Credits::Credits(SceneManager &manager) : Scene(manager)
 {
-    this->__objContainer.emplace_back(std::make_unique<Image>("./assets/MainMenu/credits_back.png", "background", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f)));
+    this->__objContainer.emplace_back(std::make_unique<Image>(Bomberman::Config::ExecutablePath + "./assets/MainMenu/credits_back.png", "background", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f)));
     this->__textIndex = 0;
 
     std::vector<std::string> textSetOne;
@@ -84,7 +87,7 @@ Bomberman::Menu::Credits::Credits(SceneManager &manager) : Scene(manager)
     std::vector<std::string> textSetSeven;
     textSetSeven.push_back("Virgile Agnel");
 
-    this->__textVector.emplace_back(0, std::make_unique<CreditsComponent>("./assets/MainMenu/lobby.png", textSetOne));
+    this->__textVector.emplace_back(0, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "./assets/MainMenu/lobby.png", textSetOne));
     this->__textVector.emplace_back(1, std::make_unique<CreditsComponent>("", textSetTwo));
     this->__textVector.emplace_back(2, std::make_unique<CreditsComponent>("", textSetThree));
     this->__textVector.emplace_back(3, std::make_unique<CreditsComponent>("", textSetFour));
