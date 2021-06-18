@@ -31,6 +31,7 @@ namespace Bomberman {
         std::vector<std::shared_ptr<Flame>> explode();
         void update(const double &elapsed);
         void render() const;
+        inline int getRange() const { return _range; };
     protected:
     private:
         double _lifespan;

@@ -26,7 +26,7 @@ namespace Bomberman {
     class GameScene : public Scene {
         public:
             GameScene() = delete;
-            GameScene(SceneManager &manager,
+            GameScene(SceneManager &manager, bool firstPlayerGamepad, int players,
                       const std::string &playerDll1, const std::string &playerDll2,
                       const std::string &playerDll3, const std::string &playerDll4, const int timer = 180);
             ~GameScene() = default;
@@ -64,12 +64,15 @@ namespace Bomberman {
             std::vector<std::pair<UI_SCENE, std::shared_ptr<GameObject>>> _2DGameObjectList;
             std::vector<std::pair<UI_SCENE, std::weak_ptr<FlashingText>>> _2DDynamicText;
             std::vector<std::pair<UI_SCENE, std::weak_ptr<Button>>> _2DButtonList;
+            std::vector<std::weak_ptr<Bomberman::Crate>> _CrateList;
             std::map<std::string, std::function<void(GameScene &)>>  _buttonCallback; 
 
             UI_SCENE _currentUIStage;
             std::vector<std::weak_ptr<Bomberman::Bomb>> _bombList;
             std::weak_ptr<Map> _gameMap;
             std::shared_ptr<Image> _background;
+            bool _firstPlayerGamepad;
+            int _players;
             Type::Camera3D _camera;
             int _timer;
             double _second;
