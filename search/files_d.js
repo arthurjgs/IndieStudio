@@ -14,5 +14,7 @@ var searchData=
   ['spritesheetplayer_2ecpp_830',['SpriteSheetPlayer.cpp',['../SpriteSheetPlayer_8cpp.html',1,'']]],
   ['spritesheetplayer_2ehpp_831',['SpriteSheetPlayer.hpp',['../SpriteSheetPlayer_8hpp.html',1,'']]],
   ['stateimage_2ecpp_832',['StateImage.cpp',['../StateImage_8cpp.html',1,'']]],
-  ['stateimage_2ehpp_833',['StateImage.hpp',['../StateImage_8hpp.html',1,'']]]
+  ['stateimage_2ehpp_833',['StateImage.hpp',['../StateImage_8hpp.html',1,'']]],
+  ['steve_2ecpp_834',['steve.cpp',['../steve_8cpp.html',1,'']]],
+  ['steve_2ehpp_835',['steve.hpp',['../steve_8hpp.html',1,'']]]
 ];
