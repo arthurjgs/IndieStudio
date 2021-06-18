@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['walking_588',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]],
-  ['what_589',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException::what()'],['../classBomberman_1_1GameException.html#a5e3d88a31390040f1cb89cc62374df85',1,'Bomberman::GameException::what()'],['../classBomberman_1_1QuitGame.html#a7ad4228668b9fe5d6d557a40048fee2c',1,'Bomberman::QuitGame::what()']]],
-  ['window_590',['Window',['../classRayLib_1_1Window.html',1,'RayLib']]],
-  ['window_2ecpp_591',['Window.cpp',['../Window_8cpp.html',1,'']]],
-  ['window_2ehpp_592',['Window.hpp',['../Window_8hpp.html',1,'']]]
+  ['walking_595',['WALKING',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0',1,'Bomberman::Player']]],
+  ['what_596',['what',['../classLibDl_1_1DynamicLibraryException.html#a53247e6e56d868036550277ff3b06d1a',1,'LibDl::DynamicLibraryException::what()'],['../classBomberman_1_1GameException.html#a5e3d88a31390040f1cb89cc62374df85',1,'Bomberman::GameException::what()'],['../classBomberman_1_1QuitGame.html#a7ad4228668b9fe5d6d557a40048fee2c',1,'Bomberman::QuitGame::what()']]],
+  ['window_597',['Window',['../classRayLib_1_1Window.html',1,'RayLib']]],
+  ['window_2ecpp_598',['Window.cpp',['../Window_8cpp.html',1,'']]],
+  ['window_2ehpp_599',['Window.hpp',['../Window_8hpp.html',1,'']]]
 ];

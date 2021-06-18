@@ -185,27 +185,28 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            loadObjects();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">case</span> PLAYER_SELECTION:</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="keywordflow">case</span> MAP_SELECTION:</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">  122</a></span>&#160;std::shared_ptr&lt;RayLib::Models::Animate&gt; <a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a>(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;{</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; model : this-&gt;_models) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">if</span> (model.first == <span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <span class="keywordflow">return</span> model.second;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;RayLib::Manager3D::~Manager3D() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            loadPlayers();</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">case</span> MAP_SELECTION:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno"><a class="line" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">  123</a></span>&#160;std::shared_ptr&lt;RayLib::Models::Animate&gt; <a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a>(<span class="keyword">const</span> std::string &amp;<span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; model : this-&gt;_models) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (model.first == <span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> model.second;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;RayLib::Manager3D::~Manager3D() = <span class="keywordflow">default</span>;</div>
 <div class="ttc" id="aManager3D_8hpp_html"><div class="ttname"><a href="Manager3D_8hpp.html">Manager3D.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameException_html"><div class="ttname"><a href="classBomberman_1_1GameException.html">Bomberman::GameException</a></div><div class="ttdef"><b>Definition:</b> <a href="GameException_8hpp_source.html#l00016">GameException.hpp:16</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html"><div class="ttname"><a href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a></div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8hpp_source.html#l00017">Manager3D.hpp:17</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html_a60d9b18d2acceb319a74b15bebd176bd"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a60d9b18d2acceb319a74b15bebd176bd">RayLib::Manager3D::setScene</a></div><div class="ttdeci">void setScene(Scene nextScene)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00020">Manager3D.cpp:20</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Manager3D_html_a8f72fcf7e87d47c13717cf52cdc4bb50"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a></div><div class="ttdeci">std::shared_ptr&lt; RayLib::Models::Animate &gt; getModel(const std::string &amp;object)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00122">Manager3D.cpp:122</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Manager3D_html_a8f72fcf7e87d47c13717cf52cdc4bb50"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a></div><div class="ttdeci">std::shared_ptr&lt; RayLib::Models::Animate &gt; getModel(const std::string &amp;object)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00123">Manager3D.cpp:123</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html_abbf9eec195dc5f9aea5b651a063168cd"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a></div><div class="ttdeci">static Manager3D &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00010">Manager3D.cpp:10</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html_ae135c11d0071eefafe117b3e7f720198"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198">RayLib::Manager3D::Scene</a></div><div class="ttdeci">Scene</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8hpp_source.html#l00019">Manager3D.hpp:19</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html_ae135c11d0071eefafe117b3e7f720198a68a070cf1d271e853b8d2fd7c30fc7e4"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a68a070cf1d271e853b8d2fd7c30fc7e4">RayLib::Manager3D::NONE</a></div><div class="ttdeci">@ NONE</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8hpp_source.html#l00020">Manager3D.hpp:20</a></div></div>
