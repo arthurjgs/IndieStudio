@@ -29,7 +29,7 @@ namespace Bomberman {
             GameScene() = delete;
             GameScene(SceneManager &manager,
                       const std::string &playerDll1, const std::string &playerDll2,
-                      const std::string &playerDll3, const std::string &playerDll4, const int timer = 180);
+                      const std::string &playerDll3, const std::string &playerDll4, const std::string &savePath = "", const int timer = 180);
             ~GameScene() = default;
             GameScene(const GameScene &) = delete;
             GameScene &operator = (const GameScene &) = delete;

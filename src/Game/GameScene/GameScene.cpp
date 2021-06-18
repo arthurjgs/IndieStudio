@@ -160,7 +160,8 @@ void Bomberman::GameScene::createPause()
 
 Bomberman::GameScene::GameScene(SceneManager &manager,
                                 const std::string &playerDll1, const std::string &playerDll2,
-                                const std::string &playerDll3, const std::string &playerDll4, const int timer) : Scene(manager),
+                                const std::string &playerDll3, const std::string &playerDll4, 
+                                const std::string &savePath, const int timer) : Scene(manager),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
