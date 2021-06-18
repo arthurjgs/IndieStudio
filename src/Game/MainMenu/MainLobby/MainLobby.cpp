@@ -278,7 +278,7 @@ Scene(manager)
     this->__currentBtnGameplay = 0;
     this->__currentBtnVideo = 0;
     this->__currentBtnLoad = 0;
-    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/music.mp3", 0.5f));
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MenuMusic", Bomberman::Config::ExecutablePath + "assets/sounds/lobbymusic.mp3", 0.5f));
     // TODO: set music volume via config file for each musics created
 }
 
