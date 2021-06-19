@@ -12,6 +12,8 @@
 #include "../../QuitGame/QuitGame.hpp"
 #include "../Credits/Credits.hpp"
 #include "../../Music/Music.hpp"
+#include "../../Save/GameSceneData/GameSceneData.hpp"
+#include "../../GameScene/GameScene.hpp"
 
 void Bomberman::Menu::MainLobby::backButtonCallback()
 {
@@ -959,6 +961,12 @@ void Bomberman::Menu::MainLobby::manageControllerInput()
     }
 }
 
+void Bomberman::Menu::MainLobby::__handleSaveTransition(const std::string &path)
+{
+    GameSceneData data(path);
+    this->__manager.clearStack<Bomberman::GameScene>(data.getPlayerInputIds(), data.getPlayerIa(), data.getDll1(), data.getDll2(), data.getDll3(), data.getDll4(), data.getSavePath(), data.getTimer());
+}
+
 void Bomberman::Menu::MainLobby::update(const double &elapsed)
 {
     if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0) {
@@ -989,9 +997,8 @@ void Bomberman::Menu::MainLobby::update(const double &elapsed)
     }
     for (auto const &val : this->__saveButtons) {
         if (val.lock()->getDisplay() && val.lock()->isClick() && this->__saveDisplay == false) {
-            std::cout << "click " << val.lock()->getName() << std::endl;
-            // TODO: gather player dll path here and send save path with it
-            // Can't do that now because i do not have any way to retrieve player dll path via player class
+            this->__handleSaveTransition(val.lock()->getName());
+            return;
         }
     }
     this->__saveDisplay = false;

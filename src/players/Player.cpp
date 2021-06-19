@@ -26,6 +26,7 @@ _rotationAngle(0)
         throw g;
     }
     this->_dllPath = dllPath;
+    this->_bombs = bombs;
 }
 
 Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
@@ -45,6 +46,7 @@ _rotationAngle(0)
     catch (GameException &g) {
         throw g;
     }
+    this->_bombs = bombs;
 }
 
 Bomberman::Player::~Player() = default;

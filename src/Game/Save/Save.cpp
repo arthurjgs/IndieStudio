@@ -57,8 +57,11 @@ void Bomberman::Save::__writePlayer(const std::weak_ptr<Bomberman::Player> &val,
 {
     file << "player:" << val.lock()->getName() << ",";
     file << val.lock()->getPath() << ",";
+    file << val.lock()->getIsAi() << ",";
+    file << val.lock()->getController() << ",";
+    file << val.lock()->getBombs() << ",";
     file << val.lock()->getDisplay() << ",";
-    file << "{" << val.lock()->getPosition().getX() << "," << val.lock()->getPosition().getY() << "," << val.lock()->getPosition().getZ() << "}" << ",";
+    file << "{" << val.lock()->getPosition().getX() << "|" << val.lock()->getPosition().getY() << "|" << val.lock()->getPosition().getZ() << "}" << ",";
     file << val.lock()->getSpeed() << ",";
     file << val.lock()->getRange();
     file << std::endl;
@@ -68,7 +71,7 @@ void Bomberman::Save::__writeCrate(const std::weak_ptr<GameObject> &val, std::of
 {
     file << "crate:" << val.lock()->getName() << ",";
     file << val.lock()->getDisplay() << ",";
-    file << "{" << val.lock()->getPosition().getX() << "," << val.lock()->getPosition().getY() << "," << val.lock()->getPosition().getZ() << "}";
+    file << "{" << val.lock()->getPosition().getX() << "|" << val.lock()->getPosition().getY() << "|" << val.lock()->getPosition().getZ() << "}";
     file << std::endl;
 }
 

@@ -20,6 +20,7 @@
 #include "../../RayLib/Text/Text.hpp"
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
+#include "../Save/PlayerData/PlayerData.hpp"
 #include <map>
 #include <functional>
 
@@ -53,6 +54,8 @@ namespace Bomberman {
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
             std::weak_ptr<GameObject> getObjectFromName(const std::string &name);
             std::shared_ptr<Player> loadPlayerDll(const std::string &dllPath, int inputId, int isIa, const Type::Vector<3> &position);
+            std::shared_ptr<Player> loadPlayerFromSave(const PlayerData &data);
+            void __createCratesFromSaves(const std::string &path);
 
             void createPause();
             void updatePause(const double &elasped);

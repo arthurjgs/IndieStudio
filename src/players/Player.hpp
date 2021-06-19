@@ -51,6 +51,9 @@ namespace Bomberman {
         std::shared_ptr<Bomb> createBomb();
 
         inline std::string getPath() const { return (this->_dllPath); }
+        inline bool getIsAi() const { return (this->_isAi); }
+        inline int getController() const { return (this->_controller); }
+        inline int getBombs() const { return (this->_bombs); }
     private:
         void _iaOrPlayer(double elapsed);
         void _playerHandler(double elapsed);
@@ -70,6 +73,7 @@ namespace Bomberman {
         bool _alreadyCreatedBomb;
         double _rotationAngle;
         bool _isAi;
+        int _bombs;
         int _controller;
         std::string _dllPath;
         std::pair<int, int> _newGoal;

@@ -160,6 +160,37 @@ void Bomberman::GameScene::createPause()
     this->_buttonCallback["confirmSave"] = &GameScene::confirmSaveCallback;
 }
 
+std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerFromSave(const PlayerData &data)
+{
+    std::shared_ptr<Player> player = std::make_shared<Player>(data.getName(), data.getPositions(),
+            data.getAi(), data.getController(), data.getPath(), data.getSpeed(),
+            data.getBombs(), data.getRange());
+
+    try {
+        std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(data.getPath());
+        auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+        AbstractPlayer *p1 = fct();
+        if (p1 == nullptr)
+            throw GameException("Symbol not found entryPoint in " + data.getPath());
+        player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+    } catch (LibDl::DynamicLibraryException &e) {
+        throw e;
+    }
+    return (player);
+}
+
+void Bomberman::GameScene::__createCratesFromSaves(const std::string &path)
+{
+    for (auto & obj : this->_gameMap.lock()->createCratesSaves(path))
+    {
+        for (auto &val : this->_listPlayers)
+            val.lock()->updateCollisions(obj->getPosition(), 2);
+        this->_gameObjectList.emplace_back(obj);
+        this->_CrateList.emplace_back(obj);
+    }
+}
+
+
 Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                                 const std::string &playerDll1, const std::string &playerDll2,
                                 const std::string &playerDll3, const std::string &playerDll4, 
@@ -171,11 +202,23 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
-    std::shared_ptr<Player> player1 = loadPlayerDll(playerDll1, playerInputIds[0], playerIa[0], Type::Vector<3>(-6.0f, 0.0f, -6.0f));
-    std::shared_ptr<Player> player2 = loadPlayerDll(playerDll2, playerInputIds[1], playerIa[1], Type::Vector<3>(6.0f, 0.0f, -6.0f));
-    std::shared_ptr<Player> player3 = loadPlayerDll(playerDll3, playerInputIds[2], playerIa[2], Type::Vector<3>(-6.0f, 0.0f, 6.0f));
-    std::shared_ptr<Player> player4 = loadPlayerDll(playerDll4, playerInputIds[3], playerIa[3], Type::Vector<3>(6.0f, 0.0f, 6.0f));
-
+    std::shared_ptr<Player> player1;
+    std::shared_ptr<Player> player2;
+    std::shared_ptr<Player> player3;
+    std::shared_ptr<Player> player4; 
+    if (savePath != "") {
+        PlayerParse parser(savePath);
+        
+        player1 = loadPlayerFromSave(parser.getPlayerOne());
+        player2 = loadPlayerFromSave(parser.getPlayerTwo());
+        player3 = loadPlayerFromSave(parser.getPlayerThree());
+        player4 = loadPlayerFromSave(parser.getPlayerFour());
+    } else {
+        player1 = loadPlayerDll(playerDll1, playerInputIds[0], playerIa[0], Type::Vector<3>(-6.0f, 0.0f, -6.0f));
+        player2 = loadPlayerDll(playerDll2, playerInputIds[1], playerIa[1], Type::Vector<3>(6.0f, 0.0f, -6.0f));
+        player3 = loadPlayerDll(playerDll3, playerInputIds[2], playerIa[2], Type::Vector<3>(-6.0f, 0.0f, 6.0f));
+        player4 = loadPlayerDll(playerDll4, playerInputIds[3], playerIa[3], Type::Vector<3>(6.0f, 0.0f, 6.0f));
+    }
     this->_timer = timer;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
@@ -204,12 +247,16 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     this->createPause();
 
     this->_gameMap = gameMap;
-    for (auto & obj : this->_gameMap.lock()->createCrates(75))
-    {
-        for (auto &val : this->_listPlayers)
-            val.lock()->updateCollisions(obj->getPosition(), 2);
-        this->_gameObjectList.emplace_back(obj);
-        this->_CrateList.emplace_back(obj);
+    if (savePath != "") {
+        this->__createCratesFromSaves(savePath);
+    } else {
+        for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        {
+            for (auto &val : this->_listPlayers)
+                val.lock()->updateCollisions(obj->getPosition(), 2);
+            this->_gameObjectList.emplace_back(obj);
+            this->_CrateList.emplace_back(obj);
+        }
     }
 
     //this->_listPlayers.emplace_back(player2);

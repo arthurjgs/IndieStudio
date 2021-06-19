@@ -41,6 +41,29 @@ void Bomberman::Map::update(const double &elapsed)
     (void) elapsed;
 }
 
+std::vector<std::shared_ptr<Bomberman::Crate>> Bomberman::Map::createCratesSaves(const std::string &path)
+{
+    std::vector<std::shared_ptr<Bomberman::Crate>> vec;
+    std::ifstream infile(path);
+    std::string line = "";
+    std::string lineData = "";
+
+    if (infile.is_open() == false) {
+        throw std::runtime_error(path + " -> does not exist");
+    }
+    while (std::getline(infile, line)) {
+        if (line.substr(0, line.find(':')) == "crate") {
+            lineData = line.substr(line.find(':') + 1, line.length());
+            std::vector<std::string> res = GameSceneData::splitFromSep(',', lineData);
+            std::vector<std::string> posRes = GameSceneData::splitFromSep('|', res[2]);
+            posRes[0].erase(std::remove(posRes[0].begin(), posRes[0].end(), '{'), posRes[0].end());
+            posRes[2].erase(std::remove(posRes[2].begin(), posRes[2].end(), '}'), posRes[2].end());
+            vec.emplace_back(std::make_shared<Crate>(Type::Vector<3>(std::stof(posRes[0]), std::stof(posRes[1]), std::stof(posRes[2]))));
+        }
+    }
+    return (vec);
+}
+
 std::vector<std::shared_ptr<Bomberman::Crate>> Bomberman::Map::createCrates(const double &percentage)
 {
     std::vector<std::shared_ptr<Bomberman::Crate>> crates;

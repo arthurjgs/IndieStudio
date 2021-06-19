@@ -95,6 +95,8 @@ add_executable(bomberman
         src/Game/Flame/Flame.hpp
         src/Game/Crate/Crates.cpp
         src/Game/Crate/Crates.hpp
+        src/Game/Save/GameSceneData/GameSceneData.cpp
+        src/Game/Save/PlayerData/PlayerData.cpp
         src/players/Player.cpp
         src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
         

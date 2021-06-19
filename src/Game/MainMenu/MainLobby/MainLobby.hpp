@@ -48,6 +48,7 @@ namespace Bomberman {
                     LOAD_PANEL
                 };
 
+                void __handleSaveTransition(const std::string &path);
                 void __deleteSaveButtons(const std::vector<std::string> &container);
                 void __fetchSave();
 
