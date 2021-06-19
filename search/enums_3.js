@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['playerstate_1324',['PlayerState',['../classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8',1,'Bomberman::Player']]]
+  ['scene_1322',['Scene',['../classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198',1,'RayLib::Manager3D']]],
+  ['side_1323',['Side',['../classBomberman_1_1Bomb.html#a9130bd632b3b9d4ab5423ee7a537f971',1,'Bomberman::Bomb']]]
 ];

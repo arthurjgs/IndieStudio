@@ -235,7 +235,7 @@ $(function() {
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : this-&gt;_gameMap.lock()-&gt;createCrates(75))</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    {</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            val.lock()-&gt;updateCollisions(obj-&gt;getPosition(), 1);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            val.lock()-&gt;updateCollisions(obj-&gt;getPosition(), 2);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        this-&gt;_gameObjectList.emplace_back(obj);</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        this-&gt;_CrateList.emplace_back(obj);</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
@@ -465,7 +465,7 @@ $(function() {
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                {</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    val.lock()-&gt;updateCollisions(bomb-&gt;getPosition(), 1);</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                    val.lock()-&gt;updateCollisions(bomb-&gt;getPosition(), 2);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                    val.lock()-&gt;updateDangers(bomb-&gt;getPosition(), bomb-&gt;getRange(), 1);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                }</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                _gameObjectList.emplace_back(bomb);</div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valuetype_1327',['ValueType',['../classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7',1,'Bomberman::UserConfig']]]
+  ['xbox_1325',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window']]]
 ];
