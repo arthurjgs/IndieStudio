@@ -8,9 +8,10 @@
 #include <RayLib/Manager3D.hpp>
 #include "Bomb.hpp"
 
-Bomberman::Bomb::Bomb(const Type::Vector<3> &position, int range) : GameObject("Bomb", BOMB, position), _lifespan(0), _exploded(false), _range(range)
+Bomberman::Bomb::Bomb(const Type::Vector<3> &position, Player *owner, int range) : GameObject("Bomb", BOMB, position), _lifespan(0), _exploded(false), _range(range)
 {
     this->setPosition(position);
+    this->_owner = owner;
 }
 
 Bomberman::Bomb::~Bomb() = default;

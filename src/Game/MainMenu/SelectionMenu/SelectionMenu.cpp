@@ -13,11 +13,18 @@
 #include "../../GameScene/GameScene.hpp"
 #include "../../../RayLib/Window.hpp"
 #include <Game/Config.hpp>
+#include <DynamicLibrary/DynamicLibrary.hpp>
+#include <players/AbstractPlayer.hpp>
+#include <RayLib/Manager3D.hpp>
 
-Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager)
+Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(manager), _camera(Type::Vector<3>(0.0f, 1.0f, 15.0f),
+                                                                                               Type::Vector<3>(0.0f, 0.0f, 0.0f),
+                                                                                               Type::Vector<3>(0.0f, 1.0f, 0.0f),
+                                                                                               25.0f,
+                                                                                               CAMERA_PERSPECTIVE)
 {
+    RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::PLAYER_SELECTION);
     _players = 1;
-    _firstPlayerGamepad = false;
     _selectionPlayer = 0;
     _isAction = false;
     const std::string text = "MULTIPLAYER BATTLE";
@@ -87,16 +94,80 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
     this->__flashingTextReferer.emplace_back(_gamepadInfoThree);
     this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "./assets/selectionmenu/bande_bot.png", "bande_bot", GameObject::ObjectType::DECOR, Type::Vector<3>(0.0f, 930.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<FlashingText>("Please select your charactere", Type::Color(255, 255, 255, 255), 50, 150, "select", GameObject::ObjectType::DECOR, Type::Vector<2>(580.0f, 970.0f)));
+
+    loadPlayers();
 }
 
 void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
 {
     if (_selectionPlayer == 0)
     {
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_K))
-            _firstPlayerGamepad = false;
-        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_P))
-            _firstPlayerGamepad = true;
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_K)) {
+            _playerInputIds = { -1, 0, 1, 2 };
+        }
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_P)) {
+            _playerInputIds = { 0, 1, 2, 3 };
+        }
+        if (_playerInputIds[0] == -1) {
+            if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_LEFT)) {
+                std::cout << this->_selectedModel[0] << std::endl;
+                if (this->_selectedModel[0] != 0)
+                    this->_selectedModel[0]--;
+            }
+            if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_RIGHT)) {
+                std::cout << this->_selectedModel[0] << std::endl;
+
+                if (this->_selectedModel[0] + 1 < this->__modelsContainer.size())
+                    this->_selectedModel[0]++;
+            }
+        } else {
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[0], RayLib::Window::LEFT)) {
+                if (this->_selectedModel[0] != 0)
+                    this->_selectedModel[0]--;
+            }
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[0], RayLib::Window::RIGHT)) {
+                if (this->_selectedModel[0] + 1 < this->__modelsContainer.size())
+                    this->_selectedModel[0]++;
+            }
+        }
+
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[1])) {
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[1],
+                                                                                        RayLib::Window::LEFT)) {
+                if (this->_selectedModel[1] != 0)
+                    this->_selectedModel[1]--;
+            }
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[1],
+                                                                                        RayLib::Window::RIGHT)) {
+                if (this->_selectedModel[1] + 1 < this->__modelsContainer.size())
+                    this->_selectedModel[1]++;
+            }
+        }
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[2])) {
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[2],
+                                                                                        RayLib::Window::LEFT)) {
+                if (this->_selectedModel[2] != 0)
+                    this->_selectedModel[2]--;
+            }
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[2],
+                                                                                        RayLib::Window::RIGHT)) {
+                if (this->_selectedModel[2] + 1 < this->__modelsContainer.size())
+                    this->_selectedModel[2]++;
+            }
+        }
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[3])) {
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[3],
+                                                                                        RayLib::Window::LEFT)) {
+                if (this->_selectedModel[3] != 0)
+                    this->_selectedModel[3]--;
+            }
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[3],
+                                                                                        RayLib::Window::RIGHT)) {
+                if (this->_selectedModel[3] + 1 < this->__modelsContainer.size())
+                    this->_selectedModel[3]++;
+            }
+        }
+
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_ENTER))
         {
             _selectionPlayer += 1;
@@ -118,30 +189,25 @@ void Bomberman::Menu::SelectionMenu::isKeyboardOrGamepad()
 
 void Bomberman::Menu::SelectionMenu::ready()
 {
-    int ajust = 0;
-    if (!_firstPlayerGamepad)
-        ajust = -1;
-    if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_ENTER))
-        readySquareState();
-    if (_firstPlayerGamepad)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::A))
+    if (_playerInputIds[0] == -1) {
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_ENTER))
+            readySquareState();
+    } else {
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[0]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[0], RayLib::Window::XBOX::A))
                 readySquareState();
-    if (!_firstPlayerGamepad && _selectionPlayer == 1)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::A))
-                readySquareState();
-    if (_firstPlayerGamepad && _selectionPlayer == 1)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(1))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(1, RayLib::Window::XBOX::A))
+    }
+    if (_selectionPlayer == 1)
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[1]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[1], RayLib::Window::XBOX::A))
                 readySquareState();
     if (_selectionPlayer == 2)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(ajust + 2))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(ajust + 2, RayLib::Window::XBOX::A))
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[2]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[2], RayLib::Window::XBOX::A))
                 readySquareState();
     if (_selectionPlayer == 3)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(ajust + 3))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(ajust + 3, RayLib::Window::XBOX::A))
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[3]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[3], RayLib::Window::XBOX::A))
                 readySquareState();
 }
 
@@ -259,35 +325,33 @@ void Bomberman::Menu::SelectionMenu::cancelSquareState()
 
 void Bomberman::Menu::SelectionMenu::cancel()
 {
-    if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_D))
-        cancelSquareState();
-    if (_firstPlayerGamepad)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::B))
+    if (_playerInputIds[0] == -1) {
+        if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_D))
+            cancelSquareState();
+    } else {
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[0]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[0], RayLib::Window::XBOX::B))
                 cancelSquareState();
-    if (!_firstPlayerGamepad && _selectionPlayer == 1)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(0))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(0, RayLib::Window::XBOX::B))
-                cancelSquareState();
-    if (_firstPlayerGamepad && _selectionPlayer == 1)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(1))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(1, RayLib::Window::XBOX::B))
+    }
+    if (_selectionPlayer == 1)
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[1]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[1], RayLib::Window::XBOX::B))
                 cancelSquareState();
     if (_selectionPlayer == 2)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(2))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(2, RayLib::Window::XBOX::B))
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[2]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[2], RayLib::Window::XBOX::B))
                 cancelSquareState();
     if (_selectionPlayer == 3)
-        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(3))
-            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(3, RayLib::Window::XBOX::B))
-                cancelSquareState();       
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_playerInputIds[3]))
+            if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonReleased(_playerInputIds[3], RayLib::Window::XBOX::B))
+                cancelSquareState();
 }
 
 void Bomberman::Menu::SelectionMenu::changeStateSelection(int gamepad, bool available)
 {
     int state = 2;
 
-    if (!_firstPlayerGamepad)
+    if (_playerInputIds[0] == -1)
         gamepad++;
     if (!available)
         state = 0;
@@ -296,16 +360,31 @@ void Bomberman::Menu::SelectionMenu::changeStateSelection(int gamepad, bool avai
         switch (gamepad)
         {
             case 1:
-                if (val.lock()->getName() == "gamepadInfo1")
+                if (val.lock()->getName() == "gamepadInfo1") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[1] = 0;
+                    else
+                        _selectedModel[1] = -1;
+                }
                 break;
             case 2:
-                if (val.lock()->getName() == "gamepadInfo2")
+                if (val.lock()->getName() == "gamepadInfo2") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[2] = 0;
+                    else
+                        _selectedModel[2] = -1;
+                }
                 break;
             case 3:
-                if (val.lock()->getName() == "gamepadInfo3")
+                if (val.lock()->getName() == "gamepadInfo3") {
                     val.lock()->setDisplay(!available);
+                    if (!val.lock()->getDisplay())
+                        _selectedModel[3] = 0;
+                    else
+                        _selectedModel[3] = -1;
+                }
                 break;
         }
     }
@@ -354,22 +433,6 @@ void Bomberman::Menu::SelectionMenu::handleGamepads(int gamepad)
         changeStateSelection(gamepad, false);
 }
 
-void Bomberman::Menu::SelectionMenu::checkPlayers()
-{
-    for (auto const &val : this->__stateImagesReferer)
-    {
-        if (val.lock()->getName() == "2P")
-            if (val.lock()->getActualState() == 3)
-                _players = 2;
-        if (val.lock()->getName() == "3P")
-            if (val.lock()->getActualState() == 3)
-                _players = 3;
-        if (val.lock()->getName() == "4P")
-            if (val.lock()->getActualState() == 3)
-                _players = 4;
-    }
-}
-
 void Bomberman::Menu::SelectionMenu::goToGameScene()
 {
     bool end = false;
@@ -380,12 +443,19 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
     }
     if (end)
         if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_SPACE)) {
-            __manager.clearStack<Bomberman::GameScene>(Bomberman::Config::ExecutablePath + "lib/bomberman_player.dylib", "", "", "");
+            std::vector<std::string> playerDlls = getPlayerDlls();
+            std::vector<int> playerIds = _playerInputIds;
+            std::vector<int> playerIa = _selectedModel;
+            __manager.clearStack<Bomberman::GameScene>(playerIds, playerIa, playerDlls[0], playerDlls[1], playerDlls[2], playerDlls[3]);
         }
 }
 
 void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
 {
+    for (auto &model : this->__modelsContainer) {
+        model->update(elapsed);
+    }
+
     for (auto const &val : this->__objContainer) {
         val->update(elapsed);
     }
@@ -394,7 +464,6 @@ void Bomberman::Menu::SelectionMenu::update(const double &elapsed)
     ready();
     for (int i = 0; i < 4; i++)
         handleGamepads(i);
-    checkPlayers();
     goToGameScene();
     if (RayLib::Window::getInstance().getInputKeyboard().isKeyReleased(KEY_BACKSPACE))
         __manager.unloadScene();
@@ -405,4 +474,63 @@ void Bomberman::Menu::SelectionMenu::drawScene()
     for (auto const &val : this->__objContainer) {
         val->render();
     }
+    RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
+
+    this->__modelsContainer[this->_selectedModel[0]]->render();
+
+    if (this->_selectedModel[1] != -1)
+        this->__modelsContainer1[this->_selectedModel[1]]->render();
+    if (this->_selectedModel[2] != -1)
+        this->__modelsContainer2[this->_selectedModel[2]]->render();
+    if (this->_selectedModel[3] != -1)
+        this->__modelsContainer3[this->_selectedModel[3]]->render();
+
+    RayLib::Window::getInstance().getDrawing().endMode3D();
+}
+
+void Bomberman::Menu::SelectionMenu::loadPlayers()
+{
+    if (!std::filesystem::is_directory(Config::ExecutablePath + "lib"))
+        throw GameException("Unable to find lib folder at executable root.");
+    for (auto & file : std::filesystem::directory_iterator(Config::ExecutablePath + "lib")) {
+        try {
+            std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(file.path().string());
+            auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+            AbstractPlayer *p1 = fct();
+            if (p1 == nullptr)
+                throw GameException("Symbol not found entryPoint in " + file.path().string());
+
+            std::shared_ptr<Player> player = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-4.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-1.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player2 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(1.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player3 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(4.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player2->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            player3->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+            __modelsContainer.emplace_back(player);
+            __modelsContainer1.emplace_back(player1);
+            __modelsContainer2.emplace_back(player2);
+            __modelsContainer3.emplace_back(player3);
+
+        } catch (LibDl::DynamicLibraryException &e) {
+            throw e;
+        }
+    }
+}
+
+std::vector<std::string> Bomberman::Menu::SelectionMenu::getPlayerDlls()
+{
+    std::vector<std::string> dlls;
+
+    for (auto i : this->_selectedModel) {
+        if (i == -1)
+            i = 0;
+        for (auto &file : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath + "lib")) {
+            if (file.path().string().find(__modelsContainer[i]->getName()) != std::string::npos) {
+                dlls.emplace_back(std::filesystem::absolute(file.path()).string());
+            }
+        }
+    }
+    return dlls;
 }

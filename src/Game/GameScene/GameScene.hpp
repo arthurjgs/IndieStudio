@@ -26,7 +26,7 @@ namespace Bomberman {
     class GameScene : public Scene {
         public:
             GameScene() = delete;
-            GameScene(SceneManager &manager,
+            GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                       const std::string &playerDll1, const std::string &playerDll2,
                       const std::string &playerDll3, const std::string &playerDll4, const int timer = 180);
             ~GameScene() = default;
@@ -49,6 +49,7 @@ namespace Bomberman {
             std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
             std::weak_ptr<GameObject> getObjectFromName(const std::string &name);
+            std::shared_ptr<Player> loadPlayerDll(const std::string &dllPath, int inputId, int isIa, const Type::Vector<3> &position);
 
             void createPause();
             void updatePause(const double &elasped);
@@ -64,6 +65,7 @@ namespace Bomberman {
             std::vector<std::pair<UI_SCENE, std::shared_ptr<GameObject>>> _2DGameObjectList;
             std::vector<std::pair<UI_SCENE, std::weak_ptr<FlashingText>>> _2DDynamicText;
             std::vector<std::pair<UI_SCENE, std::weak_ptr<Button>>> _2DButtonList;
+            std::vector<std::weak_ptr<Bomberman::Crate>> _CrateList;
             std::map<std::string, std::function<void(GameScene &)>>  _buttonCallback; 
 
             UI_SCENE _currentUIStage;

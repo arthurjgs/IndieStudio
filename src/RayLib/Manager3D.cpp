@@ -113,6 +113,7 @@ void RayLib::Manager3D::load3DModels()
             loadObjects();
             break;
         case PLAYER_SELECTION:
+            loadPlayers();
             break;
         case MAP_SELECTION:
             break;

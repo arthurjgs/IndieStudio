@@ -17,6 +17,9 @@
 #include <Game/Flame/Flame.hpp>
 
 namespace Bomberman {
+
+    class Player;
+
     class Bomb : public GameObject {
     public:
         enum Side {
@@ -26,16 +29,18 @@ namespace Bomberman {
             DOWN = 3,
             LEFT = 4
         };
-        Bomb(const Type::Vector<3> &position, int range = 1);
+        Bomb(const Type::Vector<3> &position, Player *owner, int range = 1);
         ~Bomb();
         std::vector<std::shared_ptr<Flame>> explode();
         void update(const double &elapsed);
         void render() const;
+        inline int getRange() const { return _range; };
     protected:
     private:
         double _lifespan;
         int _range;
         bool _exploded;
+        Player *_owner;
     };
 }
 

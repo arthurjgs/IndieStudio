@@ -18,6 +18,7 @@
 #include "../../StateImage/StateImage.hpp"
 #include <vector>
 #include <memory>
+#include <players/Player.hpp>
 
 namespace Bomberman
 {
@@ -36,6 +37,7 @@ namespace Bomberman
 
             protected:
             private:
+                void loadPlayers();
                 void cancel();
                 void cancelSquareState();
                 void ready();
@@ -46,15 +48,19 @@ namespace Bomberman
                 void checkPlayers();
                 void goToGameScene();
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
+                std::vector<std::shared_ptr<Player>> __modelsContainer;
+                std::vector<std::shared_ptr<Player>> __modelsContainer1;
+                std::vector<std::shared_ptr<Player>> __modelsContainer2;
+                std::vector<std::shared_ptr<Player>> __modelsContainer3;
+                std::vector<std::string> getPlayerDlls();
                 int _players;
-                bool _firstPlayerGamepad;
+                Type::Camera3D _camera;
                 std::vector<std::weak_ptr<StateImage>>__stateImagesReferer;
                 std::vector<std::weak_ptr<FlashingText>> __flashingTextReferer;
                 int _selectionPlayer;
                 bool _isAction;
-                bool _isPlayerTwoAI;
-                bool _isPlayerThreeAI;
-                bool _isPlayerFourAI;
+                std::vector<int> _selectedModel {0, -1, -1, -1};
+                std::vector<int> _playerInputIds {-1, 0, 1, 2};
         };
     }
 }
