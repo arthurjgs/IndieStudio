@@ -339,30 +339,30 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00010">10</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                                                                                                                          : <a class="code" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a>(name, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">PLAYER</a>, position),</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;_isAi(isAi),</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;_controller(controller),</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;_range(range),</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;_speed(speed),</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;_state(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>),</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;_startActionTime(0),</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;_alreadyCreatedBomb(<span class="keyword">false</span>),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;_rotationAngle(0)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    _newGoal.first = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    _newGoal.second = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    _dir = <a class="code" href="classBomberman_1_1Player.html#ad697b2078d75737baa86fe354855349ba56d80dec649addcba70d8166f35fc7b2">NONE</a>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    _newGoalPosition.first = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    _newGoalPosition.second = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bombs; i++)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            _bombTimers.emplace_back(0);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">catch</span> (GameException &amp;g) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">throw</span> g;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00011">11</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                                                                                                                          : <a class="code" href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">GameObject</a>(name, <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">PLAYER</a>, position),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;_isAi(isAi),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;_controller(controller),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;_range(range),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;_speed(speed),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;_state(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>),</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;_startActionTime(0),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;_alreadyCreatedBomb(<span class="keyword">false</span>),</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;_rotationAngle(0)</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    _newGoal.first = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    _newGoal.second = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    _dir = <a class="code" href="classBomberman_1_1Player.html#ad697b2078d75737baa86fe354855349ba56d80dec649addcba70d8166f35fc7b2">NONE</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    _newGoalPosition.first = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    _newGoalPosition.second = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">_position</a>.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bombs; i++)</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            _bombTimers.emplace_back(0);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordflow">catch</span> (GameException &amp;g) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">throw</span> g;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_a32130129d2f7b0428b16c47143727319"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a32130129d2f7b0428b16c47143727319">Bomberman::GameObject::_position</a></div><div class="ttdeci">Type::Vector&lt; 3 &gt; _position</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00058">GameObject.hpp:58</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_a3cabcb7657b1b8aa42527fbbb165bd90"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a3cabcb7657b1b8aa42527fbbb165bd90">Bomberman::GameObject::GameObject</a></div><div class="ttdeci">GameObject()=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea79f81571065ddae50f2e45ed3eff7323">Bomberman::GameObject::PLAYER</a></div><div class="ttdeci">@ PLAYER</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00022">GameObject.hpp:22</a></div></div>
@@ -412,10 +412,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00112">112</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;{</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">return</span> std::any_of(_bombTimers.begin(), _bombTimers.end(), [](<span class="keywordtype">double</span> t){ return t == 0.0; });</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00113">113</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> std::any_of(_bombTimers.begin(), _bombTimers.end(), [](<span class="keywordtype">double</span> t){ return t == 0.0; });</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -435,17 +435,17 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00117">117</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; timer : _bombTimers) {</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">if</span> (timer == 0)</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (timer &lt; 3)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            timer += elapsed;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;            timer = 0;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00118">118</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; timer : _bombTimers) {</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">if</span> (timer == 0)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (timer &lt; 3)</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            timer += elapsed;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            timer = 0;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -464,33 +464,33 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00139">139</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;{</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span> (_alreadyCreatedBomb)</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    _alreadyCreatedBomb = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> position = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>();</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> roundedPosition;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (_rotationAngle == 0)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() + 1)));</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == 180)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1)));</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == 90)</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() + 1)),</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == -90)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) - 1),</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">return</span> std::make_shared&lt;Bomb&gt;(roundedPosition, this-&gt;<a class="code" href="classBomberman_1_1Player.html#a8de9424906e390ac10c4f3116dc2d986">getRange</a>());</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00140">140</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;{</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordflow">if</span> (_alreadyCreatedBomb)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    _alreadyCreatedBomb = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> position = this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> roundedPosition;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordflow">if</span> (_rotationAngle == 0)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() + 1)));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == 180)</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>())),</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>() - 1)));</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == 90)</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>() + 1)),</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (_rotationAngle == -90)</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        roundedPosition = <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) - 1),</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">getY</a>())),</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                                          <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(round(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>())));</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">return</span> std::make_shared&lt;Bomb&gt;(roundedPosition, <span class="keyword">this</span>, this-&gt;<a class="code" href="classBomberman_1_1Player.html#a8de9424906e390ac10c4f3116dc2d986">getRange</a>());</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_a1da506f6cbe800e26e5c7a43ca48f01f"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">Bomberman::GameObject::getPosition</a></div><div class="ttdeci">Type::Vector&lt; 3 &gt; getPosition() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00025">GameObject.cpp:25</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a8de9424906e390ac10c4f3116dc2d986"><div class="ttname"><a href="classBomberman_1_1Player.html#a8de9424906e390ac10c4f3116dc2d986">Bomberman::Player::getRange</a></div><div class="ttdeci">int getRange()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00041">Player.cpp:41</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a8de9424906e390ac10c4f3116dc2d986"><div class="ttname"><a href="classBomberman_1_1Player.html#a8de9424906e390ac10c4f3116dc2d986">Bomberman::Player::getRange</a></div><div class="ttdeci">int getRange()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00042">Player.cpp:42</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html_a0167d3843974715eb2edbe2b1793bba9"><div class="ttname"><a href="classType_1_1Vector.html#a0167d3843974715eb2edbe2b1793bba9">Type::Vector::getY</a></div><div class="ttdeci">float &amp; getY()</div><div class="ttdef"><b>Definition:</b> <a href="Vector_8hpp_source.html#l00129">Vector.hpp:129</a></div></div>
 </div><!-- fragment -->
@@ -511,10 +511,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00041">41</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> this-&gt;_range;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00042">42</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> this-&gt;_range;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -533,10 +533,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00398">398</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;{</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keywordflow">return</span> this-&gt;_rotationAngle;</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00430">430</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;{</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">return</span> this-&gt;_rotationAngle;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -555,10 +555,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00056">56</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">return</span> this-&gt;_speed;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00057">57</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> this-&gt;_speed;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -577,10 +577,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00066">66</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> this-&gt;_state;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00067">67</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> this-&gt;_state;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -600,15 +600,15 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00129">129</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;{</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; timer : _bombTimers) {</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        <span class="keywordflow">if</span> (timer == 0) {</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;            timer += elapsed;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00130">130</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;{</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; timer : _bombTimers) {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <span class="keywordflow">if</span> (timer == 0) {</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;            timer += elapsed;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -628,10 +628,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00051">51</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">setPosition</a>(this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>() + vector);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00052">52</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">setPosition</a>(this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>() + vector);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_a380622be27edc00134161a0a0ba7658d"><div class="ttname"><a href="classBomberman_1_1GameObject.html#a380622be27edc00134161a0a0ba7658d">Bomberman::GameObject::setPosition</a></div><div class="ttdeci">void setPosition(Type::Vector&lt; 3 &gt; position)</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00030">GameObject.cpp:30</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -661,27 +661,27 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a70c1a04376caf8d73d4a5573cf88cb48">Bomberman::GameObject</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00092">92</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;{</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::weak_ptr&lt;RayLib::Models::Animate&gt; model;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    model.lock()-&gt;render(this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>(), this-&gt;_rotationAngle, this-&gt;_scale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 1.0f, 0.0f));</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00093">93</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::weak_ptr&lt;RayLib::Models::Animate&gt; model;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            model = <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    model.lock()-&gt;render(this-&gt;<a class="code" href="classBomberman_1_1GameObject.html#a1da506f6cbe800e26e5c7a43ca48f01f">getPosition</a>(), this-&gt;_rotationAngle, this-&gt;_scale, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(0.0f, 1.0f, 0.0f));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html_aa7ecc65dea82a50f7d0e3e4e2f3bd747"><div class="ttname"><a href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">Bomberman::GameObject::_name</a></div><div class="ttdeci">std::string _name</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00059">GameObject.hpp:59</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Manager3D_html_a8f72fcf7e87d47c13717cf52cdc4bb50"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a></div><div class="ttdeci">std::shared_ptr&lt; RayLib::Models::Animate &gt; getModel(const std::string &amp;object)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00122">Manager3D.cpp:122</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Manager3D_html_a8f72fcf7e87d47c13717cf52cdc4bb50"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">RayLib::Manager3D::getModel</a></div><div class="ttdeci">std::shared_ptr&lt; RayLib::Models::Animate &gt; getModel(const std::string &amp;object)</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00123">Manager3D.cpp:123</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html_abbf9eec195dc5f9aea5b651a063168cd"><div class="ttname"><a href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a></div><div class="ttdeci">static Manager3D &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8cpp_source.html#l00010">Manager3D.cpp:10</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -702,10 +702,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00036">36</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    this-&gt;_range = range;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00037">37</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    this-&gt;_range = range;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -725,10 +725,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00393">393</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;{</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    this-&gt;_rotationAngle = rotationAngle;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00425">425</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;{</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    this-&gt;_rotationAngle = rotationAngle;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -748,10 +748,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00061">61</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    this-&gt;_scale = scale;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00062">62</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    this-&gt;_scale = scale;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -771,10 +771,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00046">46</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;_speed = speed;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00047">47</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;_speed = speed;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -794,10 +794,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00388">388</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;{</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    this-&gt;_state = state;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00420">420</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;{</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    this-&gt;_state = state;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -827,50 +827,50 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1GameObject.html#a122c639a70301e75174d90a76f57b925">Bomberman::GameObject</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00346">346</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;{</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keyword">auto</span> currState = this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">getState</a>();</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <a class="code" href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">checkTimer</a>(elapsed);</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="keywordflow">if</span> (currState == <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>) {</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        _startActionTime += elapsed;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">if</span> (_startActionTime &gt;= 0.5f) {</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            _startActionTime = 0;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;            _alreadyCreatedBomb = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;            this-&gt;<a class="code" href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">setState</a>(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        }</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    }</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>)-&gt;update(elapsed);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>)-&gt;update(elapsed);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>)-&gt;update(elapsed);</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>)-&gt;update(elapsed);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    }</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">if</span> (currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a> &amp;&amp; currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    _iaOrPlayer(elapsed);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;\n Two Dimensional Array is : \n&quot;</span>;</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 15; i++)</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    {</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 15; j++)</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            {</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; _walls[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            }</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            std::cout&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    }</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a5e3a1b94134f36cbb2114484c0f3a5d1"><div class="ttname"><a href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">Bomberman::Player::getState</a></div><div class="ttdeci">PlayerState getState()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00066">Player.cpp:66</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a63b1ad93c268f66ccf940212e342fac4"><div class="ttname"><a href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">Bomberman::Player::setState</a></div><div class="ttdeci">void setState(const PlayerState &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00388">Player.cpp:388</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_ab83fa0de1422e556729dd55948ec35ae"><div class="ttname"><a href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">Bomberman::Player::checkTimer</a></div><div class="ttdeci">void checkTimer(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00117">Player.cpp:117</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00378">378</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;{</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="keyword">auto</span> currState = this-&gt;<a class="code" href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">getState</a>();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <a class="code" href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">checkTimer</a>(elapsed);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="keywordflow">if</span> (currState == <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>) {</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        _startActionTime += elapsed;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        <span class="keywordflow">if</span> (_startActionTime &gt;= 0.5f) {</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;            _startActionTime = 0;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;            _alreadyCreatedBomb = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            this-&gt;<a class="code" href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">setState</a>(<a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;        }</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordflow">switch</span> (_state) {</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a>:</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;IDLE&quot;</span>)-&gt;update(elapsed);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>:</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;WALKING&quot;</span>)-&gt;update(elapsed);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a4a3504dc07324b2339eca8756f5dce3d">ACTION</a>:</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;ACTION&quot;</span>)-&gt;update(elapsed);</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a77c350a5ede0973abc4f6a74a6f121a0">DEAD</a>:</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a8f72fcf7e87d47c13717cf52cdc4bb50">getModel</a>(<a class="code" href="classBomberman_1_1GameObject.html#aa7ecc65dea82a50f7d0e3e4e2f3bd747">_name</a> + <span class="stringliteral">&quot;DEAD&quot;</span>)-&gt;update(elapsed);</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span> (currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a32e114414ac37640ae5a03d87acb7fe2">IDLE</a> &amp;&amp; currState != <a class="code" href="classBomberman_1_1Player.html#a7b479034d37ae3902a5cca4387a4bdc8a9948a9c22536c2d86cb27efcc8c9d5c0">WALKING</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    _iaOrPlayer(elapsed);</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    std::cout&lt;&lt;<span class="stringliteral">&quot;\n Two Dimensional Array is : \n&quot;</span>;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; 15; i++)</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    {</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 15; j++)</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;            {</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; _walls[i][j] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;            }</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;            std::cout&lt;&lt;<span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    }</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a5e3a1b94134f36cbb2114484c0f3a5d1"><div class="ttname"><a href="classBomberman_1_1Player.html#a5e3a1b94134f36cbb2114484c0f3a5d1">Bomberman::Player::getState</a></div><div class="ttdeci">PlayerState getState()</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00067">Player.cpp:67</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a63b1ad93c268f66ccf940212e342fac4"><div class="ttname"><a href="classBomberman_1_1Player.html#a63b1ad93c268f66ccf940212e342fac4">Bomberman::Player::setState</a></div><div class="ttdeci">void setState(const PlayerState &amp;state)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00420">Player.cpp:420</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_ab83fa0de1422e556729dd55948ec35ae"><div class="ttname"><a href="classBomberman_1_1Player.html#ab83fa0de1422e556729dd55948ec35ae">Bomberman::Player::checkTimer</a></div><div class="ttdeci">void checkTimer(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00118">Player.cpp:118</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -900,11 +900,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00071">71</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    _walls[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="ttc" id="aclassBomberman_1_1Player_html_a4ef72b33ddd4ba38adfd3ea6532272a6"><div class="ttname"><a href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">Bomberman::Player::update</a></div><div class="ttdeci">void update(const double &amp;elapsed) override</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00346">Player.cpp:346</a></div></div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00072">72</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    _walls[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
+<div class="ttc" id="aclassBomberman_1_1Player_html_a4ef72b33ddd4ba38adfd3ea6532272a6"><div class="ttname"><a href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">Bomberman::Player::update</a></div><div class="ttdeci">void update(const double &amp;elapsed) override</div><div class="ttdef"><b>Definition:</b> <a href="Player_8cpp_source.html#l00378">Player.cpp:378</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -940,21 +940,21 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00076">76</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; range; i++)</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 + (i + 1) &lt; 15)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 + (i + 1)][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 - (i + 1) &gt; 0)</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 - (i + 1)][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1) &lt; 15)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1)] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1) &gt; 0)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 - (i + 1)] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00077">77</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; range; i++)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 + (i + 1) &lt; 15)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 + (i + 1)][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 - (i + 1) &gt; 0)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7 - (i + 1)][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1) &lt; 15)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1)] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 + (i + 1) &gt; 0)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            _dangers[<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#a1c20248488b288bae7bdbc32a406b371">getZ</a>()) + 7][<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(position.<a class="code" href="classType_1_1Vector.html#aadcbd924c2b192ec64e32b1e48509716">getX</a>()) + 7 - (i + 1)] = <a class="code" href="classBomberman_1_1Player.html#a4ef72b33ddd4ba38adfd3ea6532272a6">update</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
