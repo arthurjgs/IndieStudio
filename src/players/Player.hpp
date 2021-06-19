@@ -25,6 +25,7 @@ namespace Bomberman {
         };
 
         Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, const std::string &dllPath, float speed = 3.0f, int bombs = 1, int range = 2);
+        Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed = 3.0f, int bombs = 1, int range = 2);
         ~Player() override;
 
         void setRange(int range);
