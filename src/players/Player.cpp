@@ -5,6 +5,7 @@
 ** delivery
 */
 
+#include <RayLib/Window.hpp>
 #include "Player.hpp"
 
 Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
@@ -154,7 +155,7 @@ std::shared_ptr<Bomberman::Bomb> Bomberman::Player::createBomb()
         roundedPosition = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
                                           static_cast<float>(round(position.getY())),
                                           static_cast<float>(round(position.getZ())));
-    return std::make_shared<Bomb>(roundedPosition, this->getRange());
+    return std::make_shared<Bomb>(roundedPosition, this, this->getRange());
 }
 
 void Bomberman::Player::_playerKeyboard(double elapsed)
@@ -191,21 +192,50 @@ void Bomberman::Player::_playerKeyboard(double elapsed)
     }
 }
 
-void Bomberman::Player::_playerGamepad(double elapsed, int gamepad)
+void Bomberman::Player::_playerGamepad(double elapsed)
 {
-
+    if (RayLib::Window::getInstance().getInputGamepad().isGamepadAvailable(_controller)) {
+        if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonDown(_controller, RayLib::Window::XBOX::UP)) {
+            this->setState(WALKING);
+            this->setRotationAngle(180.0f);
+            this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(-_speed * elapsed)));
+        }
+        else if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonDown(_controller, RayLib::Window::XBOX::LEFT)) {
+            this->setState(WALKING);
+            this->setRotationAngle(-90.0f);
+            this->Move(Type::Vector<3>(static_cast<float>(-_speed * elapsed), 0.0f, 0.0f));
+        }
+        else if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonDown(_controller, RayLib::Window::XBOX::DOWN)) {
+            this->setState(WALKING);
+            this->setRotationAngle(0.0f);
+            this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(_speed * elapsed)));
+        }
+        else if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonDown(_controller, RayLib::Window::XBOX::RIGHT)) {
+            this->setState(WALKING);
+            this->setRotationAngle(90.0f);
+            this->Move(Type::Vector<3>(static_cast<float>(_speed * elapsed), 0.0f, 0.0f));
+        }
+        else if (RayLib::Window::getInstance().getInputGamepad().isGamepadButtonPressed(_controller, RayLib::Window::XBOX::A)) {
+            if (!checkFreeTimer())
+                return;
+            this->setState(ACTION);
+            launchFreeTimer(elapsed);
+            _startActionTime += elapsed;
+        }
+        else {
+            this->setState(IDLE);
+        }
+    }
 }
 
 void Bomberman::Player::_playerHandler(double elapsed)
 {
-    if (_controller < 0)
-    {
+    if (_controller == -1) {
         _playerKeyboard(elapsed);
-        if (_controller == -2)
-            _playerGamepad(elapsed, 0);
     }
-    else
-        _playerGamepad(elapsed, _controller);
+    else {
+        _playerGamepad(elapsed);
+    }
 }
 
 void Bomberman::Player::_AiHandler()
@@ -235,6 +265,8 @@ bool Bomberman::Player::_isDangerousBox(int x, int z)
 
 void Bomberman::Player::_iaOrPlayer(double elapsed)
 {
+    std::cout << "controller: " << _controller << " (AI: " << _isAi << ")" << std::endl;
+
     if (_isAi)
         _AiHandler();
     if (!_isAi)

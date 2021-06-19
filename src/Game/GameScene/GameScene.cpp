@@ -126,11 +126,9 @@ void Bomberman::GameScene::createPause()
     this->_buttonCallback["confirmSave"] = &GameScene::cancelSaveCallback;
 }
 
-Bomberman::GameScene::GameScene(SceneManager &manager, bool firstPlayerGamepad, int players,
+Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                                 const std::string &playerDll1, const std::string &playerDll2,
                                 const std::string &playerDll3, const std::string &playerDll4, const int timer) : Scene(manager),
-                                _firstPlayerGamepad(firstPlayerGamepad),
-                                _players(players),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
@@ -138,31 +136,21 @@ Bomberman::GameScene::GameScene(SceneManager &manager, bool firstPlayerGamepad, 
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
-    std::shared_ptr<Player> player1;
-
-    try {
-        std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(playerDll1);
-        auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
-        AbstractPlayer *p1 = fct();
-        if (p1 == nullptr)
-            throw GameException("Symbol not found entryPoint in " + playerDll1);
-        player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-6.0f, 0.0f, -6.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
-        player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
-    } catch (LibDl::DynamicLibraryException &e) {
-        throw e;
-    }
+    std::shared_ptr<Player> player1 = loadPlayerDll(playerDll1, playerInputIds[0], playerIa[0], Type::Vector<3>(-6.0f, 0.0f, -6.0f));
+    std::shared_ptr<Player> player2 = loadPlayerDll(playerDll2, playerInputIds[1], playerIa[1], Type::Vector<3>(6.0f, 0.0f, -6.0f));
+    std::shared_ptr<Player> player3 = loadPlayerDll(playerDll3, playerInputIds[2], playerIa[2], Type::Vector<3>(-6.0f, 0.0f, 6.0f));
+    std::shared_ptr<Player> player4 = loadPlayerDll(playerDll4, playerInputIds[3], playerIa[3], Type::Vector<3>(6.0f, 0.0f, 6.0f));
 
     this->_timer = timer;
-    (void)playerDll2;
-    (void)playerDll3;
-    (void)playerDll4;
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
     this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
-    //this->_gameObjectList.emplace_back(player2);
+    this->_gameObjectList.emplace_back(player2);
+    this->_gameObjectList.emplace_back(player3);
+    this->_gameObjectList.emplace_back(player4);
 
     std::shared_ptr<Image> timer_back = std::make_shared<Image>("./assets/game_scenes/timer.png", "backgroud_timer", GameObject::ObjectType::DECOR, Type::Vector<3>(810.0f, 50.0f, 0.0f));
     this->_2DGameObjectList.emplace_back(MAIN, timer_back);
@@ -174,6 +162,9 @@ Bomberman::GameScene::GameScene(SceneManager &manager, bool firstPlayerGamepad, 
     this->_2DGameObjectList.emplace_back(MAIN, text);
     this->_2DDynamicText.emplace_back(MAIN, text);
     this->_listPlayers.emplace_back(player1);
+    this->_listPlayers.emplace_back(player2);
+    this->_listPlayers.emplace_back(player3);
+    this->_listPlayers.emplace_back(player4);
 
     this->createPause();
 
@@ -185,6 +176,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, bool firstPlayerGamepad, 
         this->_gameObjectList.emplace_back(obj);
         this->_CrateList.emplace_back(obj);
     }
+
     //this->_listPlayers.emplace_back(player2);
     this->_currentUIStage = MAIN;
     this->_second = 0.0;
@@ -454,11 +446,36 @@ void Bomberman::GameScene::drawScene()
 {
     _background->render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
-   for (auto & object : _gameObjectList)
+    for (auto & object : _gameObjectList)
         object->render();
     RayLib::Window::getInstance().getDrawing().endMode3D();
     for (auto const &val : this->_2DGameObjectList) {
         if ((this->_currentUIStage == val.first || val.first == NONE) && val.second->getDisplay())
             val.second->render();
     }
+}
+
+std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerDll(const std::string &dllPath, int inputId, int isIa, const Type::Vector<3> &position)
+{
+    std::shared_ptr<Player> player;
+
+    try {
+        std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(dllPath);
+        auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
+        AbstractPlayer *p1 = fct();
+        if (p1 == nullptr)
+            throw GameException("Symbol not found entryPoint in " + dllPath);
+        if (isIa == -1) {
+            player = std::make_shared<Player>(p1->getName(), position,
+                                              true, inputId, p1->getSpeed(), p1->getBombs(), p1->getRange());
+        } else {
+            player = std::make_shared<Player>(p1->getName(), position,
+                                              false, inputId, p1->getSpeed(), p1->getBombs(), p1->getRange());
+        }
+        player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
+    } catch (LibDl::DynamicLibraryException &e) {
+        throw e;
+    }
+
+    return player;
 }
