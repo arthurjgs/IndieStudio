@@ -24,7 +24,7 @@ namespace Bomberman {
             DEAD
         };
 
-        Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed = 3.0f, int bombs = 1, int range = 2);
+        Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, const std::string &dllPath, float speed = 3.0f, int bombs = 1, int range = 2);
         ~Player() override;
 
         void setRange(int range);
@@ -49,6 +49,7 @@ namespace Bomberman {
         void updateDangers(Type::Vector<3> position, int range, int update);
         std::shared_ptr<Bomb> createBomb();
 
+        inline std::string getPath() const { return (this->_dllPath); }
     private:
         void _iaOrPlayer(double elapsed);
         void _playerHandler(double elapsed);
@@ -69,6 +70,7 @@ namespace Bomberman {
         double _rotationAngle;
         bool _isAi;
         int _controller;
+        std::string _dllPath;
         std::pair<int, int> _newGoal;
         int _walls[15][15] = {
                 {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},

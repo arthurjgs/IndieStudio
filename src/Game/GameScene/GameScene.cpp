@@ -522,10 +522,10 @@ std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerDll(const std
             throw GameException("Symbol not found entryPoint in " + dllPath);
         if (isIa == -1) {
             player = std::make_shared<Player>(p1->getName(), position,
-                                              true, inputId, p1->getSpeed(), p1->getBombs(), p1->getRange());
+                                              true, inputId, dllPath, p1->getSpeed(), p1->getBombs(), p1->getRange());
         } else {
             player = std::make_shared<Player>(p1->getName(), position,
-                                              false, inputId, p1->getSpeed(), p1->getBombs(), p1->getRange());
+                                              false, inputId, dllPath, p1->getSpeed(), p1->getBombs(), p1->getRange());
         }
         player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
     } catch (LibDl::DynamicLibraryException &e) {

@@ -12,7 +12,7 @@
 
 #include "../GameObject.hpp"
 #include "../Crate/Crates.hpp"
-#include "../Player.hpp"
+#include "../../players/Player.hpp"
 #include <vector>
 #include <memory>
 #include <fstream>

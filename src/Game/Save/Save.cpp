@@ -56,6 +56,7 @@ Bomberman::SaveData &Bomberman::SaveData::operator = (SaveData &&cpy)
 void Bomberman::Save::__writePlayer(const std::weak_ptr<Bomberman::Player> &val, std::ofstream &file) const
 {
     file << "player:" << val.lock()->getName() << ",";
+    file << val.lock()->getPath() << ",";
     file << val.lock()->getDisplay() << ",";
     file << "{" << val.lock()->getPosition().getX() << "," << val.lock()->getPosition().getY() << "," << val.lock()->getPosition().getZ() << "}" << ",";
     file << val.lock()->getSpeed() << ",";
