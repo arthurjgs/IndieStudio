@@ -39,6 +39,8 @@ _startActionTime(0),
 _alreadyCreatedBomb(false),
 _rotationAngle(0)
 {
+    _wait = 0;
+    _dir = NONE;
     try {
         for (int i = 0; i < bombs; i++)
             _bombTimers.emplace_back(0);
@@ -260,37 +262,185 @@ void Bomberman::Player::_playerHandler(double elapsed)
     }
 }
 
-void Bomberman::Player::_AiHandler()
+void Bomberman::Player::_AiHandler(double elapsed)
 {
-
+    if (_dir == NONE)
+    {
+        if (_dangers[static_cast<int>(floor(this->_position.getZ() + 7))][static_cast<int>(floor(this->_position.getX() + 7))] == 0)
+            _setNewGoalOffense(elapsed);
+    }
+    if (_dir != NONE)
+        _moveAi(elapsed);
 }
 
-void Bomberman::Player::_moveAi()
+void Bomberman::Player::_moveAi(double elapsed)
 {
-
+    if (_dir == LEFT)
+    {
+        this->setState(WALKING);
+        this->setRotationAngle(-90.0f);
+        this->Move(Type::Vector<3>(static_cast<float>(-_speed * elapsed / 2), 0.0f, 0.0f));
+        if (this->_position.getX() <= _goalPosition.first)
+        {
+            _dir = NONE;
+            float &x_less = this->_position.getX();
+            x_less = _goalPosition.first;
+        }
+    }
+    if (_dir == RIGHT)
+    {
+        this->setState(WALKING);
+        this->setRotationAngle(90.0f);
+        this->Move(Type::Vector<3>(static_cast<float>(_speed * elapsed / 2), 0.0f, 0.0f));
+        if (this->_position.getX() >= _goalPosition.first)
+        {
+            _dir = NONE;
+            float &x_plus = this->_position.getX();
+            x_plus = _goalPosition.first;
+        }
+    }
+    if (_dir == UP)
+    {
+        this->setState(WALKING);
+        this->setRotationAngle(180.0f);
+        this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(-_speed * elapsed / 2)));
+        if (this->_position.getZ() <= _goalPosition.second)
+        {
+            _dir = NONE;
+            float &z_less = this->_position.getZ();
+            z_less = _goalPosition.second;
+        }
+    }
+    if (_dir == DOWN)
+    {
+        this->setState(WALKING);
+        this->setRotationAngle(0.0f);
+        this->Move(Type::Vector<3>(0.0f, 0.0f, static_cast<float>(_speed * elapsed / 2)));
+        if (this->_position.getZ() >= _goalPosition.second)
+        {
+            _dir = NONE;
+            float &z_plus = this->_position.getZ();
+            z_plus = _goalPosition.second;
+        }
+    }
 }
 
-void Bomberman::Player::_setNewGoalOffense()
+void Bomberman::Player::_setNewGoalOffense(double elapsed)
 {
+    int random = rand() % 5;
+    switch (random)
+    {
+    case 0:
+        if (!_isSolidBlock(-1, 0) && !_isDangerousBox(-1, 0))
+        {
+            _dir = LEFT;
+            _goalPosition.first = this->_position.getX() - 1.0f;
+            _goalPosition.second = this->_position.getZ();
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 1:
+        if (!_isSolidBlock(1, 0) && !_isDangerousBox(1, 0))
+        {
+            _dir = RIGHT;
+            _goalPosition.first = this->_position.getX() + 1.0f;
+            _goalPosition.second = this->_position.getZ();
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 2:
+        if (!_isSolidBlock(0, -1) && !_isDangerousBox(0, -1))
+        {
+            _dir = UP;
+            _goalPosition.first = this->_position.getX();
+            _goalPosition.second = this->_position.getZ() - 1.0f;
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 3:
+        if (!_isSolidBlock(0, 1) && !_isDangerousBox(0, 1))
+        {
+            _dir = DOWN;
+            _goalPosition.first = this->_position.getX();
+            _goalPosition.second = this->_position.getZ() + 1.0f;
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    }
+}
 
+void Bomberman::Player::_setNewGoalDefense(double elapsed)
+{
+    int random = rand() % 4;
+    switch (random)
+    {
+    case 0:
+        if (!_isSolidBlock(-1, 0))
+        {
+            _dir = LEFT;
+            _goalPosition.first = this->_position.getX() - 1.0f;
+            _goalPosition.second = this->_position.getZ();
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 1:
+        if (!_isSolidBlock(1, 0))
+        {
+            _dir = RIGHT;
+            _goalPosition.first = this->_position.getX() + 1.0f;
+            _goalPosition.second = this->_position.getZ();
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 2:
+        if (!_isSolidBlock(0, -1))
+        {
+            _dir = UP;
+            _goalPosition.first = this->_position.getX();
+            _goalPosition.second = this->_position.getZ() - 1.0f;
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    case 3:
+        if (!_isSolidBlock(0, 1))
+        {
+            _dir = DOWN;
+            _goalPosition.first = this->_position.getX();
+            _goalPosition.second = this->_position.getZ() + 1.0f;
+            _basePosition.first = this->_position.getX();
+            _basePosition.second = this->_position.getZ();
+        }
+        break;
+    }
 }
 
 bool Bomberman::Player::_isSolidBlock(int x, int z)
 {
-
+    if (_walls[static_cast<int>(floor(this->_position.getZ() + 7)) + z][static_cast<int>(floor(this->_position.getX() + 7)) + x] == 1)
+        return true;
+    return false;
 }
 
 bool Bomberman::Player::_isDangerousBox(int x, int z)
 {
-
+    if (_dangers[static_cast<int>(floor(this->_position.getZ() + 7)) + z][static_cast<int>(floor(this->_position.getX() + 7)) + x] == 1)
+        return true;
+    return false;
 }
 
 void Bomberman::Player::_iaOrPlayer(double elapsed)
 {
-    std::cout << "controller: " << _controller << " (AI: " << _isAi << ")" << std::endl;
 
     if (_isAi)
-        _AiHandler();
+        if (_wait > 7)
+            _AiHandler(elapsed);
     if (!_isAi)
         _playerHandler(elapsed);
 }
@@ -299,6 +449,7 @@ void Bomberman::Player::update(const double &elapsed)
 {
     auto currState = this->getState();
     checkTimer(elapsed);
+    _wait += elapsed;
 
     if (currState == ACTION) {
         _startActionTime += elapsed;
@@ -308,34 +459,25 @@ void Bomberman::Player::update(const double &elapsed)
             this->setState(IDLE);
         }
     }
-    std::cout << "position x: " << this->_position.getX() << " position z: " << this->_position.getZ() << std::endl;
+
     switch (_state) {
         case IDLE:
-            RayLib::Manager3D::getInstance().getModel(_name + "IDLE")->update(elapsed);
+            RayLib::Manager3D::getInstance().getModel(_name + "IDLE")->update(elapsed / 10);
             break;
         case WALKING:
-            RayLib::Manager3D::getInstance().getModel(_name + "WALKING")->update(elapsed);
+            RayLib::Manager3D::getInstance().getModel(_name + "WALKING")->update(elapsed/ 10);
             break;
         case ACTION:
-            RayLib::Manager3D::getInstance().getModel(_name + "ACTION")->update(elapsed);
+            RayLib::Manager3D::getInstance().getModel(_name + "ACTION")->update(elapsed / 10);
             break;
         case DEAD:
-            RayLib::Manager3D::getInstance().getModel(_name + "DEAD")->update(elapsed);
+            RayLib::Manager3D::getInstance().getModel(_name + "DEAD")->update(elapsed / 10);
             break;
     }
 
     if (currState != IDLE && currState != WALKING) return;
 
     _iaOrPlayer(elapsed);
-    std::cout<<"\n Two Dimensional Array is : \n";
-    for(int i = 0; i < 15; i++)
-    {
-            for(int j = 0; j < 15; j++)
-            {
-                std::cout << " " << _walls[i][j] << " ";
-            }
-            std::cout<<"\n";
-    }
 }
 
 void Bomberman::Player::setState(const PlayerState &state)
