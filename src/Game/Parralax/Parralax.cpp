@@ -25,7 +25,7 @@ Bomberman::ParralaxMember &Bomberman::ParralaxMember::operator = (const Parralax
     this->__textTwo = cpy.__textTwo;
     this->__positionOne = cpy.__positionOne;
     this->__positionOne = cpy.__positionTwo;
-    this->__speed = __speed;
+    this->__speed = cpy.__speed;
     return (*this);
 }
 

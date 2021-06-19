@@ -9,6 +9,7 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/lib)
 
 include_directories(src)
 include_directories(shared)
@@ -60,8 +61,6 @@ add_executable(bomberman
         src/RayLib/Camera.cpp
         src/Game/GameObject.cpp
         src/Game/GameObject.hpp
-        src/Game/Player.cpp
-        src/Game/Player.hpp
         src/Game/GameException.cpp
         src/Game/GameException.hpp
         src/Game/SceneManager/Scene/Scene.cpp
@@ -89,12 +88,22 @@ add_executable(bomberman
         src/Game/Map.hpp
         src/Game/Save/Save.cpp
         src/Game/Bomb/Bomb.cpp
-        src/Game/Bomb/Bomb.hpp src/RayLib/Manager3D.cpp src/RayLib/Manager3D.hpp src/Game/Flame/Flame.cpp src/Game/Flame/Flame.hpp src/Game/Crate/Crates.cpp src/Game/Crate/Crates.hpp)
+        src/Game/Bomb/Bomb.hpp
+        src/RayLib/Manager3D.cpp
+        src/RayLib/Manager3D.hpp
+        src/Game/Flame/Flame.cpp
+        src/Game/Flame/Flame.hpp
+        src/Game/Crate/Crates.cpp
+        src/Game/Crate/Crates.hpp
+        src/players/Player.cpp
+        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
+add_subdirectory("src/players/Bomberman" "src/players/Bomberman")
+add_subdirectory("src/players/Steve" "src/players/Steve")
 
-install(TARGETS bomberman)
+ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
 
 enable_testing()

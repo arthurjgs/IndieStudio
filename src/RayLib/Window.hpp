@@ -53,7 +53,9 @@ namespace RayLib
                 XBOX,
                 START,
                 JOYLEFT,
-                JOYRIGHT
+                JOYRIGHT,
+                JOYDOWN,
+                JOYUP
             };
 
             inline int getMonitorRefreshRate() const
