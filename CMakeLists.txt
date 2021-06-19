@@ -107,5 +107,6 @@ add_subdirectory("src/players/Bomberman" "src/players/Bomberman")
 add_subdirectory("src/players/Steve" "src/players/Steve")
 
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
+ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/save/ $<TARGET_FILE_DIR:bomberman>/save/)
 
 enable_testing()
