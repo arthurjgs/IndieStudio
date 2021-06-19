@@ -166,6 +166,9 @@ std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerFromSave(cons
             data.getAi(), data.getController(), data.getPath(), data.getSpeed(),
             data.getBombs(), data.getRange());
 
+    player->setDisplay(data.getDisplay());
+    player->setAlive(data.getAlive());
+
     try {
         std::unique_ptr<LibDl::DynamicLibrary> dl = std::make_unique<LibDl::DynamicLibrary>(data.getPath());
         auto fct = dl->getSym<Bomberman::AbstractPlayer *(*)(void)>("entryPoint");
@@ -265,6 +268,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     this->quitting = false;
     this->_pause = false;
     this->isInput = false;
+    this->_everySecond = 0.0;
 }
 
 bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPosition) const
@@ -324,7 +328,7 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
+Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
 {
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
@@ -349,17 +353,16 @@ bool Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playe
                 for (auto &val : this->_listPlayers)
                     val.lock()->updateCollisions(obj->getPosition(), 0);
                 obj->destroy();
-                return true;
+                return BASIC;
             }
             if (obj->getType() == Bomb::BOMB && isBomb)
                 continue;
             if (obj->getType() == Bomb::FLAME)
-                std::cout << "YOU SHOULD DIE" << std::endl;
-            return true;
+                return DEATH;
+            return BASIC;
         }
     }
-    return false;
-
+    return COLLIDE_EVENT::NOTHING;
 }
 
 void Bomberman::GameScene::handleSaveNaming()
@@ -434,6 +437,7 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
 void Bomberman::GameScene::update(const double &elapsed)
 {
     std::vector<int> sideList;
+    this->_everySecond += elapsed;
     
     // CHECK IF PAUSE HIS ON GOING
     this->updatePause(elapsed);
@@ -450,7 +454,7 @@ void Bomberman::GameScene::update(const double &elapsed)
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
                     continue;
-                if (checkCollisionForObjects(flame->getPosition(), true) ||
+                if (checkCollisionForObjects(flame->getPosition(), true) == BASIC ||
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
@@ -477,6 +481,12 @@ void Bomberman::GameScene::update(const double &elapsed)
     }
 
     for (auto & player : _listPlayers) {
+        if (!player.lock()->getAlive()) {
+            if (this->_everySecond > 1.0) {
+                player.lock()->setDisplay(false);
+            }
+            continue; 
+        }
         if (player.lock()->getState() == Player::PlayerState::ACTION) {
             double angle = player.lock()->getRotationAngle();
             auto position = player.lock()->getPosition();
@@ -498,7 +508,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 bombPos = Type::Vector<3>(static_cast<float>(round(position.getX()) - 1),
                                                   static_cast<float>(round(position.getY())),
                                                   static_cast<float>(round(position.getZ())));
-            if (checkCollisionForMap(bombPos) || checkCollisionForObjects(bombPos, false, true)) {
+            if (checkCollisionForMap(bombPos) || checkCollisionForObjects(bombPos, false, true) == BASIC) {
                 player.lock()->setState(Player::PlayerState::IDLE);
                 continue;
             }
@@ -518,8 +528,16 @@ void Bomberman::GameScene::update(const double &elapsed)
         player.lock()->update(elapsed);
         if (checkCollisionForMap(player.lock()->getPosition()))
             player.lock()->setPosition(oldPosition);
-        if (checkCollisionForObjects(player.lock()->getPosition()))
+        COLLIDE_EVENT ret = checkCollisionForObjects(player.lock()->getPosition());
+        if (ret == BASIC)
             player.lock()->setPosition(oldPosition);
+        if (ret == DEATH) {
+            // A PLAYER DEATH START HERE
+            player.lock()->setAlive(false);
+            player.lock()->setState(Player::PlayerState::DEAD);
+            player.lock()->setPosition(oldPosition);
+            this->_everySecond = 0.0;
+        }
     }
     this->_second += elapsed;
     if (this->_second >= 1) {
@@ -548,8 +566,10 @@ void Bomberman::GameScene::drawScene()
 {
     _background->render();
     RayLib::Window::getInstance().getDrawing().beginMode3D(_camera);
-    for (auto & object : _gameObjectList)
-        object->render();
+    for (auto & object : _gameObjectList) {
+        if (object->getDisplay())
+            object->render();
+    }
     RayLib::Window::getInstance().getDrawing().endMode3D();
     for (auto const &val : this->_2DGameObjectList) {
         if ((this->_currentUIStage == val.first || val.first == NONE) && val.second->getDisplay())

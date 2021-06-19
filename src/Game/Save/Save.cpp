@@ -63,7 +63,8 @@ void Bomberman::Save::__writePlayer(const std::weak_ptr<Bomberman::Player> &val,
     file << val.lock()->getDisplay() << ",";
     file << "{" << val.lock()->getPosition().getX() << "|" << val.lock()->getPosition().getY() << "|" << val.lock()->getPosition().getZ() << "}" << ",";
     file << val.lock()->getSpeed() << ",";
-    file << val.lock()->getRange();
+    file << val.lock()->getRange() << ",";
+    file << val.lock()->getAlive();
     file << std::endl;
 }
 

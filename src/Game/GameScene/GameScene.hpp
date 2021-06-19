@@ -36,7 +36,14 @@ namespace Bomberman {
             GameScene &operator = (const GameScene &) = delete;
 
             bool checkCollisionForMap(const Type::Vector<3> &playerPosition) const;
-            bool checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
+            
+            enum COLLIDE_EVENT {
+                NOTHING,
+                BASIC,
+                DEATH
+            };
+            
+            COLLIDE_EVENT checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
             void update(const double &elapsed);
             void drawScene();
         protected:
@@ -48,13 +55,14 @@ namespace Bomberman {
             void cancelSaveCallback();
 
             void handleSaveNaming();
-
             std::string convertSecondToDisplayTime(int value) const;
             std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
             std::weak_ptr<GameObject> getObjectFromName(const std::string &name);
             std::shared_ptr<Player> loadPlayerDll(const std::string &dllPath, int inputId, int isIa, const Type::Vector<3> &position);
             std::shared_ptr<Player> loadPlayerFromSave(const PlayerData &data);
+        
+            
             void __createCratesFromSaves(const std::string &path);
 
             void createPause();
@@ -85,5 +93,6 @@ namespace Bomberman {
             bool quitting;
             bool isInput;
             std::string _saveName;
+            double _everySecond;
     };
 }

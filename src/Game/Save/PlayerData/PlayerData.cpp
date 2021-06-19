@@ -10,7 +10,7 @@
 
 #include "PlayerData.hpp"
 
-Bomberman::PlayerData::PlayerData(const std::string &name, const std::string &path, bool ai, int controller, int bombs, bool display, const Type::Vector<3> &positions, double speed, int range) :
+Bomberman::PlayerData::PlayerData(const std::string &name, const std::string &path, bool ai, int controller, int bombs, bool display, const Type::Vector<3> &positions, double speed, int range, bool alive) :
 __name(name),
 __path(path),
 __ai(ai),
@@ -19,7 +19,8 @@ __bombs(bombs),
 __display(display),
 __positions(positions),
 __speed(speed),
-__range(range)
+__range(range),
+__alive(alive)
 {
 
 }
@@ -33,7 +34,8 @@ __bombs(cpy.__bombs),
 __display(cpy.__display),
 __positions(cpy.__positions),
 __speed(cpy.__speed),
-__range(cpy.__range)
+__range(cpy.__range),
+__alive(cpy.__alive)
 {
 
 }
@@ -49,6 +51,7 @@ Bomberman::PlayerData &Bomberman::PlayerData::operator = (const PlayerData &cpy)
     this->__positions = cpy.__positions;
     this->__speed = cpy.__speed;
     this->__range = cpy.__range;
+    this->__alive = cpy.__alive;
     return (*this);
 }
 
@@ -68,7 +71,7 @@ Bomberman::PlayerParse::PlayerParse(const std::string &savePath)
             std::vector<std::string> posRes = GameSceneData::splitFromSep('|', res[6]);
             posRes[0].erase(std::remove(posRes[0].begin(), posRes[0].end(), '{'), posRes[0].end());
             posRes[2].erase(std::remove(posRes[2].begin(), posRes[2].end(), '}'), posRes[2].end());
-            this->__container.push_back(PlayerData(res[0], res[1], std::stoi(res[2]), std::stoi(res[3]), std::stoi(res[4]), std::stoi(res[5]), Type::Vector<3>(std::stof(posRes[0]), std::stof(posRes[1]), std::stof(posRes[2])), std::stod(res[7]), std::stoi(res[8])));
+            this->__container.push_back(PlayerData(res[0], res[1], std::stoi(res[2]), std::stoi(res[3]), std::stoi(res[4]), std::stoi(res[5]), Type::Vector<3>(std::stof(posRes[0]), std::stof(posRes[1]), std::stof(posRes[2])), std::stod(res[7]), std::stoi(res[8]), std::stoi(res[9])));
         }
     } 
 }

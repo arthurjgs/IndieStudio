@@ -35,6 +35,7 @@ namespace Bomberman {
         void update(const double &elapsed);
         void render() const;
         inline int getRange() const { return _range; };
+        inline Player &getOwner() { return (*this->_owner); }
     protected:
     private:
         double _lifespan;
