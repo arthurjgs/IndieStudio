@@ -8,6 +8,27 @@
 #include <RayLib/Window.hpp>
 #include "Player.hpp"
 
+Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, const std::string &dllPath, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
+_isAi(isAi),
+_controller(controller),
+_range(range),
+_speed(speed),
+_state(IDLE),
+_startActionTime(0),
+_alreadyCreatedBomb(false),
+_rotationAngle(0)
+{
+    try {
+        for (int i = 0; i < bombs; i++)
+            _bombTimers.emplace_back(0);
+    }
+    catch (GameException &g) {
+        throw g;
+    }
+    this->_dllPath = dllPath;
+    this->_bombs = bombs;
+}
+
 Bomberman::Player::Player(const std::string &name, const Type::Vector<3> &position, bool isAi, int controller, float speed, int bombs, int range) : GameObject(name, PLAYER, position),
 _isAi(isAi),
 _controller(controller),
@@ -25,6 +46,7 @@ _rotationAngle(0)
     catch (GameException &g) {
         throw g;
     }
+    this->_bombs = bombs;
 }
 
 Bomberman::Player::~Player() = default;

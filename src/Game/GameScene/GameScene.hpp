@@ -10,6 +10,7 @@
 
 #pragma once
 
+#include "../Save/Save.hpp"
 #include <players/Player.hpp>
 #include <Game/Map.hpp>
 #include <Types/Camera/Camera3D.hpp>
@@ -19,6 +20,7 @@
 #include "../../RayLib/Text/Text.hpp"
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
+#include "../Save/PlayerData/PlayerData.hpp"
 #include <map>
 #include <functional>
 
@@ -28,7 +30,7 @@ namespace Bomberman {
             GameScene() = delete;
             GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                       const std::string &playerDll1, const std::string &playerDll2,
-                      const std::string &playerDll3, const std::string &playerDll4, const int timer = 180);
+                      const std::string &playerDll3, const std::string &playerDll4, const std::string &savePath = "", const int timer = 180);
             ~GameScene() = default;
             GameScene(const GameScene &) = delete;
             GameScene &operator = (const GameScene &) = delete;
@@ -45,11 +47,15 @@ namespace Bomberman {
             void confirmSaveCallback();
             void cancelSaveCallback();
 
+            void handleSaveNaming();
+
             std::string convertSecondToDisplayTime(int value) const;
             std::string addZeroOrNot(int value) const;
             std::weak_ptr<FlashingText> getTextFromName(const std::string &name);
             std::weak_ptr<GameObject> getObjectFromName(const std::string &name);
             std::shared_ptr<Player> loadPlayerDll(const std::string &dllPath, int inputId, int isIa, const Type::Vector<3> &position);
+            std::shared_ptr<Player> loadPlayerFromSave(const PlayerData &data);
+            void __createCratesFromSaves(const std::string &path);
 
             void createPause();
             void updatePause(const double &elasped);
@@ -77,5 +83,7 @@ namespace Bomberman {
             double _second;
             bool _pause;
             bool quitting;
+            bool isInput;
+            std::string _saveName;
     };
 }

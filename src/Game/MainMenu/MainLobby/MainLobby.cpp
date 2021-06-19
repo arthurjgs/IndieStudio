@@ -11,6 +11,50 @@
 #include "MainLobby.hpp"
 #include "../../QuitGame/QuitGame.hpp"
 #include "../Credits/Credits.hpp"
+#include "../../Music/Music.hpp"
+#include "../../Save/GameSceneData/GameSceneData.hpp"
+#include "../../GameScene/GameScene.hpp"
+
+void Bomberman::Menu::MainLobby::backButtonCallback()
+{
+    int old = 0;
+
+    if (this->__saveIndex <= 3) {
+        return;
+    }
+    for (int i = this->__saveIndex - 1; (size_t) i < this->__saveButtons.size(); i++) {
+        this->__saveButtons[i].lock()->setDisplay(false);
+    }
+    old = this->__saveIndex;
+    this->__saveIndex -= 3;
+    if (this->__saveIndex < 0) {
+        this->__saveIndex = 0;
+    }
+    for (int i = this->__saveIndex - 1; i < old - 1; i++) {
+        this->__saveButtons[i].lock()->setDisplay(true);
+    }
+    this->__saveIndex = old - 1;
+}
+
+void Bomberman::Menu::MainLobby::forwardButtonCallback()
+{
+    int old = 0;
+
+    if ((size_t)this->__saveIndex >= this->__saveButtons.size()) {
+        return;
+    }
+    for (int i = 0; i < this->__saveIndex; i++) {
+        this->__saveButtons[i].lock()->setDisplay(false);
+    }
+    old = this->__saveIndex;
+    this->__saveIndex += 3;
+    if ((size_t) this->__saveIndex + 3 > this->__saveButtons.size()) {
+        this->__saveIndex = this->__saveButtons.size();
+    }
+    for (int i = old; i < this->__saveIndex; i++) {
+        this->__saveButtons[i].lock()->setDisplay(true);
+    } 
+}
 
 void Bomberman::Menu::MainLobby::createSavePanel()
 {
@@ -19,10 +63,23 @@ void Bomberman::Menu::MainLobby::createSavePanel()
     std::shared_ptr<Button> close = std::make_shared<Button>("closeLoad", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
     close->setDisplay(false);
 
+    std::shared_ptr<Button> back = std::make_shared<Button>("back", Type::Vector<3>(775.0f, 900.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> forward = std::make_shared<Button>("forward", Type::Vector<3>(1075.0f, 900.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    back->setDisplay(false);
+    forward->setDisplay(false);
+
     this->__objContainer.emplace_back(LOAD_PANEL, close);
     this->__buttonsReferer.emplace_back(LOAD_PANEL, close);
 
+    this->__objContainer.emplace_back(LOAD_PANEL, back);
+    this->__buttonsReferer.emplace_back(LOAD_PANEL, back);
+
+    this->__objContainer.emplace_back(LOAD_PANEL, forward);
+    this->__buttonsReferer.emplace_back(LOAD_PANEL, forward);
+
     this->__buttonCallback["closeLoad"] = &MainLobby::closeButtonCallback;
+    this->__buttonCallback["back"] = &MainLobby::backButtonCallback;
+    this->__buttonCallback["forward"] = &MainLobby::forwardButtonCallback;
     this->__controllerMapLoad[0] = "closeLoad";
 }
 
@@ -185,7 +242,7 @@ Scene(manager)
     this->__objContainer.emplace_back(MAIN, std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
     this->__objContainer.emplace_back(MAIN_PANEL, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
     this->__objContainer.emplace_back(MAIN, std::make_shared<Image>("./assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 40.0f, 0.0f)));
-    
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", "./assets/sounds/lobbymusic.mp3", 0.5f));
     this->__objContainer.emplace_back(OPTION_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel1.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(65.0f, 85.0f, 0.0f), false));
     
     // button
@@ -485,9 +542,35 @@ void Bomberman::Menu::MainLobby::closeAudioCallback()
     this->audioPanelFocus = false;
 }
 
+void Bomberman::Menu::MainLobby::__deleteSaveButtons(const std::vector<std::string> &container)
+{
+    size_t i = 0;
+    bool find = false;
+
+    while (i < this->__objContainer.size()) {
+        find = false;
+        for (auto const &val : container) {
+            if (val == this->__objContainer[i].second->getName()) {
+                this->__objContainer[i].second.reset();
+                this->__objContainer.erase(this->__objContainer.begin() + i);
+                find = true;
+            }
+        }
+        if (find == false) {
+            i++;
+        }
+    }
+    this->__saveButtons.clear();
+}
+
 void Bomberman::Menu::MainLobby::closeButtonCallback()
 {
     this->__save = false;
+    std::vector<std::string> saveName;
+    for (auto const &val : this->__saveButtons) {
+        saveName.push_back(val.lock()->getName());
+    }
+    this->__deleteSaveButtons(saveName);
     this->loadPanelFocus = false;
     this->mainPanelFocus = true;
     for (auto const &val : this->__objContainer) {
@@ -536,6 +619,43 @@ void Bomberman::Menu::MainLobby::playButtonCallback()
     this->__manager.newScene<SelectionMenu>();
 }
 
+std::string Bomberman::Menu::MainLobby::getFileName(const std::string &path)
+{
+    std::string res = "";
+
+    res = path.substr(path.find_last_of("/") + 1, path.length());
+    res = res.substr(0, res.find_last_of("."));
+    return (res);
+}
+
+void Bomberman::Menu::MainLobby::__fetchSave()
+{
+    float yOffset = 500.0f;
+    int count = 0;
+
+    for (const auto &entry : std::filesystem::directory_iterator("./save")) {
+        std::shared_ptr<Button> save = std::make_shared<Button>(entry.path(), Type::Vector<3>(775.0f, yOffset, 0.0f), "./assets/MainMenu/button_sheet_2.png", this->getFileName(entry.path()), 40);
+        save->setDisplay(false);
+        this->__objContainer.emplace_back(LOAD_PANEL, save);
+        this->__saveButtons.emplace_back(save);
+        count++;
+        yOffset += 150.0f;
+        if (count == 3) {
+            yOffset = 500.0f;
+        }
+    }
+    count = 0;
+    for (auto const &val : this->__saveButtons) {
+        val.lock()->setDisplay(true);
+        count++;
+        if (count == 3) {
+            break;
+        }
+    }
+    this->__saveIndex = 3;
+    this->__saveDisplay = true;
+}
+
 void Bomberman::Menu::MainLobby::loadButtonCallback()
 {
     this->__settings = false;
@@ -564,6 +684,7 @@ void Bomberman::Menu::MainLobby::loadButtonCallback()
             val.second->setDisplay(!this->__save);
         }
     }
+    this->__fetchSave();
 }
 
 void Bomberman::Menu::MainLobby::quitButtonCallback()
@@ -840,6 +961,12 @@ void Bomberman::Menu::MainLobby::manageControllerInput()
     }
 }
 
+void Bomberman::Menu::MainLobby::__handleSaveTransition(const std::string &path)
+{
+    GameSceneData data(path);
+    this->__manager.clearStack<Bomberman::GameScene>(data.getPlayerInputIds(), data.getPlayerIa(), data.getDll1(), data.getDll2(), data.getDll3(), data.getDll4(), data.getSavePath(), data.getTimer());
+}
+
 void Bomberman::Menu::MainLobby::update(const double &elapsed)
 {
     if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0) {
@@ -868,6 +995,13 @@ void Bomberman::Menu::MainLobby::update(const double &elapsed)
             }
         }
     }
+    for (auto const &val : this->__saveButtons) {
+        if (val.lock()->getDisplay() && val.lock()->isClick() && this->__saveDisplay == false) {
+            this->__handleSaveTransition(val.lock()->getName());
+            return;
+        }
+    }
+    this->__saveDisplay = false;
     for (auto const &val : this->__objContainer) {
         val.second->update(elapsed);
     }

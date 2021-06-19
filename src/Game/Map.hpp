@@ -11,7 +11,11 @@
 #include <RayLib/Model/Map/Map.hpp>
 #include "GameObject.hpp"
 #include <vector>
+#include <fstream>
+#include <string>
+#include <sstream>
 #include <Game/Crate/Crates.hpp>
+#include "Save/GameSceneData/GameSceneData.hpp"
 
 namespace Bomberman {
     class Map : public GameObject{
@@ -21,6 +25,8 @@ namespace Bomberman {
         Type::Vector<2> getCubicMap();
         std::vector<Type::Color> getMapPixels();
         std::vector<std::shared_ptr<Bomberman::Crate>> createCrates(const double &percentage);
+        std::vector<std::shared_ptr<Bomberman::Crate>> createCratesSaves(const std::string &path);
+
         void render() const override;
         void update(const double &elapsed) override;
     protected:
