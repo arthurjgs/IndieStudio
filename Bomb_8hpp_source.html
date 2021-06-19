@@ -107,22 +107,24 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#abb31af2d51662bc1c517f157e54ac53e">update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Bomb.html#ab08a71e0b55392596468d9f1d0a7e02a">render</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#a1f89859366254c31dcc6d716979994b1">   37</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="classBomberman_1_1Bomb.html#a1f89859366254c31dcc6d716979994b1">getRange</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _range; };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">double</span> _lifespan;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">int</span> _range;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">bool</span> _exploded;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classBomberman_1_1Player.html">Player</a> *_owner;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    };</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_BOMB_HPP</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classBomberman_1_1Bomb.html#a3a9d08a159ff8144895cfdc892c2a799">   38</a></span>&#160;        <span class="keyword">inline</span> <a class="code" href="classBomberman_1_1Player.html">Player</a> &amp;<a class="code" href="classBomberman_1_1Bomb.html#a3a9d08a159ff8144895cfdc892c2a799">getOwner</a>() { <span class="keywordflow">return</span> (*this-&gt;_owner); }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">double</span> _lifespan;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">int</span> _range;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">bool</span> _exploded;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classBomberman_1_1Player.html">Player</a> *_owner;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_BOMB_HPP</span></div>
 <div class="ttc" id="aAnimate_8hpp_html"><div class="ttname"><a href="Animate_8hpp.html">Animate.hpp</a></div></div>
 <div class="ttc" id="aFlame_8hpp_html"><div class="ttname"><a href="Flame_8hpp.html">Flame.hpp</a></div></div>
 <div class="ttc" id="aGameException_8hpp_html"><div class="ttname"><a href="GameException_8hpp.html">GameException.hpp</a></div><div class="ttdoc">Bomberman game exception header.</div></div>
 <div class="ttc" id="aGameObject_8hpp_html"><div class="ttname"><a href="GameObject_8hpp.html">GameObject.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomb_html"><div class="ttname"><a href="classBomberman_1_1Bomb.html">Bomberman::Bomb</a></div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00023">Bomb.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomb_html_a1f89859366254c31dcc6d716979994b1"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a1f89859366254c31dcc6d716979994b1">Bomberman::Bomb::getRange</a></div><div class="ttdeci">int getRange() const</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00037">Bomb.hpp:37</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Bomb_html_a3a9d08a159ff8144895cfdc892c2a799"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a3a9d08a159ff8144895cfdc892c2a799">Bomberman::Bomb::getOwner</a></div><div class="ttdeci">Player &amp; getOwner()</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8hpp_source.html#l00038">Bomb.hpp:38</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomb_html_a43fd88101de321708935645e869ebe0f"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a43fd88101de321708935645e869ebe0f">Bomberman::Bomb::explode</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Flame &gt; &gt; explode()</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00041">Bomb.cpp:41</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomb_html_a4ce448604ff647e8ecaa701e9664c6d4"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a4ce448604ff647e8ecaa701e9664c6d4">Bomberman::Bomb::~Bomb</a></div><div class="ttdeci">~Bomb()</div></div>
 <div class="ttc" id="aclassBomberman_1_1Bomb_html_a5da08657750bea7070a95ba849a66bbd"><div class="ttname"><a href="classBomberman_1_1Bomb.html#a5da08657750bea7070a95ba849a66bbd">Bomberman::Bomb::Bomb</a></div><div class="ttdeci">Bomb(const Type::Vector&lt; 3 &gt; &amp;position, Player *owner, int range=1)</div><div class="ttdef"><b>Definition:</b> <a href="Bomb_8cpp_source.html#l00011">Bomb.cpp:11</a></div></div>

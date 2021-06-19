@@ -73,7 +73,7 @@ $(function() {
 <a href="PlayerData_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="PlayerData_8hpp.html">PlayerData.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#a727e18e3dd76adb54cde6e7094d5b817">   13</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html#af3d37504ea25b1df5ccdf62562f8c526">Bomberman::PlayerData::PlayerData</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> std::string &amp;path, <span class="keywordtype">bool</span> ai, <span class="keywordtype">int</span> controller, <span class="keywordtype">int</span> bombs, <span class="keywordtype">bool</span> display, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;positions, <span class="keywordtype">double</span> speed, <span class="keywordtype">int</span> range) :</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#a403a1b242093fb67f19433e2f245fafc">   13</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html#af3d37504ea25b1df5ccdf62562f8c526">Bomberman::PlayerData::PlayerData</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> std::string &amp;path, <span class="keywordtype">bool</span> ai, <span class="keywordtype">int</span> controller, <span class="keywordtype">int</span> bombs, <span class="keywordtype">bool</span> display, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;positions, <span class="keywordtype">double</span> speed, <span class="keywordtype">int</span> range, <span class="keywordtype">bool</span> alive) :</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;__name(name),</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;__path(path),</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;__ai(ai),</div>
@@ -82,64 +82,67 @@ $(function() {
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;__display(display),</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;__positions(positions),</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;__speed(speed),</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;__range(range)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#ae8ebe59d3f880e6d946a114e473bd380">   27</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html#af3d37504ea25b1df5ccdf62562f8c526">Bomberman::PlayerData::PlayerData</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a> &amp;cpy) :</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;__name(cpy.__name),</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;__path(cpy.__path),</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;__ai(cpy.__ai),</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;__controller(cpy.__controller),</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;__bombs(cpy.__bombs),</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;__display(cpy.__display),</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;__positions(cpy.__positions),</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;__speed(cpy.__speed),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;__range(cpy.__range)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;{</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;__range(range),</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;__alive(alive)</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#ae8ebe59d3f880e6d946a114e473bd380">   28</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html#af3d37504ea25b1df5ccdf62562f8c526">Bomberman::PlayerData::PlayerData</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a> &amp;cpy) :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;__name(cpy.__name),</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;__path(cpy.__path),</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;__ai(cpy.__ai),</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;__controller(cpy.__controller),</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;__bombs(cpy.__bombs),</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;__display(cpy.__display),</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;__positions(cpy.__positions),</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;__speed(cpy.__speed),</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;__range(cpy.__range),</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;__alive(cpy.__alive)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">   41</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html">Bomberman::PlayerData</a> &amp;<a class="code" href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">Bomberman::PlayerData::operator = </a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a> &amp;cpy)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    this-&gt;__name = cpy.__name;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    this-&gt;__path = cpy.__path;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    this-&gt;__ai = cpy.__ai;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;__controller = cpy.__controller;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;__bombs = cpy.__bombs;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;__display = cpy.__display;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;__positions = cpy.__positions;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;__speed = cpy.__speed;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;__range = cpy.__range;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerParse.html#a6be066941afd43a87ef6568b02011fed">   55</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerParse.html#a26255475b82baa3278cd5de189e7093d">Bomberman::PlayerParse::PlayerParse</a>(<span class="keyword">const</span> std::string &amp;savePath)</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::ifstream infile(savePath);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::string line = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    std::string lineData = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (infile.is_open() == <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(savePath + <span class="stringliteral">&quot; -&gt; does not exist&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">while</span> (std::getline(infile, line)) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (line.substr(0, line.find(<span class="charliteral">&#39;:&#39;</span>)) == <span class="stringliteral">&quot;player&quot;</span>) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            lineData = line.substr(line.find(<span class="charliteral">&#39;:&#39;</span>) + 1, line.length());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            std::vector&lt;std::string&gt; res = <a class="code" href="classBomberman_1_1GameSceneData.html#a598f7aaaf8b9613663a479d1f91aa278">GameSceneData::splitFromSep</a>(<span class="charliteral">&#39;,&#39;</span>, lineData);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            std::vector&lt;std::string&gt; posRes = <a class="code" href="classBomberman_1_1GameSceneData.html#a598f7aaaf8b9613663a479d1f91aa278">GameSceneData::splitFromSep</a>(<span class="charliteral">&#39;|&#39;</span>, res[6]);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            posRes[0].erase(std::remove(posRes[0].begin(), posRes[0].end(), <span class="charliteral">&#39;{&#39;</span>), posRes[0].end());</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            posRes[2].erase(std::remove(posRes[2].begin(), posRes[2].end(), <span class="charliteral">&#39;}&#39;</span>), posRes[2].end());</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            this-&gt;__container.push_back(<a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a>(res[0], res[1], std::stoi(res[2]), std::stoi(res[3]), std::stoi(res[4]), std::stoi(res[5]), <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(std::stof(posRes[0]), std::stof(posRes[1]), std::stof(posRes[2])), std::stod(res[7]), std::stoi(res[8])));</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    } </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">   43</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerData.html">Bomberman::PlayerData</a> &amp;<a class="code" href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">Bomberman::PlayerData::operator = </a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a> &amp;cpy)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    this-&gt;__name = cpy.__name;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    this-&gt;__path = cpy.__path;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    this-&gt;__ai = cpy.__ai;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    this-&gt;__controller = cpy.__controller;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    this-&gt;__bombs = cpy.__bombs;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    this-&gt;__display = cpy.__display;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    this-&gt;__positions = cpy.__positions;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    this-&gt;__speed = cpy.__speed;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    this-&gt;__range = cpy.__range;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    this-&gt;__alive = cpy.__alive;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span> (*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classBomberman_1_1PlayerParse.html#a6be066941afd43a87ef6568b02011fed">   58</a></span>&#160;<a class="code" href="classBomberman_1_1PlayerParse.html#a26255475b82baa3278cd5de189e7093d">Bomberman::PlayerParse::PlayerParse</a>(<span class="keyword">const</span> std::string &amp;savePath)</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    std::ifstream infile(savePath);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string line = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string lineData = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (infile.is_open() == <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">throw</span> std::runtime_error(savePath + <span class="stringliteral">&quot; -&gt; does not exist&quot;</span>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">while</span> (std::getline(infile, line)) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">if</span> (line.substr(0, line.find(<span class="charliteral">&#39;:&#39;</span>)) == <span class="stringliteral">&quot;player&quot;</span>) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            lineData = line.substr(line.find(<span class="charliteral">&#39;:&#39;</span>) + 1, line.length());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            std::vector&lt;std::string&gt; res = <a class="code" href="classBomberman_1_1GameSceneData.html#a598f7aaaf8b9613663a479d1f91aa278">GameSceneData::splitFromSep</a>(<span class="charliteral">&#39;,&#39;</span>, lineData);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            std::vector&lt;std::string&gt; posRes = <a class="code" href="classBomberman_1_1GameSceneData.html#a598f7aaaf8b9613663a479d1f91aa278">GameSceneData::splitFromSep</a>(<span class="charliteral">&#39;|&#39;</span>, res[6]);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            posRes[0].erase(std::remove(posRes[0].begin(), posRes[0].end(), <span class="charliteral">&#39;{&#39;</span>), posRes[0].end());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            posRes[2].erase(std::remove(posRes[2].begin(), posRes[2].end(), <span class="charliteral">&#39;}&#39;</span>), posRes[2].end());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            this-&gt;__container.push_back(<a class="code" href="classBomberman_1_1PlayerData.html">PlayerData</a>(res[0], res[1], std::stoi(res[2]), std::stoi(res[3]), std::stoi(res[4]), std::stoi(res[5]), <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(std::stof(posRes[0]), std::stof(posRes[1]), std::stof(posRes[2])), std::stod(res[7]), std::stoi(res[8]), std::stoi(res[9])));</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    } </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="ttc" id="aPlayerData_8hpp_html"><div class="ttname"><a href="PlayerData_8hpp.html">PlayerData.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameSceneData_html_a598f7aaaf8b9613663a479d1f91aa278"><div class="ttname"><a href="classBomberman_1_1GameSceneData.html#a598f7aaaf8b9613663a479d1f91aa278">Bomberman::GameSceneData::splitFromSep</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; splitFromSep(char sep, const std::string &amp;line)</div><div class="ttdef"><b>Definition:</b> <a href="GameSceneData_8cpp_source.html#l00013">GameSceneData.cpp:13</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1PlayerData_html"><div class="ttname"><a href="classBomberman_1_1PlayerData.html">Bomberman::PlayerData</a></div><div class="ttdef"><b>Definition:</b> <a href="PlayerData_8hpp_source.html#l00023">PlayerData.hpp:23</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1PlayerData_html_a63188c68995181433f410baaa8a129f0"><div class="ttname"><a href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">Bomberman::PlayerData::operator=</a></div><div class="ttdeci">PlayerData &amp; operator=(const PlayerData &amp;cpy)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerData_8cpp_source.html#l00041">PlayerData.cpp:41</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1PlayerData_html_a63188c68995181433f410baaa8a129f0"><div class="ttname"><a href="classBomberman_1_1PlayerData.html#a63188c68995181433f410baaa8a129f0">Bomberman::PlayerData::operator=</a></div><div class="ttdeci">PlayerData &amp; operator=(const PlayerData &amp;cpy)</div><div class="ttdef"><b>Definition:</b> <a href="PlayerData_8cpp_source.html#l00043">PlayerData.cpp:43</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1PlayerData_html_af3d37504ea25b1df5ccdf62562f8c526"><div class="ttname"><a href="classBomberman_1_1PlayerData.html#af3d37504ea25b1df5ccdf62562f8c526">Bomberman::PlayerData::PlayerData</a></div><div class="ttdeci">PlayerData()=delete</div></div>
 <div class="ttc" id="aclassBomberman_1_1PlayerParse_html_a26255475b82baa3278cd5de189e7093d"><div class="ttname"><a href="classBomberman_1_1PlayerParse.html#a26255475b82baa3278cd5de189e7093d">Bomberman::PlayerParse::PlayerParse</a></div><div class="ttdeci">PlayerParse()=delete</div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 3 &gt;</a></div></div>
