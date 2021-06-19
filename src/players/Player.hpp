@@ -54,6 +54,9 @@ namespace Bomberman {
         inline bool getIsAi() const { return (this->_isAi); }
         inline int getController() const { return (this->_controller); }
         inline int getBombs() const { return (this->_bombs); }
+        inline bool getAlive() const { return (this->_alive); }
+
+        inline void setAlive(bool val) { this->_alive = val; }
     private:
         void _iaOrPlayer(double elapsed);
         void _playerHandler(double elapsed);
@@ -73,6 +76,7 @@ namespace Bomberman {
         bool _alreadyCreatedBomb;
         double _rotationAngle;
         bool _isAi;
+        bool _alive;
         int _bombs;
         int _controller;
         std::string _dllPath;

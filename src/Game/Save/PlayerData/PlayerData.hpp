@@ -23,7 +23,7 @@ namespace Bomberman {
     class PlayerData {
         public:
             PlayerData() = delete;
-            PlayerData(const std::string &name, const std::string &path, bool ai, int controller, int bombs, bool display, const Type::Vector<3> &positions, double speed, int range);
+            PlayerData(const std::string &name, const std::string &path, bool ai, int controller, int bombs, bool display, const Type::Vector<3> &positions, double speed, int range, bool alive);
             PlayerData(const PlayerData &cpy);
             PlayerData &operator = (const PlayerData &cpy);
         
@@ -38,6 +38,8 @@ namespace Bomberman {
             inline Type::Vector<3> getPositions() const { return (this->__positions); }
             inline double getSpeed() const { return (this->__speed); }
             inline int getRange() const { return (this->__range); }
+            inline bool getAlive() const { return (this->__alive); }
+
         protected:
         private:
             std::string __name;
@@ -49,6 +51,7 @@ namespace Bomberman {
             Type::Vector<3> __positions;
             double __speed;
             int __range;
+            bool __alive;
     };
 
     class PlayerParse {
