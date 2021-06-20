@@ -14,6 +14,7 @@
 #include "../../Music/Music.hpp"
 #include "../../Save/GameSceneData/GameSceneData.hpp"
 #include "../../GameScene/GameScene.hpp"
+#include <Game/Config.hpp>
 
 void Bomberman::Menu::MainLobby::backButtonCallback()
 {
@@ -737,7 +738,7 @@ void Bomberman::Menu::MainLobby::__fetchSave()
     int count = 0;
 
     for (const auto &entry : std::filesystem::directory_iterator("./save")) {
-        std::shared_ptr<Button> save = std::make_shared<Button>(entry.path(), Type::Vector<3>(775.0f, yOffset, 0.0f), "./assets/MainMenu/button_sheet_2.png", this->getFileName(entry.path()), 40);
+        std::shared_ptr<Button> save = std::make_shared<Button>(entry.path().string(), Type::Vector<3>(775.0f, yOffset, 0.0f), "./assets/MainMenu/button_sheet_2.png", this->getFileName(entry.path().string()), 40);
         save->setDisplay(false);
         this->__objContainer.emplace_back(LOAD_PANEL, save);
         this->__saveButtons.emplace_back(save);

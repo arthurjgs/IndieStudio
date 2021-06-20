@@ -216,7 +216,7 @@ void Bomberman::Menu::SelectionMenu::readySquareState()
 {
 
     bool plus = false;
-    _readySound.PlaySound();
+    _readySound.PlaySoundMulti();
     for (auto const &val : this->__stateImagesReferer)
     {
         if (!_isAction)
@@ -530,7 +530,13 @@ std::vector<std::string> Bomberman::Menu::SelectionMenu::getPlayerDlls()
     for (auto i : this->_selectedModel) {
         if (i == -1)
             i = 0;
-        for (auto &file : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath + "lib")) {
+		#ifdef _WIN32
+        for (auto &file : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath)) {
+        	if (file.path().string().find(".dll") == std::string::npos)
+                continue;
+		#else
+        for (auto& file : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath + "lib")) {
+		#endif
             if (file.path().string().find(__modelsContainer[i]->getName()) != std::string::npos) {
                 dlls.emplace_back(std::filesystem::absolute(file.path()).string());
             }

@@ -381,7 +381,7 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
                 continue;
             if (obj->getType() == Bomb::FLAME)
             {
-                _soundDeath.PlaySound();
+                _soundDeath.PlaySoundMulti();
                 return DEATH;
             }
             return BASIC;
@@ -428,7 +428,7 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
 
             if (obj->getType() == Bomb::FLAME)
             {
-                _soundDeath.PlaySound();
+                _soundDeath.PlaySoundMulti();
                 return DEATH;
             }
 
@@ -572,7 +572,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.expired())
             continue;
         if (b.lock()->getState() == GameObject::DESTROYED) {
-            _soundExplosion.PlaySound();
+            _soundExplosion.PlaySoundMulti();
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
@@ -581,7 +581,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
-                _soundFlame.PlaySound();
+                _soundFlame.PlaySoundMulti();
             }
             for (auto &val : this->_listPlayers)
             {
@@ -637,7 +637,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 continue;
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
-            _soundBombFuse.PlaySound();
+            _soundBombFuse.PlaySoundMulti();
             if (bomb != nullptr) {
 
                 for (auto &val : this->_listPlayers)

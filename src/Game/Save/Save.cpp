@@ -102,6 +102,8 @@ __data(std::move(data))
 
 Bomberman::SaveData &&Bomberman::Save::__loadDataFromPath()
 {
+    std::vector<std::weak_ptr<Player>> v1;
+    return SaveData(std::vector<std::shared_ptr<GameObject>>(), v1, 0);
     // load data from file
 }
 

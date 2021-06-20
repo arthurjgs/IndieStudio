@@ -5,3 +5,5 @@ lib/
 unit_tests
 .DS_Store
 bomberman
+Debug/
+Release/
