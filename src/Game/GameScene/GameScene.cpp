@@ -187,7 +187,7 @@ void Bomberman::GameScene::__createCratesFromSaves(const std::string &path)
     for (auto & obj : this->_gameMap.lock()->createCratesSaves(path))
     {
         for (auto &val : this->_listPlayers)
-            val.lock()->updateCollisions(obj->getPosition(), 2);
+            val.lock()->updateCollisions(obj->getPosition(), 1);
         this->_gameObjectList.emplace_back(obj);
         this->_CrateList.emplace_back(obj);
     }
@@ -256,7 +256,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
         for (auto & obj : this->_gameMap.lock()->createCrates(75))
         {
             for (auto &val : this->_listPlayers)
-                val.lock()->updateCollisions(obj->getPosition(), 2);
+                val.lock()->updateCollisions(obj->getPosition(), 1);
             this->_gameObjectList.emplace_back(obj);
             this->_CrateList.emplace_back(obj);
         }
@@ -517,7 +517,7 @@ void Bomberman::GameScene::update(const double &elapsed)
 
                 for (auto &val : this->_listPlayers)
                 {
-                    val.lock()->updateCollisions(bomb->getPosition(), 2);
+                    val.lock()->updateCollisions(bomb->getPosition(), 1);
                     val.lock()->updateDangers(bomb->getPosition(), bomb->getRange(), 1);
                 }
                 _gameObjectList.emplace_back(bomb);

@@ -18,6 +18,8 @@ _startActionTime(0),
 _alreadyCreatedBomb(false),
 _rotationAngle(0)
 {
+    _wait = 0;
+    _dir = NONE;
     try {
         for (int i = 0; i < bombs; i++)
             _bombTimers.emplace_back(0);
@@ -329,7 +331,7 @@ void Bomberman::Player::_moveAi(double elapsed)
 
 void Bomberman::Player::_setNewGoalOffense(double elapsed)
 {
-    int random = rand() % 5;
+    int random = rand() % 4;
     switch (random)
     {
     case 0:
