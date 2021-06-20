@@ -74,7 +74,7 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Button_8hpp.html">Button.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../RayLib/Window.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#ac452eb93e7b268b0c2321c85805af5c5">   15</a></span>&#160;<a class="code" href="classBomberman_1_1Button.html#a0138dc51d07bcd0add7afaf2174c04d2">Bomberman::Button::Button</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;position,</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#a17d10c324c12be106b02d9799e330084">   15</a></span>&#160;<a class="code" href="classBomberman_1_1Button.html#a0138dc51d07bcd0add7afaf2174c04d2">Bomberman::Button::Button</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keyword">const</span> <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a> &amp;position,</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">const</span> std::string &amp;texturePath, <span class="keyword">const</span> std::string &amp;text, <span class="keywordtype">size_t</span> fontSize, <span class="keyword">const</span> <a class="code" href="classType_1_1Color.html">Type::Color</a> &amp;textColor,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">const</span> std::string &amp;soundPath, <span class="keywordtype">bool</span> display) :</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<a class="code" href="classBomberman_1_1GameObject.html">GameObject</a>(name, <a class="code" href="namespaceBomberman.html">Bomberman</a>::<a class="code" href="classBomberman_1_1GameObject.html">GameObject</a>::BUTTON, position, display),</div>
@@ -104,60 +104,63 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (_mouse.isMouseButtonReleased(MOUSE_BUTTON_LEFT))</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">   49</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">Bomberman::Button::isValidate</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;_manual) {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputGamepad().isGamepadButtonPressed(0, <a class="code" href="classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ae37c2a6f3cba6faecac992773f883eed">RayLib::Window::A</a>));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button::render</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (_display)</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        _texture.drawTextureRec(_sourceRec, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(_btnBounds.getX(), _btnBounds.getY()), <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255));</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_text != <span class="stringliteral">&quot;&quot;</span>) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordtype">int</span> posX = (this-&gt;_btnBounds.getX() + this-&gt;_btnBounds.getWidth() / 2) - (this-&gt;_text.length() * this-&gt;_fontSize) / 3;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordtype">int</span> posY = (this-&gt;_btnBounds.getY() + this-&gt;_btnBounds.getHeight() / 2) - (this-&gt;_fontSize / 2);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            this-&gt;_textDisplayer.DrawText(this-&gt;_text, posX, posY, this-&gt;_fontSize, this-&gt;_textColor);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    (void) elapsed;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_manual == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        _sourceRec.setX(_state * _frameWidth);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">getInputKeyboard</a>().<a class="code" href="classRayLib_1_1InputKeyboard.html#a5a9c6cc53d8308b90927063a7c8f6e30">getKeyPressed</a>() &gt; 0) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            this-&gt;_manual = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;salut&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">if</span> (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">if</span> (_mouse.isMouseButtonDown(MOUSE_BUTTON_LEFT))</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            _state = 2;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            _state = 1;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        _state = 0;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    _sourceRec.setX(_state * _frameWidth);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            this-&gt;_sound.PlaySound();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">   52</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">Bomberman::Button::isValidate</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">if</span> (!this-&gt;_manual) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> (<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputGamepad().isGamepadButtonPressed(0, <a class="code" href="classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148ae37c2a6f3cba6faecac992773f883eed">RayLib::Window::A</a>));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">   60</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button::render</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (_display)</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        _texture.drawTextureRec(_sourceRec, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(_btnBounds.getX(), _btnBounds.getY()), <a class="code" href="classType_1_1Color.html">Type::Color</a>(255, 255, 255, 255));</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_text != <span class="stringliteral">&quot;&quot;</span>) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordtype">int</span> posX = (this-&gt;_btnBounds.getX() + this-&gt;_btnBounds.getWidth() / 2) - (this-&gt;_text.length() * this-&gt;_fontSize) / 3;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="keywordtype">int</span> posY = (this-&gt;_btnBounds.getY() + this-&gt;_btnBounds.getHeight() / 2) - (this-&gt;_fontSize / 2);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            this-&gt;_textDisplayer.DrawText(this-&gt;_text, posX, posY, this-&gt;_fontSize, this-&gt;_textColor);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button::update</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp;elapsed)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    (void) elapsed;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_manual == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        _sourceRec.setX(_state * _frameWidth);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">getInputKeyboard</a>().<a class="code" href="classRayLib_1_1InputKeyboard.html#a5a9c6cc53d8308b90927063a7c8f6e30">getKeyPressed</a>() &gt; 0) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            this-&gt;_manual = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;salut&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (_mouse.isMouseButtonDown(MOUSE_BUTTON_LEFT))</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            _state = 2;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            _state = 1;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        _state = 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    _sourceRec.setX(_state * _frameWidth);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="aButton_8hpp_html"><div class="ttname"><a href="Button_8hpp.html">Button.hpp</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Button_html_a0138dc51d07bcd0add7afaf2174c04d2"><div class="ttname"><a href="classBomberman_1_1Button.html#a0138dc51d07bcd0add7afaf2174c04d2">Bomberman::Button::Button</a></div><div class="ttdeci">Button()=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1Button_html_a2853485b2a8f29e9364d97cf55c02aef"><div class="ttname"><a href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button::render</a></div><div class="ttdeci">void render() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00057">Button.cpp:57</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Button_html_a34be3239f1cdc9ad4af1f24e62f911ad"><div class="ttname"><a href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00070">Button.cpp:70</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Button_html_a2853485b2a8f29e9364d97cf55c02aef"><div class="ttname"><a href="classBomberman_1_1Button.html#a2853485b2a8f29e9364d97cf55c02aef">Bomberman::Button::render</a></div><div class="ttdeci">void render() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00060">Button.cpp:60</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Button_html_a34be3239f1cdc9ad4af1f24e62f911ad"><div class="ttname"><a href="classBomberman_1_1Button.html#a34be3239f1cdc9ad4af1f24e62f911ad">Bomberman::Button::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00073">Button.cpp:73</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Button_html_a4e27bdb5263a3f53ac742f899be4e83e"><div class="ttname"><a href="classBomberman_1_1Button.html#a4e27bdb5263a3f53ac742f899be4e83e">Bomberman::Button::isClick</a></div><div class="ttdeci">bool isClick() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00038">Button.cpp:38</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1Button_html_aa28e9a861f72853d2d853d6e57bae739"><div class="ttname"><a href="classBomberman_1_1Button.html#aa28e9a861f72853d2d853d6e57bae739">Bomberman::Button::~Button</a></div><div class="ttdeci">~Button()</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00034">Button.cpp:34</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1Button_html_ae2dc0c737202183061d9c02dd94f5768"><div class="ttname"><a href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">Bomberman::Button::isValidate</a></div><div class="ttdeci">bool isValidate() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00049">Button.cpp:49</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1Button_html_ae2dc0c737202183061d9c02dd94f5768"><div class="ttname"><a href="classBomberman_1_1Button.html#ae2dc0c737202183061d9c02dd94f5768">Bomberman::Button::isValidate</a></div><div class="ttdeci">bool isValidate() const</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00052">Button.cpp:52</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameObject_html"><div class="ttname"><a href="classBomberman_1_1GameObject.html">Bomberman::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8hpp_source.html#l00014">GameObject.hpp:14</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1InputKeyboard_html_a5a9c6cc53d8308b90927063a7c8f6e30"><div class="ttname"><a href="classRayLib_1_1InputKeyboard.html#a5a9c6cc53d8308b90927063a7c8f6e30">RayLib::InputKeyboard::getKeyPressed</a></div><div class="ttdeci">int getKeyPressed(void) const</div><div class="ttdef"><b>Definition:</b> <a href="InputKeyboard_8cpp_source.html#l00047">InputKeyboard.cpp:47</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Texture_html_a012a8a9aacafcb3534e516d12b0fc888"><div class="ttname"><a href="classRayLib_1_1Texture.html#a012a8a9aacafcb3534e516d12b0fc888">RayLib::Texture::getWidth</a></div><div class="ttdeci">int getWidth() const</div><div class="ttdef"><b>Definition:</b> <a href="RayLib_2Texture_2Texture_8hpp_source.html#l00042">Texture.hpp:42</a></div></div>
