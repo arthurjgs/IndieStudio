@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['userconfig_809',['UserConfig',['../classBomberman_1_1UserConfig.html',1,'Bomberman']]]
+  ['userconfig_797',['UserConfig',['../classBomberman_1_1UserConfig.html',1,'Bomberman']]]
 ];
