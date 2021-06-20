@@ -23,11 +23,12 @@ var searchData=
   ['boundingbox_41',['BoundingBox',['../classType_1_1BoundingBox.html#a724761b666fd8bc040a235c81e157bfa',1,'Type::BoundingBox::BoundingBox(const BoundingBox &amp;cpy)'],['../classType_1_1BoundingBox.html#a81eeb82588a4a1eea4d9307632a561cf',1,'Type::BoundingBox::BoundingBox(const Vector&lt; 3 &gt; &amp;min, const Vector&lt; 3 &gt; &amp;max)'],['../classType_1_1BoundingBox.html',1,'Type::BoundingBox']]],
   ['boundingbox_2ecpp_42',['BoundingBox.cpp',['../BoundingBox_8cpp.html',1,'']]],
   ['boundingbox_2ehpp_43',['BoundingBox.hpp',['../BoundingBox_8hpp.html',1,'']]],
-  ['button_44',['Button',['../classBomberman_1_1Button.html',1,'Bomberman::Button'],['../classBomberman_1_1Button.html#a0138dc51d07bcd0add7afaf2174c04d2',1,'Bomberman::Button::Button()=delete'],['../classBomberman_1_1Button.html#aa13ab994b2c837ab1b2b185067e4b274',1,'Bomberman::Button::Button(const Bomberman::Button &amp;)=delete'],['../classBomberman_1_1Button.html#a17d10c324c12be106b02d9799e330084',1,'Bomberman::Button::Button(const std::string &amp;name, const Type::Vector&lt; 3 &gt; &amp;position, const std::string &amp;texturePath, const std::string &amp;text=&quot;&quot;, size_t fontSize=12, const Type::Color &amp;textColor=Type::Color(255, 255, 255, 255), const std::string &amp;soundPath=&quot;./assets/sound_effects/sound_click_menu.wav&quot;, bool display=true)']]],
+  ['button_44',['Button',['../classBomberman_1_1Button.html',1,'Bomberman']]],
   ['button_45',['BUTTON',['../classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eae0e562acafd533f9b72bc06f8e98b879',1,'Bomberman::GameObject']]],
-  ['button_2ecpp_46',['Button.cpp',['../Button_8cpp.html',1,'']]],
-  ['button_2ehpp_47',['Button.hpp',['../Button_8hpp.html',1,'']]],
-  ['button_5fhpp_5f_48',['BUTTON_HPP_',['../Button_8hpp.html#a795d006e5bca73e60b162465af51dec2',1,'Button.hpp']]],
-  ['config_49',['Config',['../namespaceBomberman_1_1Config.html',1,'Bomberman']]],
-  ['menu_50',['Menu',['../namespaceBomberman_1_1Menu.html',1,'Bomberman']]]
+  ['button_46',['Button',['../classBomberman_1_1Button.html#a0138dc51d07bcd0add7afaf2174c04d2',1,'Bomberman::Button::Button()=delete'],['../classBomberman_1_1Button.html#aa13ab994b2c837ab1b2b185067e4b274',1,'Bomberman::Button::Button(const Bomberman::Button &amp;)=delete'],['../classBomberman_1_1Button.html#a17d10c324c12be106b02d9799e330084',1,'Bomberman::Button::Button(const std::string &amp;name, const Type::Vector&lt; 3 &gt; &amp;position, const std::string &amp;texturePath, const std::string &amp;text=&quot;&quot;, size_t fontSize=12, const Type::Color &amp;textColor=Type::Color(255, 255, 255, 255), const std::string &amp;soundPath=&quot;./assets/sound_effects/sound_click_menu.wav&quot;, bool display=true)']]],
+  ['button_2ecpp_47',['Button.cpp',['../Button_8cpp.html',1,'']]],
+  ['button_2ehpp_48',['Button.hpp',['../Button_8hpp.html',1,'']]],
+  ['button_5fhpp_5f_49',['BUTTON_HPP_',['../Button_8hpp.html#a795d006e5bca73e60b162465af51dec2',1,'Button.hpp']]],
+  ['config_50',['Config',['../namespaceBomberman_1_1Config.html',1,'Bomberman']]],
+  ['menu_51',['Menu',['../namespaceBomberman_1_1Menu.html',1,'Bomberman']]]
 ];
