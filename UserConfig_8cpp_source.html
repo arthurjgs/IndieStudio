@@ -141,60 +141,61 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span> (res.length() == 0) {</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        res = this-&gt;__fetchDefaultValue(type);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> (std::stoi(res));</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">   84</a></span>&#160;std::map&lt;Bomberman::UserConfig::ValueType, int&gt; <a class="code" href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">Bomberman::UserConfig::getGeneralValue</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::map&lt;Bomberman::UserConfig::ValueType, int&gt; res;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    res[ValueType::MASTER_VOL] = this-&gt;getValue(ValueType::MASTER_VOL);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    res[ValueType::MUSIC_VOL] = this-&gt;getValue(ValueType::MUSIC_VOL);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    res[ValueType::FPS] = this-&gt;getValue(ValueType::FPS);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> (res);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keywordtype">void</span> Bomberman::UserConfig::__refreshExistingValue(<span class="keyword">const</span> ValueType &amp;type, <span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::vector&lt;std::string&gt; fileLine;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::ifstream t(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::string line;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (t.is_open()) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">while</span> (std::getline(t, line)) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            std::string key = line.substr(0, line.find(<span class="stringliteral">&quot;:&quot;</span>));</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (key != this-&gt;__typeToKey(type)) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                fileLine.push_back(line);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        t.close();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        fileLine.push_back(this-&gt;__typeToKey(type) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(value));</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        std::ofstream outfile(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">if</span> (outfile.is_open()) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">for</span> (std::string <span class="keyword">const</span> &amp;val : fileLine) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                outfile &lt;&lt; val &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            outfile.close();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        }</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">  120</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">Bomberman::UserConfig::setValue</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7">ValueType</a> &amp;type, <span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordflow">if</span> (this-&gt;__keyExist(type) == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        this-&gt;__refreshExistingValue(type, value);</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        std::ofstream outfile(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>, std::ios_base::app);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        outfile &lt;&lt; this-&gt;__typeToKey(type) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(value) &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        outfile.close();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::cout &lt;&lt; res &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> (std::stoi(res));</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">   85</a></span>&#160;std::map&lt;Bomberman::UserConfig::ValueType, int&gt; <a class="code" href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">Bomberman::UserConfig::getGeneralValue</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::map&lt;Bomberman::UserConfig::ValueType, int&gt; res;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    res[ValueType::MASTER_VOL] = this-&gt;getValue(ValueType::MASTER_VOL);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    res[ValueType::MUSIC_VOL] = this-&gt;getValue(ValueType::MUSIC_VOL);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    res[ValueType::FPS] = this-&gt;getValue(ValueType::FPS);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> (res);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">void</span> Bomberman::UserConfig::__refreshExistingValue(<span class="keyword">const</span> ValueType &amp;type, <span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::vector&lt;std::string&gt; fileLine;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::ifstream t(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::string line;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (t.is_open()) {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">while</span> (std::getline(t, line)) {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            std::string key = line.substr(0, line.find(<span class="stringliteral">&quot;:&quot;</span>));</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">if</span> (key != this-&gt;__typeToKey(type)) {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                fileLine.push_back(line);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        t.close();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        fileLine.push_back(this-&gt;__typeToKey(type) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(value));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        std::ofstream outfile(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        <span class="keywordflow">if</span> (outfile.is_open()) {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordflow">for</span> (std::string <span class="keyword">const</span> &amp;val : fileLine) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                outfile &lt;&lt; val &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;            outfile.close();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">Bomberman::UserConfig::setValue</a>(<span class="keyword">const</span> <a class="code" href="classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7">ValueType</a> &amp;type, <span class="keywordtype">int</span> value)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordflow">if</span> (this-&gt;__keyExist(type) == <span class="keyword">true</span>) {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        this-&gt;__refreshExistingValue(type, value);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        std::ofstream outfile(<a class="code" href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a>, std::ios_base::app);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        outfile &lt;&lt; this-&gt;__typeToKey(type) + <span class="stringliteral">&quot;:&quot;</span> + std::to_string(value) &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        outfile.close();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 <div class="ttc" id="aUserConfig_8hpp_html"><div class="ttname"><a href="UserConfig_8hpp.html">UserConfig.hpp</a></div></div>
 <div class="ttc" id="aUserConfig_8hpp_html_a863ab5d791c86f9dfff4c6e90624130c"><div class="ttname"><a href="UserConfig_8hpp.html#a863ab5d791c86f9dfff4c6e90624130c">CONFIG_PATH</a></div><div class="ttdeci">#define CONFIG_PATH</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8hpp_source.html#l00013">UserConfig.hpp:13</a></div></div>
-<div class="ttc" id="aUserConfig_8hpp_html_a9ad1b4a1e4f7381611cfd2ae6620a727"><div class="ttname"><a href="UserConfig_8hpp.html#a9ad1b4a1e4f7381611cfd2ae6620a727">TAB_SIZE</a></div><div class="ttdeci">#define TAB_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8hpp_source.html#l00053">UserConfig.hpp:53</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1UserConfig_html_a11590fe788e93fed5e0da4fbdc9cbd3c"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">Bomberman::UserConfig::setValue</a></div><div class="ttdeci">void setValue(const ValueType &amp;type, int value) const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00120">UserConfig.cpp:120</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1UserConfig_html_a308621e3a077638aaad0acdaaa37572d"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">Bomberman::UserConfig::getGeneralValue</a></div><div class="ttdeci">std::map&lt; ValueType, int &gt; getGeneralValue() const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00084">UserConfig.cpp:84</a></div></div>
+<div class="ttc" id="aUserConfig_8hpp_html_a9ad1b4a1e4f7381611cfd2ae6620a727"><div class="ttname"><a href="UserConfig_8hpp.html#a9ad1b4a1e4f7381611cfd2ae6620a727">TAB_SIZE</a></div><div class="ttdeci">#define TAB_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8hpp_source.html#l00051">UserConfig.hpp:51</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1UserConfig_html_a11590fe788e93fed5e0da4fbdc9cbd3c"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a11590fe788e93fed5e0da4fbdc9cbd3c">Bomberman::UserConfig::setValue</a></div><div class="ttdeci">void setValue(const ValueType &amp;type, int value) const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00121">UserConfig.cpp:121</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1UserConfig_html_a308621e3a077638aaad0acdaaa37572d"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a308621e3a077638aaad0acdaaa37572d">Bomberman::UserConfig::getGeneralValue</a></div><div class="ttdeci">std::map&lt; ValueType, int &gt; getGeneralValue() const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00085">UserConfig.cpp:85</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1UserConfig_html_a331675193074a390082e34cdd8bb8e26"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a331675193074a390082e34cdd8bb8e26">Bomberman::UserConfig::UserConfig</a></div><div class="ttdeci">UserConfig()</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00013">UserConfig.cpp:13</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1UserConfig_html_a430e6fc87c0757e9b3b2e768efd8cba7"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7">Bomberman::UserConfig::ValueType</a></div><div class="ttdeci">ValueType</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8hpp_source.html#l00032">UserConfig.hpp:32</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1UserConfig_html_aa140eb52c9e6e703f4efaf271104b206"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#aa140eb52c9e6e703f4efaf271104b206">Bomberman::UserConfig::getValue</a></div><div class="ttdeci">int getValue(const ValueType &amp;type) const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00064">UserConfig.cpp:64</a></div></div>
