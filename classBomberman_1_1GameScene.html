@@ -327,7 +327,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">if</span> (savePath != <span class="stringliteral">&quot;&quot;</span>) {</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        this-&gt;__createCratesFromSaves(savePath);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : this-&gt;_gameMap.lock()-&gt;createCrates(75))</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : this-&gt;_gameMap.lock()-&gt;createCrates(this-&gt;_cratesPct))</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        {</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                val.lock()-&gt;updateCollisions(obj-&gt;getPosition(), 1);</div>
