@@ -99,15 +99,21 @@ add_executable(bomberman
         src/Game/Save/PlayerData/PlayerData.cpp
         src/Game/SplashScreen/SplashScreen.cpp
         src/players/Player.cpp
-        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
+        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp
+        src/Game/RangeBonus/RangeBonus.cpp
+        src/Game/RangeBonus/RangeBonus.hpp
+        src/Game/BombBonus/BombBonus.cpp
+        src/Game/BombBonus/BombBonus.hpp
+        src/Game/SpeedBonus/SpeedBonus.cpp
+        src/Game/SpeedBonus/SpeedBonus.hpp
+        src/Game/StarBonus/StarBonus.cpp
+        src/Game/StarBonus/StarBonus.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
 add_subdirectory("src/players/Bomberman" "src/players/Bomberman")
 add_subdirectory("src/players/Steve" "src/players/Steve")
-add_subdirectory("src/players/Duck" "src/players/Duck")
-add_subdirectory("src/players/Girl" "src/players/Girl")
 
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/save/ $<TARGET_FILE_DIR:bomberman>/save/)

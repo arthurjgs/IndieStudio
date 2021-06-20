@@ -258,6 +258,8 @@ void Bomberman::Player::_playerGamepad(double elapsed)
 
 void Bomberman::Player::_playerHandler(double elapsed)
 {
+    if (_controller == -2)
+        return;
     if (_controller == -1) {
         _playerKeyboard(elapsed);
     }
@@ -497,5 +499,10 @@ void Bomberman::Player::setRotationAngle(const double &rotationAngle)
 double Bomberman::Player::getRotationAngle() const
 {
     return this->_rotationAngle;
+}
+
+void Bomberman::Player::addBomb()
+{
+    _bombTimers.emplace_back(0);
 }
 

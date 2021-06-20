@@ -45,7 +45,8 @@ namespace Bomberman {
                 DEATH
             };
             
-            COLLIDE_EVENT checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
+            COLLIDE_EVENT checkCollisionForObjects(const std::weak_ptr<Player> &player, bool isFlame = false, bool isBomb = false);
+            COLLIDE_EVENT checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false);
             void update(const double &elapsed);
             void drawScene();
         protected:
@@ -55,6 +56,7 @@ namespace Bomberman {
             void quitCallback();
             void confirmSaveCallback();
             void cancelSaveCallback();
+            void createBonus(const Type::Vector<3> &pos);
 
             void handleSaveNaming();
             std::string convertSecondToDisplayTime(int value) const;

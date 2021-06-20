@@ -504,10 +504,10 @@ void Bomberman::Menu::SelectionMenu::loadPlayers()
             if (p1 == nullptr)
                 throw GameException("Symbol not found entryPoint in " + file.path().string());
 
-            std::shared_ptr<Player> player = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-4.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
-            std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-1.0f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
-            std::shared_ptr<Player> player2 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(1.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
-            std::shared_ptr<Player> player3 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(4.5f, -0.5f, 0.0f), p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-4.0f, -0.5f, 0.0f), false, -2, p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player1 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(-1.0f, -0.5f, 0.0f), false, -2, p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player2 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(1.5f, -0.5f, 0.0f), false, -2, p1->getSpeed(), p1->getBombs(), p1->getRange());
+            std::shared_ptr<Player> player3 = std::make_shared<Player>(p1->getName(), Type::Vector<3>(4.5f, -0.5f, 0.0f), false, -2, p1->getSpeed(), p1->getBombs(), p1->getRange());
             player->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
             player1->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
             player2->setScale(Type::Vector<3>(p1->getScale(), p1->getScale(), p1->getScale()));
