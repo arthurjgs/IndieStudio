@@ -20,7 +20,7 @@ namespace Bomberman {
     };
 }
 
-extern "C" Bomberman::AbstractPlayer *entryPoint()
+extern "C" __declspec(dllexport) Bomberman::AbstractPlayer *entryPoint()
 {
     static Bomberman::Steve player;
     return &player;

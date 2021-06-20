@@ -6,6 +6,7 @@
 */
 
 #include "Manager3D.hpp"
+#include <Game/Config.hpp>
 
 RayLib::Manager3D &RayLib::Manager3D::getInstance()
 {
@@ -26,8 +27,8 @@ void RayLib::Manager3D::setScene(RayLib::Manager3D::Scene nextScene)
 
 void RayLib::Manager3D::loadPlayers()
 {
-    if (std::filesystem::is_directory("assets/models/players")) {
-        for (auto &dir : std::filesystem::directory_iterator("assets/models/players")) {
+    if (std::filesystem::is_directory(Bomberman::Config::ExecutablePath +  "assets/models/players")) {
+        for (auto &dir : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath +  "assets/models/players")) {
             if (std::filesystem::is_directory(dir)) {
                 for (auto &subDir : std::filesystem::directory_iterator(dir.path().string())) {
                     std::string path = subDir.path().string();
@@ -71,8 +72,8 @@ void RayLib::Manager3D::loadPlayers()
 
 void RayLib::Manager3D::loadObjects()
 {
-    if (std::filesystem::is_directory("assets/models/objects")) {
-        for (auto &dir : std::filesystem::directory_iterator("assets/models/objects")) {
+    if (std::filesystem::is_directory(Bomberman::Config::ExecutablePath +  "assets/models/objects")) {
+        for (auto &dir : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath +  "assets/models/objects")) {
             if (std::filesystem::is_directory(dir)) {
                 for (auto &subDir : std::filesystem::directory_iterator(dir.path().string())) {
                     std::string path = subDir.path().string();

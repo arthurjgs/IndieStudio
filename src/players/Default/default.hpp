@@ -20,10 +20,13 @@ namespace Bomberman {
     };
 }
 
-extern "C" Bomberman::AbstractPlayer *entryPoint()
+extern "C" 
 {
-    static Bomberman::Default player;
-    return &player;
+    __declspec(dllexport) Bomberman::AbstractPlayer* entryPoint()
+    {
+        static Bomberman::Default player;
+        return &player;
+    }
 }
 
 #endif //BOMBERMAN_DEFAULT_HPP

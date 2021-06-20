@@ -8,6 +8,15 @@
 #ifndef BOMBERMAN_ABSTRACTPLAYER_HPP
 #define BOMBERMAN_ABSTRACTPLAYER_HPP
 
+#if defined _WIN32 || defined __CYGWIN__
+#ifdef indie_raylib_EXPORTS
+#define indie_raylib_API __declspec(dllexport) // Note: actually gcc seems to also supports this syntax.
+#else
+#define indie_raylib_API __declspec(dllimport) // Note: actually gcc seems to also supports this syntax.
+#endif
+#define DLL_LOCAL
+#endif
+
 #include <string>
 
 namespace Bomberman {

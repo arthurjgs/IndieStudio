@@ -156,6 +156,7 @@ namespace Bomberman {
                 bool __video;
                 bool __gameplay;
                 bool __saveDisplay;
+                bool __quit;
                 
 
                 int __ignore;
