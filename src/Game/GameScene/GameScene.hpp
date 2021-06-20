@@ -102,6 +102,7 @@ namespace Bomberman {
             RayLib::Audio::Sound _soundFlame;
             RayLib::Audio::Sound _soundDeath;
             RayLib::Audio::Sound _soundBombFuse;
+            RayLib::Audio::Sound _soundBonus;
 
             bool _checkCamera;
             double _timerCamera;
