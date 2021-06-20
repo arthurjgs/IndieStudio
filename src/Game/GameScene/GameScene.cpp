@@ -17,6 +17,7 @@
 #include <DynamicLibrary/DynamicLibrary.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
+#include "../End/End.hpp"
 
 std::string Bomberman::GameScene::addZeroOrNot(int value) const
 {
@@ -448,8 +449,28 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
     }
 }
 
+bool Bomberman::GameScene::__lastAlive() const
+{
+    int count = 0;
+
+    for (auto const &val : this->_listPlayers) {
+        if (val.lock()->getAlive()) {
+            count++;
+        }
+    }
+    if (count == 1) {
+        return (true);
+    }
+    return (false);
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    if (this->__lastAlive()) {
+        RayLib::Window::loadingScreen();
+        this->__manager.clearStack<End>();
+        return;
+    }
     std::vector<int> sideList;
     this->_everySecond += elapsed;
     this->_timerCamera += elapsed;

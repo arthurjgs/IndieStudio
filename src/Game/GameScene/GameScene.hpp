@@ -109,5 +109,7 @@ namespace Bomberman {
             int _cratesPct;
             int _bonusPct;
             UserConfig __confingHandler;
+
+            bool __lastAlive() const;
     };
 }
