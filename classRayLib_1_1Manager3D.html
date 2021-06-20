@@ -159,11 +159,11 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00011">11</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">static</span> <a class="code" href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a> manager = <a class="code" href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a>(<a class="code" href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a68a070cf1d271e853b8d2fd7c30fc7e4">NONE</a>);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> (manager);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00010">10</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">static</span> <a class="code" href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a> manager = <a class="code" href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a>(<a class="code" href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a68a070cf1d271e853b8d2fd7c30fc7e4">NONE</a>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> (manager);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Manager3D_html"><div class="ttname"><a href="classRayLib_1_1Manager3D.html">RayLib::Manager3D</a></div><div class="ttdef"><b>Definition:</b> <a href="Manager3D_8hpp_source.html#l00017">Manager3D.hpp:17</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -184,14 +184,14 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00124">124</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; model : this-&gt;_models) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">if</span> (model.first == <span class="keywordtype">object</span>)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            <span class="keywordflow">return</span> model.second;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00123">123</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;{</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; model : this-&gt;_models) {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">if</span> (model.first == <span class="keywordtype">object</span>)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            <span class="keywordflow">return</span> model.second;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -211,12 +211,12 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00021">21</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    _models.clear();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;_currentScene = nextScene;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    load3DModels();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="Manager3D_8cpp_source.html#l00020">20</a> of file <a class="el" href="Manager3D_8cpp_source.html">Manager3D.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    _models.clear();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    this-&gt;_currentScene = nextScene;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    load3DModels();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
