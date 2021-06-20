@@ -212,7 +212,8 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         _soundExplosion("./assets/sound_effects/explosion_bombe.wav"),
                                         _soundFlame("./assets/sound_effects/flame_effects.wav"),
                                         _soundDeath("./assets/sound_effects/death_sound.wav"),
-                                        _soundBombFuse("./assets/sound_effects/fuse_bomb.wav")
+                                        _soundBombFuse("./assets/sound_effects/fuse_bomb.wav"),
+                                        _soundBonus("./assets/sound_effects/sound_bonus.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
     this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
@@ -433,6 +434,7 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
 
             if (obj->getType() == GameObject::BONUS) {
                 std::string name = obj->getName();
+                this->_soundBonus.PlaySound();
                 if (name == "BombBonus") {
                     player.lock()->addBomb();
                 }
@@ -690,8 +692,9 @@ void Bomberman::GameScene::update(const double &elapsed)
         std::string &text = this->getTextFromName("timer").lock()->getText();
         text = this->convertSecondToDisplayTime(this->_timer);
         if (this->_timer == 0) {
-            // TODO: HANDLE PROPERLY TIMER TO ZERO
-            throw QuitGame();
+            RayLib::Window::loadingScreen();
+            this->__manager.clearStack<End>();
+            return;
         }
         this->_second = 0.0;
     }
