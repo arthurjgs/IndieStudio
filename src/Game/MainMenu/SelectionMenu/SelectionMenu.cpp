@@ -21,7 +21,8 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
                                                                                                Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                                                                                Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                                                                                25.0f,
-                                                                                               CAMERA_PERSPECTIVE)
+                                                                                               CAMERA_PERSPECTIVE),
+                                                                                               _readySound("./assets/sound_effects/sound_click_menu.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::PLAYER_SELECTION);
     _players = 1;
@@ -213,7 +214,9 @@ void Bomberman::Menu::SelectionMenu::ready()
 
 void Bomberman::Menu::SelectionMenu::readySquareState()
 {
+
     bool plus = false;
+    _readySound.PlaySound();
     for (auto const &val : this->__stateImagesReferer)
     {
         if (!_isAction)

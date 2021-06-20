@@ -202,7 +202,11 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                         20.0f,
-                                        CAMERA_PERSPECTIVE)
+                                        CAMERA_PERSPECTIVE),
+                                        _soundExplosion("./assets/sound_effects/sound_click_menu.wav"),
+                                        _soundFlame("./assets/sound_effects/sound_click_menu.wav"),
+                                        _soundDeath("./assets/sound_effects/sound_click_menu.wav"),
+                                        _soundBombFuse("./assets/sound_effects/sound_click_menu.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
     std::shared_ptr<Player> player1;
@@ -358,7 +362,10 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
             if (obj->getType() == Bomb::BOMB && isBomb)
                 continue;
             if (obj->getType() == Bomb::FLAME)
+            {
+                _soundDeath.PlaySound();
                 return DEATH;
+            }
             return BASIC;
         }
     }
@@ -450,6 +457,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.expired())
             continue;
         if (b.lock()->getState() == GameObject::DESTROYED) {
+            _soundExplosion.PlaySound();
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
@@ -458,6 +466,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
+                _soundFlame.PlaySound();
             }
             for (auto &val : this->_listPlayers)
             {

@@ -16,6 +16,7 @@
 #include "../../../RayLib/Window.hpp"
 #include "../../Image/Image.hpp"
 #include "../../StateImage/StateImage.hpp"
+#include "../../../RayLib/Audio/Sound/Sound.hpp"
 #include <vector>
 #include <memory>
 #include <players/Player.hpp>
@@ -61,6 +62,7 @@ namespace Bomberman
                 bool _isAction;
                 std::vector<int> _selectedModel {0, -1, -1, -1};
                 std::vector<int> _playerInputIds {-1, 0, 1, 2};
+                RayLib::Audio::Sound _readySound;
         };
     }
 }
