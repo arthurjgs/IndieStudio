@@ -616,6 +616,7 @@ void Bomberman::Menu::MainLobby::closeVideoPanel()
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
     std::cout << "play click" << std::endl;
+    RayLib::Window::loadingScreen();
     this->__manager.newScene<SelectionMenu>();
 }
 
@@ -838,6 +839,7 @@ void Bomberman::Menu::MainLobby::gameplayButtonCallback()
 
 void Bomberman::Menu::MainLobby::creditsButtonCallback()
 {
+    RayLib::Window::loadingScreen();
     this->__manager.newScene<Credits>();    
 }
 
@@ -964,6 +966,7 @@ void Bomberman::Menu::MainLobby::manageControllerInput()
 void Bomberman::Menu::MainLobby::__handleSaveTransition(const std::string &path)
 {
     GameSceneData data(path);
+    RayLib::Window::loadingScreen();
     this->__manager.clearStack<Bomberman::GameScene>(data.getPlayerInputIds(), data.getPlayerIa(), data.getDll1(), data.getDll2(), data.getDll3(), data.getDll4(), data.getSavePath(), data.getTimer());
 }
 

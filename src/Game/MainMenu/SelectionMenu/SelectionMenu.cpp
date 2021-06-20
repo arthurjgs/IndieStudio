@@ -446,6 +446,7 @@ void Bomberman::Menu::SelectionMenu::goToGameScene()
             std::vector<std::string> playerDlls = getPlayerDlls();
             std::vector<int> playerIds = _playerInputIds;
             std::vector<int> playerIa = _selectedModel;
+            RayLib::Window::loadingScreen();
             __manager.clearStack<Bomberman::GameScene>(playerIds, playerIa, playerDlls[0], playerDlls[1], playerDlls[2], playerDlls[3]);
         }
 }
