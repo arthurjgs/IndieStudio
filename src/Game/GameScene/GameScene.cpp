@@ -15,6 +15,10 @@
 #include <Game/Bomb/Bomb.hpp>
 #include <players/AbstractPlayer.hpp>
 #include <DynamicLibrary/DynamicLibrary.hpp>
+#include <Game/StarBonus/StarBonus.hpp>
+#include <Game/BombBonus/BombBonus.hpp>
+#include <Game/SpeedBonus/SpeedBonus.hpp>
+#include <Game/RangeBonus/RangeBonus.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
 
@@ -339,8 +343,55 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
+Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb)
 {
+    for (auto & obj : _gameObjectList) {
+        if (obj->getType() == GameObject::PLAYER)
+            continue;
+        Type::Vector<3> enemyPosition = obj->getPosition();
+        Type::Vector<3> playerRoundedPosition(static_cast<float>(round(playerPosition.getX())),
+                                              static_cast<float>(round(playerPosition.getY())),
+                                              static_cast<float>(round(playerPosition.getZ())));
+        if (RayLib::Models::Collision::CheckCollisionBoxes(Type::BoundingBox(Type::Vector<3>(playerRoundedPosition.getX() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getY() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getZ() - 1.0f / 2),
+                                                                             Type::Vector<3>(playerRoundedPosition.getX() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getY() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getZ() - 1.0f / 2)),
+                                                           Type::BoundingBox(Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2),
+                                                                             Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2)))) {
+            if (isFlame) {
+                if (obj == nullptr)
+                    return BASIC;
+                for (auto &val : this->_listPlayers)
+                    val.lock()->updateCollisions(obj->getPosition(), 0);
+                if (obj->getName() ==  "Crate")
+                    createBonus(obj->getPosition());
+                if (obj->getType() != GameObject::BONUS)
+                    obj->destroy();
+                return BASIC;
+            }
+            if (obj->getType() == Bomb::BOMB && isBomb)
+                continue;
+            if (obj->getType() == Bomb::FLAME)
+            {
+                _soundDeath.PlaySound();
+                return DEATH;
+            }
+            return BASIC;
+        }
+    }
+    return COLLIDE_EVENT::NOTHING;
+}
+
+Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const std::weak_ptr<Player> &player, bool isFlame, bool isBomb)
+{
+    Type::Vector<3> playerPosition = player.lock()->getPosition();
+
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
             continue;
@@ -363,15 +414,39 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
             if (isFlame) {
                 for (auto &val : this->_listPlayers)
                     val.lock()->updateCollisions(obj->getPosition(), 0);
-                obj->destroy();
+                if (obj->getName() ==  "Crate")
+                    createBonus(obj->getPosition());
+                if (obj->getType() != GameObject::BONUS)
+                    obj->destroy();
                 return BASIC;
             }
+
             if (obj->getType() == Bomb::BOMB && isBomb)
                 continue;
+
             if (obj->getType() == Bomb::FLAME)
             {
                 _soundDeath.PlaySound();
                 return DEATH;
+            }
+
+            if (obj->getType() == GameObject::BONUS) {
+                std::string name = obj->getName();
+                if (name == "BombBonus") {
+                    player.lock()->addBomb();
+                }
+                if (name == "SpeedBonus") {
+                    player.lock()->setSpeed(static_cast<float>(player.lock()->getSpeed()) + 0.5f);
+                }
+                if (name == "RangeBonus") {
+                    player.lock()->setRange(player.lock()->getRange() + 1);
+                }
+                if (name == "StarBonus") {
+                    player.lock()->addBomb();
+                    player.lock()->setRange(player.lock()->getRange() + 1);
+                    player.lock()->setSpeed(static_cast<float>(player.lock()->getSpeed()) + 0.5f);
+                }
+                obj->destroy();
             }
             return BASIC;
         }
@@ -576,7 +651,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         player.lock()->update(elapsed);
         if (checkCollisionForMap(player.lock()->getPosition()))
             player.lock()->setPosition(oldPosition);
-        COLLIDE_EVENT ret = checkCollisionForObjects(player.lock()->getPosition());
+        COLLIDE_EVENT ret = checkCollisionForObjects(player);
         if (ret == BASIC)
             player.lock()->setPosition(oldPosition);
         if (ret == DEATH) {
@@ -649,4 +724,26 @@ std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerDll(const std
     }
 
     return player;
+}
+
+void Bomberman::GameScene::createBonus(const Type::Vector<3> &pos)
+{
+    if (rand() % (100 + 1) <= this->_bonusPct) {
+        int which = rand() % (3 + 1);
+        switch (which) {
+            case 0:
+                _gameObjectList.emplace_back(std::make_shared<StarBonus>(pos));
+                break;
+            case 1:
+                _gameObjectList.emplace_back(std::make_shared<BombBonus>(pos));
+                break;
+            case 2:
+                _gameObjectList.emplace_back(std::make_shared<SpeedBonus>(pos));
+                break;
+            case 3:
+                _gameObjectList.emplace_back(std::make_shared<RangeBonus>(pos));
+                break;
+        }
+
+    }
 }

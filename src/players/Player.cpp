@@ -501,3 +501,8 @@ double Bomberman::Player::getRotationAngle() const
     return this->_rotationAngle;
 }
 
+void Bomberman::Player::addBomb()
+{
+    _bombTimers.emplace_back(0);
+}
+

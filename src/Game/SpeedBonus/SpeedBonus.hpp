@@ -14,7 +14,7 @@
 namespace Bomberman {
     class SpeedBonus : public GameObject {
     public:
-        SpeedBonus(const Type::Vector<3> &position, int side);
+        SpeedBonus(const Type::Vector<3> &position);
         ~SpeedBonus();
         void update(const double &elapsed);
         void render() const;

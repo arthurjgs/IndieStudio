@@ -39,6 +39,7 @@ namespace Bomberman {
         int getRange();
         void setSpeed(float range);
         double getSpeed();
+        void addBomb();
         void setScale(const Type::Vector<3> &scale);
         PlayerState getState();
         void setState(const PlayerState &state);
