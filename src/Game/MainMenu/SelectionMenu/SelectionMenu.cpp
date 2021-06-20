@@ -1,12 +1,12 @@
 /**
  * @file SelectionMenu.cpp
  * @author your name (you@domain.com)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2021-06-04
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include "SelectionMenu.hpp"
@@ -22,7 +22,7 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
                                                                                                Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                                                                                25.0f,
                                                                                                CAMERA_PERSPECTIVE),
-                                                                                               _readySound("./assets/sound_effects/sound_click_menu.wav")
+                                                                                               _readySound("./assets/sound_effects/ready.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::PLAYER_SELECTION);
     _players = 1;
