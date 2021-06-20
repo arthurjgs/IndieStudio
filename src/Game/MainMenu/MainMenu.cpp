@@ -24,7 +24,6 @@ Scene(manager)
         std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/5.png", 50.0),
         std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/6.png", 60.0),
     };
-
     this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/menumusic.mp3", this->__config.getValue(UserConfig::MUSIC_VOL)));
     this->__objContainer.push_back(std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
     this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/title.png", "tile", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, -40.0f, 0.0f)));

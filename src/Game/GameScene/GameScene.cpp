@@ -23,6 +23,7 @@
 #include "../MainMenu/MainLobby/MainLobby.hpp"
 #include <memory>
 #include <Game/Config.hpp>
+#include "../End/End.hpp"
 
 std::string Bomberman::GameScene::addZeroOrNot(int value) const
 {
@@ -214,6 +215,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         _soundFlame(Bomberman::Config::ExecutablePath + "assets/sound_effects/flame_effects.wav"),
                                         _soundDeath(Bomberman::Config::ExecutablePath + "assets/sound_effects/death_sound.wav"),
                                         _soundBombFuse(Bomberman::Config::ExecutablePath + "assets/sound_effects/fuse_bomb.wav")
+                                        _soundBonus(Bomberman::Config::ExecutablePath + "./assets/sound_effects/sound_bonus.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
     this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
@@ -239,7 +241,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     std::shared_ptr<Map> gameMap = std::make_shared<Map>(Bomberman::Config::ExecutablePath + "assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
-    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath +  "assets/sounds/music.mp3", 0.5f));
+    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/music.mp3", this->__confingHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
     this->_gameObjectList.emplace_back(player2);
@@ -434,6 +436,7 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
 
             if (obj->getType() == GameObject::BONUS) {
                 std::string name = obj->getName();
+                this->_soundBonus.PlaySound();
                 if (name == "BombBonus") {
                     player.lock()->addBomb();
                 }
@@ -525,8 +528,28 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
     }
 }
 
+bool Bomberman::GameScene::__lastAlive() const
+{
+    int count = 0;
+
+    for (auto const &val : this->_listPlayers) {
+        if (val.lock()->getAlive()) {
+            count++;
+        }
+    }
+    if (count == 1) {
+        return (true);
+    }
+    return (false);
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    if (this->__lastAlive()) {
+        RayLib::Window::loadingScreen();
+        this->__manager.clearStack<End>();
+        return;
+    }
     std::vector<int> sideList;
     this->_everySecond += elapsed;
     this->_timerCamera += elapsed;
@@ -671,8 +694,9 @@ void Bomberman::GameScene::update(const double &elapsed)
         std::string &text = this->getTextFromName("timer").lock()->getText();
         text = this->convertSecondToDisplayTime(this->_timer);
         if (this->_timer == 0) {
-            // TODO: HANDLE PROPERLY TIMER TO ZERO
-            throw QuitGame();
+            RayLib::Window::loadingScreen();
+            this->__manager.clearStack<End>();
+            return;
         }
         this->_second = 0.0;
     }

@@ -67,5 +67,5 @@ static const std::pair<Bomberman::UserConfig::ValueType, const std::string> defa
     std::make_pair(Bomberman::UserConfig::ValueType::FPS, std::to_string(RayLib::Window::getInstance().getMonitorRefreshRate())),
     std::make_pair(Bomberman::UserConfig::ValueType::VERTICAL_SYNC, "1"),
     std::make_pair(Bomberman::UserConfig::ValueType::CRATE_DROP, "75"),
-    std::make_pair(Bomberman::UserConfig::ValueType::BONUS_DROP, "10"),
+    std::make_pair(Bomberman::UserConfig::ValueType::BONUS_DROP, "40"),
 };
