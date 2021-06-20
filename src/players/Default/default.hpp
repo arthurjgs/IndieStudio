@@ -20,7 +20,8 @@ namespace Bomberman {
     };
 }
 
-extern "C" 
+#ifdef WIN32
+extern "C"
 {
     __declspec(dllexport) Bomberman::AbstractPlayer* entryPoint()
     {
@@ -28,5 +29,17 @@ extern "C"
         return &player;
     }
 }
+#else
+extern "C"
+{
+    Bomberman::AbstractPlayer* entryPoint()
+    {
+        static Bomberman::Default player;
+        return &player;
+    }
+}
+#endif
+
+
 
 #endif //BOMBERMAN_DEFAULT_HPP
