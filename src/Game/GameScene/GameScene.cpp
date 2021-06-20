@@ -21,6 +21,7 @@
 #include <Game/RangeBonus/RangeBonus.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
+#include "../End/End.hpp"
 
 std::string Bomberman::GameScene::addZeroOrNot(int value) const
 {
@@ -237,7 +238,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
-    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
+    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", this->__confingHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
     this->_gameObjectList.emplace_back(player2);
@@ -523,8 +524,28 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
     }
 }
 
+bool Bomberman::GameScene::__lastAlive() const
+{
+    int count = 0;
+
+    for (auto const &val : this->_listPlayers) {
+        if (val.lock()->getAlive()) {
+            count++;
+        }
+    }
+    if (count == 1) {
+        return (true);
+    }
+    return (false);
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    if (this->__lastAlive()) {
+        RayLib::Window::loadingScreen();
+        this->__manager.clearStack<End>();
+        return;
+    }
     std::vector<int> sideList;
     this->_everySecond += elapsed;
     this->_timerCamera += elapsed;

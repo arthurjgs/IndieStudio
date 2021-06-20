@@ -98,6 +98,7 @@ add_executable(bomberman
         src/Game/Save/GameSceneData/GameSceneData.cpp
         src/Game/Save/PlayerData/PlayerData.cpp
         src/Game/SplashScreen/SplashScreen.cpp
+        src/Game/End/End.cpp
         src/players/Player.cpp
         src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp
         src/Game/RangeBonus/RangeBonus.cpp

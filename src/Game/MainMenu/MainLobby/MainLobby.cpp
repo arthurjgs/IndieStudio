@@ -343,7 +343,7 @@ Scene(manager)
     this->__objContainer.emplace_back(MAIN, std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
     this->__objContainer.emplace_back(MAIN_PANEL, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
     this->__objContainer.emplace_back(MAIN, std::make_shared<Image>("./assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 40.0f, 0.0f)));
-    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", "./assets/sounds/lobbymusic.mp3", 0.5f));
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", "./assets/sounds/lobbymusic.mp3", this->__configHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
     this->__objContainer.emplace_back(OPTION_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel1.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(65.0f, 85.0f, 0.0f), false));
     
     // button
