@@ -97,6 +97,11 @@ namespace Bomberman {
                 
                 // gameplay panel
                 void closeGameplayPanel();
+                void confirmGameplayCallback();
+                void leftCratesCallback();
+                void rigthCratesCallback();
+                void leftBonusCallback();
+                void RightBonusCallback();
 
                 std::weak_ptr<GameObject> findElemByName(const std::string &name);
                 std::weak_ptr<FlashingText> findTextByName(const std::string &name);

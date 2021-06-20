@@ -21,8 +21,10 @@
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
 #include "../Save/PlayerData/PlayerData.hpp"
+#include "../UserConfig/UserConfig.hpp"
 #include <map>
 #include <functional>
+#include "../../RayLib/Audio/Sound/Sound.hpp"
 
 namespace Bomberman {
     class GameScene : public Scene {
@@ -43,7 +45,8 @@ namespace Bomberman {
                 DEATH
             };
             
-            COLLIDE_EVENT checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false) const;
+            COLLIDE_EVENT checkCollisionForObjects(const std::weak_ptr<Player> &player, bool isFlame = false, bool isBomb = false);
+            COLLIDE_EVENT checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame = false, bool isBomb = false);
             void update(const double &elapsed);
             void drawScene();
         protected:
@@ -53,6 +56,7 @@ namespace Bomberman {
             void quitCallback();
             void confirmSaveCallback();
             void cancelSaveCallback();
+            void createBonus(const Type::Vector<3> &pos);
 
             void handleSaveNaming();
             std::string convertSecondToDisplayTime(int value) const;
@@ -94,9 +98,21 @@ namespace Bomberman {
             bool isInput;
             std::string _saveName;
             double _everySecond;
+            RayLib::Audio::Sound _soundExplosion;
+            RayLib::Audio::Sound _soundFlame;
+            RayLib::Audio::Sound _soundDeath;
+            RayLib::Audio::Sound _soundBombFuse;
+            RayLib::Audio::Sound _soundBonus;
+
             bool _checkCamera;
             double _timerCamera;
             float _cameraOriginX;
             float _cameraOriginZ;
+
+            int _cratesPct;
+            int _bonusPct;
+            UserConfig __confingHandler;
+
+            bool __lastAlive() const;
     };
 }

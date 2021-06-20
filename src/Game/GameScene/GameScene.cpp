@@ -1,11 +1,11 @@
 /**
  * @file TestScene.cpp
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2021-05-26
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include "GameScene.hpp"
@@ -15,8 +15,13 @@
 #include <Game/Bomb/Bomb.hpp>
 #include <players/AbstractPlayer.hpp>
 #include <DynamicLibrary/DynamicLibrary.hpp>
+#include <Game/StarBonus/StarBonus.hpp>
+#include <Game/BombBonus/BombBonus.hpp>
+#include <Game/SpeedBonus/SpeedBonus.hpp>
+#include <Game/RangeBonus/RangeBonus.hpp>
 #include "../QuitGame/QuitGame.hpp"
 #include "../MainMenu/MainLobby/MainLobby.hpp"
+#include "../End/End.hpp"
 
 std::string Bomberman::GameScene::addZeroOrNot(int value) const
 {
@@ -60,7 +65,7 @@ void Bomberman::GameScene::continueCallback()
 void Bomberman::GameScene::saveCallback()
 {
     std::weak_ptr<FlashingText> text = this->getTextFromName("inputField");
-    
+
     std::string &val = text.lock()->getText();
     val = "";
     this->_saveName = "";
@@ -197,22 +202,29 @@ void Bomberman::GameScene::__createCratesFromSaves(const std::string &path)
 
 Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                                 const std::string &playerDll1, const std::string &playerDll2,
-                                const std::string &playerDll3, const std::string &playerDll4, 
+                                const std::string &playerDll3, const std::string &playerDll4,
                                 const std::string &savePath, const int timer) : Scene(manager),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                         20.0f,
-                                        CAMERA_PERSPECTIVE)
+                                        CAMERA_PERSPECTIVE),
+                                        _soundExplosion("./assets/sound_effects/explosion_bombe.wav"),
+                                        _soundFlame("./assets/sound_effects/flame_effects.wav"),
+                                        _soundDeath("./assets/sound_effects/death_sound.wav"),
+                                        _soundBombFuse("./assets/sound_effects/fuse_bomb.wav"),
+                                        _soundBonus("./assets/sound_effects/sound_bonus.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
+    this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
+    this->_bonusPct = this->__confingHandler.getValue(UserConfig::ValueType::BONUS_DROP);
     std::shared_ptr<Player> player1;
     std::shared_ptr<Player> player2;
     std::shared_ptr<Player> player3;
-    std::shared_ptr<Player> player4; 
+    std::shared_ptr<Player> player4;
     if (savePath != "") {
         PlayerParse parser(savePath);
-        
+
         player1 = loadPlayerFromSave(parser.getPlayerOne());
         player2 = loadPlayerFromSave(parser.getPlayerTwo());
         player3 = loadPlayerFromSave(parser.getPlayerThree());
@@ -227,7 +239,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
-    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
+    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", this->__confingHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
     this->_gameObjectList.emplace_back(player2);
@@ -254,7 +266,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     if (savePath != "") {
         this->__createCratesFromSaves(savePath);
     } else {
-        for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        for (auto & obj : this->_gameMap.lock()->createCrates(this->_cratesPct))
         {
             for (auto &val : this->_listPlayers)
                 val.lock()->updateCollisions(obj->getPosition(), 1);
@@ -333,8 +345,55 @@ std::weak_ptr<Bomberman::FlashingText> Bomberman::GameScene::getTextFromName(con
     throw std::runtime_error(name + " does not exist in dynamic text");
 }
 
-Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb) const
+Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const Type::Vector<3> &playerPosition, bool isFlame, bool isBomb)
 {
+    for (auto & obj : _gameObjectList) {
+        if (obj->getType() == GameObject::PLAYER)
+            continue;
+        Type::Vector<3> enemyPosition = obj->getPosition();
+        Type::Vector<3> playerRoundedPosition(static_cast<float>(round(playerPosition.getX())),
+                                              static_cast<float>(round(playerPosition.getY())),
+                                              static_cast<float>(round(playerPosition.getZ())));
+        if (RayLib::Models::Collision::CheckCollisionBoxes(Type::BoundingBox(Type::Vector<3>(playerRoundedPosition.getX() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getY() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getZ() - 1.0f / 2),
+                                                                             Type::Vector<3>(playerRoundedPosition.getX() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getY() - 1.0f / 2,
+                                                                                             playerRoundedPosition.getZ() - 1.0f / 2)),
+                                                           Type::BoundingBox(Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2),
+                                                                             Type::Vector<3>(enemyPosition.getX() - 1.0f / 2,
+                                                                                             enemyPosition.getY() - 1.0f / 2,
+                                                                                             enemyPosition.getZ() - 1.0f / 2)))) {
+            if (isFlame) {
+                if (obj == nullptr)
+                    return BASIC;
+                for (auto &val : this->_listPlayers)
+                    val.lock()->updateCollisions(obj->getPosition(), 0);
+                if (obj->getName() ==  "Crate")
+                    createBonus(obj->getPosition());
+                if (obj->getType() != GameObject::BONUS)
+                    obj->destroy();
+                return BASIC;
+            }
+            if (obj->getType() == Bomb::BOMB && isBomb)
+                continue;
+            if (obj->getType() == Bomb::FLAME)
+            {
+                _soundDeath.PlaySound();
+                return DEATH;
+            }
+            return BASIC;
+        }
+    }
+    return COLLIDE_EVENT::NOTHING;
+}
+
+Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjects(const std::weak_ptr<Player> &player, bool isFlame, bool isBomb)
+{
+    Type::Vector<3> playerPosition = player.lock()->getPosition();
+
     for (auto & obj : _gameObjectList) {
         if (obj->getType() == GameObject::PLAYER)
             continue;
@@ -357,13 +416,41 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
             if (isFlame) {
                 for (auto &val : this->_listPlayers)
                     val.lock()->updateCollisions(obj->getPosition(), 0);
-                obj->destroy();
+                if (obj->getName() ==  "Crate")
+                    createBonus(obj->getPosition());
+                if (obj->getType() != GameObject::BONUS)
+                    obj->destroy();
                 return BASIC;
             }
+
             if (obj->getType() == Bomb::BOMB && isBomb)
                 continue;
+
             if (obj->getType() == Bomb::FLAME)
+            {
+                _soundDeath.PlaySound();
                 return DEATH;
+            }
+
+            if (obj->getType() == GameObject::BONUS) {
+                std::string name = obj->getName();
+                this->_soundBonus.PlaySound();
+                if (name == "BombBonus") {
+                    player.lock()->addBomb();
+                }
+                if (name == "SpeedBonus") {
+                    player.lock()->setSpeed(static_cast<float>(player.lock()->getSpeed()) + 0.5f);
+                }
+                if (name == "RangeBonus") {
+                    player.lock()->setRange(player.lock()->getRange() + 1);
+                }
+                if (name == "StarBonus") {
+                    player.lock()->addBomb();
+                    player.lock()->setRange(player.lock()->getRange() + 1);
+                    player.lock()->setSpeed(static_cast<float>(player.lock()->getSpeed()) + 0.5f);
+                }
+                obj->destroy();
+            }
             return BASIC;
         }
     }
@@ -439,8 +526,28 @@ void Bomberman::GameScene::updatePause(const double &elapsed)
     }
 }
 
+bool Bomberman::GameScene::__lastAlive() const
+{
+    int count = 0;
+
+    for (auto const &val : this->_listPlayers) {
+        if (val.lock()->getAlive()) {
+            count++;
+        }
+    }
+    if (count == 1) {
+        return (true);
+    }
+    return (false);
+}
+
 void Bomberman::GameScene::update(const double &elapsed)
 {
+    if (this->__lastAlive()) {
+        RayLib::Window::loadingScreen();
+        this->__manager.clearStack<End>();
+        return;
+    }
     std::vector<int> sideList;
     this->_everySecond += elapsed;
     this->_timerCamera += elapsed;
@@ -486,6 +593,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.expired())
             continue;
         if (b.lock()->getState() == GameObject::DESTROYED) {
+            _soundExplosion.PlaySound();
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
@@ -494,6 +602,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
+                _soundFlame.PlaySound();
             }
             for (auto &val : this->_listPlayers)
             {
@@ -503,7 +612,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         }
     }
 
-    
+
     // CHECK IF OBJECTS SHOULD BE DESTROYED
     _gameObjectList.erase(std::remove_if(
             _gameObjectList.begin(), _gameObjectList.end(),
@@ -521,7 +630,7 @@ void Bomberman::GameScene::update(const double &elapsed)
             if (this->_everySecond > 1.0) {
                 player.lock()->setDisplay(false);
             }
-            continue; 
+            continue;
         }
         if (player.lock()->getState() == Player::PlayerState::ACTION) {
             double angle = player.lock()->getRotationAngle();
@@ -549,6 +658,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 continue;
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
+            _soundBombFuse.PlaySound();
             if (bomb != nullptr) {
 
                 for (auto &val : this->_listPlayers)
@@ -564,7 +674,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         player.lock()->update(elapsed);
         if (checkCollisionForMap(player.lock()->getPosition()))
             player.lock()->setPosition(oldPosition);
-        COLLIDE_EVENT ret = checkCollisionForObjects(player.lock()->getPosition());
+        COLLIDE_EVENT ret = checkCollisionForObjects(player);
         if (ret == BASIC)
             player.lock()->setPosition(oldPosition);
         if (ret == DEATH) {
@@ -582,8 +692,9 @@ void Bomberman::GameScene::update(const double &elapsed)
         std::string &text = this->getTextFromName("timer").lock()->getText();
         text = this->convertSecondToDisplayTime(this->_timer);
         if (this->_timer == 0) {
-            // TODO: HANDLE PROPERLY TIMER TO ZERO
-            throw QuitGame();
+            RayLib::Window::loadingScreen();
+            this->__manager.clearStack<End>();
+            return;
         }
         this->_second = 0.0;
     }
@@ -637,4 +748,26 @@ std::shared_ptr<Bomberman::Player> Bomberman::GameScene::loadPlayerDll(const std
     }
 
     return player;
+}
+
+void Bomberman::GameScene::createBonus(const Type::Vector<3> &pos)
+{
+    if (rand() % (100 + 1) <= this->_bonusPct) {
+        int which = rand() % (3 + 1);
+        switch (which) {
+            case 0:
+                _gameObjectList.emplace_back(std::make_shared<StarBonus>(pos));
+                break;
+            case 1:
+                _gameObjectList.emplace_back(std::make_shared<BombBonus>(pos));
+                break;
+            case 2:
+                _gameObjectList.emplace_back(std::make_shared<SpeedBonus>(pos));
+                break;
+            case 3:
+                _gameObjectList.emplace_back(std::make_shared<RangeBonus>(pos));
+                break;
+        }
+
+    }
 }

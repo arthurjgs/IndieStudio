@@ -34,6 +34,8 @@ namespace Bomberman {
                 MUSIC_VOL,
                 FPS,
                 VERTICAL_SYNC,
+                CRATE_DROP,
+                BONUS_DROP,
             };
 
             int getValue(const ValueType &type) const;
@@ -48,13 +50,15 @@ namespace Bomberman {
     };
 }
 
-#define TAB_SIZE 4 
+#define TAB_SIZE 6
 
 static const std::pair<Bomberman::UserConfig::ValueType, const std::string> keyTab[] = {
     std::make_pair(Bomberman::UserConfig::ValueType::MASTER_VOL, "masterVolume"),
     std::make_pair(Bomberman::UserConfig::ValueType::MUSIC_VOL, "musicVolume"),
     std::make_pair(Bomberman::UserConfig::ValueType::FPS, "fps"),
     std::make_pair(Bomberman::UserConfig::ValueType::VERTICAL_SYNC, "vsync"),
+    std::make_pair(Bomberman::UserConfig::ValueType::CRATE_DROP, "crate"),
+    std::make_pair(Bomberman::UserConfig::ValueType::BONUS_DROP, "bonus"),
 };
 
 static const std::pair<Bomberman::UserConfig::ValueType, const std::string> defaultTab[] = {
@@ -62,4 +66,6 @@ static const std::pair<Bomberman::UserConfig::ValueType, const std::string> defa
     std::make_pair(Bomberman::UserConfig::ValueType::MUSIC_VOL, "100"),
     std::make_pair(Bomberman::UserConfig::ValueType::FPS, std::to_string(RayLib::Window::getInstance().getMonitorRefreshRate())),
     std::make_pair(Bomberman::UserConfig::ValueType::VERTICAL_SYNC, "1"),
+    std::make_pair(Bomberman::UserConfig::ValueType::CRATE_DROP, "75"),
+    std::make_pair(Bomberman::UserConfig::ValueType::BONUS_DROP, "40"),
 };

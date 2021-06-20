@@ -5,3 +5,4 @@ lib/
 unit_tests
 .DS_Store
 bomberman
+config.yml

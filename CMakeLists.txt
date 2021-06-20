@@ -98,8 +98,17 @@ add_executable(bomberman
         src/Game/Save/GameSceneData/GameSceneData.cpp
         src/Game/Save/PlayerData/PlayerData.cpp
         src/Game/SplashScreen/SplashScreen.cpp
+        src/Game/End/End.cpp
         src/players/Player.cpp
-        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
+        src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp
+        src/Game/RangeBonus/RangeBonus.cpp
+        src/Game/RangeBonus/RangeBonus.hpp
+        src/Game/BombBonus/BombBonus.cpp
+        src/Game/BombBonus/BombBonus.hpp
+        src/Game/SpeedBonus/SpeedBonus.cpp
+        src/Game/SpeedBonus/SpeedBonus.hpp
+        src/Game/StarBonus/StarBonus.cpp
+        src/Game/StarBonus/StarBonus.hpp)
         
 target_link_libraries(${PROJECT_NAME} ${CMAKE_DL_LIBS} raylib)
 add_subdirectory("googletest" "googletest")
