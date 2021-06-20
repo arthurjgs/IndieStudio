@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xbox_1417',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window']]]
+  ['xbox_1416',['XBOX',['../classRayLib_1_1Window.html#aabbcac3f71e1720149d049f78b6f6148',1,'RayLib::Window']]]
 ];
