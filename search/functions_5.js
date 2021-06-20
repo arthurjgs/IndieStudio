@@ -1,13 +1,5 @@
 var searchData=
 [
-  ['ellipse_1071',['Ellipse',['../classRayLib_1_1Shapes_1_1Ellipse.html#a1182cbc3814c62344dc8719c960b6479',1,'RayLib::Shapes::Ellipse::Ellipse()=delete'],['../classRayLib_1_1Shapes_1_1Ellipse.html#ab904d9af294ae3c49807847187067e65',1,'RayLib::Shapes::Ellipse::Ellipse(const int &amp;centerX, const int &amp;centerY, const float &amp;radiusH, const float &amp;radiusV, const Type::Color &amp;color)'],['../classRayLib_1_1Shapes_1_1Ellipse.html#ac1c88a68b5e6e365d7c8e323d94fd073',1,'RayLib::Shapes::Ellipse::Ellipse(const Ellipse &amp;cpy)']]],
-  ['enablecursor_1072',['enableCursor',['../classRayLib_1_1Cursor.html#afe6ad6a4b652a1475afc4988f0628b09',1,'RayLib::Cursor']]],
-  ['endblendmode_1073',['endBlendMode',['../classRayLib_1_1Drawing.html#ad78d38a3110c44750bacb9839d732f29',1,'RayLib::Drawing']]],
-  ['enddrawing_1074',['endDrawing',['../classRayLib_1_1Drawing.html#a1b36ca14d0ed18b38cc0fa752388a7c6',1,'RayLib::Drawing']]],
-  ['endmode2d_1075',['endMode2D',['../classRayLib_1_1Drawing.html#a76c64666155759a5c0c7ada7cee78d49',1,'RayLib::Drawing']]],
-  ['endmode3d_1076',['endMode3D',['../classRayLib_1_1Drawing.html#a4577c912370ddd7bf98cb4608edfd71e',1,'RayLib::Drawing']]],
-  ['endscissormode_1077',['endScissorMode',['../classRayLib_1_1Drawing.html#a3e843a20c24f380076551f57020ab536',1,'RayLib::Drawing']]],
-  ['endtexturemode_1078',['endTextureMode',['../classRayLib_1_1Drawing.html#a34e7390f4370e89383c23471df95b87e',1,'RayLib::Drawing']]],
-  ['executablepath_1079',['ExecutablePath',['../namespaceBomberman_1_1Config.html#a750765cc178dc5a5c243c76d26609319',1,'Bomberman::Config']]],
-  ['explode_1080',['explode',['../classBomberman_1_1Bomb.html#a43fd88101de321708935645e869ebe0f',1,'Bomberman::Bomb']]]
+  ['flame_1081',['Flame',['../classBomberman_1_1Flame.html#ab01e2d1d2f6bef82b4c9a4374b69419d',1,'Bomberman::Flame']]],
+  ['flashingtext_1082',['FlashingText',['../classBomberman_1_1FlashingText.html#ae2648dd62dd84614123db9a06d548250',1,'Bomberman::FlashingText::FlashingText()=delete'],['../classBomberman_1_1FlashingText.html#a67714b596865065e5ad545df9421955a',1,'Bomberman::FlashingText::FlashingText(const std::string &amp;text, const Type::Color &amp;col, const size_t &amp;size, const double &amp;speed, const std::string &amp;name, const GameObject::ObjectType &amp;type, const Type::Vector&lt; 2 &gt; &amp;position, bool display=true)'],['../classBomberman_1_1FlashingText.html#a27c2f2d3aed471cbfe7eb8df23fbb416',1,'Bomberman::FlashingText::FlashingText(const std::string &amp;text, const Type::Color &amp;col, const size_t &amp;size, const double &amp;speed, const std::string &amp;name, const GameObject::ObjectType &amp;type, const Type::Vector&lt; 2 &gt; &amp;position, const std::string &amp;font, bool display=true)'],['../classBomberman_1_1FlashingText.html#acb6cd7255cdd23acf2cfc1f0dba5d419',1,'Bomberman::FlashingText::FlashingText(const FlashingText &amp;)=delete']]]
 ];
