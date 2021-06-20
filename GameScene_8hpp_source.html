@@ -165,17 +165,20 @@ $(function() {
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <a class="code" href="classRayLib_1_1Audio_1_1Sound.html">RayLib::Audio::Sound</a> _soundFlame;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <a class="code" href="classRayLib_1_1Audio_1_1Sound.html">RayLib::Audio::Sound</a> _soundDeath;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <a class="code" href="classRayLib_1_1Audio_1_1Sound.html">RayLib::Audio::Sound</a> _soundBombFuse;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            <span class="keywordtype">bool</span> _checkCamera;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordtype">double</span> _timerCamera;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">float</span> _cameraOriginX;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">float</span> _cameraOriginZ;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordtype">int</span> _cratesPct;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordtype">int</span> _bonusPct;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            UserConfig __confingHandler;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    };</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            <a class="code" href="classRayLib_1_1Audio_1_1Sound.html">RayLib::Audio::Sound</a> _soundBonus;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keywordtype">bool</span> _checkCamera;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            <span class="keywordtype">double</span> _timerCamera;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordtype">float</span> _cameraOriginX;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            <span class="keywordtype">float</span> _cameraOriginZ;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            <span class="keywordtype">int</span> _cratesPct;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <span class="keywordtype">int</span> _bonusPct;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;            UserConfig __confingHandler;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="keywordtype">bool</span> __lastAlive() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    };</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
 <div class="ttc" id="aCamera3D_8hpp_html"><div class="ttname"><a href="Camera3D_8hpp.html">Camera3D.hpp</a></div></div>
 <div class="ttc" id="aGame_2Image_2Image_8hpp_html"><div class="ttname"><a href="Game_2Image_2Image_8hpp.html">Image.hpp</a></div></div>
 <div class="ttc" id="aGame_2Map_8hpp_html"><div class="ttname"><a href="Game_2Map_8hpp.html">Map.hpp</a></div></div>
@@ -187,9 +190,9 @@ $(function() {
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_a1944ea09bb576b4315ade468f7125ea7a85505c0f5eee14b9b7d70e87b56f01b7"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a1944ea09bb576b4315ade468f7125ea7a85505c0f5eee14b9b7d70e87b56f01b7">Bomberman::GameScene::NOTHING</a></div><div class="ttdeci">@ NOTHING</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8hpp_source.html#l00043">GameScene.hpp:43</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_a1944ea09bb576b4315ade468f7125ea7ae555d5fd36cfdce44c242a1783370340"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a1944ea09bb576b4315ade468f7125ea7ae555d5fd36cfdce44c242a1783370340">Bomberman::GameScene::DEATH</a></div><div class="ttdeci">@ DEATH</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8hpp_source.html#l00046">GameScene.hpp:45</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_a1944ea09bb576b4315ade468f7125ea7ae8092cc3b4d79d2f55e7ca7c59629e99"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a1944ea09bb576b4315ade468f7125ea7ae8092cc3b4d79d2f55e7ca7c59629e99">Bomberman::GameScene::BASIC</a></div><div class="ttdeci">@ BASIC</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8hpp_source.html#l00044">GameScene.hpp:44</a></div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_a43c7b50b2a2940c9868e3fa0777138a7"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00528">GameScene.cpp:528</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_a43c7b50b2a2940c9868e3fa0777138a7"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a43c7b50b2a2940c9868e3fa0777138a7">Bomberman::GameScene::update</a></div><div class="ttdeci">void update(const double &amp;elapsed)</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00544">GameScene.cpp:544</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_a4bcd83a9e4f04b1090a3806bba16e0dd"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a4bcd83a9e4f04b1090a3806bba16e0dd">Bomberman::GameScene::operator=</a></div><div class="ttdeci">GameScene &amp; operator=(const GameScene &amp;)=delete</div></div>
-<div class="ttc" id="aclassBomberman_1_1GameScene_html_a66647d414a12deaf79076f2d424dc19a"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00691">GameScene.cpp:691</a></div></div>
+<div class="ttc" id="aclassBomberman_1_1GameScene_html_a66647d414a12deaf79076f2d424dc19a"><div class="ttname"><a href="classBomberman_1_1GameScene.html#a66647d414a12deaf79076f2d424dc19a">Bomberman::GameScene::drawScene</a></div><div class="ttdeci">void drawScene()</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00713">GameScene.cpp:713</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_ab440a5ef127ba20f1d77444294b1b654"><div class="ttname"><a href="classBomberman_1_1GameScene.html#ab440a5ef127ba20f1d77444294b1b654">Bomberman::GameScene::checkCollisionForObjects</a></div><div class="ttdeci">COLLIDE_EVENT checkCollisionForObjects(const std::weak_ptr&lt; Player &gt; &amp;player, bool isFlame=false, bool isBomb=false)</div><div class="ttdef"><b>Definition:</b> <a href="GameScene_8cpp_source.html#l00393">GameScene.cpp:393</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_af0ad2ebcddb5abebd2585df790c5e055"><div class="ttname"><a href="classBomberman_1_1GameScene.html#af0ad2ebcddb5abebd2585df790c5e055">Bomberman::GameScene::~GameScene</a></div><div class="ttdeci">~GameScene()=default</div></div>
 <div class="ttc" id="aclassBomberman_1_1GameScene_html_af42cdec7f1ec37b62031652841ddc770"><div class="ttname"><a href="classBomberman_1_1GameScene.html#af42cdec7f1ec37b62031652841ddc770">Bomberman::GameScene::GameScene</a></div><div class="ttdeci">GameScene()=delete</div></div>
