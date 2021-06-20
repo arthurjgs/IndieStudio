@@ -30,7 +30,7 @@ namespace Bomberman
             Button &operator=(const Bomberman::Button &) = delete;
             Button(const std::string &name, const Type::Vector<3> &position,
             const std::string &texturePath, const std::string &text = "", size_t fontSize = 12, const Type::Color &textColor = Type::Color(255, 255, 255, 255),
-            const std::string &soundPath = "./assets/sounds/mute.wav", bool display = true);
+            const std::string &soundPath = "./assets/sound_effects/sound_click_menu.wav", bool display = true);
             ~Button();
             bool isClick() const;
             bool isValidate() const;

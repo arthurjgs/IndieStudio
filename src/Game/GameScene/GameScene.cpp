@@ -1,11 +1,11 @@
 /**
  * @file TestScene.cpp
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2021-05-26
- * 
+ *
  * @copyright Copyright (c) 2021
- * 
+ *
  */
 
 #include "GameScene.hpp"
@@ -60,7 +60,7 @@ void Bomberman::GameScene::continueCallback()
 void Bomberman::GameScene::saveCallback()
 {
     std::weak_ptr<FlashingText> text = this->getTextFromName("inputField");
-    
+
     std::string &val = text.lock()->getText();
     val = "";
     this->_saveName = "";
@@ -197,13 +197,17 @@ void Bomberman::GameScene::__createCratesFromSaves(const std::string &path)
 
 Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &playerInputIds, const std::vector<int> &playerIa,
                                 const std::string &playerDll1, const std::string &playerDll2,
-                                const std::string &playerDll3, const std::string &playerDll4, 
+                                const std::string &playerDll3, const std::string &playerDll4,
                                 const std::string &savePath, const int timer) : Scene(manager),
                                 _camera(Type::Vector<3>(0.0f, 40.0f, 20.0f),
                                         Type::Vector<3>(0.0f, 0.0f, 0.0f),
                                         Type::Vector<3>(0.0f, 1.0f, 0.0f),
                                         20.0f,
-                                        CAMERA_PERSPECTIVE)
+                                        CAMERA_PERSPECTIVE),
+                                        _soundExplosion("./assets/sound_effects/explosion_bombe.wav"),
+                                        _soundFlame("./assets/sound_effects/flame_effects.wav"),
+                                        _soundDeath("./assets/sound_effects/death_sound.wav"),
+                                        _soundBombFuse("./assets/sound_effects/fuse_bomb.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
     this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
@@ -211,10 +215,10 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     std::shared_ptr<Player> player1;
     std::shared_ptr<Player> player2;
     std::shared_ptr<Player> player3;
-    std::shared_ptr<Player> player4; 
+    std::shared_ptr<Player> player4;
     if (savePath != "") {
         PlayerParse parser(savePath);
-        
+
         player1 = loadPlayerFromSave(parser.getPlayerOne());
         player2 = loadPlayerFromSave(parser.getPlayerTwo());
         player3 = loadPlayerFromSave(parser.getPlayerThree());
@@ -365,7 +369,10 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
             if (obj->getType() == Bomb::BOMB && isBomb)
                 continue;
             if (obj->getType() == Bomb::FLAME)
+            {
+                _soundDeath.PlaySound();
                 return DEATH;
+            }
             return BASIC;
         }
     }
@@ -488,6 +495,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.expired())
             continue;
         if (b.lock()->getState() == GameObject::DESTROYED) {
+            _soundExplosion.PlaySound();
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
@@ -496,6 +504,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
+                _soundFlame.PlaySound();
             }
             for (auto &val : this->_listPlayers)
             {
@@ -505,7 +514,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         }
     }
 
-    
+
     // CHECK IF OBJECTS SHOULD BE DESTROYED
     _gameObjectList.erase(std::remove_if(
             _gameObjectList.begin(), _gameObjectList.end(),
@@ -523,7 +532,7 @@ void Bomberman::GameScene::update(const double &elapsed)
             if (this->_everySecond > 1.0) {
                 player.lock()->setDisplay(false);
             }
-            continue; 
+            continue;
         }
         if (player.lock()->getState() == Player::PlayerState::ACTION) {
             double angle = player.lock()->getRotationAngle();
@@ -551,6 +560,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 continue;
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
+            _soundBombFuse.PlaySound();
             if (bomb != nullptr) {
 
                 for (auto &val : this->_listPlayers)

@@ -24,6 +24,7 @@
 #include "../UserConfig/UserConfig.hpp"
 #include <map>
 #include <functional>
+#include "../../RayLib/Audio/Sound/Sound.hpp"
 
 namespace Bomberman {
     class GameScene : public Scene {
@@ -95,6 +96,11 @@ namespace Bomberman {
             bool isInput;
             std::string _saveName;
             double _everySecond;
+            RayLib::Audio::Sound _soundExplosion;
+            RayLib::Audio::Sound _soundFlame;
+            RayLib::Audio::Sound _soundDeath;
+            RayLib::Audio::Sound _soundBombFuse;
+
             bool _checkCamera;
             double _timerCamera;
             float _cameraOriginX;
