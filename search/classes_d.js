@@ -7,10 +7,8 @@ var searchData=
   ['selectionmenu_786',['SelectionMenu',['../classBomberman_1_1Menu_1_1SelectionMenu.html',1,'Bomberman::Menu']]],
   ['simplemodel_787',['SimpleModel',['../classRayLib_1_1Models_1_1SimpleModel.html',1,'RayLib::Models']]],
   ['sound_788',['Sound',['../classRayLib_1_1Audio_1_1Sound.html',1,'RayLib::Audio']]],
-  ['speedbonus_789',['SpeedBonus',['../classBomberman_1_1SpeedBonus.html',1,'Bomberman']]],
-  ['splashscreen_790',['SplashScreen',['../classBomberman_1_1SplashScreen.html',1,'Bomberman']]],
-  ['spritesheetplayer_791',['SpriteSheetPlayer',['../classBomberman_1_1SpriteSheetPlayer.html',1,'Bomberman']]],
-  ['starbonus_792',['StarBonus',['../classBomberman_1_1StarBonus.html',1,'Bomberman']]],
-  ['stateimage_793',['StateImage',['../classBomberman_1_1StateImage.html',1,'Bomberman']]],
-  ['steve_794',['Steve',['../classBomberman_1_1Steve.html',1,'Bomberman']]]
+  ['splashscreen_789',['SplashScreen',['../classBomberman_1_1SplashScreen.html',1,'Bomberman']]],
+  ['spritesheetplayer_790',['SpriteSheetPlayer',['../classBomberman_1_1SpriteSheetPlayer.html',1,'Bomberman']]],
+  ['stateimage_791',['StateImage',['../classBomberman_1_1StateImage.html',1,'Bomberman']]],
+  ['steve_792',['Steve',['../classBomberman_1_1Steve.html',1,'Bomberman']]]
 ];
