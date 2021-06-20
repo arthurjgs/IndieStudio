@@ -258,6 +258,8 @@ void Bomberman::Player::_playerGamepad(double elapsed)
 
 void Bomberman::Player::_playerHandler(double elapsed)
 {
+    if (_controller == -2)
+        return;
     if (_controller == -1) {
         _playerKeyboard(elapsed);
     }
