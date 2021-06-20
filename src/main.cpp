@@ -10,6 +10,7 @@
 #include "Game/MainMenu/MainMenu.hpp"
 #include "Game/QuitGame/QuitGame.hpp"
 #include "Game/Config.hpp"
+#include "Game/SplashScreen/SplashScreen.hpp"
 
 int main()
 {
@@ -18,7 +19,7 @@ int main()
 
     Bomberman::SceneManager engine;
 
-    engine.newScene<Bomberman::Menu::MainMenu>();
+    engine.newScene<Bomberman::SplashScreen>();
     try {
         try {
             while (RayLib::Window::getInstance().isOpen()) {

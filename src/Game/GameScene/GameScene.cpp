@@ -79,6 +79,7 @@ void Bomberman::GameScene::saveCallback()
 
 void Bomberman::GameScene::quitCallback()
 {
+    RayLib::Window::loadingScreen();
     this->__manager.replaceTop<Menu::MainLobby>();
     this->quitting = true;
 }
@@ -209,6 +210,8 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         _soundBombFuse("./assets/sound_effects/fuse_bomb.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
+    this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
+    this->_bonusPct = this->__confingHandler.getValue(UserConfig::ValueType::BONUS_DROP);
     std::shared_ptr<Player> player1;
     std::shared_ptr<Player> player2;
     std::shared_ptr<Player> player3;
@@ -273,6 +276,10 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     this->_pause = false;
     this->isInput = false;
     this->_everySecond = 0.0;
+    _checkCamera = false;
+    _timerCamera = 0.0f;
+    _cameraOriginX = _camera.getPosition().getX();
+    _cameraOriginZ = _camera.getPosition().getZ();
 }
 
 bool Bomberman::GameScene::checkCollisionForMap(const Type::Vector<3> &playerPosition) const
@@ -445,7 +452,38 @@ void Bomberman::GameScene::update(const double &elapsed)
 {
     std::vector<int> sideList;
     this->_everySecond += elapsed;
+    this->_timerCamera += elapsed;
+    float &x = _camera.getPosition().getX();
+    float &z = _camera.getPosition().getZ();
 
+    if (_checkCamera)
+    {
+        int random = rand() % 2;
+        int randomSign = rand() % 2;
+        int randomNumber = rand() % 3 + 1;
+        if (random == 1)
+        {
+            if (randomSign == 0)
+                x += randomNumber;
+            else
+                x -= randomNumber;
+        }
+        else if (random == 0)
+        {
+            if (randomSign == 0)
+                z += randomNumber;
+            else
+                z -= randomNumber;
+        }
+    }
+    if (_timerCamera > 1)
+    {
+        _checkCamera = false;
+        _timerCamera = 0.0;
+        x = _cameraOriginX;
+        z = _cameraOriginZ;
+    }
+    
     // CHECK IF PAUSE HIS ON GOING
     this->updatePause(elapsed);
     if (this->_pause == true || this->quitting) {
@@ -542,6 +580,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (ret == BASIC)
             player.lock()->setPosition(oldPosition);
         if (ret == DEATH) {
+            _checkCamera = true;
             // A PLAYER DEATH START HERE
             player.lock()->setAlive(false);
             player.lock()->setState(Player::PlayerState::DEAD);

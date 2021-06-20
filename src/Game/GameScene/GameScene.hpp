@@ -21,6 +21,7 @@
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
 #include "../Save/PlayerData/PlayerData.hpp"
+#include "../UserConfig/UserConfig.hpp"
 #include <map>
 #include <functional>
 #include "../../RayLib/Audio/Sound/Sound.hpp"
@@ -100,5 +101,13 @@ namespace Bomberman {
             RayLib::Audio::Sound _soundDeath;
             RayLib::Audio::Sound _soundBombFuse;
 
+            bool _checkCamera;
+            double _timerCamera;
+            float _cameraOriginX;
+            float _cameraOriginZ;
+
+            int _cratesPct;
+            int _bonusPct;
+            UserConfig __confingHandler;
     };
 }

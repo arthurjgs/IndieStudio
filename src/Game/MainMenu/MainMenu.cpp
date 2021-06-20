@@ -44,6 +44,7 @@ void Bomberman::Menu::MainMenu::update(const double &elapsed)
 {
     if (RayLib::Window::getInstance().getInputKeyboard().getKeyPressed() > 0
         || RayLib::Window::getInstance().getInputGamepad().getGamepadButtonPressed() > 0) {
+        RayLib::Window::loadingScreen();
         this->__manager.replaceTop<MainLobby>();
         return;
     }

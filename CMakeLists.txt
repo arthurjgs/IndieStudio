@@ -97,6 +97,7 @@ add_executable(bomberman
         src/Game/Crate/Crates.hpp
         src/Game/Save/GameSceneData/GameSceneData.cpp
         src/Game/Save/PlayerData/PlayerData.cpp
+        src/Game/SplashScreen/SplashScreen.cpp
         src/players/Player.cpp
         src/players/Player.hpp src/players/AbstractPlayer.cpp src/players/AbstractPlayer.hpp src/Game/Config.cpp src/Game/Config.hpp)
         
@@ -105,6 +106,8 @@ add_subdirectory("googletest" "googletest")
 add_subdirectory("tests" "tests")
 add_subdirectory("src/players/Bomberman" "src/players/Bomberman")
 add_subdirectory("src/players/Steve" "src/players/Steve")
+add_subdirectory("src/players/Duck" "src/players/Duck")
+add_subdirectory("src/players/Girl" "src/players/Girl")
 
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/save/ $<TARGET_FILE_DIR:bomberman>/save/)
