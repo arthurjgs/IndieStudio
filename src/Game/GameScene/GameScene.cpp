@@ -206,6 +206,8 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         CAMERA_PERSPECTIVE)
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
+    this->_cratesPct = this->__confingHandler.getValue(UserConfig::ValueType::CRATE_DROP);
+    this->_bonusPct = this->__confingHandler.getValue(UserConfig::ValueType::BONUS_DROP);
     std::shared_ptr<Player> player1;
     std::shared_ptr<Player> player2;
     std::shared_ptr<Player> player3;
