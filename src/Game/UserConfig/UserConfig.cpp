@@ -78,7 +78,6 @@ int Bomberman::UserConfig::getValue(const ValueType &type) const
     if (res.length() == 0) {
         res = this->__fetchDefaultValue(type);
     }
-    std::cout << res << std::endl;
     return (std::stoi(res));
 }
 

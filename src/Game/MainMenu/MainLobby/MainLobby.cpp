@@ -141,19 +141,120 @@ void Bomberman::Menu::MainLobby::createVideoPanel()
     this->__controllerMapAudio[5] = "uncheckedSync";
 }
 
+void Bomberman::Menu::MainLobby::confirmGameplayCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("cratesTxt");
+    std::weak_ptr<FlashingText> textbis = this->findTextByName("bonusTxt");
+    int crates = std::stoi(text.lock()->getText());
+    int bonus = std::stoi(textbis.lock()->getText());
+
+
+    this->__configHandler.setValue(UserConfig::ValueType::CRATE_DROP, crates);
+    this->__configHandler.setValue(UserConfig::ValueType::BONUS_DROP, bonus);
+    this->closeGameplayPanel();
+}
+
+void Bomberman::Menu::MainLobby::leftCratesCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("cratesTxt");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value > 1) {
+        value--;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
+void Bomberman::Menu::MainLobby::rigthCratesCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("cratesTxt");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value < 100) {
+        value++;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
+void Bomberman::Menu::MainLobby::leftBonusCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("bonusTxt");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value > 1) {
+        value--;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
+void Bomberman::Menu::MainLobby::RightBonusCallback()
+{
+    std::weak_ptr<FlashingText> text = this->findTextByName("bonusTxt");
+    int value = std::stoi(text.lock()->getText());
+
+    if (value < 100) {
+        value++;
+        std::string &res = text.lock()->getText();
+        res = std::to_string(value);
+    }
+}
+
 void Bomberman::Menu::MainLobby::createGameplayPanel()
 {
     this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
-    
+    this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<FlashingText>("Crates spawn", Type::Color(255, 255, 255, 255), 35, 0.0, "cratesDeco", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
+    this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<FlashingText>("Bonus spawn", Type::Color(255, 255, 255, 255), 35, 0.0, "bonusDeco", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 630.0f), false));
+
     std::shared_ptr<Button> close = std::make_shared<Button>("closeGameplay", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmGameplay", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftCrates = std::make_shared<Button>("leftCrates", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightCrates = std::make_shared<Button>("rightCrates", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> leftBonus = std::make_shared<Button>("leftBonus", Type::Vector<3>(800.0f, 700.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightBonus = std::make_shared<Button>("rightBonus", Type::Vector<3>(950.0f, 700.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
     close->setDisplay(false);
+    confirm->setDisplay(false);
+    leftCrates->setDisplay(false);
+    rightCrates->setDisplay(false);
+    leftBonus->setDisplay(false);
+    rightBonus->setDisplay(false);
 
     this->__objContainer.emplace_back(GAMEPLAY, close);
     this->__buttonsReferer.emplace_back(GAMEPLAY, close);
+    this->__objContainer.emplace_back(GAMEPLAY, confirm);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, confirm);
+    this->__objContainer.emplace_back(GAMEPLAY, leftCrates);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, leftCrates);
+    this->__objContainer.emplace_back(GAMEPLAY, rightCrates);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, rightCrates);
+    this->__objContainer.emplace_back(GAMEPLAY, leftBonus);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, leftBonus);
+    this->__objContainer.emplace_back(GAMEPLAY, rightBonus);
+    this->__buttonsReferer.emplace_back(GAMEPLAY, rightBonus);
 
     this->__buttonCallback["closeGameplay"] = &MainLobby::closeGameplayPanel;
+    this->__buttonCallback["confirmGameplay"] = &MainLobby::confirmGameplayCallback;
+    this->__buttonCallback["leftCrates"] = &MainLobby::leftCratesCallback;
+    this->__buttonCallback["rightCrates"] = &MainLobby::rigthCratesCallback;
+    this->__buttonCallback["leftBonus"] = &MainLobby::leftBonusCallback;
+    this->__buttonCallback["rightBonus"] = &MainLobby::RightBonusCallback;
 
     this->__controllerMapGameplay[0] = "closeGameplay";
+    this->__controllerMapGameplay[1] = "confirmGameplay";
+    this->__controllerMapGameplay[2] = "leftCrates";
+    this->__controllerMapGameplay[3] = "rightCrates";
+    this->__controllerMapGameplay[4] = "leftBonus";
+    this->__controllerMapGameplay[5] = "rightBonus";
+
+    std::shared_ptr<FlashingText> cratesTxt = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::CRATE_DROP)), Type::Color(255, 255, 255, 255), 35, 0.0, "cratesTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 525.0f), false);
+    std::shared_ptr<FlashingText> bonusTxt = std::make_shared<FlashingText>(std::to_string(this->__configHandler.getValue(UserConfig::ValueType::BONUS_DROP)), Type::Color(255, 255, 255, 255), 35, 0.0, "bonusTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(875.0f, 725.0f), false);
+
+    this->__objContainer.emplace_back(GAMEPLAY, bonusTxt);
+    this->__dynamicTextReferer.emplace_back(GAMEPLAY, bonusTxt);
+    this->__objContainer.emplace_back(GAMEPLAY, cratesTxt);
+    this->__dynamicTextReferer.emplace_back(GAMEPLAY, cratesTxt);
 }
 
 void Bomberman::Menu::MainLobby::createAudioPanel()

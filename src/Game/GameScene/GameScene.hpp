@@ -21,6 +21,7 @@
 #include "../Button/Button.hpp"
 #include "../FlashingText/FlashingText.hpp"
 #include "../Save/PlayerData/PlayerData.hpp"
+#include "../UserConfig/UserConfig.hpp"
 #include <map>
 #include <functional>
 
@@ -98,5 +99,9 @@ namespace Bomberman {
             double _timerCamera;
             float _cameraOriginX;
             float _cameraOriginZ;
+
+            int _cratesPct;
+            int _bonusPct;
+            UserConfig __confingHandler;
     };
 }
