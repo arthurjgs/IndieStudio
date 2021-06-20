@@ -25,7 +25,7 @@ namespace RayLib {
                 inline std::string getFilepath() const { return (this->__filePath); }
             
                 void UpdateSound(const void *data, const int &samplesCount) const;
-                void PlaySound() const;
+                void PlayRaySound() const;
                 void StopSound() const;
                 void PauseSound() const;
                 void ResumeSound() const;

@@ -34,7 +34,7 @@ _sound("./assets/sound_effects/applause.wav")
     std::shared_ptr<Button> quitGame = std::make_shared<Button>("quit", Type::Vector<3>(500.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "QUIT GAME", 40);
     std::shared_ptr<Button> mainMenu = std::make_shared<Button>("menu", Type::Vector<3>(1100.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "MAIN MENU", 40);
     std::shared_ptr<Music> theme = std::make_unique<Music>("theme", "./assets/sounds/victory.mp3", this->__config.getValue(UserConfig::ValueType::MUSIC_VOL));
-    this->_sound.PlaySound();
+    this->_sound.PlayRaySound();
 
     this->__objContainer.emplace_back(theme);
 

@@ -214,7 +214,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
                                         _soundExplosion(Bomberman::Config::ExecutablePath + "assets/sound_effects/explosion_bombe.wav"),
                                         _soundFlame(Bomberman::Config::ExecutablePath + "assets/sound_effects/flame_effects.wav"),
                                         _soundDeath(Bomberman::Config::ExecutablePath + "assets/sound_effects/death_sound.wav"),
-                                        _soundBombFuse(Bomberman::Config::ExecutablePath + "assets/sound_effects/fuse_bomb.wav")
+                                        _soundBombFuse(Bomberman::Config::ExecutablePath + "assets/sound_effects/fuse_bomb.wav"),
                                         _soundBonus(Bomberman::Config::ExecutablePath + "./assets/sound_effects/sound_bonus.wav")
 {
     RayLib::Manager3D::getInstance().setScene(RayLib::Manager3D::GAME);
@@ -383,7 +383,7 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
                 continue;
             if (obj->getType() == Bomb::FLAME)
             {
-                _soundDeath.PlaySoundMulti();
+                _soundDeath.PlayRaySound();
                 return DEATH;
             }
             return BASIC;
@@ -430,13 +430,13 @@ Bomberman::GameScene::COLLIDE_EVENT Bomberman::GameScene::checkCollisionForObjec
 
             if (obj->getType() == Bomb::FLAME)
             {
-                _soundDeath.PlaySoundMulti();
+                _soundDeath.PlayRaySound();
                 return DEATH;
             }
 
             if (obj->getType() == GameObject::BONUS) {
                 std::string name = obj->getName();
-                this->_soundBonus.PlaySound();
+                this->_soundBonus.PlayRaySound();
                 if (name == "BombBonus") {
                     player.lock()->addBomb();
                 }
@@ -595,7 +595,7 @@ void Bomberman::GameScene::update(const double &elapsed)
         if (b.expired())
             continue;
         if (b.lock()->getState() == GameObject::DESTROYED) {
-            _soundExplosion.PlaySoundMulti();
+            _soundExplosion.PlayRaySound();
             auto flames = b.lock()->explode();
             for (auto & flame : flames) {
                 if (std::find(sideList.begin(), sideList.end(), flame->getSide()) != sideList.end())
@@ -604,7 +604,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                     checkCollisionForMap(flame->getPosition()))
                     sideList.emplace_back(flame->getSide());
                 _gameObjectList.emplace_back(flame);
-                _soundFlame.PlaySoundMulti();
+                _soundFlame.PlayRaySound();
             }
             for (auto &val : this->_listPlayers)
             {
@@ -660,7 +660,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 continue;
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
-            _soundBombFuse.PlaySoundMulti();
+            _soundBombFuse.PlayRaySound();
             if (bomb != nullptr) {
 
                 for (auto &val : this->_listPlayers)

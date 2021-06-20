@@ -216,7 +216,7 @@ void Bomberman::Menu::SelectionMenu::readySquareState()
 {
 
     bool plus = false;
-    _readySound.PlaySoundMulti();
+    _readySound.PlayRaySound();
     for (auto const &val : this->__stateImagesReferer)
     {
         if (!_isAction)
