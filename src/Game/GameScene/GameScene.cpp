@@ -522,6 +522,7 @@ void Bomberman::GameScene::update(const double &elapsed)
                 continue;
             }
             std::shared_ptr<Bomb> bomb = player.lock()->createBomb();
+            _soundBombFuse.PlaySound();
             if (bomb != nullptr) {
 
                 for (auto &val : this->_listPlayers)
