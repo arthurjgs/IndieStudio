@@ -324,7 +324,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; obj : this-&gt;_gameMap.lock()-&gt;createCrates(75))</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        {</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                val.lock()-&gt;updateCollisions(obj-&gt;getPosition(), 1);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                val.lock()-&gt;updateCollisions(obj-&gt;getPosition(), 2);</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;            this-&gt;_gameObjectList.emplace_back(obj);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            this-&gt;_CrateList.emplace_back(obj);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
@@ -719,7 +719,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;                {</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    val.lock()-&gt;updateCollisions(bomb-&gt;getPosition(), 1);</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                    val.lock()-&gt;updateCollisions(bomb-&gt;getPosition(), 2);</div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                    val.lock()-&gt;updateDangers(bomb-&gt;getPosition(), bomb-&gt;getRange(), 1);</div>
 <div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                }</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                _gameObjectList.emplace_back(bomb);</div>
