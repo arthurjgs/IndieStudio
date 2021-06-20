@@ -119,5 +119,3 @@ ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_
 ADD_CUSTOM_COMMAND(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/save/ $<TARGET_FILE_DIR:bomberman>/save/)
 
 enable_testing()
-
-add_custom_command(TARGET bomberman POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_SOURCE_DIR}/assets/ $<TARGET_FILE_DIR:bomberman>/assets/)
