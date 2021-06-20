@@ -94,5 +94,9 @@ namespace Bomberman {
             bool isInput;
             std::string _saveName;
             double _everySecond;
+            bool _checkCamera;
+            double _timerCamera;
+            float _cameraOriginX;
+            float _cameraOriginZ;
     };
 }
