@@ -277,7 +277,7 @@ $(function() {
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                                        _soundExplosion(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;assets/sound_effects/explosion_bombe.wav&quot;</span>),</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                                        _soundFlame(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;assets/sound_effects/flame_effects.wav&quot;</span>),</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                        _soundDeath(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;assets/sound_effects/death_sound.wav&quot;</span>),</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                        _soundBombFuse(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;assets/sound_effects/fuse_bomb.wav&quot;</span>)</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                                        _soundBombFuse(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;assets/sound_effects/fuse_bomb.wav&quot;</span>),</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                                        _soundBonus(<a class="code" href="namespaceBomberman.html">Bomberman</a>::Config::<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">ExecutablePath</a> + <span class="stringliteral">&quot;./assets/sound_effects/sound_bonus.wav&quot;</span>)</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;{</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <a class="code" href="classRayLib_1_1Manager3D.html#abbf9eec195dc5f9aea5b651a063168cd">RayLib::Manager3D::getInstance</a>().<a class="code" href="classRayLib_1_1Manager3D.html#a60d9b18d2acceb319a74b15bebd176bd">setScene</a>(<a class="code" href="classRayLib_1_1Manager3D.html#ae135c11d0071eefafe117b3e7f720198a3113ea893b0000b80227b2f6d1dadc16">RayLib::Manager3D::GAME</a>);</div>
@@ -446,7 +446,7 @@ $(function() {
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomb::FLAME</a>)</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            {</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                _soundDeath.PlaySoundMulti();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;                _soundDeath.PlayRaySound();</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;                <span class="keywordflow">return</span> DEATH;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;            }</div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;            <span class="keywordflow">return</span> BASIC;</div>
@@ -493,13 +493,13 @@ $(function() {
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4ea301950f115f15ba18a58efe4c4a7846b">Bomb::FLAME</a>)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;            {</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                _soundDeath.PlaySoundMulti();</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;                _soundDeath.PlayRaySound();</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;                <span class="keywordflow">return</span> DEATH;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;            }</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;            <span class="keywordflow">if</span> (obj-&gt;getType() == <a class="code" href="classBomberman_1_1GameObject.html#aa03f6132eeb1fdd02f7d52d767f2bc4eafc47c6a76349551ed01f8d4ed3dc8e5a">GameObject::BONUS</a>) {</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                std::string name = obj-&gt;getName();</div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                this-&gt;_soundBonus.PlaySound();</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;                this-&gt;_soundBonus.PlayRaySound();</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;                <span class="keywordflow">if</span> (name == <span class="stringliteral">&quot;BombBonus&quot;</span>) {</div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;                    player.lock()-&gt;addBomb();</div>
 <div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;                }</div>
@@ -658,7 +658,7 @@ $(function() {
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;        <span class="keywordflow">if</span> (b.expired())</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;        <span class="keywordflow">if</span> (b.lock()-&gt;getState() == <a class="code" href="classBomberman_1_1GameObject.html#acf31d65f45bc9e178c3a611d6ed7c82da31ff086352a8b59fe951f5f82a9d4e91">GameObject::DESTROYED</a>) {</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            _soundExplosion.PlaySoundMulti();</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;            _soundExplosion.PlayRaySound();</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            <span class="keyword">auto</span> flames = b.lock()-&gt;explode();</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp; flame : flames) {</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                <span class="keywordflow">if</span> (std::find(sideList.begin(), sideList.end(), flame-&gt;getSide()) != sideList.end())</div>
@@ -667,7 +667,7 @@ $(function() {
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;                    checkCollisionForMap(flame-&gt;getPosition()))</div>
 <div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                    sideList.emplace_back(flame-&gt;getSide());</div>
 <div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                _gameObjectList.emplace_back(flame);</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                _soundFlame.PlaySoundMulti();</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                _soundFlame.PlayRaySound();</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;            }</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            {</div>
@@ -723,7 +723,7 @@ $(function() {
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;            }</div>
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;            std::shared_ptr&lt;Bomb&gt; bomb = player.lock()-&gt;createBomb();</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;            _soundBombFuse.PlaySoundMulti();</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;            _soundBombFuse.PlayRaySound();</div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            <span class="keywordflow">if</span> (bomb != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;val : this-&gt;_listPlayers)</div>
