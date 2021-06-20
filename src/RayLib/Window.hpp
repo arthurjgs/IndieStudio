@@ -19,6 +19,7 @@
 #include "Camera.hpp"
 #include <memory>
 #include "../Game/SceneManager/SceneManager.hpp"
+#include "../Game/FlashingText/FlashingText.hpp"
 
 namespace RayLib
 {
@@ -34,6 +35,15 @@ namespace RayLib
             RayLib::Cursor getCursor() const;
             RayLib::Drawing getDrawing() const;
             RayLib::Camera getCamera() const;
+
+            static inline void loadingScreen() 
+            {
+                RayLib::Window::getInstance().getDrawing().beginDrawing();
+                RayLib::Window::getInstance().clearScreen();
+                Bomberman::FlashingText text("Loading...", Type::Color(0, 0, 0, 255), 60, 0.0, "text", Bomberman::GameObject::DECOR, Type::Vector<2>(1500.0f, 900.0f));
+                text.render();
+                RayLib::Window::getInstance().getDrawing().endDrawing();
+            }
 
             enum XBOX {
                 NOTHING,
@@ -79,6 +89,10 @@ namespace RayLib
                 ::SetTargetFPS(this->__fps);    
             }
 
+            inline void clearScreen()
+            {
+                ::ClearBackground(::RAYWHITE);
+            }
             inline void ShowCursor(void) {::ShowCursor();}                                                
             inline void HideCursor(void) {::HideCursor();}   
 

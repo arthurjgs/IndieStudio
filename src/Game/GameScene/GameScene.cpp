@@ -79,6 +79,7 @@ void Bomberman::GameScene::saveCallback()
 
 void Bomberman::GameScene::quitCallback()
 {
+    RayLib::Window::loadingScreen();
     this->__manager.replaceTop<Menu::MainLobby>();
     this->quitting = true;
 }

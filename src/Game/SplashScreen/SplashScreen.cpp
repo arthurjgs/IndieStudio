@@ -10,6 +10,7 @@
 
 #include "SplashScreen.hpp"
 #include "Game/MainMenu/MainMenu.hpp"
+#include "../FlashingText/FlashingText.hpp"
 
 Bomberman::SplashScreen::SplashScreen(SceneManager &manager) :
 Scene(manager)
@@ -32,7 +33,9 @@ void Bomberman::SplashScreen::update(const double &elapsed)
         uChar &a = col.getA();
         a++;
         if (a == 255) {
+            RayLib::Window::loadingScreen();
             this->__manager.clearStack<Menu::MainMenu>();
+            return;
         }
         this->__second = 0.0;
     }
