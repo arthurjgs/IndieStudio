@@ -260,7 +260,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     if (savePath != "") {
         this->__createCratesFromSaves(savePath);
     } else {
-        for (auto & obj : this->_gameMap.lock()->createCrates(75))
+        for (auto & obj : this->_gameMap.lock()->createCrates(this->_cratesPct))
         {
             for (auto &val : this->_listPlayers)
                 val.lock()->updateCollisions(obj->getPosition(), 1);
