@@ -14,6 +14,8 @@
 #include "../UserConfig/UserConfig.hpp"
 #include "../Image/Image.hpp"
 #include "../Button/Button.hpp"
+#include "../Music/Music.hpp"
+#include "../../RayLib/Audio/Sound/Sound.hpp"
 #include <functional>
 #include <map>
 
@@ -38,5 +40,6 @@ namespace Bomberman {
             std::map<std::string, std::function<void(End &)>> _buttonCallbacks;
             UserConfig __config;
             bool _quitting;
+            RayLib::Audio::Sound _sound;
     };
 }

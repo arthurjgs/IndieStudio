@@ -234,7 +234,7 @@ Bomberman::GameScene::GameScene(SceneManager &manager, const std::vector<int> &p
     std::shared_ptr<Map> gameMap = std::make_shared<Map>("assets/map/default", Type::Vector<3>(-7.0f, 0.0f, -7.0f));
     this->_background = std::make_shared<Image>("assets/map/default/bg.png", "Background", GameObject::DECOR, Type::Vector<3>(0.0f, 0.0f, 0.0f));
 
-    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", 0.5f));
+    this->_gameObjectList.emplace_back(std::make_shared<Music>("MainMusic", "assets/sounds/music.mp3", this->__confingHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
     this->_gameObjectList.emplace_back(gameMap);
     this->_gameObjectList.emplace_back(player1);
     this->_gameObjectList.emplace_back(player2);
