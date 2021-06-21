@@ -18,7 +18,7 @@ Bomberman::BombBonus::~BombBonus() = default;
 
 void Bomberman::BombBonus::update(const double &elapsed)
 {
-    if (_lifespan > 3) {
+    if (_lifespan > 5) {
         this->_state = DESTROYED;
     }
     _lifespan += elapsed;

@@ -20,6 +20,7 @@
 #include <vector>
 #include <memory>
 #include <players/Player.hpp>
+#include "../../UserConfig/UserConfig.hpp"
 
 namespace Bomberman
 {
@@ -63,6 +64,8 @@ namespace Bomberman
                 std::vector<int> _selectedModel {0, -1, -1, -1};
                 std::vector<int> _playerInputIds {-1, 0, 1, 2};
                 RayLib::Audio::Sound _readySound;
+                UserConfig __config;
+
         };
     }
 }
