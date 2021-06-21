@@ -20,10 +20,24 @@ namespace Bomberman {
     };
 }
 
-extern "C" Bomberman::AbstractPlayer *entryPoint()
+#ifdef WIN32
+extern "C"
 {
-    static Bomberman::Steve player;
-    return &player;
+    __declspec(dllexport) Bomberman::AbstractPlayer* entryPoint()
+    {
+        static Bomberman::Steve player;
+        return &player;
+    }
 }
+#else
+extern "C"
+{
+    Bomberman::AbstractPlayer* entryPoint()
+    {
+        static Bomberman::Steve player;
+        return &player;
+    }
+}
+#endif
 
 #endif //BOMBERMAN_DEFAULT_HPP

@@ -14,6 +14,7 @@
 #include "../../Music/Music.hpp"
 #include "../../Save/GameSceneData/GameSceneData.hpp"
 #include "../../GameScene/GameScene.hpp"
+#include <Game/Config.hpp>
 
 void Bomberman::Menu::MainLobby::backButtonCallback()
 {
@@ -58,13 +59,13 @@ void Bomberman::Menu::MainLobby::forwardButtonCallback()
 
 void Bomberman::Menu::MainLobby::createSavePanel()
 {
-    this->__objContainer.emplace_back(LOAD_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    this->__objContainer.emplace_back(LOAD_PANEL, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
     
-    std::shared_ptr<Button> close = std::make_shared<Button>("closeLoad", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeLoad", Type::Vector<3>(1080.0f, 360.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
     close->setDisplay(false);
 
-    std::shared_ptr<Button> back = std::make_shared<Button>("back", Type::Vector<3>(775.0f, 900.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> forward = std::make_shared<Button>("forward", Type::Vector<3>(1075.0f, 900.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> back = std::make_shared<Button>("back", Type::Vector<3>(775.0f, 900.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> forward = std::make_shared<Button>("forward", Type::Vector<3>(1075.0f, 900.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
     back->setDisplay(false);
     forward->setDisplay(false);
 
@@ -85,16 +86,16 @@ void Bomberman::Menu::MainLobby::createSavePanel()
 
 void Bomberman::Menu::MainLobby::createVideoPanel()
 {
-    this->__objContainer.emplace_back(VIDEO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    this->__objContainer.emplace_back(VIDEO, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
     this->__objContainer.emplace_back(VIDEO, std::make_shared<FlashingText>("Refresh Rate", Type::Color(255, 255, 255, 255), 35, 0.0, "refreshRateTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
     this->__objContainer.emplace_back(VIDEO, std::make_shared<FlashingText>("Vertical Sync", Type::Color(255, 255, 255, 255), 35, 0.0, "VerticalSyncTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 730.0f), false));
 
-    std::shared_ptr<Button> close = std::make_shared<Button>("closeVideo", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
-    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmVideo", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
-    std::shared_ptr<Button> leftRefresh = std::make_shared<Button>("leftRefresh", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightRefresh = std::make_shared<Button>("rightRefresh", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
-    std::shared_ptr<Button> checkedSync = std::make_shared<Button>("checkedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), "./assets/MainMenu/checked_box.png");
-    std::shared_ptr<Button> uncheckedSync = std::make_shared<Button>("uncheckedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), "./assets/MainMenu/unchecked_box.png");
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeVideo", Type::Vector<3>(1080.0f, 360.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmVideo", Type::Vector<3>(1080.0f, 930.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftRefresh = std::make_shared<Button>("leftRefresh", Type::Vector<3>(800.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightRefresh = std::make_shared<Button>("rightRefresh", Type::Vector<3>(950.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> checkedSync = std::make_shared<Button>("checkedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/checked_box.png");
+    std::shared_ptr<Button> uncheckedSync = std::make_shared<Button>("uncheckedSync", Type::Vector<3>(1050.0f, 722.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/unchecked_box.png");
     close->setDisplay(false);
     confirm->setDisplay(false);
     leftRefresh->setDisplay(false);
@@ -204,16 +205,16 @@ void Bomberman::Menu::MainLobby::RightBonusCallback()
 
 void Bomberman::Menu::MainLobby::createGameplayPanel()
 {
-    this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/Panel2.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
     this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<FlashingText>("Crates spawn", Type::Color(255, 255, 255, 255), 35, 0.0, "cratesDeco", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
     this->__objContainer.emplace_back(GAMEPLAY, std::make_shared<FlashingText>("Bonus spawn", Type::Color(255, 255, 255, 255), 35, 0.0, "bonusDeco", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 630.0f), false));
 
-    std::shared_ptr<Button> close = std::make_shared<Button>("closeGameplay", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
-    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmGameplay", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
-    std::shared_ptr<Button> leftCrates = std::make_shared<Button>("leftCrates", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightCrates = std::make_shared<Button>("rightCrates", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
-    std::shared_ptr<Button> leftBonus = std::make_shared<Button>("leftBonus", Type::Vector<3>(800.0f, 700.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightBonus = std::make_shared<Button>("rightBonus", Type::Vector<3>(950.0f, 700.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeGameplay", Type::Vector<3>(1080.0f, 360.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmGameplay", Type::Vector<3>(1080.0f, 930.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftCrates = std::make_shared<Button>("leftCrates", Type::Vector<3>(800.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightCrates = std::make_shared<Button>("rightCrates", Type::Vector<3>(950.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> leftBonus = std::make_shared<Button>("leftBonus", Type::Vector<3>(800.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightBonus = std::make_shared<Button>("rightBonus", Type::Vector<3>(950.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
     close->setDisplay(false);
     confirm->setDisplay(false);
     leftCrates->setDisplay(false);
@@ -259,16 +260,16 @@ void Bomberman::Menu::MainLobby::createGameplayPanel()
 
 void Bomberman::Menu::MainLobby::createAudioPanel()
 {
-    this->__objContainer.emplace_back(AUDIO, std::make_shared<Image>("./assets/MainMenu/Panel2.png", "audioPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
+    this->__objContainer.emplace_back(AUDIO, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/Panel2.png", "audioPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(750.0f, 350.0f, 0.0f), false));
     this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Master volume", Type::Color(255, 255, 255, 255), 35, 0.0, "masterVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 430.0f), false));
     this->__objContainer.emplace_back(AUDIO, std::make_shared<FlashingText>("Music volume", Type::Color(255, 255, 255, 255), 35, 0.0, "musicVolumeTxt", GameObject::ObjectType::DECOR, Type::Vector<2>(780.0f, 630.0f), false));
 
-    std::shared_ptr<Button> close = std::make_shared<Button>("closeAudio", Type::Vector<3>(1080.0f, 360.0f, 0.0f), "./assets/MainMenu/close.png");
-    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmAudio", Type::Vector<3>(1080.0f, 930.0f, 0.0f), "./assets/MainMenu/confirm.png");
-    std::shared_ptr<Button> leftMaster = std::make_shared<Button>("leftMaster", Type::Vector<3>(800.0f, 500.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightMaster = std::make_shared<Button>("rightMaster", Type::Vector<3>(950.0f, 500.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
-    std::shared_ptr<Button> leftMusic = std::make_shared<Button>("leftMusic", Type::Vector<3>(800.0f, 700.0f, 0.0f), "./assets/MainMenu/leftArrow.png");
-    std::shared_ptr<Button> rightMusic = std::make_shared<Button>("rightMusic", Type::Vector<3>(950.0f, 700.0f, 0.0f), "./assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeAudio", Type::Vector<3>(1080.0f, 360.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
+    std::shared_ptr<Button> confirm = std::make_shared<Button>("confirmAudio", Type::Vector<3>(1080.0f, 930.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/confirm.png");
+    std::shared_ptr<Button> leftMaster = std::make_shared<Button>("leftMaster", Type::Vector<3>(800.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightMaster = std::make_shared<Button>("rightMaster", Type::Vector<3>(950.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
+    std::shared_ptr<Button> leftMusic = std::make_shared<Button>("leftMusic", Type::Vector<3>(800.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/leftArrow.png");
+    std::shared_ptr<Button> rightMusic = std::make_shared<Button>("rightMusic", Type::Vector<3>(950.0f, 700.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/rightArrow.png");
     close->setDisplay(false);
     leftMaster->setDisplay(false);
     rightMaster->setDisplay(false);
@@ -314,10 +315,10 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
 
 void Bomberman::Menu::MainLobby::createHelpPanel()
 {
-    this->__objContainer.emplace_back(HELP, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f), false));   
+    this->__objContainer.emplace_back(HELP, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f), false));   
 
 
-    std::shared_ptr<Button> close = std::make_shared<Button>("closeHelp", Type::Vector<3>(1300.0f, 460.0f, 0.0f), "./assets/MainMenu/close.png");
+    std::shared_ptr<Button> close = std::make_shared<Button>("closeHelp", Type::Vector<3>(1300.0f, 460.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
     close->setDisplay(false);
 
     this->__objContainer.emplace_back(HELP, close);
@@ -332,25 +333,25 @@ Bomberman::Menu::MainLobby::MainLobby(SceneManager &manager) :
 Scene(manager)
 {
     const std::pair<const std::string, const double> arr[] = {
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/1.png", 10.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/2.png", 20.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/3.png", 30.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/4.png", 40.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/5.png", 50.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/6.png", 60.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/1.png", 10.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/2.png", 20.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/3.png", 30.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/4.png", 40.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/5.png", 50.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/6.png", 60.0),
     };
 
     this->__objContainer.emplace_back(MAIN, std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
-    this->__objContainer.emplace_back(MAIN_PANEL, std::make_shared<Image>("./assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
-    this->__objContainer.emplace_back(MAIN, std::make_shared<Image>("./assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 40.0f, 0.0f)));
-    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", "./assets/sounds/lobbymusic.mp3", this->__configHandler.getValue(UserConfig::ValueType::MUSIC_VOL)));
-    this->__objContainer.emplace_back(OPTION_PANEL, std::make_shared<Image>("./assets/MainMenu/Panel1.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(65.0f, 85.0f, 0.0f), false));
+    this->__objContainer.emplace_back(MAIN_PANEL, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f)));
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/lobby.png", "title", GameObject::ObjectType::DECOR, Type::Vector<3>(650.0f, 40.0f, 0.0f)));
+    this->__objContainer.emplace_back(MAIN, std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/lobbymusic.mp3", this->__configHandler.getValue(UserConfig::MUSIC_VOL)));
+    this->__objContainer.emplace_back(OPTION_PANEL, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/Panel1.png", "settingsPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(65.0f, 85.0f, 0.0f), false));
     
     // button
-    std::shared_ptr<Button> playButton = std::make_shared<Button>("playButton", Type::Vector<3>(775.0f, 500.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "PLAY", 60);
-    std::shared_ptr<Button> loadButton = std::make_shared<Button>("loadButton", Type::Vector<3>(775.0f, 650.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "LOAD", 60);
-    std::shared_ptr<Button> quitButton = std::make_shared<Button>("quitButton", Type::Vector<3>(775.0f, 800.0f, 0.0f), "./assets/MainMenu/button_sheet.png", "QUIT", 60);
-    std::shared_ptr<Button> settingsButton = std::make_shared<Button>("settingsButton", Type::Vector<3>(40.0f, 57.0f, 0.0f), "./assets/MainMenu/settings_button.png");
+    std::shared_ptr<Button> playButton = std::make_shared<Button>("playButton", Type::Vector<3>(775.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet.png", "PLAY", 60);
+    std::shared_ptr<Button> loadButton = std::make_shared<Button>("loadButton", Type::Vector<3>(775.0f, 650.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet.png", "LOAD", 60);
+    std::shared_ptr<Button> quitButton = std::make_shared<Button>("quitButton", Type::Vector<3>(775.0f, 800.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet.png", "QUIT", 60);
+    std::shared_ptr<Button> settingsButton = std::make_shared<Button>("settingsButton", Type::Vector<3>(40.0f, 57.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/settings_button.png");
 
     this->__objContainer.emplace_back(MAIN_PANEL, playButton);
     this->__buttonsReferer.emplace_back(MAIN_PANEL, playButton);
@@ -366,11 +367,11 @@ Scene(manager)
     this->__controllerMapMain[1] = "loadButton";
     this->__controllerMapMain[2] = "quitButton";
 
-    std::shared_ptr<Button> helpButton = std::make_shared<Button>("helpButton", Type::Vector<3>(80.0f, 200.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Help", 50);
-    std::shared_ptr<Button> audioButton = std::make_shared<Button>("audioButton", Type::Vector<3>(80.0f, 300.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Audio", 50);
-    std::shared_ptr<Button> videoButton = std::make_shared<Button>("videoButton", Type::Vector<3>(80.0f, 400.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Video", 50);
-    std::shared_ptr<Button> gameplayButton = std::make_shared<Button>("gameplayButton", Type::Vector<3>(80.0f, 500.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Gameplay", 50);
-    std::shared_ptr<Button> creditsButton = std::make_shared<Button>("creditsButton", Type::Vector<3>(80.0f, 600.0f, 0.0f), "./assets/MainMenu/button_sheet_2.png", "Credits", 50);
+    std::shared_ptr<Button> helpButton = std::make_shared<Button>("helpButton", Type::Vector<3>(80.0f, 200.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", "Help", 50);
+    std::shared_ptr<Button> audioButton = std::make_shared<Button>("audioButton", Type::Vector<3>(80.0f, 300.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", "Audio", 50);
+    std::shared_ptr<Button> videoButton = std::make_shared<Button>("videoButton", Type::Vector<3>(80.0f, 400.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", "Video", 50);
+    std::shared_ptr<Button> gameplayButton = std::make_shared<Button>("gameplayButton", Type::Vector<3>(80.0f, 500.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", "Gameplay", 50);
+    std::shared_ptr<Button> creditsButton = std::make_shared<Button>("creditsButton", Type::Vector<3>(80.0f, 600.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", "Credits", 50);
     helpButton->setDisplay(false);
     audioButton->setDisplay(false);
     videoButton->setDisplay(false);
@@ -419,7 +420,7 @@ Scene(manager)
     this->__video = false;
     this->__gameplay = false;
     this->__ignore = -1;
-    
+    this->__quit = false;
     this->mainPanelFocus = true;
     this->settingsFocus = false;
     this->controllerActive = false;
@@ -433,7 +434,6 @@ Scene(manager)
     this->__currentBtnGameplay = 0;
     this->__currentBtnVideo = 0;
     this->__currentBtnLoad = 0;
-    // TODO: set music volume via config file for each musics created
 }
 
 void Bomberman::Menu::MainLobby::confirmVideo()
@@ -717,6 +717,7 @@ void Bomberman::Menu::MainLobby::closeVideoPanel()
 void Bomberman::Menu::MainLobby::playButtonCallback()
 {
     std::cout << "play click" << std::endl;
+    this->__quit = true;
     RayLib::Window::loadingScreen();
     this->__manager.newScene<SelectionMenu>();
 }
@@ -725,7 +726,12 @@ std::string Bomberman::Menu::MainLobby::getFileName(const std::string &path)
 {
     std::string res = "";
 
+#ifdef WIN32
+    res = path.substr(path.find_last_of("\\") + 1, path.length());
+#else
     res = path.substr(path.find_last_of("/") + 1, path.length());
+#endif
+
     res = res.substr(0, res.find_last_of("."));
     return (res);
 }
@@ -735,8 +741,8 @@ void Bomberman::Menu::MainLobby::__fetchSave()
     float yOffset = 500.0f;
     int count = 0;
 
-    for (const auto &entry : std::filesystem::directory_iterator("./save")) {
-        std::shared_ptr<Button> save = std::make_shared<Button>(entry.path(), Type::Vector<3>(775.0f, yOffset, 0.0f), "./assets/MainMenu/button_sheet_2.png", this->getFileName(entry.path()), 40);
+    for (const auto &entry : std::filesystem::directory_iterator(Bomberman::Config::ExecutablePath + "save")) {
+        std::shared_ptr<Button> save = std::make_shared<Button>(entry.path().string(), Type::Vector<3>(775.0f, yOffset, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/button_sheet_2.png", this->getFileName(entry.path().string()), 40);
         save->setDisplay(false);
         this->__objContainer.emplace_back(LOAD_PANEL, save);
         this->__saveButtons.emplace_back(save);
@@ -1096,6 +1102,9 @@ void Bomberman::Menu::MainLobby::update(const double &elapsed)
         if (val.second.lock()->isClick() == true && val.second.lock()->getDisplay()) {
             if (this->__buttonCallback.count(val.second.lock()->getName()) > 0) {
                 this->__buttonCallback[val.second.lock()->getName()](*this);
+                if (this->__quit) {
+                    return;
+                }
             }
         }
     }

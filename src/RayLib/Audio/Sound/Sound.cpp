@@ -26,7 +26,7 @@ void RayLib::Audio::Sound::UpdateSound(const void *data, const int &samplesCount
     ::UpdateSound(this->__sound, data, samplesCount);
 }
 
-void RayLib::Audio::Sound::PlaySound() const
+void RayLib::Audio::Sound::PlayRaySound() const
 {
     ::PlaySound(this->__sound);
 }

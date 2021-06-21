@@ -10,8 +10,6 @@
 
 #pragma once
 
-#define CONFIG_PATH "./config.yml"
-
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -19,6 +17,8 @@
 #include <map>
 #include <vector>
 #include "../../RayLib/Window.hpp"
+
+#define CONFIG_PATH "config.yml"
 
 namespace Bomberman {
     class UserConfig {
