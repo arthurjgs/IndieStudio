@@ -8,6 +8,8 @@
  * 
  */
 
+#include <memory>
+#include <Game/Config.hpp>
 #include "MainMenu.hpp"
 #include "../Music/Music.hpp"
 
@@ -15,17 +17,16 @@ Bomberman::Menu::MainMenu::MainMenu(SceneManager &manager) :
 Scene(manager)
 {
     const std::pair<const std::string, const double> arr[] = {
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/1.png", 10.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/2.png", 20.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/3.png", 30.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/4.png", 40.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/5.png", 50.0),
-        std::pair<const std::string, const double>("./assets/MainMenu/layers/6.png", 60.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/1.png", 10.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/2.png", 20.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/3.png", 30.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/4.png", 40.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/5.png", 50.0),
+        std::pair<const std::string, const double>(Bomberman::Config::ExecutablePath + "assets/MainMenu/layers/6.png", 60.0),
     };
-
-    this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", "./assets/sounds/menumusic.", this->__config.getValue(UserConfig::ValueType::MUSIC_VOL)));
+    this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/menumusic.mp3", this->__config.getValue(UserConfig::MUSIC_VOL)));
     this->__objContainer.push_back(std::make_shared<Parralax>(arr, 6, "menuParralax", Type::Vector<2>(0.0f, 0.0f)));
-    this->__objContainer.push_back(std::make_shared<Image>("./assets/MainMenu/title.png", "tile", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, -40.0f, 0.0f)));
+    this->__objContainer.push_back(std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/title.png", "tile", GameObject::ObjectType::DECOR, Type::Vector<3>(550.0f, -40.0f, 0.0f)));
     
     const std::string text = "Press any key to start...";
     

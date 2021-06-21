@@ -77,7 +77,7 @@ RayLib::Models::Animate::~Animate()
 {
     for (auto texture : _textures)
         UnloadTexture(texture);
-
+    std::cout << this->_path << std::endl;
     if (_animType == IQM) {
         for (int i = 0; i < _iqmAnimCount; i++) UnloadModelAnimation(_animations[i]);
         RL_FREE(_animations);

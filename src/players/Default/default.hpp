@@ -11,10 +11,10 @@
 #include <players/AbstractPlayer.hpp>
 
 namespace Bomberman {
-    class Steve : public AbstractPlayer {
+    class Default : public AbstractPlayer {
     public:
-        Steve();
-        ~Steve() = default;
+        Default();
+        ~Default() = default;
     protected:
     private:
     };
@@ -25,7 +25,7 @@ extern "C"
 {
     __declspec(dllexport) Bomberman::AbstractPlayer* entryPoint()
     {
-        static Bomberman::Steve player;
+        static Bomberman::Default player;
         return &player;
     }
 }
@@ -34,10 +34,12 @@ extern "C"
 {
     Bomberman::AbstractPlayer* entryPoint()
     {
-        static Bomberman::Steve player;
+        static Bomberman::Default player;
         return &player;
     }
 }
 #endif
+
+
 
 #endif //BOMBERMAN_DEFAULT_HPP

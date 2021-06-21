@@ -43,7 +43,7 @@ bool Bomberman::Button::isClick() const
     if (_collision.CheckCollisionPointRec(_mouse.getMousePosition(), _btnBounds))
         if (_mouse.isMouseButtonReleased(MOUSE_BUTTON_LEFT))
         {
-            this->_sound.PlaySound();
+            this->_sound.PlayRaySound();
             return true;
         }
     return false;

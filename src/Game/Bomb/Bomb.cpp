@@ -17,7 +17,7 @@ Bomberman::Bomb::Bomb(const Type::Vector<3> &position, Player *owner, int range)
 Bomberman::Bomb::~Bomb() = default;
 
 
-void Bomberman::Bomb::update(const double &elapsed)
+void Bomberman::Bomb::update(const double& elapsed)
 {
     if (_lifespan > 3) {
         this->_state = DESTROYED;

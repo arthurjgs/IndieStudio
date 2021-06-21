@@ -96,17 +96,19 @@ void Bomberman::Save::__writeDataInFile() const
 Bomberman::Save::Save(SaveData &&data, const std::string &filepath) :
 __data(std::move(data))
 {
-    this->__filepath = SAVE_FOLDER + filepath + ".yml";
+    this->__filepath = Bomberman::Config::ExecutablePath + SAVE_FOLDER + filepath + ".yml";
     this->__writeDataInFile();
 }
 
 Bomberman::SaveData &&Bomberman::Save::__loadDataFromPath()
 {
+    std::vector<std::weak_ptr<Player>> v1;
+    return SaveData(std::vector<std::shared_ptr<GameObject>>(), v1, 0);
     // load data from file
 }
 
 Bomberman::Save::Save(const std::string &filepath) :
 __data(std::move(__loadDataFromPath())),
-__filepath(SAVE_FOLDER + filepath + ".yml")
+__filepath(Bomberman::Config::ExecutablePath + SAVE_FOLDER + filepath + ".yml")
 {
 }

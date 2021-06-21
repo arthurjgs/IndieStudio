@@ -95,11 +95,10 @@ void RayLib::Shapes::Line::DrawLineBezierQuad(const Type::Vector<2> &startPos, c
 
 void RayLib::Shapes::Line::DrawLineStrip(Type::Vector<2> &points, int pointsCount, const Type::Color &color)
 {
-    ::Vector2 dummyPoint {
-        .x = points.getX(),
-        .y = points.getY()
-    };
+    ::Vector2 dummyPoint;
 
+    dummyPoint.x = points.getX();
+    dummyPoint.y = points.getY();
     ::DrawLineStrip(
         &dummyPoint,
         pointsCount,

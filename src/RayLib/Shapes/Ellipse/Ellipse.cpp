@@ -41,44 +41,20 @@ RayLib::Shapes::Ellipse &RayLib::Shapes::Ellipse::operator = (const Ellipse &cpy
 
 void RayLib::Shapes::Ellipse::DrawEllipse() const
 {
-    ::Color dummyCol = {
-        .r = this->__color.getR(),
-        .g = this->__color.getG(),
-        .b = this->__color.getB(),
-        .a = this->__color.getA()
-    };
-    ::DrawEllipse(this->__centerX, this->__centerY, this->__radiusH, this->__radiusV, dummyCol);
+    ::DrawEllipse(this->__centerX, this->__centerY, this->__radiusH, this->__radiusV, ::Color{this->__color.getR(), this->__color.getG(), this->__color.getB(), this->__color.getA()});
 }
 
 void RayLib::Shapes::Ellipse::DrawEllipseLines() const
 {
-    ::Color dummyCol = {
-        .r = this->__color.getR(),
-        .g = this->__color.getG(),
-        .b = this->__color.getB(),
-        .a = this->__color.getA()
-    };
-    ::DrawEllipse(this->__centerX, this->__centerY, this->__radiusH, this->__radiusV, dummyCol);
+    ::DrawEllipse(this->__centerX, this->__centerY, this->__radiusH, this->__radiusV, ::Color{this->__color.getR(), this->__color.getG(), this->__color.getB(), this->__color.getA()});
 }
 
 void RayLib::Shapes::Ellipse::DrawEllipse(const int &centerX, const int &centerY, const float &radiusH, const float &radiusV, const Type::Color &color)
 {
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawEllipse(centerX, centerY, radiusH, radiusV, dummyCol);
+    ::DrawEllipse(centerX, centerY, radiusH, radiusV, ::Color{color.getR(), color.getG(), color.getB(), color.getA()});
 }
 
 void RayLib::Shapes::Ellipse::DrawEllipseLines(const int &centerX, const int &centerY, const float &radiusH, const float &radiusV, const Type::Color &color)
 {
-    ::Color dummyCol = {
-        .r = color.getR(),
-        .g = color.getG(),
-        .b = color.getB(),
-        .a = color.getA()
-    };
-    ::DrawEllipseLines(centerX, centerY, radiusH, radiusV, dummyCol);
+    ::DrawEllipseLines(centerX, centerY, radiusH, radiusV, ::Color{ color.getR(), color.getG(), color.getB(), color.getA() });
 }   

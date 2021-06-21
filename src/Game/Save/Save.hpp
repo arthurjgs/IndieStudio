@@ -15,9 +15,10 @@
 #include "../../players/Player.hpp"
 #include <vector>
 #include <memory>
+#include <Game/Config.hpp>
 #include <fstream>
 
-#define SAVE_FOLDER "./save/"
+#define SAVE_FOLDER "save/"
 
 namespace Bomberman {
     class SaveData {
