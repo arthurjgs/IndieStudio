@@ -169,117 +169,118 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00331">331</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                                                       :</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;<a class="code" href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Scene</a>(manager)</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;{</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">const</span> std::pair&lt;const std::string, const double&gt; arr[] = {</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/1.png&quot;</span>, 10.0),</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/2.png&quot;</span>, 20.0),</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/3.png&quot;</span>, 30.0),</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/4.png&quot;</span>, 40.0),</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/5.png&quot;</span>, 50.0),</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        std::pair&lt;const std::string, const double&gt;(<span class="stringliteral">&quot;./assets/MainMenu/layers/6.png&quot;</span>, 60.0),</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    };</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Parralax&gt;(arr, 6, <span class="stringliteral">&quot;menuParralax&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(0.0f, 0.0f)));</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/PNG/Window04.png&quot;</span>, <span class="stringliteral">&quot;MainPanel&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(520.0f, 400.0f, 0.0f)));</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/lobby.png&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(650.0f, 40.0f, 0.0f)));</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Music&gt;(<span class="stringliteral">&quot;MainMusic&quot;</span>, <span class="stringliteral">&quot;./assets/sounds/lobbymusic.mp3&quot;</span>, this-&gt;__configHandler.<a class="code" href="classBomberman_1_1UserConfig.html#aa140eb52c9e6e703f4efaf271104b206">getValue</a>(UserConfig::ValueType::MUSIC_VOL)));</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, std::make_shared&lt;Image&gt;(<span class="stringliteral">&quot;./assets/MainMenu/Panel1.png&quot;</span>, <span class="stringliteral">&quot;settingsPanel&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(65.0f, 85.0f, 0.0f), <span class="keyword">false</span>));</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// button</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    std::shared_ptr&lt;Button&gt; playButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;playButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 500.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;PLAY&quot;</span>, 60);</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    std::shared_ptr&lt;Button&gt; loadButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;loadButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 650.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;LOAD&quot;</span>, 60);</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    std::shared_ptr&lt;Button&gt; quitButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;quitButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 800.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;QUIT&quot;</span>, 60);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    std::shared_ptr&lt;Button&gt; settingsButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;settingsButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(40.0f, 57.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/settings_button.png&quot;</span>);</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, playButton);</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, playButton);</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, loadButton);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, loadButton);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, quitButton);</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, quitButton);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, settingsButton);</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN, settingsButton);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    this-&gt;__currentBtnMain = 0;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    this-&gt;__controllerMapMain[0] = <span class="stringliteral">&quot;playButton&quot;</span>;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    this-&gt;__controllerMapMain[1] = <span class="stringliteral">&quot;loadButton&quot;</span>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    this-&gt;__controllerMapMain[2] = <span class="stringliteral">&quot;quitButton&quot;</span>;</div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    std::shared_ptr&lt;Button&gt; helpButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;helpButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 200.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Help&quot;</span>, 50);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    std::shared_ptr&lt;Button&gt; audioButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;audioButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 300.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Audio&quot;</span>, 50);</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    std::shared_ptr&lt;Button&gt; videoButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;videoButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 400.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Video&quot;</span>, 50);</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    std::shared_ptr&lt;Button&gt; gameplayButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;gameplayButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 500.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Gameplay&quot;</span>, 50);</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    std::shared_ptr&lt;Button&gt; creditsButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;creditsButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 600.0f, 0.0f), <span class="stringliteral">&quot;./assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Credits&quot;</span>, 50);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    helpButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    audioButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    videoButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    gameplayButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    creditsButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, helpButton);</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, helpButton);</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, audioButton);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, audioButton);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, videoButton);</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, videoButton);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, gameplayButton);</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, gameplayButton);</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, creditsButton);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, creditsButton);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    this-&gt;__currentBtnSettings = 0;</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    this-&gt;__controllerMapSettings[0] = <span class="stringliteral">&quot;helpButton&quot;</span>;</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    this-&gt;__controllerMapSettings[1] = <span class="stringliteral">&quot;audioButton&quot;</span>;</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    this-&gt;__controllerMapSettings[2] = <span class="stringliteral">&quot;videoButton&quot;</span>;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    this-&gt;__controllerMapSettings[3] = <span class="stringliteral">&quot;gameplayButton&quot;</span>;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    this-&gt;__controllerMapSettings[4] = <span class="stringliteral">&quot;creditsButton&quot;</span>;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    this-&gt;createSavePanel();</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    this-&gt;createAudioPanel();</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    this-&gt;createHelpPanel();</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    this-&gt;createVideoPanel();</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    this-&gt;createGameplayPanel();</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160; </div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;playButton&quot;</span>] = &amp;MainLobby::playButtonCallback;</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;loadButton&quot;</span>] = &amp;MainLobby::loadButtonCallback;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;quitButton&quot;</span>] = &amp;MainLobby::quitButtonCallback;</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;settingsButton&quot;</span>] = &amp;MainLobby::settingsButtonCallback;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160; </div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;helpButton&quot;</span>] = &amp;MainLobby::helpButtonCallback;</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;audioButton&quot;</span>] = &amp;MainLobby::audioButtonCallback;</div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;videoButton&quot;</span>] = &amp;MainLobby::videoButtonCallback;</div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;gameplayButton&quot;</span>] = &amp;MainLobby::gameplayButtonCallback;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;creditsButton&quot;</span>] = &amp;MainLobby::creditsButtonCallback;</div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    this-&gt;__settings = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    this-&gt;__save = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    this-&gt;__audio = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    this-&gt;__help = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    this-&gt;__video = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    this-&gt;__gameplay = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    this-&gt;__ignore = -1;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    this-&gt;mainPanelFocus = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    this-&gt;settingsFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    this-&gt;controllerActive = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    this-&gt;helpPanelFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    this-&gt;audioPanelFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    this-&gt;videoPanelFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    this-&gt;gameplayPanelFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    this-&gt;loadPanelFocus = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    this-&gt;__currentBtnAudio = 0;</div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    this-&gt;__currentBtnHelp = 0;</div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    this-&gt;__currentBtnGameplay = 0;</div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    this-&gt;__currentBtnVideo = 0;</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    this-&gt;__currentBtnLoad = 0;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="comment">// TODO: set music volume via config file for each musics created</span></div>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l00332">332</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                                                       :</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<a class="code" href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Scene</a>(manager)</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;{</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keyword">const</span> std::pair&lt;const std::string, const double&gt; arr[] = {</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/1.png&quot;</span>, 10.0),</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/2.png&quot;</span>, 20.0),</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/3.png&quot;</span>, 30.0),</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/4.png&quot;</span>, 40.0),</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/5.png&quot;</span>, 50.0),</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        std::pair&lt;const std::string, const double&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/layers/6.png&quot;</span>, 60.0),</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    };</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Parralax&gt;(arr, 6, <span class="stringliteral">&quot;menuParralax&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;2&gt;</a>(0.0f, 0.0f)));</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, std::make_shared&lt;Image&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/PNG/Window04.png&quot;</span>, <span class="stringliteral">&quot;MainPanel&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(520.0f, 400.0f, 0.0f)));</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Image&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/lobby.png&quot;</span>, <span class="stringliteral">&quot;title&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(650.0f, 40.0f, 0.0f)));</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, std::make_shared&lt;Music&gt;(<span class="stringliteral">&quot;MainMusic&quot;</span>, <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/sounds/lobbymusic.mp3&quot;</span>, this-&gt;__configHandler.<a class="code" href="classBomberman_1_1UserConfig.html#aa140eb52c9e6e703f4efaf271104b206">getValue</a>(<a class="code" href="classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7a95538070c3c3949c4082c3fb5b8b67b3">UserConfig::MUSIC_VOL</a>)));</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, std::make_shared&lt;Image&gt;(<a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/Panel1.png&quot;</span>, <span class="stringliteral">&quot;settingsPanel&quot;</span>, GameObject::ObjectType::DECOR, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(65.0f, 85.0f, 0.0f), <span class="keyword">false</span>));</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    </div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// button</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    std::shared_ptr&lt;Button&gt; playButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;playButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 500.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;PLAY&quot;</span>, 60);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    std::shared_ptr&lt;Button&gt; loadButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;loadButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 650.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;LOAD&quot;</span>, 60);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    std::shared_ptr&lt;Button&gt; quitButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;quitButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(775.0f, 800.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet.png&quot;</span>, <span class="stringliteral">&quot;QUIT&quot;</span>, 60);</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    std::shared_ptr&lt;Button&gt; settingsButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;settingsButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(40.0f, 57.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/settings_button.png&quot;</span>);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, playButton);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, playButton);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, loadButton);</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, loadButton);</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN_PANEL, quitButton);</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN_PANEL, quitButton);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    this-&gt;__objContainer.emplace_back(MAIN, settingsButton);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    this-&gt;__buttonsReferer.emplace_back(MAIN, settingsButton);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    this-&gt;__currentBtnMain = 0;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    this-&gt;__controllerMapMain[0] = <span class="stringliteral">&quot;playButton&quot;</span>;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    this-&gt;__controllerMapMain[1] = <span class="stringliteral">&quot;loadButton&quot;</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    this-&gt;__controllerMapMain[2] = <span class="stringliteral">&quot;quitButton&quot;</span>;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    std::shared_ptr&lt;Button&gt; helpButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;helpButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 200.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Help&quot;</span>, 50);</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    std::shared_ptr&lt;Button&gt; audioButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;audioButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 300.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Audio&quot;</span>, 50);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    std::shared_ptr&lt;Button&gt; videoButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;videoButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 400.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Video&quot;</span>, 50);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    std::shared_ptr&lt;Button&gt; gameplayButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;gameplayButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 500.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Gameplay&quot;</span>, 50);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    std::shared_ptr&lt;Button&gt; creditsButton = std::make_shared&lt;Button&gt;(<span class="stringliteral">&quot;creditsButton&quot;</span>, <a class="code" href="classType_1_1Vector.html">Type::Vector&lt;3&gt;</a>(80.0f, 600.0f, 0.0f), <a class="code" href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a> + <span class="stringliteral">&quot;assets/MainMenu/button_sheet_2.png&quot;</span>, <span class="stringliteral">&quot;Credits&quot;</span>, 50);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    helpButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    audioButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    videoButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    gameplayButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    creditsButton-&gt;setDisplay(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, helpButton);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, helpButton);</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, audioButton);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, audioButton);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, videoButton);</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, videoButton);</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, gameplayButton);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, gameplayButton);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    this-&gt;__objContainer.emplace_back(OPTION_PANEL, creditsButton);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    this-&gt;__buttonsReferer.emplace_back(OPTION_PANEL, creditsButton);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    this-&gt;__currentBtnSettings = 0;</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    this-&gt;__controllerMapSettings[0] = <span class="stringliteral">&quot;helpButton&quot;</span>;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    this-&gt;__controllerMapSettings[1] = <span class="stringliteral">&quot;audioButton&quot;</span>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    this-&gt;__controllerMapSettings[2] = <span class="stringliteral">&quot;videoButton&quot;</span>;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    this-&gt;__controllerMapSettings[3] = <span class="stringliteral">&quot;gameplayButton&quot;</span>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    this-&gt;__controllerMapSettings[4] = <span class="stringliteral">&quot;creditsButton&quot;</span>;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    this-&gt;createSavePanel();</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    this-&gt;createAudioPanel();</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    this-&gt;createHelpPanel();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    this-&gt;createVideoPanel();</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    this-&gt;createGameplayPanel();</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;playButton&quot;</span>] = &amp;MainLobby::playButtonCallback;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;loadButton&quot;</span>] = &amp;MainLobby::loadButtonCallback;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;quitButton&quot;</span>] = &amp;MainLobby::quitButtonCallback;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;settingsButton&quot;</span>] = &amp;MainLobby::settingsButtonCallback;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160; </div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;helpButton&quot;</span>] = &amp;MainLobby::helpButtonCallback;</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;audioButton&quot;</span>] = &amp;MainLobby::audioButtonCallback;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;videoButton&quot;</span>] = &amp;MainLobby::videoButtonCallback;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;gameplayButton&quot;</span>] = &amp;MainLobby::gameplayButtonCallback;</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    this-&gt;__buttonCallback[<span class="stringliteral">&quot;creditsButton&quot;</span>] = &amp;MainLobby::creditsButtonCallback;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    this-&gt;__settings = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    this-&gt;__save = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    this-&gt;__audio = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    this-&gt;__help = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    this-&gt;__video = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    this-&gt;__gameplay = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    this-&gt;__ignore = -1;</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    this-&gt;__quit = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    this-&gt;mainPanelFocus = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    this-&gt;settingsFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    this-&gt;controllerActive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    this-&gt;helpPanelFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    this-&gt;audioPanelFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    this-&gt;videoPanelFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    this-&gt;gameplayPanelFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    this-&gt;loadPanelFocus = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    this-&gt;__currentBtnAudio = 0;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    this-&gt;__currentBtnHelp = 0;</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    this-&gt;__currentBtnGameplay = 0;</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    this-&gt;__currentBtnVideo = 0;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    this-&gt;__currentBtnLoad = 0;</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;}</div>
 <div class="ttc" id="aclassBomberman_1_1Scene_html_a189db831940ae24acfbae8dbfd6a000b"><div class="ttname"><a href="classBomberman_1_1Scene.html#a189db831940ae24acfbae8dbfd6a000b">Bomberman::Scene::Scene</a></div><div class="ttdeci">Scene()=delete</div></div>
+<div class="ttc" id="aclassBomberman_1_1UserConfig_html_a430e6fc87c0757e9b3b2e768efd8cba7a95538070c3c3949c4082c3fb5b8b67b3"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#a430e6fc87c0757e9b3b2e768efd8cba7a95538070c3c3949c4082c3fb5b8b67b3">Bomberman::UserConfig::MUSIC_VOL</a></div><div class="ttdeci">@ MUSIC_VOL</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8hpp_source.html#l00034">UserConfig.hpp:34</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1UserConfig_html_aa140eb52c9e6e703f4efaf271104b206"><div class="ttname"><a href="classBomberman_1_1UserConfig.html#aa140eb52c9e6e703f4efaf271104b206">Bomberman::UserConfig::getValue</a></div><div class="ttdeci">int getValue(const ValueType &amp;type) const</div><div class="ttdef"><b>Definition:</b> <a href="UserConfig_8cpp_source.html#l00064">UserConfig.cpp:64</a></div></div>
 <div class="ttc" id="aclassType_1_1Vector_html"><div class="ttname"><a href="classType_1_1Vector.html">Type::Vector&lt; 2 &gt;</a></div></div>
+<div class="ttc" id="anamespaceBomberman_1_1Config_html_a887228d045cf72989a20ebad3184599f"><div class="ttname"><a href="namespaceBomberman_1_1Config.html#a887228d045cf72989a20ebad3184599f">Bomberman::Config::ExecutablePath</a></div><div class="ttdeci">std::string ExecutablePath</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -360,14 +361,14 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1Scene.html#ab97e3ba24a582b4ed657cb37c9570039">Bomberman::Scene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l01114">1114</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;{</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        <span class="keywordflow">if</span> (val.second-&gt;getDisplay()) {</div>
-<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;            val.second-&gt;render();</div>
-<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        }</div>
-<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    }</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l01123">1123</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;{</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;        <span class="keywordflow">if</span> (val.second-&gt;getDisplay()) {</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;            val.second-&gt;render();</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;        }</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;    }</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -423,45 +424,48 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classBomberman_1_1Scene.html#a1f44ba61fae17dd4596aad1c343b0964">Bomberman::Scene</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l01074">1074</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;{</div>
-<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().getKeyPressed() &gt; 0) {</div>
-<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;        this-&gt;controllerActive = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
-<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;            <span class="keywordtype">bool</span> &amp;manual = val.second.lock()-&gt;getManual();</div>
-<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;            manual = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        }</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;        <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#aa640124f82cdd344db49d30c35cff312">ShowCursor</a>();</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    }</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputGamepad().getGamepadButtonPressed() &gt; 0) {</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;        this-&gt;controllerActive = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;            <span class="keywordtype">bool</span> &amp;manual = val.second.lock()-&gt;getManual();</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;            manual = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;        }</div>
-<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;        <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a37cc44a44dde02eec1062b992d69a8da">HideCursor</a>();</div>
-<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;    }</div>
-<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;    <span class="keywordflow">if</span> (this-&gt;controllerActive) {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;        this-&gt;manageControllerInput();</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    }</div>
-<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
-<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        <span class="keywordflow">if</span> (val.second.lock()-&gt;isClick() == <span class="keyword">true</span> &amp;&amp; val.second.lock()-&gt;getDisplay()) {</div>
-<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;            <span class="keywordflow">if</span> (this-&gt;__buttonCallback.count(val.second.lock()-&gt;getName()) &gt; 0) {</div>
-<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;                this-&gt;__buttonCallback[val.second.lock()-&gt;getName()](*this);</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;            }</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;        }</div>
-<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    }</div>
-<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__saveButtons) {</div>
-<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;        <span class="keywordflow">if</span> (val.lock()-&gt;getDisplay() &amp;&amp; val.lock()-&gt;isClick() &amp;&amp; this-&gt;__saveDisplay == <span class="keyword">false</span>) {</div>
-<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;            this-&gt;__handleSaveTransition(val.lock()-&gt;getName());</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;            <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;        }</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    }</div>
-<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    this-&gt;__saveDisplay = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
-<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        val.second-&gt;update(elapsed);</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    }</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="MainLobby_8cpp_source.html#l01080">1080</a> of file <a class="el" href="MainLobby_8cpp_source.html">MainLobby.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;{</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().getKeyPressed() &gt; 0) {</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;        this-&gt;controllerActive = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;            <span class="keywordtype">bool</span> &amp;manual = val.second.lock()-&gt;getManual();</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;            manual = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;        }</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;        <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#aa640124f82cdd344db49d30c35cff312">ShowCursor</a>();</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    }</div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputGamepad().getGamepadButtonPressed() &gt; 0) {</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;        this-&gt;controllerActive = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            <span class="keywordtype">bool</span> &amp;manual = val.second.lock()-&gt;getManual();</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;            manual = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;        }</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;        <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a37cc44a44dde02eec1062b992d69a8da">HideCursor</a>();</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;    }</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    <span class="keywordflow">if</span> (this-&gt;controllerActive) {</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;        this-&gt;manageControllerInput();</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    }</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__buttonsReferer) {</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;        <span class="keywordflow">if</span> (val.second.lock()-&gt;isClick() == <span class="keyword">true</span> &amp;&amp; val.second.lock()-&gt;getDisplay()) {</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;            <span class="keywordflow">if</span> (this-&gt;__buttonCallback.count(val.second.lock()-&gt;getName()) &gt; 0) {</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;                this-&gt;__buttonCallback[val.second.lock()-&gt;getName()](*this);</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;                <span class="keywordflow">if</span> (this-&gt;__quit) {</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;                }</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;            }</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;        }</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    }</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__saveButtons) {</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;        <span class="keywordflow">if</span> (val.lock()-&gt;getDisplay() &amp;&amp; val.lock()-&gt;isClick() &amp;&amp; this-&gt;__saveDisplay == <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;            this-&gt;__handleSaveTransition(val.lock()-&gt;getName());</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;        }</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;    }</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    this-&gt;__saveDisplay = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <span class="keyword">const</span> &amp;val : this-&gt;__objContainer) {</div>
+<div class="line"><a name="l01119"></a><span class="lineno"> 1119</span>&#160;        val.second-&gt;update(elapsed);</div>
+<div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    }</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a2ca6b034a482304270e21f96d22a4951"><div class="ttname"><a href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a></div><div class="ttdeci">static Window &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00011">Window.cpp:11</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_a37cc44a44dde02eec1062b992d69a8da"><div class="ttname"><a href="classRayLib_1_1Window.html#a37cc44a44dde02eec1062b992d69a8da">RayLib::Window::HideCursor</a></div><div class="ttdeci">void HideCursor(void)</div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00097">Window.hpp:97</a></div></div>
 <div class="ttc" id="aclassRayLib_1_1Window_html_aa640124f82cdd344db49d30c35cff312"><div class="ttname"><a href="classRayLib_1_1Window.html#aa640124f82cdd344db49d30c35cff312">RayLib::Window::ShowCursor</a></div><div class="ttdeci">void ShowCursor(void)</div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00096">Window.hpp:96</a></div></div>

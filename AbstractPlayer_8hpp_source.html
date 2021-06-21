@@ -80,29 +80,38 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef BOMBERMAN_ABSTRACTPLAYER_HPP</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define BOMBERMAN_ABSTRACTPLAYER_HPP</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classBomberman_1_1AbstractPlayer.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classBomberman_1_1AbstractPlayer.html">AbstractPlayer</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classBomberman_1_1AbstractPlayer.html#abb0b5cc29a9ea63c161188c9f9bbf49c">AbstractPlayer</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keywordtype">float</span> speed = 3.0f, <span class="keywordtype">int</span> bombs = 1, <span class="keywordtype">int</span> range = 1, <span class="keywordtype">float</span> scale = 1.0f);</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classBomberman_1_1AbstractPlayer.html#ac641d4aed4e9d66d00edefa6a0f3edc6">   17</a></span>&#160;        <a class="code" href="classBomberman_1_1AbstractPlayer.html#ac641d4aed4e9d66d00edefa6a0f3edc6">~AbstractPlayer</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a86d05a2a4620074b986f0d6abcc19147">getSpeed</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a71d4d5ab51c259a3f248a3e90b980b73">getBombs</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#ad0587b6a57550098b6059f82c8271c79">getRange</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a825f8e1b4af017d2185b330553d43ea5">getScale</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::string <a class="code" href="classBomberman_1_1AbstractPlayer.html#ab3aeffa86aaede2791f2e0c4020f5f4d">getName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        std::string _name;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">float</span> _speed;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">int</span> _bombs;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">int</span> _range;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_ABSTRACTPLAYER_HPP</span></div>
-<div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8hpp_source.html#l00014">AbstractPlayer.hpp:14</a></div></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#if defined _WIN32 || defined __CYGWIN__</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#ifdef indie_raylib_EXPORTS</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define indie_raylib_API __declspec(dllexport) </span><span class="comment">// Note: actually gcc seems to also supports this syntax.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define indie_raylib_API __declspec(dllimport) </span><span class="comment">// Note: actually gcc seems to also supports this syntax.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define DLL_LOCAL</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBomberman.html">Bomberman</a> {</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classBomberman_1_1AbstractPlayer.html">   23</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classBomberman_1_1AbstractPlayer.html">AbstractPlayer</a> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="classBomberman_1_1AbstractPlayer.html#abb0b5cc29a9ea63c161188c9f9bbf49c">AbstractPlayer</a>(<span class="keyword">const</span> std::string &amp;name, <span class="keywordtype">float</span> speed = 3.0f, <span class="keywordtype">int</span> bombs = 1, <span class="keywordtype">int</span> range = 1, <span class="keywordtype">float</span> scale = 1.0f);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classBomberman_1_1AbstractPlayer.html#ac641d4aed4e9d66d00edefa6a0f3edc6">   26</a></span>&#160;        <a class="code" href="classBomberman_1_1AbstractPlayer.html#ac641d4aed4e9d66d00edefa6a0f3edc6">~AbstractPlayer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a86d05a2a4620074b986f0d6abcc19147">getSpeed</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a71d4d5ab51c259a3f248a3e90b980b73">getBombs</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#ad0587b6a57550098b6059f82c8271c79">getRange</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">float</span> <a class="code" href="classBomberman_1_1AbstractPlayer.html#a825f8e1b4af017d2185b330553d43ea5">getScale</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        std::string <a class="code" href="classBomberman_1_1AbstractPlayer.html#ab3aeffa86aaede2791f2e0c4020f5f4d">getName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        std::string _name;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">float</span> _speed;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">int</span> _bombs;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> _range;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//BOMBERMAN_ABSTRACTPLAYER_HPP</span></div>
+<div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html">Bomberman::AbstractPlayer</a></div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8hpp_source.html#l00023">AbstractPlayer.hpp:23</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html_a71d4d5ab51c259a3f248a3e90b980b73"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html#a71d4d5ab51c259a3f248a3e90b980b73">Bomberman::AbstractPlayer::getBombs</a></div><div class="ttdeci">int getBombs() const</div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8cpp_source.html#l00024">AbstractPlayer.cpp:24</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html_a825f8e1b4af017d2185b330553d43ea5"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html#a825f8e1b4af017d2185b330553d43ea5">Bomberman::AbstractPlayer::getScale</a></div><div class="ttdeci">float getScale() const</div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8cpp_source.html#l00034">AbstractPlayer.cpp:34</a></div></div>
 <div class="ttc" id="aclassBomberman_1_1AbstractPlayer_html_a86d05a2a4620074b986f0d6abcc19147"><div class="ttname"><a href="classBomberman_1_1AbstractPlayer.html#a86d05a2a4620074b986f0d6abcc19147">Bomberman::AbstractPlayer::getSpeed</a></div><div class="ttdeci">float getSpeed() const</div><div class="ttdef"><b>Definition:</b> <a href="AbstractPlayer_8cpp_source.html#l00019">AbstractPlayer.cpp:19</a></div></div>
