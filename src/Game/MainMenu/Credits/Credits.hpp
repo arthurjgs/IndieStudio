@@ -14,6 +14,7 @@
 #include "../../GameObject.hpp"
 #include "../../Image/Image.hpp"
 #include "../../FlashingText/FlashingText.hpp"
+#include "../../UserConfig/UserConfig.hpp"
 #include <vector>
 #include <memory>
 
@@ -55,6 +56,7 @@ namespace Bomberman {
                 std::vector<std::shared_ptr<GameObject>> __objContainer;
                 int __textIndex;
                 std::vector<std::pair<int, std::unique_ptr<CreditsComponent>>> __textVector;
+                UserConfig __configHandler;
         };
     }
 }
