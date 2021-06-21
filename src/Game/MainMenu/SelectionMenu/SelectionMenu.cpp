@@ -73,6 +73,7 @@ Bomberman::Menu::SelectionMenu::SelectionMenu(SceneManager &manager) : Scene(man
     this->__objContainer.push_back(_gamepadInfoOne);
     this->__objContainer.push_back(_gamepadInfoTwo);
     this->__objContainer.push_back(_gamepadInfoThree);
+    this->__objContainer.emplace_back(std::make_shared<Music>("MainMusic", Bomberman::Config::ExecutablePath + "assets/sounds/selection_character_music.mp3", this->__config.getValue(UserConfig::ValueType::MUSIC_VOL)));
 
     this->__stateImagesReferer.emplace_back(playerOne);
     this->__stateImagesReferer.emplace_back(playerTwo);
