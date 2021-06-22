@@ -13,8 +13,9 @@
 #include "../FlashingText/FlashingText.hpp"
 #include <Game/Config.hpp>
 
-Bomberman::SplashScreen::SplashScreen(SceneManager &manager) :
-Scene(manager)
+Bomberman::SplashScreen::SplashScreen(SceneManager& manager) :
+    Scene(manager),
+    _sound(Bomberman::Config::ExecutablePath + "assets/sound_effects/ea.mp3")
 {
     this->__second = 0.0;
     this->__image = std::make_unique<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/ea.png", "ea", GameObject::ObjectType::DECOR, Type::Vector<3>(685.0f, 300.0f, 0.0f));
@@ -33,6 +34,9 @@ void Bomberman::SplashScreen::update(const double &elapsed)
 
         uChar &a = col.getA();
         a++;
+        if (a == 30) {
+            this->_sound.PlayRaySound();
+        }
         if (a == 255) {
             RayLib::Window::loadingScreen();
             this->__manager.clearStack<Menu::MainMenu>();

@@ -91,7 +91,7 @@ Bomberman::Menu::Credits::Credits(SceneManager &manager) : Scene(manager)
 
     this->__textVector.emplace_back(0, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/MainMenu/lobby.png", textSetOne));
     this->__textVector.emplace_back(1, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/arthur.png", textSetTwo));
-    this->__textVector.emplace_back(2, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/arthur.png", textSetThree));
+    this->__textVector.emplace_back(2, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/alex.png", textSetThree));
     this->__textVector.emplace_back(3, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/max.png", textSetFour));
     this->__textVector.emplace_back(4, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/meh.png", textSetFive));
     this->__textVector.emplace_back(5, std::make_unique<CreditsComponent>(Bomberman::Config::ExecutablePath + "assets/credits/theo.png", textSetSix));

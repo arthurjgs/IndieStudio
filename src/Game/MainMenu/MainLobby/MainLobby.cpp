@@ -316,7 +316,7 @@ void Bomberman::Menu::MainLobby::createAudioPanel()
 void Bomberman::Menu::MainLobby::createHelpPanel()
 {
     this->__objContainer.emplace_back(HELP, std::make_shared<Image>(Bomberman::Config::ExecutablePath + "assets/MainMenu/PNG/Window04.png", "MainPanel", GameObject::ObjectType::DECOR, Type::Vector<3>(520.0f, 400.0f, 0.0f), false));   
-
+    this->__objContainer.emplace_back(HELP, std::make_shared<FlashingText>("the game is really simple\ndrop the bomb to destroy the \ncrates and the other players", Type::Color(255, 255, 255, 255), 45, 0.0, "helptext", GameObject::ObjectType::DECOR, Type::Vector<2>(650.0f, 600.0f), false));
 
     std::shared_ptr<Button> close = std::make_shared<Button>("closeHelp", Type::Vector<3>(1300.0f, 460.0f, 0.0f), Bomberman::Config::ExecutablePath + "assets/MainMenu/close.png");
     close->setDisplay(false);

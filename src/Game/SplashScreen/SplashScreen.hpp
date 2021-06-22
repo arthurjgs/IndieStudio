@@ -15,6 +15,7 @@
 #include "../UserConfig/UserConfig.hpp"
 #include "../Image/Image.hpp"
 #include <memory>
+#include "../../RayLib/Audio/Sound/Sound.hpp"
 
 namespace Bomberman {
     class SplashScreen : public Scene {
@@ -32,6 +33,6 @@ namespace Bomberman {
             private:
                 std::unique_ptr<Image> __image;
                 double __second;
-
+                RayLib::Audio::Sound _sound;
     };
 }
