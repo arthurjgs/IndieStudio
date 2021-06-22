@@ -82,6 +82,7 @@ void Bomberman::GameScene::saveCallback()
             val.second->setDisplay(false);
         }
     }
+    RayLib::Window::getInstance().setCursor(true);
 }
 
 void Bomberman::GameScene::quitCallback()
@@ -106,6 +107,7 @@ void Bomberman::GameScene::confirmSaveCallback()
     }
     SaveData resData(this->_gameObjectList, this->_listPlayers, this->_timer);
     Save res(std::move(resData), this->_saveName);
+    RayLib::Window::getInstance().setCursor(false);
 }
 
 void Bomberman::GameScene::cancelSaveCallback()
@@ -121,6 +123,7 @@ void Bomberman::GameScene::cancelSaveCallback()
             val.second->setDisplay(true);
         }
     }
+    RayLib::Window::getInstance().setCursor(false);
 }
 
 void Bomberman::GameScene::createPause()
