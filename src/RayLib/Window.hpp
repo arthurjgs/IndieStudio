@@ -73,6 +73,16 @@ namespace RayLib
                 return (::GetMonitorRefreshRate(::GetCurrentMonitor()));
             }
 
+            inline void setCursor(bool val)
+            {
+                if (val == true) {
+                    ::EnableCursor();
+                }
+                else {
+                    ::DisableCursor();
+                }
+            }
+
             inline size_t getRefreshRate() const
             {
                 return (this->__fps);
