@@ -801,27 +801,27 @@ Additional Inherited Members</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    (void) elapsed;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span> (this-&gt;_manual == <span class="keyword">true</span>) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        _sourceRec.<a class="code" href="classType_1_1Rectangle.html#a35453eaff725f1bdc24a4042e2b7b3fe">setX</a>(_state * _frameWidth);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">getInputKeyboard</a>().<a class="code" href="classRayLib_1_1InputKeyboard.html#a5a9c6cc53d8308b90927063a7c8f6e30">getKeyPressed</a>() &gt; 0) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            this-&gt;_manual = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;salut&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">if</span> (_collision.<a class="code" href="classRayLib_1_1Shapes_1_1Collision.html#a2404ba54dd98ec50e082c047db26b89e">CheckCollisionPointRec</a>(_mouse.<a class="code" href="classRayLib_1_1InputMouse.html#a13c2cdd0bb083f216759261db2187222">getMousePosition</a>(), _btnBounds))</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">if</span> (_mouse.<a class="code" href="classRayLib_1_1InputMouse.html#a1791192d2e271b361ae52db8f2e39f4a">isMouseButtonDown</a>(MOUSE_BUTTON_LEFT))</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            _state = 2;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            _state = 1;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        _state = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    _sourceRec.<a class="code" href="classType_1_1Rectangle.html#a35453eaff725f1bdc24a4042e2b7b3fe">setX</a>(_state * _frameWidth);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="ttc" id="aclassRayLib_1_1InputKeyboard_html_a5a9c6cc53d8308b90927063a7c8f6e30"><div class="ttname"><a href="classRayLib_1_1InputKeyboard.html#a5a9c6cc53d8308b90927063a7c8f6e30">RayLib::InputKeyboard::getKeyPressed</a></div><div class="ttdeci">int getKeyPressed(void) const</div><div class="ttdef"><b>Definition:</b> <a href="InputKeyboard_8cpp_source.html#l00047">InputKeyboard.cpp:47</a></div></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a12ce71cd339f9545038ece85fae6e837">setCursor</a>(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        _sourceRec.<a class="code" href="classType_1_1Rectangle.html#a35453eaff725f1bdc24a4042e2b7b3fe">setX</a>(_state * _frameWidth);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().getInputKeyboard().getKeyPressed() &gt; 0) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            this-&gt;_manual = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="classRayLib_1_1Window.html#a2ca6b034a482304270e21f96d22a4951">RayLib::Window::getInstance</a>().<a class="code" href="classRayLib_1_1Window.html#a12ce71cd339f9545038ece85fae6e837">setCursor</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (_collision.<a class="code" href="classRayLib_1_1Shapes_1_1Collision.html#a2404ba54dd98ec50e082c047db26b89e">CheckCollisionPointRec</a>(_mouse.<a class="code" href="classRayLib_1_1InputMouse.html#a13c2cdd0bb083f216759261db2187222">getMousePosition</a>(), _btnBounds))</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (_mouse.<a class="code" href="classRayLib_1_1InputMouse.html#a1791192d2e271b361ae52db8f2e39f4a">isMouseButtonDown</a>(MOUSE_BUTTON_LEFT))</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            _state = 2;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            _state = 1;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        _state = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    _sourceRec.<a class="code" href="classType_1_1Rectangle.html#a35453eaff725f1bdc24a4042e2b7b3fe">setX</a>(_state * _frameWidth);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="ttc" id="aclassRayLib_1_1InputMouse_html_a1791192d2e271b361ae52db8f2e39f4a"><div class="ttname"><a href="classRayLib_1_1InputMouse.html#a1791192d2e271b361ae52db8f2e39f4a">RayLib::InputMouse::isMouseButtonDown</a></div><div class="ttdeci">bool isMouseButtonDown(int button) const</div><div class="ttdef"><b>Definition:</b> <a href="InputMouse_8cpp_source.html#l00027">InputMouse.cpp:27</a></div></div>
-<div class="ttc" id="aclassRayLib_1_1Window_html_ae845880afbbfb72d36a78d61bcd3c295"><div class="ttname"><a href="classRayLib_1_1Window.html#ae845880afbbfb72d36a78d61bcd3c295">RayLib::Window::getInputKeyboard</a></div><div class="ttdeci">RayLib::InputKeyboard getInputKeyboard() const</div><div class="ttdef"><b>Definition:</b> <a href="Window_8cpp_source.html#l00059">Window.cpp:59</a></div></div>
+<div class="ttc" id="aclassRayLib_1_1Window_html_a12ce71cd339f9545038ece85fae6e837"><div class="ttname"><a href="classRayLib_1_1Window.html#a12ce71cd339f9545038ece85fae6e837">RayLib::Window::setCursor</a></div><div class="ttdeci">void setCursor(bool val)</div><div class="ttdef"><b>Definition:</b> <a href="Window_8hpp_source.html#l00076">Window.hpp:76</a></div></div>
 <div class="ttc" id="aclassType_1_1Rectangle_html_a35453eaff725f1bdc24a4042e2b7b3fe"><div class="ttname"><a href="classType_1_1Rectangle.html#a35453eaff725f1bdc24a4042e2b7b3fe">Type::Rectangle::setX</a></div><div class="ttdeci">void setX(float x)</div><div class="ttdef"><b>Definition:</b> <a href="Types_2Rectangle_2Rectangle_8hpp_source.html#l00131">Rectangle.hpp:131</a></div></div>
 </div><!-- fragment -->
 </div>
