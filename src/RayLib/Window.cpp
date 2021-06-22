@@ -20,7 +20,7 @@ RayLib::Window::Window(float width, float height, const std::string &title)
     if (!::IsWindowReady()) {
         throw std::runtime_error("salut");
     }
-    //::ToggleFullscreen();
+    ::ToggleFullscreen();
     this->__fps = ::GetMonitorRefreshRate(::GetCurrentMonitor());
     ::SetTargetFPS(::GetMonitorRefreshRate(::GetCurrentMonitor()));
     ::InitAudioDevice();

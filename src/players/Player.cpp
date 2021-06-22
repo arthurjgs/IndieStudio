@@ -445,7 +445,7 @@ void Bomberman::Player::_iaOrPlayer(double elapsed)
 {
 
     if (_isAi)
-        if (_wait > 7)
+        if (_wait > 6)
             _AiHandler(elapsed);
     if (!_isAi)
         _playerHandler(elapsed);
